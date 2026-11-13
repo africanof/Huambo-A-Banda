@@ -1,5 +1,5 @@
 import type { Identity } from "../auth/TokenVerifier.js";
-import { defaultAppearance, type CharacterRecord, type CharacterRepository, type PositionUpdate } from "./CharacterRepository.js";
+import { defaultAppearance, type CharacterRecord, type CharacterRepository, type CharacterUpdate, type PositionUpdate } from "./CharacterRepository.js";
 
 /** Repositório em memória: convidados, desenvolvimento local sem Supabase e testes. */
 export class MemoryCharacterRepository implements CharacterRepository {
@@ -27,6 +27,13 @@ export class MemoryCharacterRepository implements CharacterRepository {
     }
     this.byOwner.set(identity.userId, rec);
     this.byId.set(id, rec);
+    return rec;
+  }
+
+  async update(identity: Identity, changes: CharacterUpdate): Promise<CharacterRecord> {
+    const rec = await this.loadOrCreate(identity);
+    if (changes.name) rec.name = changes.name;
+    if (changes.appearance) rec.appearance = { ...changes.appearance };
     return rec;
   }
 

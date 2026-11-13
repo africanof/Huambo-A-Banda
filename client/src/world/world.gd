@@ -40,7 +40,14 @@ func _ready() -> void:
 
 
 func _on_welcome(welcome: Dictionary) -> void:
-	map = Movement.MapData.from_welcome(welcome.get("district", {}))
+	var district: Dictionary = welcome.get("district", {})
+	map = Movement.MapData.from_welcome(district)
+	if typeof(district.get("map")) == TYPE_DICTIONARY:
+		var city := CityMap.load_map(str(district.map.id))
+		if city and city.version == str(district.map.version):
+			map = city.data
+		else:
+			push_error("Mapa local desatualizado: atualiza o jogo.")
 	snapshot_hz = int(welcome.get("snapshotHz", 10))
 	ground.set_map(map)
 	camera.limit_left = 0

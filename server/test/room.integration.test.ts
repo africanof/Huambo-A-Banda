@@ -20,7 +20,7 @@ async function guestToken(name: string): Promise<string> {
 }
 
 /** Liga um cliente e regista todas as mensagens recebidas para inspeção. */
-async function connect(token: string | undefined, options: Record<string, unknown> = { v: PROTOCOL_VERSION, district: "cidade_baixa" }) {
+async function connect(token: string | undefined, options: Record<string, unknown> = { v: PROTOCOL_VERSION, district: "teste_a" }) {
   const client = new Client(BASE);
   if (token) client.http.authToken = token;
   const inbox: Array<{ type: number; msg: unknown }> = [];
@@ -62,7 +62,7 @@ describe("HTTP", () => {
     const health = (await (await fetch(`${BASE}/health`)).json()) as { ok: boolean; protocol: number };
     expect(health).toMatchObject({ ok: true, protocol: PROTOCOL_VERSION });
     const districts = (await (await fetch(`${BASE}/districts`)).json()) as Array<{ id: string }>;
-    expect(districts.map((d) => d.id)).toContain("cidade_baixa");
+    expect(districts.map((d) => d.id)).toContain("teste_a");
   });
 });
 
@@ -74,14 +74,14 @@ describe("DistrictRoom", () => {
 
   it("rejects wrong protocol version and unknown districts", async () => {
     const token = await guestToken("Teste");
-    await expect(connect(token, { v: 999, district: "cidade_baixa" })).rejects.toThrow(/protocol/);
+    await expect(connect(token, { v: 999, district: "teste_a" })).rejects.toThrow(/protocol/);
     await expect(connect(token, { v: PROTOCOL_VERSION, district: "atlantida" })).rejects.toThrow();
   });
 
   it("syncs two players: welcome, spawn, movement snapshots, despawn", async () => {
     const a = await connect(await guestToken("Ana"));
     const welcomeA = await waitFor(() => first<WelcomeMessage>(a.inbox, S2C.WELCOME));
-    expect(welcomeA.district.id).toBe("cidade_baixa");
+    expect(welcomeA.district.id).toBe("teste_a");
     expect(welcomeA.district.obstacles.length).toBeGreaterThan(0);
 
     const b = await connect(await guestToken("Bento"));

@@ -1,7 +1,7 @@
 import { Room, ServerError, type AuthContext, type Client } from "@colyseus/core";
 import type { Identity } from "../auth/TokenVerifier.js";
 import { getDistrict, type District } from "../game/districts.js";
-import { randomSpawn, sanitizeTarget, step, isWalkable, WALK_SPEED, type Mover } from "../game/movement.js";
+import { randomSpawn, sanitizeTarget, step, isWalkable, validatePath, type Mover } from "../game/movement.js";
 import { SpatialGrid } from "../game/SpatialGrid.js";
 import { GameLoop } from "../game/GameLoop.js";
 import {
@@ -9,6 +9,8 @@ import {
   ErrorCodes,
   JoinOptionsSchema,
   MoveToSchema,
+  MovePathSchema,
+  MoveDirSchema,
   PROTOCOL_VERSION,
   S2C,
   type Appearance,
@@ -97,11 +99,40 @@ export class DistrictRoom extends Room {
       if (!target) return;
       p.tx = target.x;
       p.ty = target.y;
+      p.path = undefined;
+      p.dx = p.dy = 0;
+    });
+
+    // Caminho calculado pelo cliente (A*): cada segmento é validado aqui.
+    this.onMessage(C2S.MOVE_PATH, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = MovePathSchema.safeParse(raw);
+      if (!p || !msg.success) return;
+      const ok = validatePath(this.district, p.x, p.y, msg.data.p);
+      if (ok.length < 2) return;
+      p.tx = ok[0]!;
+      p.ty = ok[1]!;
+      p.path = ok.slice(2);
+      p.dx = p.dy = 0;
+    });
+
+    // Joystick / teclado: direção contínua até nova ordem.
+    this.onMessage(C2S.MOVE_DIR, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = MoveDirSchema.safeParse(raw);
+      if (!p || !msg.success) return;
+      p.dx = msg.data.x;
+      p.dy = msg.data.y;
+      p.tx = p.ty = null;
+      p.path = undefined;
     });
 
     this.onMessage(C2S.STOP, (client: DistrictClient) => {
       const p = this.playerOf(client);
-      if (p) p.tx = p.ty = null;
+      if (!p) return;
+      p.tx = p.ty = null;
+      p.path = undefined;
+      p.dx = p.dy = 0;
     });
 
     void this.presence.subscribe(KICK_CHANNEL, this.onKick);
@@ -112,14 +143,15 @@ export class DistrictRoom extends Room {
     log().debug({ sessionId: client.sessionId, type }, "unhandled message");
   }
 
-  override async onJoin(client: DistrictClient, _options: unknown, auth: Identity): Promise<void> {
+  override async onJoin(client: DistrictClient, options: { spawn?: string }, auth: Identity): Promise<void> {
     // Uma conta = uma sessão ativa no mundo inteiro (todas as salas, todos os processos).
     await this.presence.publish(KICK_CHANNEL, { userId: auth.userId, except: client.sessionId });
 
     const character = await services().characters.loadOrCreate(auth);
 
-    let pos = randomSpawn(this.district);
-    if (character.district === this.district.id && character.x !== null && character.y !== null && isWalkable(this.district, character.x, character.y)) {
+    const chosen = this.district.spawns.find((s) => s.id === options?.spawn);
+    let pos = randomSpawn(this.district, chosen?.id);
+    if (!chosen && character.district === this.district.id && character.x !== null && character.y !== null && isWalkable(this.district, character.x, character.y)) {
       pos = { x: character.x, y: character.y };
     }
 
@@ -135,6 +167,8 @@ export class DistrictRoom extends Room {
       y: pos.y,
       tx: null,
       ty: null,
+      dx: 0,
+      dy: 0,
       known: new Set(),
       dirtyPersist: false,
     };
@@ -153,7 +187,11 @@ export class DistrictRoom extends Room {
   override async onDrop(client: DistrictClient): Promise<void> {
     // Rede móvel instável: guarda o lugar durante 15 s antes de remover o jogador.
     const p = this.playerOf(client);
-    if (p) p.tx = p.ty = null;
+    if (p) {
+      p.tx = p.ty = null;
+      p.path = undefined;
+      p.dx = p.dy = 0;
+    }
     await this.allowReconnection(client, 15);
   }
 
@@ -192,8 +230,8 @@ export class DistrictRoom extends Room {
 
   private tick(dt: number): void {
     for (const p of this.players.values()) {
-      if (p.tx === null) continue;
-      if (step(this.district, p, dt, WALK_SPEED)) {
+      if (p.tx === null && !p.dx && !p.dy) continue;
+      if (step(this.district, p, dt, this.district.speed)) {
         this.grid.upsert(p.eid, p.x, p.y);
         this.movedThisWindow.add(p.eid);
         p.dirtyPersist = true;
@@ -250,8 +288,10 @@ export class DistrictRoom extends Room {
         width: this.district.width,
         height: this.district.height,
         obstacles: this.district.obstacles,
+        map: this.district.map,
+        bairros: this.district.spawns.map((b) => ({ id: b.id, name: b.name })),
       },
-      speed: WALK_SPEED,
+      speed: this.district.speed,
       simHz: env.SIM_TICK_HZ,
       snapshotHz: env.SNAPSHOT_HZ,
       serverTime: Math.round(this.loop.now()),

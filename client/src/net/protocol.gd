@@ -3,11 +3,13 @@ extends RefCounted
 ## Espelho de server/src/net/protocol.ts — NÃO editar só de um lado.
 ## O teste server/test/protocol-sync.test.ts falha se os valores divergirem.
 
-const PROTOCOL_VERSION := 1
+const PROTOCOL_VERSION := 2
 
 # Cliente -> Servidor
 const C2S_MOVE_TO := 1
 const C2S_STOP := 2
+const C2S_MOVE_PATH := 3
+const C2S_MOVE_DIR := 4
 
 # Servidor -> Cliente
 const S2C_WELCOME := 100

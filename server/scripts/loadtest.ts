@@ -14,7 +14,7 @@ const arg = (k: string, d: string) => process.argv.find((a) => a.startsWith(`--$
 const URL = arg("url", "http://127.0.0.1:2567");
 const BOTS = Number(arg("bots", "100"));
 const SECONDS = Number(arg("seconds", "20"));
-const DISTRICT = arg("district", "cidade_baixa");
+const DISTRICT = arg("district", "huambo_centro");
 const TOKEN = arg("token", ""); // opcional: reutilizar um token pré-emitido
 
 let messages = 0;

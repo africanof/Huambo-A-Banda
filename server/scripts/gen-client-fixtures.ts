@@ -10,14 +10,14 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Packr } from "msgpackr";
 import { encode } from "@colyseus/schema";
-import { getDistrict } from "../src/game/districts.js";
+import { TEST_A } from "../test/districts.js";
 import { step, type Mover } from "../src/game/movement.js";
 
 const out = resolve(dirname(fileURLToPath(import.meta.url)), "../../client/tests/fixtures");
 mkdirSync(out, { recursive: true });
 
 // ---- movimento
-const d = getDistrict("cidade_baixa")!;
+const d = TEST_A;
 const cases: Array<{ start: [number, number]; target: [number, number]; dt: number; steps: number }> = [
   { start: [1200, 800], target: [1500, 700], dt: 0.05, steps: 60 },
   { start: [460, 600], target: [460, 100], dt: 0.05, steps: 80 }, // contra a casa

@@ -2,7 +2,7 @@ class_name ColyseusClient
 extends Node
 ## Matchmaking HTTP do Colyseus + criação da ligação à sala.
 ##
-##   var res := await client.join_or_create("district", {"v": 1, "district": "cidade_baixa"})
+##   var res := await client.join_or_create("district", {"v": 2, "district": "huambo_centro"})
 ##   if res.room: ...  else: print(res.error)
 
 ## Resultado de uma tentativa de entrada.

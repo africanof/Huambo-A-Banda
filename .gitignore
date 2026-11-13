@@ -5,3 +5,5 @@
 *.log
 .vscode/
 .idea/
+tools/mapgen/osm/
+__pycache__/

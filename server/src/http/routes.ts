@@ -2,7 +2,8 @@ import express, { type Application, type Request, type Response, type NextFuncti
 import type { Services } from "../services.js";
 import { listDistricts } from "../game/districts.js";
 import { KeyedRateLimiter } from "../utils/RateLimiter.js";
-import { PROTOCOL_VERSION } from "../net/protocol.js";
+import { AppearanceSchema, PROTOCOL_VERSION } from "../net/protocol.js";
+import { sanitizeDisplayName, type Identity } from "../auth/TokenVerifier.js";
 
 export function clientIp(req: Request, trustedHeader: string): string {
   if (trustedHeader) {
@@ -22,6 +23,7 @@ function cors(origins: string[]) {
       res.setHeader("Vary", "Origin");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
       res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+      res.setHeader("Access-Control-Max-Age", "600");
     }
     if (req.method === "OPTIONS") {
       res.status(204).end();
@@ -47,7 +49,59 @@ export function registerRoutes(app: Application, svc: Services): void {
 
   app.get("/districts", (_req, res) => {
     res.set("Cache-Control", "public, max-age=60");
-    res.json(listDistricts().map((d) => ({ id: d.id, name: d.name })));
+    res.json(listDistricts().map((d) => ({ id: d.id, name: d.name, map: d.map, bairros: d.spawns.map((s) => ({ id: s.id, name: s.name })) })));
+  });
+
+  const meLimiter = new KeyedRateLimiter(20, 20 / 60);
+
+  /** Autentica o pedido pelo cabeçalho Authorization (mesmo token do matchmaking). */
+  async function identify(req: Request, res: Response): Promise<Identity | null> {
+    const h = req.headers.authorization;
+    const id = await svc.verifier.verify(h?.startsWith("Bearer ") ? h.slice(7) : undefined);
+    if (!id) {
+      res.status(401).json({ error: "invalid_token" });
+      return null;
+    }
+    if (!meLimiter.take(id.userId)) {
+      res.status(429).json({ error: "rate_limited" });
+      return null;
+    }
+    return id;
+  }
+
+  const characterView = (c: { name: string; appearance: unknown; district: string | null }) => ({
+    name: c.name,
+    appearance: c.appearance,
+    lastDistrict: c.district,
+  });
+
+  app.get("/me/character", async (req, res) => {
+    const id = await identify(req, res);
+    if (!id) return;
+    try {
+      res.json(characterView(await svc.characters.loadOrCreate(id)));
+    } catch {
+      res.status(503).json({ error: "storage_unavailable" });
+    }
+  });
+
+  // O cliente só pode mudar o nome e a aparência — nunca dinheiro, itens ou posição.
+  app.post("/me/character", async (req, res) => {
+    const id = await identify(req, res);
+    if (!id) return;
+    const body = (req.body ?? {}) as { name?: unknown; appearance?: unknown };
+    const appearance = body.appearance === undefined ? undefined : AppearanceSchema.safeParse(body.appearance);
+    const name = body.name === undefined ? undefined : sanitizeDisplayName(body.name);
+    if ((appearance && !appearance.success) || (body.name !== undefined && !name)) {
+      res.status(400).json({ error: "invalid_character" });
+      return;
+    }
+    try {
+      const rec = await svc.characters.update(id, { name, appearance: appearance?.success ? appearance.data : undefined });
+      res.json(characterView(rec));
+    } catch {
+      res.status(503).json({ error: "storage_unavailable" });
+    }
   });
 
   app.post("/auth/guest", async (req, res) => {

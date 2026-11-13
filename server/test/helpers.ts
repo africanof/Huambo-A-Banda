@@ -1,5 +1,8 @@
 import { configureLogger } from "../src/utils/logger.js";
 import { loadEnv, type Env } from "../src/config/env.js";
+import { registerTestDistricts } from "./districts.js";
+
+registerTestDistricts();
 
 configureLogger(process.env.TEST_LOG_LEVEL ?? "silent");
 

@@ -2,7 +2,7 @@ extends Node
 ## Configuração em camadas: ficheiro do projeto → ficheiro do utilizador → argumentos/URL.
 
 var server_url := "http://127.0.0.1:2567"
-var default_district := "cidade_baixa"
+var default_district := "huambo_centro"
 var supabase_url := ""
 var supabase_key := ""
 var args := {} ## argumentos --chave=valor passados depois de "--"

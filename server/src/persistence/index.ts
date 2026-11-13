@@ -1,6 +1,6 @@
 import type { Env } from "../config/env.js";
 import type { Identity } from "../auth/TokenVerifier.js";
-import type { CharacterRecord, CharacterRepository, PositionUpdate } from "./CharacterRepository.js";
+import type { CharacterRecord, CharacterRepository, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";
 import { MemoryCharacterRepository } from "./MemoryCharacterRepository.js";
 import { SupabaseCharacterRepository } from "./SupabaseCharacterRepository.js";
 
@@ -13,6 +13,10 @@ class RoutingCharacterRepository implements CharacterRepository {
 
   loadOrCreate(identity: Identity): Promise<CharacterRecord> {
     return (identity.kind === "guest" ? this.guests : this.users).loadOrCreate(identity);
+  }
+
+  update(identity: Identity, changes: CharacterUpdate): Promise<CharacterRecord> {
+    return (identity.kind === "guest" ? this.guests : this.users).update(identity, changes);
   }
 
   async savePositions(updates: PositionUpdate[]): Promise<void> {
@@ -30,4 +34,4 @@ export function createCharacterRepository(env: Env): CharacterRepository {
   return guests;
 }
 
-export type { CharacterRepository, CharacterRecord, PositionUpdate } from "./CharacterRepository.js";
+export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";

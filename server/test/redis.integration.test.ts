@@ -54,7 +54,7 @@ async function join(port: number, token: string) {
   const client = new Client(`http://127.0.0.1:${port}`);
   client.http.authToken = token;
   const inbox: Array<{ type: number; msg: unknown }> = [];
-  const room: Room = await client.joinOrCreate("district", { v: PROTOCOL_VERSION, district: "sao_joao" });
+  const room: Room = await client.joinOrCreate("district", { v: PROTOCOL_VERSION, district: "huambo_centro" });
   room.onMessage("*", (type, msg) => inbox.push({ type: type as number, msg }));
   return { room, inbox };
 }
