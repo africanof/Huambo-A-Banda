@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1l0g1n0000001"]
+
+[ext_resource type="Script" path="res://src/ui/login_screen.gd" id="1_login"]
+
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_login")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.207843, 0.341176, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Form" type="VBoxContainer" parent="Center"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Center/Form"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0.4, 1)
+theme_override_font_sizes/font_size = 34
+text = "Huambo É A Banda"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Form"]
+layout_mode = 2
+text = "Vida simulada · Multijogador"
+horizontal_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="Center/Form"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+placeholder_text = "O teu nome (2–20 letras)"
+max_length = 20
+
+[node name="DistrictOption" type="OptionButton" parent="Center/Form"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+
+[node name="GuestButton" type="Button" parent="Center/Form"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Entrar como convidado"
+
+[node name="AccountBox" type="VBoxContainer" parent="Center/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Separator" type="HSeparator" parent="Center/Form/AccountBox"]
+layout_mode = 2
+
+[node name="EmailEdit" type="LineEdit" parent="Center/Form/AccountBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+placeholder_text = "Email"
+virtual_keyboard_type = 5
+
+[node name="PasswordEdit" type="LineEdit" parent="Center/Form/AccountBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+placeholder_text = "Palavra-passe"
+secret = true
+virtual_keyboard_type = 6
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Form/AccountBox"]
+layout_mode = 2
+
+[node name="LoginButton" type="Button" parent="Center/Form/AccountBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Entrar"
+
+[node name="SignupButton" type="Button" parent="Center/Form/AccountBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Criar conta"
+
+[node name="StatusLabel" type="Label" parent="Center/Form"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.85, 1)
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7hb0char0001"]
+
+[ext_resource type="Script" path="res://src/world/character.gd" id="1_char"]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_char")
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -70.0
+offset_right = 60.0
+offset_bottom = -50.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
+text = "Nome"
+horizontal_alignment = 1

@@ -1,0 +1,11 @@
+# Godot 4
+.godot/
+/android/
+*.translation
+export_credentials.cfg
+build/
+# chaves de assinatura nunca vão para o repositório
+*.keystore
+*.jks
+*.p12
+*.mobileprovision

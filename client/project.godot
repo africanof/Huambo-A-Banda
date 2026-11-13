@@ -1,0 +1,58 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Huambo É A Banda"
+config/description="Simulador de vida 2D multijogador online."
+config/version="0.1.0"
+run/main_scene="res://src/ui/login_screen.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+run/low_processor_mode_sleep_usec=6900
+boot_splash/bg_color=Color(0.113725, 0.207843, 0.341176, 1)
+
+[autoload]
+
+AppConfig="*res://src/autoload/app_config.gd"
+Auth="*res://src/autoload/auth.gd"
+Net="*res://src/autoload/net.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=0
+gdscript/warnings/unsafe_property_access=0
+gdscript/warnings/unsafe_method_access=0
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+window/energy_saving/keep_screen_on=true
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=true
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=true
+anti_aliasing/quality/msaa_2d=0

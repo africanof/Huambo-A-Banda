@@ -1,0 +1,44 @@
+# Ambiente local "tipo produção": Redis + 2 processos de jogo a partilhar matchmaking.
+#   docker compose -f infra/docker-compose.yml up --build
+# Clientes: http://localhost:2567 ou http://localhost:2568 (caem nas mesmas salas).
+name: huambo
+
+x-game: &game
+  build: ../server
+  restart: unless-stopped
+  depends_on:
+    redis:
+      condition: service_healthy
+  environment: &game-env
+    NODE_ENV: production
+    REDIS_URL: redis://redis:6379
+    ALLOW_GUESTS: "true"
+    GUEST_TOKEN_SECRET: ${GUEST_TOKEN_SECRET:-local-compose-guest-secret-0123456789abcdef}
+    CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8060}
+    SUPABASE_URL: ${SUPABASE_URL:-}
+    SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-}
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+  game-1:
+    <<: *game
+    environment:
+      <<: *game-env
+      PORT: "2567"
+      PUBLIC_ADDRESS: localhost:2567
+    ports: ["2567:2567"]
+
+  game-2:
+    <<: *game
+    environment:
+      <<: *game-env
+      PORT: "2567"
+      PUBLIC_ADDRESS: localhost:2568
+    ports: ["2568:2567"]

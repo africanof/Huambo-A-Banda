@@ -1,0 +1,38 @@
+# Configuração do Supabase CLI para desenvolvimento local (`supabase start`).
+# Em produção, estas definições configuram-se no painel do projeto.
+project_id = "huambo-a-banda"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:8060"
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+enable_signup = true
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+# Em desenvolvimento não exigimos confirmação por email; em produção ativa-se.
+enable_confirmations = false
+
+[auth.rate_limit]
+sign_in_sign_ups = 30

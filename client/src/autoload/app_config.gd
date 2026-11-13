@@ -1,0 +1,50 @@
+extends Node
+## Configuração em camadas: ficheiro do projeto → ficheiro do utilizador → argumentos/URL.
+
+var server_url := "http://127.0.0.1:2567"
+var default_district := "cidade_baixa"
+var supabase_url := ""
+var supabase_key := ""
+var args := {} ## argumentos --chave=valor passados depois de "--"
+
+
+func _ready() -> void:
+	_load_file("res://config/client.cfg")
+	_load_file("user://client.cfg")
+	_load_args()
+	_load_web_query()
+	server_url = server_url.rstrip("/")
+
+
+func has_flag(flag: String) -> bool:
+	return args.has(flag)
+
+
+func _load_file(path: String) -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load(path) != OK:
+		return
+	server_url = cfg.get_value("server", "url", server_url)
+	default_district = cfg.get_value("server", "default_district", default_district)
+	supabase_url = cfg.get_value("supabase", "url", supabase_url)
+	supabase_key = cfg.get_value("supabase", "publishable_key", supabase_key)
+
+
+func _load_args() -> void:
+	for a in OS.get_cmdline_user_args():
+		if not a.begins_with("--"):
+			continue
+		var kv := a.substr(2).split("=", true, 1)
+		args[kv[0]] = kv[1] if kv.size() > 1 else "true"
+	server_url = args.get("server", server_url)
+	default_district = args.get("district", default_district)
+	supabase_url = args.get("supabase-url", supabase_url)
+	supabase_key = args.get("supabase-key", supabase_key)
+
+
+func _load_web_query() -> void:
+	if not OS.has_feature("web"):
+		return
+	var q: Variant = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('server') || ''", true)
+	if typeof(q) == TYPE_STRING and (q as String).begins_with("http"):
+		server_url = q
