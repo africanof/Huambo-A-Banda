@@ -1,0 +1,8 @@
+[
+  {"id": "teste_homem_direcoes", "kind": "sheet", "size": "1536x1024", "quality": "medium",
+   "prompt": "Character turnaround of a young Angolan man (about 25 years old) from Huambo: short black afro hair with a clean fade, short beard, warm dark-brown skin, light-blue short-sleeve button shirt, dark jeans, white sneakers. Show him standing in 4 cells, left to right: facing down-left (toward the camera, three-quarter view), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view)."},
+  {"id": "teste_mulher_marcha", "kind": "sheet", "size": "1536x1024", "quality": "medium",
+   "prompt": "8-frame walk cycle animation of a young Angolan woman from Huambo walking toward the camera diagonally (facing down-right, three-quarter view): long box braids tied back, warm brown skin, mustard-yellow fitted top, long ankle-length skirt made of colorful African wax-print fabric (pano) in orange, blue and green, flat sandals, small gold earrings. Frames show a smooth natural walk: contact, down, passing, up for each leg."},
+  {"id": "teste_edificio_correios", "kind": "building", "size": "1024x1024", "quality": "medium",
+   "prompt": "Two-story Portuguese colonial public building inspired by central Huambo: salmon-pink facade with white trims, a ground-floor arcade of round arches on thick white columns along both visible facades, upper floor with tall windows and small wrought-iron balconies, terracotta tiled hip roof, a red horizontal band above the arcade with the word 'CORREIOS' in white letters."}
+]

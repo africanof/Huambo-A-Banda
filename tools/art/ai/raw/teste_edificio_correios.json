@@ -1,0 +1,31 @@
+{
+ "spec": {
+  "id": "teste_edificio_correios",
+  "kind": "building",
+  "size": "1024x1024",
+  "quality": "medium",
+  "prompt": "Two-story Portuguese colonial public building inspired by central Huambo: salmon-pink facade with white trims, a ground-floor arcade of round arches on thick white columns along both visible facades, upper floor with tall windows and small wrought-iron balconies, terracotta tiled hip roof, a red horizontal band above the arcade with the word 'CORREIOS' in white letters."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSingle isolated building game asset viewed from the isometric camera, the whole building visible including roof and base, both visible facades (front-left and front-right) detailed. Transparent background, no ground tiles, no street, no people, no text other than shop signs explicitly requested.\nTwo-story Portuguese colonial public building inspired by central Huambo: salmon-pink facade with white trims, a ground-floor arcade of round arches on thick white columns along both visible facades, upper floor with tall windows and small wrought-iron balconies, terracotta tiled hip roof, a red horizontal band above the arcade with the word 'CORREIOS' in white letters.\nSetting: the city of Huambo, on the central highlands (planalto) of Angola — Portuguese colonial architecture from the 1930s-1960s with salmon/rose-pink and cream facades, white trims, terracotta roof tiles, arcades with white columns, wrought-iron window grilles, mixed with 1960s-70s concrete apartment blocks with balconies, water tanks and satellite dishes on roofs; red laterite earth, eucalyptus trees, bougainvillea. People are Angolan.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1024x1024",
+  "quality": "medium",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 362,
+  "input_tokens_details": {
+   "image_tokens": 0,
+   "text_tokens": 362
+  },
+  "output_tokens": 1449,
+  "output_tokens_details": {
+   "image_tokens": 1449,
+   "text_tokens": 0
+  },
+  "total_tokens": 1811
+ }
+}

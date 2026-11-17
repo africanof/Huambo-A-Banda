@@ -1,0 +1,31 @@
+{
+ "spec": {
+  "id": "teste_homem_direcoes",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "quality": "medium",
+  "prompt": "Character turnaround of a young Angolan man (about 25 years old) from Huambo: short black afro hair with a clean fade, short beard, warm dark-brown skin, light-blue short-sleeve button shirt, dark jeans, white sneakers. Show him standing in 4 cells, left to right: facing down-left (toward the camera, three-quarter view), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view)."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSprite sheet on a transparent background: the SAME character repeated identically (same face, hair, clothes, colors, size) in each cell, cells evenly spaced in a single horizontal row, all characters standing on the same baseline and the same scale, nothing overlapping, no text, no grid lines, no labels.\nCharacter turnaround of a young Angolan man (about 25 years old) from Huambo: short black afro hair with a clean fade, short beard, warm dark-brown skin, light-blue short-sleeve button shirt, dark jeans, white sneakers. Show him standing in 4 cells, left to right: facing down-left (toward the camera, three-quarter view), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view).\nSetting: the city of Huambo, on the central highlands (planalto) of Angola — Portuguese colonial architecture from the 1930s-1960s with salmon/rose-pink and cream facades, white trims, terracotta roof tiles, arcades with white columns, wrought-iron window grilles, mixed with 1960s-70s concrete apartment blocks with balconies, water tanks and satellite dishes on roofs; red laterite earth, eucalyptus trees, bougainvillea. People are Angolan.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "medium",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 401,
+  "input_tokens_details": {
+   "image_tokens": 0,
+   "text_tokens": 401
+  },
+  "output_tokens": 1132,
+  "output_tokens_details": {
+   "image_tokens": 1132,
+   "text_tokens": 0
+  },
+  "total_tokens": 1533
+ }
+}

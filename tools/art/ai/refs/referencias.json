@@ -1,0 +1,92 @@
+[
+ {
+  "id": "d721c64b-4220-4c41-afa4-74562edf177c",
+  "title": "Huambo",
+  "creator": "mmmavocado",
+  "license": "by 2.0",
+  "source": "flickr",
+  "url": "https://live.staticflickr.com/6122/5960369462_1a08d081e1.jpg",
+  "landing": "https://www.flickr.com/photos/10239508@N07/5960369462",
+  "w": 500,
+  "h": 375,
+  "tags": [],
+  "file": "huambo.jpg"
+ },
+ {
+  "id": "ba3c9789-3fe9-4d98-bfe8-a40c7c5f7f4c",
+  "title": "Street in Huambo",
+  "creator": "mmmavocado",
+  "license": "by 2.0",
+  "source": "flickr",
+  "url": "https://live.staticflickr.com/6013/5959810359_5edd6eba51.jpg",
+  "landing": "https://www.flickr.com/photos/10239508@N07/5959810359",
+  "w": 500,
+  "h": 375,
+  "tags": [],
+  "file": "street_in_huambo.jpg"
+ },
+ {
+  "id": "d2e546a1-9e16-4dde-a269-7fd6f4281f5e",
+  "title": "Vendendo ananás",
+  "creator": "jlrsousa",
+  "license": "by-sa 2.0",
+  "source": "flickr",
+  "url": "https://live.staticflickr.com/3141/3087953400_c291c2bc47_b.jpg",
+  "landing": "https://www.flickr.com/photos/10046557@N02/3087953400",
+  "w": 1024,
+  "h": 768,
+  "tags": [
+   "ananu00e1s",
+   "anan\\xe1s",
+   "fruit",
+   "fruta",
+   "huambo",
+   "pineapple",
+   "quibala"
+  ],
+  "file": "vendendo_anan_s.jpg"
+ },
+ {
+  "id": "88aa688d-3a5c-44e3-8e09-adfb94bf9a78",
+  "title": "Igreja em Kuando",
+  "creator": "jlrsousa",
+  "license": "by-sa 2.0",
+  "source": "flickr",
+  "url": "https://live.staticflickr.com/3066/3074445298_4d3bb6ae91_b.jpg",
+  "landing": "https://www.flickr.com/photos/10046557@N02/3074445298",
+  "w": 1024,
+  "h": 768,
+  "tags": [
+   "churches",
+   "huambo",
+   "igrejas"
+  ],
+  "file": "igreja_em_kuando.jpg"
+ },
+ {
+  "id": "2de51290-0bb7-40b1-95be-d051739375d6",
+  "title": "Landscape in Huambo",
+  "creator": "mmmavocado",
+  "license": "by 2.0",
+  "source": "flickr",
+  "url": "https://live.staticflickr.com/6127/5959810665_260ef53859.jpg",
+  "landing": "https://www.flickr.com/photos/10239508@N07/5959810665",
+  "w": 375,
+  "h": 500,
+  "tags": [
+   "building",
+   "daylight",
+   "park",
+   "travel",
+   "tree",
+   "architecture",
+   "city",
+   "landscape",
+   "summer",
+   "vacation",
+   "outdoors",
+   "road"
+  ],
+  "file": "landscape_in_huambo.jpg"
+ }
+]

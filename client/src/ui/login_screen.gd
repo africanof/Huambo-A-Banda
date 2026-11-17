@@ -15,6 +15,10 @@ const DISTRICTS := [["huambo_centro", "Huambo — Centro"]]
 
 
 func _ready() -> void:
+	if AppConfig.has_flag("demo"):
+		# demonstração do novo estilo gráfico HD (sem servidor)
+		get_tree().change_scene_to_file.call_deferred("res://src/demo/bairro_demo.tscn")
+		return
 	for i in DISTRICTS.size():
 		district_option.add_item(DISTRICTS[i][1], i)
 		if DISTRICTS[i][0] == AppConfig.default_district:

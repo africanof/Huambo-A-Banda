@@ -1,0 +1,511 @@
+{
+ "px_per_m": 64,
+ "objects": {
+  "correios": {
+   "category": "building",
+   "size": [
+    1152,
+    1089
+   ],
+   "anchor": [
+    694,
+    1085
+   ],
+   "footprint": [
+    10,
+    8
+   ],
+   "name": "Correios",
+   "out": "correios",
+   "shadow_anchor": [
+    694,
+    1085
+   ]
+  },
+  "casa_colonial": {
+   "category": "building",
+   "size": [
+    1152,
+    965
+   ],
+   "anchor": [
+    704,
+    961
+   ],
+   "footprint": [
+    10,
+    8
+   ],
+   "name": "Casa do Jogador",
+   "door": true,
+   "shadow_anchor": [
+    704,
+    961
+   ]
+  },
+  "cantina": {
+   "category": "building",
+   "size": [
+    704,
+    627
+   ],
+   "anchor": [
+    403,
+    625
+   ],
+   "footprint": [
+    6,
+    5
+   ],
+   "name": "Cantina Ekuikui",
+   "shadow_anchor": [
+    403,
+    625
+   ]
+  },
+  "padaria": {
+   "category": "building",
+   "size": [
+    832,
+    767
+   ],
+   "anchor": [
+    380,
+    764
+   ],
+   "footprint": [
+    7,
+    6
+   ],
+   "name": "Padaria Planalto",
+   "shadow_anchor": [
+    380,
+    764
+   ]
+  },
+  "predio_60": {
+   "category": "building",
+   "size": [
+    1024,
+    1578
+   ],
+   "anchor": [
+    626,
+    1577
+   ],
+   "footprint": [
+    9,
+    7
+   ],
+   "name": "Prédio da Cidade Baixa",
+   "shadow_anchor": [
+    626,
+    1577
+   ]
+  },
+  "arvore_eucalipto": {
+   "category": "prop",
+   "size": [
+    370,
+    560
+   ],
+   "anchor": [
+    166,
+    558
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "shadow_anchor": [
+    166,
+    558
+   ]
+  },
+  "arvore_mulemba": {
+   "category": "prop",
+   "size": [
+    423,
+    420
+   ],
+   "anchor": [
+    198,
+    418
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "shadow_anchor": [
+    198,
+    418
+   ]
+  },
+  "buganvilia": {
+   "category": "prop",
+   "size": [
+    154,
+    150
+   ],
+   "anchor": [
+    71,
+    149
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "shadow_anchor": [
+    71,
+    149
+   ]
+  },
+  "candeeiro": {
+   "category": "prop",
+   "size": [
+    121,
+    330
+   ],
+   "anchor": [
+    94,
+    329
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "light": true,
+   "shadow_anchor": [
+    94,
+    329
+   ]
+  },
+  "kupapata": {
+   "category": "prop",
+   "size": [
+    170,
+    165
+   ],
+   "anchor": [
+    145,
+    164
+   ],
+   "footprint": [
+    1.6,
+    0.8
+   ],
+   "shadow_anchor": [
+    145,
+    164
+   ]
+  },
+  "banco_jardim": {
+   "category": "prop",
+   "size": [
+    160,
+    156
+   ],
+   "anchor": [
+    41,
+    155
+   ],
+   "footprint": [
+    1.6,
+    0.6
+   ],
+   "shadow_anchor": [
+    41,
+    155
+   ]
+  },
+  "bancada_zungueira": {
+   "category": "prop",
+   "size": [
+    220,
+    239
+   ],
+   "anchor": [
+    63,
+    238
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "name": "Zungueira",
+   "shadow_anchor": [
+    63,
+    238
+   ]
+  },
+  "movel_sofa": {
+   "category": "furniture",
+   "size": [
+    250,
+    196
+   ],
+   "anchor": [
+    176,
+    194
+   ],
+   "footprint": [
+    2,
+    1
+   ],
+   "price": 45000,
+   "label": "Sofá"
+  },
+  "movel_poltrona": {
+   "category": "furniture",
+   "size": [
+    130,
+    143
+   ],
+   "anchor": [
+    45,
+    142
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 22000,
+   "label": "Poltrona"
+  },
+  "movel_mesa_centro": {
+   "category": "furniture",
+   "size": [
+    150,
+    137
+   ],
+   "anchor": [
+    37,
+    136
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 12000,
+   "label": "Mesa de centro"
+  },
+  "movel_tv": {
+   "category": "furniture",
+   "size": [
+    180,
+    198
+   ],
+   "anchor": [
+    139,
+    197
+   ],
+   "footprint": [
+    2,
+    1
+   ],
+   "price": 85000,
+   "label": "Televisor"
+  },
+  "movel_cama": {
+   "category": "furniture",
+   "size": [
+    300,
+    284
+   ],
+   "anchor": [
+    142,
+    282
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 95000,
+   "label": "Cama de casal"
+  },
+  "movel_mesa_jantar": {
+   "category": "furniture",
+   "size": [
+    270,
+    269
+   ],
+   "anchor": [
+    137,
+    267
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 60000,
+   "label": "Mesa de jantar"
+  },
+  "movel_frigorifico": {
+   "category": "furniture",
+   "size": [
+    105,
+    230
+   ],
+   "anchor": [
+    53,
+    229
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 150000,
+   "label": "Frigorífico"
+  },
+  "movel_fogao": {
+   "category": "furniture",
+   "size": [
+    130,
+    159
+   ],
+   "anchor": [
+    36,
+    158
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 70000,
+   "label": "Fogão + botija"
+  },
+  "movel_tapete": {
+   "category": "furniture",
+   "size": [
+    300,
+    195
+   ],
+   "anchor": [
+    94,
+    193
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 18000,
+   "label": "Tapete",
+   "floor": true
+  },
+  "movel_planta": {
+   "category": "furniture",
+   "size": [
+    109,
+    150
+   ],
+   "anchor": [
+    51,
+    149
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 8000,
+   "label": "Planta"
+  },
+  "movel_candeeiro": {
+   "category": "furniture",
+   "size": [
+    74,
+    200
+   ],
+   "anchor": [
+    37,
+    199
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 15000,
+   "label": "Candeeiro"
+  },
+  "interior_sala": {
+   "category": "room",
+   "size": [
+    1180,
+    818
+   ],
+   "anchor": [
+    592,
+    815
+   ],
+   "footprint": [
+    8,
+    7
+   ]
+  }
+ },
+ "characters": {
+  "homem": {
+   "name": "Kiala",
+   "frame_size": [
+    178,
+    375
+   ],
+   "anchor": [
+    89,
+    367
+   ],
+   "anims": {
+    "down": {
+     "file": "homem_down.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1
+    },
+    "up": {
+     "file": "homem_up.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1
+    }
+   }
+  },
+  "mulher": {
+   "name": "Nzinga",
+   "frame_size": [
+    166,
+    375
+   ],
+   "anchor": [
+    83,
+    367
+   ],
+   "anims": {
+    "down": {
+     "file": "mulher_down.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1
+    },
+    "up": {
+     "file": "mulher_up.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1
+    }
+   }
+  }
+ },
+ "tiles": {
+  "file": "chao_tiles.png",
+  "tile_size": [
+   512,
+   256
+  ],
+  "meters": 4,
+  "names": [
+   "asfalto",
+   "calcada",
+   "terra",
+   "relva"
+  ]
+ }
+}

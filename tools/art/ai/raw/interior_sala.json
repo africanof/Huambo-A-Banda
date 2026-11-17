@@ -1,0 +1,30 @@
+{
+ "spec": {
+  "id": "interior_sala",
+  "kind": "room",
+  "size": "1536x1024",
+  "prompt": "Empty living room of a Huambo colonial house shown as an isometric cutaway (only the floor and the two back walls, no front walls, no ceiling): polished red-brown terrazzo floor tiles, walls painted pale cream with a white skirting board, one tall window with wooden shutters on the left wall, a doorway on the right wall. No furniture."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nIsometric cutaway room for a life-simulation game: floor diamond and two back walls only, viewed from the isometric camera, transparent background outside the room, no furniture unless requested, no people, no text.\nEmpty living room of a Huambo colonial house shown as an isometric cutaway (only the floor and the two back walls, no front walls, no ceiling): polished red-brown terrazzo floor tiles, walls painted pale cream with a white skirting board, one tall window with wooden shutters on the left wall, a doorway on the right wall. No furniture.\nSetting: the city of Huambo, on the central highlands (planalto) of Angola — Portuguese colonial architecture from the 1930s-1960s with salmon/rose-pink and cream facades, white trims, terracotta roof tiles, arcades with white columns, wrought-iron window grilles, mixed with 1960s-70s concrete apartment blocks with balconies, water tanks and satellite dishes on roofs; red laterite earth, eucalyptus trees, bougainvillea. People are Angolan.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 350,
+  "input_tokens_details": {
+   "image_tokens": 0,
+   "text_tokens": 350
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 1722
+ }
+}

@@ -7,3 +7,4 @@
 .idea/
 tools/mapgen/osm/
 __pycache__/
+tools/art/ai/raw/*.png

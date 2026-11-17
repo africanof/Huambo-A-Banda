@@ -1,0 +1,31 @@
+{
+ "spec": {
+  "id": "textura_asfalto",
+  "kind": "texture",
+  "size": "1024x1024",
+  "background": "opaque",
+  "prompt": "Top-down orthographic seamless tileable texture of worn dark-grey asphalt road surface with subtle cracks and grain, evenly lit, no lines, no objects."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "Top-down orthographic seamless tileable texture of worn dark-grey asphalt road surface with subtle cracks and grain, evenly lit, no lines, no objects.\nFlat top-down texture filling the entire square image edge to edge, seamless and tileable, no perspective, no vignette, no border.\nAbsolutely no buildings, no people, no vehicles, no city, no perspective: only the material surface seen straight from above, filling the whole image.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "opaque",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 94,
+  "input_tokens_details": {
+   "image_tokens": 0,
+   "text_tokens": 94
+  },
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "image_tokens": 1756,
+   "text_tokens": 0
+  },
+  "total_tokens": 1850
+ }
+}

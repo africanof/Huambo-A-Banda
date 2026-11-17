@@ -1,0 +1,33 @@
+{
+ "spec": {
+  "id": "mulher_andar_baixo",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "ref_mulher"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same woman (same face, braids ponytail, gold earrings, mustard-yellow top, the same orange-blue-green wax-print skirt, sandals, same proportions). Draw an 8-frame walk cycle with her facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell. Frame poses in order: 1 right foot steps forward under the skirt, left arm forward; 2 weight on right foot, body slightly lower; 3 left leg passing, body highest; 4 left foot reaching forward; 5 left foot steps forward, right arm forward; 6 weight on left foot, body slightly lower; 7 right leg passing; 8 right foot reaching forward. Arms swing naturally, the skirt sways with each step."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSprite sheet on a transparent background: the SAME character repeated identically (same face, hair, clothes, colors, size) in each cell, cells evenly spaced in a single horizontal row, all characters standing on the same baseline and the same scale, nothing overlapping, no text, no grid lines, no labels.\nUsing the reference image, keep EXACTLY the same woman (same face, braids ponytail, gold earrings, mustard-yellow top, the same orange-blue-green wax-print skirt, sandals, same proportions). Draw an 8-frame walk cycle with her facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell. Frame poses in order: 1 right foot steps forward under the skirt, left arm forward; 2 weight on right foot, body slightly lower; 3 left leg passing, body highest; 4 left foot reaching forward; 5 left foot steps forward, right arm forward; 6 weight on left foot, body slightly lower; 7 right leg passing; 8 right foot reaching forward. Arms swing naturally, the skirt sways with each step.\nSetting: the city of Huambo, on the central highlands (planalto) of Angola — Portuguese colonial architecture from the 1930s-1960s with salmon/rose-pink and cream facades, white trims, terracotta roof tiles, arcades with white columns, wrought-iron window grilles, mixed with 1960s-70s concrete apartment blocks with balconies, water tanks and satellite dishes on roofs; red laterite earth, eucalyptus trees, bougainvillea. People are Angolan.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 2022,
+  "input_tokens_details": {
+   "image_tokens": 1536,
+   "text_tokens": 486
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 3394
+ }
+}
