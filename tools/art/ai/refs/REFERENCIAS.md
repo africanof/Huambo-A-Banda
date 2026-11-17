@@ -67,3 +67,38 @@ Observações registadas (Huambo atual):
 - **Estádio novo**: pista vermelha, relvado, bancadas cobertas, torres de iluminação, rodeado de eucaliptos.
 - **Bairros periféricos novos**: casas de 1–2 pisos com telha laranja, lotes com muros de bloco, portões azuis,
   casas de betão por acabar, telhados de chapa, depósitos de água azuis, ruas de terra a ser asfaltadas.
+
+## C. Fotografias oficiais atuais — Portal do Governo Provincial do Huambo (huambo.gov.ao, galeria 2025–2026)
+Descarregadas em 2026-11-17 de https://huambo.gov.ao/web/galeria-fotos. Direitos: Governo Provincial do Huambo.
+Usadas como imagem de referência para a arte do jogo (uso declarado autorizado pelo dono do projeto).
+
+| Ficheiro | URL de origem |
+|---|---|
+| oficiais/gov_157.jpg | https://huambo.gov.ao/media/uploads/large_794395988_1410227647952538_1416422776156222498_n_57df6f17d8.jpg |
+| oficiais/gov_193.jpg | https://huambo.gov.ao/media/uploads/large_818384761_1417234630585173_2646768302282654904_n_16fe007304.jpg |
+| oficiais/gov_194.jpg | https://huambo.gov.ao/media/uploads/large_818384762_1417234530585183_4962775200772830226_n_4b3b9ab30f.jpg |
+| oficiais/gov_195.jpg | https://huambo.gov.ao/media/uploads/large_818384775_1417234677251835_4278507277639714432_n_9ee978ccae.jpg |
+| oficiais/gov_196.jpg | https://huambo.gov.ao/media/uploads/large_818384818_1417234440585192_4071395618615319353_n_4be13ad69d.jpg |
+| oficiais/gov_197.jpg | https://huambo.gov.ao/media/uploads/large_818384858_1417234360585200_4770469282858344491_n_403a644cf6.jpg |
+| oficiais/gov_202.jpg | https://huambo.gov.ao/media/uploads/large_819318721_1417234597251843_6107722355292015135_n_3a7e63aa02.jpg |
+| oficiais/gov_204.jpg | https://huambo.gov.ao/media/uploads/large_819564672_1417234407251862_6009263956750325291_n_d01e969016.jpg |
+| oficiais/gov_206.jpg | https://huambo.gov.ao/media/uploads/large_820199049_1417234823918487_1270219087780507914_n_4babee1860.jpg |
+| oficiais/gov_210.jpg | https://huambo.gov.ao/media/uploads/large_820429199_1417234723918497_1456806363816678305_n_12c4e38429.jpg |
+| oficiais/gov_222.jpg | https://huambo.gov.ao/media/uploads/large_818384800_1417475873894382_4886970658057909546_n_b5cf5693fa.jpg |
+| oficiais/gov_240.jpg | https://huambo.gov.ao/media/uploads/large_820548759_1417474653894504_1635566098451558609_n_c9ea09a94c.jpg |
+| oficiais/gov_427.jpg | https://huambo.gov.ao/media/uploads/large_825336752_1423152203326749_748433130051081937_n_6e4f2e9e47.jpg |
+| oficiais/gov_429.jpg | https://huambo.gov.ao/media/uploads/large_826508290_1423152239993412_6359254987808196995_n_5427d546ec.jpg |
+| oficiais/gov_431.jpg | https://huambo.gov.ao/media/uploads/large_827511671_1423152196660083_4285773397405346577_n_ef24f5da9c.jpg |
+| oficiais/gov_646.jpg | https://huambo.gov.ao/media/uploads/large_838042479_1431723829136253_2384551554179900581_n_283bfb2b49.jpg |
+| oficiais/gov_648.jpg | https://huambo.gov.ao/media/uploads/large_838709848_1431723925802910_3288863835992410894_n_15bbac168e.jpg |
+| oficiais/gov_649.jpg | https://huambo.gov.ao/media/uploads/large_839559601_1431723872469582_3726379998627343054_n_0ec124ab5d.jpg |
+| oficiais/gov_650.jpg | https://huambo.gov.ao/media/uploads/large_840561922_1431723879136248_8918511196611612897_n_40c52a1003.jpg |
+| oficiais/gov_651.jpg | https://huambo.gov.ao/media/uploads/large_841031874_1431723949136241_223015304258433929_n_7d15fe64ed.jpg |
+| oficiais/gov_762.jpg | https://huambo.gov.ao/media/uploads/large_861943120_1751379646090961_4373975642468403508_n_e8a69665b2.jpg |
+| oficiais/gov_795.jpg | https://huambo.gov.ao/media/uploads/large_866045067_2187763401779898_7060002439717881316_n_ce6a45e246.jpg |
+| oficiais/gov_922.jpg | https://huambo.gov.ao/media/uploads/large_903914719_1467207735587862_626658810820292516_n_2f9dd3aac2.jpg |
+| oficiais/gov_925.jpg | https://huambo.gov.ao/media/uploads/large_904247849_1467207792254523_1723578241476515346_n_ed2a389a32.jpg |
+| oficiais/gov_931.jpg | https://huambo.gov.ao/media/uploads/large_905486325_1467207388921230_6036400298559059119_n_d1b794d11f.jpg |
+| oficiais/gov_932.jpg | https://huambo.gov.ao/media/uploads/large_905985101_1467207742254528_760617429225952063_n_541d492cb2.jpg |
+| oficiais/gov_933.jpg | https://huambo.gov.ao/media/uploads/large_906045904_1467207498921219_8797648059318557201_n_db318947a2.jpg |
+| oficiais/gov_940.jpg | https://huambo.gov.ao/media/uploads/large_906473440_1470335188608450_1780595378927106563_n_fa1357091b.jpg |

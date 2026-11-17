@@ -43,6 +43,16 @@ ASSETS = {
     "v2_candeeiro": ("prop", "height", 340, [0.4, 0.4], {"light": True, "out": "candeeiro"}),
     "v2_kupapata": ("prop", "width", 170, [1.6, 0.8], {"out": "kupapata"}),
     "v2_zungueira": ("prop", "width", 230, [1.8, 1.2], {"name": "Zungueira", "out": "bancada_zungueira"}),
+    # v3 — a partir de fotografias oficiais atuais (huambo.gov.ao, refs/oficiais)
+    "v3_predio_rosa": ("building", "width", (8 + 8) * PX_PER_M, [8, 8], {"name": "Hotel iU", "out": "predio_rosa"}),
+    "v3_predio_castanho": ("building", "width", (8 + 7) * PX_PER_M, [8, 7], {"name": "Prédio Kuito", "out": "predio_castanho"}),
+    "v3_banco": ("building", "width", (8 + 7) * PX_PER_M, [8, 7], {"name": "Banco Planalto", "out": "banco"}),
+    "v3_escola": ("building", "width", (14 + 8) * PX_PER_M, [14, 8], {"name": "Escola Primária", "out": "escola"}),
+    "v3_loja_telecom": ("building", "width", (8 + 7) * PX_PER_M, [8, 7], {"name": "Loja Kanda Móvel", "out": "loja_telecom"}),
+    "v3_edificio_vermelho": ("building", "width", (9 + 7) * PX_PER_M, [9, 7], {"name": "Tribunal da Comarca", "out": "tribunal"}),
+    "v3_bancada_mercado": ("prop", "width", 230, [1.8, 1.2], {"name": "Banca do Mercado", "out": "bancada_mercado"}),
+    "v3_arvore_avenida": ("prop", "height", 380, [1, 1], {"out": "arvore_avenida"}),
+    "v3_interior_sala": ("room", "width", 1180, [8, 7], {"out": "interior_sala"}),
     # PROVISÓRIO: sem fotografias reais de interiores do Huambo ainda (ver REFERENCIAS.md)
     "movel_sofa": ("furniture", "width", 250, [2, 1], {"price": 45000, "label": "Sofá", "provisorio": True}),
     "movel_poltrona": ("furniture", "width", 130, [1, 1], {"price": 22000, "label": "Poltrona", "provisorio": True}),
@@ -55,13 +65,12 @@ ASSETS = {
     "movel_tapete": ("furniture", "width", 300, [2, 2], {"price": 18000, "label": "Tapete", "floor": True, "provisorio": True}),
     "movel_planta": ("furniture", "height", 150, [1, 1], {"price": 8000, "label": "Planta", "provisorio": True}),
     "movel_candeeiro": ("furniture", "height", 200, [1, 1], {"price": 15000, "label": "Candeeiro", "provisorio": True}),
-    "interior_sala": ("room", "width", 1180, [8, 7], {"provisorio": True}),
 }
 CHARACTERS = {
     "homem": {"ref": "v2_ref_homem", "down": "v2_homem_andar_baixo", "up": "v2_homem_andar_cima", "name": "Kiala"},
     "mulher": {"ref": "v2_ref_mulher", "down": "v2_mulher_andar_baixo", "up": "v2_mulher_andar_cima", "name": "Nzinga"},
 }
-TEXTURES = ["v2_textura_asfalto", "v2_textura_calcada", "v2_textura_terra", "v2_textura_relva"]
+TEXTURES = ["v3_textura_asfalto", "v3_textura_calcada", "v2_textura_terra", "v3_textura_relva"]
 CHAR_H = 300  # altura na textura (exibida a 0,5 → 150 px no mundo)
 
 
@@ -233,7 +242,7 @@ def build_tiles(manifest):
         ImageDraw.Draw(mask).polygon([(TW / 2, -e), (TW + 2 * e, TH / 2), (TW / 2, TH + e), (-2 * e, TH / 2)], fill=255)
         tile.putalpha(mask)
         atlas.paste(tile, (i * TW, 0))
-        names.append(t.replace("v2_", "").replace("textura_", ""))
+        names.append(t.replace("v2_", "").replace("v3_", "").replace("textura_", ""))
     atlas.save(os.path.join(OUT, "chao_tiles.png"), optimize=True)
     manifest["tiles"] = {"file": "chao_tiles.png", "tile_size": [TW, TH], "meters": 4, "names": names}
     print("  mosaicos:", names)

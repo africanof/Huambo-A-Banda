@@ -72,6 +72,15 @@ def generate(spec, force=False):
             with urllib.request.urlopen(req, timeout=300) as r:
                 data = json.load(r)
             break
+        except (ConnectionError, TimeoutError, urllib.error.URLError) as e:
+            if isinstance(e, urllib.error.HTTPError):
+                msg = e.read().decode()[:400]
+                if e.code in (429, 500, 502, 503) and attempt < 2:
+                    time.sleep(10 * (attempt + 1)); continue
+                return spec["id"], f"ERRO {e.code}: {msg}"
+            if attempt < 2:
+                time.sleep(10 * (attempt + 1)); continue
+            return spec["id"], f"ERRO de rede: {e}"
         except urllib.error.HTTPError as e:
             msg = e.read().decode()[:400]
             if e.code in (429, 500, 502, 503) and attempt < 2:

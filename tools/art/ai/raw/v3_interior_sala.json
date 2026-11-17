@@ -1,0 +1,35 @@
+{
+ "spec": {
+  "id": "v3_interior_sala",
+  "kind": "room",
+  "size": "1536x1024",
+  "refs": [
+   "oficiais/gov_932.jpg",
+   "oficiais/gov_795.jpg",
+   "oficiais/gov_931.jpg"
+  ],
+  "prompt": "Empty room of a Huambo building shown as an isometric cutaway (only the floor and the two back walls, no front walls, no ceiling), with the real finishes seen in the reference photos: white painted walls, light ceramic tile floor, tall windows with white frames on the left wall, a doorway on the right wall. No furniture, no people."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nIsometric cutaway room for a life-simulation game: floor diamond and two back walls only, viewed from the isometric camera, transparent background outside the room, no furniture unless requested, no people, no text.\nEmpty room of a Huambo building shown as an isometric cutaway (only the floor and the two back walls, no front walls, no ceiling), with the real finishes seen in the reference photos: white painted walls, light ceramic tile floor, tall windows with white frames on the left wall, a doorway on the right wall. No furniture, no people.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 2321,
+  "input_tokens_details": {
+   "image_tokens": 1984,
+   "text_tokens": 337
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 3693
+ }
+}

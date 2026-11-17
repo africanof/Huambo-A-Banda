@@ -271,6 +271,189 @@
     219
    ]
   },
+  "predio_rosa": {
+   "category": "building",
+   "size": [
+    1024,
+    1541
+   ],
+   "anchor": [
+    648,
+    1538
+   ],
+   "footprint": [
+    8,
+    8
+   ],
+   "name": "Hotel iU",
+   "out": "predio_rosa",
+   "shadow_anchor": [
+    648,
+    1538
+   ]
+  },
+  "predio_castanho": {
+   "category": "building",
+   "size": [
+    960,
+    1450
+   ],
+   "anchor": [
+    548,
+    1449
+   ],
+   "footprint": [
+    8,
+    7
+   ],
+   "name": "Prédio Kuito",
+   "out": "predio_castanho",
+   "shadow_anchor": [
+    548,
+    1449
+   ]
+  },
+  "banco": {
+   "category": "building",
+   "size": [
+    960,
+    905
+   ],
+   "anchor": [
+    574,
+    902
+   ],
+   "footprint": [
+    8,
+    7
+   ],
+   "name": "Banco Planalto",
+   "out": "banco",
+   "shadow_anchor": [
+    574,
+    902
+   ]
+  },
+  "escola": {
+   "category": "building",
+   "size": [
+    1408,
+    941
+   ],
+   "anchor": [
+    819,
+    937
+   ],
+   "footprint": [
+    14,
+    8
+   ],
+   "name": "Escola Primária",
+   "out": "escola",
+   "shadow_anchor": [
+    819,
+    937
+   ]
+  },
+  "loja_telecom": {
+   "category": "building",
+   "size": [
+    960,
+    915
+   ],
+   "anchor": [
+    491,
+    911
+   ],
+   "footprint": [
+    8,
+    7
+   ],
+   "name": "Loja Kanda Móvel",
+   "out": "loja_telecom",
+   "shadow_anchor": [
+    491,
+    911
+   ]
+  },
+  "tribunal": {
+   "category": "building",
+   "size": [
+    1024,
+    748
+   ],
+   "anchor": [
+    524,
+    745
+   ],
+   "footprint": [
+    9,
+    7
+   ],
+   "name": "Tribunal da Comarca",
+   "out": "tribunal",
+   "shadow_anchor": [
+    524,
+    745
+   ]
+  },
+  "bancada_mercado": {
+   "category": "prop",
+   "size": [
+    230,
+    220
+   ],
+   "anchor": [
+    55,
+    219
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "name": "Banca do Mercado",
+   "out": "bancada_mercado",
+   "shadow_anchor": [
+    55,
+    219
+   ]
+  },
+  "arvore_avenida": {
+   "category": "prop",
+   "size": [
+    258,
+    380
+   ],
+   "anchor": [
+    122,
+    378
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "out": "arvore_avenida",
+   "shadow_anchor": [
+    122,
+    378
+   ]
+  },
+  "interior_sala": {
+   "category": "room",
+   "size": [
+    1180,
+    801
+   ],
+   "anchor": [
+    600,
+    798
+   ],
+   "footprint": [
+    8,
+    7
+   ],
+   "out": "interior_sala"
+  },
   "movel_sofa": {
    "category": "furniture",
    "size": [
@@ -468,22 +651,6 @@
    ],
    "price": 15000,
    "label": "Candeeiro",
-   "provisorio": true
-  },
-  "interior_sala": {
-   "category": "room",
-   "size": [
-    1180,
-    818
-   ],
-   "anchor": [
-    592,
-    815
-   ],
-   "footprint": [
-    8,
-    7
-   ],
    "provisorio": true
   }
  },

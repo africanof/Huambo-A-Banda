@@ -1,0 +1,34 @@
+{
+ "spec": {
+  "id": "v3_predio_rosa",
+  "kind": "building",
+  "size": "1024x1536",
+  "refs": [
+   "oficiais/gov_646.jpg",
+   "oficiais/gov_649.jpg"
+  ],
+  "prompt": "Recreate ONE of the REAL pink tower blocks of present-day Huambo shown in the first reference photo, as an isometric game building: 8-storey rectangular block painted bright pink with a regular grid of square windows with white frames, small sign letters on top, flat roof with small structures, ground floor with entrance doors. Clean recent paint, exactly that color and proportion."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSingle isolated building game asset viewed from the isometric camera, the whole building visible including roof and base, both visible facades (front-left and front-right) detailed. Transparent background, no ground tiles, no street, no people, no text other than shop signs explicitly requested.\nRecreate ONE of the REAL pink tower blocks of present-day Huambo shown in the first reference photo, as an isometric game building: 8-storey rectangular block painted bright pink with a regular grid of square windows with white frames, small sign letters on top, flat roof with small structures, ground floor with entrance doors. Clean recent paint, exactly that color and proportion.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1024x1536",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1622,
+  "input_tokens_details": {
+   "image_tokens": 1280,
+   "text_tokens": 342
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 2994
+ }
+}

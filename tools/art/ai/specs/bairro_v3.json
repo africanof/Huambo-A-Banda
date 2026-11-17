@@ -1,0 +1,125 @@
+[
+ {
+  "id": "v3_predio_rosa",
+  "kind": "building",
+  "size": "1024x1536",
+  "refs": [
+   "oficiais/gov_646.jpg",
+   "oficiais/gov_649.jpg"
+  ],
+  "prompt": "Recreate ONE of the REAL pink tower blocks of present-day Huambo shown in the first reference photo, as an isometric game building: 8-storey rectangular block painted bright pink with a regular grid of square windows with white frames, small sign letters on top, flat roof with small structures, ground floor with entrance doors. Clean recent paint, exactly that color and proportion."
+ },
+ {
+  "id": "v3_predio_castanho",
+  "kind": "building",
+  "size": "1024x1536",
+  "refs": [
+   "oficiais/gov_650.jpg",
+   "oficiais/gov_649.jpg"
+  ],
+  "prompt": "Recreate the REAL 1960s apartment tower of Huambo from the reference photos as an isometric game building: 7–8 storeys, brown/ochre facade with a vertical stack of balconies with iron railings, weathered concrete, ground floor shops with barred windows, water tanks and antennas on the roof."
+ },
+ {
+  "id": "v3_banco",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "oficiais/gov_762.jpg"
+  ],
+  "prompt": "Recreate the REAL three-storey yellow office building of Huambo from the reference photo as an isometric game building: pale yellow facade with white window frames, a tall vertical RED banner sign on the corner reading BANCO PLANALTO (fictional name, no real logo), flat roof with parapet, glass entrance."
+ },
+ {
+  "id": "v3_escola",
+  "kind": "building",
+  "size": "1536x1024",
+  "refs": [
+   "oficiais/gov_922.jpg",
+   "oficiais/gov_933.jpg",
+   "oficiais/gov_925.jpg"
+  ],
+  "prompt": "Recreate the REAL single-storey public school of Huambo from the reference photos as an isometric game building: long white plastered building with a covered veranda on slim white posts, row of classroom doors and windows, low-pitched roof, trimmed green hedges and lawn in front, globe street lamps, flagpole. Sign: ESCOLA PRIMÁRIA."
+ },
+ {
+  "id": "v3_loja_telecom",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "oficiais/gov_940.jpg"
+  ],
+  "prompt": "Recreate the REAL modern two-storey commercial building of Huambo from the reference photo as an isometric game building: glass and white facade with a large bright PINK cladding panel on the upper floor showing a fictional brand KANDA MÓVEL (no real logos), shop windows on the ground floor, flat roof."
+ },
+ {
+  "id": "v3_edificio_vermelho",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "oficiais/gov_210.jpg"
+  ],
+  "prompt": "Recreate the REAL two-storey red/coral painted colonial-era building on the corner in the reference photo of Huambo, as an isometric game building: coral-red facade with white trims, rows of tall windows, small shops on the ground floor with awnings, hip roof."
+ },
+ {
+  "id": "v3_bancada_mercado",
+  "kind": "object",
+  "size": "1024x1024",
+  "refs": [
+   "oficiais/gov_240.jpg",
+   "oficiais/gov_222.jpg"
+  ],
+  "prompt": "Recreate the REAL market stall from Huambo's municipal fair in the reference photos as an isometric game prop: tiered orange-painted wooden crate shelves full of green banana bunches, cabbages, potatoes and tomatoes, with a small red banner on the front (no readable text)."
+ },
+ {
+  "id": "v3_arvore_avenida",
+  "kind": "object",
+  "size": "1024x1536",
+  "refs": [
+   "oficiais/gov_210.jpg",
+   "oficiais/gov_195.jpg",
+   "oficiais/gov_202.jpg"
+  ],
+  "prompt": "Recreate the REAL street tree planted along Huambo's avenues seen in the reference photos (crooked trunk with a whitewashed base, wide rounded bright-green crown), as an isolated isometric game prop."
+ },
+ {
+  "id": "v3_textura_asfalto",
+  "kind": "texture",
+  "size": "1024x1024",
+  "background": "opaque",
+  "refs": [
+   "oficiais/gov_204.jpg",
+   "oficiais/gov_197.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the NEW dark-grey asphalt of Huambo's recently repaved avenues seen in the reference photos (fresh, fine-grained, uniform, no markings)."
+ },
+ {
+  "id": "v3_textura_calcada",
+  "kind": "texture",
+  "size": "1024x1024",
+  "background": "opaque",
+  "refs": [
+   "oficiais/gov_196.jpg",
+   "oficiais/gov_194.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the light grey concrete sidewalk paving of central Huambo seen in the reference photos (square concrete slabs, light grey, slightly worn)."
+ },
+ {
+  "id": "v3_textura_relva",
+  "kind": "texture",
+  "size": "1024x1024",
+  "background": "opaque",
+  "refs": [
+   "oficiais/gov_194.jpg",
+   "oficiais/gov_202.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the well-kept bright green lawn of Huambo's avenue medians and gardens seen in the reference photos."
+ },
+ {
+  "id": "v3_interior_sala",
+  "kind": "room",
+  "size": "1536x1024",
+  "refs": [
+   "oficiais/gov_932.jpg",
+   "oficiais/gov_795.jpg",
+   "oficiais/gov_931.jpg"
+  ],
+  "prompt": "Empty room of a Huambo building shown as an isometric cutaway (only the floor and the two back walls, no front walls, no ceiling), with the real finishes seen in the reference photos: white painted walls, light ceramic tile floor, tall windows with white frames on the left wall, a doorway on the right wall. No furniture, no people."
+ }
+]

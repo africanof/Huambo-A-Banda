@@ -17,7 +17,10 @@ Capturas: `docs/img/demo_*.jpg` · vídeo: `docs/img/demo_bairro.mp4`
   passadas como imagem de entrada (`tools/art/ai/specs/bairro_v2.json`; fontes, autores e licenças em
   `tools/art/ai/refs/REFERENCIAS.md`): Correios, Governo Provincial, obelisco da Praça Agostinho Neto, prédio da
   Rua Cinco, casa colonial, cantina, padaria, jacarandá, palmeira, eucalipto, candeeiro, kupapata, zungueira.
-- **Provisório:** interior da casa e móveis (ainda não há fotografias reais de interiores do Huambo).
+- **v3 (fotografias oficiais atuais, huambo.gov.ao, 2025–2026):** Hotel iU (prédios rosa), prédio castanho, Banco
+  Planalto (fictício), Escola Primária, loja de telecomunicações (marca fictícia), Tribunal da Comarca, banca do mercado,
+  árvore das avenidas, asfalto novo, calçada de betão, relva dos separadores e o interior da casa (acabamentos reais).
+- **Provisório:** móveis (ainda não há fotografias reais de interiores do Huambo).
 - Marcha sem deslizar: a velocidade vem da animação (*root motion*): `build_assets.py` mede quanto o pé assente
   recua em cada ciclo e o jogo avança exatamente essa distância. Teste visual: `client/tests/capture_walk.gd`
   → `docs/img/demo_marcha.mp4`.

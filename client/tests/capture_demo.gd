@@ -49,6 +49,9 @@ func _run() -> void:
 	scene.camera.zoom = Vector2(0.3, 0.3)
 	for i in 10: await process_frame
 	await _shot("rua_visao_geral")
+	scene.player.world_pos = Vector2(72, 24)
+	for i in 30: await process_frame
+	await _shot("rua_leste")
 	scene.time_min = 20.5 * 60
 	scene._apply_time()
 	for i in 5: await process_frame
