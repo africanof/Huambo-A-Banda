@@ -56,7 +56,9 @@ def generate(spec, force=False):
             path = os.path.join(RAW, ref + ".png")
             if not os.path.exists(path):
                 path = os.path.join(HERE, "refs", ref)
-            chunks.append(f'--{boundary}\r\nContent-Disposition: form-data; name="image[]"; filename="{ref}.png"\r\nContent-Type: image/png\r\n\r\n'.encode()
+            mime = "image/jpeg" if path.lower().endswith((".jpg", ".jpeg")) else ("image/webp" if path.lower().endswith(".webp") else "image/png")
+            fname = os.path.basename(path)
+            chunks.append(f'--{boundary}\r\nContent-Disposition: form-data; name="image[]"; filename="{fname}"\r\nContent-Type: {mime}\r\n\r\n'.encode()
                           + open(path, "rb").read() + b"\r\n")
         chunks.append(f"--{boundary}--\r\n".encode())
         req = urllib.request.Request(API_EDIT, data=b"".join(chunks), method="POST",

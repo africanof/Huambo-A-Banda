@@ -1,0 +1,34 @@
+{
+ "spec": {
+  "id": "v2_zungueira",
+  "kind": "object",
+  "size": "1024x1024",
+  "refs": [
+   "vendendo_anan_s.jpg",
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "A street vendor stall as seen in the Huambo reference photos: a woman vendor (generic, not a portrait) in a colorful pano wrap and headscarf seated on a low stool beside a wooden table and plastic basins with pineapples, tomatoes, bananas and onions, under a large colorful umbrella. Isometric game prop."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSingle isolated game object viewed from the isometric camera, entire object visible, transparent background, no floor, no text.\nA street vendor stall as seen in the Huambo reference photos: a woman vendor (generic, not a portrait) in a colorful pano wrap and headscarf seated on a low stool beside a wooden table and plastic basins with pineapples, tomatoes, bananas and onions, under a large colorful umbrella. Isometric game prop.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1741,
+  "input_tokens_details": {
+   "image_tokens": 1440,
+   "text_tokens": 301
+  },
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "image_tokens": 1756,
+   "text_tokens": 0
+  },
+  "total_tokens": 3497
+ }
+}

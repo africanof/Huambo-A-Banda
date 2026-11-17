@@ -62,20 +62,55 @@ def split_cells(im: Image.Image, expected: int | None = None) -> list[Image.Imag
             merged[-1] = (merged[-1][0], c[1])
         else:
             merged.append(c)
-    if expected and len(merged) != expected:
-        # figuras encostadas: corta no vale de menor conteúdo perto de cada divisão esperada
-        xs = np.where(filled)[0]
-        x_start, x_end = xs.min(), xs.max() + 1
-        step = (x_end - x_start) / expected
-        cuts = [x_start]
-        for k in range(1, expected):
-            c = x_start + k * step
-            lo, hi = int(c - step * 0.3), int(c + step * 0.3)
-            cuts.append(lo + int(np.argmin(col[lo:hi])))
-        cuts.append(x_end)
-        print(f"  {len(merged)} células por colunas vazias → corte por vales em {expected}", file=sys.stderr)
-        return [im.crop((cuts[i], 0, cuts[i + 1], im.height)) for i in range(expected)]
+    if expected and len(merged) < expected:
+        # figuras encostadas: usa os intervalos vazios reais e só divide as células
+        # largas (com 2+ figuras) no ponto mais estreito da zona central
+        smooth = np.convolve(col, np.ones(9) / 9, mode="same")
+        while len(merged) < expected:
+            i = max(range(len(merged)), key=lambda k: merged[k][1] - merged[k][0])
+            x0, x1 = merged[i]
+            w = x1 - x0
+            lo, hi = x0 + int(w * 0.3), x0 + int(w * 0.7)
+            cut = lo + int(np.argmin(smooth[lo:hi]))
+            merged[i:i + 1] = [(x0, cut), (cut, x1)]
+        print(f"  células divididas no ponto mais estreito → {len(merged)}", file=sys.stderr)
     return [im.crop((x0, 0, x1, im.height)) for x0, x1 in merged]
+
+
+def clean_cell(im: Image.Image) -> Image.Image:
+    """Remove fragmentos de figuras vizinhas: componentes pequenos que tocam a borda esquerda/direita."""
+    from collections import deque
+    arr = np.asarray(im).copy()
+    a = arr[..., 3] > 40
+    h, w = a.shape
+    label = np.zeros((h, w), np.int32)
+    comps = []
+    for y0 in range(0, h, 2):
+        for x0 in np.where(a[y0] & (label[y0] == 0))[0]:
+            if label[y0, x0]:
+                continue
+            n = len(comps) + 1
+            q = deque([(y0, x0)])
+            label[y0, x0] = n
+            area, xmin, xmax = 0, x0, x0
+            while q:
+                y, x = q.popleft()
+                area += 1
+                xmin, xmax = min(xmin, x), max(xmax, x)
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    yy, xx = y + dy, x + dx
+                    if 0 <= yy < h and 0 <= xx < w and a[yy, xx] and not label[yy, xx]:
+                        label[yy, xx] = n
+                        q.append((yy, xx))
+            comps.append((n, area, xmin, xmax))
+    if len(comps) <= 1:
+        return im
+    biggest = max(c[1] for c in comps)
+    for n, area, xmin, xmax in comps:
+        touches = xmin <= 1 or xmax >= w - 2
+        if area < biggest * 0.15 and (touches or area < biggest * 0.01):
+            arr[label == n, 3] = 0
+    return Image.fromarray(arr, "RGBA")
 
 
 def foot_anchor(im: Image.Image) -> tuple[float, float, int]:

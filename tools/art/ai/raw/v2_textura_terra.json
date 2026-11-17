@@ -1,0 +1,34 @@
+{
+ "spec": {
+  "id": "v2_textura_terra",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "Buildings_at_Rua_Cinco_Huambo_Angola.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the red laterite earth seen on the ground in the reference photo of Huambo (dusty orange-red compacted soil with small stones and a few dry grass tufts).",
+  "background": "opaque"
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "Top-down seamless tileable texture of the red laterite earth seen on the ground in the reference photo of Huambo (dusty orange-red compacted soil with small stones and a few dry grass tufts).\nFlat top-down texture filling the entire square image edge to edge, seamless and tileable, no perspective, no vignette, no border.\nAbsolutely no buildings, no people, no vehicles, no city, no perspective: only the material surface seen straight from above, filling the whole image.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "opaque",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 788,
+  "input_tokens_details": {
+   "image_tokens": 672,
+   "text_tokens": 116
+  },
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "image_tokens": 1756,
+   "text_tokens": 0
+  },
+  "total_tokens": 2544
+ }
+}

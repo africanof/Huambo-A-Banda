@@ -1,0 +1,34 @@
+{
+ "spec": {
+  "id": "v2_ref_mulher",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "vendendo_anan_s.jpg",
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "Character turnaround of a young woman from Huambo today, dressed like women in the reference photos (do NOT copy any real person's face; invent a new friendly face): long box braids in a high ponytail, warm brown skin, small gold earrings, mustard-yellow short-sleeve top, long skirt made of colorful African wax-print pano fabric (orange, blue, green), brown sandals. Show her standing in 4 cells, left to right: facing down-left (three-quarter view toward the camera), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view). Leave wide empty space between the cells."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSprite sheet on a transparent background: the SAME character repeated identically (same face, hair, clothes, colors, size) in each cell, cells evenly spaced in a single horizontal row, all characters standing on the same baseline and the same scale, nothing overlapping, no text, no grid lines, no labels.\nCharacter turnaround of a young woman from Huambo today, dressed like women in the reference photos (do NOT copy any real person's face; invent a new friendly face): long box braids in a high ponytail, warm brown skin, small gold earrings, mustard-yellow short-sleeve top, long skirt made of colorful African wax-print pano fabric (orange, blue, green), brown sandals. Show her standing in 4 cells, left to right: facing down-left (three-quarter view toward the camera), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view). Leave wide empty space between the cells.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1852,
+  "input_tokens_details": {
+   "image_tokens": 1440,
+   "text_tokens": 412
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 3224
+ }
+}

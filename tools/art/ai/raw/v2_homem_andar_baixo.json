@@ -1,0 +1,33 @@
+{
+ "spec": {
+  "id": "v2_homem_andar_baixo",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "v2_ref_homem"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same young man (same face, hair, beard, light-blue shirt, dark jeans, white sneakers, same proportions). Draw an 8-frame walk cycle with the character facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSprite sheet on a transparent background: the SAME character repeated identically (same face, hair, clothes, colors, size) in each cell, cells evenly spaced in a single horizontal row, all characters standing on the same baseline and the same scale, nothing overlapping, no text, no grid lines, no labels.\nUsing the reference image, keep EXACTLY the same young man (same face, hair, beard, light-blue shirt, dark jeans, white sneakers, same proportions). Draw an 8-frame walk cycle with the character facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1536x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1997,
+  "input_tokens_details": {
+   "image_tokens": 1536,
+   "text_tokens": 461
+  },
+  "output_tokens": 1372,
+  "output_tokens_details": {
+   "image_tokens": 1372,
+   "text_tokens": 0
+  },
+  "total_tokens": 3369
+ }
+}

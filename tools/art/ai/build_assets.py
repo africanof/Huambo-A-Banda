@@ -28,37 +28,40 @@ PX_PER_M = 64  # meia largura do losango de 1 m (tile de 1 m = 128×64 px)
 
 # id: (categoria, alvo, valor, pegada_m [w, d] ou None, extra)
 # alvo "width" = largura final em px; "height" = altura final em px
+# fonte (gerada A PARTIR DE FOTOS REAIS, specs/bairro_v2.json) → (categoria, alvo, valor, pegada_m, extra)
 ASSETS = {
-    "teste_edificio_correios": ("building", "width", (10 + 8) * PX_PER_M, [10, 8], {"name": "Correios", "out": "correios"}),
-    "casa_colonial": ("building", "width", (10 + 8) * PX_PER_M, [10, 8], {"name": "Casa do Jogador", "door": True}),
-    "cantina": ("building", "width", (6 + 5) * PX_PER_M, [6, 5], {"name": "Cantina Ekuikui"}),
-    "padaria": ("building", "width", (7 + 6) * PX_PER_M, [7, 6], {"name": "Padaria Planalto"}),
-    "predio_60": ("building", "width", (9 + 7) * PX_PER_M, [9, 7], {"name": "Prédio da Cidade Baixa"}),
-    "arvore_eucalipto": ("prop", "height", 560, [1, 1], {}),
-    "arvore_mulemba": ("prop", "height", 420, [2, 2], {}),
-    "buganvilia": ("prop", "height", 150, [1, 1], {}),
-    "candeeiro": ("prop", "height", 330, [0.4, 0.4], {"light": True}),
-    "kupapata": ("prop", "width", 170, [1.6, 0.8], {}),
-    "banco_jardim": ("prop", "width", 160, [1.6, 0.6], {}),
-    "bancada_zungueira": ("prop", "width", 220, [1.8, 1.2], {"name": "Zungueira"}),
-    "movel_sofa": ("furniture", "width", 250, [2, 1], {"price": 45000, "label": "Sofá"}),
-    "movel_poltrona": ("furniture", "width", 130, [1, 1], {"price": 22000, "label": "Poltrona"}),
-    "movel_mesa_centro": ("furniture", "width", 150, [1, 1], {"price": 12000, "label": "Mesa de centro"}),
-    "movel_tv": ("furniture", "width", 180, [2, 1], {"price": 85000, "label": "Televisor"}),
-    "movel_cama": ("furniture", "width", 300, [2, 2], {"price": 95000, "label": "Cama de casal"}),
-    "movel_mesa_jantar": ("furniture", "width", 270, [2, 2], {"price": 60000, "label": "Mesa de jantar"}),
-    "movel_frigorifico": ("furniture", "height", 230, [1, 1], {"price": 150000, "label": "Frigorífico"}),
-    "movel_fogao": ("furniture", "width", 130, [1, 1], {"price": 70000, "label": "Fogão + botija"}),
-    "movel_tapete": ("furniture", "width", 300, [2, 2], {"price": 18000, "label": "Tapete", "floor": True}),
-    "movel_planta": ("furniture", "height", 150, [1, 1], {"price": 8000, "label": "Planta"}),
-    "movel_candeeiro": ("furniture", "height", 200, [1, 1], {"price": 15000, "label": "Candeeiro"}),
-    "interior_sala": ("room", "width", 1180, [8, 7], {}),
+    "v2_correios": ("building", "width", (10 + 8) * PX_PER_M, [10, 8], {"name": "Correios", "out": "correios"}),
+    "v2_governo": ("building", "width", (14 + 8) * PX_PER_M, [14, 8], {"name": "Governo Provincial", "out": "governo"}),
+    "v2_casa_colonial": ("building", "width", (10 + 8) * PX_PER_M, [10, 8], {"name": "Casa do Jogador", "door": True, "out": "casa_colonial"}),
+    "v2_cantina": ("building", "width", (6 + 5) * PX_PER_M, [6, 5], {"name": "Cantina Ekuikui", "out": "cantina"}),
+    "v2_padaria": ("building", "width", (7 + 6) * PX_PER_M, [7, 6], {"name": "Padaria Planalto", "out": "padaria"}),
+    "v2_predio": ("building", "width", (9 + 7) * PX_PER_M, [9, 7], {"name": "Prédio da Rua Cinco", "out": "predio_60"}),
+    "v2_obelisco": ("prop", "height", 640, [3, 3], {"name": "Praça Agostinho Neto", "out": "obelisco"}),
+    "v2_eucalipto": ("prop", "height", 560, [1, 1], {"out": "arvore_eucalipto"}),
+    "v2_jacaranda": ("prop", "height", 430, [1.5, 1.5], {"out": "jacaranda"}),
+    "v2_palmeira": ("prop", "height", 300, [1.5, 1.5], {"out": "palmeira"}),
+    "v2_candeeiro": ("prop", "height", 340, [0.4, 0.4], {"light": True, "out": "candeeiro"}),
+    "v2_kupapata": ("prop", "width", 170, [1.6, 0.8], {"out": "kupapata"}),
+    "v2_zungueira": ("prop", "width", 230, [1.8, 1.2], {"name": "Zungueira", "out": "bancada_zungueira"}),
+    # PROVISÓRIO: sem fotografias reais de interiores do Huambo ainda (ver REFERENCIAS.md)
+    "movel_sofa": ("furniture", "width", 250, [2, 1], {"price": 45000, "label": "Sofá", "provisorio": True}),
+    "movel_poltrona": ("furniture", "width", 130, [1, 1], {"price": 22000, "label": "Poltrona", "provisorio": True}),
+    "movel_mesa_centro": ("furniture", "width", 150, [1, 1], {"price": 12000, "label": "Mesa de centro", "provisorio": True}),
+    "movel_tv": ("furniture", "width", 180, [2, 1], {"price": 85000, "label": "Televisor", "provisorio": True}),
+    "movel_cama": ("furniture", "width", 300, [2, 2], {"price": 95000, "label": "Cama de casal", "provisorio": True}),
+    "movel_mesa_jantar": ("furniture", "width", 270, [2, 2], {"price": 60000, "label": "Mesa de jantar", "provisorio": True}),
+    "movel_frigorifico": ("furniture", "height", 230, [1, 1], {"price": 150000, "label": "Frigorífico", "provisorio": True}),
+    "movel_fogao": ("furniture", "width", 130, [1, 1], {"price": 70000, "label": "Fogão + botija", "provisorio": True}),
+    "movel_tapete": ("furniture", "width", 300, [2, 2], {"price": 18000, "label": "Tapete", "floor": True, "provisorio": True}),
+    "movel_planta": ("furniture", "height", 150, [1, 1], {"price": 8000, "label": "Planta", "provisorio": True}),
+    "movel_candeeiro": ("furniture", "height", 200, [1, 1], {"price": 15000, "label": "Candeeiro", "provisorio": True}),
+    "interior_sala": ("room", "width", 1180, [8, 7], {"provisorio": True}),
 }
 CHARACTERS = {
-    "homem": {"ref": "ref_homem", "down": "homem_andar_baixo", "up": "homem_andar_cima", "name": "Kiala"},
-    "mulher": {"ref": "ref_mulher", "down": "mulher_andar_baixo", "up": "mulher_andar_cima", "name": "Nzinga"},
+    "homem": {"ref": "v2_ref_homem", "down": "v2_homem_andar_baixo", "up": "v2_homem_andar_cima", "name": "Kiala"},
+    "mulher": {"ref": "v2_ref_mulher", "down": "v2_mulher_andar_baixo", "up": "v2_mulher_andar_cima", "name": "Nzinga"},
 }
-TEXTURES = ["textura_asfalto", "textura_calcada", "textura_terra", "textura_relva"]
+TEXTURES = ["v2_textura_asfalto", "v2_textura_calcada", "v2_textura_terra", "v2_textura_relva"]
 CHAR_H = 300  # altura na textura (exibida a 0,5 → 150 px no mundo)
 
 
@@ -113,18 +116,15 @@ def build_characters(manifest):
         if not all(os.path.exists(os.path.join(RAW, c[k] + ".png")) for k in ("ref", "down", "up")):
             print("  personagem incompleta:", cid)
             continue
-        ref_cells = P.split_cells(P.matte(Image.open(os.path.join(RAW, c["ref"] + ".png"))), 4)
-        # referência: 0 baixo-esq, 1 baixo-dir, 2 cima-esq, 3 cima-dir → usamos as viradas à direita
-        idle = {"down": P.trim(ref_cells[1])[0], "up": P.trim(ref_cells[3])[0]} if len(ref_cells) == 4 else {}
         info = {"name": c["name"], "frame_size": None, "anchor": None, "anims": {}}
         sheets = {}
         for d in ("down", "up"):
             cells = P.split_cells(P.matte(Image.open(os.path.join(RAW, c[d] + ".png"))), 8)
-            frames = [P.trim(x)[0] for x in cells]
-            if d in idle:
-                frames = [idle[d]] + frames
+            frames = [P.trim(P.clean_cell(x))[0] for x in cells]
             norm, anchor = P.normalize_frames(frames, CHAR_H)
-            sheets[d] = norm
+            # pose parada = frame da marcha com os pés mais juntos (mesma escala e estilo da marcha)
+            idle = min(range(len(norm)), key=lambda i: foot_spread(norm[i]))
+            sheets[d] = [norm[idle]] + norm
         fw = max(f.width for fs in sheets.values() for f in fs)
         fh = max(f.height for fs in sheets.values() for f in fs)
         for d, fs in sheets.items():
@@ -132,11 +132,63 @@ def build_characters(manifest):
             for i, f in enumerate(fs):
                 sheet.alpha_composite(f, (i * fw + (fw - f.width) // 2, fh - f.height))
             sheet.save(os.path.join(OUT, f"{cid}_{d}.png"), optimize=True)
-            info["anims"][d] = {"file": f"{cid}_{d}.png", "frames": len(fs), "idle_frame": 0, "walk_from": 1}
+            # passada medida na arte: maior abertura dos pés (px) → metros (altura da figura = 1,75 m).
+            # Um ciclo de 8 frames = 2 passos. Usado no jogo para o ritmo da animação seguir o chão.
+            # root motion: o corpo avança o que o pé assente recua (arte a 0,5× no jogo;
+            # 1 m no mundo = 64 px na horizontal do ecrã nas direções diagonais)
+            cycle_px = root_motion_px(fs[1:], d == "down")
+            stride_m = cycle_px * 0.5 / 64.0
+            info["anims"][d] = {"file": f"{cid}_{d}.png", "frames": len(fs), "idle_frame": 0, "walk_from": 1,
+                                "stride_m": round(float(max(stride_m, 0.35)), 3)}
         info["frame_size"] = [fw, fh]
         info["anchor"] = [fw // 2, fh - 8]
         manifest["characters"][cid] = info
         print(f"  personagem {cid}: frame {fw}x{fh}, {[len(v) for v in sheets.values()]} frames")
+
+
+def foot_spread(im: Image.Image) -> int:
+    """Largura ocupada na faixa dos pés (8% inferiores da figura)."""
+    a = np.asarray(im)[..., 3] > 80
+    ys = np.where(a.any(1))[0]
+    top, bottom = ys.min(), ys.max()
+    band = a[bottom - max(3, int((bottom - top) * 0.08)): bottom + 1]
+    xs = np.where(band.any(0))[0]
+    return int(xs.max() - xs.min()) if len(xs) else 0
+
+
+def feet(im: Image.Image) -> list[tuple[float, int]]:
+    """Pés na faixa inferior: lista de (x central, y mais baixo) por grupo de colunas."""
+    a = np.asarray(im)[..., 3] > 80
+    ys = np.where(a.any(1))[0]
+    top, bottom = ys.min(), ys.max()
+    band = a[bottom - max(4, int((bottom - top) * 0.07)): bottom + 1]
+    cols = np.where(band.any(0))[0]
+    groups, start = [], cols[0]
+    for c0, c1 in zip(cols, cols[1:]):
+        if c1 - c0 > 3:
+            groups.append((start, c0)); start = c1
+    groups.append((start, cols[-1]))
+    out = []
+    for g0, g1 in groups:
+        sub = band[:, g0:g1 + 1]
+        low = np.where(sub.any(1))[0].max()
+        out.append(((g0 + g1) / 2, int(low)))
+    return out
+
+
+def root_motion_px(frames: list[Image.Image], facing_down: bool) -> float:
+    """Distância horizontal (px da arte) que o corpo avança num ciclo, seguindo o pé assente.
+    De frente para a câmara o pé assente é o mais baixo; de costas é o mais alto (mais longe)."""
+    total = 0.0
+    n = len(frames)
+    for i in range(n):
+        f0, f1 = feet(frames[i]), feet(frames[(i + 1) % n])
+        planted = max(f0, key=lambda f: f[1]) if facing_down else min(f0, key=lambda f: f[1])
+        nxt = min(f1, key=lambda f: abs(f[0] - planted[0]))
+        dx = planted[0] - nxt[0]  # pé recua → corpo avança para a direita do ecrã
+        if 0 < dx < 40:
+            total += dx
+    return total
 
 
 def seamless(arr: np.ndarray) -> np.ndarray:
@@ -158,8 +210,15 @@ def build_tiles(manifest):
         if not os.path.exists(path):
             print("  textura em falta:", t)
             continue
-        tex = np.asarray(Image.open(path).convert("RGB").resize((512, 512), Image.LANCZOS)).astype(np.float32)
-        if t != "textura_calcada":  # padrão em grelha: a fusão criaria linhas duplas
+        src_im = Image.open(path).convert("RGB")
+        # usa só o centro (o gerador escurece/ilumina as bordas) e iguala a luz em toda a textura
+        w0, h0 = src_im.size
+        src_im = src_im.crop((int(w0 * 0.15), int(h0 * 0.15), int(w0 * 0.85), int(h0 * 0.85)))
+        tex = np.asarray(src_im.resize((512, 512), Image.LANCZOS)).astype(np.float32)
+        from PIL import ImageFilter
+        low = np.asarray(Image.fromarray(tex.astype(np.uint8)).filter(ImageFilter.GaussianBlur(60))).astype(np.float32)
+        tex = tex - low + low.mean(axis=(0, 1), keepdims=True)  # remove gradientes de iluminação
+        if not t.endswith("textura_calcada"):  # padrão em grelha: a fusão criaria linhas duplas
             tex = seamless(tex)
         tex = Image.fromarray(tex.clip(0, 255).astype(np.uint8))
         S = tex.width
@@ -174,7 +233,7 @@ def build_tiles(manifest):
         ImageDraw.Draw(mask).polygon([(TW / 2, -e), (TW + 2 * e, TH / 2), (TW / 2, TH + e), (-2 * e, TH / 2)], fill=255)
         tile.putalpha(mask)
         atlas.paste(tile, (i * TW, 0))
-        names.append(t.replace("textura_", ""))
+        names.append(t.replace("v2_", "").replace("textura_", ""))
     atlas.save(os.path.join(OUT, "chao_tiles.png"), optimize=True)
     manifest["tiles"] = {"file": "chao_tiles.png", "tile_size": [TW, TH], "meters": 4, "names": names}
     print("  mosaicos:", names)

@@ -1,0 +1,225 @@
+[
+ {
+  "id": "v2_correios",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_central_Post_Office.jpg"
+  ],
+  "prompt": "Recreate the REAL post office building of Huambo shown in the reference photo as an isometric game asset, faithful to its architecture, proportions, materials and colors: two-story salmon-pink facade, ground-floor arcade of round arches on thick cream/white square columns, upper floor with tall windows and iron balconies, a red horizontal band above the arcade with the word CORREIOS in white (no logo), terracotta roof. Show its weathering as in the photo."
+ },
+ {
+  "id": "v2_governo",
+  "kind": "building",
+  "size": "1536x1024",
+  "refs": [
+   "Huambo_government_buildings.jpg",
+   "Central_Huambo_building.jpg"
+  ],
+  "prompt": "Recreate the REAL Provincial Government building of Huambo (Governo Provincial do Huambo) as an isometric game asset, faithful to the reference photos: 1960s modernist block with salmon/brick-red facade, rows of slender vertical white concrete fins (brise-soleil) across both wings, a taller central tower with a grid of glass windows, entrance canopy with the sign GOVERNO PROVINCIAL DO HUAMBO, flagpoles with yellow and red flags, potted palms in front, light grey sidewalk with black-and-white painted curb."
+ },
+ {
+  "id": "v2_obelisco",
+  "kind": "object",
+  "size": "1024x1536",
+  "refs": [
+   "Huambo_Central_rotunda.jpg",
+   "Cenral_Square_Huambo.Angola_-_panoramio.jpg"
+  ],
+  "prompt": "Recreate ONLY the REAL monument at the center of Praça Dr. António Agostinho Neto in Huambo, isolated, faithful to the reference photos: a tall slender grey concrete obelisk standing on a stepped square stone plinth, a dark bronze statue in front of it (stylized figure, not a portrait), a flag on a short pole at the top. NO surrounding buildings, NO cars, NO street, NO trees: just the monument and its plinth on a transparent background. Isometric game prop."
+ },
+ {
+  "id": "v2_predio",
+  "kind": "building",
+  "size": "1024x1536",
+  "refs": [
+   "Buildings_at_Rua_Cinco_Huambo_Angola.jpg",
+   "street_in_huambo.jpg"
+  ],
+  "prompt": "Recreate the REAL 1960s apartment blocks of Huambo's Rua Cinco shown in the reference photos as ONE isometric game building: five floors, concrete frame facade with long balconies whose parapets are painted in faded red, turquoise and cream, laundry hanging, satellite dishes, water tanks on the flat roof, ground floor with small shops behind roll-up metal doors and grilles, visible weathering and stains, exactly in the style of the photos."
+ },
+ {
+  "id": "v2_casa_colonial",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_street_scene_2.jpg",
+   "Huambo_jardim_rocha.jpg"
+  ],
+  "prompt": "Recreate a REAL Portuguese colonial family house of central Huambo as seen in the reference photos, as an isometric game asset: single story on a raised base, plastered walls (cream/pale yellow with white trims like in the photos), terracotta tiled hip roof, a front veranda with white columns, tall windows with wooden shutters and wrought-iron grilles, small front garden behind a low wall with a gate, a jacaranda shrub in purple bloom."
+ },
+ {
+  "id": "v2_cantina",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "street_in_huambo.jpg",
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "Recreate a small neighborhood shop (cantina) of present-day Huambo as an isometric game asset, using the materials and look of the reference photos: one-story plastered block building painted bright blue and white with a painted sign board reading CANTINA EKUIKUI, front door with protective iron grille, a zinc sheet awning, crates of soft-drink bottles, a plastic chair and an umbrella stand outside, small blue water tank on the corrugated metal roof."
+ },
+ {
+  "id": "v2_padaria",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_jardim_rocha.jpg",
+   "Huambo_central_Post_Office.jpg"
+  ],
+  "prompt": "Recreate a corner bakery in central Huambo using the REAL colonial architecture of the reference photos (pink facade with yellow/cream trims, ornate window frames, iron balconies), as an isometric game asset: one story, large shop window with bread loaves, door with iron grille, sign PADARIA PLANALTO, terracotta roof, a bench outside."
+ },
+ {
+  "id": "v2_jacaranda",
+  "kind": "object",
+  "size": "1024x1536",
+  "refs": [
+   "landscape_in_huambo.jpg",
+   "huambo.jpg"
+  ],
+  "prompt": "A jacaranda tree in full purple-violet bloom as found on Huambo's avenues today: twisting grey-brown trunk, wide airy crown covered in lilac-purple flowers with some fresh green leaves, a few fallen purple petals at the base. Isometric game prop."
+ },
+ {
+  "id": "v2_palmeira",
+  "kind": "object",
+  "size": "1024x1024",
+  "refs": [
+   "landscape_in_huambo.jpg"
+  ],
+  "prompt": "A Canary date palm (Phoenix canariensis) as planted in the roundabouts and avenue medians of Huambo: short thick textured trunk and a dense round crown of arching green fronds. Isometric game prop."
+ },
+ {
+  "id": "v2_eucalipto",
+  "kind": "object",
+  "size": "1024x1536",
+  "refs": [
+   "landscape_in_huambo.jpg",
+   "huambo.jpg"
+  ],
+  "prompt": "A tall eucalyptus tree of Huambo's parks and avenues: tall pale trunk with peeling bark, high open crown of narrow grey-green leaves. Isometric game prop."
+ },
+ {
+  "id": "v2_zungueira",
+  "kind": "object",
+  "size": "1024x1024",
+  "refs": [
+   "vendendo_anan_s.jpg",
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "A street vendor stall as seen in the Huambo reference photos: a woman vendor (generic, not a portrait) in a colorful pano wrap and headscarf seated on a low stool beside a wooden table and plastic basins with pineapples, tomatoes, bananas and onions, under a large colorful umbrella. Isometric game prop."
+ },
+ {
+  "id": "v2_kupapata",
+  "kind": "object",
+  "size": "1024x1024",
+  "refs": [
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "A parked motorcycle taxi (kupapata) exactly like the motorbikes in the Huambo market photo: small 125cc red motorbike with a long seat and chrome details, slightly worn. Isometric game prop."
+ },
+ {
+  "id": "v2_candeeiro",
+  "kind": "object",
+  "size": "1024x1536",
+  "refs": [
+   "huambo.jpg",
+   "Huambo_street_scene.jpg"
+  ],
+  "prompt": "A modern street light pole of present-day Huambo's avenues: tall grey galvanized pole with one curved arm and a flat LED lamp head, a small yellow banner hanging on the pole. Isometric game prop."
+ },
+ {
+  "id": "v2_ref_homem",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "Marketplace_Huambo.jpg",
+   "street_in_huambo.jpg"
+  ],
+  "prompt": "Character turnaround of a young man from Huambo today, dressed like the people in the reference photos (do NOT copy any real person's face; invent a new friendly face): short black hair with a clean fade, short beard, warm dark-brown skin, short-sleeve button shirt in light blue, dark jeans, white sneakers. Show him standing in 4 cells, left to right: facing down-left (three-quarter view toward the camera), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view). Leave wide empty space between the cells."
+ },
+ {
+  "id": "v2_ref_mulher",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "vendendo_anan_s.jpg",
+   "Marketplace_Huambo.jpg"
+  ],
+  "prompt": "Character turnaround of a young woman from Huambo today, dressed like women in the reference photos (do NOT copy any real person's face; invent a new friendly face): long box braids in a high ponytail, warm brown skin, small gold earrings, mustard-yellow short-sleeve top, long skirt made of colorful African wax-print pano fabric (orange, blue, green), brown sandals. Show her standing in 4 cells, left to right: facing down-left (three-quarter view toward the camera), facing down-right (three-quarter view toward the camera), facing up-left (back three-quarter view), facing up-right (back three-quarter view). Leave wide empty space between the cells."
+ },
+ {
+  "id": "v2_textura_terra",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "Buildings_at_Rua_Cinco_Huambo_Angola.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the red laterite earth seen on the ground in the reference photo of Huambo (dusty orange-red compacted soil with small stones and a few dry grass tufts).",
+  "background": "opaque"
+ },
+ {
+  "id": "v2_textura_calcada",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "huambo.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the light sidewalk paving seen in the reference photo of Huambo (light beige concrete paving blocks, slightly dusty and worn).",
+  "background": "opaque"
+ },
+ {
+  "id": "v2_textura_asfalto",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_street_scene.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the asphalt road surface seen in the reference photo of Huambo (medium grey, sun-faded, slightly dusty with red earth at the edges of grains, no markings).",
+  "background": "opaque"
+ },
+ {
+  "id": "v2_textura_relva",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_street_scene.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the garden lawn seen in the reference photo of Huambo's central gardens (short grass, natural green with some drier yellowish patches).",
+  "background": "opaque"
+ },
+ {
+  "id": "v2_homem_andar_baixo",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "v2_ref_homem"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same young man (same face, hair, beard, light-blue shirt, dark jeans, white sneakers, same proportions). Draw an 8-frame walk cycle with the character facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs."
+ },
+ {
+  "id": "v2_homem_andar_cima",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "v2_ref_homem"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same young man (same face, hair, beard, light-blue shirt, dark jeans, white sneakers, same proportions). Draw an 8-frame walk cycle with the character facing UP-RIGHT (back three-quarter view walking away from the camera, like cell 4 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs."
+ },
+ {
+  "id": "v2_mulher_andar_baixo",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "v2_ref_mulher"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same young woman (same face, box-braids ponytail, gold earrings, mustard-yellow top, the same wax-print pano skirt, brown sandals, same proportions). Draw an 8-frame walk cycle with the character facing DOWN-RIGHT (three-quarter view toward the camera, like cell 2 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs."
+ },
+ {
+  "id": "v2_mulher_andar_cima",
+  "kind": "sheet",
+  "size": "1536x1024",
+  "refs": [
+   "v2_ref_mulher"
+  ],
+  "prompt": "Using the reference image, keep EXACTLY the same young woman (same face, box-braids ponytail, gold earrings, mustard-yellow top, the same wax-print pano skirt, brown sandals, same proportions). Draw an 8-frame walk cycle with the character facing UP-RIGHT (back three-quarter view walking away from the camera, like cell 4 of the reference), one frame per cell in a single row, same size and same baseline in every cell, with WIDE EMPTY SPACE between figures so they never touch or overlap. Frame poses in order: 1 right heel touches ground, left foot behind, left arm forward; 2 right foot flat, body slightly lower; 3 left leg passing beside right leg, body highest; 4 left leg reaching forward; 5 left heel touches ground, right foot behind, right arm forward; 6 left foot flat, body slightly lower; 7 right leg passing beside left leg; 8 right leg reaching forward. Clear, natural stride length, arms swinging opposite to the legs."
+ }
+]

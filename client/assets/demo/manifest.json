@@ -5,11 +5,11 @@
    "category": "building",
    "size": [
     1152,
-    1089
+    1094
    ],
    "anchor": [
-    694,
-    1085
+    760,
+    1090
    ],
    "footprint": [
     10,
@@ -18,19 +18,40 @@
    "name": "Correios",
    "out": "correios",
    "shadow_anchor": [
-    694,
-    1085
+    760,
+    1090
+   ]
+  },
+  "governo": {
+   "category": "building",
+   "size": [
+    1408,
+    940
+   ],
+   "anchor": [
+    1044,
+    937
+   ],
+   "footprint": [
+    14,
+    8
+   ],
+   "name": "Governo Provincial",
+   "out": "governo",
+   "shadow_anchor": [
+    1044,
+    937
    ]
   },
   "casa_colonial": {
    "category": "building",
    "size": [
     1152,
-    965
+    857
    ],
    "anchor": [
-    704,
-    961
+    577,
+    854
    ],
    "footprint": [
     10,
@@ -38,204 +59,216 @@
    ],
    "name": "Casa do Jogador",
    "door": true,
+   "out": "casa_colonial",
    "shadow_anchor": [
-    704,
-    961
+    577,
+    854
    ]
   },
   "cantina": {
    "category": "building",
    "size": [
     704,
-    627
+    573
    ],
    "anchor": [
-    403,
-    625
+    425,
+    571
    ],
    "footprint": [
     6,
     5
    ],
    "name": "Cantina Ekuikui",
+   "out": "cantina",
    "shadow_anchor": [
-    403,
-    625
+    425,
+    571
    ]
   },
   "padaria": {
    "category": "building",
    "size": [
     832,
-    767
+    784
    ],
    "anchor": [
-    380,
-    764
+    481,
+    781
    ],
    "footprint": [
     7,
     6
    ],
    "name": "Padaria Planalto",
+   "out": "padaria",
    "shadow_anchor": [
-    380,
-    764
+    481,
+    781
    ]
   },
   "predio_60": {
    "category": "building",
    "size": [
     1024,
-    1578
+    1188
    ],
    "anchor": [
-    626,
-    1577
+    277,
+    1185
    ],
    "footprint": [
     9,
     7
    ],
-   "name": "Prédio da Cidade Baixa",
+   "name": "Prédio da Rua Cinco",
+   "out": "predio_60",
    "shadow_anchor": [
-    626,
-    1577
+    277,
+    1185
+   ]
+  },
+  "obelisco": {
+   "category": "prop",
+   "size": [
+    431,
+    640
+   ],
+   "anchor": [
+    204,
+    638
+   ],
+   "footprint": [
+    3,
+    3
+   ],
+   "name": "Praça Agostinho Neto",
+   "out": "obelisco",
+   "shadow_anchor": [
+    204,
+    638
    ]
   },
   "arvore_eucalipto": {
    "category": "prop",
    "size": [
-    370,
+    366,
     560
    ],
    "anchor": [
-    166,
+    162,
     558
    ],
    "footprint": [
     1,
     1
    ],
+   "out": "arvore_eucalipto",
    "shadow_anchor": [
-    166,
+    162,
     558
    ]
   },
-  "arvore_mulemba": {
+  "jacaranda": {
    "category": "prop",
    "size": [
-    423,
-    420
+    347,
+    430
    ],
    "anchor": [
-    198,
-    418
+    158,
+    428
    ],
    "footprint": [
-    2,
-    2
+    1.5,
+    1.5
    ],
+   "out": "jacaranda",
    "shadow_anchor": [
-    198,
-    418
+    158,
+    428
    ]
   },
-  "buganvilia": {
+  "palmeira": {
    "category": "prop",
    "size": [
-    154,
-    150
+    230,
+    300
    ],
    "anchor": [
-    71,
-    149
+    112,
+    298
    ],
    "footprint": [
-    1,
-    1
+    1.5,
+    1.5
    ],
+   "out": "palmeira",
    "shadow_anchor": [
-    71,
-    149
+    112,
+    298
    ]
   },
   "candeeiro": {
    "category": "prop",
    "size": [
-    121,
-    330
+    95,
+    340
    ],
    "anchor": [
-    94,
-    329
+    7,
+    339
    ],
    "footprint": [
     0.4,
     0.4
    ],
    "light": true,
+   "out": "candeeiro",
    "shadow_anchor": [
-    94,
-    329
+    7,
+    339
    ]
   },
   "kupapata": {
    "category": "prop",
    "size": [
     170,
-    165
+    166
    ],
    "anchor": [
-    145,
-    164
+    16,
+    165
    ],
    "footprint": [
     1.6,
     0.8
    ],
+   "out": "kupapata",
    "shadow_anchor": [
-    145,
-    164
-   ]
-  },
-  "banco_jardim": {
-   "category": "prop",
-   "size": [
-    160,
-    156
-   ],
-   "anchor": [
-    41,
-    155
-   ],
-   "footprint": [
-    1.6,
-    0.6
-   ],
-   "shadow_anchor": [
-    41,
-    155
+    16,
+    165
    ]
   },
   "bancada_zungueira": {
    "category": "prop",
    "size": [
-    220,
-    239
+    230,
+    220
    ],
    "anchor": [
-    63,
-    238
+    122,
+    219
    ],
    "footprint": [
     1.8,
     1.2
    ],
    "name": "Zungueira",
+   "out": "bancada_zungueira",
    "shadow_anchor": [
-    63,
-    238
+    122,
+    219
    ]
   },
   "movel_sofa": {
@@ -253,7 +286,8 @@
     1
    ],
    "price": 45000,
-   "label": "Sofá"
+   "label": "Sofá",
+   "provisorio": true
   },
   "movel_poltrona": {
    "category": "furniture",
@@ -270,7 +304,8 @@
     1
    ],
    "price": 22000,
-   "label": "Poltrona"
+   "label": "Poltrona",
+   "provisorio": true
   },
   "movel_mesa_centro": {
    "category": "furniture",
@@ -287,7 +322,8 @@
     1
    ],
    "price": 12000,
-   "label": "Mesa de centro"
+   "label": "Mesa de centro",
+   "provisorio": true
   },
   "movel_tv": {
    "category": "furniture",
@@ -304,7 +340,8 @@
     1
    ],
    "price": 85000,
-   "label": "Televisor"
+   "label": "Televisor",
+   "provisorio": true
   },
   "movel_cama": {
    "category": "furniture",
@@ -321,7 +358,8 @@
     2
    ],
    "price": 95000,
-   "label": "Cama de casal"
+   "label": "Cama de casal",
+   "provisorio": true
   },
   "movel_mesa_jantar": {
    "category": "furniture",
@@ -338,7 +376,8 @@
     2
    ],
    "price": 60000,
-   "label": "Mesa de jantar"
+   "label": "Mesa de jantar",
+   "provisorio": true
   },
   "movel_frigorifico": {
    "category": "furniture",
@@ -355,7 +394,8 @@
     1
    ],
    "price": 150000,
-   "label": "Frigorífico"
+   "label": "Frigorífico",
+   "provisorio": true
   },
   "movel_fogao": {
    "category": "furniture",
@@ -372,7 +412,8 @@
     1
    ],
    "price": 70000,
-   "label": "Fogão + botija"
+   "label": "Fogão + botija",
+   "provisorio": true
   },
   "movel_tapete": {
    "category": "furniture",
@@ -390,7 +431,8 @@
    ],
    "price": 18000,
    "label": "Tapete",
-   "floor": true
+   "floor": true,
+   "provisorio": true
   },
   "movel_planta": {
    "category": "furniture",
@@ -407,7 +449,8 @@
     1
    ],
    "price": 8000,
-   "label": "Planta"
+   "label": "Planta",
+   "provisorio": true
   },
   "movel_candeeiro": {
    "category": "furniture",
@@ -424,7 +467,8 @@
     1
    ],
    "price": 15000,
-   "label": "Candeeiro"
+   "label": "Candeeiro",
+   "provisorio": true
   },
   "interior_sala": {
    "category": "room",
@@ -439,18 +483,19 @@
    "footprint": [
     8,
     7
-   ]
+   ],
+   "provisorio": true
   }
  },
  "characters": {
   "homem": {
    "name": "Kiala",
    "frame_size": [
-    178,
+    164,
     375
    ],
    "anchor": [
-    89,
+    82,
     367
    ],
    "anims": {
@@ -458,24 +503,26 @@
      "file": "homem_down.png",
      "frames": 9,
      "idle_frame": 0,
-     "walk_from": 1
+     "walk_from": 1,
+     "stride_m": 0.375
     },
     "up": {
      "file": "homem_up.png",
      "frames": 9,
      "idle_frame": 0,
-     "walk_from": 1
+     "walk_from": 1,
+     "stride_m": 0.949
     }
    }
   },
   "mulher": {
    "name": "Nzinga",
    "frame_size": [
-    166,
+    155,
     375
    ],
    "anchor": [
-    83,
+    77,
     367
    ],
    "anims": {
@@ -483,13 +530,15 @@
      "file": "mulher_down.png",
      "frames": 9,
      "idle_frame": 0,
-     "walk_from": 1
+     "walk_from": 1,
+     "stride_m": 0.527
     },
     "up": {
      "file": "mulher_up.png",
      "frames": 9,
      "idle_frame": 0,
-     "walk_from": 1
+     "walk_from": 1,
+     "stride_m": 0.465
     }
    }
   }

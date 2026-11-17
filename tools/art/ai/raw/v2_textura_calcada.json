@@ -1,0 +1,34 @@
+{
+ "spec": {
+  "id": "v2_textura_calcada",
+  "kind": "texture",
+  "size": "1024x1024",
+  "refs": [
+   "huambo.jpg"
+  ],
+  "prompt": "Top-down seamless tileable texture of the light sidewalk paving seen in the reference photo of Huambo (light beige concrete paving blocks, slightly dusty and worn).",
+  "background": "opaque"
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "Top-down seamless tileable texture of the light sidewalk paving seen in the reference photo of Huambo (light beige concrete paving blocks, slightly dusty and worn).\nFlat top-down texture filling the entire square image edge to edge, seamless and tileable, no perspective, no vignette, no border.\nAbsolutely no buildings, no people, no vehicles, no city, no perspective: only the material surface seen straight from above, filling the whole image.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "opaque",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 873,
+  "input_tokens_details": {
+   "image_tokens": 768,
+   "text_tokens": 105
+  },
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "image_tokens": 1756,
+   "text_tokens": 0
+  },
+  "total_tokens": 2629
+ }
+}

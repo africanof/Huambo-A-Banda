@@ -6,8 +6,12 @@ extends Node2D
 
 signal moved(world_pos: Vector2)
 
-const WALK_SPEED := 3.2 ## m/s
-const RUN_SPEED := 6.0
+## Root motion: a velocidade vem da própria animação. A passada de cada folha (metros que o
+## pé assente "empurra" num ciclo de 8 frames) é medida na arte por build_assets.py; o corpo
+## avança exatamente isso por ciclo → os pés ficam presos ao chão, sem deslizar.
+const CADENCE_WALK := 2.0 ## ciclos de marcha por segundo (passo natural)
+const CADENCE_RUN := 3.0
+const BASE_FPS := 11.0 ## fps definidos nas SpriteFrames
 const RADIUS := 0.35 ## m (colisão)
 
 ## Matiz original da peça de cima de cada personagem (para a personalização).
@@ -79,20 +83,32 @@ func set_top_hue(hue: Variant) -> void:
 
 
 func step(dir_world: Vector2, delta: float) -> void:
-	_moving = dir_world != Vector2.ZERO
-	if _moving:
-		var v := dir_world.normalized() * (RUN_SPEED if running else WALK_SPEED) * delta
+	var before := world_pos
+	var cadence := CADENCE_RUN if running else CADENCE_WALK
+	if dir_world != Vector2.ZERO:
+		var v := dir_world.normalized() * stride_for(dir_world) * cadence * delta
 		_try_move(v)
-		var s := Iso.to_screen(dir_world)
+	# só "anda" se de facto saiu do sítio (encostado a uma parede fica parado)
+	var dist := world_pos.distance_to(before)
+	_moving = dist > 0.0001
+	if _moving:
+		var s := Iso.to_screen(world_pos - before)
 		if absf(s.y) > 0.01:
 			facing_up = s.y < 0
 		if absf(s.x) > 0.01:
 			facing_left = s.x < 0
-	body.speed_scale = 1.6 if running else 1.0
+	body.speed_scale = cadence * 8.0 / BASE_FPS if _moving else 1.0
 	_update_anim()
 	position = Iso.to_screen(world_pos)
 	if _moving:
 		moved.emit(world_pos)
+
+
+## Passada (m por ciclo) da folha que vai ser usada para esta direção.
+func stride_for(dir_world: Vector2) -> float:
+	var up := Iso.to_screen(dir_world).y < -0.01 or (absf(Iso.to_screen(dir_world).y) <= 0.01 and facing_up)
+	var a: Dictionary = DemoAssets.manifest().characters[cid].anims["up" if up else "down"]
+	return float(a.get("stride_m", 0.5))
 
 
 func _try_move(v: Vector2) -> void:

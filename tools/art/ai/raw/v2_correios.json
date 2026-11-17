@@ -1,0 +1,33 @@
+{
+ "spec": {
+  "id": "v2_correios",
+  "kind": "building",
+  "size": "1024x1024",
+  "refs": [
+   "Huambo_central_Post_Office.jpg"
+  ],
+  "prompt": "Recreate the REAL post office building of Huambo shown in the reference photo as an isometric game asset, faithful to its architecture, proportions, materials and colors: two-story salmon-pink facade, ground-floor arcade of round arches on thick cream/white square columns, upper floor with tall windows and iron balconies, a red horizontal band above the arcade with the word CORREIOS in white (no logo), terracotta roof. Show its weathering as in the photo."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSingle isolated building game asset viewed from the isometric camera, the whole building visible including roof and base, both visible facades (front-left and front-right) detailed. Transparent background, no ground tiles, no street, no people, no text other than shop signs explicitly requested.\nRecreate the REAL post office building of Huambo shown in the reference photo as an isometric game asset, faithful to its architecture, proportions, materials and colors: two-story salmon-pink facade, ground-floor arcade of round arches on thick cream/white square columns, upper floor with tall windows and iron balconies, a red horizontal band above the arcade with the word CORREIOS in white (no logo), terracotta roof. Show its weathering as in the photo.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "1024x1024",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1055,
+  "input_tokens_details": {
+   "image_tokens": 704,
+   "text_tokens": 351
+  },
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "image_tokens": 1756,
+   "text_tokens": 0
+  },
+  "total_tokens": 2811
+ }
+}

@@ -16,19 +16,22 @@ const BUILDINGS := [
 	{"id": "correios", "at": Vector2(2, 6)},
 	{"id": "casa_colonial", "at": Vector2(15, 6)},
 	{"id": "cantina", "at": Vector2(35, 9)},
-	{"id": "predio_60", "at": Vector2(44, 3)},
-	{"id": "padaria", "at": Vector2(5, 34)},
-	{"id": "predio_60", "at": Vector2(44, 35), "label": "Prédio Kuito"},
+	{"id": "predio_60", "at": Vector2(46, 6)},
+	{"id": "governo", "at": Vector2(2, 34)},
+	{"id": "padaria", "at": Vector2(21, 35)},
+	{"id": "predio_60", "at": Vector2(47, 36), "label": "Prédio Kuito"},
 ]
+## Adereços, todos gerados a partir de fotografias reais do Huambo (ver tools/art/ai/refs/REFERENCIAS.md)
 const PROPS := [
-	["arvore_eucalipto", Vector2(1.5, 17.5)], ["arvore_eucalipto", Vector2(13.5, 17)], ["arvore_mulemba", Vector2(33, 16.5)],
-	["arvore_eucalipto", Vector2(42.5, 17.3)], ["arvore_eucalipto", Vector2(58, 17.6)], ["arvore_mulemba", Vector2(20, 38)],
-	["arvore_eucalipto", Vector2(36, 41)], ["arvore_mulemba", Vector2(60, 30.5)], ["arvore_eucalipto", Vector2(26, 46)],
-	["buganvilia", Vector2(14.3, 15)], ["buganvilia", Vector2(26, 15)], ["buganvilia", Vector2(12.5, 40)],
+	["obelisco", Vector2(36.5, 41.5)],
+	["jacaranda", Vector2(1.5, 17.6)], ["jacaranda", Vector2(13.4, 17.4)], ["arvore_eucalipto", Vector2(33.4, 16.8)],
+	["jacaranda", Vector2(43.5, 17.4)], ["arvore_eucalipto", Vector2(58.5, 17.6)],
+	["palmeira", Vector2(6, 30.6)], ["palmeira", Vector2(18, 30.6)], ["palmeira", Vector2(40, 30.6)], ["palmeira", Vector2(54, 30.6)],
+	["jacaranda", Vector2(31.5, 37.5)], ["arvore_eucalipto", Vector2(41.5, 45.5)], ["palmeira", Vector2(33, 44.5)], ["palmeira", Vector2(40.5, 38.5)],
 	["candeeiro", Vector2(8, 19.4)], ["candeeiro", Vector2(22, 19.4)], ["candeeiro", Vector2(38, 19.4)], ["candeeiro", Vector2(52, 19.4)],
-	["candeeiro", Vector2(14, 28.6)], ["candeeiro", Vector2(34, 28.6)], ["candeeiro", Vector2(48, 28.6)],
-	["kupapata", Vector2(33.5, 20.6)], ["kupapata", Vector2(27, 29.8)],
-	["banco_jardim", Vector2(40, 30.8)], ["bancada_zungueira", Vector2(22.5, 30.4)],
+	["candeeiro", Vector2(12, 28.6)], ["candeeiro", Vector2(30, 28.6)], ["candeeiro", Vector2(48, 28.6)],
+	["kupapata", Vector2(33.5, 20.6)], ["kupapata", Vector2(27, 29.8)], ["kupapata", Vector2(26, 29.3)],
+	["bancada_zungueira", Vector2(23.5, 30.6)],
 ]
 const DOOR := Vector2(20.0, 14.8) ## porta da casa (lado da avenida)
 
@@ -105,7 +108,7 @@ func _build_ground() -> void:
 				kind = "calcada"
 			elif x >= 28 and x < 32:
 				kind = "terra"
-			elif (y < 16 and x >= 12 and x < 28) or (y >= 32 and x < 20):
+			elif (y < 16 and x >= 12 and x < 28) or (y >= 32 and x >= 32 and x < 44):
 				kind = "relva"
 			ground.set_cell(Vector2i(i, j), 0, Vector2i(idx.call(kind), 0))
 	# alinha o centro do tile (0,0) com o centro do quadrado de 4 m (2, 2) do mundo
