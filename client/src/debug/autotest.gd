@@ -26,17 +26,30 @@ func _run() -> void:
 
 	var world: Node = await _wait_for(func() -> Variant:
 		var s := tree.current_scene
-		return s if s and s.name == "World" and s.local_char != null else null)
-	print("[autotest] no mundo como eid=%d em %s" % [Net.self_id, world.local_char.position])
+		return s if s and s.name in ["World", "BairroWorld"] and s.local_char != null else null)
+	var bairro: bool = world.name == "BairroWorld"
+	var me0: Dictionary = await _wait_for(func() -> Variant: return Net.entities.get(Net.self_id))
+	var start: Vector2 = me0.pos
+	print("[autotest] no mundo (%s) como eid=%d em %s" % [world.name, Net.self_id, start])
 
 	# Escolhe um destino caminhável perto e pede para andar.
-	var start: Vector2 = world.local_char.position
 	var target: Variant = null
 	for off: Vector2 in [Vector2(120, 0), Vector2(-120, 0), Vector2(0, 120), Vector2(0, -120)]:
-		target = Movement.sanitize_target(world.map, start.x + off.x, start.y + off.y)
-		if target != null:
-			break
-	world.request_move(target)
+		if bairro:
+			var t_m: Vector2 = (start + off) / 100.0
+			var free := true
+			for r: Rect2 in world.view.obstacles:
+				if r.grow(0.4).has_point(t_m):
+					free = false
+			if free:
+				target = start + off
+				world.request_move(t_m)
+				break
+		else:
+			target = Movement.sanitize_target(world.map, start.x + off.x, start.y + off.y)
+			if target != null:
+				world.request_move(target)
+				break
 
 	# Confirmação AUTORITATIVA: a posição vem dos snapshots do servidor.
 	await _wait_for(func() -> Variant:
@@ -46,8 +59,8 @@ func _run() -> void:
 
 	var peers := int(AppConfig.args.get("expect-peers", "1"))
 	if peers > 1:
-		await _wait_for(func() -> Variant: return true if world.characters.size() >= peers else null)
-		print("[autotest] vejo %d jogadores" % world.characters.size())
+		await _wait_for(func() -> Variant: return true if (world.avatars.size() if bairro else world.characters.size()) >= peers else null)
+		print("[autotest] vejo %d jogadores" % (world.avatars.size() if bairro else world.characters.size()))
 		# Fica mais um pouco para os outros clientes também nos verem.
 		await tree.create_timer(3.0).timeout
 

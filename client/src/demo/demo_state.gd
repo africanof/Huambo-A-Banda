@@ -10,6 +10,7 @@ static var top_hue: Variant = null
 static var zoom := 0.42
 static var time_min := 10.0 * 60.0
 static var return_pos := Vector2.ZERO
+static var return_scene := "res://src/demo/bairro_demo.tscn"
 static var wallet := 350000 ## Kz (dinheiro de jogo)
 static var furniture: Array = [] ## [{id, x, y, flip}]
 static var _loaded := false

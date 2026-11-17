@@ -50,7 +50,7 @@ export class DistrictRoom extends Room {
   private persistTimer: NodeJS.Timeout | undefined;
   private readonly players = new Map<number, Player>();
   private readonly byUser = new Map<string, Player>();
-  private readonly grid = new SpatialGrid(AOI_CELL);
+  private grid = new SpatialGrid(AOI_CELL);
   private readonly movedThisWindow = new Set<number>();
   private readonly scratch = new Set<number>();
   private nextEid = 1;
@@ -77,6 +77,7 @@ export class DistrictRoom extends Room {
     const district = getDistrict(options.district);
     if (!district) throw new ServerError(ErrorCodes.INVALID_DISTRICT, "unknown district");
     this.district = district;
+    this.grid = new SpatialGrid(district.aoiCell ?? AOI_CELL);
 
     const { env } = services();
     this.maxClients = env.ROOM_MAX_CLIENTS;

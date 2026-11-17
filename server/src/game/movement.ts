@@ -51,19 +51,21 @@ export function isWalkable(d: District, x: number, y: number): boolean {
     for (const [ox, oy] of FOOT) if (cellBlocked(d.grid, x + ox, y + oy)) return false;
     return true;
   }
-  if (x < PLAYER_RADIUS || y < PLAYER_RADIUS || x > d.width - PLAYER_RADIUS || y > d.height - PLAYER_RADIUS) {
+  const rad = d.radius ?? PLAYER_RADIUS;
+  if (x < rad || y < rad || x > d.width - rad || y > d.height - rad) {
     return false;
   }
   for (const r of d.obstacles) {
-    if (pointInRect(x, y, r, PLAYER_RADIUS)) return false;
+    if (pointInRect(x, y, r, rad)) return false;
   }
   return true;
 }
 
 /** Ajusta um destino pedido pelo cliente aos limites do mapa. Devolve null se for inválido. */
 export function sanitizeTarget(d: District, x: number, y: number): { x: number; y: number } | null {
-  const cx = Math.min(Math.max(x, PLAYER_RADIUS), d.width - PLAYER_RADIUS);
-  const cy = Math.min(Math.max(y, PLAYER_RADIUS), d.height - PLAYER_RADIUS);
+  const rad = d.radius ?? PLAYER_RADIUS;
+  const cx = Math.min(Math.max(x, rad), d.width - rad);
+  const cy = Math.min(Math.max(y, rad), d.height - rad);
   if (!isWalkable(d, cx, cy)) return null;
   return { x: cx, y: cy };
 }

@@ -1,7 +1,7 @@
 extends Control
 ## Ecrã de entrada: convidado ou conta Supabase, e escolha do bairro.
 
-const DISTRICTS := [["huambo_centro", "Huambo — Centro"]]
+const DISTRICTS := [["cidade_baixa", "Cidade Baixa"], ["huambo_centro", "Huambo — mapa completo (protótipo)"]]
 
 @onready var name_edit: LineEdit = %NameEdit
 @onready var district_option: OptionButton = %DistrictOption
@@ -64,7 +64,10 @@ func _run(auth_step: Callable) -> void:
 	if err != "":
 		_set_busy(false, err)
 		return
-	get_tree().change_scene_to_file("res://src/world/world.tscn")
+	if Net.welcome.is_empty():
+		await Net.welcomed
+	var map_id := str(Net.welcome.get("district", {}).get("map", {}).get("id", ""))
+	get_tree().change_scene_to_file("res://src/game/bairro_world.tscn" if map_id.begins_with("bairro:") else "res://src/world/world.tscn")
 
 
 func _set_busy(busy: bool, text: String) -> void:

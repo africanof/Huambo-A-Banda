@@ -25,6 +25,18 @@ export interface Spawn {
   y: number;
 }
 
+/** Lugar interativo do bairro (comer, trabalhar, casa, dormir…), em unidades do mapa. */
+export interface Place {
+  id: string;
+  name: string;
+  kind: "food" | "work" | "home" | "sleep";
+  x: number;
+  y: number;
+  radius: number;
+  job?: string;
+  shop?: string;
+}
+
 export interface District {
   id: string;
   name: string;
@@ -36,6 +48,11 @@ export interface District {
   spawnRadius: number;
   obstacles: Rect[];
   grid?: Grid;
+  /** raio do corpo para colisões (unidades do mapa); omisso = PLAYER_RADIUS */
+  radius?: number;
+  /** célula da grelha de área de interesse (unidades do mapa); omisso = 400 */
+  aoiCell?: number;
+  places?: Place[];
   /** identificação do ficheiro de mapa que o cliente tem de ter (mapas de grelha) */
   map?: { id: string; version: string };
 }
@@ -53,7 +70,7 @@ interface MapFile {
 const registry = new Map<string, District>();
 let defaultsLoaded = false;
 
-export const DEFAULT_DISTRICT = "huambo_centro";
+export const DEFAULT_DISTRICT = "cidade_baixa";
 
 export function registerDistrict(d: District): void {
   registry.set(d.id, d);
@@ -78,10 +95,44 @@ export function loadMapDistrict(path: string | URL, speed = 150): District {
   };
 }
 
+interface BairroFile {
+  id: string;
+  name: string;
+  version: string;
+  size: [number, number];
+  obstacles: Array<[number, number, number, number]>;
+  spawns: Array<{ id: string; name: string; at: [number, number] }>;
+  places: Array<{ id: string; name: string; kind: Place["kind"]; at: [number, number]; radius: number; job?: string; shop?: string }>;
+}
+
+/** Unidades dos bairros HD: centímetros (o ficheiro está em metros). */
+export const BAIRRO_UNIT = 100;
+
+/** Carrega um bairro HD isométrico (tools/bairros → server/data/bairros). */
+export function loadBairroDistrict(path: string | URL): District {
+  const raw = JSON.parse(readFileSync(path, "utf8")) as BairroFile;
+  const u = BAIRRO_UNIT;
+  return {
+    id: raw.id,
+    name: raw.name,
+    width: raw.size[0] * u,
+    height: raw.size[1] * u,
+    speed: 1.5 * u,
+    radius: 0.35 * u,
+    aoiCell: 12 * u,
+    spawns: raw.spawns.map((s) => ({ id: s.id, name: s.name, x: s.at[0] * u, y: s.at[1] * u })),
+    spawnRadius: 1.5 * u,
+    obstacles: raw.obstacles.map((r) => [r[0] * u, r[1] * u, r[2] * u, r[3] * u] as Rect),
+    places: raw.places.map((p) => ({ id: p.id, name: p.name, kind: p.kind, x: p.at[0] * u, y: p.at[1] * u, radius: p.radius * u, job: p.job, shop: p.shop })),
+    map: { id: "bairro:" + raw.id, version: raw.version },
+  };
+}
+
 function ensureDefaults(): void {
   if (defaultsLoaded) return;
   defaultsLoaded = true;
   registerDistrict(loadMapDistrict(new URL("../../data/maps/huambo_centro.json", import.meta.url)));
+  registerDistrict(loadBairroDistrict(new URL("../../data/bairros/cidade_baixa.json", import.meta.url)));
 }
 
 export function getDistrict(id: string): District | undefined {

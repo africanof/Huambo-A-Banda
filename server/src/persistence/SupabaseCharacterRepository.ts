@@ -6,7 +6,7 @@ interface CharacterRow {
   id: string;
   owner_id: string;
   name: string;
-  appearance: { body?: number; shirt?: number; hair?: number; pants?: number } | null;
+  appearance: { body?: number; shirt?: number; hair?: number; pants?: number; model?: number; top?: number } | null;
   last_district: string | null;
   pos_x: number | null;
   pos_y: number | null;
@@ -96,6 +96,8 @@ function toRecord(r: CharacterRow): CharacterRecord {
       shirt: r.appearance?.shirt ?? fallback.shirt,
       hair: r.appearance?.hair ?? fallback.hair,
       pants: r.appearance?.pants ?? fallback.pants,
+      model: r.appearance?.model ?? fallback.model,
+      top: r.appearance?.top ?? fallback.top,
     },
     district: r.last_district,
     x: r.pos_x,

@@ -64,6 +64,10 @@ export const AppearanceSchema = z
     shirt: z.number().int().min(0).max(9),
     hair: z.number().int().min(0).max(5).default(0),
     pants: z.number().int().min(0).max(5).default(0),
+    /** modelo HD: 0 = homem, 1 = mulher */
+    model: z.number().int().min(0).max(1).default(0),
+    /** cor da peça de cima (matiz 0..359); -1 = original */
+    top: z.number().int().min(-1).max(359).default(-1),
   })
   .strip();
 
@@ -84,6 +88,8 @@ export interface Appearance {
   shirt: number; // cor da camisola
   hair?: number; // cor do cabelo
   pants?: number; // cor das calças
+  model?: number; // 0 homem, 1 mulher (personagens HD)
+  top?: number; // matiz da peça de cima, -1 original
 }
 
 /** [id, nome, x, y, aparência] */

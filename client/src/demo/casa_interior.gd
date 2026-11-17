@@ -294,7 +294,7 @@ func _build_ui() -> void:
 	exit.add_theme_color_override("font_color", Color("2a1d10"))
 	exit.add_theme_stylebox_override("normal", DemoHud._pill(Color(0.95, 0.72, 0.18), 22))
 	exit.focus_mode = Control.FOCUS_NONE
-	exit.pressed.connect(func() -> void: get_tree().change_scene_to_file("res://src/demo/bairro_demo.tscn"))
+	exit.pressed.connect(func() -> void: get_tree().change_scene_to_file(DemoState.return_scene))
 	v.add_child(exit)
 	info_label.add_theme_font_override("font", DemoHud.FONT)
 	info_label.add_theme_font_size_override("font_size", 15)

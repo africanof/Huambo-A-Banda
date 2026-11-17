@@ -23,6 +23,8 @@ var facing_up := false
 var facing_left := false
 var running := false
 var obstacles: Array[Rect2] = [] ## pegadas no mundo (m)
+## > 0: velocidade fixa (m/s) imposta pelo servidor; a cadência dos passos acompanha-a.
+var fixed_speed := 0.0
 var bounds := Rect2(0, 0, 64, 48)
 
 var body := AnimatedSprite2D.new()
@@ -86,7 +88,8 @@ func step(dir_world: Vector2, delta: float) -> void:
 	var before := world_pos
 	var cadence := CADENCE_RUN if running else CADENCE_WALK
 	if dir_world != Vector2.ZERO:
-		var v := dir_world.normalized() * stride_for(dir_world) * cadence * delta
+		var spd := fixed_speed * (1.0 if not running else 1.0) if fixed_speed > 0.0 else stride_for(dir_world) * cadence
+		var v := dir_world.normalized() * spd * delta
 		_try_move(v)
 	# só "anda" se de facto saiu do sítio (encostado a uma parede fica parado)
 	var dist := world_pos.distance_to(before)
@@ -97,11 +100,33 @@ func step(dir_world: Vector2, delta: float) -> void:
 			facing_up = s.y < 0
 		if absf(s.x) > 0.01:
 			facing_left = s.x < 0
+	if fixed_speed > 0.0 and _moving:
+		cadence = (dist / maxf(delta, 0.0001)) / stride_for(world_pos - before)
 	body.speed_scale = cadence * 8.0 / BASE_FPS if _moving else 1.0
 	_update_anim()
 	position = Iso.to_screen(world_pos)
 	if _moving:
 		moved.emit(world_pos)
+
+
+## Personagem de outro jogador: a posição vem da rede (interpolada); a animação segue o deslocamento real.
+func drive(new_pos: Vector2, delta: float) -> void:
+	var d := new_pos - world_pos
+	var dist := d.length()
+	world_pos = new_pos
+	_moving = dist > 0.002
+	if _moving:
+		var s := Iso.to_screen(d)
+		if absf(s.y) > 0.01:
+			facing_up = s.y < 0
+		if absf(s.x) > 0.01:
+			facing_left = s.x < 0
+		var cadence := (dist / maxf(delta, 0.0001)) / stride_for(d)
+		body.speed_scale = clampf(cadence, 0.5, 4.0) * 8.0 / BASE_FPS
+	else:
+		body.speed_scale = 1.0
+	_update_anim()
+	position = Iso.to_screen(world_pos)
 
 
 ## Passada (m por ciclo) da folha que vai ser usada para esta direção.

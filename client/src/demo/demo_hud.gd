@@ -10,6 +10,10 @@ const FONT_BOLD := preload("res://assets/fonts/Inter-Bold.otf")
 
 var clock := Label.new()
 var door_btn: Button
+## Botões do painel direito: [id, texto, ícone]. O jogo em rede usa um conjunto próprio.
+var button_specs: Array = [["personagem", "Trocar personagem", "person"], ["cor", "Cor da roupa", "shirt"],
+	["tempo", "Dia / Noite", "sun"], ["zoom_mais", "Aproximar", "plus"], ["zoom_menos", "Afastar", "minus"]]
+var place_text := "Cidade Baixa"
 
 
 func _ready() -> void:
@@ -39,8 +43,7 @@ func _ready() -> void:
 	right.offset_right = -16
 	right.offset_top = 14
 	add_child(right)
-	for b: Array in [["personagem", "Trocar personagem", "person"], ["cor", "Cor da roupa", "shirt"],
-			["tempo", "Dia / Noite", "sun"], ["zoom_mais", "Aproximar", "plus"], ["zoom_menos", "Afastar", "minus"]]:
+	for b: Array in button_specs:
 		right.add_child(_button(b[0], b[1], b[2], Color(0.08, 0.07, 0.07, 0.82), Color.WHITE))
 
 	door_btn = _button("entrar", "Entrar em casa  (E)", "home", Color(0.95, 0.72, 0.18, 0.97), Color("2a1d10"))
@@ -73,7 +76,7 @@ func set_clock(minutes: float) -> void:
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
 	var icon := "☀" if h >= 6 and h < 18 else "☾"
-	clock.text = "%s  Cidade Baixa · %02d:%02d   ·   %s Kz" % [icon, h, m, _money(DemoState.wallet)]
+	clock.text = "%s  %s · %02d:%02d   ·   %s Kz" % [icon, place_text, h, m, _money(DemoState.wallet)]
 
 
 func set_door_visible(v: bool) -> void:
