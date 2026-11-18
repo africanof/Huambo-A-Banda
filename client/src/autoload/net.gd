@@ -87,6 +87,12 @@ func action(a: String, item: String = "", n: int = 0) -> void:
 		room.send(Protocol.C2S_ACTION, msg)
 
 
+## Viajar para outro bairro com um meio de transporte (candongueiro, kupapata, táxi).
+func action_travel(district: String, how: String) -> void:
+	if room:
+		room.send(Protocol.C2S_ACTION, {"a": "travel", "i": district, "t": how})
+
+
 func move_to(world_pos: Vector2) -> void:
 	if room:
 		room.send(Protocol.C2S_MOVE_TO, {"x": roundi(world_pos.x), "y": roundi(world_pos.y)})

@@ -137,3 +137,20 @@ describe("cidade ligada a pé (ruas reais)", () => {
     expect(selves.get(a)!.travel).toMatchObject({ district: portal.to, onFoot: true, from: "cidade_alta" });
   });
 });
+
+describe("meios de transporte", () => {
+  it("kupapata e táxi custam mais do que o candongueiro e dizem quanto tempo dura a viagem", async () => {
+    const wallets = new MemoryWalletRepository();
+    const selves = new Map<LifeActor, SelfState>();
+    const ca = getDistrict("cidade_alta")!;
+    const life = new LifeController(ca, wallets, { self: (a, s) => selves.set(a, s), toast: () => {} }, () => Date.UTC(2026, 10, 18), () => 0.6);
+    const a: LifeActor = { characterId: "mem-t", x: ca.spawns[0]!.x, y: ca.spawns[0]!.y };
+    await life.join(a, null);
+    const m0 = selves.get(a)!.money;
+    await life.handle(a, { a: "travel", i: "xipuli", t: "taxi" });
+    expect(selves.get(a)!.money).toBe(m0 - 1500);
+    expect(selves.get(a)!.travel).toMatchObject({ district: "xipuli", by: "taxi", seconds: 9 });
+    await life.handle(a, { a: "travel", i: "lossambo", t: "kupapata" });
+    expect(selves.get(a)!.money).toBe(m0 - 2000);
+  });
+});

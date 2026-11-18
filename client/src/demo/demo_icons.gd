@@ -47,6 +47,29 @@ static func make(kind: String, color: Color, out := OUT) -> Texture2D:
 			_rect(img, Rect2(22, 30, 52, 58), c)
 			_rect(img, Rect2(14, 18, 68, 8), c)
 			_rect(img, Rect2(38, 8, 20, 10), c)
+		"rotate":
+			_ring(img, Vector2(48, 50), 30, 10, c)
+			for y in range(50, 82):
+				for x in range(14, 82):
+					var d := Vector2(x, y).distance_to(Vector2(48, 50))
+					if absf(d - 30) <= 5 and x > 48:
+						_px(img, x, y, c)
+			_poly(img, [Vector2(4, 50), Vector2(32, 50), Vector2(18, 70)], c)
+		"eye":
+			_ellipse(img, Vector2(48, 48), 42, 24, c)
+			_ellipse(img, Vector2(48, 48), 34, 17, Color(0, 0, 0, 0))
+			_circle(img, Vector2(48, 48), 14, c)
+		"target":
+			_ring(img, Vector2(48, 48), 30, 8, c)
+			for y in range(48, 80):
+				for x in range(10, 88):
+					if absf(Vector2(x, y).distance_to(Vector2(48, 48)) - 30) <= 4:
+						_px(img, x, y, c)
+			_circle(img, Vector2(48, 48), 10, c)
+			_rect(img, Rect2(44, 4, 8, 14), c)
+			_rect(img, Rect2(44, 78, 8, 14), c)
+			_rect(img, Rect2(4, 44, 14, 8), c)
+			_rect(img, Rect2(78, 44, 14, 8), c)
 		"pin":
 			_circle(img, Vector2(48, 36), 28, c)
 			_poly(img, [Vector2(24, 50), Vector2(72, 50), Vector2(48, 92)], c)

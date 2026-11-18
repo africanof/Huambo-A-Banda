@@ -1,0 +1,917 @@
+{
+ "id": "kit_viagens",
+ "cuts": "raw/kit_viagens_cut",
+ "scale": 1.0,
+ "items": [
+  {
+   "n": 1,
+   "id": "via_veiculo_candongueiro",
+   "cat": "frame",
+   "fp": [
+    1,
+    1
+   ],
+   "kind": "candongueiro"
+  },
+  {
+   "n": 3,
+   "id": "via_veiculo_taxi",
+   "cat": "frame",
+   "fp": [
+    1,
+    1
+   ],
+   "kind": "taxi"
+  },
+  {
+   "n": 4,
+   "id": "via_veiculo_kupapata",
+   "cat": "frame",
+   "fp": [
+    1,
+    1
+   ],
+   "kind": "kupapata"
+  },
+  {
+   "n": 5,
+   "id": "via_veiculo_autocarro",
+   "cat": "frame",
+   "fp": [
+    1,
+    1
+   ],
+   "kind": "autocarro"
+  },
+  {
+   "n": 6,
+   "id": "via_veiculo_carro",
+   "cat": "frame",
+   "fp": [
+    1,
+    1
+   ],
+   "kind": "carro"
+  },
+  {
+   "n": 7,
+   "id": "via_facade1",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 8,
+   "id": "via_facade2",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 9,
+   "id": "via_facade3",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 10,
+   "id": "via_facade4",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 11,
+   "id": "via_facade5",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 12,
+   "id": "via_facade6",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 44,
+   "id": "via_facade7",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 45,
+   "id": "via_facade8",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 46,
+   "id": "via_facade9",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 47,
+   "id": "via_facade10",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 48,
+   "id": "via_facade11",
+   "cat": "roadside",
+   "kind": "facade",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 13,
+   "id": "via_tree1",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 14,
+   "id": "via_tree2",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 15,
+   "id": "via_tree3",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 16,
+   "id": "via_tree4",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 31,
+   "id": "via_tree5",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 32,
+   "id": "via_tree6",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 33,
+   "id": "via_tree7",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 34,
+   "id": "via_tree8",
+   "cat": "roadside",
+   "kind": "tree",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 17,
+   "id": "via_billboard1",
+   "cat": "roadside",
+   "kind": "billboard",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 18,
+   "id": "via_billboard2",
+   "cat": "roadside",
+   "kind": "billboard",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 19,
+   "id": "via_lamp1",
+   "cat": "roadside",
+   "kind": "lamp",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 20,
+   "id": "via_lamp2",
+   "cat": "roadside",
+   "kind": "lamp",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 21,
+   "id": "via_sign1",
+   "cat": "roadside",
+   "kind": "sign",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 22,
+   "id": "via_sign2",
+   "cat": "roadside",
+   "kind": "sign",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 23,
+   "id": "via_stop1",
+   "cat": "roadside",
+   "kind": "stop",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 24,
+   "id": "via_person1",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 25,
+   "id": "via_person2",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 26,
+   "id": "via_person3",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 27,
+   "id": "via_person4",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 28,
+   "id": "via_person5",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 29,
+   "id": "via_person6",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 30,
+   "id": "via_person7",
+   "cat": "roadside",
+   "kind": "person",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 37,
+   "id": "via_car1",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 38,
+   "id": "via_car2",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 39,
+   "id": "via_car3",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 40,
+   "id": "via_car4",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 49,
+   "id": "via_car5",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 50,
+   "id": "via_car6",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 41,
+   "id": "via_car7",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 42,
+   "id": "via_car8",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 43,
+   "id": "via_car9",
+   "cat": "roadside",
+   "kind": "car",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 51,
+   "id": "via_stall1",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 52,
+   "id": "via_stall2",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 53,
+   "id": "via_stall3",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 54,
+   "id": "via_stall4",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 77,
+   "id": "via_stall5",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 78,
+   "id": "via_stall6",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 79,
+   "id": "via_stall7",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 80,
+   "id": "via_stall8",
+   "cat": "roadside",
+   "kind": "stall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 55,
+   "id": "via_pole1",
+   "cat": "roadside",
+   "kind": "pole",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 56,
+   "id": "via_pole2",
+   "cat": "roadside",
+   "kind": "pole",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 57,
+   "id": "via_pole3",
+   "cat": "roadside",
+   "kind": "pole",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 58,
+   "id": "via_pole4",
+   "cat": "roadside",
+   "kind": "pole",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 59,
+   "id": "via_wall1",
+   "cat": "roadside",
+   "kind": "wall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 60,
+   "id": "via_wall2",
+   "cat": "roadside",
+   "kind": "wall",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 61,
+   "id": "via_kiosk1",
+   "cat": "roadside",
+   "kind": "kiosk",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 62,
+   "id": "via_kiosk2",
+   "cat": "roadside",
+   "kind": "kiosk",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 63,
+   "id": "via_kiosk3",
+   "cat": "roadside",
+   "kind": "kiosk",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 64,
+   "id": "via_small1",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 65,
+   "id": "via_small2",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 66,
+   "id": "via_small3",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 67,
+   "id": "via_small4",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 68,
+   "id": "via_small5",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 69,
+   "id": "via_small6",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 70,
+   "id": "via_small7",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 71,
+   "id": "via_small8",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 72,
+   "id": "via_small9",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 73,
+   "id": "via_small10",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 74,
+   "id": "via_small11",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 75,
+   "id": "via_small12",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 76,
+   "id": "via_small13",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 81,
+   "id": "via_small14",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 82,
+   "id": "via_small15",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 83,
+   "id": "via_small16",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 84,
+   "id": "via_small17",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 85,
+   "id": "via_small18",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 86,
+   "id": "via_small19",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 87,
+   "id": "via_small20",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 88,
+   "id": "via_small21",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 89,
+   "id": "via_small22",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 90,
+   "id": "via_small23",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 91,
+   "id": "via_small24",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 92,
+   "id": "via_small25",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 93,
+   "id": "via_small26",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 94,
+   "id": "via_small27",
+   "cat": "roadside",
+   "kind": "small",
+   "fp": [
+    1,
+    1
+   ]
+  }
+ ]
+}

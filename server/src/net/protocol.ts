@@ -93,6 +93,8 @@ export const ActionSchema = z
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */
     n: z.number().int().min(1).max(1_000_000_000).optional(),
+    /** meio de transporte (viagens) */
+    t: z.enum(["candongueiro", "kupapata", "taxi"]).optional(),
   })
   .strict();
 export type ActionMessage = z.infer<typeof ActionSchema>;

@@ -118,6 +118,14 @@ export function rentPrice(perDay: number, days: number): number {
 /** Bilhete de candongueiro entre bairros (Kz). */
 export const TRAVEL_PRICE = 200;
 
+/** Meios de transporte entre bairros (viagem vista de dentro, como no Vida na Banda). */
+export const TRANSPORTS = [
+  { id: "candongueiro", name: "Candongueiro", price: 200, seconds: 9 },
+  { id: "kupapata", name: "Kupapata", price: 500, seconds: 13 },
+  { id: "taxi", name: "Táxi", price: 1500, seconds: 9 },
+] as const;
+export type TransportId = (typeof TRANSPORTS)[number]["id"];
+
 /** Comer em casa (o que há no frigorífico): barato e sem sair. */
 export const HOME_MEAL = { id: "comida_casa", name: "Refeição em casa", price: 500, hunger: 35 } as const;
 

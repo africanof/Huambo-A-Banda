@@ -70,7 +70,7 @@ jobs:
       - name: Importar projeto
         run: godot --headless --path client --import
       - name: Testes unitários do cliente
-        run: godot --headless --path client -s res://tests/run_tests.gd
+        run: godot --headless --path client -s res://tests/run_tests.gd && godot --headless --path client -s res://tests/check_scripts.gd
       - name: Fixtures atualizadas
         working-directory: server
         run: |

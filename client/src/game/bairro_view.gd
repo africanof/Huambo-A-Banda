@@ -67,7 +67,7 @@ func build(bairro_id: String) -> bool:
 	for b: Dictionary in data.buildings:
 		var fp: Array = b.fp
 		var at := Vector2(b.at[0], b.at[1])
-		var pos := Iso.to_screen(at + Vector2(fp[0], fp[1]))
+		var pos := Iso.to_screen(Iso.front_corner(Rect2(at, Vector2(fp[0], fp[1]))))
 		_add_object(b.id, pos)
 		if str(b.label) != "":
 			var o := DemoAssets.object(b.id)
@@ -166,8 +166,11 @@ func _build_ground() -> void:
 	for i in range(-m0, int(size.x / t) + m0):
 		for j in range(-m0, int(size.y / t) + m0):
 			var gk := str(data.ground[0].kind) if osm else _ground_kind(i * t, j * t)
-			ground.set_cell(Vector2i(i, j), 0, Vector2i(names.find(gk), 0))
-	ground.position = Iso.to_screen(Vector2(t / 2, t / 2)) - ground.map_to_local(Vector2i(0, 0))
+			# com a vista rodada, o mosaico (i, j) vai para a célula rodada (a grelha roda sobre si própria)
+			var rc := Iso.rotate(Vector2(i + 0.5, j + 0.5) * t)
+			ground.set_cell(Vector2i(floori(rc.x / t), floori(rc.y / t)), 0, Vector2i(names.find(gk), 0))
+	# centro da célula (0, 0) no espaço rodado → ecrã (projeção sem rotação)
+	ground.position = Vector2(0, t * Iso.PY) - ground.map_to_local(Vector2i(0, 0))
 
 
 ## Interiores dos edifícios: sala + mobília, cada um na sua posição longe da rua
@@ -177,7 +180,7 @@ func _build_interiors() -> void:
 	for i: Dictionary in interiors:
 		var r: Array = i.rect
 		var room := DemoAssets.make_sprite(str(i.get("room", "interior_sala")))
-		room.position = Iso.to_screen(Vector2(float(r[0]) + float(r[2]), float(r[1]) + float(r[3])))
+		room.position = Iso.to_screen(Iso.front_corner(Rect2(r[0], r[1], r[2], r[3])))
 		room.z_index = -10
 		add_child(room)
 		for f: Dictionary in i.furniture:
@@ -186,7 +189,7 @@ func _build_interiors() -> void:
 				continue
 			var fp := Vector2(o.footprint[0], o.footprint[1])
 			var s := DemoAssets.make_sprite(f.id)
-			s.position = Iso.to_screen(Vector2(f.at[0], f.at[1]) + fp)
+			s.position = Iso.to_screen(Iso.front_corner(Rect2(Vector2(f.at[0], f.at[1]), fp)))
 			if o.get("floor", false):
 				s.z_index = -6
 				add_child(s)
@@ -316,7 +319,7 @@ func _build_surroundings() -> void:
 			var lot := Rect2(x, y, float(fp[0]), float(fp[1]))
 			if not lot.intersects(keep_out) and _lot_free(lot):
 				if rng.randf() < 0.78:
-					_add_object(id, Iso.to_screen(lot.position + lot.size))
+					_add_object(id, Iso.to_screen(Iso.front_corner(lot)))
 				else:
 					_add_object(trees[rng.randi() % trees.size()], Iso.to_screen(lot.get_center()))
 				x += lot.size.x + rng.randf_range(1.0, 3.0)

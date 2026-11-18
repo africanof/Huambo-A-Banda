@@ -138,7 +138,9 @@ func _ready() -> void:
 	right.offset_right = -14
 	right.offset_top = 90
 	add_child(right)
-	right.add_child(_round("pin", "Onde estou", func() -> void: ui_action.emit("centrar")))
+	right.add_child(_round("target", "Seguir personagem", func() -> void: ui_action.emit("centrar")))
+	right.add_child(_round("rotate", "Rodar a vista (R)", func() -> void: ui_action.emit("rodar")))
+	right.add_child(_round("eye", "Ver por cima do ombro / pelos olhos", func() -> void: ui_action.emit("vista3d")))
 	right.add_child(_round("plus", "Aproximar", func() -> void: ui_action.emit("zoom_mais")))
 	right.add_child(_round("minus", "Afastar", func() -> void: ui_action.emit("zoom_menos")))
 	right.add_child(_round("door", "Sair", func() -> void: ui_action.emit("sair")))
@@ -474,8 +476,14 @@ func _go(id: String, walk: bool) -> void:
 	menu_panel.visible = false
 	if walk:
 		ui_action.emit("caminho:" + id)
-	else:
-		Net.action("travel", id)
+		return
+	_panel("Como queres ir?")
+	for tr: Dictionary in catalog.get("transports", [{"id": "candongueiro", "name": "Candongueiro", "price": 200}]):
+		var how := str(tr.id)
+		menu_body.add_child(_button("%s · %s Kz" % [tr.name, DemoHud._money(int(tr.price))], "pin", ACCENT, INK, func() -> void:
+			Net.action_travel(id, how)
+			menu_panel.visible = false))
+	_close_button()
 
 
 func _open_bank() -> void:

@@ -30,6 +30,9 @@ func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color("2a2a2e"))
 	var w := Net.welcome
 	var map_id := str(w.get("district", {}).get("map", {}).get("id", "bairro:cidade_baixa"))
+	_bairro_id = map_id.trim_prefix("bairro:")
+	_rot_user = _load_rot()
+	Iso.rot = _rot_user
 	add_child(view)
 	if not view.build(map_id.trim_prefix("bairro:")):
 		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")
@@ -45,18 +48,17 @@ func _ready() -> void:
 	# telemóvel na vertical: mais perto, a personagem fica bem visível
 	var z0 := 0.68 if get_viewport().get_visible_rect().size.x < 700.0 else 0.5
 	camera.zoom = Vector2(z0, z0)
-	# a câmara não sai da cidade desenhada (bairro + casario à volta)
-	var m := BairroView.MARGIN - 6.0
-	var bb := Rect2(Iso.to_screen(Vector2(-m, -m)), Vector2.ZERO)
-	for corner: Vector2 in [Vector2(view.size.x + m, -m), Vector2(-m, view.size.y + m), view.size + Vector2(m, m)]:
-		bb = bb.expand(Iso.to_screen(corner))
-	camera.limit_left = int(bb.position.x)
-	camera.limit_right = int(bb.end.x)
-	camera.limit_top = int(bb.position.y)
-	camera.limit_bottom = int(bb.end.y)
+	_set_street_limits()
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 6.0
 	add_child(camera)
+	var fl := CanvasLayer.new()
+	fl.layer = 40
+	add_child(fl)
+	_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_fade.color = Color(0, 0, 0, 0)
+	fl.add_child(_fade)
 	Net.entities_spawned.connect(_on_spawned)
 	Net.entities_despawned.connect(_on_despawned)
 	Net.snapshot_received.connect(_on_snapshot)
@@ -137,10 +139,14 @@ func _process(delta: float) -> void:
 	_update_local(delta)
 	_update_remotes(delta)
 	if local_char:
-		camera.position = local_char.position + Vector2(0, -70)
-		if _room_center != Vector2.INF:
-			camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
+		if _follow:
+			camera.position = local_char.position + Vector2(0, -70)
+			if _room_center != Vector2.INF:
+				camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
+		if mode3d != "" and view3d:
+			view3d.sync_people(avatars, Net.self_id)
+			view3d.update_camera(local_char.world_pos, delta)
 		view.update_occlusion(local_char.position, delta)
 		_update_inside()
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
@@ -160,8 +166,23 @@ func _on_self(me: Dictionary) -> void:
 		return
 	_travelling = true
 	var on_foot := bool(t.get("onFoot", false))
-	hud.show_toast("A caminhar para o bairro vizinho…" if on_foot else "A viajar de candongueiro…", true)
+	if on_foot:
+		hud.show_toast("A caminhar para o bairro vizinho…", true)
+	var trip: TravelView = null
+	if not on_foot:
+		# viagem vista de dentro do veículo (como no Vida na Banda), enquanto o bairro descarrega
+		trip = TravelView.new()
+		trip.by = str(t.get("by", "candongueiro"))
+		trip.seconds = float(t.get("seconds", 9))
+		trip.dest_name = _district_name(str(t.district))
+		hud.add_child(trip)
+		var layer := CanvasLayer.new()
+		layer.layer = 60
+		add_child(layer)
+		trip.reparent(layer)
 	var err: String = await Packs.ensure_bairro(str(t.district))
+	if trip and err == "" and not trip._done:
+		await trip.finished
 	if err == "":
 		# a pé: aparece no fim da rua que vem do bairro de onde saiu
 		err = await Net.join_district(str(t.district), ("from_" + str(t.get("from", ""))) if on_foot else "")
@@ -172,6 +193,89 @@ func _on_self(me: Dictionary) -> void:
 	if Net.welcome.is_empty():
 		await Net.welcomed
 	get_tree().change_scene_to_file("res://src/game/bairro_world.tscn")
+
+
+var _bairro_id := ""
+
+
+func _district_name(id: String) -> String:
+	for p: Dictionary in view.places:
+		if p.kind == "portal" and str(p.get("to", "")) == id:
+			return str(p.name).trim_prefix("A pé para ")
+	return BairroView.load_data(id).get("name", id)
+var view3d: View3D ## vistas 3D (ombro / olhos), criadas só quando são pedidas
+var mode3d := "" ## "" = vista aérea isométrica
+var _rot_user := 0 ## rotação escolhida pelo jogador (na rua); dentro dos edifícios a vista fica a 0
+var _fade := ColorRect.new()
+
+
+## A câmara não sai da cidade desenhada (bairro + casario à volta).
+func _set_street_limits() -> void:
+	var m := BairroView.MARGIN - 6.0
+	var bb := Rect2(Iso.to_screen(Vector2(-m, -m)), Vector2.ZERO)
+	for corner: Vector2 in [Vector2(view.size.x + m, -m), Vector2(-m, view.size.y + m), view.size + Vector2(m, m)]:
+		bb = bb.expand(Iso.to_screen(corner))
+	camera.limit_left = int(bb.position.x)
+	camera.limit_right = int(bb.end.x)
+	camera.limit_top = int(bb.position.y)
+	camera.limit_bottom = int(bb.end.y)
+	_street_limits = Rect2i(camera.limit_left, camera.limit_top, camera.limit_right - camera.limit_left, camera.limit_bottom - camera.limit_top)
+
+
+func _load_rot() -> int:
+	var cfg := ConfigFile.new()
+	return int(cfg.get_value("vista", "rot", 0)) % 4 if cfg.load("user://vista.cfg") == OK else 0
+
+
+func _save_rot() -> void:
+	var cfg := ConfigFile.new()
+	cfg.load("user://vista.cfg")
+	cfg.set_value("vista", "rot", _rot_user)
+	cfg.save("user://vista.cfg")
+
+
+## 🔄 Rodar a vista 90° (o mundo e o servidor ficam iguais: só muda a projeção).
+func rotate_view() -> void:
+	if _inside_id != "" and _inside_id != "?":
+		hud.show_toast("Dentro dos edifícios a vista não roda.", false)
+		return
+	_rot_user = (_rot_user + 1) % 4
+	_save_rot()
+	await _apply_rot(_rot_user, true)
+
+
+## Reconstrói o bairro com a nova projeção e põe as personagens no novo desenho.
+func _apply_rot(r: int, animate: bool) -> void:
+	if r == Iso.rot:
+		return
+	if animate:
+		_fade.color = Color(0, 0, 0, 0)
+		var tw := create_tween()
+		tw.tween_property(_fade, "color:a", 0.85, 0.18)
+		await tw.finished
+	Iso.rot = r
+	var old := view
+	view = BairroView.new()
+	add_child(view)
+	move_child(view, old.get_index())
+	view.build(_bairro_id)
+	for c: DemoCharacter in avatars.values():
+		c.reparent(view.objects, false)
+		c.position = Iso.to_screen(c.world_pos)
+	if local_char:
+		local_char.obstacles = view.obstacles
+	old.queue_free()
+	var inside := _inside_id
+	_inside_id = "?"
+	_set_street_limits()
+	if inside != "" and inside != "?":
+		_inside_id = ""
+	if local_char:
+		camera.position = local_char.position + Vector2(0, -70)
+		camera.reset_smoothing()
+	if animate:
+		var tw2 := create_tween()
+		tw2.tween_property(_fade, "color:a", 0.0, 0.22)
 
 
 var _inside_id := "?"
@@ -186,8 +290,12 @@ func _update_inside() -> void:
 	var id := str(i.get("id", ""))
 	if id == _inside_id:
 		return
-	if _inside_id == "?":
-		_street_limits = Rect2i(camera.limit_left, camera.limit_top, camera.limit_right - camera.limit_left, camera.limit_bottom - camera.limit_top)
+	if not i.is_empty() and mode3d != "":
+		_set_mode3d("")
+	var want := 0 if not i.is_empty() else _rot_user
+	if want != Iso.rot:
+		_apply_rot(want, false)
+		i = view.interior_at(local_char.world_pos)
 	_inside_id = id
 	_room_center = Vector2.INF
 	if i.is_empty():
@@ -222,6 +330,30 @@ func _update_inside() -> void:
 		RenderingServer.set_default_clear_color(Color("1c1a1f"))
 
 
+func _set_mode3d(m: String) -> void:
+	if m != "" and _inside_id != "" and _inside_id != "?":
+		hud.show_toast("Dentro dos edifícios usa-se a vista de cima.", false)
+		return
+	mode3d = m
+	if m == "":
+		if view3d:
+			view3d.visible = false
+		view.visible = true
+		hud.show_toast("Vista aérea.", true)
+		return
+	if view3d == null:
+		view3d = View3D.new()
+		hud.add_child(view3d)
+		hud.move_child(view3d, 0) # por baixo dos botões do HUD
+		view3d.build(view)
+		if local_char:
+			view3d.yaw = atan2(local_char.last_dir.x, local_char.last_dir.y)
+	view3d.mode = m
+	view3d.visible = true
+	view.visible = false
+	hud.show_toast("Por cima do ombro: arrasta para olhar, joystick ou WASD para andar." if m == "ombro" else "Pelos olhos (1.ª pessoa).", true)
+
+
 func _keyboard_dir() -> Vector2:
 	var dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if Input.is_physical_key_pressed(KEY_A): dir.x -= 1
@@ -235,12 +367,15 @@ func _update_local(delta: float) -> void:
 	if local_char == null:
 		return
 	var kdir := Iso.screen_dir_to_world(_keyboard_dir())
+	if mode3d != "" and view3d:
+		kdir = view3d.move_dir(_keyboard_dir())
 	if hud.is_busy():
 		kdir = Vector2.ZERO # ocupado(a): não anda (andar interromperia a ação no servidor)
 		_click_target = null
 	var wdir := kdir
 	if kdir != Vector2.ZERO:
 		_click_target = null
+		_follow = true
 	elif _click_target != null:
 		var to: Vector2 = _click_target - local_char.world_pos
 		wdir = Vector2.ZERO if to.length() < 0.1 else to.normalized()
@@ -298,11 +433,53 @@ func _update_remotes(delta: float) -> void:
 		(avatars[id] as DemoCharacter).drive(target, delta)
 
 
+## Câmara como no Vida na Banda: tocar = andar; arrastar = olhar à volta (a câmara deixa de
+## seguir até a personagem andar ou carregares em «Seguir personagem»); dois dedos = zoom.
+var _follow := true
+var _press_pos := Vector2.INF
+var _dragging := false
+var _touches := {}
+var _pinch_d := 0.0
+const DRAG_PX := 12.0
+
+
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			_touches[event.index] = event.position
+		else:
+			_touches.erase(event.index)
+		_pinch_d = 0.0
+		return
+	if event is InputEventScreenDrag:
+		_touches[event.index] = event.position
+		if _touches.size() >= 2:
+			var pts: Array = _touches.values()
+			var d: float = (pts[0] as Vector2).distance_to(pts[1])
+			if _pinch_d > 0.0:
+				_zoom(d / _pinch_d)
+			_pinch_d = d
+			_dragging = true # um gesto de dois dedos nunca é um toque para andar
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_press_pos = event.position
+			_dragging = false
+		else:
+			if not _dragging and _press_pos != Vector2.INF and _touches.size() <= 1:
+				request_move(Iso.to_world(get_global_mouse_position()))
+			_press_pos = Vector2.INF
+			_dragging = false
+		return
+	if event is InputEventMouseMotion and _press_pos != Vector2.INF and _touches.size() <= 1:
+		if not _dragging and event.position.distance_to(_press_pos) > DRAG_PX:
+			_dragging = true
+			_follow = false
+		if _dragging:
+			camera.position -= event.relative / camera.zoom
+		return
 	if event is InputEventMouseButton and event.pressed:
 		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				request_move(Iso.to_world(get_global_mouse_position()))
 			MOUSE_BUTTON_WHEEL_UP:
 				_zoom(1.12)
 			MOUSE_BUTTON_WHEEL_DOWN:
@@ -311,12 +488,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		_zoom(event.factor)
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_E:
 		_on_hud_action("entrar")
+	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_R:
+		_on_hud_action("rodar")
+	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_V:
+		_on_hud_action("vista3d")
 
 
 ## Andar até um ponto (metros). Com caminho (A*) à volta dos edifícios; o servidor valida cada troço.
 func request_move(target_m: Vector2) -> void:
 	if local_char == null or hud.is_busy():
 		return
+	_follow = true
 	var route := _find_path(local_char.world_pos, target_m)
 	if route.size() >= 2 and Net.room:
 		route = route.slice(1, mini(route.size(), 24))
@@ -415,7 +597,15 @@ func _on_hud_action(what: String) -> void:
 				if p.kind == "portal" and str(p.get("to", "")) == to:
 					request_move(Vector2(p.at[0], p.at[1]))
 					hud.show_toast("A caminho da saída para %s…" % str(p.name).trim_prefix("A pé para "), true)
+		"rodar":
+			if mode3d != "":
+				_set_mode3d("")
+			rotate_view()
+		"vista3d":
+			# como no Vida na Banda: aérea → por cima do ombro → pelos olhos → aérea
+			_set_mode3d({"": "ombro", "ombro": "olhos", "olhos": ""}[mode3d])
 		"centrar":
+			_follow = true
 			if local_char:
 				camera.position = local_char.position + Vector2(0, -70)
 		"mapa":

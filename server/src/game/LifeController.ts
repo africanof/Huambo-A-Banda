@@ -9,6 +9,7 @@ import {
   RENT_OPTIONS,
   SERVICES,
   rentPrice,
+  TRANSPORTS,
   TRAVEL_PRICE,
   JOBS,
   LESSONS_PER_LEVEL,
@@ -67,7 +68,7 @@ interface Entry {
   /** oferta de casas mostrada à porta de um edifício de habitação */
   offer: Offer | null;
   /** viagem paga: o cliente muda de bairro quando vê isto */
-  travel: { district: string; n: number; from?: string; onFoot?: boolean } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number } | null;
 }
 
 export interface Offer {
@@ -107,7 +108,7 @@ export interface SelfState {
   inside: { id: string; venue: string; name: string; unit?: number } | null;
   homes: Array<{ unit: string; name: string; tenure: "buy" | "rent"; paidUntil: number | null }>;
   offer: Offer | null;
-  travel: { district: string; n: number; from?: string; onFoot?: boolean } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number } | null;
 }
 
 /** Catálogo enviado no WELCOME (o cliente desenha menus e vagas a partir dele). */
@@ -116,6 +117,7 @@ export function lifeCatalog() {
     jobs: JOBS,
     menus: MENUS,
     prices: { hotel: HOTEL_PRICE, study: STUDY_PRICE, homeMeal: HOME_MEAL.price, travel: TRAVEL_PRICE },
+    transports: TRANSPORTS,
     durations: DURATION,
     lessonsPerLevel: LESSONS_PER_LEVEL,
     services: SERVICES,
@@ -262,7 +264,7 @@ export class LifeController {
           await this.homeEat(actor, e);
           break;
         case "travel":
-          await this.travel(actor, e, msg.i);
+          await this.travel(actor, e, msg.i, msg.t);
           break;
       }
     } catch (err) {
@@ -478,19 +480,20 @@ export class LifeController {
     this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
   }
 
-  private async travel(actor: LifeActor, e: Entry, to: string | undefined): Promise<void> {
+  private async travel(actor: LifeActor, e: Entry, to: string | undefined, how: string | undefined): Promise<void> {
     if (e.busy) return this.out.toast(actor, "Estás ocupado(a).", false);
     if (interiorAt(this.district, actor.x, actor.y)) return this.out.toast(actor, "Sai primeiro para a rua.", false);
     const d = getDistrict(to ?? "");
     if (!d || d.id === this.district.id || !d.places?.length) return this.out.toast(actor, "Esse bairro não existe.", false);
     // a pé, no fim da rua que dá para esse bairro: grátis
     const onFoot = this.near(actor, (p) => p.kind === "portal" && p.to === d.id);
+    const tr = TRANSPORTS.find((x) => x.id === how) ?? TRANSPORTS[0];
     if (!onFoot) {
-      e.money = await this.wallets.apply(actor.characterId, -TRAVEL_PRICE, "travel.candongueiro", `travel:${actor.characterId}:${this.op()}`);
+      e.money = await this.wallets.apply(actor.characterId, -tr.price, `travel.${tr.id}`, `travel:${actor.characterId}:${this.op()}`);
     }
-    e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot };
+    e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot, ...(onFoot ? {} : { by: tr.id, seconds: tr.seconds }) };
     e.dirty = true;
-    this.out.toast(actor, onFoot ? `A caminho de ${d.name} a pé.` : `Apanhaste o candongueiro para ${d.name} (−${TRAVEL_PRICE} Kz).`, true);
+    this.out.toast(actor, onFoot ? `A caminho de ${d.name} a pé.` : `${tr.name} para ${d.name} (−${tr.price.toLocaleString("pt-PT")} Kz).`, true);
   }
 
   private async homeEat(actor: LifeActor, e: Entry): Promise<void> {

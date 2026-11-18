@@ -76,3 +76,11 @@ ponta-a-ponta com clientes Godot reais).
   saídas a pé nos fins de rua para o bairro vizinho real (sempre ida e volta; cidade toda ligada), mapa da cidade
   com as posições reais, caminho automático (A*) no cliente.
 - Arte dos kits em WebP: 295 MB → 67 MB; PNG antigos retirados do histórico do ramo.
+
+### Modos de vista (como no Vida na Banda)
+- 🔄 Rodar a vista 90° (4 orientações, transição suave, escolha guardada; tecla R). Dentro dos edifícios a vista fica fixa.
+- Vista aérea com a câmara a seguir; arrastar = olhar à volta; botão «Seguir personagem»; zoom com dois dedos/roda.
+- 👁 Por cima do ombro (3.ª pessoa) e pelos olhos (1.ª pessoa) em 3D: ruas reais, edifícios em caixa pintados com a
+  própria arte isométrica (shader), árvores/pessoas em painéis; joystick ou WASD; arrastar para olhar (tecla V).
+- Viagens na primeira pessoa: candongueiro (200 Kz, 9 s), kupapata (500 Kz, 13 s) e táxi (1.500 Kz, 9 s), vistas de
+  dentro do veículo com a beira da estrada do Huambo e outdoors com anúncios do jogo (kit de IA com >100 objetos).

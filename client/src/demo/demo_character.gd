@@ -21,6 +21,7 @@ var cid := "homem"
 var world_pos := Vector2.ZERO
 var facing_up := false
 var facing_left := false
+var last_dir := Vector2.DOWN ## última direção de movimento no mundo (para as vistas 3D)
 var running := false
 var obstacles: Array[Rect2] = [] ## pegadas no mundo (m)
 ## > 0: velocidade fixa (m/s) imposta pelo servidor; a cadência dos passos acompanha-a.
@@ -95,6 +96,7 @@ func step(dir_world: Vector2, delta: float) -> void:
 	var dist := world_pos.distance_to(before)
 	_moving = dist > 0.0001
 	if _moving:
+		last_dir = (world_pos - before).normalized()
 		var s := Iso.to_screen(world_pos - before)
 		if absf(s.y) > 0.01:
 			facing_up = s.y < 0
@@ -116,6 +118,7 @@ func drive(new_pos: Vector2, delta: float) -> void:
 	world_pos = new_pos
 	_moving = dist > 0.002
 	if _moving:
+		last_dir = d.normalized()
 		var s := Iso.to_screen(d)
 		if absf(s.y) > 0.01:
 			facing_up = s.y < 0

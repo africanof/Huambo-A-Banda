@@ -1,0 +1,1826 @@
+{
+ "kit": "kit_viagens",
+ "objects": {
+  "via_veiculo_candongueiro": {
+   "category": "frame",
+   "size": [
+    844,
+    422
+   ],
+   "anchor": [
+    422,
+    421
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_veiculo_candongueiro",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_veiculo_candongueiro.webp",
+   "kind": "candongueiro"
+  },
+  "via_veiculo_taxi": {
+   "category": "frame",
+   "size": [
+    761,
+    422
+   ],
+   "anchor": [
+    381,
+    421
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_veiculo_taxi",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_veiculo_taxi.webp",
+   "kind": "taxi"
+  },
+  "via_veiculo_kupapata": {
+   "category": "frame",
+   "size": [
+    618,
+    391
+   ],
+   "anchor": [
+    308,
+    390
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_veiculo_kupapata",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_veiculo_kupapata.webp",
+   "kind": "kupapata"
+  },
+  "via_veiculo_autocarro": {
+   "category": "frame",
+   "size": [
+    810,
+    423
+   ],
+   "anchor": [
+    405,
+    422
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_veiculo_autocarro",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_veiculo_autocarro.webp",
+   "kind": "autocarro"
+  },
+  "via_veiculo_carro": {
+   "category": "frame",
+   "size": [
+    705,
+    424
+   ],
+   "anchor": [
+    353,
+    423
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_veiculo_carro",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_veiculo_carro.webp",
+   "kind": "carro"
+  },
+  "via_facade1": {
+   "category": "roadside",
+   "size": [
+    670,
+    421
+   ],
+   "anchor": [
+    335,
+    420
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade1.webp",
+   "kind": "facade"
+  },
+  "via_facade2": {
+   "category": "roadside",
+   "size": [
+    578,
+    291
+   ],
+   "anchor": [
+    289,
+    290
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade2.webp",
+   "kind": "facade"
+  },
+  "via_facade3": {
+   "category": "roadside",
+   "size": [
+    567,
+    411
+   ],
+   "anchor": [
+    282,
+    409
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade3.webp",
+   "kind": "facade"
+  },
+  "via_facade4": {
+   "category": "roadside",
+   "size": [
+    452,
+    435
+   ],
+   "anchor": [
+    225,
+    433
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade4.webp",
+   "kind": "facade"
+  },
+  "via_facade5": {
+   "category": "roadside",
+   "size": [
+    814,
+    225
+   ],
+   "anchor": [
+    407,
+    223
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade5.webp",
+   "kind": "facade"
+  },
+  "via_facade6": {
+   "category": "roadside",
+   "size": [
+    661,
+    295
+   ],
+   "anchor": [
+    331,
+    294
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade6.webp",
+   "kind": "facade"
+  },
+  "via_facade7": {
+   "category": "roadside",
+   "size": [
+    272,
+    161
+   ],
+   "anchor": [
+    136,
+    159
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade7.webp",
+   "kind": "facade"
+  },
+  "via_facade8": {
+   "category": "roadside",
+   "size": [
+    261,
+    165
+   ],
+   "anchor": [
+    130,
+    164
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade8",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade8.webp",
+   "kind": "facade"
+  },
+  "via_facade9": {
+   "category": "roadside",
+   "size": [
+    253,
+    164
+   ],
+   "anchor": [
+    126,
+    163
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade9",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade9.webp",
+   "kind": "facade"
+  },
+  "via_facade10": {
+   "category": "roadside",
+   "size": [
+    246,
+    163
+   ],
+   "anchor": [
+    122,
+    162
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade10",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade10.webp",
+   "kind": "facade"
+  },
+  "via_facade11": {
+   "category": "roadside",
+   "size": [
+    499,
+    150
+   ],
+   "anchor": [
+    250,
+    149
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_facade11",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_facade11.webp",
+   "kind": "facade"
+  },
+  "via_tree1": {
+   "category": "roadside",
+   "size": [
+    457,
+    329
+   ],
+   "anchor": [
+    228,
+    328
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree1.webp",
+   "kind": "tree"
+  },
+  "via_tree2": {
+   "category": "roadside",
+   "size": [
+    278,
+    342
+   ],
+   "anchor": [
+    138,
+    341
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree2.webp",
+   "kind": "tree"
+  },
+  "via_tree3": {
+   "category": "roadside",
+   "size": [
+    224,
+    321
+   ],
+   "anchor": [
+    112,
+    320
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree3.webp",
+   "kind": "tree"
+  },
+  "via_tree4": {
+   "category": "roadside",
+   "size": [
+    355,
+    318
+   ],
+   "anchor": [
+    177,
+    316
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree4.webp",
+   "kind": "tree"
+  },
+  "via_tree5": {
+   "category": "roadside",
+   "size": [
+    264,
+    225
+   ],
+   "anchor": [
+    131,
+    224
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree5.webp",
+   "kind": "tree"
+  },
+  "via_tree6": {
+   "category": "roadside",
+   "size": [
+    219,
+    189
+   ],
+   "anchor": [
+    109,
+    187
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree6.webp",
+   "kind": "tree"
+  },
+  "via_tree7": {
+   "category": "roadside",
+   "size": [
+    197,
+    187
+   ],
+   "anchor": [
+    98,
+    185
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree7.webp",
+   "kind": "tree"
+  },
+  "via_tree8": {
+   "category": "roadside",
+   "size": [
+    233,
+    171
+   ],
+   "anchor": [
+    116,
+    169
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_tree8",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_tree8.webp",
+   "kind": "tree"
+  },
+  "via_billboard1": {
+   "category": "roadside",
+   "size": [
+    384,
+    322
+   ],
+   "anchor": [
+    191,
+    321
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_billboard1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_billboard1.webp",
+   "kind": "billboard"
+  },
+  "via_billboard2": {
+   "category": "roadside",
+   "size": [
+    357,
+    308
+   ],
+   "anchor": [
+    178,
+    307
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_billboard2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_billboard2.webp",
+   "kind": "billboard"
+  },
+  "via_lamp1": {
+   "category": "roadside",
+   "size": [
+    140,
+    329
+   ],
+   "anchor": [
+    69,
+    328
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_lamp1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_lamp1.webp",
+   "kind": "lamp"
+  },
+  "via_lamp2": {
+   "category": "roadside",
+   "size": [
+    60,
+    300
+   ],
+   "anchor": [
+    29,
+    299
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_lamp2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_lamp2.webp",
+   "kind": "lamp"
+  },
+  "via_sign1": {
+   "category": "roadside",
+   "size": [
+    271,
+    229
+   ],
+   "anchor": [
+    135,
+    228
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_sign1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_sign1.webp",
+   "kind": "sign"
+  },
+  "via_sign2": {
+   "category": "roadside",
+   "size": [
+    211,
+    230
+   ],
+   "anchor": [
+    105,
+    228
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_sign2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_sign2.webp",
+   "kind": "sign"
+  },
+  "via_stop1": {
+   "category": "roadside",
+   "size": [
+    531,
+    274
+   ],
+   "anchor": [
+    266,
+    272
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stop1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stop1.webp",
+   "kind": "stop"
+  },
+  "via_person1": {
+   "category": "roadside",
+   "size": [
+    135,
+    290
+   ],
+   "anchor": [
+    67,
+    289
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person1.webp",
+   "kind": "person"
+  },
+  "via_person2": {
+   "category": "roadside",
+   "size": [
+    237,
+    233
+   ],
+   "anchor": [
+    118,
+    231
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person2.webp",
+   "kind": "person"
+  },
+  "via_person3": {
+   "category": "roadside",
+   "size": [
+    103,
+    235
+   ],
+   "anchor": [
+    51,
+    233
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person3.webp",
+   "kind": "person"
+  },
+  "via_person4": {
+   "category": "roadside",
+   "size": [
+    103,
+    227
+   ],
+   "anchor": [
+    51,
+    225
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person4.webp",
+   "kind": "person"
+  },
+  "via_person5": {
+   "category": "roadside",
+   "size": [
+    121,
+    245
+   ],
+   "anchor": [
+    60,
+    244
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person5.webp",
+   "kind": "person"
+  },
+  "via_person6": {
+   "category": "roadside",
+   "size": [
+    274,
+    244
+   ],
+   "anchor": [
+    136,
+    242
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person6.webp",
+   "kind": "person"
+  },
+  "via_person7": {
+   "category": "roadside",
+   "size": [
+    185,
+    250
+   ],
+   "anchor": [
+    92,
+    249
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_person7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_person7.webp",
+   "kind": "person"
+  },
+  "via_car1": {
+   "category": "roadside",
+   "size": [
+    249,
+    198
+   ],
+   "anchor": [
+    124,
+    197
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car1.webp",
+   "kind": "car"
+  },
+  "via_car2": {
+   "category": "roadside",
+   "size": [
+    269,
+    176
+   ],
+   "anchor": [
+    134,
+    175
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car2.webp",
+   "kind": "car"
+  },
+  "via_car3": {
+   "category": "roadside",
+   "size": [
+    300,
+    189
+   ],
+   "anchor": [
+    149,
+    188
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car3.webp",
+   "kind": "car"
+  },
+  "via_car4": {
+   "category": "roadside",
+   "size": [
+    291,
+    167
+   ],
+   "anchor": [
+    146,
+    166
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car4.webp",
+   "kind": "car"
+  },
+  "via_car5": {
+   "category": "roadside",
+   "size": [
+    240,
+    205
+   ],
+   "anchor": [
+    119,
+    204
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car5.webp",
+   "kind": "car"
+  },
+  "via_car6": {
+   "category": "roadside",
+   "size": [
+    202,
+    202
+   ],
+   "anchor": [
+    100,
+    200
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car6.webp",
+   "kind": "car"
+  },
+  "via_car7": {
+   "category": "roadside",
+   "size": [
+    194,
+    165
+   ],
+   "anchor": [
+    96,
+    163
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car7.webp",
+   "kind": "car"
+  },
+  "via_car8": {
+   "category": "roadside",
+   "size": [
+    185,
+    164
+   ],
+   "anchor": [
+    92,
+    163
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car8",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car8.webp",
+   "kind": "car"
+  },
+  "via_car9": {
+   "category": "roadside",
+   "size": [
+    189,
+    167
+   ],
+   "anchor": [
+    94,
+    166
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_car9",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_car9.webp",
+   "kind": "car"
+  },
+  "via_stall1": {
+   "category": "roadside",
+   "size": [
+    285,
+    191
+   ],
+   "anchor": [
+    142,
+    189
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall1.webp",
+   "kind": "stall"
+  },
+  "via_stall2": {
+   "category": "roadside",
+   "size": [
+    278,
+    190
+   ],
+   "anchor": [
+    138,
+    189
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall2.webp",
+   "kind": "stall"
+  },
+  "via_stall3": {
+   "category": "roadside",
+   "size": [
+    242,
+    186
+   ],
+   "anchor": [
+    120,
+    185
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall3.webp",
+   "kind": "stall"
+  },
+  "via_stall4": {
+   "category": "roadside",
+   "size": [
+    240,
+    185
+   ],
+   "anchor": [
+    119,
+    183
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall4.webp",
+   "kind": "stall"
+  },
+  "via_stall5": {
+   "category": "roadside",
+   "size": [
+    211,
+    176
+   ],
+   "anchor": [
+    104,
+    175
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall5.webp",
+   "kind": "stall"
+  },
+  "via_stall6": {
+   "category": "roadside",
+   "size": [
+    217,
+    176
+   ],
+   "anchor": [
+    108,
+    175
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall6.webp",
+   "kind": "stall"
+  },
+  "via_stall7": {
+   "category": "roadside",
+   "size": [
+    193,
+    179
+   ],
+   "anchor": [
+    96,
+    178
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall7.webp",
+   "kind": "stall"
+  },
+  "via_stall8": {
+   "category": "roadside",
+   "size": [
+    212,
+    178
+   ],
+   "anchor": [
+    105,
+    176
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_stall8",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_stall8.webp",
+   "kind": "stall"
+  },
+  "via_pole1": {
+   "category": "roadside",
+   "size": [
+    76,
+    196
+   ],
+   "anchor": [
+    37,
+    195
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_pole1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_pole1.webp",
+   "kind": "pole"
+  },
+  "via_pole2": {
+   "category": "roadside",
+   "size": [
+    75,
+    195
+   ],
+   "anchor": [
+    37,
+    193
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_pole2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_pole2.webp",
+   "kind": "pole"
+  },
+  "via_pole3": {
+   "category": "roadside",
+   "size": [
+    77,
+    197
+   ],
+   "anchor": [
+    38,
+    195
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_pole3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_pole3.webp",
+   "kind": "pole"
+  },
+  "via_pole4": {
+   "category": "roadside",
+   "size": [
+    75,
+    194
+   ],
+   "anchor": [
+    37,
+    192
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_pole4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_pole4.webp",
+   "kind": "pole"
+  },
+  "via_wall1": {
+   "category": "roadside",
+   "size": [
+    398,
+    122
+   ],
+   "anchor": [
+    200,
+    121
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_wall1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_wall1.webp",
+   "kind": "wall"
+  },
+  "via_wall2": {
+   "category": "roadside",
+   "size": [
+    405,
+    123
+   ],
+   "anchor": [
+    203,
+    121
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_wall2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_wall2.webp",
+   "kind": "wall"
+  },
+  "via_kiosk1": {
+   "category": "roadside",
+   "size": [
+    171,
+    179
+   ],
+   "anchor": [
+    85,
+    178
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_kiosk1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_kiosk1.webp",
+   "kind": "kiosk"
+  },
+  "via_kiosk2": {
+   "category": "roadside",
+   "size": [
+    167,
+    179
+   ],
+   "anchor": [
+    83,
+    178
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_kiosk2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_kiosk2.webp",
+   "kind": "kiosk"
+  },
+  "via_kiosk3": {
+   "category": "roadside",
+   "size": [
+    170,
+    180
+   ],
+   "anchor": [
+    84,
+    179
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_kiosk3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_kiosk3.webp",
+   "kind": "kiosk"
+  },
+  "via_small1": {
+   "category": "roadside",
+   "size": [
+    284,
+    131
+   ],
+   "anchor": [
+    143,
+    130
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small1",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small1.webp",
+   "kind": "small"
+  },
+  "via_small2": {
+   "category": "roadside",
+   "size": [
+    136,
+    99
+   ],
+   "anchor": [
+    67,
+    98
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small2",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small2.webp",
+   "kind": "small"
+  },
+  "via_small3": {
+   "category": "roadside",
+   "size": [
+    106,
+    77
+   ],
+   "anchor": [
+    52,
+    75
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small3",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small3.webp",
+   "kind": "small"
+  },
+  "via_small4": {
+   "category": "roadside",
+   "size": [
+    97,
+    85
+   ],
+   "anchor": [
+    48,
+    84
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small4",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small4.webp",
+   "kind": "small"
+  },
+  "via_small5": {
+   "category": "roadside",
+   "size": [
+    129,
+    121
+   ],
+   "anchor": [
+    64,
+    119
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small5",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small5.webp",
+   "kind": "small"
+  },
+  "via_small6": {
+   "category": "roadside",
+   "size": [
+    97,
+    117
+   ],
+   "anchor": [
+    48,
+    115
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small6",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small6.webp",
+   "kind": "small"
+  },
+  "via_small7": {
+   "category": "roadside",
+   "size": [
+    102,
+    120
+   ],
+   "anchor": [
+    50,
+    118
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small7",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small7.webp",
+   "kind": "small"
+  },
+  "via_small8": {
+   "category": "roadside",
+   "size": [
+    84,
+    94
+   ],
+   "anchor": [
+    41,
+    93
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small8",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small8.webp",
+   "kind": "small"
+  },
+  "via_small9": {
+   "category": "roadside",
+   "size": [
+    74,
+    101
+   ],
+   "anchor": [
+    36,
+    100
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small9",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small9.webp",
+   "kind": "small"
+  },
+  "via_small10": {
+   "category": "roadside",
+   "size": [
+    146,
+    232
+   ],
+   "anchor": [
+    72,
+    231
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small10",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small10.webp",
+   "kind": "small"
+  },
+  "via_small11": {
+   "category": "roadside",
+   "size": [
+    166,
+    205
+   ],
+   "anchor": [
+    82,
+    202
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small11",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small11.webp",
+   "kind": "small"
+  },
+  "via_small12": {
+   "category": "roadside",
+   "size": [
+    151,
+    248
+   ],
+   "anchor": [
+    75,
+    247
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small12",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small12.webp",
+   "kind": "small"
+  },
+  "via_small13": {
+   "category": "roadside",
+   "size": [
+    190,
+    203
+   ],
+   "anchor": [
+    94,
+    202
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small13",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small13.webp",
+   "kind": "small"
+  },
+  "via_small14": {
+   "category": "roadside",
+   "size": [
+    355,
+    148
+   ],
+   "anchor": [
+    178,
+    146
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small14",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small14.webp",
+   "kind": "small"
+  },
+  "via_small15": {
+   "category": "roadside",
+   "size": [
+    356,
+    156
+   ],
+   "anchor": [
+    178,
+    155
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small15",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small15.webp",
+   "kind": "small"
+  },
+  "via_small16": {
+   "category": "roadside",
+   "size": [
+    90,
+    126
+   ],
+   "anchor": [
+    44,
+    125
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small16",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small16.webp",
+   "kind": "small"
+  },
+  "via_small17": {
+   "category": "roadside",
+   "size": [
+    86,
+    126
+   ],
+   "anchor": [
+    43,
+    124
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small17",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small17.webp",
+   "kind": "small"
+  },
+  "via_small18": {
+   "category": "roadside",
+   "size": [
+    93,
+    126
+   ],
+   "anchor": [
+    46,
+    125
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small18",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small18.webp",
+   "kind": "small"
+  },
+  "via_small19": {
+   "category": "roadside",
+   "size": [
+    124,
+    135
+   ],
+   "anchor": [
+    62,
+    134
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small19",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small19.webp",
+   "kind": "small"
+  },
+  "via_small20": {
+   "category": "roadside",
+   "size": [
+    139,
+    121
+   ],
+   "anchor": [
+    69,
+    120
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small20",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small20.webp",
+   "kind": "small"
+  },
+  "via_small21": {
+   "category": "roadside",
+   "size": [
+    148,
+    164
+   ],
+   "anchor": [
+    73,
+    163
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small21",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small21.webp",
+   "kind": "small"
+  },
+  "via_small22": {
+   "category": "roadside",
+   "size": [
+    118,
+    158
+   ],
+   "anchor": [
+    58,
+    157
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small22",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small22.webp",
+   "kind": "small"
+  },
+  "via_small23": {
+   "category": "roadside",
+   "size": [
+    105,
+    171
+   ],
+   "anchor": [
+    51,
+    170
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small23",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small23.webp",
+   "kind": "small"
+  },
+  "via_small24": {
+   "category": "roadside",
+   "size": [
+    128,
+    147
+   ],
+   "anchor": [
+    63,
+    146
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small24",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small24.webp",
+   "kind": "small"
+  },
+  "via_small25": {
+   "category": "roadside",
+   "size": [
+    238,
+    111
+   ],
+   "anchor": [
+    119,
+    110
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small25",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small25.webp",
+   "kind": "small"
+  },
+  "via_small26": {
+   "category": "roadside",
+   "size": [
+    253,
+    120
+   ],
+   "anchor": [
+    127,
+    118
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small26",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small26.webp",
+   "kind": "small"
+  },
+  "via_small27": {
+   "category": "roadside",
+   "size": [
+    283,
+    121
+   ],
+   "anchor": [
+    142,
+    120
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.0,
+   "out": "via_small27",
+   "kit": "kit_viagens",
+   "path": "res://assets/kits/kit_viagens/via_small27.webp",
+   "kind": "small"
+  }
+ },
+ "version": "d9e95bb9e277"
+}
