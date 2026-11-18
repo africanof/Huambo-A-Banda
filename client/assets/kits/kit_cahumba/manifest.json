@@ -2142,7 +2142,6433 @@
    "kit": "kit_cahumba",
    "path": "res://assets/kits/kit_cahumba/cahumba_small55.webp",
    "kind": "small"
+  },
+  "cahumba_escola@1": {
+   "category": "building",
+   "size": [
+    953,
+    452
+   ],
+   "anchor": [
+    303,
+    447
+   ],
+   "footprint": [
+    7.5,
+    16.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_escola@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_escola@1.webp",
+   "name": "Escola Primária da Cahumba",
+   "venue": "escola"
+  },
+  "cahumba_saude@1": {
+   "category": "building",
+   "size": [
+    824,
+    425
+   ],
+   "anchor": [
+    280,
+    420
+   ],
+   "footprint": [
+    6.9,
+    13.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_saude@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_saude@1.webp",
+   "name": "Centro de Saúde da Cahumba",
+   "venue": "saude"
+  },
+  "cahumba_igreja@1": {
+   "category": "building",
+   "size": [
+    745,
+    493
+   ],
+   "anchor": [
+    327,
+    488
+   ],
+   "footprint": [
+    8.1,
+    10.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_igreja@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_igreja@1.webp",
+   "name": "Igreja Católica da Cahumba",
+   "venue": "igreja"
+  },
+  "cahumba_mercado@1": {
+   "category": "building",
+   "size": [
+    1121,
+    489
+   ],
+   "anchor": [
+    366,
+    481
+   ],
+   "footprint": [
+    9.1,
+    18.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_mercado@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_mercado@1.webp",
+   "name": "Mercado da Cahumba",
+   "venue": "mercado"
+  },
+  "cahumba_cantina@1": {
+   "category": "building",
+   "size": [
+    630,
+    436
+   ],
+   "anchor": [
+    228,
+    432
+   ],
+   "footprint": [
+    5.7,
+    10.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_cantina@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_cantina@1.webp",
+   "name": "Cantina da Cahumba",
+   "venue": "cantina"
+  },
+  "cahumba_farmacia@1": {
+   "category": "building",
+   "size": [
+    536,
+    376
+   ],
+   "anchor": [
+    160,
+    372
+   ],
+   "footprint": [
+    4.0,
+    9.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_farmacia@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_farmacia@1.webp",
+   "name": "Farmácia Cahumba",
+   "venue": "farmacia"
+  },
+  "cahumba_administracao@1": {
+   "category": "building",
+   "size": [
+    600,
+    442
+   ],
+   "anchor": [
+    188,
+    438
+   ],
+   "footprint": [
+    4.7,
+    10.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_administracao@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_administracao@1.webp",
+   "name": "Administração da Cahumba",
+   "venue": "administracao"
+  },
+  "cahumba_padaria@1": {
+   "category": "building",
+   "size": [
+    646,
+    409
+   ],
+   "anchor": [
+    217,
+    405
+   ],
+   "footprint": [
+    5.4,
+    10.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_padaria@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_padaria@1.webp",
+   "name": "Padaria Cahumba",
+   "venue": "padaria"
+  },
+  "cahumba_discoteca@1": {
+   "category": "building",
+   "size": [
+    665,
+    412
+   ],
+   "anchor": [
+    231,
+    408
+   ],
+   "footprint": [
+    5.7,
+    10.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_discoteca@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_discoteca@1.webp",
+   "name": "Discoteca Cahumba",
+   "venue": "discoteca"
+  },
+  "cahumba_apartamentos@1": {
+   "category": "building",
+   "size": [
+    608,
+    560
+   ],
+   "anchor": [
+    158,
+    557
+   ],
+   "footprint": [
+    3.9,
+    11.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_apartamentos@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_apartamentos@1.webp",
+   "name": "Prédio Cahumba",
+   "venue": "apartamentos"
+  },
+  "cahumba_casa1@1": {
+   "category": "building",
+   "size": [
+    425,
+    274
+   ],
+   "anchor": [
+    135,
+    272
+   ],
+   "footprint": [
+    3.3,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa1@1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cahumba_casa2@1": {
+   "category": "building",
+   "size": [
+    391,
+    271
+   ],
+   "anchor": [
+    115,
+    268
+   ],
+   "footprint": [
+    2.8,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa2@1.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cahumba_casa3@1": {
+   "category": "building",
+   "size": [
+    367,
+    265
+   ],
+   "anchor": [
+    137,
+    262
+   ],
+   "footprint": [
+    3.4,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa3@1.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cahumba_casa4@1": {
+   "category": "building",
+   "size": [
+    417,
+    290
+   ],
+   "anchor": [
+    137,
+    287
+   ],
+   "footprint": [
+    3.4,
+    6.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa4@1.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cahumba_casa5@1": {
+   "category": "building",
+   "size": [
+    433,
+    277
+   ],
+   "anchor": [
+    130,
+    274
+   ],
+   "footprint": [
+    3.2,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa5@1.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cahumba_casa6@1": {
+   "category": "building",
+   "size": [
+    359,
+    290
+   ],
+   "anchor": [
+    198,
+    289
+   ],
+   "footprint": [
+    4.9,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa6@1.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cahumba_casa7@1": {
+   "category": "building",
+   "size": [
+    404,
+    264
+   ],
+   "anchor": [
+    127,
+    261
+   ],
+   "footprint": [
+    3.1,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa7@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa7@1.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cahumba_casa8@1": {
+   "category": "building",
+   "size": [
+    385,
+    268
+   ],
+   "anchor": [
+    122,
+    265
+   ],
+   "footprint": [
+    3.0,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa8@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa8@1.webp",
+   "name": "Casa 8",
+   "venue": "casa"
+  },
+  "cahumba_casa9@1": {
+   "category": "building",
+   "size": [
+    452,
+    284
+   ],
+   "anchor": [
+    146,
+    281
+   ],
+   "footprint": [
+    3.6,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa9@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa9@1.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "cahumba_tree1@1": {
+   "category": "prop",
+   "size": [
+    344,
+    263
+   ],
+   "anchor": [
+    171,
+    260
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree1@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree2@1": {
+   "category": "prop",
+   "size": [
+    207,
+    274
+   ],
+   "anchor": [
+    102,
+    272
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree2@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_small1@1": {
+   "category": "prop",
+   "size": [
+    196,
+    253
+   ],
+   "anchor": [
+    96,
+    251
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small1@1.webp",
+   "kind": "small"
+  },
+  "cahumba_tree3@1": {
+   "category": "prop",
+   "size": [
+    375,
+    278
+   ],
+   "anchor": [
+    187,
+    275
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree3@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree4@1": {
+   "category": "prop",
+   "size": [
+    233,
+    235
+   ],
+   "anchor": [
+    115,
+    234
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree4@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree5@1": {
+   "category": "prop",
+   "size": [
+    217,
+    227
+   ],
+   "anchor": [
+    108,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree5@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree6@1": {
+   "category": "prop",
+   "size": [
+    220,
+    232
+   ],
+   "anchor": [
+    109,
+    231
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree6@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree7@1": {
+   "category": "prop",
+   "size": [
+    201,
+    229
+   ],
+   "anchor": [
+    99,
+    228
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree7@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree7@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree8@1": {
+   "category": "prop",
+   "size": [
+    185,
+    209
+   ],
+   "anchor": [
+    92,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree8@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree8@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree9@1": {
+   "category": "prop",
+   "size": [
+    158,
+    194
+   ],
+   "anchor": [
+    79,
+    192
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree9@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree9@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_lamp1@1": {
+   "category": "prop",
+   "size": [
+    115,
+    255
+   ],
+   "anchor": [
+    57,
+    254
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp1@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole1@1": {
+   "category": "prop",
+   "size": [
+    77,
+    218
+   ],
+   "anchor": [
+    37,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole1@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole2@1": {
+   "category": "prop",
+   "size": [
+    59,
+    218
+   ],
+   "anchor": [
+    29,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole2@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_lamp2@1": {
+   "category": "prop",
+   "size": [
+    96,
+    234
+   ],
+   "anchor": [
+    47,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp2@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_lamp3@1": {
+   "category": "prop",
+   "size": [
+    132,
+    232
+   ],
+   "anchor": [
+    65,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp3@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole3@1": {
+   "category": "prop",
+   "size": [
+    87,
+    233
+   ],
+   "anchor": [
+    43,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole3@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole4@1": {
+   "category": "prop",
+   "size": [
+    104,
+    245
+   ],
+   "anchor": [
+    52,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole4@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole5@1": {
+   "category": "prop",
+   "size": [
+    84,
+    245
+   ],
+   "anchor": [
+    41,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole5@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole6@1": {
+   "category": "prop",
+   "size": [
+    84,
+    242
+   ],
+   "anchor": [
+    41,
+    241
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole6@1.webp",
+   "kind": "pole"
+  },
+  "cahumba_vehicle1@1": {
+   "category": "prop",
+   "size": [
+    256,
+    195
+   ],
+   "anchor": [
+    134,
+    193
+   ],
+   "footprint": [
+    1.8,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle1@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle2@1": {
+   "category": "prop",
+   "size": [
+    258,
+    195
+   ],
+   "anchor": [
+    143,
+    193
+   ],
+   "footprint": [
+    1.9,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle2@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle3@1": {
+   "category": "prop",
+   "size": [
+    125,
+    125
+   ],
+   "anchor": [
+    94,
+    123
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle3@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_small2@1": {
+   "category": "prop",
+   "size": [
+    103,
+    114
+   ],
+   "anchor": [
+    76,
+    112
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small2@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small3@1": {
+   "category": "prop",
+   "size": [
+    112,
+    117
+   ],
+   "anchor": [
+    85,
+    116
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small3@1.webp",
+   "kind": "small"
+  },
+  "cahumba_vehicle4@1": {
+   "category": "prop",
+   "size": [
+    115,
+    116
+   ],
+   "anchor": [
+    88,
+    115
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle4@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle5@1": {
+   "category": "prop",
+   "size": [
+    219,
+    118
+   ],
+   "anchor": [
+    116,
+    116
+   ],
+   "footprint": [
+    1.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle5@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle6@1": {
+   "category": "prop",
+   "size": [
+    212,
+    118
+   ],
+   "anchor": [
+    106,
+    116
+   ],
+   "footprint": [
+    1.4,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle6@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle7@1": {
+   "category": "prop",
+   "size": [
+    222,
+    144
+   ],
+   "anchor": [
+    109,
+    142
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle7@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle7@1.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_stall1@1": {
+   "category": "prop",
+   "size": [
+    174,
+    187
+   ],
+   "anchor": [
+    104,
+    185
+   ],
+   "footprint": [
+    1.4,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall1@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall1@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall2@1": {
+   "category": "prop",
+   "size": [
+    157,
+    172
+   ],
+   "anchor": [
+    91,
+    170
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall2@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall2@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall3@1": {
+   "category": "prop",
+   "size": [
+    205,
+    182
+   ],
+   "anchor": [
+    127,
+    180
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall3@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall3@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall4@1": {
+   "category": "prop",
+   "size": [
+    197,
+    175
+   ],
+   "anchor": [
+    110,
+    173
+   ],
+   "footprint": [
+    1.5,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall4@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall5@1": {
+   "category": "prop",
+   "size": [
+    151,
+    182
+   ],
+   "anchor": [
+    86,
+    179
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall5@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall6@1": {
+   "category": "prop",
+   "size": [
+    195,
+    176
+   ],
+   "anchor": [
+    112,
+    173
+   ],
+   "footprint": [
+    1.5,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall6@1.webp",
+   "kind": "stall"
+  },
+  "cahumba_small4@1": {
+   "category": "prop",
+   "size": [
+    156,
+    149
+   ],
+   "anchor": [
+    84,
+    147
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small4@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small4@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small5@1": {
+   "category": "prop",
+   "size": [
+    154,
+    148
+   ],
+   "anchor": [
+    82,
+    146
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small5@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small5@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small6@1": {
+   "category": "prop",
+   "size": [
+    157,
+    148
+   ],
+   "anchor": [
+    87,
+    145
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small6@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small6@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small7@1": {
+   "category": "prop",
+   "size": [
+    169,
+    156
+   ],
+   "anchor": [
+    108,
+    154
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small7@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small7@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small8@1": {
+   "category": "prop",
+   "size": [
+    137,
+    83
+   ],
+   "anchor": [
+    100,
+    81
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small8@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small8@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small9@1": {
+   "category": "prop",
+   "size": [
+    136,
+    88
+   ],
+   "anchor": [
+    98,
+    86
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small9@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small9@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small10@1": {
+   "category": "prop",
+   "size": [
+    121,
+    78
+   ],
+   "anchor": [
+    81,
+    77
+   ],
+   "footprint": [
+    1.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small10@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small10@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small11@1": {
+   "category": "prop",
+   "size": [
+    142,
+    95
+   ],
+   "anchor": [
+    108,
+    93
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small11@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small11@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small12@1": {
+   "category": "prop",
+   "size": [
+    122,
+    146
+   ],
+   "anchor": [
+    66,
+    144
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small12@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small12@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small13@1": {
+   "category": "prop",
+   "size": [
+    121,
+    141
+   ],
+   "anchor": [
+    64,
+    139
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small13@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small13@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small14@1": {
+   "category": "prop",
+   "size": [
+    112,
+    128
+   ],
+   "anchor": [
+    56,
+    126
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small14@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small14@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small15@1": {
+   "category": "prop",
+   "size": [
+    112,
+    93
+   ],
+   "anchor": [
+    58,
+    90
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small15@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small15@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small16@1": {
+   "category": "prop",
+   "size": [
+    112,
+    93
+   ],
+   "anchor": [
+    59,
+    91
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small16@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small16@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small17@1": {
+   "category": "prop",
+   "size": [
+    224,
+    136
+   ],
+   "anchor": [
+    54,
+    133
+   ],
+   "footprint": [
+    0.7,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small17@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small17@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small18@1": {
+   "category": "prop",
+   "size": [
+    217,
+    140
+   ],
+   "anchor": [
+    169,
+    138
+   ],
+   "footprint": [
+    2.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small18@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small18@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small19@1": {
+   "category": "prop",
+   "size": [
+    81,
+    106
+   ],
+   "anchor": [
+    34,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small19@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small19@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small20@1": {
+   "category": "prop",
+   "size": [
+    81,
+    105
+   ],
+   "anchor": [
+    31,
+    104
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small20@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small20@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small21@1": {
+   "category": "prop",
+   "size": [
+    84,
+    109
+   ],
+   "anchor": [
+    35,
+    108
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small21@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small21@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small22@1": {
+   "category": "prop",
+   "size": [
+    85,
+    98
+   ],
+   "anchor": [
+    33,
+    97
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small22@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small22@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small23@1": {
+   "category": "prop",
+   "size": [
+    126,
+    110
+   ],
+   "anchor": [
+    21,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small23@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small23@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small24@1": {
+   "category": "prop",
+   "size": [
+    126,
+    109
+   ],
+   "anchor": [
+    23,
+    108
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small24@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small24@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small25@1": {
+   "category": "prop",
+   "size": [
+    133,
+    110
+   ],
+   "anchor": [
+    19,
+    108
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small25@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small25@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small26@1": {
+   "category": "prop",
+   "size": [
+    117,
+    100
+   ],
+   "anchor": [
+    53,
+    98
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small26@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small26@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small27@1": {
+   "category": "prop",
+   "size": [
+    116,
+    100
+   ],
+   "anchor": [
+    50,
+    98
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small27@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small27@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small28@1": {
+   "category": "prop",
+   "size": [
+    115,
+    96
+   ],
+   "anchor": [
+    46,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small28@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small28@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small29@1": {
+   "category": "prop",
+   "size": [
+    114,
+    100
+   ],
+   "anchor": [
+    49,
+    98
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small29@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small29@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small30@1": {
+   "category": "prop",
+   "size": [
+    169,
+    124
+   ],
+   "anchor": [
+    29,
+    123
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small30@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small30@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small31@1": {
+   "category": "prop",
+   "size": [
+    171,
+    123
+   ],
+   "anchor": [
+    35,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small31@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small31@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small32@1": {
+   "category": "prop",
+   "size": [
+    64,
+    82
+   ],
+   "anchor": [
+    25,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small32@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small32@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small33@1": {
+   "category": "prop",
+   "size": [
+    66,
+    82
+   ],
+   "anchor": [
+    26,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small33@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small33@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small34@1": {
+   "category": "prop",
+   "size": [
+    65,
+    79
+   ],
+   "anchor": [
+    30,
+    78
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small34@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small34@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small35@1": {
+   "category": "prop",
+   "size": [
+    94,
+    94
+   ],
+   "anchor": [
+    48,
+    92
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small35@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small35@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small36@1": {
+   "category": "prop",
+   "size": [
+    83,
+    83
+   ],
+   "anchor": [
+    36,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small36@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small36@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small37@1": {
+   "category": "prop",
+   "size": [
+    80,
+    83
+   ],
+   "anchor": [
+    32,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small37@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small37@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small38@1": {
+   "category": "prop",
+   "size": [
+    113,
+    107
+   ],
+   "anchor": [
+    56,
+    105
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small38@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small38@1.webp",
+   "kind": "small"
+  },
+  "cahumba_tree10@1": {
+   "category": "prop",
+   "size": [
+    136,
+    126
+   ],
+   "anchor": [
+    67,
+    124
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree10@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree10@1.webp",
+   "kind": "tree"
+  },
+  "cahumba_small39@1": {
+   "category": "prop",
+   "size": [
+    136,
+    132
+   ],
+   "anchor": [
+    57,
+    130
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small39@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small39@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small40@1": {
+   "category": "prop",
+   "size": [
+    135,
+    132
+   ],
+   "anchor": [
+    60,
+    131
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small40@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small40@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small41@1": {
+   "category": "prop",
+   "size": [
+    90,
+    182
+   ],
+   "anchor": [
+    9,
+    181
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small41@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small41@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small42@1": {
+   "category": "prop",
+   "size": [
+    109,
+    188
+   ],
+   "anchor": [
+    11,
+    187
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small42@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small42@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small43@1": {
+   "category": "prop",
+   "size": [
+    137,
+    172
+   ],
+   "anchor": [
+    84,
+    169
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small43@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small43@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small44@1": {
+   "category": "prop",
+   "size": [
+    131,
+    171
+   ],
+   "anchor": [
+    82,
+    170
+   ],
+   "footprint": [
+    1.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small44@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small44@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small45@1": {
+   "category": "prop",
+   "size": [
+    137,
+    175
+   ],
+   "anchor": [
+    85,
+    173
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small45@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small45@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small46@1": {
+   "category": "prop",
+   "size": [
+    97,
+    122
+   ],
+   "anchor": [
+    36,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small46@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small46@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small47@1": {
+   "category": "prop",
+   "size": [
+    99,
+    122
+   ],
+   "anchor": [
+    39,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small47@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small47@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small48@1": {
+   "category": "prop",
+   "size": [
+    146,
+    158
+   ],
+   "anchor": [
+    80,
+    156
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small48@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small48@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small49@1": {
+   "category": "prop",
+   "size": [
+    202,
+    138
+   ],
+   "anchor": [
+    99,
+    129
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small49@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small49@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small50@1": {
+   "category": "prop",
+   "size": [
+    226,
+    142
+   ],
+   "anchor": [
+    58,
+    127
+   ],
+   "footprint": [
+    0.8,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small50@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small50@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small51@1": {
+   "category": "prop",
+   "size": [
+    76,
+    121
+   ],
+   "anchor": [
+    23,
+    119
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small51@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small51@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small52@1": {
+   "category": "prop",
+   "size": [
+    75,
+    121
+   ],
+   "anchor": [
+    42,
+    120
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small52@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small52@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small53@1": {
+   "category": "prop",
+   "size": [
+    195,
+    126
+   ],
+   "anchor": [
+    135,
+    124
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small53@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small53@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small54@1": {
+   "category": "prop",
+   "size": [
+    380,
+    163
+   ],
+   "anchor": [
+    339,
+    161
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small54@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small54@1.webp",
+   "kind": "small"
+  },
+  "cahumba_small55@1": {
+   "category": "prop",
+   "size": [
+    530,
+    160
+   ],
+   "anchor": [
+    359,
+    157
+   ],
+   "footprint": [
+    3.0,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small55@1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small55@1.webp",
+   "kind": "small"
+  },
+  "cahumba_escola@2": {
+   "category": "building",
+   "size": [
+    986,
+    512
+   ],
+   "anchor": [
+    417,
+    506
+   ],
+   "footprint": [
+    10.4,
+    14.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_escola@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_escola@2.webp",
+   "name": "Escola Primária da Cahumba",
+   "venue": "escola"
+  },
+  "cahumba_saude@2": {
+   "category": "building",
+   "size": [
+    814,
+    443
+   ],
+   "anchor": [
+    326,
+    437
+   ],
+   "footprint": [
+    8.1,
+    12.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_saude@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_saude@2.webp",
+   "name": "Centro de Saúde da Cahumba",
+   "venue": "saude"
+  },
+  "cahumba_igreja@2": {
+   "category": "building",
+   "size": [
+    728,
+    501
+   ],
+   "anchor": [
+    309,
+    496
+   ],
+   "footprint": [
+    7.7,
+    10.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_igreja@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_igreja@2.webp",
+   "name": "Igreja Católica da Cahumba",
+   "venue": "igreja"
+  },
+  "cahumba_mercado@2": {
+   "category": "building",
+   "size": [
+    1065,
+    496
+   ],
+   "anchor": [
+    497,
+    489
+   ],
+   "footprint": [
+    12.4,
+    14.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_mercado@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_mercado@2.webp",
+   "name": "Mercado da Cahumba",
+   "venue": "mercado"
+  },
+  "cahumba_cantina@2": {
+   "category": "building",
+   "size": [
+    650,
+    426
+   ],
+   "anchor": [
+    351,
+    420
+   ],
+   "footprint": [
+    8.7,
+    7.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_cantina@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_cantina@2.webp",
+   "name": "Cantina da Cahumba",
+   "venue": "cantina"
+  },
+  "cahumba_farmacia@2": {
+   "category": "building",
+   "size": [
+    523,
+    404
+   ],
+   "anchor": [
+    318,
+    401
+   ],
+   "footprint": [
+    7.9,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_farmacia@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_farmacia@2.webp",
+   "name": "Farmácia Cahumba",
+   "venue": "farmacia"
+  },
+  "cahumba_administracao@2": {
+   "category": "building",
+   "size": [
+    605,
+    484
+   ],
+   "anchor": [
+    357,
+    480
+   ],
+   "footprint": [
+    8.9,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_administracao@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_administracao@2.webp",
+   "name": "Administração da Cahumba",
+   "venue": "administracao"
+  },
+  "cahumba_padaria@2": {
+   "category": "building",
+   "size": [
+    619,
+    412
+   ],
+   "anchor": [
+    384,
+    408
+   ],
+   "footprint": [
+    9.6,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_padaria@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_padaria@2.webp",
+   "name": "Padaria Cahumba",
+   "venue": "padaria"
+  },
+  "cahumba_discoteca@2": {
+   "category": "building",
+   "size": [
+    654,
+    442
+   ],
+   "anchor": [
+    389,
+    437
+   ],
+   "footprint": [
+    9.7,
+    6.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_discoteca@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_discoteca@2.webp",
+   "name": "Discoteca Cahumba",
+   "venue": "discoteca"
+  },
+  "cahumba_apartamentos@2": {
+   "category": "building",
+   "size": [
+    585,
+    609
+   ],
+   "anchor": [
+    348,
+    605
+   ],
+   "footprint": [
+    8.7,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_apartamentos@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_apartamentos@2.webp",
+   "name": "Prédio Cahumba",
+   "venue": "apartamentos"
+  },
+  "cahumba_casa1@2": {
+   "category": "building",
+   "size": [
+    431,
+    293
+   ],
+   "anchor": [
+    193,
+    290
+   ],
+   "footprint": [
+    4.8,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa1@2.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cahumba_casa2@2": {
+   "category": "building",
+   "size": [
+    393,
+    291
+   ],
+   "anchor": [
+    192,
+    289
+   ],
+   "footprint": [
+    4.8,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa2@2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cahumba_casa3@2": {
+   "category": "building",
+   "size": [
+    378,
+    287
+   ],
+   "anchor": [
+    187,
+    284
+   ],
+   "footprint": [
+    4.6,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa3@2.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cahumba_casa4@2": {
+   "category": "building",
+   "size": [
+    431,
+    304
+   ],
+   "anchor": [
+    206,
+    301
+   ],
+   "footprint": [
+    5.1,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa4@2.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cahumba_casa5@2": {
+   "category": "building",
+   "size": [
+    429,
+    292
+   ],
+   "anchor": [
+    220,
+    289
+   ],
+   "footprint": [
+    5.5,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa5@2.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cahumba_casa6@2": {
+   "category": "building",
+   "size": [
+    386,
+    314
+   ],
+   "anchor": [
+    189,
+    311
+   ],
+   "footprint": [
+    4.7,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa6@2.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cahumba_casa7@2": {
+   "category": "building",
+   "size": [
+    410,
+    285
+   ],
+   "anchor": [
+    205,
+    282
+   ],
+   "footprint": [
+    5.1,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa7@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa7@2.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cahumba_casa8@2": {
+   "category": "building",
+   "size": [
+    388,
+    283
+   ],
+   "anchor": [
+    188,
+    280
+   ],
+   "footprint": [
+    4.7,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa8@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa8@2.webp",
+   "name": "Casa 8",
+   "venue": "casa"
+  },
+  "cahumba_casa9@2": {
+   "category": "building",
+   "size": [
+    466,
+    277
+   ],
+   "anchor": [
+    232,
+    274
+   ],
+   "footprint": [
+    5.8,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa9@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa9@2.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "cahumba_tree1@2": {
+   "category": "prop",
+   "size": [
+    359,
+    233
+   ],
+   "anchor": [
+    179,
+    231
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree1@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree2@2": {
+   "category": "prop",
+   "size": [
+    185,
+    258
+   ],
+   "anchor": [
+    92,
+    256
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree2@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_small1@2": {
+   "category": "prop",
+   "size": [
+    188,
+    246
+   ],
+   "anchor": [
+    94,
+    245
+   ],
+   "footprint": [
+    1.3,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small1@2.webp",
+   "kind": "small"
+  },
+  "cahumba_tree3@2": {
+   "category": "prop",
+   "size": [
+    369,
+    269
+   ],
+   "anchor": [
+    184,
+    267
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree3@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree4@2": {
+   "category": "prop",
+   "size": [
+    234,
+    234
+   ],
+   "anchor": [
+    117,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree4@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree5@2": {
+   "category": "prop",
+   "size": [
+    214,
+    226
+   ],
+   "anchor": [
+    106,
+    224
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree5@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree6@2": {
+   "category": "prop",
+   "size": [
+    213,
+    231
+   ],
+   "anchor": [
+    106,
+    229
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree6@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree7@2": {
+   "category": "prop",
+   "size": [
+    194,
+    220
+   ],
+   "anchor": [
+    96,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree7@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree7@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree8@2": {
+   "category": "prop",
+   "size": [
+    176,
+    205
+   ],
+   "anchor": [
+    87,
+    203
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree8@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree8@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree9@2": {
+   "category": "prop",
+   "size": [
+    154,
+    189
+   ],
+   "anchor": [
+    76,
+    188
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree9@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree9@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_lamp1@2": {
+   "category": "prop",
+   "size": [
+    106,
+    247
+   ],
+   "anchor": [
+    52,
+    246
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp1@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole1@2": {
+   "category": "prop",
+   "size": [
+    72,
+    217
+   ],
+   "anchor": [
+    35,
+    215
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole1@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole2@2": {
+   "category": "prop",
+   "size": [
+    62,
+    221
+   ],
+   "anchor": [
+    30,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole2@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_lamp2@2": {
+   "category": "prop",
+   "size": [
+    97,
+    234
+   ],
+   "anchor": [
+    48,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp2@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_lamp3@2": {
+   "category": "prop",
+   "size": [
+    130,
+    227
+   ],
+   "anchor": [
+    64,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp3@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole3@2": {
+   "category": "prop",
+   "size": [
+    92,
+    235
+   ],
+   "anchor": [
+    45,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole3@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole4@2": {
+   "category": "prop",
+   "size": [
+    94,
+    246
+   ],
+   "anchor": [
+    46,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole4@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole5@2": {
+   "category": "prop",
+   "size": [
+    81,
+    249
+   ],
+   "anchor": [
+    39,
+    248
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole5@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole6@2": {
+   "category": "prop",
+   "size": [
+    87,
+    247
+   ],
+   "anchor": [
+    43,
+    245
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole6@2.webp",
+   "kind": "pole"
+  },
+  "cahumba_vehicle1@2": {
+   "category": "prop",
+   "size": [
+    293,
+    193
+   ],
+   "anchor": [
+    132,
+    191
+   ],
+   "footprint": [
+    1.8,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle1@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle2@2": {
+   "category": "prop",
+   "size": [
+    288,
+    196
+   ],
+   "anchor": [
+    125,
+    194
+   ],
+   "footprint": [
+    1.7,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle2@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle3@2": {
+   "category": "prop",
+   "size": [
+    124,
+    118
+   ],
+   "anchor": [
+    16,
+    117
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle3@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_small2@2": {
+   "category": "prop",
+   "size": [
+    115,
+    114
+   ],
+   "anchor": [
+    13,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small2@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small3@2": {
+   "category": "prop",
+   "size": [
+    118,
+    116
+   ],
+   "anchor": [
+    14,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small3@2.webp",
+   "kind": "small"
+  },
+  "cahumba_vehicle4@2": {
+   "category": "prop",
+   "size": [
+    116,
+    116
+   ],
+   "anchor": [
+    14,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle4@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle5@2": {
+   "category": "prop",
+   "size": [
+    224,
+    126
+   ],
+   "anchor": [
+    110,
+    125
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle5@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle6@2": {
+   "category": "prop",
+   "size": [
+    215,
+    124
+   ],
+   "anchor": [
+    104,
+    122
+   ],
+   "footprint": [
+    1.4,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle6@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle7@2": {
+   "category": "prop",
+   "size": [
+    229,
+    147
+   ],
+   "anchor": [
+    111,
+    146
+   ],
+   "footprint": [
+    1.5,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle7@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle7@2.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_stall1@2": {
+   "category": "prop",
+   "size": [
+    172,
+    186
+   ],
+   "anchor": [
+    108,
+    184
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall1@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall1@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall2@2": {
+   "category": "prop",
+   "size": [
+    168,
+    168
+   ],
+   "anchor": [
+    99,
+    166
+   ],
+   "footprint": [
+    1.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall2@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall2@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall3@2": {
+   "category": "prop",
+   "size": [
+    205,
+    183
+   ],
+   "anchor": [
+    132,
+    180
+   ],
+   "footprint": [
+    1.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall3@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall3@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall4@2": {
+   "category": "prop",
+   "size": [
+    186,
+    171
+   ],
+   "anchor": [
+    103,
+    169
+   ],
+   "footprint": [
+    1.4,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall4@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall5@2": {
+   "category": "prop",
+   "size": [
+    156,
+    178
+   ],
+   "anchor": [
+    96,
+    176
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall5@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall6@2": {
+   "category": "prop",
+   "size": [
+    198,
+    174
+   ],
+   "anchor": [
+    112,
+    172
+   ],
+   "footprint": [
+    1.5,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall6@2.webp",
+   "kind": "stall"
+  },
+  "cahumba_small4@2": {
+   "category": "prop",
+   "size": [
+    159,
+    146
+   ],
+   "anchor": [
+    86,
+    144
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small4@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small4@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small5@2": {
+   "category": "prop",
+   "size": [
+    155,
+    146
+   ],
+   "anchor": [
+    84,
+    143
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small5@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small5@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small6@2": {
+   "category": "prop",
+   "size": [
+    155,
+    147
+   ],
+   "anchor": [
+    86,
+    145
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small6@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small6@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small7@2": {
+   "category": "prop",
+   "size": [
+    165,
+    152
+   ],
+   "anchor": [
+    97,
+    150
+   ],
+   "footprint": [
+    1.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small7@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small7@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small8@2": {
+   "category": "prop",
+   "size": [
+    135,
+    80
+   ],
+   "anchor": [
+    97,
+    79
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small8@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small8@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small9@2": {
+   "category": "prop",
+   "size": [
+    139,
+    88
+   ],
+   "anchor": [
+    98,
+    86
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small9@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small9@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small10@2": {
+   "category": "prop",
+   "size": [
+    120,
+    75
+   ],
+   "anchor": [
+    75,
+    73
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small10@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small10@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small11@2": {
+   "category": "prop",
+   "size": [
+    141,
+    94
+   ],
+   "anchor": [
+    107,
+    91
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small11@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small11@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small12@2": {
+   "category": "prop",
+   "size": [
+    122,
+    143
+   ],
+   "anchor": [
+    68,
+    141
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small12@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small12@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small13@2": {
+   "category": "prop",
+   "size": [
+    119,
+    141
+   ],
+   "anchor": [
+    63,
+    139
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small13@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small13@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small14@2": {
+   "category": "prop",
+   "size": [
+    112,
+    128
+   ],
+   "anchor": [
+    58,
+    126
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small14@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small14@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small15@2": {
+   "category": "prop",
+   "size": [
+    117,
+    91
+   ],
+   "anchor": [
+    59,
+    89
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small15@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small15@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small16@2": {
+   "category": "prop",
+   "size": [
+    116,
+    92
+   ],
+   "anchor": [
+    64,
+    90
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small16@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small16@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small17@2": {
+   "category": "prop",
+   "size": [
+    236,
+    144
+   ],
+   "anchor": [
+    169,
+    141
+   ],
+   "footprint": [
+    2.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small17@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small17@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small18@2": {
+   "category": "prop",
+   "size": [
+    216,
+    145
+   ],
+   "anchor": [
+    158,
+    143
+   ],
+   "footprint": [
+    2.1,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small18@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small18@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small19@2": {
+   "category": "prop",
+   "size": [
+    79,
+    103
+   ],
+   "anchor": [
+    29,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small19@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small19@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small20@2": {
+   "category": "prop",
+   "size": [
+    74,
+    102
+   ],
+   "anchor": [
+    26,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small20@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small20@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small21@2": {
+   "category": "prop",
+   "size": [
+    82,
+    107
+   ],
+   "anchor": [
+    31,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small21@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small21@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small22@2": {
+   "category": "prop",
+   "size": [
+    82,
+    95
+   ],
+   "anchor": [
+    30,
+    93
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small22@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small22@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small23@2": {
+   "category": "prop",
+   "size": [
+    121,
+    102
+   ],
+   "anchor": [
+    18,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small23@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small23@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small24@2": {
+   "category": "prop",
+   "size": [
+    120,
+    101
+   ],
+   "anchor": [
+    19,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small24@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small24@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small25@2": {
+   "category": "prop",
+   "size": [
+    124,
+    101
+   ],
+   "anchor": [
+    18,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small25@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small25@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small26@2": {
+   "category": "prop",
+   "size": [
+    122,
+    102
+   ],
+   "anchor": [
+    51,
+    100
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small26@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small26@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small27@2": {
+   "category": "prop",
+   "size": [
+    121,
+    101
+   ],
+   "anchor": [
+    50,
+    99
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small27@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small27@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small28@2": {
+   "category": "prop",
+   "size": [
+    120,
+    100
+   ],
+   "anchor": [
+    52,
+    99
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small28@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small28@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small29@2": {
+   "category": "prop",
+   "size": [
+    122,
+    102
+   ],
+   "anchor": [
+    51,
+    100
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small29@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small29@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small30@2": {
+   "category": "prop",
+   "size": [
+    176,
+    119
+   ],
+   "anchor": [
+    23,
+    118
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small30@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small30@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small31@2": {
+   "category": "prop",
+   "size": [
+    175,
+    121
+   ],
+   "anchor": [
+    28,
+    120
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small31@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small31@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small32@2": {
+   "category": "prop",
+   "size": [
+    65,
+    81
+   ],
+   "anchor": [
+    28,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small32@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small32@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small33@2": {
+   "category": "prop",
+   "size": [
+    66,
+    83
+   ],
+   "anchor": [
+    25,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small33@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small33@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small34@2": {
+   "category": "prop",
+   "size": [
+    64,
+    79
+   ],
+   "anchor": [
+    26,
+    77
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small34@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small34@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small35@2": {
+   "category": "prop",
+   "size": [
+    93,
+    89
+   ],
+   "anchor": [
+    43,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small35@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small35@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small36@2": {
+   "category": "prop",
+   "size": [
+    82,
+    84
+   ],
+   "anchor": [
+    38,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small36@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small36@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small37@2": {
+   "category": "prop",
+   "size": [
+    78,
+    84
+   ],
+   "anchor": [
+    38,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small37@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small37@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small38@2": {
+   "category": "prop",
+   "size": [
+    110,
+    101
+   ],
+   "anchor": [
+    58,
+    99
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small38@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small38@2.webp",
+   "kind": "small"
+  },
+  "cahumba_tree10@2": {
+   "category": "prop",
+   "size": [
+    138,
+    120
+   ],
+   "anchor": [
+    68,
+    118
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree10@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree10@2.webp",
+   "kind": "tree"
+  },
+  "cahumba_small39@2": {
+   "category": "prop",
+   "size": [
+    129,
+    134
+   ],
+   "anchor": [
+    58,
+    132
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small39@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small39@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small40@2": {
+   "category": "prop",
+   "size": [
+    129,
+    135
+   ],
+   "anchor": [
+    59,
+    133
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small40@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small40@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small41@2": {
+   "category": "prop",
+   "size": [
+    88,
+    183
+   ],
+   "anchor": [
+    8,
+    181
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small41@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small41@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small42@2": {
+   "category": "prop",
+   "size": [
+    101,
+    183
+   ],
+   "anchor": [
+    11,
+    181
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small42@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small42@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small43@2": {
+   "category": "prop",
+   "size": [
+    131,
+    167
+   ],
+   "anchor": [
+    82,
+    165
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small43@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small43@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small44@2": {
+   "category": "prop",
+   "size": [
+    126,
+    165
+   ],
+   "anchor": [
+    77,
+    163
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small44@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small44@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small45@2": {
+   "category": "prop",
+   "size": [
+    129,
+    167
+   ],
+   "anchor": [
+    80,
+    165
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small45@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small45@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small46@2": {
+   "category": "prop",
+   "size": [
+    98,
+    124
+   ],
+   "anchor": [
+    42,
+    123
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small46@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small46@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small47@2": {
+   "category": "prop",
+   "size": [
+    99,
+    124
+   ],
+   "anchor": [
+    40,
+    123
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small47@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small47@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small48@2": {
+   "category": "prop",
+   "size": [
+    145,
+    157
+   ],
+   "anchor": [
+    80,
+    155
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small48@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small48@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small49@2": {
+   "category": "prop",
+   "size": [
+    201,
+    132
+   ],
+   "anchor": [
+    42,
+    130
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small49@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small49@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small50@2": {
+   "category": "prop",
+   "size": [
+    220,
+    134
+   ],
+   "anchor": [
+    43,
+    131
+   ],
+   "footprint": [
+    0.6,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small50@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small50@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small51@2": {
+   "category": "prop",
+   "size": [
+    75,
+    117
+   ],
+   "anchor": [
+    15,
+    115
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small51@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small51@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small52@2": {
+   "category": "prop",
+   "size": [
+    75,
+    120
+   ],
+   "anchor": [
+    21,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small52@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small52@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small53@2": {
+   "category": "prop",
+   "size": [
+    195,
+    123
+   ],
+   "anchor": [
+    133,
+    122
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small53@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small53@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small54@2": {
+   "category": "prop",
+   "size": [
+    380,
+    160
+   ],
+   "anchor": [
+    338,
+    158
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small54@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small54@2.webp",
+   "kind": "small"
+  },
+  "cahumba_small55@2": {
+   "category": "prop",
+   "size": [
+    539,
+    161
+   ],
+   "anchor": [
+    356,
+    158
+   ],
+   "footprint": [
+    3.0,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small55@2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small55@2.webp",
+   "kind": "small"
+  },
+  "cahumba_escola@3": {
+   "category": "building",
+   "size": [
+    964,
+    510
+   ],
+   "anchor": [
+    453,
+    505
+   ],
+   "footprint": [
+    11.3,
+    12.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_escola@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_escola@3.webp",
+   "name": "Escola Primária da Cahumba",
+   "venue": "escola"
+  },
+  "cahumba_saude@3": {
+   "category": "building",
+   "size": [
+    851,
+    446
+   ],
+   "anchor": [
+    357,
+    441
+   ],
+   "footprint": [
+    8.9,
+    12.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_saude@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_saude@3.webp",
+   "name": "Centro de Saúde da Cahumba",
+   "venue": "saude"
+  },
+  "cahumba_igreja@3": {
+   "category": "building",
+   "size": [
+    702,
+    500
+   ],
+   "anchor": [
+    300,
+    497
+   ],
+   "footprint": [
+    7.5,
+    10.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_igreja@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_igreja@3.webp",
+   "name": "Igreja Católica da Cahumba",
+   "venue": "igreja"
+  },
+  "cahumba_mercado@3": {
+   "category": "building",
+   "size": [
+    1041,
+    498
+   ],
+   "anchor": [
+    449,
+    490
+   ],
+   "footprint": [
+    11.2,
+    14.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_mercado@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_mercado@3.webp",
+   "name": "Mercado da Cahumba",
+   "venue": "mercado"
+  },
+  "cahumba_cantina@3": {
+   "category": "building",
+   "size": [
+    647,
+    422
+   ],
+   "anchor": [
+    233,
+    418
+   ],
+   "footprint": [
+    5.8,
+    10.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_cantina@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_cantina@3.webp",
+   "name": "Cantina da Cahumba",
+   "venue": "cantina"
+  },
+  "cahumba_farmacia@3": {
+   "category": "building",
+   "size": [
+    551,
+    379
+   ],
+   "anchor": [
+    203,
+    376
+   ],
+   "footprint": [
+    5.0,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_farmacia@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_farmacia@3.webp",
+   "name": "Farmácia Cahumba",
+   "venue": "farmacia"
+  },
+  "cahumba_administracao@3": {
+   "category": "building",
+   "size": [
+    587,
+    489
+   ],
+   "anchor": [
+    208,
+    486
+   ],
+   "footprint": [
+    5.2,
+    9.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_administracao@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_administracao@3.webp",
+   "name": "Administração da Cahumba",
+   "venue": "administracao"
+  },
+  "cahumba_padaria@3": {
+   "category": "building",
+   "size": [
+    623,
+    414
+   ],
+   "anchor": [
+    243,
+    411
+   ],
+   "footprint": [
+    6.0,
+    9.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_padaria@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_padaria@3.webp",
+   "name": "Padaria Cahumba",
+   "venue": "padaria"
+  },
+  "cahumba_discoteca@3": {
+   "category": "building",
+   "size": [
+    654,
+    408
+   ],
+   "anchor": [
+    273,
+    405
+   ],
+   "footprint": [
+    6.8,
+    9.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_discoteca@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_discoteca@3.webp",
+   "name": "Discoteca Cahumba",
+   "venue": "discoteca"
+  },
+  "cahumba_apartamentos@3": {
+   "category": "building",
+   "size": [
+    577,
+    573
+   ],
+   "anchor": [
+    224,
+    570
+   ],
+   "footprint": [
+    5.6,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_apartamentos@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_apartamentos@3.webp",
+   "name": "Prédio Cahumba",
+   "venue": "apartamentos"
+  },
+  "cahumba_casa1@3": {
+   "category": "building",
+   "size": [
+    449,
+    287
+   ],
+   "anchor": [
+    225,
+    284
+   ],
+   "footprint": [
+    5.6,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa1@3.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cahumba_casa2@3": {
+   "category": "building",
+   "size": [
+    401,
+    281
+   ],
+   "anchor": [
+    181,
+    278
+   ],
+   "footprint": [
+    4.5,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa2@3.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cahumba_casa3@3": {
+   "category": "building",
+   "size": [
+    357,
+    272
+   ],
+   "anchor": [
+    158,
+    269
+   ],
+   "footprint": [
+    3.9,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa3@3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cahumba_casa4@3": {
+   "category": "building",
+   "size": [
+    410,
+    291
+   ],
+   "anchor": [
+    167,
+    288
+   ],
+   "footprint": [
+    4.1,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa4@3.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cahumba_casa5@3": {
+   "category": "building",
+   "size": [
+    431,
+    289
+   ],
+   "anchor": [
+    175,
+    287
+   ],
+   "footprint": [
+    4.3,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa5@3.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cahumba_casa6@3": {
+   "category": "building",
+   "size": [
+    367,
+    305
+   ],
+   "anchor": [
+    167,
+    302
+   ],
+   "footprint": [
+    4.1,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa6@3.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cahumba_casa7@3": {
+   "category": "building",
+   "size": [
+    399,
+    288
+   ],
+   "anchor": [
+    188,
+    285
+   ],
+   "footprint": [
+    4.7,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa7@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa7@3.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cahumba_casa8@3": {
+   "category": "building",
+   "size": [
+    393,
+    275
+   ],
+   "anchor": [
+    171,
+    273
+   ],
+   "footprint": [
+    4.2,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa8@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa8@3.webp",
+   "name": "Casa 8",
+   "venue": "casa"
+  },
+  "cahumba_casa9@3": {
+   "category": "building",
+   "size": [
+    412,
+    275
+   ],
+   "anchor": [
+    143,
+    272
+   ],
+   "footprint": [
+    3.5,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa9@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa9@3.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "cahumba_tree1@3": {
+   "category": "prop",
+   "size": [
+    356,
+    254
+   ],
+   "anchor": [
+    177,
+    252
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree1@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree2@3": {
+   "category": "prop",
+   "size": [
+    201,
+    271
+   ],
+   "anchor": [
+    100,
+    269
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree2@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_small1@3": {
+   "category": "prop",
+   "size": [
+    201,
+    258
+   ],
+   "anchor": [
+    98,
+    256
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small1@3.webp",
+   "kind": "small"
+  },
+  "cahumba_tree3@3": {
+   "category": "prop",
+   "size": [
+    378,
+    270
+   ],
+   "anchor": [
+    188,
+    267
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree3@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree4@3": {
+   "category": "prop",
+   "size": [
+    232,
+    235
+   ],
+   "anchor": [
+    116,
+    233
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree4@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree5@3": {
+   "category": "prop",
+   "size": [
+    220,
+    231
+   ],
+   "anchor": [
+    109,
+    229
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree5@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree6@3": {
+   "category": "prop",
+   "size": [
+    221,
+    234
+   ],
+   "anchor": [
+    110,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree6@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree7@3": {
+   "category": "prop",
+   "size": [
+    208,
+    234
+   ],
+   "anchor": [
+    103,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree7@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree7@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree8@3": {
+   "category": "prop",
+   "size": [
+    186,
+    216
+   ],
+   "anchor": [
+    92,
+    214
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree8@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree8@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_tree9@3": {
+   "category": "prop",
+   "size": [
+    156,
+    190
+   ],
+   "anchor": [
+    77,
+    189
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree9@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree9@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_lamp1@3": {
+   "category": "prop",
+   "size": [
+    109,
+    248
+   ],
+   "anchor": [
+    54,
+    247
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp1@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole1@3": {
+   "category": "prop",
+   "size": [
+    80,
+    215
+   ],
+   "anchor": [
+    39,
+    214
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole1@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole2@3": {
+   "category": "prop",
+   "size": [
+    57,
+    217
+   ],
+   "anchor": [
+    28,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole2@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_lamp2@3": {
+   "category": "prop",
+   "size": [
+    101,
+    232
+   ],
+   "anchor": [
+    50,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp2@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_lamp3@3": {
+   "category": "prop",
+   "size": [
+    134,
+    225
+   ],
+   "anchor": [
+    66,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_lamp3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_lamp3@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cahumba_pole3@3": {
+   "category": "prop",
+   "size": [
+    89,
+    237
+   ],
+   "anchor": [
+    44,
+    236
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole3@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole4@3": {
+   "category": "prop",
+   "size": [
+    107,
+    246
+   ],
+   "anchor": [
+    52,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole4@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole5@3": {
+   "category": "prop",
+   "size": [
+    96,
+    245
+   ],
+   "anchor": [
+    47,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole5@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_pole6@3": {
+   "category": "prop",
+   "size": [
+    85,
+    246
+   ],
+   "anchor": [
+    42,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_pole6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_pole6@3.webp",
+   "kind": "pole"
+  },
+  "cahumba_vehicle1@3": {
+   "category": "prop",
+   "size": [
+    283,
+    193
+   ],
+   "anchor": [
+    146,
+    192
+   ],
+   "footprint": [
+    2.0,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle1@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle2@3": {
+   "category": "prop",
+   "size": [
+    281,
+    192
+   ],
+   "anchor": [
+    142,
+    191
+   ],
+   "footprint": [
+    1.9,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle2@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle3@3": {
+   "category": "prop",
+   "size": [
+    117,
+    117
+   ],
+   "anchor": [
+    13,
+    116
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle3@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_small2@3": {
+   "category": "prop",
+   "size": [
+    111,
+    115
+   ],
+   "anchor": [
+    14,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small2@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small3@3": {
+   "category": "prop",
+   "size": [
+    112,
+    115
+   ],
+   "anchor": [
+    12,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small3@3.webp",
+   "kind": "small"
+  },
+  "cahumba_vehicle4@3": {
+   "category": "prop",
+   "size": [
+    113,
+    115
+   ],
+   "anchor": [
+    11,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle4@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle5@3": {
+   "category": "prop",
+   "size": [
+    213,
+    127
+   ],
+   "anchor": [
+    110,
+    126
+   ],
+   "footprint": [
+    1.5,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle5@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle6@3": {
+   "category": "prop",
+   "size": [
+    210,
+    131
+   ],
+   "anchor": [
+    105,
+    129
+   ],
+   "footprint": [
+    1.4,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle6@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_vehicle7@3": {
+   "category": "prop",
+   "size": [
+    222,
+    154
+   ],
+   "anchor": [
+    105,
+    153
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_vehicle7@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_vehicle7@3.webp",
+   "kind": "vehicle"
+  },
+  "cahumba_stall1@3": {
+   "category": "prop",
+   "size": [
+    168,
+    184
+   ],
+   "anchor": [
+    116,
+    182
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall1@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall1@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall2@3": {
+   "category": "prop",
+   "size": [
+    164,
+    169
+   ],
+   "anchor": [
+    77,
+    167
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall2@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall2@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall3@3": {
+   "category": "prop",
+   "size": [
+    216,
+    182
+   ],
+   "anchor": [
+    126,
+    180
+   ],
+   "footprint": [
+    1.7,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall3@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall3@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall4@3": {
+   "category": "prop",
+   "size": [
+    190,
+    176
+   ],
+   "anchor": [
+    94,
+    174
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall4@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall5@3": {
+   "category": "prop",
+   "size": [
+    155,
+    181
+   ],
+   "anchor": [
+    70,
+    179
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall5@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_stall6@3": {
+   "category": "prop",
+   "size": [
+    201,
+    174
+   ],
+   "anchor": [
+    112,
+    172
+   ],
+   "footprint": [
+    1.5,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_stall6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_stall6@3.webp",
+   "kind": "stall"
+  },
+  "cahumba_small4@3": {
+   "category": "prop",
+   "size": [
+    150,
+    146
+   ],
+   "anchor": [
+    80,
+    143
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small4@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small4@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small5@3": {
+   "category": "prop",
+   "size": [
+    150,
+    142
+   ],
+   "anchor": [
+    81,
+    140
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small5@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small5@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small6@3": {
+   "category": "prop",
+   "size": [
+    153,
+    147
+   ],
+   "anchor": [
+    85,
+    145
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small6@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small6@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small7@3": {
+   "category": "prop",
+   "size": [
+    157,
+    149
+   ],
+   "anchor": [
+    92,
+    147
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small7@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small7@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small8@3": {
+   "category": "prop",
+   "size": [
+    133,
+    74
+   ],
+   "anchor": [
+    99,
+    73
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small8@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small8@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small9@3": {
+   "category": "prop",
+   "size": [
+    138,
+    84
+   ],
+   "anchor": [
+    103,
+    83
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small9@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small9@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small10@3": {
+   "category": "prop",
+   "size": [
+    118,
+    72
+   ],
+   "anchor": [
+    76,
+    70
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small10@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small10@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small11@3": {
+   "category": "prop",
+   "size": [
+    148,
+    92
+   ],
+   "anchor": [
+    116,
+    90
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small11@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small11@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small12@3": {
+   "category": "prop",
+   "size": [
+    120,
+    143
+   ],
+   "anchor": [
+    63,
+    141
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small12@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small12@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small13@3": {
+   "category": "prop",
+   "size": [
+    117,
+    134
+   ],
+   "anchor": [
+    62,
+    132
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small13@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small13@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small14@3": {
+   "category": "prop",
+   "size": [
+    112,
+    126
+   ],
+   "anchor": [
+    59,
+    124
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small14@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small14@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small15@3": {
+   "category": "prop",
+   "size": [
+    111,
+    93
+   ],
+   "anchor": [
+    58,
+    91
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small15@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small15@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small16@3": {
+   "category": "prop",
+   "size": [
+    114,
+    92
+   ],
+   "anchor": [
+    58,
+    90
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small16@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small16@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small17@3": {
+   "category": "prop",
+   "size": [
+    221,
+    144
+   ],
+   "anchor": [
+    45,
+    141
+   ],
+   "footprint": [
+    0.6,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small17@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small17@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small18@3": {
+   "category": "prop",
+   "size": [
+    207,
+    146
+   ],
+   "anchor": [
+    159,
+    144
+   ],
+   "footprint": [
+    2.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small18@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small18@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small19@3": {
+   "category": "prop",
+   "size": [
+    86,
+    103
+   ],
+   "anchor": [
+    31,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small19@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small19@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small20@3": {
+   "category": "prop",
+   "size": [
+    81,
+    102
+   ],
+   "anchor": [
+    33,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small20@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small20@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small21@3": {
+   "category": "prop",
+   "size": [
+    86,
+    104
+   ],
+   "anchor": [
+    33,
+    103
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small21@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small21@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small22@3": {
+   "category": "prop",
+   "size": [
+    84,
+    95
+   ],
+   "anchor": [
+    32,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small22@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small22@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small23@3": {
+   "category": "prop",
+   "size": [
+    124,
+    111
+   ],
+   "anchor": [
+    20,
+    110
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small23@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small23@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small24@3": {
+   "category": "prop",
+   "size": [
+    122,
+    113
+   ],
+   "anchor": [
+    18,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small24@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small24@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small25@3": {
+   "category": "prop",
+   "size": [
+    126,
+    110
+   ],
+   "anchor": [
+    17,
+    108
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small25@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small25@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small26@3": {
+   "category": "prop",
+   "size": [
+    115,
+    98
+   ],
+   "anchor": [
+    52,
+    96
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small26@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small26@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small27@3": {
+   "category": "prop",
+   "size": [
+    113,
+    97
+   ],
+   "anchor": [
+    49,
+    95
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small27@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small27@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small28@3": {
+   "category": "prop",
+   "size": [
+    113,
+    97
+   ],
+   "anchor": [
+    46,
+    95
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small28@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small28@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small29@3": {
+   "category": "prop",
+   "size": [
+    115,
+    100
+   ],
+   "anchor": [
+    53,
+    98
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small29@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small29@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small30@3": {
+   "category": "prop",
+   "size": [
+    170,
+    123
+   ],
+   "anchor": [
+    26,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small30@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small30@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small31@3": {
+   "category": "prop",
+   "size": [
+    174,
+    125
+   ],
+   "anchor": [
+    31,
+    124
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small31@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small31@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small32@3": {
+   "category": "prop",
+   "size": [
+    67,
+    85
+   ],
+   "anchor": [
+    29,
+    84
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small32@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small32@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small33@3": {
+   "category": "prop",
+   "size": [
+    69,
+    85
+   ],
+   "anchor": [
+    32,
+    84
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small33@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small33@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small34@3": {
+   "category": "prop",
+   "size": [
+    66,
+    82
+   ],
+   "anchor": [
+    24,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small34@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small34@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small35@3": {
+   "category": "prop",
+   "size": [
+    91,
+    93
+   ],
+   "anchor": [
+    47,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small35@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small35@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small36@3": {
+   "category": "prop",
+   "size": [
+    83,
+    84
+   ],
+   "anchor": [
+    39,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small36@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small36@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small37@3": {
+   "category": "prop",
+   "size": [
+    77,
+    82
+   ],
+   "anchor": [
+    31,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small37@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small37@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small38@3": {
+   "category": "prop",
+   "size": [
+    102,
+    100
+   ],
+   "anchor": [
+    52,
+    97
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small38@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small38@3.webp",
+   "kind": "small"
+  },
+  "cahumba_tree10@3": {
+   "category": "prop",
+   "size": [
+    132,
+    113
+   ],
+   "anchor": [
+    65,
+    111
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_tree10@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_tree10@3.webp",
+   "kind": "tree"
+  },
+  "cahumba_small39@3": {
+   "category": "prop",
+   "size": [
+    132,
+    132
+   ],
+   "anchor": [
+    58,
+    131
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small39@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small39@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small40@3": {
+   "category": "prop",
+   "size": [
+    130,
+    135
+   ],
+   "anchor": [
+    57,
+    133
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small40@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small40@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small41@3": {
+   "category": "prop",
+   "size": [
+    91,
+    183
+   ],
+   "anchor": [
+    9,
+    181
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small41@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small41@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small42@3": {
+   "category": "prop",
+   "size": [
+    105,
+    188
+   ],
+   "anchor": [
+    13,
+    187
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small42@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small42@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small43@3": {
+   "category": "prop",
+   "size": [
+    134,
+    169
+   ],
+   "anchor": [
+    85,
+    166
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small43@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small43@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small44@3": {
+   "category": "prop",
+   "size": [
+    133,
+    170
+   ],
+   "anchor": [
+    85,
+    167
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small44@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small44@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small45@3": {
+   "category": "prop",
+   "size": [
+    140,
+    175
+   ],
+   "anchor": [
+    87,
+    173
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small45@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small45@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small46@3": {
+   "category": "prop",
+   "size": [
+    98,
+    127
+   ],
+   "anchor": [
+    28,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small46@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small46@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small47@3": {
+   "category": "prop",
+   "size": [
+    102,
+    128
+   ],
+   "anchor": [
+    35,
+    127
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small47@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small47@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small48@3": {
+   "category": "prop",
+   "size": [
+    141,
+    158
+   ],
+   "anchor": [
+    74,
+    156
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small48@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small48@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small49@3": {
+   "category": "prop",
+   "size": [
+    206,
+    138
+   ],
+   "anchor": [
+    45,
+    136
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small49@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small49@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small50@3": {
+   "category": "prop",
+   "size": [
+    222,
+    136
+   ],
+   "anchor": [
+    49,
+    131
+   ],
+   "footprint": [
+    0.7,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small50@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small50@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small51@3": {
+   "category": "prop",
+   "size": [
+    74,
+    120
+   ],
+   "anchor": [
+    19,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small51@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small51@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small52@3": {
+   "category": "prop",
+   "size": [
+    74,
+    120
+   ],
+   "anchor": [
+    21,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small52@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small52@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small53@3": {
+   "category": "prop",
+   "size": [
+    191,
+    122
+   ],
+   "anchor": [
+    132,
+    121
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small53@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small53@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small54@3": {
+   "category": "prop",
+   "size": [
+    380,
+    163
+   ],
+   "anchor": [
+    339,
+    161
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small54@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small54@3.webp",
+   "kind": "small"
+  },
+  "cahumba_small55@3": {
+   "category": "prop",
+   "size": [
+    534,
+    159
+   ],
+   "anchor": [
+    360,
+    157
+   ],
+   "footprint": [
+    3.0,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_small55@3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_small55@3.webp",
+   "kind": "small"
   }
  },
- "version": "3f32ad52b0ef"
+ "version": "cab28e2fbab0"
 }
