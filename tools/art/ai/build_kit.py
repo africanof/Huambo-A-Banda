@@ -24,7 +24,7 @@ type="CompressedTexture2D"
 
 [deps]
 
-source_file="res://assets/kits/{kit}/{id}.png"
+source_file="res://assets/kits/{kit}/{id}.webp"
 
 [params]
 
@@ -66,7 +66,9 @@ def main(cfg_path):
     os.makedirs(OUT, exist_ok=True)
     man_path = os.path.join(OUT, "manifest.json")
     man = {"kit": kit, "objects": {}}
+    base_scale = scale
     for e in cfg["items"]:
+        scale = float(e.get("scale", base_scale))
         if "file" in e:  # recorte substituído (ex.: letreiro corrigido)
             im = Image.open(os.path.join(HERE, e["file"])).convert("RGBA")
             if "crop" in e:  # várias peças na mesma imagem de correção: posição gravada ao compor
@@ -101,22 +103,28 @@ def main(cfg_path):
         fx, fy, x0, x1 = front_anchor(a)
         if e.get("fp"):
             fp = e["fp"]
-            anchor = [fx, fy] if e.get("cat") == "building" else [int((x0 + x1) / 2), fy]
+            anchor = [fx, fy] if e.get("cat") in ("building", "room") else [int((x0 + x1) / 2), fy]
         else:
             w_m = round(max(1.0, (fx - x0) * scale / PX_PER_M), 1)
             d_m = round(max(1.0, (x1 - fx) * scale / PX_PER_M), 1)
-            if e.get("cat") != "building":
+            if e.get("cat") == "furniture":  # mobília: a base é quase a silhueta
+                w_m, d_m = (round(min(4.0, max(0.5, v * 0.8)), 1) for v in (w_m, d_m))
+            elif e.get("cat") != "building":
                 # adereços: a silhueta é maior do que a base (rodas, toldos, ramos)
                 w_m, d_m = (round(min(3.0, max(0.6, v * 0.55)), 1) for v in (w_m, d_m))
             fp = [w_m, d_m]
             anchor = [fx, fy]
-        im.save(os.path.join(OUT, e["id"] + ".png"), optimize=True)
-        imp = os.path.join(OUT, e["id"] + ".png.import")
+        # WebP (qualidade 92): ~6× mais leve do que PNG no repositório; o Godot importa igual
+        im.save(os.path.join(OUT, e["id"] + ".webp"), "WEBP", quality=92, method=6)
+        for old in (".png", ".png.import"):
+            if os.path.exists(os.path.join(OUT, e["id"] + old)):
+                os.remove(os.path.join(OUT, e["id"] + old))
+        imp = os.path.join(OUT, e["id"] + ".webp.import")
         if not os.path.exists(imp):
             open(imp, "w").write(IMPORT.format(kit=kit, id=e["id"]))
         entry = {"category": e.get("cat", "prop"), "size": [im.width, im.height], "anchor": anchor, "footprint": fp,
-                 "scale": scale, "out": e["id"], "kit": kit, "path": f"res://assets/kits/{kit}/{e['id']}.png"}
-        for k in ("name", "light", "floor"):
+                 "scale": scale, "out": e["id"], "kit": kit, "path": f"res://assets/kits/{kit}/{e['id']}.webp"}
+        for k in ("name", "light", "floor", "venue", "role", "kind"):
             if k in e:
                 entry[k] = e[k]
         man["objects"][e["id"]] = entry
@@ -124,7 +132,7 @@ def main(cfg_path):
     # versão do kit (muda quando a arte muda): o cliente guarda o pacote com este nome
     h = hashlib.sha256(json.dumps(man["objects"], sort_keys=True).encode())
     for k in sorted(man["objects"]):
-        h.update(open(os.path.join(OUT, k + ".png"), "rb").read())
+        h.update(open(os.path.join(OUT, k + ".webp"), "rb").read())
     man["version"] = h.hexdigest()[:12]
     json.dump(man, open(man_path, "w"), ensure_ascii=False, indent=1)
     print("kit", kit, "versão", man["version"], len(man["objects"]), "objetos")

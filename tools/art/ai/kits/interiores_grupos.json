@@ -1,0 +1,171 @@
+[
+ {
+  "kit": "kit_interiores_1",
+  "venues": [
+   "casa",
+   "cantina",
+   "padaria",
+   "hotel",
+   "banco",
+   "loja_telecom",
+   "correios",
+   "governo",
+   "tribunal"
+  ],
+  "furniture": {
+   "casa": [
+    "double bed with wax-print bedspread",
+    "terracotta sofa",
+    "TV on a wooden cabinet",
+    "gas stove with gas cylinder",
+    "white fridge",
+    "dining table with 4 chairs and flowered tablecloth",
+    "woven rug",
+    "wardrobe"
+   ],
+   "cantina": [
+    "shop counter with a scale and sweets",
+    "tall shelf full of cans, rice bags and oil bottles",
+    "soft-drink fridge (red)",
+    "stack of crates of Cuca beer",
+    "plastic table with 4 plastic chairs",
+    "sacks of rice and beans"
+   ],
+   "padaria": [
+    "glass bread counter with pão",
+    "wood-fired bread oven",
+    "bread shelf with baguettes",
+    "cake display",
+    "small coffee machine on a counter",
+    "flour sacks"
+   ],
+   "hotel": [
+    "reception desk with a bell and key board",
+    "hotel double bed with white sheets",
+    "single bed",
+    "bedside table with lamp",
+    "armchair",
+    "luggage rack with suitcase"
+   ],
+   "banco": [
+    "bank teller counter with glass partition",
+    "ATM machine",
+    "waiting chairs row",
+    "queue barrier posts",
+    "manager desk with computer",
+    "safe (cofre)"
+   ],
+   "loja_telecom": [
+    "phone display counter with smartphones",
+    "wall display of phone cases",
+    "shop counter with cash register",
+    "SIM card stand",
+    "waiting stool",
+    "internet cafe computer desk"
+   ],
+   "correios": [
+    "post office counter with window",
+    "wall of post office boxes (caixas postais)",
+    "parcel scale",
+    "stack of parcels",
+    "mail sorting table",
+    "waiting bench"
+   ],
+   "governo": [
+    "official desk with documents and stamp",
+    "visitor chairs",
+    "filing cabinet",
+    "Angolan flag on a stand",
+    "waiting bench",
+    "document counter with forms"
+   ],
+   "tribunal": [
+    "judge bench (raised)",
+    "witness stand",
+    "lawyer tables",
+    "public benches",
+    "court clerk desk",
+    "scales of justice statue"
+   ]
+  }
+ },
+ {
+  "kit": "kit_interiores_2",
+  "venues": [
+   "escola",
+   "saude",
+   "igreja",
+   "mercado",
+   "esquadra",
+   "farmacia",
+   "churrasqueira",
+   "discoteca"
+  ],
+  "furniture": {
+   "escola": [
+    "teacher desk",
+    "school desks with benches (pair)",
+    "school desks with benches (pair)",
+    "bookshelf with books",
+    "globe on a stand",
+    "chalk board on easel"
+   ],
+   "saude": [
+    "hospital bed with drip stand",
+    "doctor desk with stethoscope",
+    "medicine cabinet",
+    "examination table",
+    "waiting chairs",
+    "wheelchair"
+   ],
+   "igreja": [
+    "altar with white cloth and candles",
+    "wooden pews (benches)",
+    "wooden pews (benches)",
+    "lectern / ambo",
+    "statue of Our Lady",
+    "church keyboard / organ"
+   ],
+   "mercado": [
+    "vegetable stall",
+    "fruit stall with bananas and mangoes",
+    "dried fish stall",
+    "fabric / clothing stall",
+    "basket of cassava",
+    "market scale with weights"
+   ],
+   "esquadra": [
+    "police reception desk",
+    "holding cell with bars",
+    "filing cabinet",
+    "officer desk with radio",
+    "waiting bench",
+    "wanted posters board"
+   ],
+   "farmacia": [
+    "pharmacy counter",
+    "tall medicine shelf",
+    "glass display of medicines",
+    "blood pressure machine with chair",
+    "refrigerator for vaccines",
+    "baby products shelf"
+   ],
+   "churrasqueira": [
+    "charcoal grill with chicken",
+    "bar counter with stools",
+    "plastic table set (red)",
+    "plastic table set (blue)",
+    "drinks fridge",
+    "menu board"
+   ],
+   "discoteca": [
+    "DJ booth with speakers",
+    "bar counter with bottles",
+    "big speaker",
+    "lounge sofa",
+    "high bar table with stools",
+    "disco light dance floor panel"
+   ]
+  }
+ }
+]

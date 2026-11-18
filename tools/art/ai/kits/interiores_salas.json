@@ -1,0 +1,21 @@
+{
+ "casa": "int_sala1_0",
+ "cantina": "int_sala1_1",
+ "padaria": "int_sala1_2",
+ "hotel": "int_sala1_3",
+ "banco": "int_sala1_4",
+ "loja_telecom": "int_sala1_5",
+ "correios": "int_sala1_6",
+ "governo": "int_sala1_7",
+ "tribunal": "int_sala1_7",
+ "escola": "int_sala2_0",
+ "saude": "int_sala2_1",
+ "igreja": "int_sala2_2",
+ "mercado": "int_sala2_3",
+ "esquadra": "int_sala2_4",
+ "farmacia": "int_sala2_5",
+ "churrasqueira": "int_sala2_6",
+ "discoteca": "int_sala2_7",
+ "apartamentos": "int_sala1_0",
+ "administracao": "int_sala1_7"
+}

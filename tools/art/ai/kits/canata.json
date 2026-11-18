@@ -128,6 +128,633 @@
    "name": "Casa 7",
    "cat": "building",
    "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "canata_tree1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 19,
+   "id": "canata_small1",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 20,
+   "id": "canata_tree2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 21,
+   "id": "canata_tree3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 22,
+   "id": "canata_tree4",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 23,
+   "id": "canata_tree5",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 24,
+   "id": "canata_tree6",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 25,
+   "id": "canata_tree7",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 26,
+   "id": "canata_tree8",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 27,
+   "id": "canata_small2",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 28,
+   "id": "canata_pole1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 29,
+   "id": "canata_lamp1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 30,
+   "id": "canata_lamp2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 31,
+   "id": "canata_pole2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 32,
+   "id": "canata_lamp3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 33,
+   "id": "canata_pole3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 34,
+   "id": "canata_pole4",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 35,
+   "id": "canata_pole5",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 36,
+   "id": "canata_pole6",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 37,
+   "id": "canata_pole7",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 38,
+   "id": "canata_vehicle1",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 39,
+   "id": "canata_vehicle2",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 40,
+   "id": "canata_vehicle3",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 41,
+   "id": "canata_vehicle4",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 42,
+   "id": "canata_vehicle5",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 43,
+   "id": "canata_vehicle6",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 44,
+   "id": "canata_vehicle7",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 45,
+   "id": "canata_vehicle8",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 46,
+   "id": "canata_vehicle9",
+   "cat": "prop",
+   "kind": "vehicle"
+  },
+  {
+   "n": 47,
+   "id": "canata_stall1",
+   "cat": "prop",
+   "kind": "stall"
+  },
+  {
+   "n": 48,
+   "id": "canata_tree9",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 49,
+   "id": "canata_stall2",
+   "cat": "prop",
+   "kind": "stall"
+  },
+  {
+   "n": 50,
+   "id": "canata_stall3",
+   "cat": "prop",
+   "kind": "stall"
+  },
+  {
+   "n": 51,
+   "id": "canata_tree10",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 52,
+   "id": "canata_stall4",
+   "cat": "prop",
+   "kind": "stall"
+  },
+  {
+   "n": 53,
+   "id": "canata_small3",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 54,
+   "id": "canata_small4",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 55,
+   "id": "canata_small5",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 56,
+   "id": "canata_small6",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 57,
+   "id": "canata_small7",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 58,
+   "id": "canata_small8",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 59,
+   "id": "canata_small9",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 60,
+   "id": "canata_small10",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 61,
+   "id": "canata_small11",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 62,
+   "id": "canata_small12",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 63,
+   "id": "canata_small13",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 64,
+   "id": "canata_small14",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 65,
+   "id": "canata_small15",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 66,
+   "id": "canata_small16",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 67,
+   "id": "canata_small17",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 68,
+   "id": "canata_tree11",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 69,
+   "id": "canata_tree12",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 70,
+   "id": "canata_tree13",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 71,
+   "id": "canata_tree14",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 72,
+   "id": "canata_small18",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 73,
+   "id": "canata_small19",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 74,
+   "id": "canata_small20",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 75,
+   "id": "canata_small21",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 76,
+   "id": "canata_small22",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 77,
+   "id": "canata_small23",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 78,
+   "id": "canata_small24",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 79,
+   "id": "canata_small25",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 80,
+   "id": "canata_small26",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 81,
+   "id": "canata_small27",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 82,
+   "id": "canata_small28",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 83,
+   "id": "canata_small29",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 84,
+   "id": "canata_small30",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 85,
+   "id": "canata_small31",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 86,
+   "id": "canata_small32",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 87,
+   "id": "canata_small33",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 88,
+   "id": "canata_small34",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 89,
+   "id": "canata_small35",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 90,
+   "id": "canata_small36",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 91,
+   "id": "canata_small37",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 92,
+   "id": "canata_small38",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 93,
+   "id": "canata_small39",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 94,
+   "id": "canata_small40",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 95,
+   "id": "canata_small41",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 96,
+   "id": "canata_small42",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 97,
+   "id": "canata_small43",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 98,
+   "id": "canata_small44",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 99,
+   "id": "canata_small45",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 100,
+   "id": "canata_small46",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 101,
+   "id": "canata_small47",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 102,
+   "id": "canata_small48",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 103,
+   "id": "canata_small49",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 104,
+   "id": "canata_small50",
+   "cat": "prop",
+   "kind": "small"
+  },
+  {
+   "n": 105,
+   "id": "canata_small51",
+   "cat": "prop",
+   "kind": "small"
   }
  ]
 }

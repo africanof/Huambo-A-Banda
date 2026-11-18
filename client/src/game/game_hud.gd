@@ -382,6 +382,9 @@ func _rebuild_actions() -> void:
 			actions_box.add_child(_button("Entrar — %s" % _context.name, "home" if home else "door", ACCENT, INK, func() -> void: Net.action("enter")))
 		"exit":
 			pass # o botão "Sair" está sempre visível lá dentro
+		"portal":
+			var to := str(_context.get("to", ""))
+			actions_box.add_child(_button(str(_context.name), "pin", ACCENT, INK, func() -> void: Net.action("travel", to)))
 		"food":
 			actions_box.add_child(_button("Comer — %s" % _interior_name(), "bag", ACCENT, INK, func() -> void: _open_menu()))
 		"sleep":
@@ -445,16 +448,34 @@ func _open_map() -> void:
 	if typeof(list) != TYPE_ARRAY:
 		menu_body.add_child(_label("Não foi possível obter os bairros.", 14, Color("ffb4a8"), FONT_REG, true))
 	else:
-		(list as Array).sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
-		for d: Dictionary in list:
-			var map_id := str(d.get("map", {}).get("id", "")) if typeof(d.get("map")) == TYPE_DICTIONARY else ""
-			if not map_id.begins_with("bairro:") or str(d.id) == here:
+		var bairros: Array = (list as Array).filter(func(d: Dictionary) -> bool: return typeof(d.get("map")) == TYPE_DICTIONARY and str(d.map.get("id", "")).begins_with("bairro:"))
+		var links: Array = []
+		for d: Dictionary in bairros:
+			if d.id == here:
+				links = d.get("links", [])
+		var cm := HuamboMap.new()
+		cm.districts = bairros
+		cm.here = here
+		cm.picked.connect(func(id: String) -> void: _go(id, links.has(id)))
+		menu_body.add_child(cm)
+		menu_body.add_child(_label("A amarelo: bairros vizinhos a pé (vai ao fim da rua com a placa). Os outros: candongueiro.", 12, Color(1, 1, 1, 0.7), FONT_REG, true))
+		bairros.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
+		for d: Dictionary in bairros:
+			if str(d.id) == here:
 				continue
 			var id := str(d.id)
-			menu_body.add_child(_button(str(d.name), "pin", ACCENT, INK, func() -> void:
-				Net.action("travel", id)
-				menu_panel.visible = false))
+			var walk := links.has(id)
+			menu_body.add_child(_button(("%s  (a pé)" if walk else "%s") % d.name, "pin", ACCENT if not walk else Color("f2c14e"), INK, func() -> void: _go(id, walk)))
 	_close_button()
+
+
+## Destino escolhido no mapa: vizinho → mostra o caminho (placa no fim da rua); senão candongueiro.
+func _go(id: String, walk: bool) -> void:
+	menu_panel.visible = false
+	if walk:
+		ui_action.emit("caminho:" + id)
+	else:
+		Net.action("travel", id)
 
 
 func _open_bank() -> void:

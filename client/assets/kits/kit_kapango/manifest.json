@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "kapango_escola",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_escola.png",
-   "name": "Escola Primária do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_escola.webp",
+   "name": "Escola Primária do Kapango",
+   "venue": "escola"
   },
   "kapango_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "kapango_saude",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_saude.png",
-   "name": "Centro de Saúde do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_saude.webp",
+   "name": "Centro de Saúde do Kapango",
+   "venue": "saude"
   },
   "kapango_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "kapango_igreja",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_igreja.png",
-   "name": "Igreja Católica do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_igreja.webp",
+   "name": "Igreja Católica do Kapango",
+   "venue": "igreja"
   },
   "kapango_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "kapango_mercado",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_mercado.png",
-   "name": "Mercado do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_mercado.webp",
+   "name": "Mercado do Kapango",
+   "venue": "mercado"
   },
   "kapango_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "kapango_cantina",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_cantina.png",
-   "name": "Cantina do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_cantina.webp",
+   "name": "Cantina do Kapango",
+   "venue": "cantina"
   },
   "kapango_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "kapango_farmacia",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_farmacia.png",
-   "name": "Farmácia Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_farmacia.webp",
+   "name": "Farmácia Kapango",
+   "venue": "farmacia"
   },
   "kapango_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "kapango_administracao",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_administracao.png",
-   "name": "Administração do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_administracao.webp",
+   "name": "Administração do Kapango",
+   "venue": "administracao"
   },
   "kapango_discoteca": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "kapango_discoteca",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_discoteca.png",
-   "name": "Discoteca Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_discoteca.webp",
+   "name": "Discoteca Kapango",
+   "venue": "discoteca"
   },
   "kapango_padaria": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "kapango_padaria",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_padaria.png",
-   "name": "Padaria Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_padaria.webp",
+   "name": "Padaria Kapango",
+   "venue": "padaria"
   },
   "kapango_esquadra": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "kapango_esquadra",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_esquadra.png",
-   "name": "Esquadra Policial do Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_esquadra.webp",
+   "name": "Esquadra Policial do Kapango",
+   "venue": "esquadra"
   },
   "kapango_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "kapango_apartamentos",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_apartamentos.png",
-   "name": "Prédio Kapango"
+   "path": "res://assets/kits/kit_kapango/kapango_apartamentos.webp",
+   "name": "Prédio Kapango",
+   "venue": "apartamentos"
   },
   "kapango_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "kapango_casa1",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_kapango/kapango_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "kapango_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "kapango_casa2",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_kapango/kapango_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "kapango_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "kapango_casa3",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_kapango/kapango_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "kapango_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "kapango_casa4",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_kapango/kapango_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "kapango_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "kapango_casa5",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_kapango/kapango_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "kapango_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "kapango_casa6",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_kapango/kapango_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "kapango_casa7": {
    "category": "building",
@@ -358,9 +375,1736 @@
    "scale": 1.6,
    "out": "kapango_casa7",
    "kit": "kit_kapango",
-   "path": "res://assets/kits/kit_kapango/kapango_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_kapango/kapango_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "kapango_tree1": {
+   "category": "prop",
+   "size": [
+    258,
+    241
+   ],
+   "anchor": [
+    129,
+    239
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree1.webp",
+   "kind": "tree"
+  },
+  "kapango_tree2": {
+   "category": "prop",
+   "size": [
+    208,
+    210
+   ],
+   "anchor": [
+    103,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree2.webp",
+   "kind": "tree"
+  },
+  "kapango_tree3": {
+   "category": "prop",
+   "size": [
+    147,
+    267
+   ],
+   "anchor": [
+    73,
+    266
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree3.webp",
+   "kind": "tree"
+  },
+  "kapango_tree4": {
+   "category": "prop",
+   "size": [
+    348,
+    244
+   ],
+   "anchor": [
+    173,
+    243
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree4.webp",
+   "kind": "tree"
+  },
+  "kapango_tree5": {
+   "category": "prop",
+   "size": [
+    197,
+    216
+   ],
+   "anchor": [
+    98,
+    214
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree5.webp",
+   "kind": "tree"
+  },
+  "kapango_tree6": {
+   "category": "prop",
+   "size": [
+    181,
+    216
+   ],
+   "anchor": [
+    89,
+    214
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree6.webp",
+   "kind": "tree"
+  },
+  "kapango_tree7": {
+   "category": "prop",
+   "size": [
+    160,
+    216
+   ],
+   "anchor": [
+    79,
+    215
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree7",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree7.webp",
+   "kind": "tree"
+  },
+  "kapango_tree8": {
+   "category": "prop",
+   "size": [
+    186,
+    193
+   ],
+   "anchor": [
+    92,
+    192
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree8",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree8.webp",
+   "kind": "tree"
+  },
+  "kapango_tree9": {
+   "category": "prop",
+   "size": [
+    176,
+    205
+   ],
+   "anchor": [
+    87,
+    203
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree9",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree9.webp",
+   "kind": "tree"
+  },
+  "kapango_lamp1": {
+   "category": "prop",
+   "size": [
+    92,
+    234
+   ],
+   "anchor": [
+    45,
+    232
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_lamp2": {
+   "category": "prop",
+   "size": [
+    81,
+    209
+   ],
+   "anchor": [
+    40,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_lamp3": {
+   "category": "prop",
+   "size": [
+    80,
+    210
+   ],
+   "anchor": [
+    39,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_lamp4": {
+   "category": "prop",
+   "size": [
+    44,
+    182
+   ],
+   "anchor": [
+    21,
+    180
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_lamp5": {
+   "category": "prop",
+   "size": [
+    68,
+    205
+   ],
+   "anchor": [
+    34,
+    204
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_lamp6": {
+   "category": "prop",
+   "size": [
+    46,
+    182
+   ],
+   "anchor": [
+    22,
+    181
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_lamp6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_lamp6.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "kapango_pole1": {
+   "category": "prop",
+   "size": [
+    95,
+    227
+   ],
+   "anchor": [
+    47,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_pole1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_pole1.webp",
+   "kind": "pole"
+  },
+  "kapango_pole2": {
+   "category": "prop",
+   "size": [
+    92,
+    224
+   ],
+   "anchor": [
+    45,
+    223
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_pole2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_pole2.webp",
+   "kind": "pole"
+  },
+  "kapango_pole3": {
+   "category": "prop",
+   "size": [
+    94,
+    222
+   ],
+   "anchor": [
+    46,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_pole3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_pole3.webp",
+   "kind": "pole"
+  },
+  "kapango_vehicle1": {
+   "category": "prop",
+   "size": [
+    352,
+    197
+   ],
+   "anchor": [
+    135,
+    195
+   ],
+   "footprint": [
+    1.8,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle2": {
+   "category": "prop",
+   "size": [
+    324,
+    194
+   ],
+   "anchor": [
+    137,
+    192
+   ],
+   "footprint": [
+    1.9,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle3": {
+   "category": "prop",
+   "size": [
+    177,
+    133
+   ],
+   "anchor": [
+    19,
+    132
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle4": {
+   "category": "prop",
+   "size": [
+    177,
+    117
+   ],
+   "anchor": [
+    17,
+    115
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle5": {
+   "category": "prop",
+   "size": [
+    181,
+    116
+   ],
+   "anchor": [
+    18,
+    115
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle6": {
+   "category": "prop",
+   "size": [
+    176,
+    116
+   ],
+   "anchor": [
+    18,
+    115
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle7": {
+   "category": "prop",
+   "size": [
+    232,
+    113
+   ],
+   "anchor": [
+    99,
+    111
+   ],
+   "footprint": [
+    1.3,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle7",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle8": {
+   "category": "prop",
+   "size": [
+    204,
+    105
+   ],
+   "anchor": [
+    87,
+    104
+   ],
+   "footprint": [
+    1.2,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle8",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "kapango_vehicle9": {
+   "category": "prop",
+   "size": [
+    218,
+    132
+   ],
+   "anchor": [
+    87,
+    131
+   ],
+   "footprint": [
+    1.2,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_vehicle9",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "kapango_stall1": {
+   "category": "prop",
+   "size": [
+    199,
+    171
+   ],
+   "anchor": [
+    134,
+    168
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall1.webp",
+   "kind": "stall"
+  },
+  "kapango_stall2": {
+   "category": "prop",
+   "size": [
+    195,
+    154
+   ],
+   "anchor": [
+    128,
+    152
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall2.webp",
+   "kind": "stall"
+  },
+  "kapango_stall3": {
+   "category": "prop",
+   "size": [
+    167,
+    151
+   ],
+   "anchor": [
+    107,
+    149
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall3.webp",
+   "kind": "stall"
+  },
+  "kapango_stall4": {
+   "category": "prop",
+   "size": [
+    227,
+    138
+   ],
+   "anchor": [
+    51,
+    137
+   ],
+   "footprint": [
+    0.7,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall4.webp",
+   "kind": "stall"
+  },
+  "kapango_stall5": {
+   "category": "prop",
+   "size": [
+    217,
+    144
+   ],
+   "anchor": [
+    134,
+    141
+   ],
+   "footprint": [
+    1.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall5.webp",
+   "kind": "stall"
+  },
+  "kapango_stall6": {
+   "category": "prop",
+   "size": [
+    200,
+    131
+   ],
+   "anchor": [
+    101,
+    124
+   ],
+   "footprint": [
+    1.4,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_stall6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_stall6.webp",
+   "kind": "stall"
+  },
+  "kapango_small1": {
+   "category": "prop",
+   "size": [
+    169,
+    122
+   ],
+   "anchor": [
+    121,
+    120
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small1.webp",
+   "kind": "small"
+  },
+  "kapango_small2": {
+   "category": "prop",
+   "size": [
+    167,
+    122
+   ],
+   "anchor": [
+    123,
+    120
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small2.webp",
+   "kind": "small"
+  },
+  "kapango_small3": {
+   "category": "prop",
+   "size": [
+    168,
+    131
+   ],
+   "anchor": [
+    112,
+    129
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small3.webp",
+   "kind": "small"
+  },
+  "kapango_small4": {
+   "category": "prop",
+   "size": [
+    167,
+    121
+   ],
+   "anchor": [
+    125,
+    119
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small4.webp",
+   "kind": "small"
+  },
+  "kapango_small5": {
+   "category": "prop",
+   "size": [
+    184,
+    122
+   ],
+   "anchor": [
+    36,
+    120
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small5.webp",
+   "kind": "small"
+  },
+  "kapango_small6": {
+   "category": "prop",
+   "size": [
+    185,
+    123
+   ],
+   "anchor": [
+    46,
+    120
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small6.webp",
+   "kind": "small"
+  },
+  "kapango_small7": {
+   "category": "prop",
+   "size": [
+    174,
+    119
+   ],
+   "anchor": [
+    46,
+    91
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small7",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small7.webp",
+   "kind": "small"
+  },
+  "kapango_small8": {
+   "category": "prop",
+   "size": [
+    177,
+    119
+   ],
+   "anchor": [
+    44,
+    117
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small8",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small8.webp",
+   "kind": "small"
+  },
+  "kapango_small9": {
+   "category": "prop",
+   "size": [
+    159,
+    157
+   ],
+   "anchor": [
+    74,
+    156
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small9",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small9.webp",
+   "kind": "small"
+  },
+  "kapango_small10": {
+   "category": "prop",
+   "size": [
+    146,
+    141
+   ],
+   "anchor": [
+    69,
+    140
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small10",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small10.webp",
+   "kind": "small"
+  },
+  "kapango_small11": {
+   "category": "prop",
+   "size": [
+    120,
+    95
+   ],
+   "anchor": [
+    58,
+    94
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small11",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small11.webp",
+   "kind": "small"
+  },
+  "kapango_small12": {
+   "category": "prop",
+   "size": [
+    139,
+    109
+   ],
+   "anchor": [
+    70,
+    107
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small12",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small12.webp",
+   "kind": "small"
+  },
+  "kapango_small13": {
+   "category": "prop",
+   "size": [
+    147,
+    104
+   ],
+   "anchor": [
+    63,
+    102
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_small13",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small13.webp",
+   "kind": "small"
+  },
+  "kapango_small14": {
+   "category": "prop",
+   "size": [
+    232,
+    146
+   ],
+   "anchor": [
+    61,
+    143
+   ],
+   "footprint": [
+    0.8,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_small14",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small14.webp",
+   "kind": "small"
+  },
+  "kapango_small15": {
+   "category": "prop",
+   "size": [
+    253,
+    142
+   ],
+   "anchor": [
+    28,
+    139
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small15",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small15.webp",
+   "kind": "small"
+  },
+  "kapango_tree10": {
+   "category": "prop",
+   "size": [
+    104,
+    116
+   ],
+   "anchor": [
+    51,
+    115
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree10",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree10.webp",
+   "kind": "tree"
+  },
+  "kapango_tree11": {
+   "category": "prop",
+   "size": [
+    107,
+    133
+   ],
+   "anchor": [
+    54,
+    132
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree11",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree11.webp",
+   "kind": "tree"
+  },
+  "kapango_tree12": {
+   "category": "prop",
+   "size": [
+    99,
+    101
+   ],
+   "anchor": [
+    49,
+    100
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree12",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree12.webp",
+   "kind": "tree"
+  },
+  "kapango_small16": {
+   "category": "prop",
+   "size": [
+    106,
+    117
+   ],
+   "anchor": [
+    49,
+    116
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small16",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small16.webp",
+   "kind": "small"
+  },
+  "kapango_small17": {
+   "category": "prop",
+   "size": [
+    164,
+    104
+   ],
+   "anchor": [
+    20,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small17",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small17.webp",
+   "kind": "small"
+  },
+  "kapango_small18": {
+   "category": "prop",
+   "size": [
+    164,
+    102
+   ],
+   "anchor": [
+    22,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small18",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small18.webp",
+   "kind": "small"
+  },
+  "kapango_small19": {
+   "category": "prop",
+   "size": [
+    165,
+    108
+   ],
+   "anchor": [
+    22,
+    107
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small19",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small19.webp",
+   "kind": "small"
+  },
+  "kapango_small20": {
+   "category": "prop",
+   "size": [
+    149,
+    102
+   ],
+   "anchor": [
+    58,
+    100
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small20",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small20.webp",
+   "kind": "small"
+  },
+  "kapango_small21": {
+   "category": "prop",
+   "size": [
+    157,
+    111
+   ],
+   "anchor": [
+    58,
+    109
+   ],
+   "footprint": [
+    0.8,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_small21",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small21.webp",
+   "kind": "small"
+  },
+  "kapango_small22": {
+   "category": "prop",
+   "size": [
+    152,
+    117
+   ],
+   "anchor": [
+    60,
+    115
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small22",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small22.webp",
+   "kind": "small"
+  },
+  "kapango_small23": {
+   "category": "prop",
+   "size": [
+    159,
+    111
+   ],
+   "anchor": [
+    70,
+    109
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small23",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small23.webp",
+   "kind": "small"
+  },
+  "kapango_small24": {
+   "category": "prop",
+   "size": [
+    191,
+    109
+   ],
+   "anchor": [
+    55,
+    107
+   ],
+   "footprint": [
+    0.7,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small24",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small24.webp",
+   "kind": "small"
+  },
+  "kapango_small25": {
+   "category": "prop",
+   "size": [
+    181,
+    107
+   ],
+   "anchor": [
+    50,
+    106
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small25",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small25.webp",
+   "kind": "small"
+  },
+  "kapango_small26": {
+   "category": "prop",
+   "size": [
+    98,
+    119
+   ],
+   "anchor": [
+    41,
+    117
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small26",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small26.webp",
+   "kind": "small"
+  },
+  "kapango_small27": {
+   "category": "prop",
+   "size": [
+    82,
+    100
+   ],
+   "anchor": [
+    35,
+    98
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small27",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small27.webp",
+   "kind": "small"
+  },
+  "kapango_small28": {
+   "category": "prop",
+   "size": [
+    63,
+    76
+   ],
+   "anchor": [
+    24,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small28",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small28.webp",
+   "kind": "small"
+  },
+  "kapango_small29": {
+   "category": "prop",
+   "size": [
+    101,
+    110
+   ],
+   "anchor": [
+    44,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small29",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small29.webp",
+   "kind": "small"
+  },
+  "kapango_small30": {
+   "category": "prop",
+   "size": [
+    91,
+    95
+   ],
+   "anchor": [
+    36,
+    93
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small30",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small30.webp",
+   "kind": "small"
+  },
+  "kapango_small31": {
+   "category": "prop",
+   "size": [
+    93,
+    95
+   ],
+   "anchor": [
+    40,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small31",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small31.webp",
+   "kind": "small"
+  },
+  "kapango_small32": {
+   "category": "prop",
+   "size": [
+    157,
+    119
+   ],
+   "anchor": [
+    86,
+    117
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small32",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small32.webp",
+   "kind": "small"
+  },
+  "kapango_small33": {
+   "category": "prop",
+   "size": [
+    147,
+    118
+   ],
+   "anchor": [
+    56,
+    116
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small33",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small33.webp",
+   "kind": "small"
+  },
+  "kapango_small34": {
+   "category": "prop",
+   "size": [
+    175,
+    156
+   ],
+   "anchor": [
+    81,
+    154
+   ],
+   "footprint": [
+    1.1,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_small34",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small34.webp",
+   "kind": "small"
+  },
+  "kapango_tree13": {
+   "category": "prop",
+   "size": [
+    175,
+    157
+   ],
+   "anchor": [
+    87,
+    155
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_tree13",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_tree13.webp",
+   "kind": "tree"
+  },
+  "kapango_small35": {
+   "category": "prop",
+   "size": [
+    131,
+    174
+   ],
+   "anchor": [
+    26,
+    173
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_small35",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small35.webp",
+   "kind": "small"
+  },
+  "kapango_small36": {
+   "category": "prop",
+   "size": [
+    118,
+    264
+   ],
+   "anchor": [
+    30,
+    260
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_small36",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small36.webp",
+   "kind": "small"
+  },
+  "kapango_small37": {
+   "category": "prop",
+   "size": [
+    177,
+    187
+   ],
+   "anchor": [
+    123,
+    186
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small37",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small37.webp",
+   "kind": "small"
+  },
+  "kapango_small38": {
+   "category": "prop",
+   "size": [
+    172,
+    186
+   ],
+   "anchor": [
+    120,
+    185
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small38",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small38.webp",
+   "kind": "small"
+  },
+  "kapango_small39": {
+   "category": "prop",
+   "size": [
+    166,
+    186
+   ],
+   "anchor": [
+    122,
+    185
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small39",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small39.webp",
+   "kind": "small"
+  },
+  "kapango_small40": {
+   "category": "prop",
+   "size": [
+    130,
+    163
+   ],
+   "anchor": [
+    57,
+    162
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small40",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small40.webp",
+   "kind": "small"
+  },
+  "kapango_small41": {
+   "category": "prop",
+   "size": [
+    127,
+    164
+   ],
+   "anchor": [
+    92,
+    163
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "kapango_small41",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small41.webp",
+   "kind": "small"
+  },
+  "kapango_small42": {
+   "category": "prop",
+   "size": [
+    169,
+    152
+   ],
+   "anchor": [
+    96,
+    151
+   ],
+   "footprint": [
+    1.3,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small42",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small42.webp",
+   "kind": "small"
+  },
+  "kapango_small43": {
+   "category": "prop",
+   "size": [
+    246,
+    141
+   ],
+   "anchor": [
+    120,
+    137
+   ],
+   "footprint": [
+    1.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_small43",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small43.webp",
+   "kind": "small"
+  },
+  "kapango_small44": {
+   "category": "prop",
+   "size": [
+    228,
+    141
+   ],
+   "anchor": [
+    113,
+    138
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_small44",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small44.webp",
+   "kind": "small"
+  },
+  "kapango_small45": {
+   "category": "prop",
+   "size": [
+    95,
+    150
+   ],
+   "anchor": [
+    33,
+    149
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small45",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small45.webp",
+   "kind": "small"
+  },
+  "kapango_small46": {
+   "category": "prop",
+   "size": [
+    98,
+    152
+   ],
+   "anchor": [
+    39,
+    151
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_small46",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small46.webp",
+   "kind": "small"
+  },
+  "kapango_small47": {
+   "category": "prop",
+   "size": [
+    337,
+    159
+   ],
+   "anchor": [
+    196,
+    157
+   ],
+   "footprint": [
+    2.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_small47",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small47.webp",
+   "kind": "small"
+  },
+  "kapango_small48": {
+   "category": "prop",
+   "size": [
+    589,
+    142
+   ],
+   "anchor": [
+    206,
+    141
+   ],
+   "footprint": [
+    2.8,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_small48",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small48.webp",
+   "kind": "small"
+  },
+  "kapango_small49": {
+   "category": "prop",
+   "size": [
+    557,
+    141
+   ],
+   "anchor": [
+    387,
+    140
+   ],
+   "footprint": [
+    3.0,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_small49",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_small49.webp",
+   "kind": "small"
   }
  },
- "version": "f85f41c76e5c"
+ "version": "54f0d101b3ec"
 }

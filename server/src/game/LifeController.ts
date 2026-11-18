@@ -67,7 +67,7 @@ interface Entry {
   /** oferta de casas mostrada à porta de um edifício de habitação */
   offer: Offer | null;
   /** viagem paga: o cliente muda de bairro quando vê isto */
-  travel: { district: string; n: number } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean } | null;
 }
 
 export interface Offer {
@@ -107,7 +107,7 @@ export interface SelfState {
   inside: { id: string; venue: string; name: string; unit?: number } | null;
   homes: Array<{ unit: string; name: string; tenure: "buy" | "rent"; paidUntil: number | null }>;
   offer: Offer | null;
-  travel: { district: string; n: number } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean } | null;
 }
 
 /** Catálogo enviado no WELCOME (o cliente desenha menus e vagas a partir dele). */
@@ -483,10 +483,14 @@ export class LifeController {
     if (interiorAt(this.district, actor.x, actor.y)) return this.out.toast(actor, "Sai primeiro para a rua.", false);
     const d = getDistrict(to ?? "");
     if (!d || d.id === this.district.id || !d.places?.length) return this.out.toast(actor, "Esse bairro não existe.", false);
-    e.money = await this.wallets.apply(actor.characterId, -TRAVEL_PRICE, "travel.candongueiro", `travel:${actor.characterId}:${this.op()}`);
-    e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1 };
+    // a pé, no fim da rua que dá para esse bairro: grátis
+    const onFoot = this.near(actor, (p) => p.kind === "portal" && p.to === d.id);
+    if (!onFoot) {
+      e.money = await this.wallets.apply(actor.characterId, -TRAVEL_PRICE, "travel.candongueiro", `travel:${actor.characterId}:${this.op()}`);
+    }
+    e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot };
     e.dirty = true;
-    this.out.toast(actor, `Apanhaste o candongueiro para ${d.name} (−${TRAVEL_PRICE} Kz).`, true);
+    this.out.toast(actor, onFoot ? `A caminho de ${d.name} a pé.` : `Apanhaste o candongueiro para ${d.name} (−${TRAVEL_PRICE} Kz).`, true);
   }
 
   private async homeEat(actor: LifeActor, e: Entry): Promise<void> {

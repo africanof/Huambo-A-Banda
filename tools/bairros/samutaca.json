@@ -2,137 +2,472 @@
  "id": "samutaca",
  "name": "Samutaca",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "terra",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     -120.81,
+     175.63
+    ],
+    [
+     -110.77,
+     136.74
+    ],
+    [
+     -109.85,
+     132.53
+    ],
+    [
+     -107.49,
+     124.63
+    ],
+    [
+     -103.6,
+     115.32
+    ],
+    [
+     -100.38,
+     109.28
+    ],
+    [
+     -97.53,
+     103.26
+    ],
+    [
+     -93.27,
+     87.04
+    ],
+    [
+     -92.09,
+     81.93
+    ],
+    [
+     -89.49,
+     76.81
+    ],
+    [
+     -83.94,
+     73.55
+    ],
+    [
+     -72.69,
+     72.63
+    ],
+    [
+     8.85,
+     68.21
+    ],
+    [
+     70.85,
+     64.2
+    ],
+    [
+     117.93,
+     64.16
+    ],
+    [
+     125.18,
+     65.77
+    ],
+    [
+     130.42,
+     71.5
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     137.27,
+     206.66
+    ],
+    [
+     141.89,
+     213.51
+    ],
+    [
+     145.04,
+     215.82
+    ],
+    [
+     149.45,
+     217.12
+    ],
+    [
+     154.11,
+     217.54
+    ],
+    [
+     173.26,
+     215.55
+    ],
+    [
+     181.83,
+     215.06
+    ],
+    [
+     189.45,
+     215.57
+    ],
+    [
+     195.33,
+     216.61
+    ],
+    [
+     202.0,
+     219.6
+    ],
+    [
+     206.79,
+     222.34
+    ],
+    [
+     209.35,
+     226.57
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     8.85,
+     68.21
+    ],
+    [
+     -2.01,
+     199.97
+    ],
+    [
+     -19.93,
+     344.55
+    ],
+    [
+     -21.7,
+     357.7
+    ],
+    [
+     -36.07,
+     447.01
+    ],
+    [
+     -40.85,
+     490.73
+    ],
+    [
+     -46.52,
+     542.62
+    ],
+    [
+     -50.31,
+     572.29
+    ],
+    [
+     -50.32,
+     580.46
+    ],
+    [
+     -51.0,
+     589.68
+    ],
+    [
+     -51.46,
+     602.2
+    ],
+    [
+     -52.91,
+     661.46
+    ],
+    [
+     -62.09,
+     739.79
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -117.15,
+     -598.88
+    ],
+    [
+     -113.94,
+     -582.48
+    ],
+    [
+     -112.02,
+     -572.88
+    ],
+    [
+     -89.04,
+     -516.24
+    ],
+    [
+     -67.19,
+     -456.88
+    ],
+    [
+     -20.41,
+     -299.19
+    ],
+    [
+     -4.09,
+     -249.25
+    ],
+    [
+     11.68,
+     -208.34
+    ],
+    [
+     30.57,
+     -153.42
+    ],
+    [
+     52.22,
+     -80.72
+    ],
+    [
+     60.32,
+     -50.28
+    ],
+    [
+     65.21,
+     -32.65
+    ],
+    [
+     68.97,
+     -14.52
+    ],
+    [
+     70.1,
+     0.42
+    ],
+    [
+     70.8,
+     19.72
+    ],
+    [
+     71.69,
+     35.79
+    ],
+    [
+     71.82,
+     45.47
+    ],
+    [
+     70.85,
+     64.2
+    ],
+    [
+     65.42,
+     205.45
+    ],
+    [
+     54.99,
+     372.78
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -73.21,
+     194.75
+    ],
+    [
+     -65.46,
+     195.49
+    ],
+    [
+     -2.01,
+     199.97
+    ],
+    [
+     65.42,
+     205.45
+    ],
+    [
+     137.27,
+     206.66
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -21.7,
+     357.7
+    ],
+    [
+     54.99,
+     372.78
+    ],
+    [
+     139.99,
+     393.79
+    ],
+    [
+     143.68,
+     393.57
+    ],
+    [
+     146.68,
+     391.95
+    ],
+    [
+     148.48,
+     389.27
+    ],
+    [
+     147.09,
+     299.36
+    ],
+    [
+     142.83,
+     251.42
+    ],
+    [
+     137.27,
+     206.66
+    ],
+    [
+     136.97,
+     186.3
+    ],
+    [
+     133.99,
+     142.55
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     133.99,
+     142.55
+    ],
+    [
+     131.65,
+     84.46
+    ],
+    [
+     131.14,
+     77.38
+    ],
+    [
+     130.42,
+     71.5
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     133.99,
+     142.55
+    ],
+    [
+     157.8,
+     142.33
+    ],
+    [
+     182.97,
+     144.15
+    ],
+    [
+     214.76,
+     150.0
+    ],
+    [
+     261.74,
+     148.22
+    ],
+    [
+     298.85,
+     149.8
+    ],
+    [
+     325.59,
+     143.92
+    ],
+    [
+     365.13,
+     127.58
+    ],
+    [
+     398.17,
+     111.1
+    ],
+    [
+     437.84,
+     88.25
+    ],
+    [
+     516.94,
+     57.85
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [],
+ "geo": {
+  "lat": -12.845,
+  "lon": 15.7386,
+  "rot_deg": -11.4,
+  "cx": 120,
+  "cy": 170
+ },
  "buildings": [
+  {
+   "id": "samutaca_mercado",
+   "at": [
+    51.6,
+    73.2
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
   {
    "id": "samutaca_escola",
    "at": [
-    2.0,
-    23.8
+    79.1,
+    50.5
    ],
    "venue": {
     "venue": "escola",
@@ -142,8 +477,8 @@
   {
    "id": "samutaca_saude",
    "at": [
-    19.0,
-    25.3
+    52.9,
+    52.8
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +488,8 @@
   {
    "id": "samutaca_igreja",
    "at": [
-    32.0,
-    23.8
+    96.7,
+    50.5
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +497,43 @@
    }
   },
   {
-   "id": "samutaca_mercado",
+   "id": "samutaca_esquadra",
    "at": [
-    28.9,
-    2.0
+    41.8,
+    53.7
    ],
    "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
+    "venue": "esquadra",
+    "job": "policia"
+   }
+  },
+  {
+   "id": "samutaca_administracao",
+   "at": [
+    107.7,
+    52.4
+   ],
+   "venue": {
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "samutaca_apartamentos",
+   "at": [
+    30.0,
+    54.4
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
    }
   },
   {
    "id": "samutaca_cantina",
    "at": [
-    51.0,
-    25.6
+    119.5,
+    53.6
    ],
    "venue": {
     "venue": "cantina",
@@ -186,32 +542,10 @@
    }
   },
   {
-   "id": "samutaca_farmacia",
-   "at": [
-    62.0,
-    27.6
-   ],
-   "venue": {
-    "venue": "farmacia",
-    "job": "farmaceutico"
-   }
-  },
-  {
-   "id": "samutaca_administracao",
-   "at": [
-    72.0,
-    25.7
-   ],
-   "venue": {
-    "venue": "administracao",
-    "job": "funcionario_publico"
-   }
-  },
-  {
    "id": "samutaca_churrasqueira",
    "at": [
-    99.0,
-    27.8
+    17.5,
+    57.6
    ],
    "venue": {
     "venue": "churrasqueira",
@@ -220,32 +554,21 @@
    }
   },
   {
-   "id": "samutaca_esquadra",
+   "id": "samutaca_farmacia",
    "at": [
-    111.0,
-    25.4
+    6.8,
+    58.2
    ],
    "venue": {
-    "venue": "esquadra",
-    "job": "policia"
-   }
-  },
-  {
-   "id": "samutaca_apartamentos",
-   "at": [
-    122.0,
-    25.4
-   ],
-   "venue": {
-    "venue": "apartamentos",
-    "units": 4
+    "venue": "farmacia",
+    "job": "farmaceutico"
    }
   },
   {
    "id": "samutaca_casa1",
    "at": [
-    133.0,
-    27.2
+    147.3,
+    132.1
    ],
    "venue": {
     "venue": "casa",
@@ -254,34 +577,10 @@
    "label": "Casa 1"
   },
   {
-   "id": "samutaca_casa2",
-   "at": [
-    141.0,
-    28.1
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 2"
-  },
-  {
-   "id": "samutaca_casa3",
-   "at": [
-    2.0,
-    74.5
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 3"
-  },
-  {
    "id": "samutaca_casa4",
    "at": [
-    11.0,
-    73.6
+    133.9,
+    50.2
    ],
    "venue": {
     "venue": "casa",
@@ -290,10 +589,22 @@
    "label": "Casa 4"
   },
   {
+   "id": "samutaca_casa8",
+   "at": [
+    94.7,
+    85.3
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 8"
+  },
+  {
    "id": "samutaca_casa5",
    "at": [
-    19.0,
-    73.8
+    149.5,
+    103.4
    ],
    "venue": {
     "venue": "casa",
@@ -304,8 +615,8 @@
   {
    "id": "samutaca_casa6",
    "at": [
-    27.0,
-    73.8
+    94.1,
+    140.0
    ],
    "venue": {
     "venue": "casa",
@@ -314,745 +625,368 @@
    "label": "Casa 6"
   },
   {
-   "id": "samutaca_casa7",
-   "at": [
-    84.0,
-    28.1
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 7"
-  },
-  {
-   "id": "samutaca_casa8",
-   "at": [
-    51.0,
-    74.1
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 8"
-  },
-  {
    "id": "samutaca_casa9",
    "at": [
-    35.0,
-    74.1
+    79.8,
+    103.4
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
    "label": "Casa 9"
+  },
+  {
+   "id": "samutaca_casa3",
+   "at": [
+    101.5,
+    116.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
+  },
+  {
+   "id": "samutaca_casa2",
+   "at": [
+    145.6,
+    88.9
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
+  },
+  {
+   "id": "samutaca_casa7",
+   "at": [
+    139.6,
+    133.1
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 7"
   }
  ],
  "props": [
   [
-   "f_poste",
+   "samutaca_pole6",
    [
-    6,
-    32.5
+    13.2,
+    73.8
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_pole7",
    [
-    12.5,
-    41.4
+    29.2,
+    72.8
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole7",
    [
-    19,
-    32.5
+    45.2,
+    71.8
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_pole7",
    [
-    25.5,
-    41.4
+    61.1,
+    70.7
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole2",
    [
-    32,
-    32.5
+    74.9,
+    70.1
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_pole5",
    [
-    38.5,
-    41.4
+    90.9,
+    70.1
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole5",
    [
-    45,
-    32.5
+    106.9,
+    70.1
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_pole3",
    [
-    51.5,
-    41.4
+    120.6,
+    70.8
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole3",
    [
-    58,
-    32.5
+    123.5,
+    72.7
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_tree13",
    [
-    64.5,
-    41.4
+    133.0,
+    64.1
    ]
   ],
   [
-   "f_poste",
+   "samutaca_tree11",
    [
-    71,
-    32.5
+    15.4,
+    72.8
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_tree13",
    [
-    77.5,
-    41.4
+    14.1,
+    88.7
    ]
   ],
   [
-   "f_poste",
+   "samutaca_tree8",
    [
-    84,
-    32.5
+    11.5,
+    120.6
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_tree3",
    [
-    90.5,
-    41.4
+    10.1,
+    136.5
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole4",
    [
-    97,
-    32.5
+    64.3,
+    4.6
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_tree8",
    [
-    103.5,
-    41.4
+    77.1,
+    4.2
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole5",
    [
-    110,
-    32.5
+    65.1,
+    24.0
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_pole3",
    [
-    116.5,
-    41.4
+    65.8,
+    39.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_tree4",
    [
-    123,
-    32.5
+    78.6,
+    39.7
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_pole3",
    [
-    129.5,
-    41.4
+    65.7,
+    49.2
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_tree5",
    [
-    142.5,
-    41.4
+    77.6,
+    68.5
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_tree3",
    [
-    12.5,
-    86.4
+    77.0,
+    84.5
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole7",
    [
-    19,
-    78.5
+    63.6,
+    99.9
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_tree5",
    [
-    25.5,
-    86.4
+    76.4,
+    100.4
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_pole4",
    [
-    38.5,
-    86.4
+    63.0,
+    115.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_tree8",
    [
-    45,
-    78.5
+    75.7,
+    116.4
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_pole3",
    [
-    51.5,
-    86.4
+    62.3,
+    131.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_tree3",
    [
-    58,
-    78.5
+    75.1,
+    132.4
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_pole3",
    [
-    64.5,
-    86.4
+    61.7,
+    147.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole4",
    [
-    71,
-    78.5
+    140.4,
+    150.0
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_tree7",
    [
-    77.5,
-    86.4
+    127.6,
+    150.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole1",
    [
-    84,
-    78.5
+    139.7,
+    138.3
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_pole3",
    [
-    90.5,
-    86.4
+    139.1,
+    122.3
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole7",
    [
-    97,
-    78.5
+    138.4,
+    106.3
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_pole7",
    [
-    103.5,
-    86.4
+    137.8,
+    90.4
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole6",
    [
-    110,
-    78.5
+    137.2,
+    80.0
    ]
   ],
   [
-   "f_eucalipto",
+   "samutaca_tree8",
    [
-    116.5,
-    86.4
+    124.5,
+    81.0
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole5",
    [
-    123,
-    78.5
+    136.5,
+    72.7
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_tree10",
    [
-    129.5,
-    86.4
+    123.8,
+    74.2
    ]
   ],
   [
-   "f_poste",
+   "samutaca_pole7",
    [
-    136,
-    78.5
+    154.0,
+    148.3
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_vehicle8",
    [
-    142.5,
-    86.4
+    67.2,
+    100.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_vehicle2",
    [
-    6,
-    112.5
+    126.5,
+    70.4
    ]
   ],
   [
-   "f_palmeira",
+   "samutaca_vehicle6",
    [
-    12.5,
-    120.4
+    69.1,
+    54.9
    ]
   ],
   [
-   "f_poste",
+   "samutaca_vehicle8",
    [
-    19,
-    112.5
+    66.7,
+    115.7
    ]
   ],
   [
-   "f_jacaranda2",
+   "samutaca_stall3",
    [
-    25.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    32,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    38.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    45,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    51.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    58,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    64.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    71,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    77.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    90.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    103.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    116.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    129.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    142.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
-   ]
-  ],
-  [
-   "f_hilux",
-   [
-    30,
-    83.0
-   ]
-  ],
-  [
-   "f_carro2",
-   [
-    128,
-    83.0
-   ]
-  ],
-  [
-   "f_banca",
-   [
-    22,
-    42.2
+    74.3,
+    87.2
    ],
    {
     "kind": "work",
@@ -1060,238 +994,580 @@
    }
   ],
   [
-   "f_banca3",
+   "samutaca_stall1",
    [
-    30,
-    42.2
+    65.4,
+    89.0
    ]
   ],
   [
-   "f_banca_roupa",
+   "samutaca_stall3",
    [
-    34,
-    42.2
+    78.0,
+    86.8
    ]
   ],
   [
-   "f_contentor",
+   "samutaca_small26",
    [
-    8,
-    42.2
+    147.1,
+    83.7
    ]
   ],
   [
-   "f_contentor2",
+   "samutaca_small32",
    [
-    140,
-    87.2
+    79.3,
+    74.4
    ]
   ],
   [
-   "f_galinha",
+   "samutaca_small48",
    [
-    12,
-    88.5
+    149.4,
+    18.2
    ]
   ],
   [
-   "f_galinha2",
+   "samutaca_small20",
    [
-    14,
-    89.4
+    50.0,
+    39.1
    ]
   ],
   [
-   "f_cabra",
+   "samutaca_small10",
    [
-    20,
-    90.0
+    63.6,
+    21.4
    ]
   ],
   [
-   "f_bidao",
+   "samutaca_small30",
    [
-    46,
-    88.0
+    146.1,
+    54.3
    ]
   ],
   [
-   "f_carvao",
+   "samutaca_small20",
    [
-    60,
-    88.0
+    143.2,
+    62.8
    ]
   ],
   [
-   "f_blocos",
+   "samutaca_small39",
    [
-    138,
-    106
+    154.4,
+    17.5
    ]
   ],
   [
-   "f_bicicleta",
+   "samutaca_small9",
    [
-    88,
-    88.0
+    15.8,
+    33.9
    ]
   ],
   [
-   "f_tanque",
+   "samutaca_small14",
    [
-    140,
-    64
+    30.2,
+    154.9
    ]
   ],
   [
-   "f_carroca",
+   "samutaca_small14",
    [
-    70,
-    88.0
+    108.9,
+    109.1
    ]
   ],
   [
-   "f_mesa_plastico2",
+   "samutaca_small26",
    [
-    108,
-    88.4
+    133.4,
+    57.6
    ]
   ],
   [
-   "f_mangueira",
+   "samutaca_small36",
    [
-    58.2,
-    108.6
+    111.2,
+    131.0
    ]
   ],
   [
-   "f_eucalipto2",
+   "samutaca_small31",
    [
-    96.1,
-    61.2
+    63.2,
+    10.3
    ]
   ],
   [
-   "f_palmeira2",
+   "samutaca_small41",
    [
-    104.7,
-    7.3
+    142.1,
+    51.7
    ]
   ],
   [
-   "f_palmeira2",
+   "samutaca_small6",
    [
-    133.7,
-    6.5
+    140.5,
+    63.8
    ]
   ],
   [
-   "f_eucalipto2",
+   "samutaca_small19",
    [
-    69.4,
-    72.6
+    47.7,
+    76.2
    ]
   ],
   [
-   "f_abacateiro",
+   "samutaca_small6",
    [
-    80.2,
-    122.7
+    109.2,
+    127.1
    ]
   ],
   [
-   "f_eucalipto2",
+   "samutaca_small29",
    [
-    29.6,
-    85.2
+    84.5,
+    112.8
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_small2",
    [
-    78.2,
-    65.2
+    50.8,
+    17.1
    ]
   ],
   [
-   "f_mangueira",
+   "samutaca_small21",
    [
-    124.9,
-    108.8
+    83.2,
+    90.4
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_small2",
    [
-    32.7,
-    117.3
+    126.4,
+    103.4
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_small11",
    [
-    109.8,
-    18.7
+    50.5,
+    23.7
    ]
   ],
   [
-   "f_abacateiro",
+   "samutaca_small40",
    [
-    58.7,
-    16.6
+    20.5,
+    21.9
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_small6",
    [
-    61.1,
-    91.1
+    139.6,
+    69.2
    ]
   ],
   [
-   "f_jacaranda",
+   "samutaca_small14",
    [
-    123.8,
-    118.3
+    115.8,
+    35.7
    ]
   ],
   [
-   "f_abacateiro",
+   "samutaca_small40",
    [
-    29.4,
-    116.4
+    145.5,
+    129.1
    ]
   ],
   [
-   "f_palmeira2",
+   "samutaca_small14",
+   [
+    38.9,
+    14.9
+   ]
+  ],
+  [
+   "samutaca_small22",
+   [
+    39.6,
+    79.2
+   ]
+  ],
+  [
+   "samutaca_small47",
+   [
+    91.4,
+    44.9
+   ]
+  ],
+  [
+   "samutaca_small13",
+   [
+    141.3,
+    23.9
+   ]
+  ],
+  [
+   "samutaca_small42",
+   [
+    54.2,
+    149.7
+   ]
+  ],
+  [
+   "samutaca_small35",
+   [
+    124.1,
+    94.2
+   ]
+  ],
+  [
+   "samutaca_small3",
+   [
+    12.6,
+    39.2
+   ]
+  ],
+  [
+   "samutaca_small40",
    [
     89.8,
-    123.5
+    98.6
    ]
   ],
   [
-   "f_mangueira",
+   "samutaca_small47",
    [
-    36.2,
-    91.3
+    142.3,
+    56.4
+   ]
+  ],
+  [
+   "samutaca_small33",
+   [
+    93.4,
+    24.0
+   ]
+  ],
+  [
+   "samutaca_small31",
+   [
+    60.3,
+    128.3
+   ]
+  ],
+  [
+   "samutaca_small30",
+   [
+    20.2,
+    24.5
+   ]
+  ],
+  [
+   "samutaca_small37",
+   [
+    148.9,
+    47.9
+   ]
+  ],
+  [
+   "samutaca_small25",
+   [
+    94.2,
+    34.2
+   ]
+  ],
+  [
+   "samutaca_small47",
+   [
+    80.9,
+    86.5
+   ]
+  ],
+  [
+   "samutaca_small40",
+   [
+    113.5,
+    140.0
+   ]
+  ],
+  [
+   "samutaca_small37",
+   [
+    43.9,
+    151.8
+   ]
+  ],
+  [
+   "samutaca_small44",
+   [
+    121.0,
+    37.3
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    108.6,
+    152.9
+   ]
+  ],
+  [
+   "samutaca_tree3",
+   [
+    110.6,
+    23.0
+   ]
+  ],
+  [
+   "samutaca_tree10",
+   [
+    104.8,
+    151.2
+   ]
+  ],
+  [
+   "samutaca_tree1",
+   [
+    52.0,
+    39.0
+   ]
+  ],
+  [
+   "samutaca_tree10",
+   [
+    87.5,
+    15.5
+   ]
+  ],
+  [
+   "samutaca_tree1",
+   [
+    86.2,
+    120.9
+   ]
+  ],
+  [
+   "samutaca_tree13",
+   [
+    146.9,
+    128.0
+   ]
+  ],
+  [
+   "samutaca_tree4",
+   [
+    84.4,
+    144.6
+   ]
+  ],
+  [
+   "samutaca_tree11",
+   [
+    106.7,
+    77.2
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    139.8,
+    13.8
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    152.9,
+    78.9
+   ]
+  ],
+  [
+   "samutaca_tree6",
+   [
+    118.6,
+    128.2
+   ]
+  ],
+  [
+   "samutaca_tree14",
+   [
+    151.9,
+    82.5
+   ]
+  ],
+  [
+   "samutaca_tree4",
+   [
+    119.5,
+    15.7
+   ]
+  ],
+  [
+   "samutaca_tree14",
+   [
+    26.5,
+    97.1
+   ]
+  ],
+  [
+   "samutaca_tree9",
+   [
+    22.3,
+    55.0
+   ]
+  ],
+  [
+   "samutaca_tree12",
+   [
+    7.3,
+    18.4
+   ]
+  ],
+  [
+   "samutaca_tree9",
+   [
+    97.2,
+    125.1
+   ]
+  ],
+  [
+   "samutaca_tree10",
+   [
+    40.5,
+    32.2
+   ]
+  ],
+  [
+   "samutaca_tree1",
+   [
+    15.5,
+    37.5
+   ]
+  ],
+  [
+   "samutaca_tree14",
+   [
+    54.9,
+    8.9
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    75.7,
+    89.3
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    112.2,
+    116.9
+   ]
+  ],
+  [
+   "samutaca_tree2",
+   [
+    48.5,
+    38.1
+   ]
+  ],
+  [
+   "samutaca_tree7",
+   [
+    44.7,
+    27.9
+   ]
+  ],
+  [
+   "samutaca_tree5",
+   [
+    81.9,
+    42.9
+   ]
+  ],
+  [
+   "samutaca_tree8",
+   [
+    26.3,
+    150.0
+   ]
+  ],
+  [
+   "samutaca_tree13",
+   [
+    50.8,
+    122.4
+   ]
+  ],
+  [
+   "samutaca_tree14",
+   [
+    31.1,
+    17.0
+   ]
+  ],
+  [
+   "samutaca_tree13",
+   [
+    45.7,
+    138.0
+   ]
+  ],
+  [
+   "samutaca_tree5",
+   [
+    109.8,
+    86.8
+   ]
+  ],
+  [
+   "samutaca_tree11",
+   [
+    139.7,
+    99.6
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Samutaca",
    "at": [
-    46.5,
-    37.0
+    70.8,
+    64.2
    ]
-  },
+  }
+ ],
+ "portals": [
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "lossambo",
+   "name": "Lossambo",
    "at": [
-    72,
-    64
+    156.0,
+    142.3
+   ],
+   "arrive": [
+    150.5,
+    142.4
    ]
   }
  ]

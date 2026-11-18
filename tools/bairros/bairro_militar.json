@@ -2,137 +2,511 @@
  "id": "bairro_militar",
  "name": "Bairro Militar",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "asfalto",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "asfalto",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     576.58,
+     144.95
+    ],
+    [
+     558.26,
+     143.35
+    ],
+    [
+     519.04,
+     143.08
+    ],
+    [
+     461.56,
+     143.69
+    ],
+    [
+     373.26,
+     138.46
+    ],
+    [
+     316.59,
+     134.1
+    ],
+    [
+     282.94,
+     132.51
+    ],
+    [
+     274.08,
+     131.85
+    ],
+    [
+     218.82,
+     136.21
+    ],
+    [
+     189.1,
+     141.39
+    ],
+    [
+     149.8,
+     149.42
+    ],
+    [
+     109.85,
+     150.47
+    ],
+    [
+     80.05,
+     148.64
+    ],
+    [
+     52.21,
+     145.64
+    ],
+    [
+     20.05,
+     141.66
+    ],
+    [
+     9.69,
+     138.13
+    ],
+    [
+     -9.45,
+     131.9
+    ],
+    [
+     -26.51,
+     124.45
+    ],
+    [
+     -78.69,
+     102.76
+    ],
+    [
+     -133.35,
+     76.79
+    ],
+    [
+     -154.46,
+     68.78
+    ],
+    [
+     -175.78,
+     61.94
+    ],
+    [
+     -198.81,
+     53.99
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     20.05,
+     141.66
+    ],
+    [
+     25.85,
+     153.32
+    ],
+    [
+     37.14,
+     182.85
+    ],
+    [
+     41.15,
+     197.24
+    ],
+    [
+     54.92,
+     246.71
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -58.16,
+     -29.55
+    ],
+    [
+     -41.89,
+     -13.4
+    ],
+    [
+     -15.91,
+     9.92
+    ],
+    [
+     44.17,
+     58.73
+    ],
+    [
+     52.98,
+     65.55
+    ],
+    [
+     59.34,
+     70.15
+    ],
+    [
+     112.83,
+     117.02
+    ],
+    [
+     149.8,
+     149.42
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     206.16,
+     200.37
+    ],
+    [
+     231.51,
+     344.5
+    ],
+    [
+     235.97,
+     373.21
+    ],
+    [
+     240.97,
+     417.54
+    ],
+    [
+     246.65,
+     460.61
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -25.96,
+     297.07
+    ],
+    [
+     -15.52,
+     289.82
+    ],
+    [
+     -11.35,
+     266.58
+    ],
+    [
+     3.28,
+     176.27
+    ],
+    [
+     5.98,
+     160.23
+    ],
+    [
+     9.69,
+     138.13
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     183.6,
+     -66.13
+    ],
+    [
+     181.41,
+     -53.63
+    ],
+    [
+     176.44,
+     -25.31
+    ],
+    [
+     171.88,
+     3.07
+    ],
+    [
+     167.23,
+     25.98
+    ],
+    [
+     163.49,
+     48.03
+    ],
+    [
+     163.11,
+     59.12
+    ],
+    [
+     167.31,
+     67.66
+    ],
+    [
+     180.86,
+     76.82
+    ],
+    [
+     196.52,
+     86.36
+    ],
+    [
+     210.53,
+     103.45
+    ],
+    [
+     215.3,
+     116.02
+    ],
+    [
+     218.82,
+     136.21
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     59.34,
+     70.15
+    ],
+    [
+     57.01,
+     88.38
+    ],
+    [
+     54.4,
+     116.06
+    ],
+    [
+     52.21,
+     145.64
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     465.25,
+     201.71
+    ],
+    [
+     368.44,
+     197.01
+    ],
+    [
+     290.04,
+     195.62
+    ],
+    [
+     248.64,
+     199.24
+    ],
+    [
+     206.16,
+     200.37
+    ],
+    [
+     173.87,
+     206.27
+    ],
+    [
+     151.99,
+     212.22
+    ],
+    [
+     111.48,
+     224.5
+    ],
+    [
+     54.92,
+     246.71
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     55.27,
+     -53.87
+    ],
+    [
+     54.37,
+     11.93
+    ],
+    [
+     53.89,
+     21.41
+    ],
+    [
+     53.38,
+     31.16
+    ],
+    [
+     53.33,
+     47.47
+    ],
+    [
+     52.98,
+     65.55
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     135.42,
+     -81.54
+    ],
+    [
+     132.1,
+     -62.19
+    ],
+    [
+     130.53,
+     -44.65
+    ],
+    [
+     128.48,
+     -37.77
+    ],
+    [
+     125.66,
+     -33.38
+    ],
+    [
+     116.92,
+     -31.5
+    ],
+    [
+     111.08,
+     -32.12
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     54.37,
+     11.93
+    ],
+    [
+     88.45,
+     7.48
+    ],
+    [
+     102.02,
+     5.72
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     88.45,
+     7.48
+    ],
+    [
+     102.97,
+     38.05
+    ],
+    [
+     112.67,
+     48.21
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     141.05,
+     86.72
+    ],
+    [
+     112.83,
+     117.02
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [],
+ "geo": {
+  "lat": -12.777,
+  "lon": 15.7257,
+  "rot_deg": -8.8,
+  "cx": -100,
+  "cy": -10
+ },
  "buildings": [
+  {
+   "id": "bairro_militar_mercado",
+   "at": [
+    66.7,
+    132.3
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
   {
    "id": "bairro_militar_escola",
    "at": [
-    2.0,
-    23.6
+    82.7,
+    135.4
    ],
    "venue": {
     "venue": "escola",
@@ -142,8 +516,8 @@
   {
    "id": "bairro_militar_saude",
    "at": [
-    31.9,
-    2.0
+    42.7,
+    72.1
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +527,8 @@
   {
    "id": "bairro_militar_igreja",
    "at": [
-    21.0,
-    23.5
+    101.2,
+    136.3
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +536,43 @@
    }
   },
   {
-   "id": "bairro_militar_mercado",
+   "id": "bairro_militar_saude_8",
    "at": [
-    51.0,
-    21.8
+    42.4,
+    85.6
    ],
    "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
+    "venue": "saude",
+    "job": "enfermeiro"
+   }
+  },
+  {
+   "id": "bairro_militar_administracao",
+   "at": [
+    37.1,
+    133.3
+   ],
+   "venue": {
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "bairro_militar_esquadra",
+   "at": [
+    25.2,
+    131.7
+   ],
+   "venue": {
+    "venue": "esquadra",
+    "job": "policia"
    }
   },
   {
    "id": "bairro_militar_cantina",
    "at": [
-    67.0,
-    26.9
+    116.3,
+    139.6
    ],
    "venue": {
     "venue": "cantina",
@@ -188,8 +583,8 @@
   {
    "id": "bairro_militar_farmacia",
    "at": [
-    78.0,
-    26.3
+    6.5,
+    12.5
    ],
    "venue": {
     "venue": "farmacia",
@@ -197,43 +592,10 @@
    }
   },
   {
-   "id": "bairro_militar_administracao",
-   "at": [
-    99.0,
-    26.4
-   ],
-   "venue": {
-    "venue": "administracao",
-    "job": "funcionario_publico"
-   }
-  },
-  {
-   "id": "bairro_militar_esquadra",
-   "at": [
-    111.0,
-    26.3
-   ],
-   "venue": {
-    "venue": "esquadra",
-    "job": "policia"
-   }
-  },
-  {
-   "id": "bairro_militar_saude_8",
-   "at": [
-    33.1,
-    42.0
-   ],
-   "venue": {
-    "venue": "saude",
-    "job": "enfermeiro"
-   }
-  },
-  {
    "id": "bairro_militar_padaria",
    "at": [
-    122.0,
-    26.7
+    37.0,
+    112.1
    ],
    "venue": {
     "venue": "padaria",
@@ -244,8 +606,8 @@
   {
    "id": "bairro_militar_apartamentos",
    "at": [
-    36.0,
-    26.9
+    129.4,
+    23.0
    ],
    "venue": {
     "venue": "apartamentos",
@@ -253,22 +615,10 @@
    }
   },
   {
-   "id": "bairro_militar_casa1",
-   "at": [
-    132.0,
-    26.9
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 1"
-  },
-  {
    "id": "bairro_militar_casa2",
    "at": [
-    141.0,
-    27.0
+    5.8,
+    127.6
    ],
    "venue": {
     "venue": "casa",
@@ -277,46 +627,22 @@
    "label": "Casa 2"
   },
   {
-   "id": "bairro_militar_casa3",
+   "id": "bairro_militar_casa1",
    "at": [
-    2.0,
-    72.9
+    20.6,
+    122.8
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
-   "label": "Casa 3"
-  },
-  {
-   "id": "bairro_militar_casa4",
-   "at": [
-    10.0,
-    73.4
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 4"
-  },
-  {
-   "id": "bairro_militar_casa5",
-   "at": [
-    19.0,
-    73.9
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 5"
+   "label": "Casa 1"
   },
   {
    "id": "bairro_militar_casa6",
    "at": [
-    29.0,
-    73.2
+    150.0,
+    138.3
    ],
    "venue": {
     "venue": "casa",
@@ -325,10 +651,46 @@
    "label": "Casa 6"
   },
   {
+   "id": "bairro_militar_casa4",
+   "at": [
+    62.6,
+    1.3
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
+   "id": "bairro_militar_casa3",
+   "at": [
+    58.7,
+    55.6
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
+  },
+  {
+   "id": "bairro_militar_casa5",
+   "at": [
+    145.0,
+    96.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 5"
+  },
+  {
    "id": "bairro_militar_casa7",
    "at": [
-    51.0,
-    73.9
+    121.1,
+    21.7
    ],
    "venue": {
     "venue": "casa",
@@ -339,679 +701,409 @@
  ],
  "props": [
   [
-   "f_candeeiro",
+   "bairro_militar_tree3",
    [
-    6,
-    32.5
+    155.2,
+    155.4
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_tree4",
    [
-    12.5,
-    41.4
+    146.0,
+    156.4
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_pole3",
    [
-    19,
-    32.5
+    129.7,
+    144.0
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_tree6",
    [
-    25.5,
-    41.4
+    105.4,
+    157.1
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_pole1",
    [
-    32,
-    32.5
+    60.8,
+    140.6
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_tree2",
    [
-    45,
-    32.5
+    59.4,
+    153.4
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_pole3",
    [
-    51.5,
-    41.4
+    49.0,
+    139.3
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_militar_pole3",
    [
-    64.5,
-    41.4
+    33.1,
+    137.3
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_tree1",
    [
-    77.5,
-    41.4
+    31.5,
+    150.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_pole3",
    [
-    90.5,
-    41.4
+    18.2,
+    134.8
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_pole2",
    [
-    97,
-    32.5
+    16.5,
+    147.9
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_tree6",
    [
-    103.5,
-    41.4
+    33.7,
+    154.6
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_tree6",
    [
-    110,
-    32.5
+    4.0,
+    17.2
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_pole5",
    [
-    116.5,
-    41.4
+    8.3,
+    37.2
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_militar_pole3",
    [
-    123,
-    32.5
+    20.7,
+    47.3
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_pole4",
    [
-    129.5,
-    41.4
+    33.1,
+    57.4
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_militar_tree3",
    [
-    142.5,
-    41.4
+    41.2,
+    47.4
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_pole5",
    [
-    12.5,
-    86.4
+    43.7,
+    65.8
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole1",
    [
-    19,
-    78.5
+    52.8,
+    72.7
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_pole2",
    [
-    25.5,
-    86.4
+    70.5,
+    87.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_tree2",
    [
-    38.5,
-    86.4
+    78.9,
+    78.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole2",
    [
-    45,
-    78.5
+    82.5,
+    98.3
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_tree1",
    [
-    51.5,
-    86.4
+    91.0,
+    88.7
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole3",
    [
-    58,
-    78.5
+    94.6,
+    108.9
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_tree4",
    [
-    64.5,
-    86.4
+    103.0,
+    99.2
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole1",
    [
-    71,
-    78.5
+    106.6,
+    119.4
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_pole4",
    [
-    77.5,
-    86.4
+    111.9,
+    124.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_tree2",
    [
-    84,
-    78.5
+    120.4,
+    114.5
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_pole3",
    [
-    90.5,
-    86.4
+    124.0,
+    134.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_tree5",
    [
-    97,
-    78.5
+    132.4,
+    125.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_pole4",
    [
-    103.5,
-    86.4
+    136.0,
+    145.2
    ]
   ],
   [
-   "f_poste",
-   [
-    110,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    116.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    129.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    142.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    6,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
+   "bairro_militar_pole2",
    [
     12.5,
-    120.4
+    157.3
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_tree4",
    [
-    19,
-    112.5
+    63.5,
+    93.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_pole2",
    [
-    25.5,
-    120.4
+    49.3,
+    107.7
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole2",
    [
-    32,
-    112.5
+    48.2,
+    119.6
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_tree3",
    [
-    38.5,
-    120.4
+    61.0,
+    120.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_tree3",
    [
-    45,
-    112.5
+    59.8,
+    136.5
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_militar_pole1",
    [
-    51.5,
-    120.4
+    49.3,
+    15.7
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole5",
    [
-    58,
-    112.5
+    48.8,
+    25.1
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_militar_pole2",
    [
-    64.5,
-    120.4
+    48.5,
+    35.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole1",
    [
-    71,
-    112.5
+    48.4,
+    51.4
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_tree2",
    [
-    77.5,
-    120.4
+    59.2,
+    51.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole4",
    [
-    84,
-    112.5
+    59.0,
+    16.3
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_militar_tree6",
    [
-    90.5,
-    120.4
+    57.6,
+    5.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole2",
    [
-    97,
-    112.5
+    74.8,
+    14.2
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_tree5",
    [
-    103.5,
-    120.4
+    73.4,
+    3.5
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole2",
    [
-    110,
-    112.5
+    85.7,
+    13.2
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_pole2",
    [
-    116.5,
-    120.4
+    92.6,
+    27.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_pole5",
    [
-    123,
-    112.5
+    102.2,
+    44.3
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_militar_pole2",
    [
-    129.5,
-    120.4
+    134.0,
+    85.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_militar_tree1",
    [
-    136,
-    112.5
+    143.4,
+    94.3
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_pole2",
    [
-    142.5,
-    120.4
+    123.1,
+    97.3
    ]
   ],
   [
-   "f_poste2",
+   "bairro_militar_tree3",
    [
-    50.5,
-    8
+    132.5,
+    106.1
    ]
   ],
   [
-   "f_poste2",
+   "bairro_militar_pole4",
    [
-    50.5,
-    22
+    112.2,
+    109.0
    ]
   ],
   [
-   "f_poste2",
+   "bairro_militar_tree2",
    [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
+    121.6,
+    117.8
    ]
   ],
   [
    "f_hilux",
    [
-    30,
-    83.0
+    21.0,
+    148.6
    ]
   ],
   [
    "f_carro2",
    [
-    128,
-    83.0
+    4.2,
+    134.0
    ]
   ],
   [
-   "f_banca",
+   "bairro_militar_stall1",
    [
-    22,
-    42.2
+    64.8,
+    152.8
    ],
    {
     "kind": "work",
@@ -1019,210 +1111,591 @@
    }
   ],
   [
-   "f_banca3",
+   "bairro_militar_stall5",
    [
-    30,
-    42.2
+    66.6,
+    152.6
    ]
   ],
   [
-   "f_contentor",
+   "bairro_militar_stall1",
    [
-    8,
-    42.2
+    74.2,
+    152.1
    ]
   ],
   [
-   "f_contentor2",
+   "bairro_militar_small37",
    [
-    140,
-    87.2
+    13.0,
+    61.2
    ]
   ],
   [
-   "f_galinha",
+   "bairro_militar_small21",
    [
-    12,
-    88.5
+    131.4,
+    84.2
    ]
   ],
   [
-   "f_galinha2",
+   "bairro_militar_small24",
    [
-    14,
-    89.4
+    66.0,
+    151.2
    ]
   ],
   [
-   "f_cabra",
+   "bairro_militar_small29",
    [
-    20,
-    90.0
+    155.0,
+    6.6
    ]
   ],
   [
-   "f_bidao",
+   "bairro_militar_small27",
    [
-    46,
-    88.0
-   ]
-  ],
-  [
-   "f_carvao",
-   [
-    60,
-    88.0
-   ]
-  ],
-  [
-   "f_blocos",
-   [
-    138,
-    106
-   ]
-  ],
-  [
-   "f_bicicleta",
-   [
-    88,
-    88.0
-   ]
-  ],
-  [
-   "f_tanque",
-   [
-    140,
-    64
-   ]
-  ],
-  [
-   "f_carroca",
-   [
-    70,
-    88.0
-   ]
-  ],
-  [
-   "f_mesa_plastico2",
-   [
-    108,
-    88.4
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    98.8,
-    34.2
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    85.9,
-    38.0
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    140.0,
-    54.3
-   ]
-  ],
-  [
-   "f_abacateiro",
-   [
-    97.1,
+    10.5,
     47.0
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_militar_small21",
    [
-    132.8,
-    95.3
+    63.6,
+    133.7
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_militar_small5",
    [
-    104.1,
-    44.2
+    106.4,
+    123.1
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_militar_small8",
    [
-    38.6,
-    19.5
+    139.1,
+    80.9
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_militar_small12",
    [
-    4.9,
-    85.4
+    108.4,
+    90.8
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_militar_small43",
    [
-    110.8,
-    49.0
+    64.0,
+    6.8
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_militar_small55",
    [
-    54.4,
-    6.3
+    65.7,
+    41.7
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_militar_small22",
    [
-    37.5,
-    56.9
+    151.7,
+    121.0
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_militar_small26",
    [
-    100.7,
-    125.5
+    84.6,
+    130.0
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_militar_small28",
    [
-    46.6,
-    122.4
+    124.2,
+    74.1
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_militar_small52",
+   [
+    144.6,
+    129.8
+   ]
+  ],
+  [
+   "bairro_militar_small12",
+   [
+    99.3,
+    89.3
+   ]
+  ],
+  [
+   "bairro_militar_small9",
+   [
+    134.7,
+    51.5
+   ]
+  ],
+  [
+   "bairro_militar_small49",
+   [
+    69.6,
+    46.6
+   ]
+  ],
+  [
+   "bairro_militar_small38",
+   [
+    115.6,
+    40.3
+   ]
+  ],
+  [
+   "bairro_militar_small28",
+   [
+    155.5,
+    101.3
+   ]
+  ],
+  [
+   "bairro_militar_small65",
+   [
+    80.9,
+    23.9
+   ]
+  ],
+  [
+   "bairro_militar_small7",
+   [
+    15.0,
+    96.3
+   ]
+  ],
+  [
+   "bairro_militar_small60",
+   [
+    5.4,
+    58.3
+   ]
+  ],
+  [
+   "bairro_militar_small12",
+   [
+    107.5,
+    82.9
+   ]
+  ],
+  [
+   "bairro_militar_small46",
+   [
+    133.6,
+    102.9
+   ]
+  ],
+  [
+   "bairro_militar_small55",
+   [
+    60.5,
+    41.5
+   ]
+  ],
+  [
+   "bairro_militar_small50",
    [
     48.5,
-    102.2
+    132.1
+   ]
+  ],
+  [
+   "bairro_militar_small67",
+   [
+    47.9,
+    31.2
+   ]
+  ],
+  [
+   "bairro_militar_small22",
+   [
+    34.2,
+    15.1
+   ]
+  ],
+  [
+   "bairro_militar_small42",
+   [
+    32.0,
+    121.7
+   ]
+  ],
+  [
+   "bairro_militar_small54",
+   [
+    81.4,
+    77.3
+   ]
+  ],
+  [
+   "bairro_militar_small2",
+   [
+    118.0,
+    11.3
+   ]
+  ],
+  [
+   "bairro_militar_small54",
+   [
+    85.4,
+    23.2
+   ]
+  ],
+  [
+   "bairro_militar_small68",
+   [
+    43.8,
+    9.8
+   ]
+  ],
+  [
+   "bairro_militar_small5",
+   [
+    106.2,
+    95.9
+   ]
+  ],
+  [
+   "bairro_militar_small8",
+   [
+    145.0,
+    83.6
+   ]
+  ],
+  [
+   "bairro_militar_small5",
+   [
+    139.7,
+    36.1
+   ]
+  ],
+  [
+   "bairro_militar_small18",
+   [
+    92.8,
+    82.7
+   ]
+  ],
+  [
+   "bairro_militar_small13",
+   [
+    139.3,
+    11.0
+   ]
+  ],
+  [
+   "bairro_militar_small8",
+   [
+    10.5,
+    120.3
+   ]
+  ],
+  [
+   "bairro_militar_small48",
+   [
+    60.9,
+    88.6
+   ]
+  ],
+  [
+   "bairro_militar_small58",
+   [
+    136.7,
+    20.6
+   ]
+  ],
+  [
+   "bairro_militar_small23",
+   [
+    79.0,
+    35.0
+   ]
+  ],
+  [
+   "bairro_militar_small37",
+   [
+    24.0,
+    27.3
+   ]
+  ],
+  [
+   "bairro_militar_tree4",
+   [
+    142.4,
+    27.8
+   ]
+  ],
+  [
+   "bairro_militar_tree3",
+   [
+    115.5,
+    59.1
+   ]
+  ],
+  [
+   "bairro_militar_tree6",
+   [
+    37.5,
+    13.6
+   ]
+  ],
+  [
+   "bairro_militar_tree5",
+   [
+    120.1,
+    62.5
+   ]
+  ],
+  [
+   "bairro_militar_tree4",
+   [
+    98.1,
+    128.7
+   ]
+  ],
+  [
+   "bairro_militar_tree5",
+   [
+    113.0,
+    8.3
+   ]
+  ],
+  [
+   "bairro_militar_tree3",
+   [
+    97.8,
+    120.9
+   ]
+  ],
+  [
+   "bairro_militar_tree6",
+   [
+    24.3,
+    69.6
+   ]
+  ],
+  [
+   "bairro_militar_tree3",
+   [
+    65.5,
+    40.2
+   ]
+  ],
+  [
+   "bairro_militar_tree7",
+   [
+    4.1,
+    20.7
+   ]
+  ],
+  [
+   "bairro_militar_tree5",
+   [
+    4.5,
+    54.5
+   ]
+  ],
+  [
+   "bairro_militar_tree4",
+   [
+    75.8,
+    29.1
+   ]
+  ],
+  [
+   "bairro_militar_tree3",
+   [
+    133.1,
+    141.2
+   ]
+  ],
+  [
+   "bairro_militar_tree1",
+   [
+    153.4,
+    83.2
+   ]
+  ],
+  [
+   "bairro_militar_tree1",
+   [
+    72.9,
+    92.7
+   ]
+  ],
+  [
+   "bairro_militar_tree3",
+   [
+    83.8,
+    73.2
+   ]
+  ],
+  [
+   "bairro_militar_tree1",
+   [
+    133.8,
+    11.6
+   ]
+  ],
+  [
+   "bairro_militar_tree6",
+   [
+    91.0,
+    106.5
+   ]
+  ],
+  [
+   "bairro_militar_tree1",
+   [
+    6.7,
+    61.5
+   ]
+  ],
+  [
+   "bairro_militar_tree5",
+   [
+    142.7,
+    113.4
+   ]
+  ],
+  [
+   "bairro_militar_tree4",
+   [
+    19.4,
+    14.6
+   ]
+  ],
+  [
+   "bairro_militar_tree7",
+   [
+    136.5,
+    15.8
+   ]
+  ],
+  [
+   "bairro_militar_tree2",
+   [
+    7.1,
+    118.2
+   ]
+  ],
+  [
+   "bairro_militar_tree6",
+   [
+    25.7,
+    31.7
+   ]
+  ],
+  [
+   "bairro_militar_tree4",
+   [
+    104.8,
+    83.0
+   ]
+  ],
+  [
+   "bairro_militar_tree2",
+   [
+    49.2,
+    122.0
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Bairro Militar",
    "at": [
-    46.5,
-    37.0
+    59.3,
+    70.2
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "aviacao",
+   "name": "Aviação",
+   "at": [
+    6.7,
+    156.0
+   ],
+   "arrive": [
+    7.6,
+    150.6
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "bairro_fatima",
+   "name": "Bairro de Fátima",
    "at": [
-    72,
-    64
+    26.9,
+    156.1
+   ],
+   "arrive": [
+    24.9,
+    151.0
+   ]
+  },
+  {
+   "to": "cacilhas",
+   "name": "Cacilhas",
+   "at": [
+    3.9,
+    136.3
+   ],
+   "arrive": [
+    9.2,
+    138.0
+   ]
+  },
+  {
+   "to": "cidade_alta",
+   "name": "Cidade Alta",
+   "at": [
+    156.0,
+    148.1
+   ],
+   "arrive": [
+    150.6,
+    149.2
+   ]
+  },
+  {
+   "to": "kapango",
+   "name": "Kapango",
+   "at": [
+    54.5,
+    4.0
+   ],
+   "arrive": [
+    54.4,
+    9.5
+   ]
+  },
+  {
+   "to": "sao_pedro",
+   "name": "São Pedro",
+   "at": [
+    3.7,
+    25.8
+   ],
+   "arrive": [
+    7.9,
+    29.3
    ]
   }
  ]

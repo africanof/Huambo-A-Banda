@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "cacoio_escola",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_escola.png",
-   "name": "Escola Primária do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_escola.webp",
+   "name": "Escola Primária do Cacoio",
+   "venue": "escola"
   },
   "cacoio_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "cacoio_saude",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_saude.png",
-   "name": "Centro de Saúde do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_saude.webp",
+   "name": "Centro de Saúde do Cacoio",
+   "venue": "saude"
   },
   "cacoio_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "cacoio_igreja",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_igreja.png",
-   "name": "Igreja Evangélica do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_igreja.webp",
+   "name": "Igreja Evangélica do Cacoio",
+   "venue": "igreja"
   },
   "cacoio_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "cacoio_mercado",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_mercado.png",
-   "name": "Mercado do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_mercado.webp",
+   "name": "Mercado do Cacoio",
+   "venue": "mercado"
   },
   "cacoio_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "cacoio_cantina",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_cantina.png",
-   "name": "Cantina do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_cantina.webp",
+   "name": "Cantina do Cacoio",
+   "venue": "cantina"
   },
   "cacoio_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "cacoio_farmacia",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_farmacia.png",
-   "name": "Farmácia Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_farmacia.webp",
+   "name": "Farmácia Cacoio",
+   "venue": "farmacia"
   },
   "cacoio_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "cacoio_administracao",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_administracao.png",
-   "name": "Administração do Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_administracao.webp",
+   "name": "Administração do Cacoio",
+   "venue": "administracao"
   },
   "cacoio_churrasqueira": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "cacoio_churrasqueira",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_churrasqueira.png",
-   "name": "Churrasqueira Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_churrasqueira.webp",
+   "name": "Churrasqueira Cacoio",
+   "venue": "churrasqueira"
   },
   "cacoio_loja_telecom": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "cacoio_loja_telecom",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_loja_telecom.png",
-   "name": "Quiosque Unitel Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_loja_telecom.webp",
+   "name": "Quiosque Unitel Cacoio",
+   "venue": "loja_telecom"
   },
   "cacoio_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "cacoio_apartamentos",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_apartamentos.png",
-   "name": "Prédio Cacoio"
+   "path": "res://assets/kits/kit_cacoio/cacoio_apartamentos.webp",
+   "name": "Prédio Cacoio",
+   "venue": "apartamentos"
   },
   "cacoio_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "cacoio_casa1",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "cacoio_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "cacoio_casa2",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "cacoio_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "cacoio_casa3",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "cacoio_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "cacoio_casa4",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "cacoio_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "cacoio_casa5",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "cacoio_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "cacoio_casa6",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "cacoio_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "cacoio_casa7",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "cacoio_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "cacoio_casa8",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "cacoio_casa9": {
    "category": "building",
@@ -378,9 +396,1775 @@
    "scale": 1.6,
    "out": "cacoio_casa9",
    "kit": "kit_cacoio",
-   "path": "res://assets/kits/kit_cacoio/cacoio_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "cacoio_tree1": {
+   "category": "prop",
+   "size": [
+    327,
+    230
+   ],
+   "anchor": [
+    163,
+    228
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree1.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree2": {
+   "category": "prop",
+   "size": [
+    279,
+    247
+   ],
+   "anchor": [
+    139,
+    245
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree2.webp",
+   "kind": "tree"
+  },
+  "cacoio_small1": {
+   "category": "prop",
+   "size": [
+    163,
+    257
+   ],
+   "anchor": [
+    75,
+    255
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small1.webp",
+   "kind": "small"
+  },
+  "cacoio_tree3": {
+   "category": "prop",
+   "size": [
+    176,
+    239
+   ],
+   "anchor": [
+    87,
+    237
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree3.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree4": {
+   "category": "prop",
+   "size": [
+    185,
+    249
+   ],
+   "anchor": [
+    92,
+    248
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree4.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree5": {
+   "category": "prop",
+   "size": [
+    351,
+    238
+   ],
+   "anchor": [
+    175,
+    236
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree5",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree5.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree6": {
+   "category": "prop",
+   "size": [
+    219,
+    233
+   ],
+   "anchor": [
+    108,
+    231
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree6",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree6.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree7": {
+   "category": "prop",
+   "size": [
+    218,
+    225
+   ],
+   "anchor": [
+    108,
+    223
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree7",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree7.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree8": {
+   "category": "prop",
+   "size": [
+    215,
+    211
+   ],
+   "anchor": [
+    107,
+    209
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree8",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree8.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree9": {
+   "category": "prop",
+   "size": [
+    213,
+    221
+   ],
+   "anchor": [
+    106,
+    219
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree9",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree9.webp",
+   "kind": "tree"
+  },
+  "cacoio_tree10": {
+   "category": "prop",
+   "size": [
+    220,
+    217
+   ],
+   "anchor": [
+    109,
+    216
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree10",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree10.webp",
+   "kind": "tree"
+  },
+  "cacoio_lamp1": {
+   "category": "prop",
+   "size": [
+    104,
+    235
+   ],
+   "anchor": [
+    52,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_lamp1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacoio_lamp2": {
+   "category": "prop",
+   "size": [
+    99,
+    240
+   ],
+   "anchor": [
+    49,
+    239
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_lamp2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacoio_lamp3": {
+   "category": "prop",
+   "size": [
+    50,
+    222
+   ],
+   "anchor": [
+    24,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_lamp3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacoio_lamp4": {
+   "category": "prop",
+   "size": [
+    104,
+    208
+   ],
+   "anchor": [
+    51,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_lamp4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacoio_lamp5": {
+   "category": "prop",
+   "size": [
+    70,
+    217
+   ],
+   "anchor": [
+    34,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_lamp5",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacoio_pole1": {
+   "category": "prop",
+   "size": [
+    70,
+    250
+   ],
+   "anchor": [
+    34,
+    248
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_pole1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_pole1.webp",
+   "kind": "pole"
+  },
+  "cacoio_pole2": {
+   "category": "prop",
+   "size": [
+    78,
+    249
+   ],
+   "anchor": [
+    38,
+    247
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_pole2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_pole2.webp",
+   "kind": "pole"
+  },
+  "cacoio_pole3": {
+   "category": "prop",
+   "size": [
+    86,
+    254
+   ],
+   "anchor": [
+    42,
+    253
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_pole3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_pole3.webp",
+   "kind": "pole"
+  },
+  "cacoio_pole4": {
+   "category": "prop",
+   "size": [
+    85,
+    257
+   ],
+   "anchor": [
+    42,
+    256
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacoio_pole4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_pole4.webp",
+   "kind": "pole"
+  },
+  "cacoio_vehicle1": {
+   "category": "prop",
+   "size": [
+    313,
+    196
+   ],
+   "anchor": [
+    151,
+    194
+   ],
+   "footprint": [
+    2.0,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle2": {
+   "category": "prop",
+   "size": [
+    310,
+    191
+   ],
+   "anchor": [
+    150,
+    189
+   ],
+   "footprint": [
+    2.0,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle3": {
+   "category": "prop",
+   "size": [
+    168,
+    138
+   ],
+   "anchor": [
+    15,
+    136
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle4": {
+   "category": "prop",
+   "size": [
+    149,
+    134
+   ],
+   "anchor": [
+    18,
+    133
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle5": {
+   "category": "prop",
+   "size": [
+    149,
+    132
+   ],
+   "anchor": [
+    17,
+    131
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle5",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle6": {
+   "category": "prop",
+   "size": [
+    149,
+    131
+   ],
+   "anchor": [
+    17,
+    130
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle6",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle7": {
+   "category": "prop",
+   "size": [
+    317,
+    156
+   ],
+   "anchor": [
+    130,
+    154
+   ],
+   "footprint": [
+    1.8,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle7",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle8": {
+   "category": "prop",
+   "size": [
+    249,
+    130
+   ],
+   "anchor": [
+    123,
+    128
+   ],
+   "footprint": [
+    1.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle8",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_vehicle9": {
+   "category": "prop",
+   "size": [
+    253,
+    131
+   ],
+   "anchor": [
+    128,
+    130
+   ],
+   "footprint": [
+    1.8,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_vehicle9",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "cacoio_tree11": {
+   "category": "prop",
+   "size": [
+    220,
+    181
+   ],
+   "anchor": [
+    110,
+    179
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree11",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree11.webp",
+   "kind": "tree"
+  },
+  "cacoio_stall1": {
+   "category": "prop",
+   "size": [
+    186,
+    176
+   ],
+   "anchor": [
+    34,
+    174
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_stall1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_stall1.webp",
+   "kind": "stall"
+  },
+  "cacoio_stall2": {
+   "category": "prop",
+   "size": [
+    189,
+    178
+   ],
+   "anchor": [
+    134,
+    177
+   ],
+   "footprint": [
+    1.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_stall2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_stall2.webp",
+   "kind": "stall"
+  },
+  "cacoio_tree12": {
+   "category": "prop",
+   "size": [
+    204,
+    183
+   ],
+   "anchor": [
+    101,
+    181
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree12",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree12.webp",
+   "kind": "tree"
+  },
+  "cacoio_stall3": {
+   "category": "prop",
+   "size": [
+    275,
+    172
+   ],
+   "anchor": [
+    204,
+    169
+   ],
+   "footprint": [
+    2.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_stall3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_stall3.webp",
+   "kind": "stall"
+  },
+  "cacoio_stall4": {
+   "category": "prop",
+   "size": [
+    258,
+    170
+   ],
+   "anchor": [
+    198,
+    167
+   ],
+   "footprint": [
+    2.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_stall4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_stall4.webp",
+   "kind": "stall"
+  },
+  "cacoio_small2": {
+   "category": "prop",
+   "size": [
+    169,
+    122
+   ],
+   "anchor": [
+    107,
+    120
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small2.webp",
+   "kind": "small"
+  },
+  "cacoio_small3": {
+   "category": "prop",
+   "size": [
+    156,
+    117
+   ],
+   "anchor": [
+    98,
+    115
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small3.webp",
+   "kind": "small"
+  },
+  "cacoio_small4": {
+   "category": "prop",
+   "size": [
+    139,
+    115
+   ],
+   "anchor": [
+    85,
+    113
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small4.webp",
+   "kind": "small"
+  },
+  "cacoio_small5": {
+   "category": "prop",
+   "size": [
+    77,
+    116
+   ],
+   "anchor": [
+    42,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small5",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small5.webp",
+   "kind": "small"
+  },
+  "cacoio_small6": {
+   "category": "prop",
+   "size": [
+    154,
+    69
+   ],
+   "anchor": [
+    115,
+    68
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small6",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small6.webp",
+   "kind": "small"
+  },
+  "cacoio_small7": {
+   "category": "prop",
+   "size": [
+    156,
+    87
+   ],
+   "anchor": [
+    120,
+    86
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small7",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small7.webp",
+   "kind": "small"
+  },
+  "cacoio_small8": {
+   "category": "prop",
+   "size": [
+    132,
+    73
+   ],
+   "anchor": [
+    99,
+    72
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small8",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small8.webp",
+   "kind": "small"
+  },
+  "cacoio_small9": {
+   "category": "prop",
+   "size": [
+    170,
+    93
+   ],
+   "anchor": [
+    138,
+    92
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small9",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small9.webp",
+   "kind": "small"
+  },
+  "cacoio_small10": {
+   "category": "prop",
+   "size": [
+    137,
+    149
+   ],
+   "anchor": [
+    58,
+    148
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small10",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small10.webp",
+   "kind": "small"
+  },
+  "cacoio_small11": {
+   "category": "prop",
+   "size": [
+    135,
+    117
+   ],
+   "anchor": [
+    62,
+    116
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small11",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small11.webp",
+   "kind": "small"
+  },
+  "cacoio_small12": {
+   "category": "prop",
+   "size": [
+    141,
+    123
+   ],
+   "anchor": [
+    82,
+    122
+   ],
+   "footprint": [
+    1.1,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small12",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small12.webp",
+   "kind": "small"
+  },
+  "cacoio_small13": {
+   "category": "prop",
+   "size": [
+    133,
+    97
+   ],
+   "anchor": [
+    79,
+    95
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small13",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small13.webp",
+   "kind": "small"
+  },
+  "cacoio_small14": {
+   "category": "prop",
+   "size": [
+    128,
+    91
+   ],
+   "anchor": [
+    74,
+    89
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small14",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small14.webp",
+   "kind": "small"
+  },
+  "cacoio_small15": {
+   "category": "prop",
+   "size": [
+    297,
+    142
+   ],
+   "anchor": [
+    237,
+    140
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small15",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small15.webp",
+   "kind": "small"
+  },
+  "cacoio_small16": {
+   "category": "prop",
+   "size": [
+    250,
+    144
+   ],
+   "anchor": [
+    27,
+    142
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small16",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small16.webp",
+   "kind": "small"
+  },
+  "cacoio_small17": {
+   "category": "prop",
+   "size": [
+    150,
+    126
+   ],
+   "anchor": [
+    73,
+    124
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small17",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small17.webp",
+   "kind": "small"
+  },
+  "cacoio_tree13": {
+   "category": "prop",
+   "size": [
+    113,
+    120
+   ],
+   "anchor": [
+    56,
+    119
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_tree13",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_tree13.webp",
+   "kind": "tree"
+  },
+  "cacoio_small18": {
+   "category": "prop",
+   "size": [
+    81,
+    123
+   ],
+   "anchor": [
+    31,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small18",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small18.webp",
+   "kind": "small"
+  },
+  "cacoio_small19": {
+   "category": "prop",
+   "size": [
+    102,
+    110
+   ],
+   "anchor": [
+    44,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small19",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small19.webp",
+   "kind": "small"
+  },
+  "cacoio_small20": {
+   "category": "prop",
+   "size": [
+    141,
+    102
+   ],
+   "anchor": [
+    20,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small20",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small20.webp",
+   "kind": "small"
+  },
+  "cacoio_small21": {
+   "category": "prop",
+   "size": [
+    137,
+    102
+   ],
+   "anchor": [
+    20,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small21",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small21.webp",
+   "kind": "small"
+  },
+  "cacoio_small22": {
+   "category": "prop",
+   "size": [
+    141,
+    103
+   ],
+   "anchor": [
+    22,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small22",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small22.webp",
+   "kind": "small"
+  },
+  "cacoio_small23": {
+   "category": "prop",
+   "size": [
+    159,
+    96
+   ],
+   "anchor": [
+    79,
+    94
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small23",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small23.webp",
+   "kind": "small"
+  },
+  "cacoio_small24": {
+   "category": "prop",
+   "size": [
+    133,
+    96
+   ],
+   "anchor": [
+    68,
+    94
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small24",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small24.webp",
+   "kind": "small"
+  },
+  "cacoio_small25": {
+   "category": "prop",
+   "size": [
+    130,
+    94
+   ],
+   "anchor": [
+    61,
+    93
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small25",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small25.webp",
+   "kind": "small"
+  },
+  "cacoio_small26": {
+   "category": "prop",
+   "size": [
+    150,
+    83
+   ],
+   "anchor": [
+    57,
+    81
+   ],
+   "footprint": [
+    0.8,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small26",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small26.webp",
+   "kind": "small"
+  },
+  "cacoio_small27": {
+   "category": "prop",
+   "size": [
+    168,
+    96
+   ],
+   "anchor": [
+    39,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small27",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small27.webp",
+   "kind": "small"
+  },
+  "cacoio_small28": {
+   "category": "prop",
+   "size": [
+    169,
+    96
+   ],
+   "anchor": [
+    39,
+    95
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small28",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small28.webp",
+   "kind": "small"
+  },
+  "cacoio_small29": {
+   "category": "prop",
+   "size": [
+    82,
+    94
+   ],
+   "anchor": [
+    37,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small29",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small29.webp",
+   "kind": "small"
+  },
+  "cacoio_small30": {
+   "category": "prop",
+   "size": [
+    66,
+    77
+   ],
+   "anchor": [
+    31,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small30",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small30.webp",
+   "kind": "small"
+  },
+  "cacoio_small31": {
+   "category": "prop",
+   "size": [
+    51,
+    58
+   ],
+   "anchor": [
+    21,
+    57
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small31",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small31.webp",
+   "kind": "small"
+  },
+  "cacoio_small32": {
+   "category": "prop",
+   "size": [
+    90,
+    98
+   ],
+   "anchor": [
+    45,
+    96
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small32",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small32.webp",
+   "kind": "small"
+  },
+  "cacoio_small33": {
+   "category": "prop",
+   "size": [
+    67,
+    74
+   ],
+   "anchor": [
+    29,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small33",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small33.webp",
+   "kind": "small"
+  },
+  "cacoio_small34": {
+   "category": "prop",
+   "size": [
+    73,
+    78
+   ],
+   "anchor": [
+    32,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small34",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small34.webp",
+   "kind": "small"
+  },
+  "cacoio_small35": {
+   "category": "prop",
+   "size": [
+    123,
+    95
+   ],
+   "anchor": [
+    44,
+    93
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small35",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small35.webp",
+   "kind": "small"
+  },
+  "cacoio_small36": {
+   "category": "prop",
+   "size": [
+    135,
+    96
+   ],
+   "anchor": [
+    44,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small36",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small36.webp",
+   "kind": "small"
+  },
+  "cacoio_small37": {
+   "category": "prop",
+   "size": [
+    128,
+    105
+   ],
+   "anchor": [
+    57,
+    104
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small37",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small37.webp",
+   "kind": "small"
+  },
+  "cacoio_small38": {
+   "category": "prop",
+   "size": [
+    112,
+    105
+   ],
+   "anchor": [
+    49,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small38",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small38.webp",
+   "kind": "small"
+  },
+  "cacoio_small39": {
+   "category": "prop",
+   "size": [
+    90,
+    134
+   ],
+   "anchor": [
+    9,
+    133
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small39",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small39.webp",
+   "kind": "small"
+  },
+  "cacoio_small40": {
+   "category": "prop",
+   "size": [
+    104,
+    135
+   ],
+   "anchor": [
+    12,
+    134
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small40",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small40.webp",
+   "kind": "small"
+  },
+  "cacoio_small41": {
+   "category": "prop",
+   "size": [
+    159,
+    144
+   ],
+   "anchor": [
+    14,
+    143
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small41",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small41.webp",
+   "kind": "small"
+  },
+  "cacoio_small42": {
+   "category": "prop",
+   "size": [
+    156,
+    144
+   ],
+   "anchor": [
+    14,
+    143
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small42",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small42.webp",
+   "kind": "small"
+  },
+  "cacoio_small43": {
+   "category": "prop",
+   "size": [
+    156,
+    144
+   ],
+   "anchor": [
+    14,
+    143
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small43",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small43.webp",
+   "kind": "small"
+  },
+  "cacoio_small44": {
+   "category": "prop",
+   "size": [
+    124,
+    136
+   ],
+   "anchor": [
+    40,
+    135
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small44",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small44.webp",
+   "kind": "small"
+  },
+  "cacoio_small45": {
+   "category": "prop",
+   "size": [
+    119,
+    129
+   ],
+   "anchor": [
+    54,
+    128
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small45",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small45.webp",
+   "kind": "small"
+  },
+  "cacoio_small46": {
+   "category": "prop",
+   "size": [
+    171,
+    148
+   ],
+   "anchor": [
+    116,
+    147
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small46",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small46.webp",
+   "kind": "small"
+  },
+  "cacoio_small47": {
+   "category": "prop",
+   "size": [
+    233,
+    130
+   ],
+   "anchor": [
+    39,
+    128
+   ],
+   "footprint": [
+    0.6,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small47",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small47.webp",
+   "kind": "small"
+  },
+  "cacoio_small48": {
+   "category": "prop",
+   "size": [
+    221,
+    129
+   ],
+   "anchor": [
+    179,
+    119
+   ],
+   "footprint": [
+    2.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small48",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small48.webp",
+   "kind": "small"
+  },
+  "cacoio_small49": {
+   "category": "prop",
+   "size": [
+    80,
+    127
+   ],
+   "anchor": [
+    31,
+    126
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small49",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small49.webp",
+   "kind": "small"
+  },
+  "cacoio_small50": {
+   "category": "prop",
+   "size": [
+    79,
+    127
+   ],
+   "anchor": [
+    29,
+    126
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small50",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small50.webp",
+   "kind": "small"
+  },
+  "cacoio_small51": {
+   "category": "prop",
+   "size": [
+    340,
+    128
+   ],
+   "anchor": [
+    130,
+    126
+   ],
+   "footprint": [
+    1.8,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small51",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small51.webp",
+   "kind": "small"
+  },
+  "cacoio_small52": {
+   "category": "prop",
+   "size": [
+    610,
+    151
+   ],
+   "anchor": [
+    541,
+    148
+   ],
+   "footprint": [
+    3.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small52",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small52.webp",
+   "kind": "small"
+  },
+  "cacoio_small53": {
+   "category": "prop",
+   "size": [
+    525,
+    143
+   ],
+   "anchor": [
+    205,
+    142
+   ],
+   "footprint": [
+    2.8,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_small53",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_small53.webp",
+   "kind": "small"
   }
  },
- "version": "fe412afae86e"
+ "version": "599ce246238d"
 }

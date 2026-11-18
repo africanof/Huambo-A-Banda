@@ -102,3 +102,38 @@ describe("lugares novos funcionam", () => {
     expect(t.toasts.at(-1)).toMatch(/Sai primeiro/);
   });
 });
+
+describe("cidade ligada a pé (ruas reais)", () => {
+  const all = listDistricts().filter((d) => d.places?.some((p) => p.kind === "portal"));
+  const links = new Map(all.map((d) => [d.id, d.places!.filter((p) => p.kind === "portal").map((p) => p.to!)]));
+
+  it("todas as ligações têm volta e chega-se a pé a todos os bairros", () => {
+    for (const [a, tos] of links) for (const b of tos) expect(links.get(b) ?? [], `${b} → ${a}`).toContain(a);
+    const seen = new Set(["cidade_baixa"]);
+    const stack = ["cidade_baixa"];
+    while (stack.length) for (const n of links.get(stack.pop()!) ?? []) if (!seen.has(n)) (seen.add(n), stack.push(n));
+    expect(seen.size).toBe(listDistricts().filter((d) => d.map?.id.startsWith("bairro:")).length);
+  });
+
+  it("chegar a pé aparece num sítio caminhável, perto da saída de volta", () => {
+    for (const d of all) {
+      for (const s of d.spawns.filter((x) => x.id.startsWith("from_"))) {
+        expect(isWalkable(d, s.x, s.y), `${d.id} ${s.id}`).toBe(true);
+      }
+    }
+  });
+
+  it("ir a pé é grátis; de candongueiro paga", async () => {
+    const wallets = new MemoryWalletRepository();
+    const selves = new Map<LifeActor, SelfState>();
+    const ca = getDistrict("cidade_alta")!;
+    const life = new LifeController(ca, wallets, { self: (a, s) => selves.set(a, s), toast: () => {} }, () => Date.UTC(2026, 10, 18), () => 0.6);
+    const portal = ca.places!.find((p) => p.kind === "portal")!;
+    const a: LifeActor = { characterId: "mem-p", x: portal.x, y: portal.y };
+    await life.join(a, null);
+    const m0 = selves.get(a)!.money;
+    await life.handle(a, { a: "travel", i: portal.to! });
+    expect(selves.get(a)!.money).toBe(m0);
+    expect(selves.get(a)!.travel).toMatchObject({ district: portal.to, onFoot: true, from: "cidade_alta" });
+  });
+});

@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "vila_graca_escola",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_escola.png",
-   "name": "Escola Primária da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_escola.webp",
+   "name": "Escola Primária da Vila Graça",
+   "venue": "escola"
   },
   "vila_graca_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "vila_graca_saude",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_saude.png",
-   "name": "Centro de Saúde da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_saude.webp",
+   "name": "Centro de Saúde da Vila Graça",
+   "venue": "saude"
   },
   "vila_graca_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "vila_graca_igreja",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_igreja.png",
-   "name": "Igreja Evangélica da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_igreja.webp",
+   "name": "Igreja Evangélica da Vila Graça",
+   "venue": "igreja"
   },
   "vila_graca_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "vila_graca_mercado",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_mercado.png",
-   "name": "Mercado da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_mercado.webp",
+   "name": "Mercado da Vila Graça",
+   "venue": "mercado"
   },
   "vila_graca_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "vila_graca_cantina",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_cantina.png",
-   "name": "Cantina da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_cantina.webp",
+   "name": "Cantina da Vila Graça",
+   "venue": "cantina"
   },
   "vila_graca_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "vila_graca_farmacia",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_farmacia.png",
-   "name": "Farmácia Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_farmacia.webp",
+   "name": "Farmácia Vila Graça",
+   "venue": "farmacia"
   },
   "vila_graca_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "vila_graca_administracao",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_administracao.png",
-   "name": "Administração da Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_administracao.webp",
+   "name": "Administração da Vila Graça",
+   "venue": "administracao"
   },
   "vila_graca_padaria": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "vila_graca_padaria",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_padaria.png",
-   "name": "Padaria Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_padaria.webp",
+   "name": "Padaria Vila Graça",
+   "venue": "padaria"
   },
   "vila_graca_loja_telecom": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "vila_graca_loja_telecom",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_loja_telecom.png",
-   "name": "Loja Unitel Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_loja_telecom.webp",
+   "name": "Loja Unitel Vila Graça",
+   "venue": "loja_telecom"
   },
   "vila_graca_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "vila_graca_apartamentos",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_apartamentos.png",
-   "name": "Prédio Vila Graça"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_apartamentos.webp",
+   "name": "Prédio Vila Graça",
+   "venue": "apartamentos"
   },
   "vila_graca_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa1",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "vila_graca_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa2",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "vila_graca_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa3",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "vila_graca_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa4",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "vila_graca_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa5",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "vila_graca_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa6",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "vila_graca_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa7",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "vila_graca_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "vila_graca_casa8",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "vila_graca_casa9": {
    "category": "building",
@@ -378,9 +396,1755 @@
    "scale": 1.6,
    "out": "vila_graca_casa9",
    "kit": "kit_vila_graca",
-   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "vila_graca_tree1": {
+   "category": "prop",
+   "size": [
+    289,
+    248
+   ],
+   "anchor": [
+    144,
+    246
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree1.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree2": {
+   "category": "prop",
+   "size": [
+    218,
+    210
+   ],
+   "anchor": [
+    108,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree2.webp",
+   "kind": "tree"
+  },
+  "vila_graca_small1": {
+   "category": "prop",
+   "size": [
+    178,
+    248
+   ],
+   "anchor": [
+    81,
+    246
+   ],
+   "footprint": [
+    1.1,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small1.webp",
+   "kind": "small"
+  },
+  "vila_graca_tree3": {
+   "category": "prop",
+   "size": [
+    170,
+    230
+   ],
+   "anchor": [
+    84,
+    228
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree3.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree4": {
+   "category": "prop",
+   "size": [
+    175,
+    252
+   ],
+   "anchor": [
+    87,
+    251
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree4.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree5": {
+   "category": "prop",
+   "size": [
+    330,
+    243
+   ],
+   "anchor": [
+    165,
+    241
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree5.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree6": {
+   "category": "prop",
+   "size": [
+    210,
+    203
+   ],
+   "anchor": [
+    104,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree6",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree6.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree7": {
+   "category": "prop",
+   "size": [
+    194,
+    203
+   ],
+   "anchor": [
+    96,
+    202
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree7",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree7.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree8": {
+   "category": "prop",
+   "size": [
+    217,
+    172
+   ],
+   "anchor": [
+    108,
+    170
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree8",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree8.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree9": {
+   "category": "prop",
+   "size": [
+    155,
+    147
+   ],
+   "anchor": [
+    77,
+    144
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree9",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree9.webp",
+   "kind": "tree"
+  },
+  "vila_graca_lamp1": {
+   "category": "prop",
+   "size": [
+    82,
+    186
+   ],
+   "anchor": [
+    40,
+    184
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_lamp1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "vila_graca_lamp2": {
+   "category": "prop",
+   "size": [
+    76,
+    186
+   ],
+   "anchor": [
+    37,
+    184
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_lamp2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "vila_graca_lamp3": {
+   "category": "prop",
+   "size": [
+    50,
+    194
+   ],
+   "anchor": [
+    24,
+    193
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_lamp3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "vila_graca_small2": {
+   "category": "prop",
+   "size": [
+    155,
+    182
+   ],
+   "anchor": [
+    72,
+    181
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small2.webp",
+   "kind": "small"
+  },
+  "vila_graca_lamp4": {
+   "category": "prop",
+   "size": [
+    65,
+    215
+   ],
+   "anchor": [
+    32,
+    213
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_lamp4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "vila_graca_lamp5": {
+   "category": "prop",
+   "size": [
+    65,
+    222
+   ],
+   "anchor": [
+    32,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_lamp5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "vila_graca_pole1": {
+   "category": "prop",
+   "size": [
+    97,
+    221
+   ],
+   "anchor": [
+    48,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_pole1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_pole1.webp",
+   "kind": "pole"
+  },
+  "vila_graca_pole2": {
+   "category": "prop",
+   "size": [
+    112,
+    216
+   ],
+   "anchor": [
+    55,
+    215
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_pole2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_pole2.webp",
+   "kind": "pole"
+  },
+  "vila_graca_pole3": {
+   "category": "prop",
+   "size": [
+    109,
+    226
+   ],
+   "anchor": [
+    54,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_pole3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_pole3.webp",
+   "kind": "pole"
+  },
+  "vila_graca_pole4": {
+   "category": "prop",
+   "size": [
+    103,
+    218
+   ],
+   "anchor": [
+    51,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_pole4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_pole4.webp",
+   "kind": "pole"
+  },
+  "vila_graca_vehicle1": {
+   "category": "prop",
+   "size": [
+    304,
+    170
+   ],
+   "anchor": [
+    124,
+    168
+   ],
+   "footprint": [
+    1.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle2": {
+   "category": "prop",
+   "size": [
+    298,
+    172
+   ],
+   "anchor": [
+    134,
+    170
+   ],
+   "footprint": [
+    1.8,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle3": {
+   "category": "prop",
+   "size": [
+    160,
+    132
+   ],
+   "anchor": [
+    17,
+    130
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle4": {
+   "category": "prop",
+   "size": [
+    152,
+    128
+   ],
+   "anchor": [
+    17,
+    126
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle5": {
+   "category": "prop",
+   "size": [
+    186,
+    133
+   ],
+   "anchor": [
+    20,
+    132
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle6": {
+   "category": "prop",
+   "size": [
+    280,
+    121
+   ],
+   "anchor": [
+    116,
+    120
+   ],
+   "footprint": [
+    1.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle6",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle7": {
+   "category": "prop",
+   "size": [
+    250,
+    149
+   ],
+   "anchor": [
+    115,
+    148
+   ],
+   "footprint": [
+    1.5,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle7",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle8": {
+   "category": "prop",
+   "size": [
+    282,
+    132
+   ],
+   "anchor": [
+    107,
+    130
+   ],
+   "footprint": [
+    1.4,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle8",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_vehicle9": {
+   "category": "prop",
+   "size": [
+    190,
+    177
+   ],
+   "anchor": [
+    90,
+    175
+   ],
+   "footprint": [
+    1.2,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_vehicle9",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "vila_graca_stall1": {
+   "category": "prop",
+   "size": [
+    197,
+    167
+   ],
+   "anchor": [
+    107,
+    165
+   ],
+   "footprint": [
+    1.4,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_stall1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_stall1.webp",
+   "kind": "stall"
+  },
+  "vila_graca_stall2": {
+   "category": "prop",
+   "size": [
+    218,
+    153
+   ],
+   "anchor": [
+    158,
+    150
+   ],
+   "footprint": [
+    2.1,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_stall2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_stall2.webp",
+   "kind": "stall"
+  },
+  "vila_graca_stall3": {
+   "category": "prop",
+   "size": [
+    185,
+    158
+   ],
+   "anchor": [
+    131,
+    156
+   ],
+   "footprint": [
+    1.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_stall3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_stall3.webp",
+   "kind": "stall"
+  },
+  "vila_graca_tree10": {
+   "category": "prop",
+   "size": [
+    203,
+    154
+   ],
+   "anchor": [
+    101,
+    152
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree10",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree10.webp",
+   "kind": "tree"
+  },
+  "vila_graca_stall4": {
+   "category": "prop",
+   "size": [
+    226,
+    160
+   ],
+   "anchor": [
+    53,
+    158
+   ],
+   "footprint": [
+    0.7,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_stall4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_stall4.webp",
+   "kind": "stall"
+  },
+  "vila_graca_stall5": {
+   "category": "prop",
+   "size": [
+    149,
+    108
+   ],
+   "anchor": [
+    22,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_stall5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_stall5.webp",
+   "kind": "stall"
+  },
+  "vila_graca_small3": {
+   "category": "prop",
+   "size": [
+    146,
+    108
+   ],
+   "anchor": [
+    24,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small3.webp",
+   "kind": "small"
+  },
+  "vila_graca_small4": {
+   "category": "prop",
+   "size": [
+    145,
+    108
+   ],
+   "anchor": [
+    22,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small4.webp",
+   "kind": "small"
+  },
+  "vila_graca_small5": {
+   "category": "prop",
+   "size": [
+    78,
+    102
+   ],
+   "anchor": [
+    28,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small5.webp",
+   "kind": "small"
+  },
+  "vila_graca_small6": {
+   "category": "prop",
+   "size": [
+    166,
+    85
+   ],
+   "anchor": [
+    39,
+    83
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small6",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small6.webp",
+   "kind": "small"
+  },
+  "vila_graca_small7": {
+   "category": "prop",
+   "size": [
+    172,
+    106
+   ],
+   "anchor": [
+    117,
+    104
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small7",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small7.webp",
+   "kind": "small"
+  },
+  "vila_graca_small8": {
+   "category": "prop",
+   "size": [
+    173,
+    104
+   ],
+   "anchor": [
+    135,
+    92
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small8",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small8.webp",
+   "kind": "small"
+  },
+  "vila_graca_small9": {
+   "category": "prop",
+   "size": [
+    174,
+    110
+   ],
+   "anchor": [
+    130,
+    107
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small9",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small9.webp",
+   "kind": "small"
+  },
+  "vila_graca_small10": {
+   "category": "prop",
+   "size": [
+    139,
+    171
+   ],
+   "anchor": [
+    76,
+    169
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small10",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small10.webp",
+   "kind": "small"
+  },
+  "vila_graca_small11": {
+   "category": "prop",
+   "size": [
+    134,
+    165
+   ],
+   "anchor": [
+    74,
+    163
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small11",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small11.webp",
+   "kind": "small"
+  },
+  "vila_graca_small12": {
+   "category": "prop",
+   "size": [
+    133,
+    167
+   ],
+   "anchor": [
+    75,
+    166
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small12",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small12.webp",
+   "kind": "small"
+  },
+  "vila_graca_small13": {
+   "category": "prop",
+   "size": [
+    147,
+    113
+   ],
+   "anchor": [
+    83,
+    111
+   ],
+   "footprint": [
+    1.1,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small13",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small13.webp",
+   "kind": "small"
+  },
+  "vila_graca_small14": {
+   "category": "prop",
+   "size": [
+    143,
+    109
+   ],
+   "anchor": [
+    86,
+    107
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small14",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small14.webp",
+   "kind": "small"
+  },
+  "vila_graca_small15": {
+   "category": "prop",
+   "size": [
+    326,
+    153
+   ],
+   "anchor": [
+    201,
+    144
+   ],
+   "footprint": [
+    2.8,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small15",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small15.webp",
+   "kind": "small"
+  },
+  "vila_graca_small16": {
+   "category": "prop",
+   "size": [
+    345,
+    152
+   ],
+   "anchor": [
+    231,
+    142
+   ],
+   "footprint": [
+    3.0,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small16",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small16.webp",
+   "kind": "small"
+  },
+  "vila_graca_tree11": {
+   "category": "prop",
+   "size": [
+    136,
+    136
+   ],
+   "anchor": [
+    67,
+    135
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree11",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree11.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree12": {
+   "category": "prop",
+   "size": [
+    129,
+    145
+   ],
+   "anchor": [
+    64,
+    144
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree12",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree12.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree13": {
+   "category": "prop",
+   "size": [
+    124,
+    136
+   ],
+   "anchor": [
+    62,
+    135
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree13",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree13.webp",
+   "kind": "tree"
+  },
+  "vila_graca_tree14": {
+   "category": "prop",
+   "size": [
+    123,
+    143
+   ],
+   "anchor": [
+    61,
+    141
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_tree14",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_tree14.webp",
+   "kind": "tree"
+  },
+  "vila_graca_small17": {
+   "category": "prop",
+   "size": [
+    164,
+    108
+   ],
+   "anchor": [
+    26,
+    107
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small17",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small17.webp",
+   "kind": "small"
+  },
+  "vila_graca_small18": {
+   "category": "prop",
+   "size": [
+    140,
+    105
+   ],
+   "anchor": [
+    22,
+    103
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small18",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small18.webp",
+   "kind": "small"
+  },
+  "vila_graca_small19": {
+   "category": "prop",
+   "size": [
+    142,
+    106
+   ],
+   "anchor": [
+    19,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small19",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small19.webp",
+   "kind": "small"
+  },
+  "vila_graca_small20": {
+   "category": "prop",
+   "size": [
+    115,
+    96
+   ],
+   "anchor": [
+    34,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small20",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small20.webp",
+   "kind": "small"
+  },
+  "vila_graca_small21": {
+   "category": "prop",
+   "size": [
+    104,
+    96
+   ],
+   "anchor": [
+    40,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small21",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small21.webp",
+   "kind": "small"
+  },
+  "vila_graca_small22": {
+   "category": "prop",
+   "size": [
+    103,
+    87
+   ],
+   "anchor": [
+    48,
+    85
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small22",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small22.webp",
+   "kind": "small"
+  },
+  "vila_graca_small23": {
+   "category": "prop",
+   "size": [
+    89,
+    91
+   ],
+   "anchor": [
+    36,
+    89
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small23",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small23.webp",
+   "kind": "small"
+  },
+  "vila_graca_small24": {
+   "category": "prop",
+   "size": [
+    161,
+    98
+   ],
+   "anchor": [
+    43,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small24",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small24.webp",
+   "kind": "small"
+  },
+  "vila_graca_small25": {
+   "category": "prop",
+   "size": [
+    159,
+    99
+   ],
+   "anchor": [
+    40,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small25",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small25.webp",
+   "kind": "small"
+  },
+  "vila_graca_small26": {
+   "category": "prop",
+   "size": [
+    61,
+    73
+   ],
+   "anchor": [
+    17,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small26",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small26.webp",
+   "kind": "small"
+  },
+  "vila_graca_small27": {
+   "category": "prop",
+   "size": [
+    61,
+    73
+   ],
+   "anchor": [
+    21,
+    72
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small27",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small27.webp",
+   "kind": "small"
+  },
+  "vila_graca_small28": {
+   "category": "prop",
+   "size": [
+    59,
+    73
+   ],
+   "anchor": [
+    18,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small28",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small28.webp",
+   "kind": "small"
+  },
+  "vila_graca_small29": {
+   "category": "prop",
+   "size": [
+    93,
+    96
+   ],
+   "anchor": [
+    35,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small29",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small29.webp",
+   "kind": "small"
+  },
+  "vila_graca_small30": {
+   "category": "prop",
+   "size": [
+    70,
+    74
+   ],
+   "anchor": [
+    26,
+    72
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small30",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small30.webp",
+   "kind": "small"
+  },
+  "vila_graca_small31": {
+   "category": "prop",
+   "size": [
+    82,
+    78
+   ],
+   "anchor": [
+    35,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small31",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small31.webp",
+   "kind": "small"
+  },
+  "vila_graca_small32": {
+   "category": "prop",
+   "size": [
+    118,
+    107
+   ],
+   "anchor": [
+    42,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small32",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small32.webp",
+   "kind": "small"
+  },
+  "vila_graca_small33": {
+   "category": "prop",
+   "size": [
+    112,
+    114
+   ],
+   "anchor": [
+    42,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small33",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small33.webp",
+   "kind": "small"
+  },
+  "vila_graca_small34": {
+   "category": "prop",
+   "size": [
+    149,
+    106
+   ],
+   "anchor": [
+    71,
+    104
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small34",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small34.webp",
+   "kind": "small"
+  },
+  "vila_graca_small35": {
+   "category": "prop",
+   "size": [
+    149,
+    108
+   ],
+   "anchor": [
+    69,
+    106
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small35",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small35.webp",
+   "kind": "small"
+  },
+  "vila_graca_small36": {
+   "category": "prop",
+   "size": [
+    128,
+    168
+   ],
+   "anchor": [
+    67,
+    166
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small36",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small36.webp",
+   "kind": "small"
+  },
+  "vila_graca_small37": {
+   "category": "prop",
+   "size": [
+    127,
+    167
+   ],
+   "anchor": [
+    20,
+    165
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small37",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small37.webp",
+   "kind": "small"
+  },
+  "vila_graca_small38": {
+   "category": "prop",
+   "size": [
+    131,
+    168
+   ],
+   "anchor": [
+    75,
+    167
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small38",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small38.webp",
+   "kind": "small"
+  },
+  "vila_graca_small39": {
+   "category": "prop",
+   "size": [
+    125,
+    141
+   ],
+   "anchor": [
+    94,
+    139
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small39",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small39.webp",
+   "kind": "small"
+  },
+  "vila_graca_small40": {
+   "category": "prop",
+   "size": [
+    122,
+    140
+   ],
+   "anchor": [
+    84,
+    138
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small40",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small40.webp",
+   "kind": "small"
+  },
+  "vila_graca_small41": {
+   "category": "prop",
+   "size": [
+    165,
+    136
+   ],
+   "anchor": [
+    74,
+    134
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small41",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small41.webp",
+   "kind": "small"
+  },
+  "vila_graca_small42": {
+   "category": "prop",
+   "size": [
+    211,
+    124
+   ],
+   "anchor": [
+    36,
+    121
+   ],
+   "footprint": [
+    0.6,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small42",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small42.webp",
+   "kind": "small"
+  },
+  "vila_graca_small43": {
+   "category": "prop",
+   "size": [
+    198,
+    120
+   ],
+   "anchor": [
+    35,
+    115
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small43",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small43.webp",
+   "kind": "small"
+  },
+  "vila_graca_small44": {
+   "category": "prop",
+   "size": [
+    81,
+    123
+   ],
+   "anchor": [
+    36,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small44",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small44.webp",
+   "kind": "small"
+  },
+  "vila_graca_small45": {
+   "category": "prop",
+   "size": [
+    83,
+    123
+   ],
+   "anchor": [
+    32,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small45",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small45.webp",
+   "kind": "small"
+  },
+  "vila_graca_small46": {
+   "category": "prop",
+   "size": [
+    332,
+    125
+   ],
+   "anchor": [
+    224,
+    123
+   ],
+   "footprint": [
+    3.0,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small46",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small46.webp",
+   "kind": "small"
+  },
+  "vila_graca_small47": {
+   "category": "prop",
+   "size": [
+    486,
+    128
+   ],
+   "anchor": [
+    42,
+    126
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small47",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small47.webp",
+   "kind": "small"
+  },
+  "vila_graca_small48": {
+   "category": "prop",
+   "size": [
+    463,
+    116
+   ],
+   "anchor": [
+    40,
+    114
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small48",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small48.webp",
+   "kind": "small"
+  },
+  "vila_graca_small49": {
+   "category": "prop",
+   "size": [
+    93,
+    263
+   ],
+   "anchor": [
+    9,
+    262
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small49",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small49.webp",
+   "kind": "small"
+  },
+  "vila_graca_small50": {
+   "category": "prop",
+   "size": [
+    88,
+    242
+   ],
+   "anchor": [
+    8,
+    241
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_small50",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_small50.webp",
+   "kind": "small"
   }
  },
- "version": "217886ab3ca0"
+ "version": "2ec2acb75f29"
 }

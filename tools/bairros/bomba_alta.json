@@ -2,137 +2,392 @@
  "id": "bomba_alta",
  "name": "Bomba Alta",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "terra",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     251.58,
+     426.41
+    ],
+    [
+     216.55,
+     405.42
+    ],
+    [
+     164.02,
+     366.95
+    ],
+    [
+     121.34,
+     330.98
+    ],
+    [
+     108.28,
+     312.54
+    ],
+    [
+     104.46,
+     302.84
+    ],
+    [
+     91.79,
+     234.28
+    ],
+    [
+     62.65,
+     96.0
+    ],
+    [
+     52.15,
+     -6.92
+    ],
+    [
+     42.47,
+     -166.6
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -40.32,
+     115.26
+    ],
+    [
+     9.81,
+     109.89
+    ],
+    [
+     35.43,
+     103.52
+    ],
+    [
+     47.6,
+     100.0
+    ],
+    [
+     62.65,
+     96.0
+    ],
+    [
+     79.05,
+     88.12
+    ],
+    [
+     93.89,
+     84.51
+    ],
+    [
+     108.58,
+     82.14
+    ],
+    [
+     117.68,
+     83.42
+    ],
+    [
+     128.59,
+     87.05
+    ],
+    [
+     140.05,
+     87.58
+    ],
+    [
+     177.96,
+     75.87
+    ],
+    [
+     192.54,
+     76.88
+    ],
+    [
+     210.53,
+     79.83
+    ],
+    [
+     228.52,
+     87.21
+    ],
+    [
+     257.82,
+     104.41
+    ],
+    [
+     289.72,
+     117.55
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -44.5,
+     -26.81
+    ],
+    [
+     -27.86,
+     -20.95
+    ],
+    [
+     -8.5,
+     -14.32
+    ],
+    [
+     5.38,
+     -9.75
+    ],
+    [
+     18.42,
+     -7.4
+    ],
+    [
+     52.15,
+     -6.92
+    ],
+    [
+     108.12,
+     0.01
+    ],
+    [
+     124.62,
+     6.78
+    ],
+    [
+     137.73,
+     17.21
+    ],
+    [
+     192.54,
+     76.88
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     13.72,
+     217.28
+    ],
+    [
+     -45.77,
+     232.59
+    ],
+    [
+     -89.72,
+     243.92
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     280.85,
+     130.5
+    ],
+    [
+     257.74,
+     150.65
+    ],
+    [
+     212.93,
+     184.13
+    ],
+    [
+     193.24,
+     197.7
+    ],
+    [
+     177.92,
+     215.82
+    ],
+    [
+     171.11,
+     230.82
+    ],
+    [
+     164.34,
+     246.99
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -131.73,
+     140.36
+    ],
+    [
+     -107.1,
+     156.11
+    ],
+    [
+     -72.2,
+     172.95
+    ],
+    [
+     -43.02,
+     181.21
+    ],
+    [
+     -27.59,
+     185.83
+    ],
+    [
+     -16.22,
+     191.54
+    ],
+    [
+     -1.91,
+     200.61
+    ],
+    [
+     3.98,
+     206.96
+    ],
+    [
+     13.72,
+     217.28
+    ],
+    [
+     30.17,
+     248.14
+    ],
+    [
+     40.68,
+     258.86
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     66.79,
+     -151.27
+    ],
+    [
+     85.82,
+     -102.0
+    ],
+    [
+     103.92,
+     -48.44
+    ],
+    [
+     109.74,
+     -41.32
+    ],
+    [
+     115.34,
+     -36.93
+    ],
+    [
+     125.96,
+     -28.95
+    ],
+    [
+     141.41,
+     -17.64
+    ],
+    [
+     150.88,
+     -10.91
+    ],
+    [
+     161.77,
+     -3.77
+    ],
+    [
+     183.87,
+     3.29
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -40.32,
+     115.26
+    ],
+    [
+     -31.47,
+     159.0
+    ],
+    [
+     -27.59,
+     185.83
+    ],
+    [
+     -28.68,
+     196.35
+    ],
+    [
+     -45.77,
+     232.59
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [],
+ "geo": {
+  "lat": -12.764,
+  "lon": 15.7882,
+  "rot_deg": -27.5,
+  "cx": -90,
+  "cy": -10
+ },
  "buildings": [
+  {
+   "id": "bomba_alta_mercado",
+   "at": [
+    97.9,
+    64.2
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
   {
    "id": "bomba_alta_escola",
    "at": [
-    2.0,
-    23.8
+    92.3,
+    114.8
    ],
    "venue": {
     "venue": "escola",
@@ -142,8 +397,8 @@
   {
    "id": "bomba_alta_saude",
    "at": [
-    30.6,
-    2.0
+    44.5,
+    78.5
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +408,8 @@
   {
    "id": "bomba_alta_igreja",
    "at": [
-    20.0,
-    23.8
+    141.8,
+    69.0
    ],
    "venue": {
     "venue": "igreja",
@@ -162,68 +417,10 @@
    }
   },
   {
-   "id": "bomba_alta_mercado",
-   "at": [
-    51.0,
-    18.9
-   ],
-   "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
-   }
-  },
-  {
-   "id": "bomba_alta_cantina",
-   "at": [
-    65.0,
-    27.2
-   ],
-   "venue": {
-    "venue": "cantina",
-    "job": "cozinheiro",
-    "shop": "cantina"
-   }
-  },
-  {
-   "id": "bomba_alta_farmacia",
-   "at": [
-    33.0,
-    26.5
-   ],
-   "venue": {
-    "venue": "farmacia",
-    "job": "farmaceutico"
-   }
-  },
-  {
-   "id": "bomba_alta_administracao",
-   "at": [
-    77.0,
-    27.0
-   ],
-   "venue": {
-    "venue": "administracao",
-    "job": "funcionario_publico"
-   }
-  },
-  {
-   "id": "bomba_alta_padaria",
-   "at": [
-    99.0,
-    26.7
-   ],
-   "venue": {
-    "venue": "padaria",
-    "job": "padeiro",
-    "shop": "padaria"
-   }
-  },
-  {
    "id": "bomba_alta_churrasqueira",
    "at": [
-    110.0,
-    27.0
+    72.8,
+    77.6
    ],
    "venue": {
     "venue": "churrasqueira",
@@ -234,8 +431,8 @@
   {
    "id": "bomba_alta_apartamentos",
    "at": [
-    124.0,
-    25.6
+    112.0,
+    71.4
    ],
    "venue": {
     "venue": "apartamentos",
@@ -243,10 +440,56 @@
    }
   },
   {
+   "id": "bomba_alta_padaria",
+   "at": [
+    129.8,
+    76.5
+   ],
+   "venue": {
+    "venue": "padaria",
+    "job": "padeiro",
+    "shop": "padaria"
+   }
+  },
+  {
+   "id": "bomba_alta_cantina",
+   "at": [
+    24.0,
+    94.7
+   ],
+   "venue": {
+    "venue": "cantina",
+    "job": "cozinheiro",
+    "shop": "cantina"
+   }
+  },
+  {
+   "id": "bomba_alta_administracao",
+   "at": [
+    38.3,
+    90.7
+   ],
+   "venue": {
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "bomba_alta_farmacia",
+   "at": [
+    3.5,
+    99.1
+   ],
+   "venue": {
+    "venue": "farmacia",
+    "job": "farmaceutico"
+   }
+  },
+  {
    "id": "bomba_alta_casa1",
    "at": [
-    135.0,
-    26.5
+    89.9,
+    73.8
    ],
    "venue": {
     "venue": "casa",
@@ -255,58 +498,10 @@
    "label": "Casa 1"
   },
   {
-   "id": "bomba_alta_casa2",
-   "at": [
-    143.0,
-    27.7
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 2"
-  },
-  {
-   "id": "bomba_alta_casa3",
-   "at": [
-    2.0,
-    73.6
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 3"
-  },
-  {
-   "id": "bomba_alta_casa4",
-   "at": [
-    8.0,
-    73.9
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 4"
-  },
-  {
-   "id": "bomba_alta_casa5",
-   "at": [
-    16.0,
-    73.5
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 5"
-  },
-  {
    "id": "bomba_alta_casa6",
    "at": [
-    22.0,
-    73.7
+    14.5,
+    98.1
    ],
    "venue": {
     "venue": "casa",
@@ -315,10 +510,46 @@
    "label": "Casa 6"
   },
   {
+   "id": "bomba_alta_casa4",
+   "at": [
+    85.3,
+    29.2
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
+   "id": "bomba_alta_casa9",
+   "at": [
+    11.0,
+    53.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 9"
+  },
+  {
+   "id": "bomba_alta_casa2",
+   "at": [
+    43.3,
+    30.4
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
+  },
+  {
    "id": "bomba_alta_casa7",
    "at": [
-    30.0,
-    73.5
+    123.0,
+    76.1
    ],
    "venue": {
     "venue": "casa",
@@ -327,10 +558,22 @@
    "label": "Casa 7"
   },
   {
+   "id": "bomba_alta_casa5",
+   "at": [
+    146.3,
+    9.1
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 5"
+  },
+  {
    "id": "bomba_alta_casa8",
    "at": [
-    51.0,
-    74.0
+    56.5,
+    152.3
    ],
    "venue": {
     "venue": "casa",
@@ -339,693 +582,276 @@
    "label": "Casa 8"
   },
   {
-   "id": "bomba_alta_casa9",
+   "id": "bomba_alta_casa3",
    "at": [
-    58.0,
-    74.2
+    81.1,
+    58.3
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
-   "label": "Casa 9"
+   "label": "Casa 3"
   }
  ],
  "props": [
   [
-   "f_poste",
+   "bomba_alta_pole4",
    [
-    6,
-    32.5
+    80.2,
+    150.9
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_tree4",
    [
-    12.5,
-    41.4
+    67.7,
+    153.5
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole1",
    [
-    19,
-    32.5
+    76.9,
+    135.2
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_pole1",
    [
-    25.5,
-    41.4
+    73.6,
+    119.6
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole1",
    [
-    32,
-    32.5
+    70.3,
+    103.9
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_tree11",
    [
-    38.5,
-    41.4
+    55.4,
+    92.7
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole3",
    [
-    45,
-    32.5
+    66.5,
+    75.5
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_tree9",
    [
-    51.5,
-    41.4
+    53.8,
+    76.8
    ]
   ],
   [
-   "f_eucalipto",
+   "bomba_alta_pole2",
    [
-    64.5,
-    41.4
+    64.9,
+    59.6
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_pole1",
    [
-    77.5,
-    41.4
+    63.2,
+    43.7
    ]
   ],
   [
-   "f_jacaranda2",
+   "bomba_alta_pole4",
    [
-    90.5,
-    41.4
+    61.6,
+    27.8
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_tree12",
    [
-    97,
-    32.5
+    48.9,
+    29.1
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_pole1",
    [
-    103.5,
-    41.4
+    60.0,
+    11.8
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_tree9",
    [
-    110,
-    32.5
+    47.3,
+    13.1
    ]
   ],
   [
-   "f_eucalipto",
+   "bomba_alta_pole3",
    [
-    116.5,
-    41.4
+    15.1,
+    114.7
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole1",
    [
-    123,
-    32.5
+    30.6,
+    110.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "bomba_alta_pole3",
    [
-    129.5,
-    41.4
+    40.9,
+    108.1
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_pole1",
    [
-    142.5,
-    41.4
+    53.0,
+    104.7
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_pole1",
    [
-    12.5,
-    86.4
+    68.8,
+    99.6
    ]
   ],
   [
-   "f_eucalipto",
+   "bomba_alta_pole3",
    [
-    25.5,
-    86.4
+    84.3,
+    92.9
    ]
   ],
   [
-   "f_eucalipto",
+   "bomba_alta_pole4",
    [
-    38.5,
-    86.4
+    98.8,
+    89.7
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole4",
    [
-    45,
-    78.5
+    111.7,
+    88.5
    ]
   ],
   [
-   "f_jacaranda2",
+   "bomba_alta_pole1",
    [
-    51.5,
-    86.4
+    119.6,
+    90.3
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole1",
    [
-    58,
-    78.5
+    132.3,
+    93.1
    ]
   ],
   [
-   "f_eucalipto",
+   "bomba_alta_pole4",
    [
-    64.5,
-    86.4
+    145.6,
+    92.0
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_tree7",
    [
-    71,
-    78.5
+    141.8,
+    79.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "bomba_alta_tree9",
    [
-    77.5,
-    86.4
+    157.1,
+    75.1
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole1",
    [
-    84,
-    78.5
+    87.2,
+    3.4
    ]
   ],
   [
-   "f_jacaranda2",
+   "bomba_alta_pole3",
    [
-    90.5,
-    86.4
+    103.0,
+    5.3
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole2",
    [
-    97,
-    78.5
+    109.6,
+    7.0
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_pole1",
    [
-    103.5,
-    86.4
+    124.1,
+    13.9
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_tree11",
    [
-    110,
-    78.5
+    132.0,
+    3.9
    ]
   ],
   [
-   "f_jacaranda",
+   "bomba_alta_pole4",
    [
-    116.5,
-    86.4
+    136.1,
+    24.1
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_pole3",
    [
-    123,
-    78.5
+    146.9,
+    35.9
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_pole1",
    [
-    129.5,
-    86.4
+    157.7,
+    47.7
    ]
   ],
   [
-   "f_poste",
+   "bomba_alta_vehicle5",
    [
-    136,
-    78.5
+    112.8,
+    84.9
    ]
   ],
   [
-   "f_palmeira",
+   "bomba_alta_stall2",
    [
-    142.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    6,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    12.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    19,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    25.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    32,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    38.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    45,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    51.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    58,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    64.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    71,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    77.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    90.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    103.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    116.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    129.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    142.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
-   ]
-  ],
-  [
-   "f_hilux",
-   [
-    30,
-    83.0
-   ]
-  ],
-  [
-   "f_carro2",
-   [
-    128,
-    83.0
-   ]
-  ],
-  [
-   "f_banca",
-   [
-    22,
-    42.2
+    107.3,
+    87.3
    ],
    {
     "kind": "work",
@@ -1033,224 +859,572 @@
    }
   ],
   [
-   "f_banca3",
+   "bomba_alta_stall3",
    [
-    30,
-    42.2
+    114.7,
+    87.6
    ]
   ],
   [
-   "f_banca_roupa",
+   "bomba_alta_small1",
    [
-    34,
-    42.2
+    30.9,
+    109.3
    ]
   ],
   [
-   "f_contentor",
+   "bomba_alta_small12",
    [
-    8,
-    42.2
+    6.8,
+    19.9
    ]
   ],
   [
-   "f_contentor2",
+   "bomba_alta_small30",
    [
-    140,
-    87.2
+    30.2,
+    155.1
    ]
   ],
   [
-   "f_galinha",
+   "bomba_alta_small19",
    [
-    12,
+    37.1,
+    141.9
+   ]
+  ],
+  [
+   "bomba_alta_small37",
+   [
+    126.1,
+    55.3
+   ]
+  ],
+  [
+   "bomba_alta_small45",
+   [
+    49.1,
+    69.4
+   ]
+  ],
+  [
+   "bomba_alta_small26",
+   [
+    60.6,
+    38.5
+   ]
+  ],
+  [
+   "bomba_alta_small47",
+   [
+    50.8,
+    144.7
+   ]
+  ],
+  [
+   "bomba_alta_small12",
+   [
+    76.5,
+    58.0
+   ]
+  ],
+  [
+   "bomba_alta_small11",
+   [
+    20.4,
+    81.7
+   ]
+  ],
+  [
+   "bomba_alta_small44",
+   [
+    41.5,
+    155.8
+   ]
+  ],
+  [
+   "bomba_alta_small23",
+   [
+    101.8,
+    152.9
+   ]
+  ],
+  [
+   "bomba_alta_small28",
+   [
+    142.5,
+    37.7
+   ]
+  ],
+  [
+   "bomba_alta_small10",
+   [
+    112.6,
+    95.4
+   ]
+  ],
+  [
+   "bomba_alta_small23",
+   [
+    53.7,
+    102.8
+   ]
+  ],
+  [
+   "bomba_alta_small22",
+   [
+    125.1,
+    71.8
+   ]
+  ],
+  [
+   "bomba_alta_small30",
+   [
+    128.7,
+    123.8
+   ]
+  ],
+  [
+   "bomba_alta_small26",
+   [
+    45.0,
+    63.2
+   ]
+  ],
+  [
+   "bomba_alta_small7",
+   [
+    34.8,
+    138.2
+   ]
+  ],
+  [
+   "bomba_alta_small8",
+   [
+    118.1,
+    33.4
+   ]
+  ],
+  [
+   "bomba_alta_small33",
+   [
+    123.7,
+    117.1
+   ]
+  ],
+  [
+   "bomba_alta_small5",
+   [
+    95.4,
+    112.1
+   ]
+  ],
+  [
+   "bomba_alta_small47",
+   [
+    6.2,
+    85.7
+   ]
+  ],
+  [
+   "bomba_alta_small44",
+   [
+    5.7,
+    71.4
+   ]
+  ],
+  [
+   "bomba_alta_small28",
+   [
+    7.3,
+    47.2
+   ]
+  ],
+  [
+   "bomba_alta_small6",
+   [
+    147.0,
+    17.4
+   ]
+  ],
+  [
+   "bomba_alta_small43",
+   [
+    154.0,
+    104.0
+   ]
+  ],
+  [
+   "bomba_alta_small33",
+   [
+    120.9,
+    101.5
+   ]
+  ],
+  [
+   "bomba_alta_small26",
+   [
+    118.0,
+    117.4
+   ]
+  ],
+  [
+   "bomba_alta_small36",
+   [
+    112.3,
+    18.0
+   ]
+  ],
+  [
+   "bomba_alta_small12",
+   [
+    111.7,
+    123.7
+   ]
+  ],
+  [
+   "bomba_alta_small23",
+   [
+    144.2,
+    15.0
+   ]
+  ],
+  [
+   "bomba_alta_small17",
+   [
+    76.1,
+    37.9
+   ]
+  ],
+  [
+   "bomba_alta_small44",
+   [
+    118.5,
+    137.7
+   ]
+  ],
+  [
+   "bomba_alta_small31",
+   [
+    47.4,
+    38.4
+   ]
+  ],
+  [
+   "bomba_alta_small44",
+   [
+    128.8,
+    18.3
+   ]
+  ],
+  [
+   "bomba_alta_small7",
+   [
+    11.6,
+    42.1
+   ]
+  ],
+  [
+   "bomba_alta_small26",
+   [
+    90.4,
+    106.9
+   ]
+  ],
+  [
+   "bomba_alta_small48",
+   [
+    142.0,
+    138.1
+   ]
+  ],
+  [
+   "bomba_alta_small39",
+   [
+    11.7,
+    148.0
+   ]
+  ],
+  [
+   "bomba_alta_small24",
+   [
+    110.3,
+    87.3
+   ]
+  ],
+  [
+   "bomba_alta_small18",
+   [
+    108.6,
+    14.0
+   ]
+  ],
+  [
+   "bomba_alta_small31",
+   [
+    130.8,
+    56.8
+   ]
+  ],
+  [
+   "bomba_alta_tree13",
+   [
+    14.5,
+    5.1
+   ]
+  ],
+  [
+   "bomba_alta_tree11",
+   [
+    51.7,
+    40.7
+   ]
+  ],
+  [
+   "bomba_alta_tree1",
+   [
+    90.3,
+    117.0
+   ]
+  ],
+  [
+   "bomba_alta_tree7",
+   [
+    121.8,
+    43.8
+   ]
+  ],
+  [
+   "bomba_alta_tree7",
+   [
+    98.2,
+    62.5
+   ]
+  ],
+  [
+   "bomba_alta_tree10",
+   [
+    39.9,
+    78.9
+   ]
+  ],
+  [
+   "bomba_alta_tree9",
+   [
+    64.6,
+    55.5
+   ]
+  ],
+  [
+   "bomba_alta_tree9",
+   [
+    56.7,
+    108.6
+   ]
+  ],
+  [
+   "bomba_alta_tree9",
+   [
+    85.9,
+    149.5
+   ]
+  ],
+  [
+   "bomba_alta_tree5",
+   [
+    26.2,
+    137.7
+   ]
+  ],
+  [
+   "bomba_alta_tree12",
+   [
+    67.8,
+    18.8
+   ]
+  ],
+  [
+   "bomba_alta_tree6",
+   [
+    121.3,
     88.5
    ]
   ],
   [
-   "f_galinha2",
+   "bomba_alta_tree5",
    [
-    14,
-    89.4
+    127.6,
+    42.3
    ]
   ],
   [
-   "f_cabra",
+   "bomba_alta_tree12",
    [
-    20,
-    90.0
+    4.2,
+    153.5
    ]
   ],
   [
-   "f_bidao",
+   "bomba_alta_tree8",
    [
-    46,
-    88.0
+    68.0,
+    49.9
    ]
   ],
   [
-   "f_carvao",
+   "bomba_alta_tree7",
    [
-    60,
-    88.0
+    93.2,
+    137.0
    ]
   ],
   [
-   "f_blocos",
+   "bomba_alta_tree4",
    [
-    138,
-    106
+    113.4,
+    154.9
    ]
   ],
   [
-   "f_bicicleta",
+   "bomba_alta_tree11",
    [
-    88,
-    88.0
+    121.1,
+    16.1
    ]
   ],
   [
-   "f_tanque",
+   "bomba_alta_tree12",
    [
-    140,
-    64
+    127.2,
+    155.9
    ]
   ],
   [
-   "f_carroca",
+   "bomba_alta_tree5",
    [
-    70,
-    88.0
+    98.1,
+    96.3
    ]
   ],
   [
-   "f_mesa_plastico2",
+   "bomba_alta_tree5",
    [
-    108,
-    88.4
+    33.8,
+    43.0
    ]
   ],
   [
-   "f_abacateiro",
+   "bomba_alta_tree2",
    [
-    57.3,
-    11.6
+    152.6,
+    134.7
    ]
   ],
   [
-   "f_palmeira2",
+   "bomba_alta_tree6",
    [
-    81.6,
-    67.6
+    95.7,
+    14.3
    ]
   ],
   [
-   "f_abacateiro",
+   "bomba_alta_tree7",
    [
-    52.5,
-    46.4
+    132.7,
+    113.3
    ]
   ],
   [
-   "f_palmeira2",
+   "bomba_alta_tree5",
    [
-    22.9,
-    87.7
+    20.9,
+    24.2
    ]
   ],
   [
-   "f_palmeira2",
+   "bomba_alta_tree4",
    [
-    48.5,
-    48.3
+    104.7,
+    131.4
    ]
   ],
   [
-   "f_eucalipto2",
+   "bomba_alta_tree5",
    [
-    69.0,
-    67.7
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    84.8,
-    36.3
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    44.2,
-    52.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    96.3,
-    108.2
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    23.3,
-    81.3
-   ]
-  ],
-  [
-   "f_abacateiro",
-   [
-    14.2,
-    58.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    138.4,
-    94.0
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    137.4,
-    85.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    57.7,
-    102.2
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    86.9,
-    58.3
+    72.0,
+    97.3
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Bomba Alta",
    "at": [
-    46.5,
-    37.0
+    79.0,
+    88.1
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "cambiote",
+   "name": "Cambiote",
+   "at": [
+    75.3,
+    156.0
+   ],
+   "arrive": [
+    74.2,
+    150.7
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "canata",
+   "name": "Canata",
    "at": [
-    72,
-    64
+    115.6,
+    3.1
+   ],
+   "arrive": [
+    120.7,
+    5.2
+   ]
+  },
+  {
+   "to": "sao_joao",
+   "name": "São João",
+   "at": [
+    156.1,
+    82.6
+   ],
+   "arrive": [
+    150.8,
+    84.3
+   ]
+  },
+  {
+   "to": "sao_jose",
+   "name": "São José",
+   "at": [
+    4.0,
+    110.5
+   ],
+   "arrive": [
+    9.5,
+    109.9
+   ]
+  },
+  {
+   "to": "vila_graca",
+   "name": "Vila Graça",
+   "at": [
+    53.3,
+    4.0
+   ],
+   "arrive": [
+    53.8,
+    9.5
    ]
   }
  ]

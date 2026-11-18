@@ -22,7 +22,11 @@ const MARGIN := 64.0
 const FILLER_BUILDINGS := {"casa_colonial": [10, 8], "predio_castanho": [8, 7], "predio_rosa": [8, 8], "predio_60": [9, 7]}
 const FILLER_TREES := ["palmeira", "arvore_avenida", "jacaranda", "arvore_eucalipto"]
 var occluders: Array[Sprite2D] = []
-var interiors: Array = [] ## dados dos interiores (rect em metros) ## edifícios/árvores que podem tapar a personagem
+var interiors: Array = [] ## dados dos interiores (rect em metros)
+var osm := false ## bairro com as ruas reais do OpenStreetMap
+var _mask := PackedByteArray() ## 1 m: 0 terra, 1 passeio, 2 rua (para o casario à volta)
+var _mask_o := Vector2.ZERO
+var _mask_w := 0 ## edifícios/árvores que podem tapar a personagem
 
 
 static func load_data(id: String) -> Dictionary:
@@ -48,9 +52,16 @@ func build(bairro_id: String) -> bool:
 	for r: Array in data.obstacles:
 		obstacles.append(Rect2(r[0], r[1], r[2], r[3]))
 	places = data.places
+	osm = bool(data.get("osm", false))
+	if osm:
+		_build_road_mask()
 	_build_ground()
-	_build_markings()
+	if osm:
+		_build_roads()
+	else:
+		_build_markings()
 	_build_surroundings()
+	_build_portals()
 	RenderingServer.set_default_clear_color(Color("8a5a3c")) # cor da terra: nunca aparece "vazio"
 	_build_interiors()
 	for b: Dictionary in data.buildings:
@@ -111,6 +122,13 @@ func _outer_kind(x: float, y: float) -> String:
 
 
 func _ground_kind(x: float, y: float) -> String:
+	if osm:
+		var i := int(x - _mask_o.x)
+		var j := int(y - _mask_o.y)
+		if i < 0 or j < 0 or i >= _mask_w or j >= _mask_w:
+			return "terra"
+		var v := _mask[j * _mask_w + i]
+		return "asfalto" if v == 2 else ("calcada" if v == 1 else str(data.ground[0].kind))
 	if not _inside(x, y):
 		# a avenida e a rua do bairro continuam com a mesma largura
 		if y >= 20.0 and y < 28.0:
@@ -147,7 +165,8 @@ func _build_ground() -> void:
 	var m0 := int(MARGIN / t)
 	for i in range(-m0, int(size.x / t) + m0):
 		for j in range(-m0, int(size.y / t) + m0):
-			ground.set_cell(Vector2i(i, j), 0, Vector2i(names.find(_ground_kind(i * t, j * t)), 0))
+			var gk := str(data.ground[0].kind) if osm else _ground_kind(i * t, j * t)
+			ground.set_cell(Vector2i(i, j), 0, Vector2i(names.find(gk), 0))
 	ground.position = Iso.to_screen(Vector2(t / 2, t / 2)) - ground.map_to_local(Vector2i(0, 0))
 
 
@@ -157,7 +176,7 @@ func _build_interiors() -> void:
 	interiors = data.get("interiors", [])
 	for i: Dictionary in interiors:
 		var r: Array = i.rect
-		var room := DemoAssets.make_sprite("interior_sala")
+		var room := DemoAssets.make_sprite(str(i.get("room", "interior_sala")))
 		room.position = Iso.to_screen(Vector2(float(r[0]) + float(r[2]), float(r[1]) + float(r[3])))
 		room.z_index = -10
 		add_child(room)
@@ -184,11 +203,108 @@ func interior_at(p: Vector2) -> Dictionary:
 	return {}
 
 
+## Grelha de 1 m com ruas e passeios (só para decidir onde há casario à volta).
+func _build_road_mask() -> void:
+	_mask_o = Vector2(-MARGIN, -MARGIN)
+	_mask_w = int(size.x + MARGIN * 2.0)
+	_mask.resize(_mask_w * _mask_w)
+	_mask.fill(0)
+	for r: Dictionary in data.get("roads", []):
+		var pts: Array = r.pts
+		var hw := float(r.w) / 2.0
+		for k in range(pts.size() - 1):
+			var a := Vector2(pts[k][0], pts[k][1])
+			var b := Vector2(pts[k + 1][0], pts[k + 1][1])
+			var bb := Rect2(a, Vector2.ZERO).expand(b).grow(hw + 2.5)
+			for j in range(int(bb.position.y - _mask_o.y), int(bb.end.y - _mask_o.y) + 1):
+				for i in range(int(bb.position.x - _mask_o.x), int(bb.end.x - _mask_o.x) + 1):
+					if i < 0 or j < 0 or i >= _mask_w or j >= _mask_w:
+						continue
+					var c := Vector2(i + 0.5, j + 0.5) + _mask_o
+					var d := c.distance_to(Geometry2D.get_closest_point_to_segment(c, a, b))
+					var v := 2 if d < hw else (1 if d < hw + 2.0 else 0)
+					if v > _mask[j * _mask_w + i]:
+						_mask[j * _mask_w + i] = v
+
+
+## Ruas reais: faixas com textura (passeio por baixo, alcatrão ou terra batida por cima).
+func _build_roads() -> void:
+	var tex := {}
+	for k: String in ["asfalto", "calcada", "terra", "relva"]:
+		tex[k] = load("res://assets/demo/chao_%s.png" % k)
+	for a: Dictionary in data.get("areas", []):
+		var poly := PackedVector2Array()
+		for q: Array in a.pts:
+			poly.append(Vector2(q[0], q[1]))
+		_tex_poly(poly, tex["relva"], Color.WHITE)
+	var roads: Array = data.get("roads", [])
+	for pass_i in 2: # 0 = passeios/berma, 1 = faixa
+		for r: Dictionary in roads:
+			var paved := bool(r.paved)
+			var hw := float(r.w) / 2.0 + (0.0 if pass_i == 1 else (2.0 if paved else 0.8))
+			var t: Texture2D = tex["calcada"] if pass_i == 0 and paved else (tex["asfalto"] if paved else tex["terra"])
+			var col := Color.WHITE if paved or pass_i == 0 else Color(0.82, 0.74, 0.68)
+			if pass_i == 0 and not paved:
+				col = Color(0.9, 0.84, 0.78)
+			var pts: Array = r.pts
+			for k in range(pts.size() - 1):
+				var a := Vector2(pts[k][0], pts[k][1])
+				var b := Vector2(pts[k + 1][0], pts[k + 1][1])
+				if a.distance_to(b) < 0.05:
+					continue
+				var n := (b - a).normalized().orthogonal() * hw
+				_tex_poly(PackedVector2Array([a + n, b + n, b - n, a - n]), t, col)
+			for q: Array in pts: # juntas redondas
+				var c := Vector2(q[0], q[1])
+				var circ := PackedVector2Array()
+				for i in 12:
+					circ.append(c + Vector2.from_angle(TAU * i / 12.0) * hw)
+				_tex_poly(circ, t, col)
+
+
+## Polígono em metros → ecrã isométrico, com a textura fixa ao chão (4 m por repetição).
+func _tex_poly(world: PackedVector2Array, t: Texture2D, col: Color) -> void:
+	var p := Polygon2D.new()
+	var scr := PackedVector2Array()
+	var uv := PackedVector2Array()
+	for w in world:
+		scr.append(Iso.to_screen(w))
+		uv.append(w * 128.0)
+	p.polygon = scr
+	p.uv = uv
+	p.texture = t
+	p.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	p.color = col
+	markings.add_child(p)
+
+
+## Placas nas pontas das ruas: "A pé para <bairro vizinho>".
+func _build_portals() -> void:
+	for pt: Dictionary in data.get("portals", []):
+		_add_label("→ " + str(pt.name), Iso.to_screen(Vector2(pt.at[0], pt.at[1])) + Vector2(0, -40), false)
+
+
 ## Casario decorativo à volta do bairro (mesma arte do Huambo, sem letreiros nem interação).
 func _build_surroundings() -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.seed = hash(str(data.get("id", "")))
 	var ids: Array = FILLER_BUILDINGS.keys()
+	var fps := FILLER_BUILDINGS.duplicate()
+	var trees := FILLER_TREES.duplicate()
+	if osm: # casario à volta com as casas e árvores do próprio bairro
+		var own := {}
+		for b: Dictionary in data.buildings:
+			if str(b.get("label", "")).begins_with("Casa"):
+				own[b.id] = b.fp
+		if not own.is_empty():
+			fps = own
+			ids = own.keys()
+		var own_trees := []
+		for p: Dictionary in data.props:
+			if "_tree" in str(p.id) and not own_trees.has(p.id):
+				own_trees.append(p.id)
+		if not own_trees.is_empty():
+			trees = own_trees
 	var area := Rect2(-MARGIN, -MARGIN, size.x + MARGIN * 2.0, size.y + MARGIN * 2.0)
 	var keep_out := Rect2(-2, -2, size.x + 4, size.y + 4)
 	var y := area.position.y
@@ -196,13 +312,13 @@ func _build_surroundings() -> void:
 		var x := area.position.x
 		while x < area.end.x:
 			var id: String = ids[rng.randi() % ids.size()]
-			var fp: Array = FILLER_BUILDINGS[id]
+			var fp: Array = fps[id]
 			var lot := Rect2(x, y, float(fp[0]), float(fp[1]))
 			if not lot.intersects(keep_out) and _lot_free(lot):
 				if rng.randf() < 0.78:
 					_add_object(id, Iso.to_screen(lot.position + lot.size))
 				else:
-					_add_object(FILLER_TREES[rng.randi() % FILLER_TREES.size()], Iso.to_screen(lot.get_center()))
+					_add_object(trees[rng.randi() % trees.size()], Iso.to_screen(lot.get_center()))
 				x += lot.size.x + rng.randf_range(1.0, 3.0)
 			else:
 				x += 2.0
@@ -215,7 +331,7 @@ func _lot_free(lot: Rect2) -> bool:
 	while px <= lot.end.x:
 		var py := lot.position.y
 		while py <= lot.end.y:
-			if _inside(px, py) or _ground_kind(px, py) != "terra":
+			if _inside(px, py) or _ground_kind(px, py) not in ["terra", "relva"]:
 				return false
 			py += 2.0
 		px += 2.0

@@ -23,6 +23,7 @@ var _clock_ready := false
 var _last_dir := Vector2i.ZERO
 var _last_send_ms := -100000
 var _click_target: Variant = null
+var _path: Array[Vector2] = [] ## pontos seguintes (metros) depois de _click_target
 
 
 func _ready() -> void:
@@ -158,10 +159,12 @@ func _on_self(me: Dictionary) -> void:
 	if _travelling or typeof(t) != TYPE_DICTIONARY:
 		return
 	_travelling = true
-	hud.show_toast("A viajar para o outro bairro…", true)
+	var on_foot := bool(t.get("onFoot", false))
+	hud.show_toast("A caminhar para o bairro vizinho…" if on_foot else "A viajar de candongueiro…", true)
 	var err: String = await Packs.ensure_bairro(str(t.district))
 	if err == "":
-		err = await Net.join_district(str(t.district))
+		# a pé: aparece no fim da rua que vem do bairro de onde saiu
+		err = await Net.join_district(str(t.district), ("from_" + str(t.get("from", ""))) if on_foot else "")
 	if err != "":
 		_travelling = false
 		hud.show_toast(err, false)
@@ -242,7 +245,7 @@ func _update_local(delta: float) -> void:
 		var to: Vector2 = _click_target - local_char.world_pos
 		wdir = Vector2.ZERO if to.length() < 0.1 else to.normalized()
 		if wdir == Vector2.ZERO:
-			_click_target = null
+			_click_target = _path.pop_front() if not _path.is_empty() else null
 	# teclado/joystick: direção para o servidor (inteiros −100..100), enviada só quando muda.
 	# (o clique já enviou MOVE_TO; não o sobrepomos com direções)
 	var q := Vector2i(roundi(kdir.x * 100), roundi(kdir.y * 100))
@@ -257,6 +260,7 @@ func _update_local(delta: float) -> void:
 	local_char.step(wdir, delta)
 	if _click_target != null and local_char.world_pos.distance_to(before) < 0.0005:
 		_click_target = null
+		_path.clear()
 	# reconciliação com a posição autoritativa
 	var me: Variant = Net.entities.get(Net.self_id)
 	if me != null:
@@ -309,14 +313,90 @@ func _unhandled_input(event: InputEvent) -> void:
 		_on_hud_action("entrar")
 
 
-## Andar até um ponto (metros). O servidor valida o destino; a personagem segue-o localmente.
+## Andar até um ponto (metros). Com caminho (A*) à volta dos edifícios; o servidor valida cada troço.
 func request_move(target_m: Vector2) -> void:
 	if local_char == null or hud.is_busy():
 		return
+	var route := _find_path(local_char.world_pos, target_m)
+	if route.size() >= 2 and Net.room:
+		route = route.slice(1, mini(route.size(), 24))
+		_click_target = route[0]
+		_path.assign(route.slice(1))
+		var flat: Array = []
+		for p: Vector2 in route:
+			flat.append(roundi(p.x * UNIT))
+			flat.append(roundi(p.y * UNIT))
+		Net.room.send(Protocol.C2S_MOVE_PATH, {"p": flat})
+		_last_dir = Vector2i.ZERO
+		return
+	_path.clear()
 	_click_target = target_m
 	if Net.room:
 		Net.room.send(Protocol.C2S_MOVE_TO, {"x": roundi(target_m.x * UNIT), "y": roundi(target_m.y * UNIT)})
 	_last_dir = Vector2i.ZERO
+
+
+## A* numa grelha de 0,5 m (obstáculos alargados pelo raio do corpo), depois simplificado por linha de vista.
+func _find_path(from: Vector2, to: Vector2) -> Array[Vector2]:
+	var out: Array[Vector2] = []
+	var bounds := local_char.bounds
+	var G := 0.5
+	var free := func(p: Vector2) -> bool:
+		if not bounds.grow(-0.4).has_point(p):
+			return false
+		for r: Rect2 in view.obstacles:
+			if r.grow(0.42).has_point(p):
+				return false
+		return true
+	if free.call(to) == false:
+		return out
+	var los := func(a: Vector2, b: Vector2) -> bool:
+		var n := maxi(1, ceili(a.distance_to(b) / 0.25))
+		for i in range(1, n + 1):
+			if not free.call(a.lerp(b, float(i) / n)):
+				return false
+		return true
+	if los.call(from, to):
+		out.assign([from, to])
+		return out
+	var astar := AStarGrid2D.new()
+	var o := bounds.position
+	astar.region = Rect2i(0, 0, int(bounds.size.x / G) + 1, int(bounds.size.y / G) + 1)
+	astar.cell_size = Vector2(G, G)
+	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	astar.update()
+	# só marca as células perto dos obstáculos (rápido mesmo com centenas de obstáculos)
+	for r: Rect2 in view.obstacles:
+		var g := r.grow(0.42)
+		if not g.intersects(bounds):
+			continue
+		for i in range(int((g.position.x - o.x) / G), int((g.end.x - o.x) / G) + 1):
+			for j in range(int((g.position.y - o.y) / G), int((g.end.y - o.y) / G) + 1):
+				var c := Vector2i(i, j)
+				if astar.is_in_boundsv(c) and g.has_point(o + Vector2(i, j) * G):
+					astar.set_point_solid(c)
+	var a := Vector2i(((from - o) / G).round())
+	var b := Vector2i(((to - o) / G).round())
+	if not astar.is_in_boundsv(a) or not astar.is_in_boundsv(b) or astar.is_point_solid(b):
+		return out
+	astar.set_point_solid(a, false)
+	var cells := astar.get_id_path(a, b)
+	if cells.is_empty():
+		return out
+	var pts: Array[Vector2] = [from]
+	for c: Vector2i in cells:
+		pts.append(o + Vector2(c) * G)
+	pts.append(to)
+	# linha de vista: salta pontos intermédios
+	out.append(from)
+	var i := 0
+	while i < pts.size() - 1:
+		var j := pts.size() - 1
+		while j > i + 1 and not los.call(pts[i], pts[j]):
+			j -= 1
+		out.append(pts[j])
+		i = j
+	return out
 
 
 func _zoom(f: float) -> void:
@@ -328,6 +408,13 @@ func _on_hud_action(what: String) -> void:
 	match what:
 		"zoom_mais": _zoom(1.25)
 		"zoom_menos": _zoom(0.8)
+		var w when w.begins_with("caminho:"):
+			# vai a pé até à placa no fim da rua que dá para esse bairro
+			var to := w.trim_prefix("caminho:")
+			for p: Dictionary in view.places:
+				if p.kind == "portal" and str(p.get("to", "")) == to:
+					request_move(Vector2(p.at[0], p.at[1]))
+					hud.show_toast("A caminho da saída para %s…" % str(p.name).trim_prefix("A pé para "), true)
 		"centrar":
 			if local_char:
 				camera.position = local_char.position + Vector2(0, -70)

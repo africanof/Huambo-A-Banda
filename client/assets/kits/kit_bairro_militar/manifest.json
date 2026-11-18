@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "bairro_militar_escola",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_escola.png",
-   "name": "Escola Primária do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_escola.webp",
+   "name": "Escola Primária do Bairro Militar",
+   "venue": "escola"
   },
   "bairro_militar_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "bairro_militar_saude",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude.png",
-   "name": "Centro de Saúde do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude.webp",
+   "name": "Centro de Saúde do Bairro Militar",
+   "venue": "saude"
   },
   "bairro_militar_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "bairro_militar_igreja",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_igreja.png",
-   "name": "Igreja Metodista do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_igreja.webp",
+   "name": "Igreja Metodista do Bairro Militar",
+   "venue": "igreja"
   },
   "bairro_militar_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "bairro_militar_mercado",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_mercado.png",
-   "name": "Mercado do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_mercado.webp",
+   "name": "Mercado do Bairro Militar",
+   "venue": "mercado"
   },
   "bairro_militar_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "bairro_militar_cantina",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_cantina.png",
-   "name": "Cantina do Quartel"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_cantina.webp",
+   "name": "Cantina do Quartel",
+   "venue": "cantina"
   },
   "bairro_militar_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "bairro_militar_farmacia",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_farmacia.png",
-   "name": "Farmácia Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_farmacia.webp",
+   "name": "Farmácia Bairro Militar",
+   "venue": "farmacia"
   },
   "bairro_militar_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "bairro_militar_administracao",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_administracao.png",
-   "name": "Administração do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_administracao.webp",
+   "name": "Administração do Bairro Militar",
+   "venue": "administracao"
   },
   "bairro_militar_esquadra": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "bairro_militar_esquadra",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_esquadra.png",
-   "name": "Comando da Polícia do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_esquadra.webp",
+   "name": "Comando da Polícia do Bairro Militar",
+   "venue": "esquadra"
   },
   "bairro_militar_saude_8": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "bairro_militar_saude_8",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude_8.png",
-   "name": "Hospital Militar do Huambo"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude_8.webp",
+   "name": "Hospital Militar do Huambo",
+   "venue": "saude"
   },
   "bairro_militar_padaria": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "bairro_militar_padaria",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_padaria.png",
-   "name": "Padaria do Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_padaria.webp",
+   "name": "Padaria do Bairro Militar",
+   "venue": "padaria"
   },
   "bairro_militar_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "bairro_militar_apartamentos",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_apartamentos.png",
-   "name": "Prédio Bairro Militar"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_apartamentos.webp",
+   "name": "Prédio Bairro Militar",
+   "venue": "apartamentos"
   },
   "bairro_militar_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa1",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "bairro_militar_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa2",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "bairro_militar_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa3",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "bairro_militar_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa4",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "bairro_militar_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa5",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "bairro_militar_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "bairro_militar_casa6",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "bairro_militar_casa7": {
    "category": "building",
@@ -358,9 +375,1815 @@
    "scale": 1.6,
    "out": "bairro_militar_casa7",
    "kit": "kit_bairro_militar",
-   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "bairro_militar_small1": {
+   "category": "prop",
+   "size": [
+    146,
+    191
+   ],
+   "anchor": [
+    65,
+    190
+   ],
+   "footprint": [
+    0.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small1.webp",
+   "kind": "small"
+  },
+  "bairro_militar_tree1": {
+   "category": "prop",
+   "size": [
+    195,
+    198
+   ],
+   "anchor": [
+    97,
+    197
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree1.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_lamp1": {
+   "category": "prop",
+   "size": [
+    75,
+    232
+   ],
+   "anchor": [
+    37,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_lamp1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_militar_pole1": {
+   "category": "prop",
+   "size": [
+    80,
+    220
+   ],
+   "anchor": [
+    39,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_pole1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_pole1.webp",
+   "kind": "pole"
+  },
+  "bairro_militar_lamp2": {
+   "category": "prop",
+   "size": [
+    46,
+    201
+   ],
+   "anchor": [
+    22,
+    199
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_lamp2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_militar_lamp3": {
+   "category": "prop",
+   "size": [
+    47,
+    209
+   ],
+   "anchor": [
+    23,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_lamp3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_militar_lamp4": {
+   "category": "prop",
+   "size": [
+    81,
+    207
+   ],
+   "anchor": [
+    39,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_lamp4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_militar_lamp5": {
+   "category": "prop",
+   "size": [
+    63,
+    204
+   ],
+   "anchor": [
+    31,
+    202
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_lamp5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_militar_pole2": {
+   "category": "prop",
+   "size": [
+    83,
+    225
+   ],
+   "anchor": [
+    41,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_pole2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_pole2.webp",
+   "kind": "pole"
+  },
+  "bairro_militar_pole3": {
+   "category": "prop",
+   "size": [
+    82,
+    227
+   ],
+   "anchor": [
+    40,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_pole3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_pole3.webp",
+   "kind": "pole"
+  },
+  "bairro_militar_pole4": {
+   "category": "prop",
+   "size": [
+    77,
+    226
+   ],
+   "anchor": [
+    38,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_pole4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_pole4.webp",
+   "kind": "pole"
+  },
+  "bairro_militar_pole5": {
+   "category": "prop",
+   "size": [
+    75,
+    226
+   ],
+   "anchor": [
+    37,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_pole5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_pole5.webp",
+   "kind": "pole"
+  },
+  "bairro_militar_stall1": {
+   "category": "prop",
+   "size": [
+    291,
+    196
+   ],
+   "anchor": [
+    149,
+    195
+   ],
+   "footprint": [
+    2.0,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_stall1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_stall1.webp",
+   "kind": "stall"
+  },
+  "bairro_militar_tree2": {
+   "category": "prop",
+   "size": [
+    227,
+    241
+   ],
+   "anchor": [
+    113,
+    240
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree2.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_stall2": {
+   "category": "prop",
+   "size": [
+    127,
+    114
+   ],
+   "anchor": [
+    17,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_stall2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_stall2.webp",
+   "kind": "stall"
+  },
+  "bairro_militar_stall3": {
+   "category": "prop",
+   "size": [
+    201,
+    226
+   ],
+   "anchor": [
+    99,
+    225
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_stall3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_stall3.webp",
+   "kind": "stall"
+  },
+  "bairro_militar_stall4": {
+   "category": "prop",
+   "size": [
+    127,
+    123
+   ],
+   "anchor": [
+    16,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_stall4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_stall4.webp",
+   "kind": "stall"
+  },
+  "bairro_militar_stall5": {
+   "category": "prop",
+   "size": [
+    131,
+    126
+   ],
+   "anchor": [
+    15,
+    124
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_stall5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_stall5.webp",
+   "kind": "stall"
+  },
+  "bairro_militar_small2": {
+   "category": "prop",
+   "size": [
+    164,
+    280
+   ],
+   "anchor": [
+    74,
+    278
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small2.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small3": {
+   "category": "prop",
+   "size": [
+    212,
+    109
+   ],
+   "anchor": [
+    97,
+    107
+   ],
+   "footprint": [
+    1.3,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small3.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small4": {
+   "category": "prop",
+   "size": [
+    157,
+    249
+   ],
+   "anchor": [
+    67,
+    247
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small4.webp",
+   "kind": "small"
+  },
+  "bairro_militar_tree3": {
+   "category": "prop",
+   "size": [
+    285,
+    229
+   ],
+   "anchor": [
+    142,
+    227
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree3.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_small5": {
+   "category": "prop",
+   "size": [
+    216,
+    124
+   ],
+   "anchor": [
+    96,
+    122
+   ],
+   "footprint": [
+    1.3,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small5.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small6": {
+   "category": "prop",
+   "size": [
+    193,
+    130
+   ],
+   "anchor": [
+    91,
+    128
+   ],
+   "footprint": [
+    1.2,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small6",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small6.webp",
+   "kind": "small"
+  },
+  "bairro_militar_tree4": {
+   "category": "prop",
+   "size": [
+    194,
+    222
+   ],
+   "anchor": [
+    96,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree4.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_tree5": {
+   "category": "prop",
+   "size": [
+    166,
+    219
+   ],
+   "anchor": [
+    82,
+    217
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree5.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_tree6": {
+   "category": "prop",
+   "size": [
+    165,
+    229
+   ],
+   "anchor": [
+    82,
+    227
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree6",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree6.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_small7": {
+   "category": "prop",
+   "size": [
+    119,
+    113
+   ],
+   "anchor": [
+    66,
+    111
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small7",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small7.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small8": {
+   "category": "prop",
+   "size": [
+    118,
+    112
+   ],
+   "anchor": [
+    64,
+    110
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small8",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small8.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small9": {
+   "category": "prop",
+   "size": [
+    92,
+    109
+   ],
+   "anchor": [
+    41,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small9",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small9.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small10": {
+   "category": "prop",
+   "size": [
+    97,
+    108
+   ],
+   "anchor": [
+    47,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small10",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small10.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small11": {
+   "category": "prop",
+   "size": [
+    142,
+    78
+   ],
+   "anchor": [
+    36,
+    76
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small11",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small11.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small12": {
+   "category": "prop",
+   "size": [
+    173,
+    112
+   ],
+   "anchor": [
+    35,
+    110
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small12",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small12.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small13": {
+   "category": "prop",
+   "size": [
+    166,
+    109
+   ],
+   "anchor": [
+    32,
+    78
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small13",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small13.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small14": {
+   "category": "prop",
+   "size": [
+    314,
+    209
+   ],
+   "anchor": [
+    153,
+    207
+   ],
+   "footprint": [
+    2.1,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small14",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small14.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small15": {
+   "category": "prop",
+   "size": [
+    122,
+    71
+   ],
+   "anchor": [
+    34,
+    69
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small15",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small15.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small16": {
+   "category": "prop",
+   "size": [
+    138,
+    98
+   ],
+   "anchor": [
+    31,
+    71
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small16",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small16.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small17": {
+   "category": "prop",
+   "size": [
+    111,
+    80
+   ],
+   "anchor": [
+    10,
+    63
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small17",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small17.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small18": {
+   "category": "prop",
+   "size": [
+    108,
+    60
+   ],
+   "anchor": [
+    26,
+    58
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small18",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small18.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small19": {
+   "category": "prop",
+   "size": [
+    133,
+    126
+   ],
+   "anchor": [
+    16,
+    124
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small19",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small19.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small20": {
+   "category": "prop",
+   "size": [
+    155,
+    160
+   ],
+   "anchor": [
+    76,
+    158
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small20",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small20.webp",
+   "kind": "small"
+  },
+  "bairro_militar_tree7": {
+   "category": "prop",
+   "size": [
+    157,
+    159
+   ],
+   "anchor": [
+    78,
+    158
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_tree7",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_tree7.webp",
+   "kind": "tree"
+  },
+  "bairro_militar_small21": {
+   "category": "prop",
+   "size": [
+    165,
+    154
+   ],
+   "anchor": [
+    102,
+    152
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small21",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small21.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small22": {
+   "category": "prop",
+   "size": [
+    168,
+    157
+   ],
+   "anchor": [
+    105,
+    155
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small22",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small22.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small23": {
+   "category": "prop",
+   "size": [
+    138,
+    143
+   ],
+   "anchor": [
+    84,
+    142
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small23",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small23.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small24": {
+   "category": "prop",
+   "size": [
+    157,
+    152
+   ],
+   "anchor": [
+    95,
+    150
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small24",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small24.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small25": {
+   "category": "prop",
+   "size": [
+    83,
+    106
+   ],
+   "anchor": [
+    34,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small25",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small25.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small26": {
+   "category": "prop",
+   "size": [
+    84,
+    107
+   ],
+   "anchor": [
+    36,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small26",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small26.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small27": {
+   "category": "prop",
+   "size": [
+    76,
+    96
+   ],
+   "anchor": [
+    34,
+    95
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small27",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small27.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small28": {
+   "category": "prop",
+   "size": [
+    252,
+    193
+   ],
+   "anchor": [
+    201,
+    190
+   ],
+   "footprint": [
+    2.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small28",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small28.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small29": {
+   "category": "prop",
+   "size": [
+    134,
+    169
+   ],
+   "anchor": [
+    78,
+    168
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small29",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small29.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small30": {
+   "category": "prop",
+   "size": [
+    150,
+    115
+   ],
+   "anchor": [
+    88,
+    114
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small30",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small30.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small31": {
+   "category": "prop",
+   "size": [
+    139,
+    104
+   ],
+   "anchor": [
+    76,
+    102
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small31",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small31.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small32": {
+   "category": "prop",
+   "size": [
+    221,
+    158
+   ],
+   "anchor": [
+    64,
+    156
+   ],
+   "footprint": [
+    0.9,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small32",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small32.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small33": {
+   "category": "prop",
+   "size": [
+    212,
+    161
+   ],
+   "anchor": [
+    61,
+    159
+   ],
+   "footprint": [
+    0.8,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small33",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small33.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small34": {
+   "category": "prop",
+   "size": [
+    104,
+    156
+   ],
+   "anchor": [
+    44,
+    154
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small34",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small34.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small35": {
+   "category": "prop",
+   "size": [
+    99,
+    154
+   ],
+   "anchor": [
+    40,
+    153
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small35",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small35.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small36": {
+   "category": "prop",
+   "size": [
+    110,
+    141
+   ],
+   "anchor": [
+    46,
+    140
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small36",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small36.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small37": {
+   "category": "prop",
+   "size": [
+    116,
+    153
+   ],
+   "anchor": [
+    52,
+    152
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small37",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small37.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small38": {
+   "category": "prop",
+   "size": [
+    162,
+    123
+   ],
+   "anchor": [
+    22,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small38",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small38.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small39": {
+   "category": "prop",
+   "size": [
+    146,
+    116
+   ],
+   "anchor": [
+    18,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small39",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small39.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small40": {
+   "category": "prop",
+   "size": [
+    133,
+    109
+   ],
+   "anchor": [
+    19,
+    108
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small40",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small40.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small41": {
+   "category": "prop",
+   "size": [
+    154,
+    116
+   ],
+   "anchor": [
+    70,
+    114
+   ],
+   "footprint": [
+    0.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small41",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small41.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small42": {
+   "category": "prop",
+   "size": [
+    132,
+    103
+   ],
+   "anchor": [
+    62,
+    101
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small42",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small42.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small43": {
+   "category": "prop",
+   "size": [
+    129,
+    97
+   ],
+   "anchor": [
+    59,
+    95
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small43",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small43.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small44": {
+   "category": "prop",
+   "size": [
+    175,
+    117
+   ],
+   "anchor": [
+    27,
+    115
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small44",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small44.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small45": {
+   "category": "prop",
+   "size": [
+    172,
+    120
+   ],
+   "anchor": [
+    29,
+    118
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small45",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small45.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small46": {
+   "category": "prop",
+   "size": [
+    105,
+    122
+   ],
+   "anchor": [
+    54,
+    119
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small46",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small46.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small47": {
+   "category": "prop",
+   "size": [
+    77,
+    98
+   ],
+   "anchor": [
+    41,
+    95
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small47",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small47.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small48": {
+   "category": "prop",
+   "size": [
+    74,
+    95
+   ],
+   "anchor": [
+    34,
+    93
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small48",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small48.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small49": {
+   "category": "prop",
+   "size": [
+    122,
+    125
+   ],
+   "anchor": [
+    64,
+    124
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small49",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small49.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small50": {
+   "category": "prop",
+   "size": [
+    113,
+    113
+   ],
+   "anchor": [
+    42,
+    111
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small50",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small50.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small51": {
+   "category": "prop",
+   "size": [
+    155,
+    129
+   ],
+   "anchor": [
+    73,
+    128
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small51",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small51.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small52": {
+   "category": "prop",
+   "size": [
+    150,
+    130
+   ],
+   "anchor": [
+    71,
+    129
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small52",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small52.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small53": {
+   "category": "prop",
+   "size": [
+    88,
+    191
+   ],
+   "anchor": [
+    8,
+    189
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small53",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small53.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small54": {
+   "category": "prop",
+   "size": [
+    92,
+    190
+   ],
+   "anchor": [
+    9,
+    188
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small54",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small54.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small55": {
+   "category": "prop",
+   "size": [
+    174,
+    162
+   ],
+   "anchor": [
+    118,
+    161
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small55",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small55.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small56": {
+   "category": "prop",
+   "size": [
+    156,
+    161
+   ],
+   "anchor": [
+    97,
+    160
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small56",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small56.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small57": {
+   "category": "prop",
+   "size": [
+    158,
+    161
+   ],
+   "anchor": [
+    96,
+    159
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small57",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small57.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small58": {
+   "category": "prop",
+   "size": [
+    102,
+    140
+   ],
+   "anchor": [
+    41,
+    139
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small58",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small58.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small59": {
+   "category": "prop",
+   "size": [
+    100,
+    140
+   ],
+   "anchor": [
+    40,
+    139
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small59",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small59.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small60": {
+   "category": "prop",
+   "size": [
+    129,
+    155
+   ],
+   "anchor": [
+    73,
+    154
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small60",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small60.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small61": {
+   "category": "prop",
+   "size": [
+    178,
+    121
+   ],
+   "anchor": [
+    36,
+    120
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small61",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small61.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small62": {
+   "category": "prop",
+   "size": [
+    141,
+    119
+   ],
+   "anchor": [
+    73,
+    117
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small62",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small62.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small63": {
+   "category": "prop",
+   "size": [
+    64,
+    113
+   ],
+   "anchor": [
+    26,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small63",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small63.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small64": {
+   "category": "prop",
+   "size": [
+    64,
+    113
+   ],
+   "anchor": [
+    25,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small64",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small64.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small65": {
+   "category": "prop",
+   "size": [
+    220,
+    122
+   ],
+   "anchor": [
+    134,
+    120
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small65",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small65.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small66": {
+   "category": "prop",
+   "size": [
+    259,
+    144
+   ],
+   "anchor": [
+    94,
+    143
+   ],
+   "footprint": [
+    1.3,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small66",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small66.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small67": {
+   "category": "prop",
+   "size": [
+    289,
+    179
+   ],
+   "anchor": [
+    249,
+    178
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small67",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small67.webp",
+   "kind": "small"
+  },
+  "bairro_militar_small68": {
+   "category": "prop",
+   "size": [
+    336,
+    181
+   ],
+   "anchor": [
+    29,
+    179
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_small68",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_small68.webp",
+   "kind": "small"
   }
  },
- "version": "50b1d55b4525"
+ "version": "910ef3667d93"
 }

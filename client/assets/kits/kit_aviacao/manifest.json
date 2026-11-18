@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "aviacao_escola",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_escola.png",
-   "name": "Escola Primária da Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_escola.webp",
+   "name": "Escola Primária da Aviação",
+   "venue": "escola"
   },
   "aviacao_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "aviacao_saude",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_saude.png",
-   "name": "Centro de Saúde da Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_saude.webp",
+   "name": "Centro de Saúde da Aviação",
+   "venue": "saude"
   },
   "aviacao_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "aviacao_igreja",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_igreja.png",
-   "name": "Igreja Católica da Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_igreja.webp",
+   "name": "Igreja Católica da Aviação",
+   "venue": "igreja"
   },
   "aviacao_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "aviacao_mercado",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_mercado.png",
-   "name": "Mercado da Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_mercado.webp",
+   "name": "Mercado da Aviação",
+   "venue": "mercado"
   },
   "aviacao_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "aviacao_cantina",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_cantina.png",
-   "name": "Cantina do Piloto"
+   "path": "res://assets/kits/kit_aviacao/aviacao_cantina.webp",
+   "name": "Cantina do Piloto",
+   "venue": "cantina"
   },
   "aviacao_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "aviacao_farmacia",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_farmacia.png",
-   "name": "Farmácia Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_farmacia.webp",
+   "name": "Farmácia Aviação",
+   "venue": "farmacia"
   },
   "aviacao_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "aviacao_administracao",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_administracao.png",
-   "name": "Administração da Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_administracao.webp",
+   "name": "Administração da Aviação",
+   "venue": "administracao"
   },
   "aviacao_hotel": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "aviacao_hotel",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_hotel.png",
-   "name": "Hotel Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_hotel.webp",
+   "name": "Hotel Aviação",
+   "venue": "hotel"
   },
   "aviacao_churrasqueira": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "aviacao_churrasqueira",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_churrasqueira.png",
-   "name": "Churrasqueira do Aeroporto"
+   "path": "res://assets/kits/kit_aviacao/aviacao_churrasqueira.webp",
+   "name": "Churrasqueira do Aeroporto",
+   "venue": "churrasqueira"
   },
   "aviacao_loja_telecom": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "aviacao_loja_telecom",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_loja_telecom.png",
-   "name": "Loja de Telemóveis Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_loja_telecom.webp",
+   "name": "Loja de Telemóveis Aviação",
+   "venue": "loja_telecom"
   },
   "aviacao_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "aviacao_apartamentos",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_apartamentos.png",
-   "name": "Prédio Aviação"
+   "path": "res://assets/kits/kit_aviacao/aviacao_apartamentos.webp",
+   "name": "Prédio Aviação",
+   "venue": "apartamentos"
   },
   "aviacao_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "aviacao_casa1",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "aviacao_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "aviacao_casa2",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "aviacao_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "aviacao_casa3",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "aviacao_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "aviacao_casa4",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "aviacao_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "aviacao_casa5",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "aviacao_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "aviacao_casa6",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "aviacao_casa7": {
    "category": "building",
@@ -358,9 +375,1795 @@
    "scale": 1.6,
    "out": "aviacao_casa7",
    "kit": "kit_aviacao",
-   "path": "res://assets/kits/kit_aviacao/aviacao_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "aviacao_tree1": {
+   "category": "prop",
+   "size": [
+    248,
+    205
+   ],
+   "anchor": [
+    123,
+    203
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree1.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree2": {
+   "category": "prop",
+   "size": [
+    205,
+    189
+   ],
+   "anchor": [
+    102,
+    188
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree2.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree3": {
+   "category": "prop",
+   "size": [
+    165,
+    223
+   ],
+   "anchor": [
+    82,
+    221
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree3.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree4": {
+   "category": "prop",
+   "size": [
+    312,
+    194
+   ],
+   "anchor": [
+    155,
+    192
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree4.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree5": {
+   "category": "prop",
+   "size": [
+    195,
+    186
+   ],
+   "anchor": [
+    97,
+    185
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree5.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree6": {
+   "category": "prop",
+   "size": [
+    181,
+    185
+   ],
+   "anchor": [
+    90,
+    183
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree6",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree6.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree7": {
+   "category": "prop",
+   "size": [
+    184,
+    171
+   ],
+   "anchor": [
+    91,
+    170
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree7",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree7.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree8": {
+   "category": "prop",
+   "size": [
+    178,
+    189
+   ],
+   "anchor": [
+    88,
+    188
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree8",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree8.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree9": {
+   "category": "prop",
+   "size": [
+    135,
+    210
+   ],
+   "anchor": [
+    67,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree9",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree9.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree10": {
+   "category": "prop",
+   "size": [
+    156,
+    208
+   ],
+   "anchor": [
+    77,
+    206
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree10",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree10.webp",
+   "kind": "tree"
+  },
+  "aviacao_lamp1": {
+   "category": "prop",
+   "size": [
+    111,
+    200
+   ],
+   "anchor": [
+    55,
+    199
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_lamp1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "aviacao_lamp2": {
+   "category": "prop",
+   "size": [
+    75,
+    179
+   ],
+   "anchor": [
+    37,
+    178
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_lamp2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "aviacao_lamp3": {
+   "category": "prop",
+   "size": [
+    43,
+    184
+   ],
+   "anchor": [
+    21,
+    182
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_lamp3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "aviacao_lamp4": {
+   "category": "prop",
+   "size": [
+    49,
+    188
+   ],
+   "anchor": [
+    24,
+    186
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_lamp4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "aviacao_small1": {
+   "category": "prop",
+   "size": [
+    166,
+    184
+   ],
+   "anchor": [
+    75,
+    182
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small1.webp",
+   "kind": "small"
+  },
+  "aviacao_lamp5": {
+   "category": "prop",
+   "size": [
+    83,
+    182
+   ],
+   "anchor": [
+    41,
+    181
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_lamp5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "aviacao_pole1": {
+   "category": "prop",
+   "size": [
+    85,
+    171
+   ],
+   "anchor": [
+    41,
+    169
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_pole1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_pole1.webp",
+   "kind": "pole"
+  },
+  "aviacao_pole2": {
+   "category": "prop",
+   "size": [
+    87,
+    185
+   ],
+   "anchor": [
+    43,
+    184
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_pole2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_pole2.webp",
+   "kind": "pole"
+  },
+  "aviacao_pole3": {
+   "category": "prop",
+   "size": [
+    81,
+    171
+   ],
+   "anchor": [
+    40,
+    170
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_pole3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_pole3.webp",
+   "kind": "pole"
+  },
+  "aviacao_pole4": {
+   "category": "prop",
+   "size": [
+    83,
+    185
+   ],
+   "anchor": [
+    41,
+    184
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_pole4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_pole4.webp",
+   "kind": "pole"
+  },
+  "aviacao_vehicle1": {
+   "category": "prop",
+   "size": [
+    285,
+    172
+   ],
+   "anchor": [
+    134,
+    171
+   ],
+   "footprint": [
+    1.8,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle2": {
+   "category": "prop",
+   "size": [
+    287,
+    165
+   ],
+   "anchor": [
+    130,
+    164
+   ],
+   "footprint": [
+    1.8,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle3": {
+   "category": "prop",
+   "size": [
+    153,
+    137
+   ],
+   "anchor": [
+    18,
+    136
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle4": {
+   "category": "prop",
+   "size": [
+    142,
+    134
+   ],
+   "anchor": [
+    16,
+    132
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle5": {
+   "category": "prop",
+   "size": [
+    139,
+    121
+   ],
+   "anchor": [
+    15,
+    120
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle6": {
+   "category": "prop",
+   "size": [
+    144,
+    120
+   ],
+   "anchor": [
+    17,
+    119
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle6",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle7": {
+   "category": "prop",
+   "size": [
+    246,
+    113
+   ],
+   "anchor": [
+    146,
+    112
+   ],
+   "footprint": [
+    2.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle7",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle8": {
+   "category": "prop",
+   "size": [
+    220,
+    115
+   ],
+   "anchor": [
+    103,
+    113
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle8",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_vehicle9": {
+   "category": "prop",
+   "size": [
+    280,
+    146
+   ],
+   "anchor": [
+    154,
+    144
+   ],
+   "footprint": [
+    2.1,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_vehicle9",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "aviacao_stall1": {
+   "category": "prop",
+   "size": [
+    207,
+    157
+   ],
+   "anchor": [
+    35,
+    156
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "aviacao_stall1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_stall1.webp",
+   "kind": "stall"
+  },
+  "aviacao_stall2": {
+   "category": "prop",
+   "size": [
+    231,
+    145
+   ],
+   "anchor": [
+    152,
+    143
+   ],
+   "footprint": [
+    2.1,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_stall2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_stall2.webp",
+   "kind": "stall"
+  },
+  "aviacao_stall3": {
+   "category": "prop",
+   "size": [
+    252,
+    143
+   ],
+   "anchor": [
+    173,
+    141
+   ],
+   "footprint": [
+    2.3,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_stall3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_stall3.webp",
+   "kind": "stall"
+  },
+  "aviacao_stall4": {
+   "category": "prop",
+   "size": [
+    179,
+    144
+   ],
+   "anchor": [
+    120,
+    142
+   ],
+   "footprint": [
+    1.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_stall4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_stall4.webp",
+   "kind": "stall"
+  },
+  "aviacao_tree11": {
+   "category": "prop",
+   "size": [
+    156,
+    151
+   ],
+   "anchor": [
+    77,
+    149
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree11",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree11.webp",
+   "kind": "tree"
+  },
+  "aviacao_stall5": {
+   "category": "prop",
+   "size": [
+    150,
+    149
+   ],
+   "anchor": [
+    87,
+    147
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_stall5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_stall5.webp",
+   "kind": "stall"
+  },
+  "aviacao_small2": {
+   "category": "prop",
+   "size": [
+    159,
+    146
+   ],
+   "anchor": [
+    100,
+    144
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small2.webp",
+   "kind": "small"
+  },
+  "aviacao_small3": {
+   "category": "prop",
+   "size": [
+    98,
+    89
+   ],
+   "anchor": [
+    44,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small3.webp",
+   "kind": "small"
+  },
+  "aviacao_small4": {
+   "category": "prop",
+   "size": [
+    137,
+    75
+   ],
+   "anchor": [
+    18,
+    73
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small4.webp",
+   "kind": "small"
+  },
+  "aviacao_small5": {
+   "category": "prop",
+   "size": [
+    98,
+    90
+   ],
+   "anchor": [
+    41,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small5.webp",
+   "kind": "small"
+  },
+  "aviacao_small6": {
+   "category": "prop",
+   "size": [
+    98,
+    89
+   ],
+   "anchor": [
+    39,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small6",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small6.webp",
+   "kind": "small"
+  },
+  "aviacao_small7": {
+   "category": "prop",
+   "size": [
+    126,
+    74
+   ],
+   "anchor": [
+    16,
+    72
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small7",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small7.webp",
+   "kind": "small"
+  },
+  "aviacao_small8": {
+   "category": "prop",
+   "size": [
+    98,
+    89
+   ],
+   "anchor": [
+    40,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small8",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small8.webp",
+   "kind": "small"
+  },
+  "aviacao_small9": {
+   "category": "prop",
+   "size": [
+    120,
+    72
+   ],
+   "anchor": [
+    15,
+    70
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small9",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small9.webp",
+   "kind": "small"
+  },
+  "aviacao_small10": {
+   "category": "prop",
+   "size": [
+    170,
+    60
+   ],
+   "anchor": [
+    132,
+    59
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small10",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small10.webp",
+   "kind": "small"
+  },
+  "aviacao_small11": {
+   "category": "prop",
+   "size": [
+    130,
+    66
+   ],
+   "anchor": [
+    59,
+    64
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small11",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small11.webp",
+   "kind": "small"
+  },
+  "aviacao_small12": {
+   "category": "prop",
+   "size": [
+    155,
+    69
+   ],
+   "anchor": [
+    130,
+    68
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small12",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small12.webp",
+   "kind": "small"
+  },
+  "aviacao_small13": {
+   "category": "prop",
+   "size": [
+    119,
+    63
+   ],
+   "anchor": [
+    56,
+    61
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small13",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small13.webp",
+   "kind": "small"
+  },
+  "aviacao_small14": {
+   "category": "prop",
+   "size": [
+    154,
+    75
+   ],
+   "anchor": [
+    112,
+    73
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small14",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small14.webp",
+   "kind": "small"
+  },
+  "aviacao_small15": {
+   "category": "prop",
+   "size": [
+    113,
+    62
+   ],
+   "anchor": [
+    52,
+    60
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small15",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small15.webp",
+   "kind": "small"
+  },
+  "aviacao_small16": {
+   "category": "prop",
+   "size": [
+    176,
+    56
+   ],
+   "anchor": [
+    138,
+    55
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small16",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small16.webp",
+   "kind": "small"
+  },
+  "aviacao_small17": {
+   "category": "prop",
+   "size": [
+    110,
+    65
+   ],
+   "anchor": [
+    54,
+    63
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small17",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small17.webp",
+   "kind": "small"
+  },
+  "aviacao_small18": {
+   "category": "prop",
+   "size": [
+    155,
+    69
+   ],
+   "anchor": [
+    77,
+    67
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small18",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small18.webp",
+   "kind": "small"
+  },
+  "aviacao_small19": {
+   "category": "prop",
+   "size": [
+    118,
+    109
+   ],
+   "anchor": [
+    35,
+    107
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small19",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small19.webp",
+   "kind": "small"
+  },
+  "aviacao_small20": {
+   "category": "prop",
+   "size": [
+    98,
+    109
+   ],
+   "anchor": [
+    31,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small20",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small20.webp",
+   "kind": "small"
+  },
+  "aviacao_small21": {
+   "category": "prop",
+   "size": [
+    147,
+    67
+   ],
+   "anchor": [
+    75,
+    66
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small21",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small21.webp",
+   "kind": "small"
+  },
+  "aviacao_small22": {
+   "category": "prop",
+   "size": [
+    116,
+    99
+   ],
+   "anchor": [
+    36,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small22",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small22.webp",
+   "kind": "small"
+  },
+  "aviacao_small23": {
+   "category": "prop",
+   "size": [
+    66,
+    79
+   ],
+   "anchor": [
+    24,
+    78
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small23",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small23.webp",
+   "kind": "small"
+  },
+  "aviacao_small24": {
+   "category": "prop",
+   "size": [
+    130,
+    89
+   ],
+   "anchor": [
+    39,
+    87
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small24",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small24.webp",
+   "kind": "small"
+  },
+  "aviacao_small25": {
+   "category": "prop",
+   "size": [
+    60,
+    73
+   ],
+   "anchor": [
+    18,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small25",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small25.webp",
+   "kind": "small"
+  },
+  "aviacao_small26": {
+   "category": "prop",
+   "size": [
+    53,
+    66
+   ],
+   "anchor": [
+    17,
+    65
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small26",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small26.webp",
+   "kind": "small"
+  },
+  "aviacao_small27": {
+   "category": "prop",
+   "size": [
+    126,
+    82
+   ],
+   "anchor": [
+    36,
+    80
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small27",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small27.webp",
+   "kind": "small"
+  },
+  "aviacao_small28": {
+   "category": "prop",
+   "size": [
+    81,
+    78
+   ],
+   "anchor": [
+    21,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small28",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small28.webp",
+   "kind": "small"
+  },
+  "aviacao_small29": {
+   "category": "prop",
+   "size": [
+    247,
+    114
+   ],
+   "anchor": [
+    199,
+    112
+   ],
+   "footprint": [
+    2.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small29",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small29.webp",
+   "kind": "small"
+  },
+  "aviacao_small30": {
+   "category": "prop",
+   "size": [
+    71,
+    70
+   ],
+   "anchor": [
+    25,
+    68
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small30",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small30.webp",
+   "kind": "small"
+  },
+  "aviacao_small31": {
+   "category": "prop",
+   "size": [
+    62,
+    68
+   ],
+   "anchor": [
+    19,
+    67
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small31",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small31.webp",
+   "kind": "small"
+  },
+  "aviacao_small32": {
+   "category": "prop",
+   "size": [
+    209,
+    111
+   ],
+   "anchor": [
+    170,
+    108
+   ],
+   "footprint": [
+    2.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small32",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small32.webp",
+   "kind": "small"
+  },
+  "aviacao_small33": {
+   "category": "prop",
+   "size": [
+    95,
+    79
+   ],
+   "anchor": [
+    37,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small33",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small33.webp",
+   "kind": "small"
+  },
+  "aviacao_small34": {
+   "category": "prop",
+   "size": [
+    92,
+    74
+   ],
+   "anchor": [
+    34,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small34",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small34.webp",
+   "kind": "small"
+  },
+  "aviacao_tree12": {
+   "category": "prop",
+   "size": [
+    98,
+    116
+   ],
+   "anchor": [
+    48,
+    115
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree12",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree12.webp",
+   "kind": "tree"
+  },
+  "aviacao_tree13": {
+   "category": "prop",
+   "size": [
+    98,
+    123
+   ],
+   "anchor": [
+    48,
+    121
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_tree13",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_tree13.webp",
+   "kind": "tree"
+  },
+  "aviacao_small35": {
+   "category": "prop",
+   "size": [
+    104,
+    101
+   ],
+   "anchor": [
+    40,
+    100
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small35",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small35.webp",
+   "kind": "small"
+  },
+  "aviacao_small36": {
+   "category": "prop",
+   "size": [
+    93,
+    128
+   ],
+   "anchor": [
+    37,
+    127
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small36",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small36.webp",
+   "kind": "small"
+  },
+  "aviacao_small37": {
+   "category": "prop",
+   "size": [
+    129,
+    124
+   ],
+   "anchor": [
+    57,
+    122
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small37",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small37.webp",
+   "kind": "small"
+  },
+  "aviacao_small38": {
+   "category": "prop",
+   "size": [
+    110,
+    124
+   ],
+   "anchor": [
+    49,
+    123
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small38",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small38.webp",
+   "kind": "small"
+  },
+  "aviacao_small39": {
+   "category": "prop",
+   "size": [
+    89,
+    129
+   ],
+   "anchor": [
+    9,
+    128
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small39",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small39.webp",
+   "kind": "small"
+  },
+  "aviacao_small40": {
+   "category": "prop",
+   "size": [
+    93,
+    130
+   ],
+   "anchor": [
+    10,
+    129
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small40",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small40.webp",
+   "kind": "small"
+  },
+  "aviacao_small41": {
+   "category": "prop",
+   "size": [
+    151,
+    122
+   ],
+   "anchor": [
+    89,
+    121
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small41",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small41.webp",
+   "kind": "small"
+  },
+  "aviacao_small42": {
+   "category": "prop",
+   "size": [
+    142,
+    122
+   ],
+   "anchor": [
+    87,
+    121
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small42",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small42.webp",
+   "kind": "small"
+  },
+  "aviacao_small43": {
+   "category": "prop",
+   "size": [
+    144,
+    124
+   ],
+   "anchor": [
+    88,
+    122
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small43",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small43.webp",
+   "kind": "small"
+  },
+  "aviacao_small44": {
+   "category": "prop",
+   "size": [
+    103,
+    122
+   ],
+   "anchor": [
+    48,
+    121
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small44",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small44.webp",
+   "kind": "small"
+  },
+  "aviacao_small45": {
+   "category": "prop",
+   "size": [
+    102,
+    113
+   ],
+   "anchor": [
+    42,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small45",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small45.webp",
+   "kind": "small"
+  },
+  "aviacao_small46": {
+   "category": "prop",
+   "size": [
+    148,
+    117
+   ],
+   "anchor": [
+    47,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small46",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small46.webp",
+   "kind": "small"
+  },
+  "aviacao_small47": {
+   "category": "prop",
+   "size": [
+    189,
+    106
+   ],
+   "anchor": [
+    32,
+    105
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small47",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small47.webp",
+   "kind": "small"
+  },
+  "aviacao_small48": {
+   "category": "prop",
+   "size": [
+    183,
+    104
+   ],
+   "anchor": [
+    30,
+    102
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small48",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small48.webp",
+   "kind": "small"
+  },
+  "aviacao_small49": {
+   "category": "prop",
+   "size": [
+    61,
+    84
+   ],
+   "anchor": [
+    19,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small49",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small49.webp",
+   "kind": "small"
+  },
+  "aviacao_small50": {
+   "category": "prop",
+   "size": [
+    58,
+    80
+   ],
+   "anchor": [
+    18,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small50",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small50.webp",
+   "kind": "small"
+  },
+  "aviacao_small51": {
+   "category": "prop",
+   "size": [
+    272,
+    112
+   ],
+   "anchor": [
+    160,
+    110
+   ],
+   "footprint": [
+    2.2,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small51",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small51.webp",
+   "kind": "small"
+  },
+  "aviacao_small52": {
+   "category": "prop",
+   "size": [
+    444,
+    137
+   ],
+   "anchor": [
+    38,
+    136
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small52",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small52.webp",
+   "kind": "small"
+  },
+  "aviacao_small53": {
+   "category": "prop",
+   "size": [
+    385,
+    157
+   ],
+   "anchor": [
+    83,
+    156
+   ],
+   "footprint": [
+    1.1,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_small53",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_small53.webp",
+   "kind": "small"
   }
  },
- "version": "fc560b50e63e"
+ "version": "b5730f985f1d"
 }

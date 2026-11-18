@@ -7,97 +7,113 @@
    "n": 0,
    "id": "f_escola",
    "name": "Escola Primária do Bairro de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "escola"
   },
   {
    "n": 1,
    "id": "f_liceu",
    "name": "Liceu do Bairro de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "escola"
   },
   {
    "n": 2,
    "id": "f_centro_saude",
    "name": "Centro de Saúde do Bairro de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "saude"
   },
   {
    "n": 3,
    "id": "f_igreja",
    "name": "Igreja Nossa Senhora de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "igreja"
   },
   {
    "n": 5,
    "id": "f_esquadra",
    "name": "Esquadra Policial de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "esquadra"
   },
   {
    "n": 6,
    "id": "f_farmacia",
    "name": "Farmácia Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "farmacia"
   },
   {
    "n": 9,
    "id": "f_cantina",
    "name": "Cantina da Dona Rosa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "cantina"
   },
   {
    "n": 10,
    "id": "f_churrasqueira",
    "name": "Churrasqueira Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "churrasqueira"
   },
   {
    "n": 11,
    "id": "f_administracao",
    "name": "Administração do Bairro de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "administracao"
   },
   {
    "n": 12,
    "id": "f_predio",
    "name": "Prédio Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "apartamentos"
   },
   {
    "n": 14,
    "id": "f_casa3",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 15,
    "id": "f_casa4",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 16,
    "id": "f_casa5",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 17,
    "id": "f_casa6",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 18,
    "id": "f_casa7",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 19,
    "id": "f_casa8",
    "name": "Casa",
-   "cat": "building"
+   "cat": "building",
+   "venue": "casa"
   },
   {
    "n": 13,
@@ -107,7 +123,8 @@
    "split": [
     0,
     2
-   ]
+   ],
+   "venue": "casa"
   },
   {
    "n": 13,
@@ -117,27 +134,31 @@
    "split": [
     1,
     2
-   ]
+   ],
+   "venue": "casa"
   },
   {
    "file": "raw/fix_signs_out.png",
    "crop": "mercado",
    "id": "f_mercado",
    "name": "Mercado do Bairro de Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "mercado"
   },
   {
    "file": "raw/fix_signs_out.png",
    "crop": "discoteca",
    "id": "f_discoteca",
    "name": "Discoteca Kizomba Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "discoteca"
   },
   {
    "file": "raw/fix_pensao_out.png",
    "id": "f_hospedaria",
    "name": "Hospedaria Fátima",
-   "cat": "building"
+   "cat": "building",
+   "venue": "hotel"
   },
   {
    "n": 20,
@@ -145,7 +166,9 @@
    "fp": [
     1.5,
     1.5
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 21,
@@ -153,7 +176,9 @@
    "fp": [
     1.5,
     1.5
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 22,
@@ -161,7 +186,9 @@
    "fp": [
     1.2,
     1.2
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 23,
@@ -169,7 +196,9 @@
    "fp": [
     1.2,
     1.2
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 24,
@@ -177,7 +206,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 25,
@@ -185,7 +216,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 26,
@@ -193,7 +226,9 @@
    "fp": [
     2.5,
     2.5
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 27,
@@ -201,7 +236,9 @@
    "fp": [
     1.6,
     1.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 28,
@@ -209,7 +246,9 @@
    "fp": [
     1.6,
     1.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "tree"
   },
   {
    "n": 29,
@@ -217,7 +256,9 @@
    "fp": [
     1.2,
     1.2
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 30,
@@ -226,7 +267,9 @@
     0.4,
     0.4
    ],
-   "light": true
+   "light": true,
+   "cat": "prop",
+   "kind": "lamp"
   },
   {
    "n": 31,
@@ -235,7 +278,9 @@
     0.4,
     0.4
    ],
-   "light": true
+   "light": true,
+   "cat": "prop",
+   "kind": "lamp"
   },
   {
    "n": 34,
@@ -244,7 +289,9 @@
     0.4,
     0.4
    ],
-   "light": true
+   "light": true,
+   "cat": "prop",
+   "kind": "lamp"
   },
   {
    "n": 38,
@@ -252,7 +299,9 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "pole"
   },
   {
    "n": 40,
@@ -260,59 +309,87 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "pole"
   },
   {
    "n": 42,
-   "id": "f_candongueiro"
+   "id": "f_candongueiro",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 43,
-   "id": "f_candongueiro2"
+   "id": "f_candongueiro2",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 45,
-   "id": "f_kupapata"
+   "id": "f_kupapata",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 46,
-   "id": "f_kupapata2"
+   "id": "f_kupapata2",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 49,
-   "id": "f_carro"
+   "id": "f_carro",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 50,
-   "id": "f_hilux"
+   "id": "f_hilux",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 51,
-   "id": "f_carro2"
+   "id": "f_carro2",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 52,
-   "id": "f_banca"
+   "id": "f_banca",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 53,
-   "id": "f_banca2"
+   "id": "f_banca2",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 54,
-   "id": "f_banca3"
+   "id": "f_banca3",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 55,
-   "id": "f_banca4"
+   "id": "f_banca4",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 56,
-   "id": "f_banca5"
+   "id": "f_banca5",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 57,
-   "id": "f_banca_roupa"
+   "id": "f_banca_roupa",
+   "cat": "prop",
+   "kind": "stall"
   },
   {
    "n": 58,
@@ -320,7 +397,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 60,
@@ -328,19 +407,27 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 63,
-   "id": "f_banco_jardim"
+   "id": "f_banco_jardim",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 64,
-   "id": "f_banco_jardim2"
+   "id": "f_banco_jardim2",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 65,
-   "id": "f_banco_madeira"
+   "id": "f_banco_madeira",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 66,
@@ -348,7 +435,9 @@
    "fp": [
     1.2,
     1.2
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 69,
@@ -356,15 +445,21 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 71,
-   "id": "f_paragem"
+   "id": "f_paragem",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 72,
-   "id": "f_paragem2"
+   "id": "f_paragem2",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 74,
@@ -372,7 +467,9 @@
    "fp": [
     0.6,
     0.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 75,
@@ -380,7 +477,9 @@
    "fp": [
     0.6,
     0.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 76,
@@ -388,7 +487,9 @@
    "fp": [
     0.6,
     0.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 78,
@@ -396,7 +497,9 @@
    "fp": [
     1,
     0.5
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 81,
@@ -404,7 +507,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 87,
@@ -412,7 +517,9 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 90,
@@ -420,7 +527,9 @@
    "fp": [
     0.3,
     0.3
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 91,
@@ -428,7 +537,9 @@
    "fp": [
     0.3,
     0.3
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 93,
@@ -436,7 +547,9 @@
    "fp": [
     0.6,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 95,
@@ -444,7 +557,9 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 97,
@@ -452,7 +567,9 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 99,
@@ -460,7 +577,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 100,
@@ -468,7 +587,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 101,
@@ -476,7 +597,9 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 103,
@@ -484,7 +607,9 @@
    "fp": [
     0.6,
     0.6
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 105,
@@ -492,15 +617,21 @@
    "fp": [
     1,
     1
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 106,
-   "id": "f_mesa_plastico"
+   "id": "f_mesa_plastico",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 107,
-   "id": "f_mesa_plastico2"
+   "id": "f_mesa_plastico2",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 108,
@@ -508,19 +639,27 @@
    "fp": [
     0.4,
     0.4
-   ]
+   ],
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 110,
-   "id": "f_carroca"
+   "id": "f_carroca",
+   "cat": "prop",
+   "kind": "vehicle"
   },
   {
    "n": 111,
-   "id": "f_muro_portao"
+   "id": "f_muro_portao",
+   "cat": "prop",
+   "kind": "small"
   },
   {
    "n": 112,
-   "id": "f_muro_portao2"
+   "id": "f_muro_portao2",
+   "cat": "prop",
+   "kind": "small"
   }
  ]
 }

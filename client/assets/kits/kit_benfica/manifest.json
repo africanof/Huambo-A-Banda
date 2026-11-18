@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "benfica_escola",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_escola.png",
-   "name": "Escola Primária do Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_escola.webp",
+   "name": "Escola Primária do Benfica",
+   "venue": "escola"
   },
   "benfica_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "benfica_saude",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_saude.png",
-   "name": "Centro de Saúde do Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_saude.webp",
+   "name": "Centro de Saúde do Benfica",
+   "venue": "saude"
   },
   "benfica_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "benfica_igreja",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_igreja.png",
-   "name": "Igreja Católica do Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_igreja.webp",
+   "name": "Igreja Católica do Benfica",
+   "venue": "igreja"
   },
   "benfica_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "benfica_mercado",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_mercado.png",
-   "name": "Mercado do Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_mercado.webp",
+   "name": "Mercado do Benfica",
+   "venue": "mercado"
   },
   "benfica_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "benfica_cantina",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_cantina.png",
-   "name": "Cantina do Sr. Kalei"
+   "path": "res://assets/kits/kit_benfica/benfica_cantina.webp",
+   "name": "Cantina do Sr. Kalei",
+   "venue": "cantina"
   },
   "benfica_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "benfica_farmacia",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_farmacia.png",
-   "name": "Farmácia Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_farmacia.webp",
+   "name": "Farmácia Benfica",
+   "venue": "farmacia"
   },
   "benfica_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "benfica_administracao",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_administracao.png",
-   "name": "Administração do Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_administracao.webp",
+   "name": "Administração do Benfica",
+   "venue": "administracao"
   },
   "benfica_discoteca": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "benfica_discoteca",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_discoteca.png",
-   "name": "Discoteca Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_discoteca.webp",
+   "name": "Discoteca Benfica",
+   "venue": "discoteca"
   },
   "benfica_churrasqueira": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "benfica_churrasqueira",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_churrasqueira.png",
-   "name": "Churrasqueira Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_churrasqueira.webp",
+   "name": "Churrasqueira Benfica",
+   "venue": "churrasqueira"
   },
   "benfica_banco": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "benfica_banco",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_banco.png",
-   "name": "Banco Sol Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_banco.webp",
+   "name": "Banco Sol Benfica",
+   "venue": "banco"
   },
   "benfica_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "benfica_apartamentos",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_apartamentos.png",
-   "name": "Prédio Benfica"
+   "path": "res://assets/kits/kit_benfica/benfica_apartamentos.webp",
+   "name": "Prédio Benfica",
+   "venue": "apartamentos"
   },
   "benfica_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "benfica_casa1",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_benfica/benfica_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "benfica_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "benfica_casa2",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_benfica/benfica_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "benfica_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "benfica_casa3",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_benfica/benfica_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "benfica_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "benfica_casa4",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_benfica/benfica_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "benfica_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "benfica_casa5",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_benfica/benfica_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "benfica_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "benfica_casa6",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_benfica/benfica_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "benfica_casa7": {
    "category": "building",
@@ -358,9 +375,1796 @@
    "scale": 1.6,
    "out": "benfica_casa7",
    "kit": "kit_benfica",
-   "path": "res://assets/kits/kit_benfica/benfica_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_benfica/benfica_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "benfica_tree1": {
+   "category": "prop",
+   "size": [
+    302,
+    256
+   ],
+   "anchor": [
+    150,
+    255
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree1.webp",
+   "kind": "tree"
+  },
+  "benfica_tree2": {
+   "category": "prop",
+   "size": [
+    178,
+    286
+   ],
+   "anchor": [
+    88,
+    285
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree2.webp",
+   "kind": "tree"
+  },
+  "benfica_tree3": {
+   "category": "prop",
+   "size": [
+    198,
+    269
+   ],
+   "anchor": [
+    99,
+    268
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree3.webp",
+   "kind": "tree"
+  },
+  "benfica_tree4": {
+   "category": "prop",
+   "size": [
+    347,
+    263
+   ],
+   "anchor": [
+    173,
+    261
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree4.webp",
+   "kind": "tree"
+  },
+  "benfica_tree5": {
+   "category": "prop",
+   "size": [
+    202,
+    234
+   ],
+   "anchor": [
+    100,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree5.webp",
+   "kind": "tree"
+  },
+  "benfica_tree6": {
+   "category": "prop",
+   "size": [
+    186,
+    236
+   ],
+   "anchor": [
+    92,
+    234
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree6",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree6.webp",
+   "kind": "tree"
+  },
+  "benfica_tree7": {
+   "category": "prop",
+   "size": [
+    235,
+    190
+   ],
+   "anchor": [
+    117,
+    188
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree7",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree7.webp",
+   "kind": "tree"
+  },
+  "benfica_tree8": {
+   "category": "prop",
+   "size": [
+    210,
+    202
+   ],
+   "anchor": [
+    105,
+    200
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree8",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree8.webp",
+   "kind": "tree"
+  },
+  "benfica_tree9": {
+   "category": "prop",
+   "size": [
+    175,
+    193
+   ],
+   "anchor": [
+    87,
+    192
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree9",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree9.webp",
+   "kind": "tree"
+  },
+  "benfica_tree10": {
+   "category": "prop",
+   "size": [
+    213,
+    207
+   ],
+   "anchor": [
+    106,
+    205
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree10",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree10.webp",
+   "kind": "tree"
+  },
+  "benfica_lamp1": {
+   "category": "prop",
+   "size": [
+    118,
+    227
+   ],
+   "anchor": [
+    58,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_lamp2": {
+   "category": "prop",
+   "size": [
+    82,
+    208
+   ],
+   "anchor": [
+    40,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_lamp3": {
+   "category": "prop",
+   "size": [
+    49,
+    208
+   ],
+   "anchor": [
+    24,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_lamp4": {
+   "category": "prop",
+   "size": [
+    46,
+    209
+   ],
+   "anchor": [
+    22,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_lamp5": {
+   "category": "prop",
+   "size": [
+    85,
+    228
+   ],
+   "anchor": [
+    42,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_lamp6": {
+   "category": "prop",
+   "size": [
+    44,
+    214
+   ],
+   "anchor": [
+    21,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_lamp6",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_lamp6.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "benfica_pole1": {
+   "category": "prop",
+   "size": [
+    101,
+    245
+   ],
+   "anchor": [
+    50,
+    243
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_pole1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_pole1.webp",
+   "kind": "pole"
+  },
+  "benfica_pole2": {
+   "category": "prop",
+   "size": [
+    89,
+    244
+   ],
+   "anchor": [
+    44,
+    243
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_pole2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_pole2.webp",
+   "kind": "pole"
+  },
+  "benfica_pole3": {
+   "category": "prop",
+   "size": [
+    89,
+    229
+   ],
+   "anchor": [
+    44,
+    227
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_pole3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_pole3.webp",
+   "kind": "pole"
+  },
+  "benfica_pole4": {
+   "category": "prop",
+   "size": [
+    91,
+    230
+   ],
+   "anchor": [
+    45,
+    229
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_pole4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_pole4.webp",
+   "kind": "pole"
+  },
+  "benfica_vehicle1": {
+   "category": "prop",
+   "size": [
+    321,
+    167
+   ],
+   "anchor": [
+    135,
+    165
+   ],
+   "footprint": [
+    1.8,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle2": {
+   "category": "prop",
+   "size": [
+    302,
+    164
+   ],
+   "anchor": [
+    126,
+    162
+   ],
+   "footprint": [
+    1.7,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle3": {
+   "category": "prop",
+   "size": [
+    132,
+    119
+   ],
+   "anchor": [
+    15,
+    117
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle4": {
+   "category": "prop",
+   "size": [
+    128,
+    116
+   ],
+   "anchor": [
+    14,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle5": {
+   "category": "prop",
+   "size": [
+    131,
+    116
+   ],
+   "anchor": [
+    17,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle6": {
+   "category": "prop",
+   "size": [
+    132,
+    120
+   ],
+   "anchor": [
+    15,
+    118
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle6",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle7": {
+   "category": "prop",
+   "size": [
+    258,
+    136
+   ],
+   "anchor": [
+    116,
+    134
+   ],
+   "footprint": [
+    1.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle7",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle8": {
+   "category": "prop",
+   "size": [
+    219,
+    115
+   ],
+   "anchor": [
+    106,
+    113
+   ],
+   "footprint": [
+    1.4,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle8",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "benfica_vehicle9": {
+   "category": "prop",
+   "size": [
+    196,
+    118
+   ],
+   "anchor": [
+    99,
+    116
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "benfica_vehicle9",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "benfica_tree11": {
+   "category": "prop",
+   "size": [
+    220,
+    190
+   ],
+   "anchor": [
+    109,
+    188
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_tree11",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_tree11.webp",
+   "kind": "tree"
+  },
+  "benfica_stall1": {
+   "category": "prop",
+   "size": [
+    185,
+    166
+   ],
+   "anchor": [
+    31,
+    164
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "benfica_stall1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_stall1.webp",
+   "kind": "stall"
+  },
+  "benfica_stall2": {
+   "category": "prop",
+   "size": [
+    204,
+    167
+   ],
+   "anchor": [
+    145,
+    165
+   ],
+   "footprint": [
+    2.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_stall2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_stall2.webp",
+   "kind": "stall"
+  },
+  "benfica_stall3": {
+   "category": "prop",
+   "size": [
+    181,
+    148
+   ],
+   "anchor": [
+    53,
+    146
+   ],
+   "footprint": [
+    0.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_stall3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_stall3.webp",
+   "kind": "stall"
+  },
+  "benfica_stall4": {
+   "category": "prop",
+   "size": [
+    163,
+    149
+   ],
+   "anchor": [
+    98,
+    148
+   ],
+   "footprint": [
+    1.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_stall4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_stall4.webp",
+   "kind": "stall"
+  },
+  "benfica_stall5": {
+   "category": "prop",
+   "size": [
+    218,
+    172
+   ],
+   "anchor": [
+    89,
+    169
+   ],
+   "footprint": [
+    1.2,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_stall5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_stall5.webp",
+   "kind": "stall"
+  },
+  "benfica_small1": {
+   "category": "prop",
+   "size": [
+    106,
+    106
+   ],
+   "anchor": [
+    54,
+    104
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small1.webp",
+   "kind": "small"
+  },
+  "benfica_small2": {
+   "category": "prop",
+   "size": [
+    99,
+    104
+   ],
+   "anchor": [
+    48,
+    102
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small2.webp",
+   "kind": "small"
+  },
+  "benfica_small3": {
+   "category": "prop",
+   "size": [
+    89,
+    103
+   ],
+   "anchor": [
+    46,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small3.webp",
+   "kind": "small"
+  },
+  "benfica_small4": {
+   "category": "prop",
+   "size": [
+    120,
+    107
+   ],
+   "anchor": [
+    65,
+    105
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small4.webp",
+   "kind": "small"
+  },
+  "benfica_small5": {
+   "category": "prop",
+   "size": [
+    143,
+    78
+   ],
+   "anchor": [
+    42,
+    76
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_small5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small5.webp",
+   "kind": "small"
+  },
+  "benfica_small6": {
+   "category": "prop",
+   "size": [
+    144,
+    85
+   ],
+   "anchor": [
+    25,
+    68
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small6",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small6.webp",
+   "kind": "small"
+  },
+  "benfica_small7": {
+   "category": "prop",
+   "size": [
+    112,
+    79
+   ],
+   "anchor": [
+    31,
+    62
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "benfica_small7",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small7.webp",
+   "kind": "small"
+  },
+  "benfica_small8": {
+   "category": "prop",
+   "size": [
+    124,
+    88
+   ],
+   "anchor": [
+    35,
+    86
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "benfica_small8",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small8.webp",
+   "kind": "small"
+  },
+  "benfica_small9": {
+   "category": "prop",
+   "size": [
+    118,
+    144
+   ],
+   "anchor": [
+    43,
+    143
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "benfica_small9",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small9.webp",
+   "kind": "small"
+  },
+  "benfica_small10": {
+   "category": "prop",
+   "size": [
+    86,
+    95
+   ],
+   "anchor": [
+    29,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small10",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small10.webp",
+   "kind": "small"
+  },
+  "benfica_small11": {
+   "category": "prop",
+   "size": [
+    85,
+    63
+   ],
+   "anchor": [
+    32,
+    62
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small11",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small11.webp",
+   "kind": "small"
+  },
+  "benfica_small12": {
+   "category": "prop",
+   "size": [
+    134,
+    94
+   ],
+   "anchor": [
+    77,
+    92
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small12",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small12.webp",
+   "kind": "small"
+  },
+  "benfica_small13": {
+   "category": "prop",
+   "size": [
+    123,
+    87
+   ],
+   "anchor": [
+    72,
+    86
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small13",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small13.webp",
+   "kind": "small"
+  },
+  "benfica_small14": {
+   "category": "prop",
+   "size": [
+    225,
+    150
+   ],
+   "anchor": [
+    170,
+    148
+   ],
+   "footprint": [
+    2.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small14",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small14.webp",
+   "kind": "small"
+  },
+  "benfica_small15": {
+   "category": "prop",
+   "size": [
+    212,
+    143
+   ],
+   "anchor": [
+    163,
+    141
+   ],
+   "footprint": [
+    2.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small15",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small15.webp",
+   "kind": "small"
+  },
+  "benfica_small16": {
+   "category": "prop",
+   "size": [
+    85,
+    113
+   ],
+   "anchor": [
+    36,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small16",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small16.webp",
+   "kind": "small"
+  },
+  "benfica_small17": {
+   "category": "prop",
+   "size": [
+    88,
+    105
+   ],
+   "anchor": [
+    38,
+    104
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small17",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small17.webp",
+   "kind": "small"
+  },
+  "benfica_small18": {
+   "category": "prop",
+   "size": [
+    79,
+    96
+   ],
+   "anchor": [
+    28,
+    94
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small18",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small18.webp",
+   "kind": "small"
+  },
+  "benfica_small19": {
+   "category": "prop",
+   "size": [
+    65,
+    131
+   ],
+   "anchor": [
+    28,
+    130
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small19",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small19.webp",
+   "kind": "small"
+  },
+  "benfica_small20": {
+   "category": "prop",
+   "size": [
+    127,
+    84
+   ],
+   "anchor": [
+    19,
+    83
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_small20",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small20.webp",
+   "kind": "small"
+  },
+  "benfica_small21": {
+   "category": "prop",
+   "size": [
+    113,
+    83
+   ],
+   "anchor": [
+    16,
+    82
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "benfica_small21",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small21.webp",
+   "kind": "small"
+  },
+  "benfica_small22": {
+   "category": "prop",
+   "size": [
+    123,
+    83
+   ],
+   "anchor": [
+    19,
+    82
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_small22",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small22.webp",
+   "kind": "small"
+  },
+  "benfica_small23": {
+   "category": "prop",
+   "size": [
+    90,
+    71
+   ],
+   "anchor": [
+    35,
+    69
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small23",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small23.webp",
+   "kind": "small"
+  },
+  "benfica_small24": {
+   "category": "prop",
+   "size": [
+    132,
+    98
+   ],
+   "anchor": [
+    48,
+    96
+   ],
+   "footprint": [
+    0.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "benfica_small24",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small24.webp",
+   "kind": "small"
+  },
+  "benfica_small25": {
+   "category": "prop",
+   "size": [
+    112,
+    80
+   ],
+   "anchor": [
+    51,
+    78
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small25",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small25.webp",
+   "kind": "small"
+  },
+  "benfica_small26": {
+   "category": "prop",
+   "size": [
+    120,
+    85
+   ],
+   "anchor": [
+    60,
+    84
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small26",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small26.webp",
+   "kind": "small"
+  },
+  "benfica_small27": {
+   "category": "prop",
+   "size": [
+    116,
+    88
+   ],
+   "anchor": [
+    46,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_small27",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small27.webp",
+   "kind": "small"
+  },
+  "benfica_small28": {
+   "category": "prop",
+   "size": [
+    145,
+    91
+   ],
+   "anchor": [
+    21,
+    90
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small28",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small28.webp",
+   "kind": "small"
+  },
+  "benfica_small29": {
+   "category": "prop",
+   "size": [
+    140,
+    86
+   ],
+   "anchor": [
+    21,
+    85
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small29",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small29.webp",
+   "kind": "small"
+  },
+  "benfica_small30": {
+   "category": "prop",
+   "size": [
+    60,
+    72
+   ],
+   "anchor": [
+    33,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small30",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small30.webp",
+   "kind": "small"
+  },
+  "benfica_small31": {
+   "category": "prop",
+   "size": [
+    60,
+    72
+   ],
+   "anchor": [
+    32,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small31",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small31.webp",
+   "kind": "small"
+  },
+  "benfica_small32": {
+   "category": "prop",
+   "size": [
+    61,
+    74
+   ],
+   "anchor": [
+    30,
+    72
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small32",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small32.webp",
+   "kind": "small"
+  },
+  "benfica_small33": {
+   "category": "prop",
+   "size": [
+    86,
+    88
+   ],
+   "anchor": [
+    46,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small33",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small33.webp",
+   "kind": "small"
+  },
+  "benfica_small34": {
+   "category": "prop",
+   "size": [
+    69,
+    76
+   ],
+   "anchor": [
+    33,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small34",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small34.webp",
+   "kind": "small"
+  },
+  "benfica_small35": {
+   "category": "prop",
+   "size": [
+    71,
+    75
+   ],
+   "anchor": [
+    31,
+    73
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small35",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small35.webp",
+   "kind": "small"
+  },
+  "benfica_small36": {
+   "category": "prop",
+   "size": [
+    111,
+    103
+   ],
+   "anchor": [
+    59,
+    101
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small36",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small36.webp",
+   "kind": "small"
+  },
+  "benfica_small37": {
+   "category": "prop",
+   "size": [
+    108,
+    97
+   ],
+   "anchor": [
+    56,
+    94
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small37",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small37.webp",
+   "kind": "small"
+  },
+  "benfica_small38": {
+   "category": "prop",
+   "size": [
+    110,
+    99
+   ],
+   "anchor": [
+    84,
+    95
+   ],
+   "footprint": [
+    1.2,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small38",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small38.webp",
+   "kind": "small"
+  },
+  "benfica_small39": {
+   "category": "prop",
+   "size": [
+    125,
+    105
+   ],
+   "anchor": [
+    16,
+    103
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_small39",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small39.webp",
+   "kind": "small"
+  },
+  "benfica_small40": {
+   "category": "prop",
+   "size": [
+    64,
+    127
+   ],
+   "anchor": [
+    6,
+    126
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small40",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small40.webp",
+   "kind": "small"
+  },
+  "benfica_small41": {
+   "category": "prop",
+   "size": [
+    72,
+    127
+   ],
+   "anchor": [
+    7,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_small41",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small41.webp",
+   "kind": "small"
+  },
+  "benfica_small42": {
+   "category": "prop",
+   "size": [
+    119,
+    122
+   ],
+   "anchor": [
+    79,
+    121
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small42",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small42.webp",
+   "kind": "small"
+  },
+  "benfica_small43": {
+   "category": "prop",
+   "size": [
+    118,
+    122
+   ],
+   "anchor": [
+    75,
+    121
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small43",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small43.webp",
+   "kind": "small"
+  },
+  "benfica_small44": {
+   "category": "prop",
+   "size": [
+    115,
+    122
+   ],
+   "anchor": [
+    70,
+    120
+   ],
+   "footprint": [
+    0.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small44",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small44.webp",
+   "kind": "small"
+  },
+  "benfica_small45": {
+   "category": "prop",
+   "size": [
+    89,
+    108
+   ],
+   "anchor": [
+    35,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small45",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small45.webp",
+   "kind": "small"
+  },
+  "benfica_small46": {
+   "category": "prop",
+   "size": [
+    89,
+    109
+   ],
+   "anchor": [
+    35,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small46",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small46.webp",
+   "kind": "small"
+  },
+  "benfica_small47": {
+   "category": "prop",
+   "size": [
+    109,
+    119
+   ],
+   "anchor": [
+    55,
+    117
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_small47",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small47.webp",
+   "kind": "small"
+  },
+  "benfica_small48": {
+   "category": "prop",
+   "size": [
+    138,
+    97
+   ],
+   "anchor": [
+    29,
+    93
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_small48",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small48.webp",
+   "kind": "small"
+  },
+  "benfica_small49": {
+   "category": "prop",
+   "size": [
+    137,
+    94
+   ],
+   "anchor": [
+    26,
+    89
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_small49",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small49.webp",
+   "kind": "small"
+  },
+  "benfica_small50": {
+   "category": "prop",
+   "size": [
+    53,
+    84
+   ],
+   "anchor": [
+    14,
+    83
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small50",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small50.webp",
+   "kind": "small"
+  },
+  "benfica_small51": {
+   "category": "prop",
+   "size": [
+    53,
+    84
+   ],
+   "anchor": [
+    20,
+    83
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small51",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small51.webp",
+   "kind": "small"
+  },
+  "benfica_small52": {
+   "category": "prop",
+   "size": [
+    178,
+    107
+   ],
+   "anchor": [
+    123,
+    106
+   ],
+   "footprint": [
+    1.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_small52",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small52.webp",
+   "kind": "small"
+  },
+  "benfica_small53": {
+   "category": "prop",
+   "size": [
+    367,
+    125
+   ],
+   "anchor": [
+    324,
+    123
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small53",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small53.webp",
+   "kind": "small"
+  },
+  "benfica_small54": {
+   "category": "prop",
+   "size": [
+    412,
+    128
+   ],
+   "anchor": [
+    373,
+    127
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_small54",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_small54.webp",
+   "kind": "small"
   }
  },
- "version": "e8d57790369b"
+ "version": "7212b75145bf"
 }

@@ -1,0 +1,832 @@
+{
+ "id": "kit_interiores_1",
+ "cuts": "raw/kit_interiores_1_cut",
+ "scale": 2.06,
+ "items": [
+  {
+   "n": 0,
+   "id": "int_sala1_0",
+   "cat": "room",
+   "venue": "casa",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 13,
+   "id": "int_casa_cama",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "main_home_sleep",
+   "scale": 0.8
+  },
+  {
+   "n": 17,
+   "id": "int_casa_fogao",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "main_home_eat",
+   "scale": 0.8
+  },
+  {
+   "n": 14,
+   "id": "int_casa_sofa",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 15,
+   "id": "int_casa_poltrona",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 16,
+   "id": "int_casa_tv",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 19,
+   "id": "int_casa_frigorifico",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 18,
+   "id": "int_casa_botija",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 20,
+   "id": "int_casa_mesa_jantar",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 8,
+   "id": "int_casa_tapete",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "floor",
+   "floor": true,
+   "scale": 0.8
+  },
+  {
+   "n": 21,
+   "id": "int_casa_roupeiro",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 22,
+   "id": "int_casa_planta",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 23,
+   "id": "int_casa_ventoinha",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 11,
+   "id": "int_casa_cesto",
+   "cat": "furniture",
+   "venue": "casa",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 1,
+   "id": "int_sala1_1",
+   "cat": "room",
+   "venue": "cantina",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 24,
+   "id": "int_cantina_balcao",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "main_food",
+   "scale": 0.8
+  },
+  {
+   "n": 25,
+   "id": "int_cantina_prateleira",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 26,
+   "id": "int_cantina_prateleira2",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 29,
+   "id": "int_cantina_frigorifico",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 30,
+   "id": "int_cantina_grades_cuca",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 31,
+   "id": "int_cantina_mesa",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 32,
+   "id": "int_cantina_sacos",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 27,
+   "id": "int_cantina_arroz",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 28,
+   "id": "int_cantina_oleo",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 36,
+   "id": "int_cantina_grade",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 38,
+   "id": "int_cantina_lixo",
+   "cat": "furniture",
+   "venue": "cantina",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 2,
+   "id": "int_sala1_2",
+   "cat": "room",
+   "venue": "padaria",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 39,
+   "id": "int_padaria_balcao",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "main_food",
+   "scale": 0.8
+  },
+  {
+   "n": 40,
+   "id": "int_padaria_forno",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 42,
+   "id": "int_padaria_prateleira_pao",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 43,
+   "id": "int_padaria_vitrine_bolos",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 44,
+   "id": "int_padaria_cafe",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 45,
+   "id": "int_padaria_farinha",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 46,
+   "id": "int_padaria_farinha2",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 47,
+   "id": "int_padaria_carrinho_pao",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 55,
+   "id": "int_padaria_planta",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 57,
+   "id": "int_padaria_extintor",
+   "cat": "furniture",
+   "venue": "padaria",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 3,
+   "id": "int_sala1_3",
+   "cat": "room",
+   "venue": "hotel",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 58,
+   "id": "int_hotel_rececao",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 74,
+   "id": "int_hotel_cama_casal",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "main_sleep",
+   "scale": 0.8
+  },
+  {
+   "n": 60,
+   "id": "int_hotel_cama",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 61,
+   "id": "int_hotel_mesa_cabeceira",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 62,
+   "id": "int_hotel_poltrona",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 63,
+   "id": "int_hotel_suporte_malas",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 64,
+   "id": "int_hotel_mala",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 65,
+   "id": "int_hotel_carrinho",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 66,
+   "id": "int_hotel_planta",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 70,
+   "id": "int_hotel_candeeiro",
+   "cat": "furniture",
+   "venue": "hotel",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 4,
+   "id": "int_sala1_4",
+   "cat": "room",
+   "venue": "banco",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 72,
+   "id": "int_banco_balcao_caixa",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "main_bank",
+   "scale": 0.8
+  },
+  {
+   "n": 77,
+   "id": "int_banco_secretaria",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 73,
+   "id": "int_banco_atm",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 75,
+   "id": "int_banco_cadeiras",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 76,
+   "id": "int_banco_barreira",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 78,
+   "id": "int_banco_armario",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 79,
+   "id": "int_banco_cofre",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 80,
+   "id": "int_banco_folhetos",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 81,
+   "id": "int_banco_planta",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 85,
+   "id": "int_banco_lixo",
+   "cat": "furniture",
+   "venue": "banco",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 5,
+   "id": "int_sala1_5",
+   "cat": "room",
+   "venue": "loja_telecom",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 86,
+   "id": "int_loja_telecom_balcao_telemoveis",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "main_service",
+   "scale": 0.8
+  },
+  {
+   "n": 88,
+   "id": "int_loja_telecom_balcao_unitel",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 89,
+   "id": "int_loja_telecom_balcao_movicel",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 90,
+   "id": "int_loja_telecom_balcao_africell",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 91,
+   "id": "int_loja_telecom_cartoes_sim",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 92,
+   "id": "int_loja_telecom_banco",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 93,
+   "id": "int_loja_telecom_computadores",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 98,
+   "id": "int_loja_telecom_planta",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 99,
+   "id": "int_loja_telecom_lixo",
+   "cat": "furniture",
+   "venue": "loja_telecom",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 6,
+   "id": "int_sala1_6",
+   "cat": "room",
+   "venue": "correios",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 100,
+   "id": "int_correios_balcao",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "main_service",
+   "scale": 0.8
+  },
+  {
+   "n": 104,
+   "id": "int_correios_triagem",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 101,
+   "id": "int_correios_apartados",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 102,
+   "id": "int_correios_balanca",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 103,
+   "id": "int_correios_encomendas",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 105,
+   "id": "int_correios_mesa",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 106,
+   "id": "int_correios_banco_espera",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 109,
+   "id": "int_correios_planta",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 110,
+   "id": "int_correios_marco_correio",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 112,
+   "id": "int_correios_lixo",
+   "cat": "furniture",
+   "venue": "correios",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 7,
+   "id": "int_sala1_7",
+   "cat": "room",
+   "venue": "governo",
+   "fp": [
+    7.5,
+    7.5
+   ],
+   "room": true
+  },
+  {
+   "n": 119,
+   "id": "int_governo_balcao",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "main_service",
+   "scale": 0.8
+  },
+  {
+   "n": 113,
+   "id": "int_governo_secretaria",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 114,
+   "id": "int_governo_cadeira",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 115,
+   "id": "int_governo_cadeira2",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 116,
+   "id": "int_governo_arquivo",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 117,
+   "id": "int_governo_bandeira",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 118,
+   "id": "int_governo_banco_espera",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 120,
+   "id": "int_governo_estante",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 123,
+   "id": "int_governo_planta",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 125,
+   "id": "int_governo_lixo",
+   "cat": "furniture",
+   "venue": "governo",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 132,
+   "id": "int_tribunal_cartorio",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "main_service",
+   "scale": 0.8
+  },
+  {
+   "n": 126,
+   "id": "int_tribunal_tribuna_juiz",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "main_work",
+   "scale": 0.8
+  },
+  {
+   "n": 128,
+   "id": "int_tribunal_mesa_advogados",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 129,
+   "id": "int_tribunal_mesa_advogados2",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 130,
+   "id": "int_tribunal_bancos_publico",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 131,
+   "id": "int_tribunal_bancos_publico2",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 127,
+   "id": "int_tribunal_testemunhas",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 135,
+   "id": "int_tribunal_planta",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  },
+  {
+   "n": 138,
+   "id": "int_tribunal_lixo",
+   "cat": "furniture",
+   "venue": "tribunal",
+   "role": "",
+   "scale": 0.8
+  }
+ ]
+}

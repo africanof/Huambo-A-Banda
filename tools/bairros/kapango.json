@@ -2,137 +2,414 @@
  "id": "kapango",
  "name": "Kapango",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "asfalto",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "asfalto",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     141.92,
+     765.65
+    ],
+    [
+     117.69,
+     662.9
+    ],
+    [
+     104.44,
+     614.89
+    ],
+    [
+     75.92,
+     506.32
+    ],
+    [
+     63.73,
+     456.34
+    ],
+    [
+     62.52,
+     446.92
+    ],
+    [
+     62.52,
+     425.83
+    ],
+    [
+     71.9,
+     388.01
+    ],
+    [
+     84.92,
+     338.39
+    ],
+    [
+     90.07,
+     324.22
+    ],
+    [
+     97.24,
+     307.91
+    ],
+    [
+     100.94,
+     294.27
+    ],
+    [
+     112.67,
+     252.42
+    ],
+    [
+     120.84,
+     179.01
+    ],
+    [
+     127.64,
+     111.38
+    ],
+    [
+     131.64,
+     86.28
+    ],
+    [
+     132.3,
+     -5.9
+    ],
+    [
+     133.69,
+     -63.75
+    ],
+    [
+     139.58,
+     -133.3
+    ],
+    [
+     138.1,
+     -160.33
+    ],
+    [
+     138.53,
+     -184.58
+    ],
+    [
+     140.64,
+     -196.66
+    ],
+    [
+     144.87,
+     -207.39
+    ],
+    [
+     153.17,
+     -217.81
+    ],
+    [
+     165.99,
+     -231.17
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     46.1,
+     113.91
+    ],
+    [
+     60.73,
+     119.98
+    ],
+    [
+     79.73,
+     133.52
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     29.79,
+     64.21
+    ],
+    [
+     38.4,
+     80.47
+    ],
+    [
+     42.74,
+     92.17
+    ],
+    [
+     46.1,
+     113.91
+    ],
+    [
+     44.27,
+     128.38
+    ],
+    [
+     44.52,
+     147.65
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     33.05,
+     23.74
+    ],
+    [
+     47.8,
+     16.93
+    ],
+    [
+     68.38,
+     9.09
+    ],
+    [
+     92.0,
+     2.18
+    ],
+    [
+     132.3,
+     -5.9
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -120.73,
+     183.77
+    ],
+    [
+     -103.61,
+     174.37
+    ],
+    [
+     -99.46,
+     173.48
+    ],
+    [
+     -94.79,
+     175.29
+    ],
+    [
+     -69.5,
+     197.9
+    ],
+    [
+     -54.59,
+     207.48
+    ],
+    [
+     -29.34,
+     222.16
+    ],
+    [
+     -17.62,
+     225.97
+    ],
+    [
+     1.5,
+     230.02
+    ],
+    [
+     37.59,
+     237.53
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     97.24,
+     307.91
+    ],
+    [
+     53.98,
+     285.61
+    ],
+    [
+     43.89,
+     282.28
+    ],
+    [
+     40.38,
+     249.71
+    ],
+    [
+     37.59,
+     237.53
+    ],
+    [
+     32.33,
+     214.61
+    ],
+    [
+     29.46,
+     184.23
+    ],
+    [
+     34.25,
+     165.01
+    ],
+    [
+     44.52,
+     147.65
+    ],
+    [
+     57.66,
+     140.18
+    ],
+    [
+     79.73,
+     133.52
+    ],
+    [
+     103.65,
+     117.76
+    ],
+    [
+     127.64,
+     111.38
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     131.64,
+     86.28
+    ],
+    [
+     149.34,
+     71.95
+    ],
+    [
+     168.23,
+     55.91
+    ],
+    [
+     200.46,
+     29.42
+    ],
+    [
+     213.39,
+     19.15
+    ],
+    [
+     230.57,
+     7.9
+    ],
+    [
+     242.85,
+     -1.57
+    ],
+    [
+     257.54,
+     -12.29
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     120.84,
+     179.01
+    ],
+    [
+     155.49,
+     186.1
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [
+  {
+   "kind": "relva",
+   "pts": [
+    [
+     156.88,
+     203.86
+    ],
+    [
+     251.91,
+     244.23
+    ],
+    [
+     282.01,
+     184.28
+    ],
+    [
+     183.79,
+     140.5
+    ],
+    [
+     156.88,
+     203.86
+    ]
+   ]
+  }
+ ],
+ "geo": {
+  "lat": -12.76,
+  "lon": 15.73,
+  "rot_deg": 43.0,
+  "cx": 0,
+  "cy": 140
+ },
  "buildings": [
+  {
+   "id": "kapango_mercado",
+   "at": [
+    53.4,
+    65.8
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
   {
    "id": "kapango_escola",
    "at": [
-    2.0,
-    22.4
+    3.1,
+    99.7
    ],
    "venue": {
     "venue": "escola",
@@ -142,8 +419,8 @@
   {
    "id": "kapango_saude",
    "at": [
-    32.2,
-    2.0
+    116.4,
+    74.6
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +430,8 @@
   {
    "id": "kapango_igreja",
    "at": [
-    34.0,
-    15.0
+    117.0,
+    87.6
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +439,10 @@
    }
   },
   {
-   "id": "kapango_mercado",
-   "at": [
-    18.0,
-    17.9
-   ],
-   "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
-   }
-  },
-  {
    "id": "kapango_cantina",
    "at": [
-    51.0,
-    25.9
+    5.5,
+    113.8
    ],
    "venue": {
     "venue": "cantina",
@@ -186,21 +451,21 @@
    }
   },
   {
-   "id": "kapango_farmacia",
+   "id": "kapango_apartamentos",
    "at": [
-    62.0,
-    26.6
+    99.4,
+    106.3
    ],
    "venue": {
-    "venue": "farmacia",
-    "job": "farmaceutico"
+    "venue": "apartamentos",
+    "units": 4
    }
   },
   {
    "id": "kapango_administracao",
    "at": [
-    70.0,
-    27.1
+    109.2,
+    104.7
    ],
    "venue": {
     "venue": "administracao",
@@ -208,21 +473,21 @@
    }
   },
   {
-   "id": "kapango_discoteca",
+   "id": "kapango_esquadra",
    "at": [
-    80.0,
-    27.7
+    64.4,
+    81.2
    ],
    "venue": {
-    "venue": "discoteca",
-    "job": "barman"
+    "venue": "esquadra",
+    "job": "policia"
    }
   },
   {
    "id": "kapango_padaria",
    "at": [
-    99.0,
-    27.3
+    55.4,
+    129.4
    ],
    "venue": {
     "venue": "padaria",
@@ -231,32 +496,56 @@
    }
   },
   {
-   "id": "kapango_esquadra",
+   "id": "kapango_discoteca",
    "at": [
-    109.0,
-    27.2
+    143.5,
+    91.0
    ],
    "venue": {
-    "venue": "esquadra",
-    "job": "policia"
+    "venue": "discoteca",
+    "job": "barman"
    }
   },
   {
-   "id": "kapango_apartamentos",
+   "id": "kapango_farmacia",
    "at": [
-    119.0,
-    26.0
+    55.6,
+    59.0
    ],
    "venue": {
-    "venue": "apartamentos",
-    "units": 4
+    "venue": "farmacia",
+    "job": "farmaceutico"
    }
+  },
+  {
+   "id": "kapango_casa7",
+   "at": [
+    99.2,
+    144.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 7"
+  },
+  {
+   "id": "kapango_casa6",
+   "at": [
+    66.1,
+    100.6
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 6"
   },
   {
    "id": "kapango_casa1",
    "at": [
-    129.0,
-    27.5
+    140.1,
+    22.6
    ],
    "venue": {
     "venue": "casa",
@@ -265,10 +554,22 @@
    "label": "Casa 1"
   },
   {
+   "id": "kapango_casa4",
+   "at": [
+    2.6,
+    54.4
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
    "id": "kapango_casa2",
    "at": [
-    2.0,
-    73.6
+    94.9,
+    81.3
    ],
    "venue": {
     "venue": "casa",
@@ -279,8 +580,8 @@
   {
    "id": "kapango_casa3",
    "at": [
-    12.0,
-    74.1
+    47.7,
+    36.6
    ],
    "venue": {
     "venue": "casa",
@@ -289,750 +590,367 @@
    "label": "Casa 3"
   },
   {
-   "id": "kapango_casa4",
-   "at": [
-    23.0,
-    73.2
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 4"
-  },
-  {
    "id": "kapango_casa5",
    "at": [
-    141.0,
-    27.0
+    48.0,
+    5.0
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
    "label": "Casa 5"
-  },
-  {
-   "id": "kapango_casa6",
-   "at": [
-    33.0,
-    72.7
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 6"
-  },
-  {
-   "id": "kapango_casa7",
-   "at": [
-    51.0,
-    72.1
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 7"
   }
  ],
  "props": [
   [
-   "f_candeeiro",
+   "kapango_pole3",
    [
-    6,
-    32.5
+    130.3,
+    143.8
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree13",
    [
-    12.5,
-    41.4
+    117.6,
+    142.5
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole1",
    [
-    19,
-    32.5
+    131.9,
+    127.9
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_tree1",
    [
-    25.5,
-    41.4
+    119.2,
+    126.6
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole2",
    [
-    32,
-    32.5
+    134.1,
+    108.4
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_tree11",
    [
-    38.5,
-    41.4
+    121.5,
+    106.3
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole3",
    [
-    45,
-    32.5
+    136.6,
+    92.6
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_pole2",
    [
-    51.5,
-    41.4
+    137.7,
+    66.3
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole3",
    [
-    58,
-    32.5
+    137.8,
+    50.3
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree7",
    [
-    64.5,
-    41.4
+    125.0,
+    50.2
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole2",
    [
-    71,
-    32.5
+    137.9,
+    34.3
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree2",
    [
-    77.5,
-    41.4
+    125.1,
+    34.2
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_pole3",
    [
-    90.5,
-    41.4
+    138.0,
+    18.3
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole2",
    [
-    97,
-    32.5
+    138.1,
+    2.3
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree13",
    [
-    103.5,
-    41.4
+    52.4,
+    109.1
    ]
   ],
   [
-   "f_candeeiro",
+   "kapango_pole1",
    [
-    110,
-    32.5
+    60.6,
+    127.1
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_tree9",
    [
-    116.5,
-    41.4
+    68.0,
+    116.7
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole2",
    [
-    129.5,
-    41.4
+    26.4,
+    70.5
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_pole1",
    [
-    142.5,
-    41.4
+    34.3,
+    86.3
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_tree10",
    [
-    12.5,
-    86.4
+    46.3,
+    81.8
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_pole2",
    [
-    25.5,
-    86.4
+    37.5,
+    97.0
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole1",
    [
-    32,
-    78.5
+    40.0,
+    112.8
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree10",
    [
-    38.5,
-    86.4
+    52.6,
+    110.9
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole2",
    [
-    45,
-    78.5
+    39.7,
+    117.1
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole2",
    [
-    51.5,
-    86.4
+    38.4,
+    132.5
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole3",
    [
-    58,
-    78.5
+    39.2,
+    27.4
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole1",
    [
-    64.5,
-    86.4
+    53.6,
+    21.0
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole2",
    [
-    71,
-    78.5
+    68.6,
+    15.3
    ]
   ],
   [
-   "f_jacaranda2",
+   "kapango_tree3",
    [
-    77.5,
-    86.4
+    64.0,
+    3.4
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole2",
    [
-    84,
-    78.5
+    73.9,
+    13.6
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole3",
    [
-    90.5,
-    86.4
+    89.2,
+    9.1
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole1",
    [
-    97,
-    78.5
+    97.1,
+    7.2
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_pole3",
    [
-    103.5,
-    86.4
+    112.8,
+    4.0
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole2",
    [
-    110,
-    78.5
+    49.5,
+    150.8
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_pole3",
    [
-    116.5,
-    86.4
+    50.9,
+    150.8
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole1",
    [
-    123,
-    78.5
+    63.2,
+    144.7
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole1",
    [
-    129.5,
-    86.4
+    78.5,
+    140.1
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole3",
    [
-    136,
-    78.5
+    86.3,
+    136.2
    ]
   ],
   [
-   "f_eucalipto",
+   "kapango_pole2",
    [
-    142.5,
-    86.4
+    99.7,
+    127.4
    ]
   ],
   [
-   "f_poste",
+   "kapango_tree3",
    [
-    6,
-    112.5
+    92.6,
+    116.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "kapango_pole2",
    [
-    12.5,
-    120.4
+    109.0,
+    122.4
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole1",
    [
-    19,
-    112.5
+    138.5,
+    88.3
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_pole1",
    [
-    25.5,
-    120.4
+    150.9,
+    78.3
    ]
   ],
   [
-   "f_poste",
+   "kapango_pole1",
    [
-    32,
-    112.5
+    156.2,
+    73.9
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_tree1",
    [
-    38.5,
-    120.4
+    147.9,
+    64.1
    ]
   ],
   [
-   "f_poste",
+   "kapango_vehicle7",
    [
-    45,
-    112.5
+    52.2,
+    145.8
    ]
   ],
   [
-   "f_palmeira",
+   "kapango_vehicle3",
    [
-    51.5,
-    120.4
+    32.9,
+    74.8
    ]
   ],
   [
-   "f_poste",
+   "kapango_vehicle2",
    [
-    58,
-    112.5
+    51.6,
+    118.6
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_vehicle7",
    [
-    64.5,
-    120.4
+    69.3,
+    128.8
    ]
   ],
   [
-   "f_poste",
+   "kapango_stall3",
    [
-    71,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    77.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    90.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    103.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    116.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    129.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    142.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    120
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
-   ]
-  ],
-  [
-   "f_hilux",
-   [
-    30,
-    83.0
-   ]
-  ],
-  [
-   "f_carro2",
-   [
-    128,
-    83.0
-   ]
-  ],
-  [
-   "f_banca",
-   [
-    22,
-    42.2
+    58.3,
+    89.3
    ],
    {
     "kind": "work",
@@ -1040,217 +958,643 @@
    }
   ],
   [
-   "f_banca3",
+   "kapango_stall3",
    [
-    30,
-    42.2
-   ]
-  ],
-  [
-   "f_banca_roupa",
-   [
-    34,
-    42.2
-   ]
-  ],
-  [
-   "f_contentor",
-   [
-    8,
-    42.2
-   ]
-  ],
-  [
-   "f_contentor2",
-   [
-    140,
-    87.2
-   ]
-  ],
-  [
-   "f_galinha",
-   [
-    12,
+    54.7,
     88.5
    ]
   ],
   [
-   "f_galinha2",
+   "kapango_stall3",
    [
-    14,
-    89.4
+    56.2,
+    83.7
    ]
   ],
   [
-   "f_cabra",
+   "kapango_stall4",
    [
-    20,
-    90.0
+    64.9,
+    89.1
    ]
   ],
   [
-   "f_bidao",
+   "kapango_stall4",
    [
-    46,
-    88.0
+    47.1,
+    85.8
    ]
   ],
   [
-   "f_carvao",
+   "kapango_stall5",
    [
-    60,
-    88.0
+    51.8,
+    88.5
    ]
   ],
   [
-   "f_blocos",
+   "kapango_small41",
    [
-    138,
-    106
+    144.4,
+    49.2
    ]
   ],
   [
-   "f_bicicleta",
+   "kapango_small31",
    [
-    88,
-    88.0
+    87.7,
+    63.9
    ]
   ],
   [
-   "f_tanque",
+   "kapango_small35",
    [
-    140,
-    64
+    105.9,
+    81.9
    ]
   ],
   [
-   "f_carroca",
+   "kapango_small30",
    [
-    70,
-    88.0
+    18.4,
+    141.5
    ]
   ],
   [
-   "f_mesa_plastico2",
+   "kapango_small35",
    [
-    108,
-    88.4
+    144.7,
+    118.0
    ]
   ],
   [
-   "f_abacateiro",
+   "kapango_small14",
    [
-    134.8,
-    55.0
+    81.6,
+    24.7
    ]
   ],
   [
-   "f_eucalipto2",
+   "kapango_small11",
    [
-    70.0,
-    85.7
+    7.1,
+    155.7
    ]
   ],
   [
-   "f_abacateiro",
+   "kapango_small35",
    [
-    124.3,
+    16.9,
+    24.7
+   ]
+  ],
+  [
+   "kapango_small6",
+   [
+    93.2,
+    30.3
+   ]
+  ],
+  [
+   "kapango_small37",
+   [
+    28.0,
+    5.8
+   ]
+  ],
+  [
+   "kapango_small3",
+   [
+    16.0,
+    145.7
+   ]
+  ],
+  [
+   "kapango_small17",
+   [
+    70.8,
+    89.2
+   ]
+  ],
+  [
+   "kapango_small2",
+   [
+    141.1,
+    113.8
+   ]
+  ],
+  [
+   "kapango_small42",
+   [
+    62.1,
+    4.9
+   ]
+  ],
+  [
+   "kapango_small48",
+   [
+    150.1,
+    110.6
+   ]
+  ],
+  [
+   "kapango_small7",
+   [
+    85.4,
+    9.4
+   ]
+  ],
+  [
+   "kapango_small48",
+   [
+    146.5,
+    109.4
+   ]
+  ],
+  [
+   "kapango_small38",
+   [
+    138.0,
+    147.1
+   ]
+  ],
+  [
+   "kapango_small33",
+   [
+    36.4,
+    60.3
+   ]
+  ],
+  [
+   "kapango_small2",
+   [
+    133.7,
+    150.9
+   ]
+  ],
+  [
+   "kapango_small27",
+   [
+    38.6,
+    135.1
+   ]
+  ],
+  [
+   "kapango_small17",
+   [
+    80.4,
+    67.6
+   ]
+  ],
+  [
+   "kapango_small31",
+   [
+    132.7,
+    108.7
+   ]
+  ],
+  [
+   "kapango_small43",
+   [
+    114.7,
+    9.2
+   ]
+  ],
+  [
+   "kapango_small29",
+   [
+    13.0,
+    112.0
+   ]
+  ],
+  [
+   "kapango_small10",
+   [
+    64.3,
+    110.4
+   ]
+  ],
+  [
+   "kapango_small35",
+   [
+    112.3,
+    64.6
+   ]
+  ],
+  [
+   "kapango_small12",
+   [
+    21.1,
+    7.6
+   ]
+  ],
+  [
+   "kapango_small25",
+   [
+    94.8,
+    39.6
+   ]
+  ],
+  [
+   "kapango_small46",
+   [
+    153.7,
+    93.0
+   ]
+  ],
+  [
+   "kapango_small43",
+   [
+    88.1,
+    111.0
+   ]
+  ],
+  [
+   "kapango_small23",
+   [
+    134.3,
+    122.9
+   ]
+  ],
+  [
+   "kapango_small8",
+   [
+    61.7,
+    31.0
+   ]
+  ],
+  [
+   "kapango_small35",
+   [
+    112.3,
+    67.6
+   ]
+  ],
+  [
+   "kapango_small43",
+   [
+    144.0,
+    40.1
+   ]
+  ],
+  [
+   "kapango_small11",
+   [
+    86.9,
+    22.0
+   ]
+  ],
+  [
+   "kapango_small10",
+   [
+    33.5,
+    80.7
+   ]
+  ],
+  [
+   "kapango_small2",
+   [
+    109.4,
+    32.8
+   ]
+  ],
+  [
+   "kapango_small40",
+   [
+    29.4,
+    59.1
+   ]
+  ],
+  [
+   "kapango_small40",
+   [
+    96.2,
+    41.8
+   ]
+  ],
+  [
+   "kapango_small19",
+   [
+    99.2,
+    68.7
+   ]
+  ],
+  [
+   "kapango_small42",
+   [
+    40.8,
+    118.9
+   ]
+  ],
+  [
+   "kapango_small12",
+   [
+    142.6,
+    92.4
+   ]
+  ],
+  [
+   "kapango_small10",
+   [
+    126.7,
     59.7
    ]
   ],
   [
-   "f_eucalipto2",
+   "kapango_tree1",
    [
-    99.8,
-    61.5
+    47.9,
+    51.9
    ]
   ],
   [
-   "f_palmeira2",
+   "kapango_tree1",
    [
-    106.7,
-    43.6
+    83.0,
+    80.7
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_tree10",
    [
-    116.6,
-    82.9
+    60.9,
+    84.1
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_tree2",
    [
-    60.1,
-    108.4
+    83.6,
+    150.7
    ]
   ],
   [
-   "f_eucalipto2",
+   "kapango_tree9",
    [
-    40.5,
-    48.4
+    99.5,
+    138.6
    ]
   ],
   [
-   "f_mangueira",
+   "kapango_tree7",
    [
-    71.0,
-    23.1
+    154.6,
+    121.5
    ]
   ],
   [
-   "f_mangueira",
+   "kapango_tree3",
    [
-    121.7,
-    44.0
+    75.8,
+    51.9
    ]
   ],
   [
-   "f_mangueira",
+   "kapango_tree6",
    [
-    43.2,
-    15.5
+    85.1,
+    64.2
    ]
   ],
   [
-   "f_jacaranda",
+   "kapango_tree13",
    [
-    71.3,
-    40.2
+    140.9,
+    60.0
    ]
   ],
   [
-   "f_abacateiro",
+   "kapango_tree5",
    [
-    101.1,
-    19.5
+    117.5,
+    154.7
    ]
   ],
   [
-   "f_eucalipto2",
+   "kapango_tree7",
    [
-    69.1,
-    118.9
+    148.8,
+    7.1
+   ]
+  ],
+  [
+   "kapango_tree5",
+   [
+    121.5,
+    104.2
+   ]
+  ],
+  [
+   "kapango_tree13",
+   [
+    37.9,
+    40.9
+   ]
+  ],
+  [
+   "kapango_tree10",
+   [
+    111.8,
+    125.2
+   ]
+  ],
+  [
+   "kapango_tree12",
+   [
+    29.4,
+    127.9
+   ]
+  ],
+  [
+   "kapango_tree9",
+   [
+    89.7,
+    70.8
+   ]
+  ],
+  [
+   "kapango_tree5",
+   [
+    27.9,
+    136.0
+   ]
+  ],
+  [
+   "kapango_tree10",
+   [
+    19.0,
+    111.8
+   ]
+  ],
+  [
+   "kapango_tree2",
+   [
+    135.7,
+    31.6
+   ]
+  ],
+  [
+   "kapango_tree2",
+   [
+    79.5,
+    15.9
+   ]
+  ],
+  [
+   "kapango_tree13",
+   [
+    85.7,
+    153.6
+   ]
+  ],
+  [
+   "kapango_tree5",
+   [
+    8.9,
+    79.2
+   ]
+  ],
+  [
+   "kapango_tree13",
+   [
+    144.6,
+    18.3
+   ]
+  ],
+  [
+   "kapango_tree11",
+   [
+    130.9,
+    135.7
+   ]
+  ],
+  [
+   "kapango_tree9",
+   [
+    62.4,
+    102.0
+   ]
+  ],
+  [
+   "kapango_tree5",
+   [
+    29.8,
+    44.5
+   ]
+  ],
+  [
+   "kapango_tree2",
+   [
+    107.2,
+    143.7
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Kapango",
    "at": [
-    46.5,
-    37.0
+    42.7,
+    92.2
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "aviacao",
+   "name": "Aviação",
+   "at": [
+    39.5,
+    156.2
+   ],
+   "arrive": [
+    42.3,
+    151.5
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "bairro_militar",
+   "name": "Bairro Militar",
    "at": [
-    72,
-    64
+    123.2,
+    156.0
+   ],
+   "arrive": [
+    123.7,
+    150.5
+   ]
+  },
+  {
+   "to": "benfica",
+   "name": "Benfica",
+   "at": [
+    132.2,
+    4.0
+   ],
+   "arrive": [
+    132.2,
+    9.5
+   ]
+  },
+  {
+   "to": "cidade_alta",
+   "name": "Cidade Alta",
+   "at": [
+    89.5,
+    2.9
+   ],
+   "arrive": [
+    84.2,
+    4.5
+   ]
+  },
+  {
+   "to": "cidade_baixa",
+   "name": "Cidade Baixa",
+   "at": [
+    88.9,
+    1.0
+   ],
+   "arrive": [
+    83.6,
+    2.6
+   ]
+  },
+  {
+   "to": "sao_joao",
+   "name": "São João",
+   "at": [
+    156.4,
+    66.0
+   ],
+   "arrive": [
+    152.2,
+    69.6
+   ]
+  },
+  {
+   "to": "sao_pedro",
+   "name": "São Pedro",
+   "at": [
+    125.2,
+    156.2
+   ],
+   "arrive": [
+    125.7,
+    150.7
+   ]
+  },
+  {
+   "to": "xipuli",
+   "name": "Xipuli",
+   "at": [
+    130.2,
+    4.0
+   ],
+   "arrive": [
+    130.2,
+    9.5
    ]
   }
  ]

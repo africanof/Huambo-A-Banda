@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "xipuli_escola",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_escola.png",
-   "name": "Escola Primária do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_escola.webp",
+   "name": "Escola Primária do Xipuli",
+   "venue": "escola"
   },
   "xipuli_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "xipuli_saude",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_saude.png",
-   "name": "Centro de Saúde do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_saude.webp",
+   "name": "Centro de Saúde do Xipuli",
+   "venue": "saude"
   },
   "xipuli_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "xipuli_igreja",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_igreja.png",
-   "name": "Igreja Católica do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_igreja.webp",
+   "name": "Igreja Católica do Xipuli",
+   "venue": "igreja"
   },
   "xipuli_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "xipuli_mercado",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_mercado.png",
-   "name": "Mercado do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_mercado.webp",
+   "name": "Mercado do Xipuli",
+   "venue": "mercado"
   },
   "xipuli_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "xipuli_cantina",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_cantina.png",
-   "name": "Cantina do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_cantina.webp",
+   "name": "Cantina do Xipuli",
+   "venue": "cantina"
   },
   "xipuli_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "xipuli_farmacia",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_farmacia.png",
-   "name": "Farmácia Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_farmacia.webp",
+   "name": "Farmácia Xipuli",
+   "venue": "farmacia"
   },
   "xipuli_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "xipuli_administracao",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_administracao.png",
-   "name": "Administração do Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_administracao.webp",
+   "name": "Administração do Xipuli",
+   "venue": "administracao"
   },
   "xipuli_churrasqueira": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "xipuli_churrasqueira",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_churrasqueira.png",
-   "name": "Churrasqueira Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_churrasqueira.webp",
+   "name": "Churrasqueira Xipuli",
+   "venue": "churrasqueira"
   },
   "xipuli_discoteca": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "xipuli_discoteca",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_discoteca.png",
-   "name": "Discoteca Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_discoteca.webp",
+   "name": "Discoteca Xipuli",
+   "venue": "discoteca"
   },
   "xipuli_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "xipuli_apartamentos",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_apartamentos.png",
-   "name": "Prédio Xipuli"
+   "path": "res://assets/kits/kit_xipuli/xipuli_apartamentos.webp",
+   "name": "Prédio Xipuli",
+   "venue": "apartamentos"
   },
   "xipuli_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "xipuli_casa1",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "xipuli_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "xipuli_casa2",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "xipuli_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "xipuli_casa3",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "xipuli_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "xipuli_casa4",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "xipuli_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "xipuli_casa5",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "xipuli_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "xipuli_casa6",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "xipuli_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "xipuli_casa7",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "xipuli_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "xipuli_casa8",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "xipuli_casa9": {
    "category": "building",
@@ -378,9 +396,1776 @@
    "scale": 1.6,
    "out": "xipuli_casa9",
    "kit": "kit_xipuli",
-   "path": "res://assets/kits/kit_xipuli/xipuli_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "xipuli_small1": {
+   "category": "prop",
+   "size": [
+    397,
+    250
+   ],
+   "anchor": [
+    216,
+    247
+   ],
+   "footprint": [
+    3.0,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small1.webp",
+   "kind": "small"
+  },
+  "xipuli_tree1": {
+   "category": "prop",
+   "size": [
+    304,
+    238
+   ],
+   "anchor": [
+    152,
+    236
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree1.webp",
+   "kind": "tree"
+  },
+  "xipuli_small2": {
+   "category": "prop",
+   "size": [
+    173,
+    268
+   ],
+   "anchor": [
+    81,
+    267
+   ],
+   "footprint": [
+    1.1,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small2.webp",
+   "kind": "small"
+  },
+  "xipuli_tree2": {
+   "category": "prop",
+   "size": [
+    208,
+    247
+   ],
+   "anchor": [
+    103,
+    246
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree2.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree3": {
+   "category": "prop",
+   "size": [
+    335,
+    251
+   ],
+   "anchor": [
+    166,
+    249
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree3.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree4": {
+   "category": "prop",
+   "size": [
+    237,
+    225
+   ],
+   "anchor": [
+    118,
+    223
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree4.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree5": {
+   "category": "prop",
+   "size": [
+    219,
+    219
+   ],
+   "anchor": [
+    110,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree5.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree6": {
+   "category": "prop",
+   "size": [
+    241,
+    228
+   ],
+   "anchor": [
+    120,
+    227
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree6.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree7": {
+   "category": "prop",
+   "size": [
+    221,
+    210
+   ],
+   "anchor": [
+    110,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree7",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree7.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree8": {
+   "category": "prop",
+   "size": [
+    207,
+    208
+   ],
+   "anchor": [
+    103,
+    206
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree8",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree8.webp",
+   "kind": "tree"
+  },
+  "xipuli_tree9": {
+   "category": "prop",
+   "size": [
+    191,
+    213
+   ],
+   "anchor": [
+    95,
+    211
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree9",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree9.webp",
+   "kind": "tree"
+  },
+  "xipuli_lamp1": {
+   "category": "prop",
+   "size": [
+    78,
+    236
+   ],
+   "anchor": [
+    38,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_lamp2": {
+   "category": "prop",
+   "size": [
+    77,
+    221
+   ],
+   "anchor": [
+    38,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_lamp3": {
+   "category": "prop",
+   "size": [
+    49,
+    225
+   ],
+   "anchor": [
+    24,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_lamp4": {
+   "category": "prop",
+   "size": [
+    47,
+    195
+   ],
+   "anchor": [
+    23,
+    194
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_lamp5": {
+   "category": "prop",
+   "size": [
+    69,
+    217
+   ],
+   "anchor": [
+    34,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_lamp6": {
+   "category": "prop",
+   "size": [
+    106,
+    204
+   ],
+   "anchor": [
+    53,
+    203
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_lamp6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_lamp6.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "xipuli_pole1": {
+   "category": "prop",
+   "size": [
+    93,
+    239
+   ],
+   "anchor": [
+    46,
+    237
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_pole1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_pole1.webp",
+   "kind": "pole"
+  },
+  "xipuli_pole2": {
+   "category": "prop",
+   "size": [
+    108,
+    253
+   ],
+   "anchor": [
+    53,
+    251
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_pole2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_pole2.webp",
+   "kind": "pole"
+  },
+  "xipuli_pole3": {
+   "category": "prop",
+   "size": [
+    97,
+    227
+   ],
+   "anchor": [
+    48,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_pole3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_pole3.webp",
+   "kind": "pole"
+  },
+  "xipuli_pole4": {
+   "category": "prop",
+   "size": [
+    88,
+    224
+   ],
+   "anchor": [
+    43,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_pole4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_pole4.webp",
+   "kind": "pole"
+  },
+  "xipuli_vehicle1": {
+   "category": "prop",
+   "size": [
+    289,
+    172
+   ],
+   "anchor": [
+    123,
+    171
+   ],
+   "footprint": [
+    1.7,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle2": {
+   "category": "prop",
+   "size": [
+    300,
+    177
+   ],
+   "anchor": [
+    121,
+    175
+   ],
+   "footprint": [
+    1.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle3": {
+   "category": "prop",
+   "size": [
+    143,
+    123
+   ],
+   "anchor": [
+    17,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle4": {
+   "category": "prop",
+   "size": [
+    144,
+    121
+   ],
+   "anchor": [
+    17,
+    120
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle5": {
+   "category": "prop",
+   "size": [
+    135,
+    123
+   ],
+   "anchor": [
+    16,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle6": {
+   "category": "prop",
+   "size": [
+    143,
+    117
+   ],
+   "anchor": [
+    17,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle7": {
+   "category": "prop",
+   "size": [
+    243,
+    130
+   ],
+   "anchor": [
+    107,
+    129
+   ],
+   "footprint": [
+    1.4,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle7",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle8": {
+   "category": "prop",
+   "size": [
+    228,
+    127
+   ],
+   "anchor": [
+    102,
+    125
+   ],
+   "footprint": [
+    1.4,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle8",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_vehicle9": {
+   "category": "prop",
+   "size": [
+    252,
+    154
+   ],
+   "anchor": [
+    113,
+    153
+   ],
+   "footprint": [
+    1.5,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_vehicle9",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "xipuli_stall1": {
+   "category": "prop",
+   "size": [
+    185,
+    161
+   ],
+   "anchor": [
+    30,
+    159
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall1.webp",
+   "kind": "stall"
+  },
+  "xipuli_stall2": {
+   "category": "prop",
+   "size": [
+    195,
+    155
+   ],
+   "anchor": [
+    28,
+    153
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall2.webp",
+   "kind": "stall"
+  },
+  "xipuli_stall3": {
+   "category": "prop",
+   "size": [
+    220,
+    170
+   ],
+   "anchor": [
+    155,
+    168
+   ],
+   "footprint": [
+    2.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall3.webp",
+   "kind": "stall"
+  },
+  "xipuli_stall4": {
+   "category": "prop",
+   "size": [
+    208,
+    154
+   ],
+   "anchor": [
+    140,
+    152
+   ],
+   "footprint": [
+    1.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall4.webp",
+   "kind": "stall"
+  },
+  "xipuli_stall5": {
+   "category": "prop",
+   "size": [
+    216,
+    180
+   ],
+   "anchor": [
+    140,
+    179
+   ],
+   "footprint": [
+    1.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall5.webp",
+   "kind": "stall"
+  },
+  "xipuli_stall6": {
+   "category": "prop",
+   "size": [
+    152,
+    124
+   ],
+   "anchor": [
+    87,
+    122
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_stall6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_stall6.webp",
+   "kind": "stall"
+  },
+  "xipuli_small3": {
+   "category": "prop",
+   "size": [
+    139,
+    124
+   ],
+   "anchor": [
+    75,
+    122
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small3.webp",
+   "kind": "small"
+  },
+  "xipuli_small4": {
+   "category": "prop",
+   "size": [
+    125,
+    124
+   ],
+   "anchor": [
+    68,
+    122
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small4.webp",
+   "kind": "small"
+  },
+  "xipuli_small5": {
+   "category": "prop",
+   "size": [
+    92,
+    126
+   ],
+   "anchor": [
+    48,
+    123
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small5.webp",
+   "kind": "small"
+  },
+  "xipuli_small6": {
+   "category": "prop",
+   "size": [
+    154,
+    84
+   ],
+   "anchor": [
+    36,
+    82
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small6.webp",
+   "kind": "small"
+  },
+  "xipuli_small7": {
+   "category": "prop",
+   "size": [
+    147,
+    114
+   ],
+   "anchor": [
+    43,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small7",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small7.webp",
+   "kind": "small"
+  },
+  "xipuli_small8": {
+   "category": "prop",
+   "size": [
+    151,
+    115
+   ],
+   "anchor": [
+    41,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small8",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small8.webp",
+   "kind": "small"
+  },
+  "xipuli_tree10": {
+   "category": "prop",
+   "size": [
+    136,
+    114
+   ],
+   "anchor": [
+    67,
+    112
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree10",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree10.webp",
+   "kind": "tree"
+  },
+  "xipuli_small9": {
+   "category": "prop",
+   "size": [
+    103,
+    142
+   ],
+   "anchor": [
+    49,
+    140
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small9",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small9.webp",
+   "kind": "small"
+  },
+  "xipuli_small10": {
+   "category": "prop",
+   "size": [
+    115,
+    142
+   ],
+   "anchor": [
+    59,
+    140
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small10",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small10.webp",
+   "kind": "small"
+  },
+  "xipuli_small11": {
+   "category": "prop",
+   "size": [
+    109,
+    143
+   ],
+   "anchor": [
+    56,
+    141
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small11",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small11.webp",
+   "kind": "small"
+  },
+  "xipuli_small12": {
+   "category": "prop",
+   "size": [
+    132,
+    104
+   ],
+   "anchor": [
+    61,
+    102
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small12",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small12.webp",
+   "kind": "small"
+  },
+  "xipuli_small13": {
+   "category": "prop",
+   "size": [
+    139,
+    106
+   ],
+   "anchor": [
+    63,
+    104
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small13",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small13.webp",
+   "kind": "small"
+  },
+  "xipuli_small14": {
+   "category": "prop",
+   "size": [
+    223,
+    152
+   ],
+   "anchor": [
+    173,
+    150
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small14",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small14.webp",
+   "kind": "small"
+  },
+  "xipuli_small15": {
+   "category": "prop",
+   "size": [
+    244,
+    145
+   ],
+   "anchor": [
+    196,
+    142
+   ],
+   "footprint": [
+    2.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small15",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small15.webp",
+   "kind": "small"
+  },
+  "xipuli_small16": {
+   "category": "prop",
+   "size": [
+    96,
+    123
+   ],
+   "anchor": [
+    44,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small16",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small16.webp",
+   "kind": "small"
+  },
+  "xipuli_small17": {
+   "category": "prop",
+   "size": [
+    104,
+    120
+   ],
+   "anchor": [
+    39,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small17",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small17.webp",
+   "kind": "small"
+  },
+  "xipuli_tree11": {
+   "category": "prop",
+   "size": [
+    101,
+    128
+   ],
+   "anchor": [
+    50,
+    127
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_tree11",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_tree11.webp",
+   "kind": "tree"
+  },
+  "xipuli_small18": {
+   "category": "prop",
+   "size": [
+    81,
+    129
+   ],
+   "anchor": [
+    30,
+    128
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small18",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small18.webp",
+   "kind": "small"
+  },
+  "xipuli_small19": {
+   "category": "prop",
+   "size": [
+    177,
+    113
+   ],
+   "anchor": [
+    24,
+    111
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small19",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small19.webp",
+   "kind": "small"
+  },
+  "xipuli_small20": {
+   "category": "prop",
+   "size": [
+    161,
+    106
+   ],
+   "anchor": [
+    24,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small20",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small20.webp",
+   "kind": "small"
+  },
+  "xipuli_small21": {
+   "category": "prop",
+   "size": [
+    174,
+    108
+   ],
+   "anchor": [
+    27,
+    107
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small21",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small21.webp",
+   "kind": "small"
+  },
+  "xipuli_small22": {
+   "category": "prop",
+   "size": [
+    196,
+    108
+   ],
+   "anchor": [
+    97,
+    106
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small22",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small22.webp",
+   "kind": "small"
+  },
+  "xipuli_small23": {
+   "category": "prop",
+   "size": [
+    162,
+    109
+   ],
+   "anchor": [
+    80,
+    107
+   ],
+   "footprint": [
+    1.1,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small23",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small23.webp",
+   "kind": "small"
+  },
+  "xipuli_small24": {
+   "category": "prop",
+   "size": [
+    182,
+    111
+   ],
+   "anchor": [
+    83,
+    109
+   ],
+   "footprint": [
+    1.1,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small24",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small24.webp",
+   "kind": "small"
+  },
+  "xipuli_small25": {
+   "category": "prop",
+   "size": [
+    157,
+    111
+   ],
+   "anchor": [
+    77,
+    109
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small25",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small25.webp",
+   "kind": "small"
+  },
+  "xipuli_small26": {
+   "category": "prop",
+   "size": [
+    179,
+    102
+   ],
+   "anchor": [
+    48,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small26",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small26.webp",
+   "kind": "small"
+  },
+  "xipuli_small27": {
+   "category": "prop",
+   "size": [
+    181,
+    102
+   ],
+   "anchor": [
+    47,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small27",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small27.webp",
+   "kind": "small"
+  },
+  "xipuli_small28": {
+   "category": "prop",
+   "size": [
+    84,
+    93
+   ],
+   "anchor": [
+    37,
+    91
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small28",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small28.webp",
+   "kind": "small"
+  },
+  "xipuli_small29": {
+   "category": "prop",
+   "size": [
+    68,
+    81
+   ],
+   "anchor": [
+    27,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small29",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small29.webp",
+   "kind": "small"
+  },
+  "xipuli_small30": {
+   "category": "prop",
+   "size": [
+    60,
+    68
+   ],
+   "anchor": [
+    24,
+    66
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small30",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small30.webp",
+   "kind": "small"
+  },
+  "xipuli_small31": {
+   "category": "prop",
+   "size": [
+    105,
+    112
+   ],
+   "anchor": [
+    33,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small31",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small31.webp",
+   "kind": "small"
+  },
+  "xipuli_small32": {
+   "category": "prop",
+   "size": [
+    84,
+    91
+   ],
+   "anchor": [
+    30,
+    89
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small32",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small32.webp",
+   "kind": "small"
+  },
+  "xipuli_small33": {
+   "category": "prop",
+   "size": [
+    86,
+    90
+   ],
+   "anchor": [
+    32,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small33",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small33.webp",
+   "kind": "small"
+  },
+  "xipuli_small34": {
+   "category": "prop",
+   "size": [
+    128,
+    110
+   ],
+   "anchor": [
+    53,
+    108
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small34",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small34.webp",
+   "kind": "small"
+  },
+  "xipuli_small35": {
+   "category": "prop",
+   "size": [
+    117,
+    106
+   ],
+   "anchor": [
+    46,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small35",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small35.webp",
+   "kind": "small"
+  },
+  "xipuli_small36": {
+   "category": "prop",
+   "size": [
+    134,
+    137
+   ],
+   "anchor": [
+    62,
+    135
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small36",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small36.webp",
+   "kind": "small"
+  },
+  "xipuli_small37": {
+   "category": "prop",
+   "size": [
+    155,
+    138
+   ],
+   "anchor": [
+    67,
+    136
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small37",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small37.webp",
+   "kind": "small"
+  },
+  "xipuli_small38": {
+   "category": "prop",
+   "size": [
+    87,
+    164
+   ],
+   "anchor": [
+    9,
+    161
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small38",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small38.webp",
+   "kind": "small"
+  },
+  "xipuli_small39": {
+   "category": "prop",
+   "size": [
+    88,
+    165
+   ],
+   "anchor": [
+    8,
+    163
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small39",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small39.webp",
+   "kind": "small"
+  },
+  "xipuli_small40": {
+   "category": "prop",
+   "size": [
+    206,
+    176
+   ],
+   "anchor": [
+    125,
+    174
+   ],
+   "footprint": [
+    1.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small40",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small40.webp",
+   "kind": "small"
+  },
+  "xipuli_small41": {
+   "category": "prop",
+   "size": [
+    197,
+    175
+   ],
+   "anchor": [
+    119,
+    173
+   ],
+   "footprint": [
+    1.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small41",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small41.webp",
+   "kind": "small"
+  },
+  "xipuli_small42": {
+   "category": "prop",
+   "size": [
+    202,
+    175
+   ],
+   "anchor": [
+    122,
+    174
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small42",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small42.webp",
+   "kind": "small"
+  },
+  "xipuli_small43": {
+   "category": "prop",
+   "size": [
+    141,
+    147
+   ],
+   "anchor": [
+    60,
+    146
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small43",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small43.webp",
+   "kind": "small"
+  },
+  "xipuli_small44": {
+   "category": "prop",
+   "size": [
+    138,
+    144
+   ],
+   "anchor": [
+    59,
+    143
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small44",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small44.webp",
+   "kind": "small"
+  },
+  "xipuli_small45": {
+   "category": "prop",
+   "size": [
+    195,
+    163
+   ],
+   "anchor": [
+    112,
+    162
+   ],
+   "footprint": [
+    1.5,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small45",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small45.webp",
+   "kind": "small"
+  },
+  "xipuli_small46": {
+   "category": "prop",
+   "size": [
+    255,
+    151
+   ],
+   "anchor": [
+    46,
+    147
+   ],
+   "footprint": [
+    0.6,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small46",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small46.webp",
+   "kind": "small"
+  },
+  "xipuli_small47": {
+   "category": "prop",
+   "size": [
+    248,
+    146
+   ],
+   "anchor": [
+    43,
+    139
+   ],
+   "footprint": [
+    0.6,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small47",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small47.webp",
+   "kind": "small"
+  },
+  "xipuli_small48": {
+   "category": "prop",
+   "size": [
+    77,
+    119
+   ],
+   "anchor": [
+    33,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small48",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small48.webp",
+   "kind": "small"
+  },
+  "xipuli_small49": {
+   "category": "prop",
+   "size": [
+    76,
+    118
+   ],
+   "anchor": [
+    22,
+    116
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small49",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small49.webp",
+   "kind": "small"
+  },
+  "xipuli_small50": {
+   "category": "prop",
+   "size": [
+    277,
+    153
+   ],
+   "anchor": [
+    215,
+    151
+   ],
+   "footprint": [
+    2.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small50",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small50.webp",
+   "kind": "small"
+  },
+  "xipuli_small51": {
+   "category": "prop",
+   "size": [
+    560,
+    150
+   ],
+   "anchor": [
+    368,
+    148
+   ],
+   "footprint": [
+    3.0,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small51",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small51.webp",
+   "kind": "small"
+  },
+  "xipuli_small52": {
+   "category": "prop",
+   "size": [
+    531,
+    164
+   ],
+   "anchor": [
+    478,
+    162
+   ],
+   "footprint": [
+    3.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_small52",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_small52.webp",
+   "kind": "small"
   }
  },
- "version": "e17440998950"
+ "version": "088bfc7d5b93"
 }

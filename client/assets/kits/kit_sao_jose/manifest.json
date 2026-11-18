@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "sao_jose_escola",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola.png",
-   "name": "Escola Primária de São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola.webp",
+   "name": "Escola Primária de São José",
+   "venue": "escola"
   },
   "sao_jose_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "sao_jose_saude",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_saude.png",
-   "name": "Centro de Saúde de São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_saude.webp",
+   "name": "Centro de Saúde de São José",
+   "venue": "saude"
   },
   "sao_jose_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "sao_jose_igreja",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_igreja.png",
-   "name": "Igreja de São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_igreja.webp",
+   "name": "Igreja de São José",
+   "venue": "igreja"
   },
   "sao_jose_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "sao_jose_mercado",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_mercado.png",
-   "name": "Mercado de São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_mercado.webp",
+   "name": "Mercado de São José",
+   "venue": "mercado"
   },
   "sao_jose_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "sao_jose_cantina",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_cantina.png",
-   "name": "Cantina São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_cantina.webp",
+   "name": "Cantina São José",
+   "venue": "cantina"
   },
   "sao_jose_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "sao_jose_farmacia",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_farmacia.png",
-   "name": "Farmácia São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_farmacia.webp",
+   "name": "Farmácia São José",
+   "venue": "farmacia"
   },
   "sao_jose_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "sao_jose_administracao",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_administracao.png",
-   "name": "Administração de São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_administracao.webp",
+   "name": "Administração de São José",
+   "venue": "administracao"
   },
   "sao_jose_escola_7": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "sao_jose_escola_7",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola_7.png",
-   "name": "Complexo Escolar São José de Cluny"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola_7.webp",
+   "name": "Complexo Escolar São José de Cluny",
+   "venue": "escola"
   },
   "sao_jose_padaria": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "sao_jose_padaria",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_padaria.png",
-   "name": "Padaria São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_padaria.webp",
+   "name": "Padaria São José",
+   "venue": "padaria"
   },
   "sao_jose_banco": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "sao_jose_banco",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_banco.png",
-   "name": "Banco BFA São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_banco.webp",
+   "name": "Banco BFA São José",
+   "venue": "banco"
   },
   "sao_jose_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "sao_jose_apartamentos",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_apartamentos.png",
-   "name": "Prédio São José"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_apartamentos.webp",
+   "name": "Prédio São José",
+   "venue": "apartamentos"
   },
   "sao_jose_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa1",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "sao_jose_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa2",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "sao_jose_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa3",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "sao_jose_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa4",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "sao_jose_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa5",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "sao_jose_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "sao_jose_casa6",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "sao_jose_casa7": {
    "category": "building",
@@ -358,9 +375,1552 @@
    "scale": 1.6,
    "out": "sao_jose_casa7",
    "kit": "kit_sao_jose",
-   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_jose_tree1": {
+   "category": "prop",
+   "size": [
+    252,
+    228
+   ],
+   "anchor": [
+    125,
+    226
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree1.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree2": {
+   "category": "prop",
+   "size": [
+    203,
+    200
+   ],
+   "anchor": [
+    100,
+    198
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree2.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree3": {
+   "category": "prop",
+   "size": [
+    189,
+    253
+   ],
+   "anchor": [
+    94,
+    251
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree3.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree4": {
+   "category": "prop",
+   "size": [
+    345,
+    226
+   ],
+   "anchor": [
+    171,
+    224
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree4.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree5": {
+   "category": "prop",
+   "size": [
+    194,
+    203
+   ],
+   "anchor": [
+    97,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree5.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree6": {
+   "category": "prop",
+   "size": [
+    204,
+    203
+   ],
+   "anchor": [
+    101,
+    200
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree6",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree6.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree7": {
+   "category": "prop",
+   "size": [
+    183,
+    235
+   ],
+   "anchor": [
+    91,
+    233
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree7",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree7.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree8": {
+   "category": "prop",
+   "size": [
+    133,
+    185
+   ],
+   "anchor": [
+    66,
+    184
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree8",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree8.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree9": {
+   "category": "prop",
+   "size": [
+    213,
+    173
+   ],
+   "anchor": [
+    106,
+    171
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree9",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree9.webp",
+   "kind": "tree"
+  },
+  "sao_jose_tree10": {
+   "category": "prop",
+   "size": [
+    192,
+    197
+   ],
+   "anchor": [
+    95,
+    195
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree10",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree10.webp",
+   "kind": "tree"
+  },
+  "sao_jose_pole1": {
+   "category": "prop",
+   "size": [
+    100,
+    228
+   ],
+   "anchor": [
+    49,
+    227
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole1.webp",
+   "kind": "pole"
+  },
+  "sao_jose_lamp1": {
+   "category": "prop",
+   "size": [
+    86,
+    218
+   ],
+   "anchor": [
+    42,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_lamp1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_jose_pole2": {
+   "category": "prop",
+   "size": [
+    51,
+    217
+   ],
+   "anchor": [
+    25,
+    215
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole2.webp",
+   "kind": "pole"
+  },
+  "sao_jose_small1": {
+   "category": "prop",
+   "size": [
+    137,
+    214
+   ],
+   "anchor": [
+    65,
+    212
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small1.webp",
+   "kind": "small"
+  },
+  "sao_jose_lamp2": {
+   "category": "prop",
+   "size": [
+    90,
+    213
+   ],
+   "anchor": [
+    44,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_lamp2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_jose_pole3": {
+   "category": "prop",
+   "size": [
+    96,
+    214
+   ],
+   "anchor": [
+    47,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole3.webp",
+   "kind": "pole"
+  },
+  "sao_jose_pole4": {
+   "category": "prop",
+   "size": [
+    93,
+    214
+   ],
+   "anchor": [
+    46,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole4.webp",
+   "kind": "pole"
+  },
+  "sao_jose_pole5": {
+   "category": "prop",
+   "size": [
+    96,
+    215
+   ],
+   "anchor": [
+    48,
+    213
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole5.webp",
+   "kind": "pole"
+  },
+  "sao_jose_pole6": {
+   "category": "prop",
+   "size": [
+    99,
+    216
+   ],
+   "anchor": [
+    49,
+    214
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_pole6",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_pole6.webp",
+   "kind": "pole"
+  },
+  "sao_jose_vehicle1": {
+   "category": "prop",
+   "size": [
+    326,
+    179
+   ],
+   "anchor": [
+    132,
+    178
+   ],
+   "footprint": [
+    1.8,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle2": {
+   "category": "prop",
+   "size": [
+    161,
+    124
+   ],
+   "anchor": [
+    19,
+    123
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle3": {
+   "category": "prop",
+   "size": [
+    149,
+    127
+   ],
+   "anchor": [
+    18,
+    126
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle4": {
+   "category": "prop",
+   "size": [
+    147,
+    122
+   ],
+   "anchor": [
+    16,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle5": {
+   "category": "prop",
+   "size": [
+    152,
+    123
+   ],
+   "anchor": [
+    17,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle6": {
+   "category": "prop",
+   "size": [
+    187,
+    107
+   ],
+   "anchor": [
+    92,
+    106
+   ],
+   "footprint": [
+    1.2,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle6",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle7": {
+   "category": "prop",
+   "size": [
+    197,
+    137
+   ],
+   "anchor": [
+    99,
+    135
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle7",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_vehicle8": {
+   "category": "prop",
+   "size": [
+    176,
+    113
+   ],
+   "anchor": [
+    89,
+    112
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_vehicle8",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "sao_jose_tree11": {
+   "category": "prop",
+   "size": [
+    171,
+    163
+   ],
+   "anchor": [
+    85,
+    161
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_tree11",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_tree11.webp",
+   "kind": "tree"
+  },
+  "sao_jose_stall1": {
+   "category": "prop",
+   "size": [
+    155,
+    157
+   ],
+   "anchor": [
+    73,
+    155
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_stall1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_stall1.webp",
+   "kind": "stall"
+  },
+  "sao_jose_stall2": {
+   "category": "prop",
+   "size": [
+    175,
+    152
+   ],
+   "anchor": [
+    120,
+    147
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_stall2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_stall2.webp",
+   "kind": "stall"
+  },
+  "sao_jose_stall3": {
+   "category": "prop",
+   "size": [
+    183,
+    155
+   ],
+   "anchor": [
+    91,
+    153
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_stall3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_stall3.webp",
+   "kind": "stall"
+  },
+  "sao_jose_stall4": {
+   "category": "prop",
+   "size": [
+    178,
+    159
+   ],
+   "anchor": [
+    79,
+    157
+   ],
+   "footprint": [
+    1.0,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_stall4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_stall4.webp",
+   "kind": "stall"
+  },
+  "sao_jose_stall5": {
+   "category": "prop",
+   "size": [
+    118,
+    116
+   ],
+   "anchor": [
+    72,
+    114
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_stall5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_stall5.webp",
+   "kind": "stall"
+  },
+  "sao_jose_small2": {
+   "category": "prop",
+   "size": [
+    77,
+    102
+   ],
+   "anchor": [
+    41,
+    100
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small2.webp",
+   "kind": "small"
+  },
+  "sao_jose_small3": {
+   "category": "prop",
+   "size": [
+    81,
+    107
+   ],
+   "anchor": [
+    42,
+    104
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small3.webp",
+   "kind": "small"
+  },
+  "sao_jose_small4": {
+   "category": "prop",
+   "size": [
+    71,
+    117
+   ],
+   "anchor": [
+    31,
+    116
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small4.webp",
+   "kind": "small"
+  },
+  "sao_jose_small5": {
+   "category": "prop",
+   "size": [
+    195,
+    100
+   ],
+   "anchor": [
+    133,
+    92
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small5.webp",
+   "kind": "small"
+  },
+  "sao_jose_small6": {
+   "category": "prop",
+   "size": [
+    224,
+    103
+   ],
+   "anchor": [
+    136,
+    101
+   ],
+   "footprint": [
+    1.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small6",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small6.webp",
+   "kind": "small"
+  },
+  "sao_jose_small7": {
+   "category": "prop",
+   "size": [
+    125,
+    139
+   ],
+   "anchor": [
+    60,
+    137
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small7",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small7.webp",
+   "kind": "small"
+  },
+  "sao_jose_small8": {
+   "category": "prop",
+   "size": [
+    128,
+    146
+   ],
+   "anchor": [
+    64,
+    144
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small8",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small8.webp",
+   "kind": "small"
+  },
+  "sao_jose_small9": {
+   "category": "prop",
+   "size": [
+    124,
+    137
+   ],
+   "anchor": [
+    62,
+    135
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small9",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small9.webp",
+   "kind": "small"
+  },
+  "sao_jose_small10": {
+   "category": "prop",
+   "size": [
+    305,
+    182
+   ],
+   "anchor": [
+    136,
+    181
+   ],
+   "footprint": [
+    1.9,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small10",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small10.webp",
+   "kind": "small"
+  },
+  "sao_jose_small11": {
+   "category": "prop",
+   "size": [
+    149,
+    120
+   ],
+   "anchor": [
+    101,
+    118
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small11",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small11.webp",
+   "kind": "small"
+  },
+  "sao_jose_small12": {
+   "category": "prop",
+   "size": [
+    141,
+    112
+   ],
+   "anchor": [
+    69,
+    110
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small12",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small12.webp",
+   "kind": "small"
+  },
+  "sao_jose_small13": {
+   "category": "prop",
+   "size": [
+    144,
+    113
+   ],
+   "anchor": [
+    69,
+    112
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small13",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small13.webp",
+   "kind": "small"
+  },
+  "sao_jose_small14": {
+   "category": "prop",
+   "size": [
+    127,
+    100
+   ],
+   "anchor": [
+    60,
+    99
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small14",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small14.webp",
+   "kind": "small"
+  },
+  "sao_jose_small15": {
+   "category": "prop",
+   "size": [
+    147,
+    103
+   ],
+   "anchor": [
+    76,
+    102
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small15",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small15.webp",
+   "kind": "small"
+  },
+  "sao_jose_small16": {
+   "category": "prop",
+   "size": [
+    132,
+    89
+   ],
+   "anchor": [
+    57,
+    87
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small16",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small16.webp",
+   "kind": "small"
+  },
+  "sao_jose_small17": {
+   "category": "prop",
+   "size": [
+    174,
+    112
+   ],
+   "anchor": [
+    120,
+    111
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small17",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small17.webp",
+   "kind": "small"
+  },
+  "sao_jose_small18": {
+   "category": "prop",
+   "size": [
+    158,
+    96
+   ],
+   "anchor": [
+    99,
+    94
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small18",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small18.webp",
+   "kind": "small"
+  },
+  "sao_jose_small19": {
+   "category": "prop",
+   "size": [
+    58,
+    70
+   ],
+   "anchor": [
+    26,
+    69
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small19",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small19.webp",
+   "kind": "small"
+  },
+  "sao_jose_small20": {
+   "category": "prop",
+   "size": [
+    63,
+    83
+   ],
+   "anchor": [
+    29,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small20",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small20.webp",
+   "kind": "small"
+  },
+  "sao_jose_small21": {
+   "category": "prop",
+   "size": [
+    63,
+    72
+   ],
+   "anchor": [
+    28,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small21",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small21.webp",
+   "kind": "small"
+  },
+  "sao_jose_small22": {
+   "category": "prop",
+   "size": [
+    96,
+    87
+   ],
+   "anchor": [
+    41,
+    84
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small22",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small22.webp",
+   "kind": "small"
+  },
+  "sao_jose_small23": {
+   "category": "prop",
+   "size": [
+    85,
+    83
+   ],
+   "anchor": [
+    37,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small23",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small23.webp",
+   "kind": "small"
+  },
+  "sao_jose_small24": {
+   "category": "prop",
+   "size": [
+    97,
+    91
+   ],
+   "anchor": [
+    49,
+    89
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small24",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small24.webp",
+   "kind": "small"
+  },
+  "sao_jose_small25": {
+   "category": "prop",
+   "size": [
+    133,
+    105
+   ],
+   "anchor": [
+    61,
+    103
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small25",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small25.webp",
+   "kind": "small"
+  },
+  "sao_jose_small26": {
+   "category": "prop",
+   "size": [
+    120,
+    103
+   ],
+   "anchor": [
+    50,
+    100
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small26",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small26.webp",
+   "kind": "small"
+  },
+  "sao_jose_small27": {
+   "category": "prop",
+   "size": [
+    336,
+    144
+   ],
+   "anchor": [
+    296,
+    143
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small27",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small27.webp",
+   "kind": "small"
+  },
+  "sao_jose_small28": {
+   "category": "prop",
+   "size": [
+    470,
+    157
+   ],
+   "anchor": [
+    88,
+    156
+   ],
+   "footprint": [
+    1.2,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small28",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small28.webp",
+   "kind": "small"
+  },
+  "sao_jose_small29": {
+   "category": "prop",
+   "size": [
+    151,
+    212
+   ],
+   "anchor": [
+    72,
+    211
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small29",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small29.webp",
+   "kind": "small"
+  },
+  "sao_jose_small30": {
+   "category": "prop",
+   "size": [
+    155,
+    211
+   ],
+   "anchor": [
+    74,
+    210
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small30",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small30.webp",
+   "kind": "small"
+  },
+  "sao_jose_small31": {
+   "category": "prop",
+   "size": [
+    104,
+    235
+   ],
+   "anchor": [
+    20,
+    233
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small31",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small31.webp",
+   "kind": "small"
+  },
+  "sao_jose_small32": {
+   "category": "prop",
+   "size": [
+    92,
+    233
+   ],
+   "anchor": [
+    20,
+    231
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small32",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small32.webp",
+   "kind": "small"
+  },
+  "sao_jose_small33": {
+   "category": "prop",
+   "size": [
+    154,
+    205
+   ],
+   "anchor": [
+    100,
+    204
+   ],
+   "footprint": [
+    1.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small33",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small33.webp",
+   "kind": "small"
+  },
+  "sao_jose_small34": {
+   "category": "prop",
+   "size": [
+    151,
+    206
+   ],
+   "anchor": [
+    93,
+    205
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small34",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small34.webp",
+   "kind": "small"
+  },
+  "sao_jose_small35": {
+   "category": "prop",
+   "size": [
+    156,
+    206
+   ],
+   "anchor": [
+    101,
+    205
+   ],
+   "footprint": [
+    1.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small35",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small35.webp",
+   "kind": "small"
+  },
+  "sao_jose_small36": {
+   "category": "prop",
+   "size": [
+    130,
+    165
+   ],
+   "anchor": [
+    48,
+    164
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small36",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small36.webp",
+   "kind": "small"
+  },
+  "sao_jose_small37": {
+   "category": "prop",
+   "size": [
+    143,
+    174
+   ],
+   "anchor": [
+    57,
+    173
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small37",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small37.webp",
+   "kind": "small"
+  },
+  "sao_jose_small38": {
+   "category": "prop",
+   "size": [
+    169,
+    179
+   ],
+   "anchor": [
+    96,
+    177
+   ],
+   "footprint": [
+    1.3,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small38",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small38.webp",
+   "kind": "small"
+  },
+  "sao_jose_small39": {
+   "category": "prop",
+   "size": [
+    203,
+    138
+   ],
+   "anchor": [
+    35,
+    135
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small39",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small39.webp",
+   "kind": "small"
+  },
+  "sao_jose_small40": {
+   "category": "prop",
+   "size": [
+    215,
+    141
+   ],
+   "anchor": [
+    45,
+    139
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small40",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small40.webp",
+   "kind": "small"
+  },
+  "sao_jose_small41": {
+   "category": "prop",
+   "size": [
+    82,
+    152
+   ],
+   "anchor": [
+    35,
+    151
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small41",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small41.webp",
+   "kind": "small"
+  },
+  "sao_jose_small42": {
+   "category": "prop",
+   "size": [
+    84,
+    155
+   ],
+   "anchor": [
+    31,
+    154
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small42",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small42.webp",
+   "kind": "small"
+  },
+  "sao_jose_small43": {
+   "category": "prop",
+   "size": [
+    353,
+    158
+   ],
+   "anchor": [
+    231,
+    156
+   ],
+   "footprint": [
+    3.0,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small43",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small43.webp",
+   "kind": "small"
+  },
+  "sao_jose_small44": {
+   "category": "prop",
+   "size": [
+    291,
+    162
+   ],
+   "anchor": [
+    249,
+    161
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small44",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small44.webp",
+   "kind": "small"
+  },
+  "sao_jose_small45": {
+   "category": "prop",
+   "size": [
+    435,
+    160
+   ],
+   "anchor": [
+    312,
+    159
+   ],
+   "footprint": [
+    3.0,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_small45",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_small45.webp",
+   "kind": "small"
   }
  },
- "version": "beff3e382b51"
+ "version": "c47821496ee8"
 }

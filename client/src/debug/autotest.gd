@@ -215,7 +215,10 @@ func _travel_loop() -> void:
 	for p: Dictionary in world.view.places:
 		if p.kind == "door" and str(p.get("venue", "")) == "saude":
 			door = Vector2(p.at[0], p.at[1])
-	await _walk(world, [Vector2(47.0, 39.4), Vector2(door.x, 39.4), door + Vector2(0, 0.2)])
+	world.request_move(door)
+	await _wait_for(func() -> Variant:
+		var me: Variant = Net.entities.get(Net.self_id)
+		return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(door) < 2.0 else null)
 	Net.action("enter")
 	await _wait_for(func() -> Variant: return true if _inside_venue() == "saude" else null)
 	print("[autotest] entrei no Centro de Saúde")
@@ -227,6 +230,44 @@ func _travel_loop() -> void:
 	Net.action("exit")
 	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
 	print("[autotest] viagem OK")
+	if AppConfig.has_flag("walk"):
+		await _walk_loop()
+
+
+## A pé: ir até à placa no fim da rua e passar para o bairro vizinho real.
+func _walk_loop() -> void:
+	var tree := get_tree()
+	var world: Node = tree.current_scene
+	var here := str(Net.welcome.district.id)
+	var portal: Dictionary = {}
+	for p: Dictionary in world.view.places:
+		if p.kind == "portal":
+			portal = p
+			break
+	var dest := str(portal.to)
+	world.request_move(Vector2(portal.at[0], portal.at[1]))
+	await _wait_for(func() -> Variant:
+		var me: Variant = Net.entities.get(Net.self_id)
+		return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(Vector2(portal.at[0], portal.at[1])) < 2.5 else null)
+	print("[autotest] cheguei à placa para %s" % portal.name)
+	await _shot("a_pe_placa")
+	var m0 := int(Net.me.money)
+	Net.action("travel", dest)
+	await _wait_for(func() -> Variant:
+		var s := tree.current_scene
+		return true if s and s.name == "BairroWorld" and s.local_char != null and str(Net.welcome.get("district", {}).get("id", "")) == dest and Net.entities.has(Net.self_id) and Net.me.has("money") else null)
+	world = tree.current_scene
+	# apareceu no fim da rua que vem do bairro de onde saiu
+	var back: Dictionary = {}
+	for p: Dictionary in world.view.places:
+		if p.kind == "portal" and str(p.to) == here:
+			back = p
+	var me_pos: Vector2 = (Net.entities[Net.self_id].pos as Vector2) / 100.0
+	var d := me_pos.distance_to(Vector2(back.at[0], back.at[1])) if not back.is_empty() else 999.0
+	print("[autotest] a pé até %s: dinheiro %d → %d, a %.1f m da placa de volta" % [Net.welcome.district.name, m0, int(Net.me.money), d])
+	await _shot("a_pe_chegada")
+	if int(Net.me.money) != m0 or d > 12.0:
+		_finish(false, "viagem a pé errada")
 
 
 ## Capturas de ecrã opcionais (CAPTURE_DIR) para revisão visual.

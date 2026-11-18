@@ -1,0 +1,2099 @@
+{
+ "kit": "kit_interiores_1",
+ "objects": {
+  "int_sala1_0": {
+   "category": "room",
+   "size": [
+    476,
+    412
+   ],
+   "anchor": [
+    232,
+    407
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_0",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_0.webp",
+   "venue": "casa"
+  },
+  "int_casa_cama": {
+   "category": "furniture",
+   "size": [
+    348,
+    240
+   ],
+   "anchor": [
+    169,
+    237
+   ],
+   "footprint": [
+    1.7,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_casa_cama",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_cama.webp",
+   "venue": "casa",
+   "role": "main_home_sleep"
+  },
+  "int_casa_fogao": {
+   "category": "furniture",
+   "size": [
+    168,
+    213
+   ],
+   "anchor": [
+    66,
+    211
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_casa_fogao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_fogao.webp",
+   "venue": "casa",
+   "role": "main_home_eat"
+  },
+  "int_casa_sofa": {
+   "category": "furniture",
+   "size": [
+    325,
+    211
+   ],
+   "anchor": [
+    80,
+    208
+   ],
+   "footprint": [
+    0.8,
+    2.4
+   ],
+   "scale": 0.8,
+   "out": "int_casa_sofa",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_sofa.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_poltrona": {
+   "category": "furniture",
+   "size": [
+    204,
+    190
+   ],
+   "anchor": [
+    69,
+    188
+   ],
+   "footprint": [
+    0.8,
+    1.4
+   ],
+   "scale": 0.8,
+   "out": "int_casa_poltrona",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_poltrona.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_tv": {
+   "category": "furniture",
+   "size": [
+    239,
+    218
+   ],
+   "anchor": [
+    48,
+    216
+   ],
+   "footprint": [
+    0.8,
+    1.9
+   ],
+   "scale": 0.8,
+   "out": "int_casa_tv",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_tv.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_frigorifico": {
+   "category": "furniture",
+   "size": [
+    155,
+    229
+   ],
+   "anchor": [
+    59,
+    227
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_casa_frigorifico",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_frigorifico.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_botija": {
+   "category": "furniture",
+   "size": [
+    76,
+    122
+   ],
+   "anchor": [
+    31,
+    121
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_casa_botija",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_botija.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_mesa_jantar": {
+   "category": "furniture",
+   "size": [
+    330,
+    251
+   ],
+   "anchor": [
+    126,
+    246
+   ],
+   "footprint": [
+    1.3,
+    2.0
+   ],
+   "scale": 0.8,
+   "out": "int_casa_mesa_jantar",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_mesa_jantar.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_tapete": {
+   "category": "furniture",
+   "size": [
+    301,
+    145
+   ],
+   "anchor": [
+    142,
+    143
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 0.8,
+   "out": "int_casa_tapete",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_tapete.webp",
+   "floor": true,
+   "venue": "casa",
+   "role": "floor"
+  },
+  "int_casa_roupeiro": {
+   "category": "furniture",
+   "size": [
+    205,
+    255
+   ],
+   "anchor": [
+    48,
+    253
+   ],
+   "footprint": [
+    0.8,
+    1.5
+   ],
+   "scale": 0.8,
+   "out": "int_casa_roupeiro",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_roupeiro.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_planta": {
+   "category": "furniture",
+   "size": [
+    145,
+    179
+   ],
+   "anchor": [
+    63,
+    178
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_casa_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_planta.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_ventoinha": {
+   "category": "furniture",
+   "size": [
+    106,
+    213
+   ],
+   "anchor": [
+    40,
+    211
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_casa_ventoinha",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_ventoinha.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_casa_cesto": {
+   "category": "furniture",
+   "size": [
+    125,
+    135
+   ],
+   "anchor": [
+    50,
+    134
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_casa_cesto",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_casa_cesto.webp",
+   "venue": "casa",
+   "role": ""
+  },
+  "int_sala1_1": {
+   "category": "room",
+   "size": [
+    462,
+    411
+   ],
+   "anchor": [
+    214,
+    406
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_1",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_1.webp",
+   "venue": "cantina"
+  },
+  "int_cantina_balcao": {
+   "category": "furniture",
+   "size": [
+    411,
+    216
+   ],
+   "anchor": [
+    63,
+    213
+   ],
+   "footprint": [
+    0.8,
+    3.4
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_balcao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_balcao.webp",
+   "venue": "cantina",
+   "role": "main_food"
+  },
+  "int_cantina_prateleira": {
+   "category": "furniture",
+   "size": [
+    206,
+    232
+   ],
+   "anchor": [
+    33,
+    230
+   ],
+   "footprint": [
+    0.8,
+    1.7
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_prateleira",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_prateleira.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_prateleira2": {
+   "category": "furniture",
+   "size": [
+    221,
+    233
+   ],
+   "anchor": [
+    34,
+    230
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_prateleira2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_prateleira2.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_frigorifico": {
+   "category": "furniture",
+   "size": [
+    180,
+    256
+   ],
+   "anchor": [
+    52,
+    254
+   ],
+   "footprint": [
+    0.8,
+    1.3
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_frigorifico",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_frigorifico.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_grades_cuca": {
+   "category": "furniture",
+   "size": [
+    273,
+    225
+   ],
+   "anchor": [
+    55,
+    223
+   ],
+   "footprint": [
+    0.8,
+    2.2
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_grades_cuca",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_grades_cuca.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_mesa": {
+   "category": "furniture",
+   "size": [
+    312,
+    204
+   ],
+   "anchor": [
+    146,
+    201
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_mesa",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_mesa.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_sacos": {
+   "category": "furniture",
+   "size": [
+    321,
+    137
+   ],
+   "anchor": [
+    147,
+    136
+   ],
+   "footprint": [
+    1.4,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_sacos",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_sacos.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_arroz": {
+   "category": "furniture",
+   "size": [
+    222,
+    164
+   ],
+   "anchor": [
+    20,
+    162
+   ],
+   "footprint": [
+    0.8,
+    2.0
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_arroz",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_arroz.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_oleo": {
+   "category": "furniture",
+   "size": [
+    109,
+    122
+   ],
+   "anchor": [
+    21,
+    120
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_oleo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_oleo.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_grade": {
+   "category": "furniture",
+   "size": [
+    144,
+    117
+   ],
+   "anchor": [
+    46,
+    115
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_grade",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_grade.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_cantina_lixo": {
+   "category": "furniture",
+   "size": [
+    107,
+    149
+   ],
+   "anchor": [
+    41,
+    148
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_cantina_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_cantina_lixo.webp",
+   "venue": "cantina",
+   "role": ""
+  },
+  "int_sala1_2": {
+   "category": "room",
+   "size": [
+    464,
+    411
+   ],
+   "anchor": [
+    223,
+    406
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_2.webp",
+   "venue": "padaria"
+  },
+  "int_padaria_balcao": {
+   "category": "furniture",
+   "size": [
+    387,
+    219
+   ],
+   "anchor": [
+    66,
+    216
+   ],
+   "footprint": [
+    0.8,
+    3.2
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_balcao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_balcao.webp",
+   "venue": "padaria",
+   "role": "main_food"
+  },
+  "int_padaria_forno": {
+   "category": "furniture",
+   "size": [
+    281,
+    258
+   ],
+   "anchor": [
+    95,
+    256
+   ],
+   "footprint": [
+    1.0,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_forno",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_forno.webp",
+   "venue": "padaria",
+   "role": "main_work"
+  },
+  "int_padaria_prateleira_pao": {
+   "category": "furniture",
+   "size": [
+    256,
+    222
+   ],
+   "anchor": [
+    36,
+    219
+   ],
+   "footprint": [
+    0.8,
+    2.2
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_prateleira_pao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_prateleira_pao.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_vitrine_bolos": {
+   "category": "furniture",
+   "size": [
+    316,
+    217
+   ],
+   "anchor": [
+    62,
+    214
+   ],
+   "footprint": [
+    0.8,
+    2.5
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_vitrine_bolos",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_vitrine_bolos.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_cafe": {
+   "category": "furniture",
+   "size": [
+    232,
+    193
+   ],
+   "anchor": [
+    54,
+    191
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_cafe",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_cafe.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_farinha": {
+   "category": "furniture",
+   "size": [
+    132,
+    177
+   ],
+   "anchor": [
+    22,
+    175
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_farinha",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_farinha.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_farinha2": {
+   "category": "furniture",
+   "size": [
+    130,
+    174
+   ],
+   "anchor": [
+    23,
+    172
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_farinha2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_farinha2.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_carrinho_pao": {
+   "category": "furniture",
+   "size": [
+    163,
+    210
+   ],
+   "anchor": [
+    41,
+    208
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_carrinho_pao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_carrinho_pao.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_planta": {
+   "category": "furniture",
+   "size": [
+    119,
+    160
+   ],
+   "anchor": [
+    50,
+    159
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_planta.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_padaria_extintor": {
+   "category": "furniture",
+   "size": [
+    77,
+    155
+   ],
+   "anchor": [
+    37,
+    154
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_padaria_extintor",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_padaria_extintor.webp",
+   "venue": "padaria",
+   "role": ""
+  },
+  "int_sala1_3": {
+   "category": "room",
+   "size": [
+    463,
+    412
+   ],
+   "anchor": [
+    216,
+    406
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_3",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_3.webp",
+   "venue": "hotel"
+  },
+  "int_hotel_rececao": {
+   "category": "furniture",
+   "size": [
+    406,
+    218
+   ],
+   "anchor": [
+    65,
+    215
+   ],
+   "footprint": [
+    0.8,
+    3.4
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_rececao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_rececao.webp",
+   "venue": "hotel",
+   "role": "main_work"
+  },
+  "int_hotel_cama_casal": {
+   "category": "furniture",
+   "size": [
+    380,
+    212
+   ],
+   "anchor": [
+    139,
+    209
+   ],
+   "footprint": [
+    1.4,
+    2.4
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_cama_casal",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_cama_casal.webp",
+   "venue": "hotel",
+   "role": "main_sleep"
+  },
+  "int_hotel_cama": {
+   "category": "furniture",
+   "size": [
+    292,
+    173
+   ],
+   "anchor": [
+    168,
+    170
+   ],
+   "footprint": [
+    1.7,
+    1.2
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_cama",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_cama.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_mesa_cabeceira": {
+   "category": "furniture",
+   "size": [
+    137,
+    189
+   ],
+   "anchor": [
+    48,
+    188
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_mesa_cabeceira",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_mesa_cabeceira.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_poltrona": {
+   "category": "furniture",
+   "size": [
+    199,
+    168
+   ],
+   "anchor": [
+    58,
+    166
+   ],
+   "footprint": [
+    0.8,
+    1.4
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_poltrona",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_poltrona.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_suporte_malas": {
+   "category": "furniture",
+   "size": [
+    187,
+    127
+   ],
+   "anchor": [
+    56,
+    125
+   ],
+   "footprint": [
+    0.8,
+    1.3
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_suporte_malas",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_suporte_malas.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_mala": {
+   "category": "furniture",
+   "size": [
+    105,
+    183
+   ],
+   "anchor": [
+    34,
+    181
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_mala",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_mala.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_carrinho": {
+   "category": "furniture",
+   "size": [
+    165,
+    205
+   ],
+   "anchor": [
+    41,
+    203
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_carrinho",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_carrinho.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_planta": {
+   "category": "furniture",
+   "size": [
+    141,
+    198
+   ],
+   "anchor": [
+    64,
+    197
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_planta.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_hotel_candeeiro": {
+   "category": "furniture",
+   "size": [
+    97,
+    181
+   ],
+   "anchor": [
+    37,
+    180
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_hotel_candeeiro",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_hotel_candeeiro.webp",
+   "venue": "hotel",
+   "role": ""
+  },
+  "int_sala1_4": {
+   "category": "room",
+   "size": [
+    465,
+    411
+   ],
+   "anchor": [
+    218,
+    407
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_4",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_4.webp",
+   "venue": "banco"
+  },
+  "int_banco_balcao_caixa": {
+   "category": "furniture",
+   "size": [
+    517,
+    209
+   ],
+   "anchor": [
+    86,
+    206
+   ],
+   "footprint": [
+    0.9,
+    4.0
+   ],
+   "scale": 0.8,
+   "out": "int_banco_balcao_caixa",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_balcao_caixa.webp",
+   "venue": "banco",
+   "role": "main_bank"
+  },
+  "int_banco_secretaria": {
+   "category": "furniture",
+   "size": [
+    314,
+    180
+   ],
+   "anchor": [
+    64,
+    178
+   ],
+   "footprint": [
+    0.8,
+    2.5
+   ],
+   "scale": 0.8,
+   "out": "int_banco_secretaria",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_secretaria.webp",
+   "venue": "banco",
+   "role": "main_work"
+  },
+  "int_banco_atm": {
+   "category": "furniture",
+   "size": [
+    137,
+    212
+   ],
+   "anchor": [
+    40,
+    211
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_banco_atm",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_atm.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_cadeiras": {
+   "category": "furniture",
+   "size": [
+    348,
+    158
+   ],
+   "anchor": [
+    50,
+    152
+   ],
+   "footprint": [
+    0.8,
+    3.0
+   ],
+   "scale": 0.8,
+   "out": "int_banco_cadeiras",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_cadeiras.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_barreira": {
+   "category": "furniture",
+   "size": [
+    293,
+    135
+   ],
+   "anchor": [
+    26,
+    134
+   ],
+   "footprint": [
+    0.8,
+    2.6
+   ],
+   "scale": 0.8,
+   "out": "int_banco_barreira",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_barreira.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_armario": {
+   "category": "furniture",
+   "size": [
+    227,
+    171
+   ],
+   "anchor": [
+    49,
+    170
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_banco_armario",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_armario.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_cofre": {
+   "category": "furniture",
+   "size": [
+    159,
+    160
+   ],
+   "anchor": [
+    44,
+    158
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 0.8,
+   "out": "int_banco_cofre",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_cofre.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_folhetos": {
+   "category": "furniture",
+   "size": [
+    122,
+    178
+   ],
+   "anchor": [
+    66,
+    176
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_banco_folhetos",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_folhetos.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_planta": {
+   "category": "furniture",
+   "size": [
+    173,
+    164
+   ],
+   "anchor": [
+    80,
+    163
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 0.8,
+   "out": "int_banco_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_planta.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_banco_lixo": {
+   "category": "furniture",
+   "size": [
+    83,
+    105
+   ],
+   "anchor": [
+    34,
+    104
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_banco_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_banco_lixo.webp",
+   "venue": "banco",
+   "role": ""
+  },
+  "int_sala1_5": {
+   "category": "room",
+   "size": [
+    466,
+    412
+   ],
+   "anchor": [
+    221,
+    407
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_5",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_5.webp",
+   "venue": "loja_telecom"
+  },
+  "int_loja_telecom_balcao_telemoveis": {
+   "category": "furniture",
+   "size": [
+    379,
+    150
+   ],
+   "anchor": [
+    46,
+    148
+   ],
+   "footprint": [
+    0.8,
+    3.4
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_balcao_telemoveis",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_balcao_telemoveis.webp",
+   "venue": "loja_telecom",
+   "role": "main_service"
+  },
+  "int_loja_telecom_balcao_unitel": {
+   "category": "furniture",
+   "size": [
+    280,
+    153
+   ],
+   "anchor": [
+    44,
+    151
+   ],
+   "footprint": [
+    0.8,
+    2.3
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_balcao_unitel",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_balcao_unitel.webp",
+   "venue": "loja_telecom",
+   "role": "main_work"
+  },
+  "int_loja_telecom_balcao_movicel": {
+   "category": "furniture",
+   "size": [
+    246,
+    127
+   ],
+   "anchor": [
+    49,
+    125
+   ],
+   "footprint": [
+    0.8,
+    2.0
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_balcao_movicel",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_balcao_movicel.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_balcao_africell": {
+   "category": "furniture",
+   "size": [
+    250,
+    132
+   ],
+   "anchor": [
+    48,
+    131
+   ],
+   "footprint": [
+    0.8,
+    2.0
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_balcao_africell",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_balcao_africell.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_cartoes_sim": {
+   "category": "furniture",
+   "size": [
+    119,
+    157
+   ],
+   "anchor": [
+    23,
+    156
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_cartoes_sim",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_cartoes_sim.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_banco": {
+   "category": "furniture",
+   "size": [
+    78,
+    138
+   ],
+   "anchor": [
+    31,
+    137
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_banco",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_banco.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_computadores": {
+   "category": "furniture",
+   "size": [
+    311,
+    176
+   ],
+   "anchor": [
+    227,
+    157
+   ],
+   "footprint": [
+    2.2,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_computadores",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_computadores.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_planta": {
+   "category": "furniture",
+   "size": [
+    126,
+    149
+   ],
+   "anchor": [
+    51,
+    148
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_planta.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_loja_telecom_lixo": {
+   "category": "furniture",
+   "size": [
+    75,
+    88
+   ],
+   "anchor": [
+    30,
+    87
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_loja_telecom_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_loja_telecom_lixo.webp",
+   "venue": "loja_telecom",
+   "role": ""
+  },
+  "int_sala1_6": {
+   "category": "room",
+   "size": [
+    468,
+    414
+   ],
+   "anchor": [
+    218,
+    409
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_6",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_6.webp",
+   "venue": "correios"
+  },
+  "int_correios_balcao": {
+   "category": "furniture",
+   "size": [
+    437,
+    187
+   ],
+   "anchor": [
+    76,
+    185
+   ],
+   "footprint": [
+    0.8,
+    3.6
+   ],
+   "scale": 0.8,
+   "out": "int_correios_balcao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_balcao.webp",
+   "venue": "correios",
+   "role": "main_service"
+  },
+  "int_correios_triagem": {
+   "category": "furniture",
+   "size": [
+    268,
+    159
+   ],
+   "anchor": [
+    34,
+    156
+   ],
+   "footprint": [
+    0.8,
+    2.3
+   ],
+   "scale": 0.8,
+   "out": "int_correios_triagem",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_triagem.webp",
+   "venue": "correios",
+   "role": "main_work"
+  },
+  "int_correios_apartados": {
+   "category": "furniture",
+   "size": [
+    276,
+    128
+   ],
+   "anchor": [
+    24,
+    127
+   ],
+   "footprint": [
+    0.8,
+    2.5
+   ],
+   "scale": 0.8,
+   "out": "int_correios_apartados",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_apartados.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_balanca": {
+   "category": "furniture",
+   "size": [
+    129,
+    155
+   ],
+   "anchor": [
+    53,
+    153
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_correios_balanca",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_balanca.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_encomendas": {
+   "category": "furniture",
+   "size": [
+    217,
+    141
+   ],
+   "anchor": [
+    57,
+    139
+   ],
+   "footprint": [
+    0.8,
+    1.6
+   ],
+   "scale": 0.8,
+   "out": "int_correios_encomendas",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_encomendas.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_mesa": {
+   "category": "furniture",
+   "size": [
+    272,
+    134
+   ],
+   "anchor": [
+    69,
+    131
+   ],
+   "footprint": [
+    0.8,
+    2.0
+   ],
+   "scale": 0.8,
+   "out": "int_correios_mesa",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_mesa.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_banco_espera": {
+   "category": "furniture",
+   "size": [
+    303,
+    137
+   ],
+   "anchor": [
+    34,
+    131
+   ],
+   "footprint": [
+    0.8,
+    2.7
+   ],
+   "scale": 0.8,
+   "out": "int_correios_banco_espera",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_banco_espera.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_planta": {
+   "category": "furniture",
+   "size": [
+    121,
+    139
+   ],
+   "anchor": [
+    52,
+    138
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_correios_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_planta.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_marco_correio": {
+   "category": "furniture",
+   "size": [
+    127,
+    140
+   ],
+   "anchor": [
+    85,
+    138
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_correios_marco_correio",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_marco_correio.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_correios_lixo": {
+   "category": "furniture",
+   "size": [
+    85,
+    99
+   ],
+   "anchor": [
+    33,
+    98
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_correios_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_correios_lixo.webp",
+   "venue": "correios",
+   "role": ""
+  },
+  "int_sala1_7": {
+   "category": "room",
+   "size": [
+    469,
+    413
+   ],
+   "anchor": [
+    216,
+    408
+   ],
+   "footprint": [
+    7.5,
+    7.5
+   ],
+   "scale": 2.06,
+   "out": "int_sala1_7",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_sala1_7.webp",
+   "venue": "governo"
+  },
+  "int_governo_balcao": {
+   "category": "furniture",
+   "size": [
+    344,
+    165
+   ],
+   "anchor": [
+    51,
+    162
+   ],
+   "footprint": [
+    0.8,
+    3.0
+   ],
+   "scale": 0.8,
+   "out": "int_governo_balcao",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_balcao.webp",
+   "venue": "governo",
+   "role": "main_service"
+  },
+  "int_governo_secretaria": {
+   "category": "furniture",
+   "size": [
+    433,
+    171
+   ],
+   "anchor": [
+    58,
+    168
+   ],
+   "footprint": [
+    0.8,
+    3.8
+   ],
+   "scale": 0.8,
+   "out": "int_governo_secretaria",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_secretaria.webp",
+   "venue": "governo",
+   "role": "main_work"
+  },
+  "int_governo_cadeira": {
+   "category": "furniture",
+   "size": [
+    152,
+    146
+   ],
+   "anchor": [
+    38,
+    144
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 0.8,
+   "out": "int_governo_cadeira",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_cadeira.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_cadeira2": {
+   "category": "furniture",
+   "size": [
+    152,
+    148
+   ],
+   "anchor": [
+    42,
+    146
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_governo_cadeira2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_cadeira2.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_arquivo": {
+   "category": "furniture",
+   "size": [
+    151,
+    171
+   ],
+   "anchor": [
+    56,
+    170
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 0.8,
+   "out": "int_governo_arquivo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_arquivo.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_bandeira": {
+   "category": "furniture",
+   "size": [
+    83,
+    222
+   ],
+   "anchor": [
+    35,
+    220
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_governo_bandeira",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_bandeira.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_banco_espera": {
+   "category": "furniture",
+   "size": [
+    304,
+    147
+   ],
+   "anchor": [
+    39,
+    117
+   ],
+   "footprint": [
+    0.8,
+    2.6
+   ],
+   "scale": 0.8,
+   "out": "int_governo_banco_espera",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_banco_espera.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_estante": {
+   "category": "furniture",
+   "size": [
+    196,
+    167
+   ],
+   "anchor": [
+    30,
+    166
+   ],
+   "footprint": [
+    0.8,
+    1.6
+   ],
+   "scale": 0.8,
+   "out": "int_governo_estante",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_estante.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_planta": {
+   "category": "furniture",
+   "size": [
+    137,
+    140
+   ],
+   "anchor": [
+    59,
+    139
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_governo_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_planta.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_governo_lixo": {
+   "category": "furniture",
+   "size": [
+    84,
+    99
+   ],
+   "anchor": [
+    31,
+    98
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_governo_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_governo_lixo.webp",
+   "venue": "governo",
+   "role": ""
+  },
+  "int_tribunal_cartorio": {
+   "category": "furniture",
+   "size": [
+    235,
+    146
+   ],
+   "anchor": [
+    52,
+    144
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_cartorio",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_cartorio.webp",
+   "venue": "tribunal",
+   "role": "main_service"
+  },
+  "int_tribunal_tribuna_juiz": {
+   "category": "furniture",
+   "size": [
+    579,
+    188
+   ],
+   "anchor": [
+    64,
+    186
+   ],
+   "footprint": [
+    0.8,
+    4.0
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_tribuna_juiz",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_tribuna_juiz.webp",
+   "venue": "tribunal",
+   "role": "main_work"
+  },
+  "int_tribunal_mesa_advogados": {
+   "category": "furniture",
+   "size": [
+    234,
+    134
+   ],
+   "anchor": [
+    46,
+    132
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_mesa_advogados",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_mesa_advogados.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_mesa_advogados2": {
+   "category": "furniture",
+   "size": [
+    231,
+    135
+   ],
+   "anchor": [
+    47,
+    133
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_mesa_advogados2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_mesa_advogados2.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_bancos_publico": {
+   "category": "furniture",
+   "size": [
+    311,
+    132
+   ],
+   "anchor": [
+    89,
+    130
+   ],
+   "footprint": [
+    0.9,
+    2.2
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_bancos_publico",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_bancos_publico.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_bancos_publico2": {
+   "category": "furniture",
+   "size": [
+    300,
+    124
+   ],
+   "anchor": [
+    87,
+    121
+   ],
+   "footprint": [
+    0.9,
+    2.2
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_bancos_publico2",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_bancos_publico2.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_testemunhas": {
+   "category": "furniture",
+   "size": [
+    194,
+    118
+   ],
+   "anchor": [
+    46,
+    117
+   ],
+   "footprint": [
+    0.8,
+    1.4
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_testemunhas",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_testemunhas.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_planta": {
+   "category": "furniture",
+   "size": [
+    118,
+    132
+   ],
+   "anchor": [
+    48,
+    130
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_planta",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_planta.webp",
+   "venue": "tribunal",
+   "role": ""
+  },
+  "int_tribunal_lixo": {
+   "category": "furniture",
+   "size": [
+    82,
+    98
+   ],
+   "anchor": [
+    33,
+    97
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 0.8,
+   "out": "int_tribunal_lixo",
+   "kit": "kit_interiores_1",
+   "path": "res://assets/kits/kit_interiores_1/int_tribunal_lixo.webp",
+   "venue": "tribunal",
+   "role": ""
+  }
+ },
+ "version": "a5c4b67c98f7"
+}

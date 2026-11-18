@@ -35,7 +35,8 @@ export type PlaceKind =
   | "bank" // balcão do banco
   | "service" // atendimento (correios, governo, tribunal, loja de telemóveis)
   | "home_sleep" // cama de casa (grátis para quem lá mora)
-  | "home_eat"; // cozinha de casa
+  | "home_eat" // cozinha de casa
+  | "portal"; // fim de rua: ir a pé para o bairro vizinho (to)
 
 /** Lugar interativo do bairro, em unidades do mapa. */
 export interface Place {
@@ -52,6 +53,8 @@ export interface Place {
   /** portas: interiores a que dá acesso; lugares interiores: o interior onde estão */
   interiors?: string[];
   interior?: string;
+  /** portais: bairro de destino */
+  to?: string;
 }
 
 /** Interior de um edifício: sala caminhável longe da rua, no mesmo mundo da sala de jogo. */
@@ -84,6 +87,8 @@ export interface District {
   /** célula da grelha de área de interesse (unidades do mapa); omisso = 400 */
   aoiCell?: number;
   places?: Place[];
+  /** posição real no Huambo (mapa da cidade) */
+  geo?: { lat: number; lon: number };
   /** interiores dos edifícios (também são zonas caminháveis) */
   interiors?: Interior[];
   /** identificação do ficheiro de mapa que o cliente tem de ter (mapas de grelha) */
@@ -135,7 +140,9 @@ interface BairroFile {
   size: [number, number];
   obstacles: Array<[number, number, number, number]>;
   spawns: Array<{ id: string; name: string; at: [number, number] }>;
-  places: Array<{ id: string; name: string; kind: PlaceKind; at: [number, number]; radius: number; job?: string; shop?: string; venue?: string; interiors?: string[]; interior?: string }>;
+  places: Array<{ id: string; name: string; kind: PlaceKind; at: [number, number]; radius: number; job?: string; shop?: string; venue?: string; interiors?: string[]; interior?: string; to?: string }>;
+  portals?: Array<{ to: string; name: string; at: [number, number]; arrive: [number, number] }>;
+  geo?: { lat: number; lon: number };
   interiors?: Array<{ id: string; venue: string; name: string; rect: [number, number, number, number]; entry: [number, number]; building: string; unit?: number }>;
 }
 
@@ -154,7 +161,11 @@ export function loadBairroDistrict(path: string | URL): District {
     speed: 1.5 * u,
     radius: 0.35 * u,
     aoiCell: 12 * u,
-    spawns: raw.spawns.map((s) => ({ id: s.id, name: s.name, x: s.at[0] * u, y: s.at[1] * u })),
+    // chegadas a pé: "from_<bairro>" aparece na rua que vem desse bairro
+    spawns: [
+      ...raw.spawns.map((s) => ({ id: s.id, name: s.name, x: s.at[0] * u, y: s.at[1] * u })),
+      ...(raw.portals ?? []).map((p) => ({ id: `from_${p.to}`, name: p.name, x: p.arrive[0] * u, y: p.arrive[1] * u })),
+    ],
     spawnRadius: 1.5 * u,
     obstacles: raw.obstacles.map((r) => [r[0] * u, r[1] * u, r[2] * u, r[3] * u] as Rect),
     places: raw.places.map((p) => ({
@@ -169,7 +180,9 @@ export function loadBairroDistrict(path: string | URL): District {
       venue: p.venue,
       interiors: p.interiors,
       interior: p.interior,
+      to: p.to,
     })),
+    geo: raw.geo ? { lat: raw.geo.lat, lon: raw.geo.lon } : undefined,
     interiors: (raw.interiors ?? []).map((i) => ({
       id: i.id,
       venue: i.venue,

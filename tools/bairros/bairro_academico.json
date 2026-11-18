@@ -2,137 +2,438 @@
  "id": "bairro_academico",
  "name": "Bairro Académico",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "asfalto",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "asfalto",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     -264.78,
+     91.16
+    ],
+    [
+     -192.31,
+     99.02
+    ],
+    [
+     -95.21,
+     113.21
+    ],
+    [
+     -27.65,
+     121.93
+    ],
+    [
+     70.34,
+     134.21
+    ],
+    [
+     154.75,
+     146.42
+    ],
+    [
+     221.99,
+     152.07
+    ],
+    [
+     264.04,
+     152.98
+    ],
+    [
+     299.69,
+     152.6
+    ],
+    [
+     436.38,
+     145.47
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": "Rua Pedro Nunes"
+  },
+  {
+   "pts": [
+    [
+     -440.98,
+     146.43
+    ],
+    [
+     -428.41,
+     145.24
+    ],
+    [
+     -387.46,
+     136.56
+    ],
+    [
+     -349.26,
+     125.43
+    ],
+    [
+     -315.75,
+     112.05
+    ],
+    [
+     -264.78,
+     91.16
+    ],
+    [
+     -207.94,
+     69.34
+    ],
+    [
+     -188.38,
+     61.83
+    ],
+    [
+     -183.36,
+     59.9
+    ],
+    [
+     -104.02,
+     27.58
+    ],
+    [
+     -72.03,
+     12.13
+    ],
+    [
+     50.94,
+     -37.07
+    ],
+    [
+     122.63,
+     -65.76
+    ],
+    [
+     178.35,
+     -87.66
+    ],
+    [
+     218.13,
+     -103.56
+    ],
+    [
+     258.77,
+     -120.2
+    ],
+    [
+     418.64,
+     -182.26
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": "Rua Silva Porto"
+  },
+  {
+   "pts": [
+    [
+     424.34,
+     -82.24
+    ],
+    [
+     372.6,
+     -79.06
+    ],
+    [
+     264.4,
+     -65.78
+    ],
+    [
+     182.26,
+     -56.2
+    ],
+    [
+     130.07,
+     -47.97
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     37.14,
+     256.34
+    ],
+    [
+     58.86,
+     184.31
+    ],
+    [
+     70.34,
+     134.21
+    ],
+    [
+     76.03,
+     64.68
+    ],
+    [
+     71.09,
+     27.48
+    ],
+    [
+     64.38,
+     0.88
+    ],
+    [
+     50.94,
+     -37.07
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": "Rua Daniel Junqueira"
+  },
+  {
+   "pts": [
+    [
+     180.99,
+     331.35
+    ],
+    [
+     209.95,
+     235.35
+    ],
+    [
+     217.71,
+     193.73
+    ],
+    [
+     221.99,
+     152.07
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -100.4,
+     40.1
+    ],
+    [
+     -64.64,
+     45.21
+    ],
+    [
+     76.03,
+     64.68
+    ],
+    [
+     155.39,
+     75.08
+    ],
+    [
+     187.93,
+     76.1
+    ],
+    [
+     241.41,
+     77.08
+    ],
+    [
+     278.9,
+     76.29
+    ],
+    [
+     432.55,
+     71.6
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": "Rua Egas Moniz"
+  },
+  {
+   "pts": [
+    [
+     182.26,
+     -56.2
+    ],
+    [
+     178.35,
+     -87.66
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -38.32,
+     188.34
+    ],
+    [
+     -27.65,
+     121.93
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     150.14,
+     16.26
+    ],
+    [
+     271.93,
+     6.16
+    ],
+    [
+     399.94,
+     -3.82
+    ],
+    [
+     429.2,
+     -6.1
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     58.86,
+     184.31
+    ],
+    [
+     119.34,
+     197.72
+    ],
+    [
+     122.32,
+     201.29
+    ],
+    [
+     125.89,
+     217.78
+    ]
+   ],
+   "w": 5,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     154.75,
+     146.42
+    ],
+    [
+     155.39,
+     75.08
+    ],
+    [
+     154.31,
+     44.61
+    ],
+    [
+     150.14,
+     16.26
+    ],
+    [
+     139.52,
+     -20.72
+    ],
+    [
+     130.07,
+     -47.97
+    ],
+    [
+     122.63,
+     -65.76
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [
+  {
+   "kind": "relva",
+   "pts": [
+    [
+     91.51,
+     72.39
+    ],
+    [
+     84.41,
+     130.08
+    ],
+    [
+     147.41,
+     140.65
+    ],
+    [
+     151.44,
+     80.26
+    ],
+    [
+     91.51,
+     72.39
+    ]
+   ]
+  }
+ ],
+ "geo": {
+  "lat": -12.771,
+  "lon": 15.7487,
+  "rot_deg": 3.8,
+  "cx": -30,
+  "cy": 10
+ },
  "buildings": [
+  {
+   "id": "bairro_academico_escola_7",
+   "at": [
+    98.3,
+    25.6
+   ],
+   "venue": {
+    "venue": "escola",
+    "job": "professor"
+   }
+  },
+  {
+   "id": "bairro_academico_mercado",
+   "at": [
+    124.0,
+    33.5
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
   {
    "id": "bairro_academico_escola",
    "at": [
-    2.0,
-    24.0
+    83.0,
+    53.3
    ],
    "venue": {
     "venue": "escola",
@@ -142,8 +443,8 @@
   {
    "id": "bairro_academico_saude",
    "at": [
-    21.0,
-    20.9
+    85.2,
+    29.0
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +454,8 @@
   {
    "id": "bairro_academico_igreja",
    "at": [
-    51.0,
-    21.1
+    57.0,
+    46.4
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +463,43 @@
    }
   },
   {
-   "id": "bairro_academico_mercado",
+   "id": "bairro_academico_administracao",
    "at": [
-    63.0,
-    20.7
+    102.0,
+    57.0
    ],
    "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "bairro_academico_farmacia",
+   "at": [
+    24.8,
+    149.7
+   ],
+   "venue": {
+    "venue": "farmacia",
+    "job": "farmaceutico"
+   }
+  },
+  {
+   "id": "bairro_academico_loja_telecom",
+   "at": [
+    45.4,
+    49.8
+   ],
+   "venue": {
+    "venue": "loja_telecom",
+    "job": "vendedor_loja"
    }
   },
   {
    "id": "bairro_academico_cantina",
    "at": [
-    78.0,
-    27.7
+    115.9,
+    60.9
    ],
    "venue": {
     "venue": "cantina",
@@ -186,43 +508,10 @@
    }
   },
   {
-   "id": "bairro_academico_farmacia",
+   "id": "bairro_academico_apartamentos_11",
    "at": [
-    99.0,
-    25.2
-   ],
-   "venue": {
-    "venue": "farmacia",
-    "job": "farmaceutico"
-   }
-  },
-  {
-   "id": "bairro_academico_administracao",
-   "at": [
-    109.0,
-    25.7
-   ],
-   "venue": {
-    "venue": "administracao",
-    "job": "funcionario_publico"
-   }
-  },
-  {
-   "id": "bairro_academico_escola_7",
-   "at": [
-    122.0,
-    20.8
-   ],
-   "venue": {
-    "venue": "escola",
-    "job": "professor"
-   }
-  },
-  {
-   "id": "bairro_academico_apartamentos",
-   "at": [
-    34.0,
-    28.4
+    78.3,
+    126.0
    ],
    "venue": {
     "venue": "apartamentos",
@@ -230,21 +519,10 @@
    }
   },
   {
-   "id": "bairro_academico_loja_telecom",
-   "at": [
-    139.0,
-    26.2
-   ],
-   "venue": {
-    "venue": "loja_telecom",
-    "job": "vendedor_loja"
-   }
-  },
-  {
    "id": "bairro_academico_discoteca",
    "at": [
-    2.0,
-    73.0
+    59.2,
+    122.7
    ],
    "venue": {
     "venue": "discoteca",
@@ -252,10 +530,10 @@
    }
   },
   {
-   "id": "bairro_academico_apartamentos_11",
+   "id": "bairro_academico_apartamentos",
    "at": [
-    10.0,
-    73.6
+    4.4,
+    10.9
    ],
    "venue": {
     "venue": "apartamentos",
@@ -263,46 +541,10 @@
    }
   },
   {
-   "id": "bairro_academico_casa1",
-   "at": [
-    19.0,
-    73.5
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 1"
-  },
-  {
-   "id": "bairro_academico_casa2",
-   "at": [
-    26.0,
-    73.8
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 2"
-  },
-  {
-   "id": "bairro_academico_casa3",
-   "at": [
-    33.0,
-    73.3
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 3"
-  },
-  {
    "id": "bairro_academico_casa4",
    "at": [
-    51.0,
-    73.8
+    12.3,
+    118.0
    ],
    "venue": {
     "venue": "casa",
@@ -311,22 +553,46 @@
    "label": "Casa 4"
   },
   {
-   "id": "bairro_academico_casa5",
+   "id": "bairro_academico_casa1",
    "at": [
-    65.0,
-    73.6
+    142.9,
+    135.1
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
-   "label": "Casa 5"
+   "label": "Casa 1"
+  },
+  {
+   "id": "bairro_academico_casa3",
+   "at": [
+    2.2,
+    44.6
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
+  },
+  {
+   "id": "bairro_academico_casa2",
+   "at": [
+    133.0,
+    134.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
   },
   {
    "id": "bairro_academico_casa6",
    "at": [
-    71.0,
-    74.2
+    121.3,
+    132.7
    ],
    "venue": {
     "venue": "casa",
@@ -335,10 +601,22 @@
    "label": "Casa 6"
   },
   {
+   "id": "bairro_academico_casa5",
+   "at": [
+    141.3,
+    63.6
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 5"
+  },
+  {
    "id": "bairro_academico_casa7",
    "at": [
-    37.8,
-    2.0
+    140.4,
+    14.0
    ],
    "venue": {
     "venue": "casa",
@@ -349,693 +627,332 @@
  ],
  "props": [
   [
-   "f_candeeiro",
+   "bairro_academico_pole2",
    [
-    6,
-    32.5
+    7.3,
+    132.3
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_pole2",
    [
-    12.5,
-    41.4
+    23.2,
+    134.3
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_pole3",
    [
-    19,
-    32.5
+    39.1,
+    136.2
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_pole2",
    [
-    25.5,
-    41.4
+    55.0,
+    138.2
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_tree12",
    [
-    32,
-    32.5
+    56.6,
+    125.5
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_academico_pole4",
    [
-    38.5,
-    41.4
+    73.5,
+    140.6
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_tree13",
    [
-    45,
-    32.5
+    75.3,
+    128.0
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_pole4",
    [
-    51.5,
-    41.4
+    89.3,
+    142.9
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_tree15",
    [
-    64.5,
-    41.4
+    91.1,
+    130.2
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_pole4",
    [
-    77.5,
-    41.4
+    105.1,
+    145.2
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_pole2",
    [
-    90.5,
-    41.4
+    121.0,
+    147.5
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_pole2",
    [
-    97,
-    32.5
+    136.8,
+    149.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_pole1",
    [
-    103.5,
-    41.4
+    152.6,
+    152.1
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_pole4",
    [
-    110,
-    32.5
+    72.7,
+    150.5
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_tree6",
    [
-    116.5,
-    41.4
+    60.2,
+    147.7
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_pole2",
    [
-    123,
-    32.5
+    76.5,
+    130.7
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_pole1",
    [
-    129.5,
-    41.4
+    77.9,
+    114.8
    ]
   ],
   [
-   "f_candeeiro",
+   "bairro_academico_pole3",
    [
-    136,
-    32.5
+    79.2,
+    98.8
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_tree8",
    [
-    142.5,
-    41.4
+    66.4,
+    97.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_pole2",
    [
-    12.5,
-    86.4
+    80.5,
+    82.9
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole2",
    [
-    19,
-    78.5
+    81.4,
+    59.9
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_pole1",
    [
-    25.5,
-    86.4
+    79.2,
+    44.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole4",
    [
-    32,
-    78.5
+    77.1,
+    28.2
    ]
   ],
   [
-   "f_eucalipto",
-   [
-    38.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    45,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    51.5,
-    86.4
-   ]
-  ],
-  [
-   "f_jacaranda2",
+   "bairro_academico_tree1",
    [
     64.5,
-    86.4
+    29.9
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole1",
    [
-    71,
-    78.5
+    75.8,
+    22.2
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_tree14",
    [
-    77.5,
-    86.4
+    63.4,
+    25.3
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole2",
    [
-    84,
-    78.5
+    71.9,
+    6.6
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_pole1",
    [
-    90.5,
-    86.4
+    17.8,
+    62.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole4",
    [
-    97,
-    78.5
+    33.6,
+    64.8
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_tree8",
    [
-    103.5,
-    86.4
+    35.4,
+    52.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole1",
    [
-    110,
-    78.5
+    49.5,
+    67.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_pole3",
    [
-    116.5,
-    86.4
+    65.3,
+    69.2
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole2",
    [
-    123,
-    78.5
+    79.2,
+    71.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_tree16",
    [
-    129.5,
-    86.4
+    80.9,
+    58.4
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole3",
    [
-    136,
-    78.5
+    95.1,
+    73.1
    ]
   ],
   [
-   "f_eucalipto",
+   "bairro_academico_pole1",
    [
-    142.5,
-    86.4
+    111.0,
+    75.2
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole3",
    [
-    6,
-    112.5
+    126.8,
+    77.3
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_tree8",
    [
-    12.5,
-    120.4
+    128.5,
+    64.6
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole2",
    [
-    19,
-    112.5
+    142.7,
+    79.4
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_tree16",
    [
-    25.5,
-    120.4
+    148.3,
+    94.4
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_tree10",
    [
-    32,
-    112.5
+    147.8,
+    55.3
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_tree16",
    [
-    38.5,
-    120.4
+    146.9,
+    41.7
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_pole3",
    [
-    45,
-    112.5
+    157.2,
+    24.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "bairro_academico_pole3",
    [
-    51.5,
-    120.4
+    154.7,
+    10.8
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_vehicle1",
    [
-    58,
-    112.5
+    157.3,
+    102.9
    ]
   ],
   [
-   "f_palmeira",
+   "bairro_academico_vehicle2",
    [
-    64.5,
-    120.4
+    34.1,
+    61.1
    ]
   ],
   [
-   "f_poste",
+   "bairro_academico_stall2",
    [
-    71,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    77.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    90.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    103.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    116.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    129.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    142.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
-   ]
-  ],
-  [
-   "f_hilux",
-   [
-    30,
-    83.0
-   ]
-  ],
-  [
-   "f_carro2",
-   [
-    128,
-    83.0
-   ]
-  ],
-  [
-   "f_banca",
-   [
-    22,
-    42.2
+    128.0,
+    52.5
    ],
    {
     "kind": "work",
@@ -1043,217 +960,690 @@
    }
   ],
   [
-   "f_banca3",
+   "bairro_academico_stall3",
    [
-    30,
-    42.2
+    122.9,
+    52.7
    ]
   ],
   [
-   "f_banca_roupa",
+   "bairro_academico_stall1",
    [
-    34,
-    42.2
+    138.2,
+    48.9
    ]
   ],
   [
-   "f_contentor",
+   "bairro_academico_stall2",
    [
-    8,
-    42.2
+    130.3,
+    52.6
    ]
   ],
   [
-   "f_contentor2",
+   "bairro_academico_stall3",
    [
-    140,
-    87.2
+    132.0,
+    51.9
    ]
   ],
   [
-   "f_galinha",
+   "bairro_academico_stall4",
    [
-    12,
-    88.5
+    129.6,
+    55.1
    ]
   ],
   [
-   "f_galinha2",
+   "bairro_academico_small54",
    [
-    14,
-    89.4
+    125.2,
+    12.1
    ]
   ],
   [
-   "f_cabra",
+   "bairro_academico_small6",
    [
-    20,
-    90.0
+    32.2,
+    123.8
    ]
   ],
   [
-   "f_bidao",
+   "bairro_academico_small33",
    [
-    46,
-    88.0
+    95.0,
+    119.5
    ]
   ],
   [
-   "f_carvao",
+   "bairro_academico_small35",
    [
-    60,
-    88.0
+    42.1,
+    6.3
    ]
   ],
   [
-   "f_blocos",
+   "bairro_academico_small16",
    [
-    138,
-    106
+    83.2,
+    50.7
    ]
   ],
   [
-   "f_bicicleta",
+   "bairro_academico_small46",
    [
-    88,
-    88.0
+    20.6,
+    64.8
    ]
   ],
   [
-   "f_tanque",
+   "bairro_academico_small44",
    [
-    140,
-    64
+    97.1,
+    13.2
    ]
   ],
   [
-   "f_carroca",
+   "bairro_academico_small45",
    [
-    70,
-    88.0
+    126.9,
+    8.6
    ]
   ],
   [
-   "f_mesa_plastico2",
+   "bairro_academico_small45",
    [
-    108,
-    88.4
+    45.9,
+    78.4
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_academico_small48",
    [
-    137.7,
-    95.3
+    131.7,
+    116.6
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_academico_small52",
    [
-    96.8,
-    14.0
+    143.4,
+    51.2
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_academico_small17",
    [
-    111.5,
-    40.9
+    38.6,
+    97.4
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_academico_small8",
    [
-    90.0,
-    118.4
+    71.6,
+    149.0
    ]
   ],
   [
-   "f_abacateiro",
+   "bairro_academico_small14",
    [
-    62.0,
-    110.4
+    41.7,
+    29.1
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_academico_small22",
    [
-    16.1,
-    5.2
+    133.7,
+    126.2
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_academico_small46",
    [
-    76.0,
-    57.3
+    86.7,
+    13.8
    ]
   ],
   [
-   "f_eucalipto2",
+   "bairro_academico_small38",
    [
-    22.1,
-    13.5
+    142.6,
+    119.9
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_small41",
    [
-    123.7,
-    14.4
+    61.0,
+    152.9
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_academico_small2",
    [
-    141.7,
-    117.4
+    41.9,
+    78.5
    ]
   ],
   [
-   "f_palmeira2",
+   "bairro_academico_small44",
    [
-    104.6,
-    76.2
+    30.1,
+    63.0
    ]
   ],
   [
-   "f_jacaranda",
+   "bairro_academico_small20",
    [
-    4.8,
-    87.3
+    42.9,
+    105.5
    ]
   ],
   [
-   "f_abacateiro",
+   "bairro_academico_small23",
    [
-    144.2,
-    89.0
+    30.3,
+    113.9
    ]
   ],
   [
-   "f_mangueira",
+   "bairro_academico_small15",
    [
-    99.1,
-    117.8
+    6.7,
+    112.5
+   ]
+  ],
+  [
+   "bairro_academico_small50",
+   [
+    94.6,
+    130.1
+   ]
+  ],
+  [
+   "bairro_academico_small17",
+   [
+    80.6,
+    116.1
+   ]
+  ],
+  [
+   "bairro_academico_small21",
+   [
+    39.3,
+    49.8
+   ]
+  ],
+  [
+   "bairro_academico_small43",
+   [
+    31.3,
+    70.0
+   ]
+  ],
+  [
+   "bairro_academico_small28",
+   [
+    113.6,
+    87.7
+   ]
+  ],
+  [
+   "bairro_academico_small34",
+   [
+    122.3,
+    58.3
+   ]
+  ],
+  [
+   "bairro_academico_small7",
+   [
+    28.2,
+    115.4
+   ]
+  ],
+  [
+   "bairro_academico_small52",
+   [
+    82.8,
+    43.6
+   ]
+  ],
+  [
+   "bairro_academico_small39",
+   [
+    96.9,
+    18.9
+   ]
+  ],
+  [
+   "bairro_academico_small29",
+   [
+    155.9,
+    23.3
+   ]
+  ],
+  [
+   "bairro_academico_small38",
+   [
+    54.3,
+    89.6
+   ]
+  ],
+  [
+   "bairro_academico_small40",
+   [
+    35.4,
+    109.3
+   ]
+  ],
+  [
+   "bairro_academico_small44",
+   [
+    37.1,
+    23.1
+   ]
+  ],
+  [
+   "bairro_academico_small12",
+   [
+    122.1,
+    20.1
+   ]
+  ],
+  [
+   "bairro_academico_small15",
+   [
+    148.8,
+    43.2
+   ]
+  ],
+  [
+   "bairro_academico_small8",
+   [
+    124.5,
+    8.3
+   ]
+  ],
+  [
+   "bairro_academico_small6",
+   [
+    25.5,
+    85.2
+   ]
+  ],
+  [
+   "bairro_academico_small42",
+   [
+    6.5,
+    27.5
+   ]
+  ],
+  [
+   "bairro_academico_small50",
+   [
+    24.0,
+    87.5
+   ]
+  ],
+  [
+   "bairro_academico_small45",
+   [
+    128.9,
+    121.0
+   ]
+  ],
+  [
+   "bairro_academico_small35",
+   [
+    148.6,
+    69.1
+   ]
+  ],
+  [
+   "bairro_academico_small15",
+   [
+    121.6,
+    77.4
+   ]
+  ],
+  [
+   "bairro_academico_small35",
+   [
+    142.8,
+    149.6
+   ]
+  ],
+  [
+   "bairro_academico_small53",
+   [
+    58.3,
+    74.1
+   ]
+  ],
+  [
+   "bairro_academico_small3",
+   [
+    50.8,
+    44.9
+   ]
+  ],
+  [
+   "bairro_academico_tree5",
+   [
+    59.2,
+    151.6
+   ]
+  ],
+  [
+   "bairro_academico_tree15",
+   [
+    50.2,
+    105.8
+   ]
+  ],
+  [
+   "bairro_academico_tree8",
+   [
+    13.0,
+    97.5
+   ]
+  ],
+  [
+   "bairro_academico_tree14",
+   [
+    89.8,
+    110.6
+   ]
+  ],
+  [
+   "bairro_academico_tree1",
+   [
+    27.7,
+    53.7
+   ]
+  ],
+  [
+   "bairro_academico_tree11",
+   [
+    34.1,
+    114.5
+   ]
+  ],
+  [
+   "bairro_academico_tree15",
+   [
+    84.2,
+    71.7
+   ]
+  ],
+  [
+   "bairro_academico_tree3",
+   [
+    69.6,
+    81.8
+   ]
+  ],
+  [
+   "bairro_academico_tree1",
+   [
+    19.7,
+    80.1
+   ]
+  ],
+  [
+   "bairro_academico_tree13",
+   [
+    121.0,
+    130.0
+   ]
+  ],
+  [
+   "bairro_academico_tree11",
+   [
+    21.6,
+    85.9
+   ]
+  ],
+  [
+   "bairro_academico_tree15",
+   [
+    110.7,
+    99.1
+   ]
+  ],
+  [
+   "bairro_academico_tree3",
+   [
+    59.5,
+    32.2
+   ]
+  ],
+  [
+   "bairro_academico_tree7",
+   [
+    107.8,
+    148.9
+   ]
+  ],
+  [
+   "bairro_academico_tree2",
+   [
+    44.6,
+    17.8
+   ]
+  ],
+  [
+   "bairro_academico_tree1",
+   [
+    117.2,
+    147.4
+   ]
+  ],
+  [
+   "bairro_academico_tree14",
+   [
+    10.6,
+    34.1
+   ]
+  ],
+  [
+   "bairro_academico_tree6",
+   [
+    22.8,
+    40.0
+   ]
+  ],
+  [
+   "bairro_academico_tree2",
+   [
+    133.4,
+    97.5
+   ]
+  ],
+  [
+   "bairro_academico_tree7",
+   [
+    137.8,
+    62.4
+   ]
+  ],
+  [
+   "bairro_academico_tree10",
+   [
+    101.6,
+    127.2
+   ]
+  ],
+  [
+   "bairro_academico_tree7",
+   [
+    100.0,
+    131.6
+   ]
+  ],
+  [
+   "bairro_academico_tree2",
+   [
+    80.7,
+    98.4
+   ]
+  ],
+  [
+   "bairro_academico_tree14",
+   [
+    47.2,
+    154.2
+   ]
+  ],
+  [
+   "bairro_academico_tree14",
+   [
+    120.4,
+    30.1
+   ]
+  ],
+  [
+   "bairro_academico_tree4",
+   [
+    126.8,
+    126.9
+   ]
+  ],
+  [
+   "bairro_academico_tree5",
+   [
+    140.4,
+    31.1
+   ]
+  ],
+  [
+   "bairro_academico_tree6",
+   [
+    117.2,
+    24.0
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Bairro Académico",
    "at": [
-    46.5,
-    37.0
+    76.0,
+    64.7
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "aviacao",
+   "name": "Aviação",
+   "at": [
+    4.0,
+    125.9
+   ],
+   "arrive": [
+    9.4,
+    126.6
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "bairro_fatima",
+   "name": "Bairro de Fátima",
    "at": [
-    72,
-    64
+    65.3,
+    156.0
+   ],
+   "arrive": [
+    66.6,
+    150.7
+   ]
+  },
+  {
+   "to": "benfica",
+   "name": "Benfica",
+   "at": [
+    65.2,
+    4.0
+   ],
+   "arrive": [
+    66.5,
+    9.3
+   ]
+  },
+  {
+   "to": "cacilhas",
+   "name": "Cacilhas",
+   "at": [
+    156.0,
+    146.5
+   ],
+   "arrive": [
+    150.5,
+    146.1
+   ]
+  },
+  {
+   "to": "canata",
+   "name": "Canata",
+   "at": [
+    156.0,
+    75.1
+   ],
+   "arrive": [
+    150.5,
+    74.9
+   ]
+  },
+  {
+   "to": "cidade_baixa",
+   "name": "Cidade Baixa",
+   "at": [
+    4.0,
+    54.7
+   ],
+   "arrive": [
+    9.4,
+    55.5
+   ]
+  },
+  {
+   "to": "sao_jose",
+   "name": "São José",
+   "at": [
+    156.0,
+    15.8
+   ],
+   "arrive": [
+    150.5,
+    16.2
+   ]
+  },
+  {
+   "to": "sao_pedro",
+   "name": "São Pedro",
+   "at": [
+    3.7,
+    127.9
+   ],
+   "arrive": [
+    9.1,
+    128.6
+   ]
+  },
+  {
+   "to": "xipuli",
+   "name": "Xipuli",
+   "at": [
+    146.6,
+    3.9
+   ],
+   "arrive": [
+    148.1,
+    9.2
    ]
   }
  ]

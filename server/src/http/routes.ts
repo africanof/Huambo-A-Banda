@@ -49,7 +49,16 @@ export function registerRoutes(app: Application, svc: Services): void {
 
   app.get("/districts", (_req, res) => {
     res.set("Cache-Control", "public, max-age=60");
-    res.json(listDistricts().map((d) => ({ id: d.id, name: d.name, map: d.map, bairros: d.spawns.map((s) => ({ id: s.id, name: s.name })) })));
+    res.json(
+      listDistricts().map((d) => ({
+        id: d.id,
+        name: d.name,
+        map: d.map,
+        geo: d.geo,
+        links: (d.places ?? []).filter((p) => p.kind === "portal").map((p) => p.to),
+        bairros: d.spawns.filter((s) => !s.id.startsWith("from_")).map((s) => ({ id: s.id, name: s.name })),
+      })),
+    );
   });
 
   const meLimiter = new KeyedRateLimiter(20, 20 / 60);

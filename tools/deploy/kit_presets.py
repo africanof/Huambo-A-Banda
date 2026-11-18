@@ -31,7 +31,7 @@ for h, o in main:
     out.append((h, o))
 for kitdir in sorted(glob.glob(os.path.join(ROOT, "client", "assets", "kits", "*"))):
     kit = os.path.basename(kitdir)
-    files = sorted(f'"res://assets/kits/{kit}/{os.path.basename(p)}"' for p in glob.glob(os.path.join(kitdir, "*.png")))
+    files = sorted(f'"res://assets/kits/{kit}/{os.path.basename(p)}"' for p in glob.glob(os.path.join(kitdir, "*.webp")))
     h = web_online[0]
     h = re.sub(r'(?m)^name=".*"$', f'name="Pack {kit}"', h)
     h = re.sub(r'(?m)^runnable=.*$', "runnable=false", h)

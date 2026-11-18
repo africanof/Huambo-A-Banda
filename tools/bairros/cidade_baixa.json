@@ -518,5 +518,107 @@
     34
    ]
   }
- ]
+ ],
+ "portals": [
+  {
+   "to": "bairro_academico",
+   "name": "Bairro Académico",
+   "at": [
+    93.0,
+    24.0
+   ],
+   "arrive": [
+    87.0,
+    24.0
+   ]
+  },
+  {
+   "to": "bairro_fatima",
+   "name": "Bairro de Fátima",
+   "at": [
+    30.0,
+    45.0
+   ],
+   "arrive": [
+    30.0,
+    39.0
+   ]
+  },
+  {
+   "to": "benfica",
+   "name": "Benfica",
+   "at": [
+    30.0,
+    3.0
+   ],
+   "arrive": [
+    30.0,
+    9.0
+   ]
+  },
+  {
+   "to": "canata",
+   "name": "Canata",
+   "at": [
+    93.0,
+    22.0
+   ],
+   "arrive": [
+    87.0,
+    22.0
+   ]
+  },
+  {
+   "to": "cidade_alta",
+   "name": "Cidade Alta",
+   "at": [
+    3.0,
+    24.0
+   ],
+   "arrive": [
+    9.0,
+    24.0
+   ]
+  },
+  {
+   "to": "kapango",
+   "name": "Kapango",
+   "at": [
+    3.0,
+    26.0
+   ],
+   "arrive": [
+    9.0,
+    26.0
+   ]
+  },
+  {
+   "to": "sao_joao",
+   "name": "São João",
+   "at": [
+    93.0,
+    26.0
+   ],
+   "arrive": [
+    87.0,
+    26.0
+   ]
+  },
+  {
+   "to": "sao_pedro",
+   "name": "São Pedro",
+   "at": [
+    3.0,
+    22.0
+   ],
+   "arrive": [
+    9.0,
+    22.0
+   ]
+  }
+ ],
+ "geo": {
+  "lat": -12.767,
+  "lon": 15.744
+ }
 }

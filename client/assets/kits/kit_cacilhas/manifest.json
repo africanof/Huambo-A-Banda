@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "cacilhas_escola",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_escola.png",
-   "name": "Escola Primária de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_escola.webp",
+   "name": "Escola Primária de Cacilhas",
+   "venue": "escola"
   },
   "cacilhas_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "cacilhas_saude",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_saude.png",
-   "name": "Centro de Saúde de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_saude.webp",
+   "name": "Centro de Saúde de Cacilhas",
+   "venue": "saude"
   },
   "cacilhas_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "cacilhas_igreja",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_igreja.png",
-   "name": "Igreja Adventista de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_igreja.webp",
+   "name": "Igreja Adventista de Cacilhas",
+   "venue": "igreja"
   },
   "cacilhas_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "cacilhas_mercado",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_mercado.png",
-   "name": "Mercado de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_mercado.webp",
+   "name": "Mercado de Cacilhas",
+   "venue": "mercado"
   },
   "cacilhas_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "cacilhas_cantina",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_cantina.png",
-   "name": "Cantina da Mamã Rosa"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_cantina.webp",
+   "name": "Cantina da Mamã Rosa",
+   "venue": "cantina"
   },
   "cacilhas_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "cacilhas_farmacia",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_farmacia.png",
-   "name": "Farmácia Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_farmacia.webp",
+   "name": "Farmácia Cacilhas",
+   "venue": "farmacia"
   },
   "cacilhas_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "cacilhas_administracao",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_administracao.png",
-   "name": "Administração de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_administracao.webp",
+   "name": "Administração de Cacilhas",
+   "venue": "administracao"
   },
   "cacilhas_padaria": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "cacilhas_padaria",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_padaria.png",
-   "name": "Padaria Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_padaria.webp",
+   "name": "Padaria Cacilhas",
+   "venue": "padaria"
   },
   "cacilhas_hotel": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "cacilhas_hotel",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_hotel.png",
-   "name": "Hospedaria Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_hotel.webp",
+   "name": "Hospedaria Cacilhas",
+   "venue": "hotel"
   },
   "cacilhas_esquadra": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "cacilhas_esquadra",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_esquadra.png",
-   "name": "Esquadra Policial de Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_esquadra.webp",
+   "name": "Esquadra Policial de Cacilhas",
+   "venue": "esquadra"
   },
   "cacilhas_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "cacilhas_apartamentos",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_apartamentos.png",
-   "name": "Prédio Cacilhas"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_apartamentos.webp",
+   "name": "Prédio Cacilhas",
+   "venue": "apartamentos"
   },
   "cacilhas_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa1",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "cacilhas_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa2",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "cacilhas_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa3",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "cacilhas_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa4",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "cacilhas_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa5",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "cacilhas_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "cacilhas_casa6",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "cacilhas_casa7": {
    "category": "building",
@@ -358,9 +375,1712 @@
    "scale": 1.6,
    "out": "cacilhas_casa7",
    "kit": "kit_cacilhas",
-   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cacilhas_tree1": {
+   "category": "prop",
+   "size": [
+    194,
+    245
+   ],
+   "anchor": [
+    96,
+    243
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree1.webp",
+   "kind": "tree"
+  },
+  "cacilhas_tree2": {
+   "category": "prop",
+   "size": [
+    249,
+    200
+   ],
+   "anchor": [
+    124,
+    198
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree2.webp",
+   "kind": "tree"
+  },
+  "cacilhas_lamp1": {
+   "category": "prop",
+   "size": [
+    101,
+    221
+   ],
+   "anchor": [
+    50,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_lamp1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacilhas_pole1": {
+   "category": "prop",
+   "size": [
+    98,
+    221
+   ],
+   "anchor": [
+    48,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole1.webp",
+   "kind": "pole"
+  },
+  "cacilhas_pole2": {
+   "category": "prop",
+   "size": [
+    52,
+    208
+   ],
+   "anchor": [
+    25,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole2.webp",
+   "kind": "pole"
+  },
+  "cacilhas_pole3": {
+   "category": "prop",
+   "size": [
+    104,
+    218
+   ],
+   "anchor": [
+    51,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole3.webp",
+   "kind": "pole"
+  },
+  "cacilhas_lamp2": {
+   "category": "prop",
+   "size": [
+    75,
+    214
+   ],
+   "anchor": [
+    37,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_lamp2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cacilhas_pole4": {
+   "category": "prop",
+   "size": [
+    118,
+    220
+   ],
+   "anchor": [
+    57,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole4.webp",
+   "kind": "pole"
+  },
+  "cacilhas_pole5": {
+   "category": "prop",
+   "size": [
+    106,
+    220
+   ],
+   "anchor": [
+    52,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole5",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole5.webp",
+   "kind": "pole"
+  },
+  "cacilhas_pole6": {
+   "category": "prop",
+   "size": [
+    104,
+    219
+   ],
+   "anchor": [
+    51,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole6",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole6.webp",
+   "kind": "pole"
+  },
+  "cacilhas_pole7": {
+   "category": "prop",
+   "size": [
+    106,
+    219
+   ],
+   "anchor": [
+    51,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_pole7",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_pole7.webp",
+   "kind": "pole"
+  },
+  "cacilhas_vehicle1": {
+   "category": "prop",
+   "size": [
+    318,
+    247
+   ],
+   "anchor": [
+    148,
+    245
+   ],
+   "footprint": [
+    2.0,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_small1": {
+   "category": "prop",
+   "size": [
+    210,
+    246
+   ],
+   "anchor": [
+    95,
+    244
+   ],
+   "footprint": [
+    1.3,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small1.webp",
+   "kind": "small"
+  },
+  "cacilhas_vehicle2": {
+   "category": "prop",
+   "size": [
+    158,
+    145
+   ],
+   "anchor": [
+    18,
+    144
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_small2": {
+   "category": "prop",
+   "size": [
+    194,
+    238
+   ],
+   "anchor": [
+    92,
+    237
+   ],
+   "footprint": [
+    1.2,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small2.webp",
+   "kind": "small"
+  },
+  "cacilhas_vehicle3": {
+   "category": "prop",
+   "size": [
+    146,
+    139
+   ],
+   "anchor": [
+    17,
+    138
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_vehicle4": {
+   "category": "prop",
+   "size": [
+    407,
+    248
+   ],
+   "anchor": [
+    196,
+    246
+   ],
+   "footprint": [
+    2.7,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_vehicle5": {
+   "category": "prop",
+   "size": [
+    150,
+    138
+   ],
+   "anchor": [
+    16,
+    136
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle5",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_vehicle6": {
+   "category": "prop",
+   "size": [
+    148,
+    140
+   ],
+   "anchor": [
+    17,
+    138
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle6",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_vehicle7": {
+   "category": "prop",
+   "size": [
+    225,
+    213
+   ],
+   "anchor": [
+    100,
+    212
+   ],
+   "footprint": [
+    1.4,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle7",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_vehicle8": {
+   "category": "prop",
+   "size": [
+    233,
+    113
+   ],
+   "anchor": [
+    103,
+    111
+   ],
+   "footprint": [
+    1.4,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_vehicle8",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "cacilhas_tree3": {
+   "category": "prop",
+   "size": [
+    221,
+    223
+   ],
+   "anchor": [
+    110,
+    222
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree3.webp",
+   "kind": "tree"
+  },
+  "cacilhas_stall1": {
+   "category": "prop",
+   "size": [
+    237,
+    135
+   ],
+   "anchor": [
+    102,
+    134
+   ],
+   "footprint": [
+    1.4,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_stall1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_stall1.webp",
+   "kind": "stall"
+  },
+  "cacilhas_small3": {
+   "category": "prop",
+   "size": [
+    213,
+    105
+   ],
+   "anchor": [
+    98,
+    104
+   ],
+   "footprint": [
+    1.3,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small3.webp",
+   "kind": "small"
+  },
+  "cacilhas_stall2": {
+   "category": "prop",
+   "size": [
+    224,
+    211
+   ],
+   "anchor": [
+    99,
+    210
+   ],
+   "footprint": [
+    1.3,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_stall2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_stall2.webp",
+   "kind": "stall"
+  },
+  "cacilhas_stall3": {
+   "category": "prop",
+   "size": [
+    224,
+    162
+   ],
+   "anchor": [
+    139,
+    161
+   ],
+   "footprint": [
+    1.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_stall3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_stall3.webp",
+   "kind": "stall"
+  },
+  "cacilhas_stall4": {
+   "category": "prop",
+   "size": [
+    225,
+    176
+   ],
+   "anchor": [
+    109,
+    174
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_stall4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_stall4.webp",
+   "kind": "stall"
+  },
+  "cacilhas_small4": {
+   "category": "prop",
+   "size": [
+    219,
+    157
+   ],
+   "anchor": [
+    160,
+    155
+   ],
+   "footprint": [
+    2.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small4.webp",
+   "kind": "small"
+  },
+  "cacilhas_small5": {
+   "category": "prop",
+   "size": [
+    109,
+    108
+   ],
+   "anchor": [
+    57,
+    107
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small5",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small5.webp",
+   "kind": "small"
+  },
+  "cacilhas_small6": {
+   "category": "prop",
+   "size": [
+    317,
+    181
+   ],
+   "anchor": [
+    142,
+    179
+   ],
+   "footprint": [
+    1.9,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small6",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small6.webp",
+   "kind": "small"
+  },
+  "cacilhas_small7": {
+   "category": "prop",
+   "size": [
+    103,
+    108
+   ],
+   "anchor": [
+    53,
+    107
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small7",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small7.webp",
+   "kind": "small"
+  },
+  "cacilhas_small8": {
+   "category": "prop",
+   "size": [
+    111,
+    109
+   ],
+   "anchor": [
+    55,
+    108
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small8",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small8.webp",
+   "kind": "small"
+  },
+  "cacilhas_small9": {
+   "category": "prop",
+   "size": [
+    325,
+    178
+   ],
+   "anchor": [
+    141,
+    176
+   ],
+   "footprint": [
+    1.9,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small9",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small9.webp",
+   "kind": "small"
+  },
+  "cacilhas_small10": {
+   "category": "prop",
+   "size": [
+    149,
+    121
+   ],
+   "anchor": [
+    92,
+    119
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small10",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small10.webp",
+   "kind": "small"
+  },
+  "cacilhas_small11": {
+   "category": "prop",
+   "size": [
+    173,
+    98
+   ],
+   "anchor": [
+    31,
+    96
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small11",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small11.webp",
+   "kind": "small"
+  },
+  "cacilhas_small12": {
+   "category": "prop",
+   "size": [
+    165,
+    112
+   ],
+   "anchor": [
+    36,
+    110
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small12",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small12.webp",
+   "kind": "small"
+  },
+  "cacilhas_small13": {
+   "category": "prop",
+   "size": [
+    164,
+    104
+   ],
+   "anchor": [
+    35,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small13",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small13.webp",
+   "kind": "small"
+  },
+  "cacilhas_small14": {
+   "category": "prop",
+   "size": [
+    162,
+    75
+   ],
+   "anchor": [
+    33,
+    74
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small14",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small14.webp",
+   "kind": "small"
+  },
+  "cacilhas_small15": {
+   "category": "prop",
+   "size": [
+    140,
+    151
+   ],
+   "anchor": [
+    75,
+    150
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small15",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small15.webp",
+   "kind": "small"
+  },
+  "cacilhas_small16": {
+   "category": "prop",
+   "size": [
+    116,
+    110
+   ],
+   "anchor": [
+    49,
+    108
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small16",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small16.webp",
+   "kind": "small"
+  },
+  "cacilhas_tree4": {
+   "category": "prop",
+   "size": [
+    118,
+    160
+   ],
+   "anchor": [
+    58,
+    159
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree4.webp",
+   "kind": "tree"
+  },
+  "cacilhas_small17": {
+   "category": "prop",
+   "size": [
+    127,
+    101
+   ],
+   "anchor": [
+    60,
+    99
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small17",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small17.webp",
+   "kind": "small"
+  },
+  "cacilhas_small18": {
+   "category": "prop",
+   "size": [
+    123,
+    94
+   ],
+   "anchor": [
+    57,
+    92
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small18",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small18.webp",
+   "kind": "small"
+  },
+  "cacilhas_small19": {
+   "category": "prop",
+   "size": [
+    292,
+    160
+   ],
+   "anchor": [
+    211,
+    156
+   ],
+   "footprint": [
+    2.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small19",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small19.webp",
+   "kind": "small"
+  },
+  "cacilhas_small20": {
+   "category": "prop",
+   "size": [
+    262,
+    155
+   ],
+   "anchor": [
+    192,
+    153
+   ],
+   "footprint": [
+    2.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small20",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small20.webp",
+   "kind": "small"
+  },
+  "cacilhas_small21": {
+   "category": "prop",
+   "size": [
+    202,
+    163
+   ],
+   "anchor": [
+    138,
+    161
+   ],
+   "footprint": [
+    1.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small21",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small21.webp",
+   "kind": "small"
+  },
+  "cacilhas_small22": {
+   "category": "prop",
+   "size": [
+    124,
+    135
+   ],
+   "anchor": [
+    56,
+    133
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small22",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small22.webp",
+   "kind": "small"
+  },
+  "cacilhas_tree5": {
+   "category": "prop",
+   "size": [
+    116,
+    130
+   ],
+   "anchor": [
+    58,
+    129
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree5",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree5.webp",
+   "kind": "tree"
+  },
+  "cacilhas_small23": {
+   "category": "prop",
+   "size": [
+    227,
+    168
+   ],
+   "anchor": [
+    157,
+    165
+   ],
+   "footprint": [
+    2.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small23",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small23.webp",
+   "kind": "small"
+  },
+  "cacilhas_tree6": {
+   "category": "prop",
+   "size": [
+    93,
+    128
+   ],
+   "anchor": [
+    46,
+    126
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree6",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree6.webp",
+   "kind": "tree"
+  },
+  "cacilhas_small24": {
+   "category": "prop",
+   "size": [
+    232,
+    172
+   ],
+   "anchor": [
+    165,
+    170
+   ],
+   "footprint": [
+    2.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small24",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small24.webp",
+   "kind": "small"
+  },
+  "cacilhas_small25": {
+   "category": "prop",
+   "size": [
+    112,
+    107
+   ],
+   "anchor": [
+    44,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small25",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small25.webp",
+   "kind": "small"
+  },
+  "cacilhas_small26": {
+   "category": "prop",
+   "size": [
+    142,
+    104
+   ],
+   "anchor": [
+    18,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small26",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small26.webp",
+   "kind": "small"
+  },
+  "cacilhas_small27": {
+   "category": "prop",
+   "size": [
+    137,
+    105
+   ],
+   "anchor": [
+    20,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small27",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small27.webp",
+   "kind": "small"
+  },
+  "cacilhas_small28": {
+   "category": "prop",
+   "size": [
+    130,
+    105
+   ],
+   "anchor": [
+    17,
+    103
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small28",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small28.webp",
+   "kind": "small"
+  },
+  "cacilhas_small29": {
+   "category": "prop",
+   "size": [
+    126,
+    75
+   ],
+   "anchor": [
+    48,
+    74
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small29",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small29.webp",
+   "kind": "small"
+  },
+  "cacilhas_small30": {
+   "category": "prop",
+   "size": [
+    137,
+    94
+   ],
+   "anchor": [
+    57,
+    92
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small30",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small30.webp",
+   "kind": "small"
+  },
+  "cacilhas_small31": {
+   "category": "prop",
+   "size": [
+    167,
+    109
+   ],
+   "anchor": [
+    67,
+    107
+   ],
+   "footprint": [
+    0.9,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small31",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small31.webp",
+   "kind": "small"
+  },
+  "cacilhas_small32": {
+   "category": "prop",
+   "size": [
+    167,
+    114
+   ],
+   "anchor": [
+    35,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small32",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small32.webp",
+   "kind": "small"
+  },
+  "cacilhas_small33": {
+   "category": "prop",
+   "size": [
+    159,
+    107
+   ],
+   "anchor": [
+    36,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small33",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small33.webp",
+   "kind": "small"
+  },
+  "cacilhas_small34": {
+   "category": "prop",
+   "size": [
+    69,
+    90
+   ],
+   "anchor": [
+    31,
+    89
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small34",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small34.webp",
+   "kind": "small"
+  },
+  "cacilhas_small35": {
+   "category": "prop",
+   "size": [
+    60,
+    76
+   ],
+   "anchor": [
+    25,
+    75
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small35",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small35.webp",
+   "kind": "small"
+  },
+  "cacilhas_small36": {
+   "category": "prop",
+   "size": [
+    49,
+    65
+   ],
+   "anchor": [
+    22,
+    63
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small36",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small36.webp",
+   "kind": "small"
+  },
+  "cacilhas_small37": {
+   "category": "prop",
+   "size": [
+    93,
+    92
+   ],
+   "anchor": [
+    34,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small37",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small37.webp",
+   "kind": "small"
+  },
+  "cacilhas_small38": {
+   "category": "prop",
+   "size": [
+    79,
+    76
+   ],
+   "anchor": [
+    30,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small38",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small38.webp",
+   "kind": "small"
+  },
+  "cacilhas_small39": {
+   "category": "prop",
+   "size": [
+    88,
+    79
+   ],
+   "anchor": [
+    40,
+    77
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small39",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small39.webp",
+   "kind": "small"
+  },
+  "cacilhas_small40": {
+   "category": "prop",
+   "size": [
+    128,
+    111
+   ],
+   "anchor": [
+    44,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small40",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small40.webp",
+   "kind": "small"
+  },
+  "cacilhas_small41": {
+   "category": "prop",
+   "size": [
+    139,
+    114
+   ],
+   "anchor": [
+    40,
+    111
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small41",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small41.webp",
+   "kind": "small"
+  },
+  "cacilhas_small42": {
+   "category": "prop",
+   "size": [
+    126,
+    105
+   ],
+   "anchor": [
+    56,
+    104
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small42",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small42.webp",
+   "kind": "small"
+  },
+  "cacilhas_small43": {
+   "category": "prop",
+   "size": [
+    131,
+    113
+   ],
+   "anchor": [
+    60,
+    112
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small43",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small43.webp",
+   "kind": "small"
+  },
+  "cacilhas_small44": {
+   "category": "prop",
+   "size": [
+    84,
+    138
+   ],
+   "anchor": [
+    8,
+    136
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small44",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small44.webp",
+   "kind": "small"
+  },
+  "cacilhas_small45": {
+   "category": "prop",
+   "size": [
+    88,
+    138
+   ],
+   "anchor": [
+    8,
+    136
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small45",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small45.webp",
+   "kind": "small"
+  },
+  "cacilhas_small46": {
+   "category": "prop",
+   "size": [
+    171,
+    156
+   ],
+   "anchor": [
+    112,
+    154
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small46",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small46.webp",
+   "kind": "small"
+  },
+  "cacilhas_small47": {
+   "category": "prop",
+   "size": [
+    172,
+    156
+   ],
+   "anchor": [
+    116,
+    154
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small47",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small47.webp",
+   "kind": "small"
+  },
+  "cacilhas_small48": {
+   "category": "prop",
+   "size": [
+    172,
+    156
+   ],
+   "anchor": [
+    114,
+    154
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small48",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small48.webp",
+   "kind": "small"
+  },
+  "cacilhas_small49": {
+   "category": "prop",
+   "size": [
+    120,
+    132
+   ],
+   "anchor": [
+    65,
+    131
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small49",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small49.webp",
+   "kind": "small"
+  },
+  "cacilhas_small50": {
+   "category": "prop",
+   "size": [
+    115,
+    132
+   ],
+   "anchor": [
+    81,
+    131
+   ],
+   "footprint": [
+    1.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small50",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small50.webp",
+   "kind": "small"
+  },
+  "cacilhas_tree7": {
+   "category": "prop",
+   "size": [
+    157,
+    139
+   ],
+   "anchor": [
+    78,
+    137
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_tree7",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_tree7.webp",
+   "kind": "tree"
+  },
+  "cacilhas_small51": {
+   "category": "prop",
+   "size": [
+    215,
+    119
+   ],
+   "anchor": [
+    44,
+    117
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small51",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small51.webp",
+   "kind": "small"
+  },
+  "cacilhas_small52": {
+   "category": "prop",
+   "size": [
+    231,
+    122
+   ],
+   "anchor": [
+    48,
+    119
+   ],
+   "footprint": [
+    0.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small52",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small52.webp",
+   "kind": "small"
+  },
+  "cacilhas_small53": {
+   "category": "prop",
+   "size": [
+    79,
+    111
+   ],
+   "anchor": [
+    25,
+    110
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small53",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small53.webp",
+   "kind": "small"
+  },
+  "cacilhas_small54": {
+   "category": "prop",
+   "size": [
+    79,
+    111
+   ],
+   "anchor": [
+    27,
+    110
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small54",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small54.webp",
+   "kind": "small"
+  },
+  "cacilhas_small55": {
+   "category": "prop",
+   "size": [
+    369,
+    129
+   ],
+   "anchor": [
+    170,
+    128
+   ],
+   "footprint": [
+    2.3,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small55",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small55.webp",
+   "kind": "small"
+  },
+  "cacilhas_small56": {
+   "category": "prop",
+   "size": [
+    522,
+    133
+   ],
+   "anchor": [
+    169,
+    131
+   ],
+   "footprint": [
+    2.3,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small56",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small56.webp",
+   "kind": "small"
+  },
+  "cacilhas_small57": {
+   "category": "prop",
+   "size": [
+    567,
+    133
+   ],
+   "anchor": [
+    248,
+    132
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_small57",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_small57.webp",
+   "kind": "small"
   }
  },
- "version": "4f70abe2f975"
+ "version": "68cfb46c4039"
 }

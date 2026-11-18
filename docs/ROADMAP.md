@@ -66,3 +66,13 @@ ponta-a-ponta com clientes Godot reais).
   Cahumba, Cambiote, Chiva, Lossambo, Salucombo, Samutaca, Vila Graça, Xipuli — 1 imagem cada, nomes automáticos
   (`tools/art/ai/name_kits.py`), plantas (`tools/bairros/gen_bairro.py`).
 - Pacotes por bairro (~1 MB) descarregados só quando se vai lá (`Packs`), guardados no aparelho; jogo base ~22 MB.
+
+### Limitações resolvidas
+- Interiores próprios por tipo de lugar: 2 kits de IA (>100 objetos cada), 16 salas e ~170 móveis
+  (igreja com altar e bancos, hospital com camas e consultório, discoteca com DJ e pista…);
+  disposição automática com caminho livre da porta a cada ponto (`build_bairros.py: auto_layout`).
+- Adereços próprios de cada bairro (árvores, candeeiros, postes, veículos, bancas do seu kit; `classify_props.py`).
+- Ruas reais do OpenStreetMap em cada bairro (`osm_bairros.py`, `gen_osm.py`), edifícios ao longo das ruas,
+  saídas a pé nos fins de rua para o bairro vizinho real (sempre ida e volta; cidade toda ligada), mapa da cidade
+  com as posições reais, caminho automático (A*) no cliente.
+- Arte dos kits em WebP: 295 MB → 67 MB; PNG antigos retirados do histórico do ramo.

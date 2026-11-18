@@ -2,137 +2,531 @@
  "id": "salucombo",
  "name": "Salucombo",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "terra",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     -500.63,
+     536.43
+    ],
+    [
+     -470.85,
+     485.64
+    ],
+    [
+     -451.59,
+     460.11
+    ],
+    [
+     -397.03,
+     360.1
+    ],
+    [
+     -373.69,
+     334.43
+    ],
+    [
+     -343.39,
+     313.95
+    ],
+    [
+     -307.93,
+     287.54
+    ],
+    [
+     -276.31,
+     242.64
+    ],
+    [
+     -266.57,
+     230.76
+    ],
+    [
+     -259.82,
+     221.1
+    ],
+    [
+     -221.47,
+     175.27
+    ],
+    [
+     -208.34,
+     166.42
+    ],
+    [
+     -183.15,
+     162.66
+    ],
+    [
+     -131.09,
+     160.2
+    ],
+    [
+     -85.03,
+     158.02
+    ],
+    [
+     8.3,
+     153.61
+    ],
+    [
+     80.64,
+     149.94
+    ],
+    [
+     154.21,
+     145.58
+    ],
+    [
+     278.1,
+     151.17
+    ],
+    [
+     316.15,
+     162.43
+    ],
+    [
+     337.56,
+     183.0
+    ],
+    [
+     346.12,
+     204.28
+    ],
+    [
+     349.5,
+     223.92
+    ],
+    [
+     346.27,
+     240.99
+    ],
+    [
+     339.18,
+     259.97
+    ],
+    [
+     330.09,
+     278.0
+    ],
+    [
+     312.0,
+     295.12
+    ],
+    [
+     271.36,
+     323.68
+    ],
+    [
+     192.93,
+     374.47
+    ],
+    [
+     175.47,
+     382.01
+    ],
+    [
+     74.1,
+     431.11
+    ],
+    [
+     38.73,
+     442.67
+    ],
+    [
+     -2.7,
+     452.55
+    ],
+    [
+     -32.95,
+     459.33
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     26.8,
+     540.12
+    ],
+    [
+     52.8,
+     537.84
+    ],
+    [
+     87.93,
+     533.27
+    ],
+    [
+     182.81,
+     519.18
+    ],
+    [
+     259.22,
+     508.8
+    ],
+    [
+     287.93,
+     504.0
+    ],
+    [
+     340.86,
+     490.29
+    ],
+    [
+     358.89,
+     482.79
+    ],
+    [
+     382.02,
+     471.82
+    ],
+    [
+     417.14,
+     450.93
+    ],
+    [
+     453.29,
+     425.42
+    ],
+    [
+     568.6,
+     337.2
+    ],
+    [
+     612.66,
+     303.44
+    ],
+    [
+     624.9,
+     294.06
+    ],
+    [
+     640.95,
+     277.15
+    ],
+    [
+     652.66,
+     259.22
+    ],
+    [
+     665.99,
+     228.53
+    ],
+    [
+     672.94,
+     188.87
+    ],
+    [
+     674.62,
+     158.05
+    ],
+    [
+     672.2,
+     147.25
+    ],
+    [
+     669.35,
+     134.56
+    ],
+    [
+     655.44,
+     107.84
+    ],
+    [
+     637.38,
+     91.47
+    ],
+    [
+     599.0,
+     73.2
+    ],
+    [
+     585.79,
+     66.11
+    ],
+    [
+     514.11,
+     27.64
+    ],
+    [
+     501.49,
+     21.94
+    ],
+    [
+     492.56,
+     19.29
+    ],
+    [
+     454.83,
+     15.32
+    ],
+    [
+     357.88,
+     8.23
+    ],
+    [
+     252.02,
+     0.5
+    ],
+    [
+     189.32,
+     2.64
+    ],
+    [
+     129.03,
+     6.3
+    ],
+    [
+     74.92,
+     8.31
+    ],
+    [
+     67.35,
+     16.48
+    ],
+    [
+     61.63,
+     29.68
+    ],
+    [
+     52.89,
+     42.04
+    ],
+    [
+     36.62,
+     61.27
+    ],
+    [
+     26.45,
+     81.01
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -203.08,
+     573.85
+    ],
+    [
+     -11.22,
+     486.91
+    ],
+    [
+     60.3,
+     474.89
+    ],
+    [
+     106.27,
+     468.09
+    ],
+    [
+     153.71,
+     461.33
+    ],
+    [
+     195.34,
+     453.8
+    ],
+    [
+     209.21,
+     449.04
+    ],
+    [
+     220.19,
+     443.32
+    ],
+    [
+     269.04,
+     413.31
+    ],
+    [
+     310.76,
+     386.84
+    ],
+    [
+     344.16,
+     365.31
+    ],
+    [
+     369.94,
+     344.96
+    ],
+    [
+     387.49,
+     326.37
+    ],
+    [
+     402.21,
+     302.13
+    ],
+    [
+     409.92,
+     285.8
+    ],
+    [
+     417.47,
+     262.18
+    ],
+    [
+     421.7,
+     233.49
+    ],
+    [
+     423.36,
+     215.34
+    ],
+    [
+     416.99,
+     177.69
+    ],
+    [
+     410.47,
+     164.49
+    ],
+    [
+     398.91,
+     145.28
+    ],
+    [
+     389.37,
+     131.11
+    ],
+    [
+     378.34,
+     117.89
+    ],
+    [
+     367.75,
+     108.49
+    ],
+    [
+     344.75,
+     96.02
+    ],
+    [
+     323.04,
+     88.1
+    ],
+    [
+     307.29,
+     84.48
+    ],
+    [
+     281.93,
+     80.95
+    ],
+    [
+     233.02,
+     75.71
+    ],
+    [
+     183.18,
+     72.47
+    ],
+    [
+     116.49,
+     71.98
+    ],
+    [
+     54.45,
+     75.59
+    ],
+    [
+     38.22,
+     77.5
+    ],
+    [
+     26.45,
+     81.01
+    ],
+    [
+     24.36,
+     90.4
+    ],
+    [
+     8.3,
+     153.61
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -91.06,
+     20.87
+    ],
+    [
+     -76.49,
+     18.63
+    ],
+    [
+     -26.64,
+     13.42
+    ],
+    [
+     40.1,
+     8.67
+    ],
+    [
+     74.92,
+     8.31
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     175.47,
+     382.01
+    ],
+    [
+     80.64,
+     149.94
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [],
+ "geo": {
+  "lat": -12.835,
+  "lon": 15.773,
+  "rot_deg": -2.0,
+  "cx": -40,
+  "cy": -10
+ },
  "buildings": [
   {
    "id": "salucombo_escola",
    "at": [
-    2.0,
-    22.1
+    71.2,
+    58.8
    ],
    "venue": {
     "venue": "escola",
@@ -140,10 +534,22 @@
    }
   },
   {
+   "id": "salucombo_mercado",
+   "at": [
+    88.5,
+    56.1
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
+  {
    "id": "salucombo_saude",
    "at": [
-    18.0,
-    24.1
+    56.4,
+    61.7
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +559,8 @@
   {
    "id": "salucombo_igreja",
    "at": [
-    51.0,
-    24.9
+    103.0,
+    59.8
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +568,43 @@
    }
   },
   {
-   "id": "salucombo_mercado",
+   "id": "salucombo_discoteca",
    "at": [
-    63.0,
-    20.3
+    43.3,
+    64.5
    ],
    "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
+    "venue": "discoteca",
+    "job": "barman"
+   }
+  },
+  {
+   "id": "salucombo_administracao",
+   "at": [
+    115.3,
+    60.7
+   ],
+   "venue": {
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "salucombo_apartamentos",
+   "at": [
+    128.5,
+    59.9
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
    }
   },
   {
    "id": "salucombo_cantina",
    "at": [
-    76.0,
-    26.9
+    73.0,
+    139.4
    ],
    "venue": {
     "venue": "cantina",
@@ -188,8 +615,8 @@
   {
    "id": "salucombo_farmacia",
    "at": [
-    32.0,
-    26.9
+    86.5,
+    138.7
    ],
    "venue": {
     "venue": "farmacia",
@@ -197,21 +624,10 @@
    }
   },
   {
-   "id": "salucombo_administracao",
-   "at": [
-    99.0,
-    26.2
-   ],
-   "venue": {
-    "venue": "administracao",
-    "job": "funcionario_publico"
-   }
-  },
-  {
    "id": "salucombo_padaria",
    "at": [
-    111.0,
-    27.8
+    61.5,
+    141.0
    ],
    "venue": {
     "venue": "padaria",
@@ -220,32 +636,10 @@
    }
   },
   {
-   "id": "salucombo_discoteca",
-   "at": [
-    123.0,
-    25.7
-   ],
-   "venue": {
-    "venue": "discoteca",
-    "job": "barman"
-   }
-  },
-  {
-   "id": "salucombo_apartamentos",
-   "at": [
-    135.0,
-    25.3
-   ],
-   "venue": {
-    "venue": "apartamentos",
-    "units": 4
-   }
-  },
-  {
    "id": "salucombo_casa1",
    "at": [
-    2.0,
-    72.7
+    151.0,
+    134.8
    ],
    "venue": {
     "venue": "casa",
@@ -254,46 +648,22 @@
    "label": "Casa 1"
   },
   {
-   "id": "salucombo_casa2",
+   "id": "salucombo_casa9",
    "at": [
-    10.0,
-    73.8
+    23.0,
+    142.4
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
-   "label": "Casa 2"
-  },
-  {
-   "id": "salucombo_casa3",
-   "at": [
-    18.0,
-    75.4
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 3"
-  },
-  {
-   "id": "salucombo_casa4",
-   "at": [
-    27.0,
-    73.4
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 4"
+   "label": "Casa 9"
   },
   {
    "id": "salucombo_casa5",
    "at": [
-    34.0,
-    73.0
+    142.0,
+    135.6
    ],
    "venue": {
     "venue": "casa",
@@ -302,34 +672,10 @@
    "label": "Casa 5"
   },
   {
-   "id": "salucombo_casa6",
-   "at": [
-    51.0,
-    73.4
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 6"
-  },
-  {
-   "id": "salucombo_casa7",
-   "at": [
-    59.0,
-    73.9
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 7"
-  },
-  {
    "id": "salucombo_casa8",
    "at": [
-    66.0,
-    73.4
+    2.4,
+    1.0
    ],
    "venue": {
     "venue": "casa",
@@ -338,714 +684,345 @@
    "label": "Casa 8"
   },
   {
-   "id": "salucombo_casa9",
+   "id": "salucombo_casa6",
    "at": [
-    74.0,
-    73.2
+    133.9,
+    136.5
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
-   "label": "Casa 9"
+   "label": "Casa 6"
+  },
+  {
+   "id": "salucombo_casa4",
+   "at": [
+    33.5,
+    142.1
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
+   "id": "salucombo_casa2",
+   "at": [
+    119.9,
+    137.7
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
+  },
+  {
+   "id": "salucombo_casa7",
+   "at": [
+    99.8,
+    139.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 7"
+  },
+  {
+   "id": "salucombo_casa3",
+   "at": [
+    10.2,
+    2.4
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
   }
  ],
  "props": [
   [
-   "f_poste",
+   "salucombo_pole3",
    [
-    6,
-    32.5
+    44.6,
+    157.7
    ]
   ],
   [
-   "f_jacaranda2",
+   "salucombo_pole3",
    [
-    12.5,
-    41.4
+    60.5,
+    156.9
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole4",
    [
-    19,
-    32.5
+    76.5,
+    156.1
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_pole1",
    [
-    25.5,
-    41.4
+    101.0,
+    154.6
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole2",
    [
-    32,
-    32.5
+    116.9,
+    153.7
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_tree4",
    [
-    38.5,
-    41.4
+    116.2,
+    140.9
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole2",
    [
-    45,
-    32.5
+    132.9,
+    152.8
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_pole2",
    [
-    51.5,
-    41.4
+    148.9,
+    151.8
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_pole1",
    [
-    64.5,
-    41.4
+    157.9,
+    151.7
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_tree6",
    [
-    77.5,
-    41.4
+    125.3,
+    13.3
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole4",
    [
-    84,
-    32.5
+    76.8,
+    2.3
    ]
   ],
   [
-   "f_jacaranda2",
+   "salucombo_tree12",
    [
-    90.5,
-    41.4
+    77.3,
+    15.1
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole3",
    [
-    97,
-    32.5
+    60.3,
+    17.8
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_tree3",
    [
-    103.5,
-    41.4
+    72.1,
+    22.9
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole1",
    [
-    110,
-    32.5
+    54.5,
+    29.5
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_tree1",
    [
-    116.5,
-    41.4
+    65.0,
+    36.9
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole2",
    [
-    123,
-    32.5
+    45.8,
+    41.3
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_pole4",
    [
-    129.5,
-    41.4
+    35.5,
+    53.5
    ]
   ],
   [
-   "f_poste",
+   "salucombo_tree5",
    [
-    136,
-    32.5
+    45.2,
+    61.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "salucombo_pole3",
    [
-    142.5,
-    41.4
+    29.5,
+    62.1
    ]
   ],
   [
-   "f_jacaranda2",
+   "salucombo_pole2",
    [
-    12.5,
+    22.2,
+    76.3
+   ]
+  ],
+  [
+   "salucombo_pole3",
+   [
+    147.2,
+    66.3
+   ]
+  ],
+  [
+   "salucombo_tree13",
+   [
+    112.9,
+    79.1
+   ]
+  ],
+  [
+   "salucombo_tree8",
+   [
+    81.0,
+    81.0
+   ]
+  ],
+  [
+   "salucombo_pole3",
+   [
+    19.8,
+    83.6
+   ]
+  ],
+  [
+   "salucombo_tree4",
+   [
+    32.3,
     86.4
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole1",
    [
-    19,
-    78.5
+    17.7,
+    92.8
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_tree7",
    [
-    25.5,
-    86.4
+    30.1,
+    96.0
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_pole3",
    [
-    38.5,
-    86.4
+    13.7,
+    108.3
    ]
   ],
   [
-   "f_poste",
+   "salucombo_tree12",
    [
-    45,
-    78.5
+    26.1,
+    111.5
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_pole1",
    [
-    51.5,
-    86.4
+    9.8,
+    123.8
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole3",
    [
-    58,
-    78.5
+    5.8,
+    139.3
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_pole2",
    [
-    64.5,
-    86.4
+    9.7,
+    16.7
    ]
   ],
   [
-   "f_eucalipto",
+   "salucombo_pole4",
    [
-    77.5,
-    86.4
+    25.6,
+    15.6
    ]
   ],
   [
-   "f_poste",
+   "salucombo_tree11",
    [
-    84,
-    78.5
+    24.7,
+    2.8
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_pole2",
    [
-    90.5,
-    86.4
+    44.2,
+    14.5
    ]
   ],
   [
-   "f_poste",
+   "salucombo_pole3",
    [
-    97,
-    78.5
+    60.2,
+    14.4
    ]
   ],
   [
-   "f_jacaranda2",
+   "salucombo_pole4",
    [
-    103.5,
-    86.4
+    88.6,
+    153.9
    ]
   ],
   [
-   "f_poste",
+   "salucombo_vehicle7",
    [
-    110,
-    78.5
+    28.8,
+    78.0
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_stall2",
    [
-    116.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    129.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    78.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    142.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    6,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    12.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    19,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    25.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    32,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    38.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    45,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    51.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    58,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    64.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    71,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    77.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    90.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    103.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    112.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    116.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    112.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    129.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    112.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    142.5,
-    120.4
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    50.5,
-    120
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    8
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    22
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    36
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    50
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    64
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_poste2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
-    37.5
-   ]
-  ],
-  [
-   "f_hilux",
-   [
-    30,
-    83.0
-   ]
-  ],
-  [
-   "f_carro2",
-   [
-    128,
-    83.0
-   ]
-  ],
-  [
-   "f_banca",
-   [
-    22,
-    42.2
+    92.2,
+    77.5
    ],
    {
     "kind": "work",
@@ -1053,231 +1030,592 @@
    }
   ],
   [
-   "f_banca3",
+   "salucombo_stall2",
    [
-    30,
-    42.2
+    106.2,
+    76.4
    ]
   ],
   [
-   "f_banca_roupa",
+   "salucombo_stall3",
    [
-    34,
-    42.2
+    107.7,
+    77.8
    ]
   ],
   [
-   "f_contentor",
+   "salucombo_small8",
    [
-    8,
-    42.2
+    142.4,
+    110.1
    ]
   ],
   [
-   "f_contentor2",
+   "salucombo_small2",
    [
-    140,
-    87.2
+    47.1,
+    128.8
    ]
   ],
   [
-   "f_galinha",
+   "salucombo_small2",
    [
-    12,
-    88.5
+    67.7,
+    98.1
    ]
   ],
   [
-   "f_galinha2",
+   "salucombo_small38",
    [
-    14,
-    89.4
+    133.0,
+    53.2
    ]
   ],
   [
-   "f_cabra",
+   "salucombo_small52",
    [
-    20,
-    90.0
+    55.0,
+    63.4
    ]
   ],
   [
-   "f_bidao",
+   "salucombo_small23",
    [
-    46,
-    88.0
+    135.1,
+    80.0
    ]
   ],
   [
-   "f_carvao",
+   "salucombo_small26",
    [
-    60,
-    88.0
+    90.1,
+    133.4
    ]
   ],
   [
-   "f_blocos",
+   "salucombo_small9",
    [
-    138,
-    106
+    104.2,
+    38.9
    ]
   ],
   [
-   "f_bicicleta",
+   "salucombo_small2",
    [
-    88,
-    88.0
+    76.0,
+    125.4
    ]
   ],
   [
-   "f_tanque",
+   "salucombo_small19",
    [
-    140,
-    64
+    115.3,
+    105.0
    ]
   ],
   [
-   "f_carroca",
+   "salucombo_small47",
    [
-    70,
-    88.0
+    124.7,
+    98.1
    ]
   ],
   [
-   "f_mesa_plastico2",
+   "salucombo_small9",
    [
-    108,
-    88.4
+    94.5,
+    52.8
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_small49",
    [
-    22.6,
-    95.5
+    32.7,
+    47.7
    ]
   ],
   [
-   "f_palmeira2",
+   "salucombo_small48",
    [
-    20.1,
-    54.7
+    80.5,
+    84.3
    ]
   ],
   [
-   "f_palmeira2",
+   "salucombo_small51",
    [
-    53.1,
-    49.2
+    81.7,
+    42.6
    ]
   ],
   [
-   "f_mangueira",
+   "salucombo_small1",
    [
-    63.1,
-    97.0
+    106.6,
+    37.5
    ]
   ],
   [
-   "f_mangueira",
+   "salucombo_small47",
    [
-    94.9,
-    8.9
+    139.9,
+    98.0
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_small40",
    [
-    15.3,
-    62.8
+    152.8,
+    28.0
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_small20",
    [
-    131.6,
-    101.2
+    42.9,
+    14.7
    ]
   ],
   [
-   "f_abacateiro",
+   "salucombo_small38",
    [
-    13.7,
-    5.4
+    78.9,
+    80.8
    ]
   ],
   [
-   "f_jacaranda",
+   "salucombo_small29",
    [
-    97.9,
-    13.5
+    153.9,
+    130.3
    ]
   ],
   [
-   "f_mangueira",
+   "salucombo_small16",
    [
-    23.4,
-    81.1
+    38.4,
+    107.8
    ]
   ],
   [
-   "f_palmeira2",
+   "salucombo_small43",
    [
-    120.9,
-    112.1
+    13.4,
+    33.2
    ]
   ],
   [
-   "f_eucalipto2",
+   "salucombo_small52",
    [
-    22.5,
-    74.5
+    143.9,
+    150.5
    ]
   ],
   [
-   "f_eucalipto2",
+   "salucombo_small9",
    [
-    95.3,
-    121.4
+    37.3,
+    109.8
    ]
   ],
   [
-   "f_mangueira",
+   "salucombo_small18",
    [
-    120.5,
-    105.2
+    21.3,
+    132.0
    ]
   ],
   [
-   "f_palmeira2",
+   "salucombo_small18",
    [
-    40.5,
-    63.7
+    51.7,
+    61.6
    ]
   ],
   [
-   "f_palmeira2",
+   "salucombo_small7",
    [
-    80.9,
-    105.9
+    46.4,
+    87.3
+   ]
+  ],
+  [
+   "salucombo_small47",
+   [
+    41.6,
+    86.9
+   ]
+  ],
+  [
+   "salucombo_small22",
+   [
+    34.0,
+    27.6
+   ]
+  ],
+  [
+   "salucombo_small24",
+   [
+    149.8,
+    10.9
+   ]
+  ],
+  [
+   "salucombo_small3",
+   [
+    125.9,
+    11.5
+   ]
+  ],
+  [
+   "salucombo_small10",
+   [
+    97.0,
+    77.4
+   ]
+  ],
+  [
+   "salucombo_small9",
+   [
+    66.4,
+    45.3
+   ]
+  ],
+  [
+   "salucombo_small50",
+   [
+    24.9,
+    26.6
+   ]
+  ],
+  [
+   "salucombo_small52",
+   [
+    154.4,
+    42.7
+   ]
+  ],
+  [
+   "salucombo_small41",
+   [
+    54.1,
+    106.9
+   ]
+  ],
+  [
+   "salucombo_small29",
+   [
+    154.1,
+    77.8
+   ]
+  ],
+  [
+   "salucombo_small44",
+   [
+    89.2,
+    120.4
+   ]
+  ],
+  [
+   "salucombo_small40",
+   [
+    131.5,
+    133.8
+   ]
+  ],
+  [
+   "salucombo_small51",
+   [
+    12.2,
+    84.8
+   ]
+  ],
+  [
+   "salucombo_small27",
+   [
+    105.6,
+    98.6
+   ]
+  ],
+  [
+   "salucombo_small47",
+   [
+    6.4,
+    22.9
+   ]
+  ],
+  [
+   "salucombo_small41",
+   [
+    143.7,
+    115.6
+   ]
+  ],
+  [
+   "salucombo_small33",
+   [
+    51.8,
+    94.8
+   ]
+  ],
+  [
+   "salucombo_small36",
+   [
+    138.3,
+    42.6
+   ]
+  ],
+  [
+   "salucombo_tree12",
+   [
+    8.2,
+    35.8
+   ]
+  ],
+  [
+   "salucombo_tree4",
+   [
+    142.9,
+    52.4
+   ]
+  ],
+  [
+   "salucombo_tree7",
+   [
+    74.0,
+    84.0
+   ]
+  ],
+  [
+   "salucombo_tree11",
+   [
+    109.4,
+    32.0
+   ]
+  ],
+  [
+   "salucombo_tree7",
+   [
+    88.5,
+    87.0
+   ]
+  ],
+  [
+   "salucombo_tree1",
+   [
+    113.2,
+    125.8
+   ]
+  ],
+  [
+   "salucombo_tree13",
+   [
+    84.4,
+    102.3
+   ]
+  ],
+  [
+   "salucombo_tree10",
+   [
+    76.9,
+    35.3
+   ]
+  ],
+  [
+   "salucombo_tree6",
+   [
+    77.0,
+    90.2
+   ]
+  ],
+  [
+   "salucombo_tree12",
+   [
+    66.3,
+    131.3
+   ]
+  ],
+  [
+   "salucombo_tree12",
+   [
+    89.2,
+    112.0
+   ]
+  ],
+  [
+   "salucombo_tree1",
+   [
+    44.3,
+    125.1
+   ]
+  ],
+  [
+   "salucombo_tree11",
+   [
+    72.7,
+    96.9
+   ]
+  ],
+  [
+   "salucombo_tree4",
+   [
+    98.2,
+    143.6
+   ]
+  ],
+  [
+   "salucombo_tree13",
+   [
+    41.4,
+    97.2
+   ]
+  ],
+  [
+   "salucombo_tree3",
+   [
+    28.0,
+    24.3
+   ]
+  ],
+  [
+   "salucombo_tree12",
+   [
+    112.1,
+    15.9
+   ]
+  ],
+  [
+   "salucombo_tree10",
+   [
+    112.7,
+    22.9
+   ]
+  ],
+  [
+   "salucombo_tree7",
+   [
+    153.5,
+    18.1
+   ]
+  ],
+  [
+   "salucombo_tree7",
+   [
+    79.0,
+    129.1
+   ]
+  ],
+  [
+   "salucombo_tree12",
+   [
+    70.7,
+    85.0
+   ]
+  ],
+  [
+   "salucombo_tree4",
+   [
+    126.3,
+    89.8
+   ]
+  ],
+  [
+   "salucombo_tree13",
+   [
+    103.0,
+    23.3
+   ]
+  ],
+  [
+   "salucombo_tree11",
+   [
+    109.9,
+    10.9
+   ]
+  ],
+  [
+   "salucombo_tree11",
+   [
+    10.3,
+    72.7
+   ]
+  ],
+  [
+   "salucombo_tree4",
+   [
+    111.5,
+    139.5
+   ]
+  ],
+  [
+   "salucombo_tree6",
+   [
+    97.4,
+    86.4
+   ]
+  ],
+  [
+   "salucombo_tree10",
+   [
+    25.9,
+    5.6
+   ]
+  ],
+  [
+   "salucombo_tree5",
+   [
+    153.1,
+    35.7
+   ]
+  ],
+  [
+   "salucombo_tree2",
+   [
+    132.8,
+    142.2
+   ]
+  ],
+  [
+   "salucombo_tree9",
+   [
+    103.5,
+    14.7
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Salucombo",
    "at": [
-    46.5,
-    37.0
+    54.5,
+    75.6
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "cacilhas",
+   "name": "Cacilhas",
+   "at": [
+    4.0,
+    11.2
+   ],
+   "arrive": [
+    9.5,
+    10.8
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "lossambo",
+   "name": "Lossambo",
    "at": [
-    72,
-    64
+    4.0,
+    153.8
+   ],
+   "arrive": [
+    9.5,
+    153.6
    ]
   }
  ]

@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "salucombo_escola",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_escola.png",
-   "name": "Escola Primária do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_escola.webp",
+   "name": "Escola Primária do Salucombo",
+   "venue": "escola"
   },
   "salucombo_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "salucombo_saude",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_saude.png",
-   "name": "Centro de Saúde do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_saude.webp",
+   "name": "Centro de Saúde do Salucombo",
+   "venue": "saude"
   },
   "salucombo_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "salucombo_igreja",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_igreja.png",
-   "name": "Igreja Evangélica do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_igreja.webp",
+   "name": "Igreja Evangélica do Salucombo",
+   "venue": "igreja"
   },
   "salucombo_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "salucombo_mercado",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_mercado.png",
-   "name": "Mercado do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_mercado.webp",
+   "name": "Mercado do Salucombo",
+   "venue": "mercado"
   },
   "salucombo_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "salucombo_cantina",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_cantina.png",
-   "name": "Cantina do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_cantina.webp",
+   "name": "Cantina do Salucombo",
+   "venue": "cantina"
   },
   "salucombo_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "salucombo_farmacia",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_farmacia.png",
-   "name": "Farmácia Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_farmacia.webp",
+   "name": "Farmácia Salucombo",
+   "venue": "farmacia"
   },
   "salucombo_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "salucombo_administracao",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_administracao.png",
-   "name": "Administração do Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_administracao.webp",
+   "name": "Administração do Salucombo",
+   "venue": "administracao"
   },
   "salucombo_padaria": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "salucombo_padaria",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_padaria.png",
-   "name": "Padaria Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_padaria.webp",
+   "name": "Padaria Salucombo",
+   "venue": "padaria"
   },
   "salucombo_discoteca": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "salucombo_discoteca",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_discoteca.png",
-   "name": "Discoteca Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_discoteca.webp",
+   "name": "Discoteca Salucombo",
+   "venue": "discoteca"
   },
   "salucombo_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "salucombo_apartamentos",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_apartamentos.png",
-   "name": "Prédio Salucombo"
+   "path": "res://assets/kits/kit_salucombo/salucombo_apartamentos.webp",
+   "name": "Prédio Salucombo",
+   "venue": "apartamentos"
   },
   "salucombo_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "salucombo_casa1",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "salucombo_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "salucombo_casa2",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "salucombo_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "salucombo_casa3",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "salucombo_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "salucombo_casa4",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "salucombo_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "salucombo_casa5",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "salucombo_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "salucombo_casa6",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "salucombo_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "salucombo_casa7",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "salucombo_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "salucombo_casa8",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "salucombo_casa9": {
    "category": "building",
@@ -378,9 +396,1776 @@
    "scale": 1.6,
    "out": "salucombo_casa9",
    "kit": "kit_salucombo",
-   "path": "res://assets/kits/kit_salucombo/salucombo_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "salucombo_tree1": {
+   "category": "prop",
+   "size": [
+    316,
+    263
+   ],
+   "anchor": [
+    157,
+    260
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree1.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree2": {
+   "category": "prop",
+   "size": [
+    192,
+    277
+   ],
+   "anchor": [
+    96,
+    276
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree2.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree3": {
+   "category": "prop",
+   "size": [
+    414,
+    258
+   ],
+   "anchor": [
+    206,
+    256
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree3.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree4": {
+   "category": "prop",
+   "size": [
+    234,
+    223
+   ],
+   "anchor": [
+    116,
+    222
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree4.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree5": {
+   "category": "prop",
+   "size": [
+    215,
+    221
+   ],
+   "anchor": [
+    106,
+    219
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree5.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree6": {
+   "category": "prop",
+   "size": [
+    218,
+    267
+   ],
+   "anchor": [
+    108,
+    265
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree6",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree6.webp",
+   "kind": "tree"
+  },
+  "salucombo_small1": {
+   "category": "prop",
+   "size": [
+    202,
+    215
+   ],
+   "anchor": [
+    91,
+    213
+   ],
+   "footprint": [
+    1.2,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small1.webp",
+   "kind": "small"
+  },
+  "salucombo_tree7": {
+   "category": "prop",
+   "size": [
+    226,
+    202
+   ],
+   "anchor": [
+    112,
+    200
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree7",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree7.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree8": {
+   "category": "prop",
+   "size": [
+    260,
+    245
+   ],
+   "anchor": [
+    130,
+    243
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree8",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree8.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree9": {
+   "category": "prop",
+   "size": [
+    181,
+    213
+   ],
+   "anchor": [
+    89,
+    212
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree9",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree9.webp",
+   "kind": "tree"
+  },
+  "salucombo_lamp1": {
+   "category": "prop",
+   "size": [
+    90,
+    236
+   ],
+   "anchor": [
+    45,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_lamp2": {
+   "category": "prop",
+   "size": [
+    98,
+    235
+   ],
+   "anchor": [
+    48,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_lamp3": {
+   "category": "prop",
+   "size": [
+    51,
+    222
+   ],
+   "anchor": [
+    25,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_lamp4": {
+   "category": "prop",
+   "size": [
+    56,
+    225
+   ],
+   "anchor": [
+    27,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_lamp5": {
+   "category": "prop",
+   "size": [
+    66,
+    214
+   ],
+   "anchor": [
+    32,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_lamp6": {
+   "category": "prop",
+   "size": [
+    81,
+    235
+   ],
+   "anchor": [
+    40,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_lamp6",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_lamp6.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "salucombo_pole1": {
+   "category": "prop",
+   "size": [
+    95,
+    235
+   ],
+   "anchor": [
+    47,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_pole1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_pole1.webp",
+   "kind": "pole"
+  },
+  "salucombo_pole2": {
+   "category": "prop",
+   "size": [
+    92,
+    246
+   ],
+   "anchor": [
+    45,
+    245
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_pole2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_pole2.webp",
+   "kind": "pole"
+  },
+  "salucombo_pole3": {
+   "category": "prop",
+   "size": [
+    91,
+    242
+   ],
+   "anchor": [
+    45,
+    240
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_pole3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_pole3.webp",
+   "kind": "pole"
+  },
+  "salucombo_pole4": {
+   "category": "prop",
+   "size": [
+    88,
+    243
+   ],
+   "anchor": [
+    43,
+    242
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_pole4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_pole4.webp",
+   "kind": "pole"
+  },
+  "salucombo_vehicle1": {
+   "category": "prop",
+   "size": [
+    348,
+    190
+   ],
+   "anchor": [
+    151,
+    188
+   ],
+   "footprint": [
+    2.0,
+    2.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle2": {
+   "category": "prop",
+   "size": [
+    322,
+    186
+   ],
+   "anchor": [
+    147,
+    184
+   ],
+   "footprint": [
+    2.0,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle3": {
+   "category": "prop",
+   "size": [
+    166,
+    158
+   ],
+   "anchor": [
+    20,
+    157
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle4": {
+   "category": "prop",
+   "size": [
+    161,
+    152
+   ],
+   "anchor": [
+    20,
+    151
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle5": {
+   "category": "prop",
+   "size": [
+    151,
+    142
+   ],
+   "anchor": [
+    17,
+    141
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_small2": {
+   "category": "prop",
+   "size": [
+    138,
+    133
+   ],
+   "anchor": [
+    15,
+    131
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small2.webp",
+   "kind": "small"
+  },
+  "salucombo_vehicle6": {
+   "category": "prop",
+   "size": [
+    251,
+    119
+   ],
+   "anchor": [
+    126,
+    117
+   ],
+   "footprint": [
+    1.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle6",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle7": {
+   "category": "prop",
+   "size": [
+    236,
+    112
+   ],
+   "anchor": [
+    109,
+    110
+   ],
+   "footprint": [
+    1.5,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle7",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_vehicle8": {
+   "category": "prop",
+   "size": [
+    236,
+    144
+   ],
+   "anchor": [
+    105,
+    143
+   ],
+   "footprint": [
+    1.4,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_vehicle8",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "salucombo_stall1": {
+   "category": "prop",
+   "size": [
+    194,
+    181
+   ],
+   "anchor": [
+    117,
+    179
+   ],
+   "footprint": [
+    1.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_stall1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_stall1.webp",
+   "kind": "stall"
+  },
+  "salucombo_stall2": {
+   "category": "prop",
+   "size": [
+    237,
+    170
+   ],
+   "anchor": [
+    167,
+    168
+   ],
+   "footprint": [
+    2.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_stall2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_stall2.webp",
+   "kind": "stall"
+  },
+  "salucombo_stall3": {
+   "category": "prop",
+   "size": [
+    241,
+    174
+   ],
+   "anchor": [
+    173,
+    172
+   ],
+   "footprint": [
+    2.4,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_stall3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_stall3.webp",
+   "kind": "stall"
+  },
+  "salucombo_stall4": {
+   "category": "prop",
+   "size": [
+    211,
+    169
+   ],
+   "anchor": [
+    144,
+    167
+   ],
+   "footprint": [
+    2.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_stall4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_stall4.webp",
+   "kind": "stall"
+  },
+  "salucombo_tree10": {
+   "category": "prop",
+   "size": [
+    215,
+    198
+   ],
+   "anchor": [
+    107,
+    196
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree10",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree10.webp",
+   "kind": "tree"
+  },
+  "salucombo_stall5": {
+   "category": "prop",
+   "size": [
+    236,
+    176
+   ],
+   "anchor": [
+    102,
+    164
+   ],
+   "footprint": [
+    1.4,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_stall5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_stall5.webp",
+   "kind": "stall"
+  },
+  "salucombo_small3": {
+   "category": "prop",
+   "size": [
+    156,
+    125
+   ],
+   "anchor": [
+    93,
+    123
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small3.webp",
+   "kind": "small"
+  },
+  "salucombo_small4": {
+   "category": "prop",
+   "size": [
+    148,
+    118
+   ],
+   "anchor": [
+    89,
+    116
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small4.webp",
+   "kind": "small"
+  },
+  "salucombo_small5": {
+   "category": "prop",
+   "size": [
+    119,
+    116
+   ],
+   "anchor": [
+    67,
+    114
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small5.webp",
+   "kind": "small"
+  },
+  "salucombo_small6": {
+   "category": "prop",
+   "size": [
+    122,
+    117
+   ],
+   "anchor": [
+    68,
+    115
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small6",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small6.webp",
+   "kind": "small"
+  },
+  "salucombo_small7": {
+   "category": "prop",
+   "size": [
+    173,
+    102
+   ],
+   "anchor": [
+    124,
+    100
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small7",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small7.webp",
+   "kind": "small"
+  },
+  "salucombo_small8": {
+   "category": "prop",
+   "size": [
+    171,
+    109
+   ],
+   "anchor": [
+    130,
+    107
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small8",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small8.webp",
+   "kind": "small"
+  },
+  "salucombo_small9": {
+   "category": "prop",
+   "size": [
+    192,
+    110
+   ],
+   "anchor": [
+    150,
+    109
+   ],
+   "footprint": [
+    2.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small9",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small9.webp",
+   "kind": "small"
+  },
+  "salucombo_small10": {
+   "category": "prop",
+   "size": [
+    176,
+    80
+   ],
+   "anchor": [
+    25,
+    79
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small10",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small10.webp",
+   "kind": "small"
+  },
+  "salucombo_small11": {
+   "category": "prop",
+   "size": [
+    157,
+    153
+   ],
+   "anchor": [
+    84,
+    152
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small11",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small11.webp",
+   "kind": "small"
+  },
+  "salucombo_small12": {
+   "category": "prop",
+   "size": [
+    112,
+    121
+   ],
+   "anchor": [
+    46,
+    120
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small12",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small12.webp",
+   "kind": "small"
+  },
+  "salucombo_small13": {
+   "category": "prop",
+   "size": [
+    94,
+    89
+   ],
+   "anchor": [
+    39,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small13",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small13.webp",
+   "kind": "small"
+  },
+  "salucombo_small14": {
+   "category": "prop",
+   "size": [
+    136,
+    106
+   ],
+   "anchor": [
+    77,
+    104
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small14",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small14.webp",
+   "kind": "small"
+  },
+  "salucombo_small15": {
+   "category": "prop",
+   "size": [
+    137,
+    104
+   ],
+   "anchor": [
+    79,
+    102
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small15",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small15.webp",
+   "kind": "small"
+  },
+  "salucombo_small16": {
+   "category": "prop",
+   "size": [
+    325,
+    172
+   ],
+   "anchor": [
+    255,
+    156
+   ],
+   "footprint": [
+    3.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small16",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small16.webp",
+   "kind": "small"
+  },
+  "salucombo_small17": {
+   "category": "prop",
+   "size": [
+    258,
+    163
+   ],
+   "anchor": [
+    205,
+    160
+   ],
+   "footprint": [
+    2.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small17",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small17.webp",
+   "kind": "small"
+  },
+  "salucombo_small18": {
+   "category": "prop",
+   "size": [
+    101,
+    163
+   ],
+   "anchor": [
+    40,
+    162
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small18",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small18.webp",
+   "kind": "small"
+  },
+  "salucombo_tree11": {
+   "category": "prop",
+   "size": [
+    134,
+    138
+   ],
+   "anchor": [
+    67,
+    136
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree11",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree11.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree12": {
+   "category": "prop",
+   "size": [
+    125,
+    131
+   ],
+   "anchor": [
+    62,
+    130
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree12",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree12.webp",
+   "kind": "tree"
+  },
+  "salucombo_tree13": {
+   "category": "prop",
+   "size": [
+    127,
+    151
+   ],
+   "anchor": [
+    63,
+    150
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_tree13",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_tree13.webp",
+   "kind": "tree"
+  },
+  "salucombo_small19": {
+   "category": "prop",
+   "size": [
+    179,
+    108
+   ],
+   "anchor": [
+    28,
+    107
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small19",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small19.webp",
+   "kind": "small"
+  },
+  "salucombo_small20": {
+   "category": "prop",
+   "size": [
+    171,
+    110
+   ],
+   "anchor": [
+    29,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small20",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small20.webp",
+   "kind": "small"
+  },
+  "salucombo_small21": {
+   "category": "prop",
+   "size": [
+    157,
+    106
+   ],
+   "anchor": [
+    22,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small21",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small21.webp",
+   "kind": "small"
+  },
+  "salucombo_small22": {
+   "category": "prop",
+   "size": [
+    144,
+    99
+   ],
+   "anchor": [
+    69,
+    97
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small22",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small22.webp",
+   "kind": "small"
+  },
+  "salucombo_small23": {
+   "category": "prop",
+   "size": [
+    153,
+    93
+   ],
+   "anchor": [
+    85,
+    91
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small23",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small23.webp",
+   "kind": "small"
+  },
+  "salucombo_small24": {
+   "category": "prop",
+   "size": [
+    141,
+    94
+   ],
+   "anchor": [
+    76,
+    92
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small24",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small24.webp",
+   "kind": "small"
+  },
+  "salucombo_small25": {
+   "category": "prop",
+   "size": [
+    129,
+    98
+   ],
+   "anchor": [
+    67,
+    97
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small25",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small25.webp",
+   "kind": "small"
+  },
+  "salucombo_small26": {
+   "category": "prop",
+   "size": [
+    159,
+    95
+   ],
+   "anchor": [
+    45,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small26",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small26.webp",
+   "kind": "small"
+  },
+  "salucombo_small27": {
+   "category": "prop",
+   "size": [
+    161,
+    101
+   ],
+   "anchor": [
+    43,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small27",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small27.webp",
+   "kind": "small"
+  },
+  "salucombo_small28": {
+   "category": "prop",
+   "size": [
+    80,
+    92
+   ],
+   "anchor": [
+    36,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small28",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small28.webp",
+   "kind": "small"
+  },
+  "salucombo_small29": {
+   "category": "prop",
+   "size": [
+    63,
+    76
+   ],
+   "anchor": [
+    27,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small29",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small29.webp",
+   "kind": "small"
+  },
+  "salucombo_small30": {
+   "category": "prop",
+   "size": [
+    57,
+    66
+   ],
+   "anchor": [
+    28,
+    65
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small30",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small30.webp",
+   "kind": "small"
+  },
+  "salucombo_small31": {
+   "category": "prop",
+   "size": [
+    104,
+    108
+   ],
+   "anchor": [
+    31,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small31",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small31.webp",
+   "kind": "small"
+  },
+  "salucombo_small32": {
+   "category": "prop",
+   "size": [
+    98,
+    84
+   ],
+   "anchor": [
+    38,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small32",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small32.webp",
+   "kind": "small"
+  },
+  "salucombo_small33": {
+   "category": "prop",
+   "size": [
+    95,
+    88
+   ],
+   "anchor": [
+    39,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small33",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small33.webp",
+   "kind": "small"
+  },
+  "salucombo_small34": {
+   "category": "prop",
+   "size": [
+    127,
+    112
+   ],
+   "anchor": [
+    69,
+    109
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small34",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small34.webp",
+   "kind": "small"
+  },
+  "salucombo_small35": {
+   "category": "prop",
+   "size": [
+    130,
+    109
+   ],
+   "anchor": [
+    69,
+    106
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small35",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small35.webp",
+   "kind": "small"
+  },
+  "salucombo_small36": {
+   "category": "prop",
+   "size": [
+    188,
+    108
+   ],
+   "anchor": [
+    82,
+    106
+   ],
+   "footprint": [
+    1.1,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small36",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small36.webp",
+   "kind": "small"
+  },
+  "salucombo_small37": {
+   "category": "prop",
+   "size": [
+    178,
+    111
+   ],
+   "anchor": [
+    85,
+    109
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small37",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small37.webp",
+   "kind": "small"
+  },
+  "salucombo_small38": {
+   "category": "prop",
+   "size": [
+    92,
+    144
+   ],
+   "anchor": [
+    9,
+    142
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small38",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small38.webp",
+   "kind": "small"
+  },
+  "salucombo_small39": {
+   "category": "prop",
+   "size": [
+    90,
+    144
+   ],
+   "anchor": [
+    9,
+    142
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small39",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small39.webp",
+   "kind": "small"
+  },
+  "salucombo_small40": {
+   "category": "prop",
+   "size": [
+    193,
+    171
+   ],
+   "anchor": [
+    131,
+    170
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small40",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small40.webp",
+   "kind": "small"
+  },
+  "salucombo_small41": {
+   "category": "prop",
+   "size": [
+    198,
+    168
+   ],
+   "anchor": [
+    129,
+    166
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small41",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small41.webp",
+   "kind": "small"
+  },
+  "salucombo_small42": {
+   "category": "prop",
+   "size": [
+    198,
+    169
+   ],
+   "anchor": [
+    133,
+    168
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small42",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small42.webp",
+   "kind": "small"
+  },
+  "salucombo_small43": {
+   "category": "prop",
+   "size": [
+    137,
+    148
+   ],
+   "anchor": [
+    45,
+    147
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small43",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small43.webp",
+   "kind": "small"
+  },
+  "salucombo_small44": {
+   "category": "prop",
+   "size": [
+    126,
+    141
+   ],
+   "anchor": [
+    45,
+    140
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small44",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small44.webp",
+   "kind": "small"
+  },
+  "salucombo_small45": {
+   "category": "prop",
+   "size": [
+    179,
+    171
+   ],
+   "anchor": [
+    103,
+    170
+   ],
+   "footprint": [
+    1.4,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small45",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small45.webp",
+   "kind": "small"
+  },
+  "salucombo_small46": {
+   "category": "prop",
+   "size": [
+    247,
+    132
+   ],
+   "anchor": [
+    136,
+    129
+   ],
+   "footprint": [
+    1.9,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small46",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small46.webp",
+   "kind": "small"
+  },
+  "salucombo_small47": {
+   "category": "prop",
+   "size": [
+    225,
+    131
+   ],
+   "anchor": [
+    118,
+    129
+   ],
+   "footprint": [
+    1.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small47",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small47.webp",
+   "kind": "small"
+  },
+  "salucombo_small48": {
+   "category": "prop",
+   "size": [
+    80,
+    131
+   ],
+   "anchor": [
+    28,
+    130
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small48",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small48.webp",
+   "kind": "small"
+  },
+  "salucombo_small49": {
+   "category": "prop",
+   "size": [
+    80,
+    130
+   ],
+   "anchor": [
+    34,
+    129
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small49",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small49.webp",
+   "kind": "small"
+  },
+  "salucombo_small50": {
+   "category": "prop",
+   "size": [
+    325,
+    148
+   ],
+   "anchor": [
+    170,
+    146
+   ],
+   "footprint": [
+    2.3,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small50",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small50.webp",
+   "kind": "small"
+  },
+  "salucombo_small51": {
+   "category": "prop",
+   "size": [
+    516,
+    151
+   ],
+   "anchor": [
+    163,
+    150
+   ],
+   "footprint": [
+    2.2,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small51",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small51.webp",
+   "kind": "small"
+  },
+  "salucombo_small52": {
+   "category": "prop",
+   "size": [
+    526,
+    151
+   ],
+   "anchor": [
+    95,
+    149
+   ],
+   "footprint": [
+    1.3,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_small52",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_small52.webp",
+   "kind": "small"
   }
  },
- "version": "6a6fe0b16722"
+ "version": "990ae4d792ee"
 }

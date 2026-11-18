@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "lossambo_escola",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_escola.png",
-   "name": "Escola Primária do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_escola.webp",
+   "name": "Escola Primária do Lossambo",
+   "venue": "escola"
   },
   "lossambo_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "lossambo_saude",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_saude.png",
-   "name": "Centro de Saúde do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_saude.webp",
+   "name": "Centro de Saúde do Lossambo",
+   "venue": "saude"
   },
   "lossambo_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "lossambo_igreja",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_igreja.png",
-   "name": "Igreja Adventista do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_igreja.webp",
+   "name": "Igreja Adventista do Lossambo",
+   "venue": "igreja"
   },
   "lossambo_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "lossambo_mercado",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_mercado.png",
-   "name": "Mercado do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_mercado.webp",
+   "name": "Mercado do Lossambo",
+   "venue": "mercado"
   },
   "lossambo_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "lossambo_cantina",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_cantina.png",
-   "name": "Cantina do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_cantina.webp",
+   "name": "Cantina do Lossambo",
+   "venue": "cantina"
   },
   "lossambo_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "lossambo_farmacia",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_farmacia.png",
-   "name": "Farmácia Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_farmacia.webp",
+   "name": "Farmácia Lossambo",
+   "venue": "farmacia"
   },
   "lossambo_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "lossambo_administracao",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_administracao.png",
-   "name": "Administração do Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_administracao.webp",
+   "name": "Administração do Lossambo",
+   "venue": "administracao"
   },
   "lossambo_churrasqueira": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "lossambo_churrasqueira",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_churrasqueira.png",
-   "name": "Churrasqueira Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_churrasqueira.webp",
+   "name": "Churrasqueira Lossambo",
+   "venue": "churrasqueira"
   },
   "lossambo_hotel": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "lossambo_hotel",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_hotel.png",
-   "name": "Hospedaria Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_hotel.webp",
+   "name": "Hospedaria Lossambo",
+   "venue": "hotel"
   },
   "lossambo_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "lossambo_apartamentos",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_apartamentos.png",
-   "name": "Prédio Lossambo"
+   "path": "res://assets/kits/kit_lossambo/lossambo_apartamentos.webp",
+   "name": "Prédio Lossambo",
+   "venue": "apartamentos"
   },
   "lossambo_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "lossambo_casa1",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "lossambo_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "lossambo_casa2",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "lossambo_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "lossambo_casa3",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "lossambo_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "lossambo_casa4",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "lossambo_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "lossambo_casa5",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "lossambo_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "lossambo_casa6",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "lossambo_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "lossambo_casa7",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "lossambo_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "lossambo_casa8",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "lossambo_casa9": {
    "category": "building",
@@ -378,9 +396,1753 @@
    "scale": 1.6,
    "out": "lossambo_casa9",
    "kit": "kit_lossambo",
-   "path": "res://assets/kits/kit_lossambo/lossambo_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "lossambo_tree1": {
+   "category": "prop",
+   "size": [
+    570,
+    236
+   ],
+   "anchor": [
+    285,
+    233
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree1.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree2": {
+   "category": "prop",
+   "size": [
+    269,
+    210
+   ],
+   "anchor": [
+    134,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree2.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree3": {
+   "category": "prop",
+   "size": [
+    178,
+    166
+   ],
+   "anchor": [
+    88,
+    164
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree3.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree4": {
+   "category": "prop",
+   "size": [
+    168,
+    222
+   ],
+   "anchor": [
+    83,
+    221
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree4.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree5": {
+   "category": "prop",
+   "size": [
+    328,
+    210
+   ],
+   "anchor": [
+    163,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree5.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree6": {
+   "category": "prop",
+   "size": [
+    219,
+    209
+   ],
+   "anchor": [
+    109,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree6",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree6.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree7": {
+   "category": "prop",
+   "size": [
+    210,
+    203
+   ],
+   "anchor": [
+    104,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree7",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree7.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree8": {
+   "category": "prop",
+   "size": [
+    195,
+    208
+   ],
+   "anchor": [
+    97,
+    206
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree8",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree8.webp",
+   "kind": "tree"
+  },
+  "lossambo_small1": {
+   "category": "prop",
+   "size": [
+    165,
+    207
+   ],
+   "anchor": [
+    73,
+    205
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small1.webp",
+   "kind": "small"
+  },
+  "lossambo_tree9": {
+   "category": "prop",
+   "size": [
+    212,
+    159
+   ],
+   "anchor": [
+    106,
+    157
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree9",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree9.webp",
+   "kind": "tree"
+  },
+  "lossambo_tree10": {
+   "category": "prop",
+   "size": [
+    191,
+    175
+   ],
+   "anchor": [
+    95,
+    173
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree10",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree10.webp",
+   "kind": "tree"
+  },
+  "lossambo_pole1": {
+   "category": "prop",
+   "size": [
+    83,
+    182
+   ],
+   "anchor": [
+    41,
+    181
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole1.webp",
+   "kind": "pole"
+  },
+  "lossambo_pole2": {
+   "category": "prop",
+   "size": [
+    74,
+    166
+   ],
+   "anchor": [
+    36,
+    165
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole2.webp",
+   "kind": "pole"
+  },
+  "lossambo_lamp1": {
+   "category": "prop",
+   "size": [
+    52,
+    186
+   ],
+   "anchor": [
+    25,
+    185
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_lamp1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "lossambo_pole3": {
+   "category": "prop",
+   "size": [
+    52,
+    194
+   ],
+   "anchor": [
+    25,
+    193
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole3.webp",
+   "kind": "pole"
+  },
+  "lossambo_lamp2": {
+   "category": "prop",
+   "size": [
+    71,
+    186
+   ],
+   "anchor": [
+    35,
+    184
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_lamp2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "lossambo_lamp3": {
+   "category": "prop",
+   "size": [
+    84,
+    226
+   ],
+   "anchor": [
+    41,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_lamp3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "lossambo_pole4": {
+   "category": "prop",
+   "size": [
+    106,
+    209
+   ],
+   "anchor": [
+    52,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole4.webp",
+   "kind": "pole"
+  },
+  "lossambo_pole5": {
+   "category": "prop",
+   "size": [
+    104,
+    238
+   ],
+   "anchor": [
+    52,
+    237
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole5.webp",
+   "kind": "pole"
+  },
+  "lossambo_pole6": {
+   "category": "prop",
+   "size": [
+    104,
+    236
+   ],
+   "anchor": [
+    51,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_pole6",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_pole6.webp",
+   "kind": "pole"
+  },
+  "lossambo_small2": {
+   "category": "prop",
+   "size": [
+    111,
+    112
+   ],
+   "anchor": [
+    57,
+    111
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small2.webp",
+   "kind": "small"
+  },
+  "lossambo_vehicle1": {
+   "category": "prop",
+   "size": [
+    293,
+    175
+   ],
+   "anchor": [
+    134,
+    173
+   ],
+   "footprint": [
+    1.8,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_small3": {
+   "category": "prop",
+   "size": [
+    106,
+    112
+   ],
+   "anchor": [
+    53,
+    110
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small3.webp",
+   "kind": "small"
+  },
+  "lossambo_small4": {
+   "category": "prop",
+   "size": [
+    109,
+    112
+   ],
+   "anchor": [
+    55,
+    111
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small4.webp",
+   "kind": "small"
+  },
+  "lossambo_vehicle2": {
+   "category": "prop",
+   "size": [
+    292,
+    174
+   ],
+   "anchor": [
+    131,
+    172
+   ],
+   "footprint": [
+    1.8,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_small5": {
+   "category": "prop",
+   "size": [
+    84,
+    104
+   ],
+   "anchor": [
+    29,
+    103
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small5.webp",
+   "kind": "small"
+  },
+  "lossambo_vehicle3": {
+   "category": "prop",
+   "size": [
+    147,
+    79
+   ],
+   "anchor": [
+    36,
+    77
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle4": {
+   "category": "prop",
+   "size": [
+    166,
+    137
+   ],
+   "anchor": [
+    17,
+    135
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle5": {
+   "category": "prop",
+   "size": [
+    126,
+    96
+   ],
+   "anchor": [
+    80,
+    89
+   ],
+   "footprint": [
+    1.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle6": {
+   "category": "prop",
+   "size": [
+    147,
+    131
+   ],
+   "anchor": [
+    15,
+    130
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle6",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle7": {
+   "category": "prop",
+   "size": [
+    141,
+    96
+   ],
+   "anchor": [
+    97,
+    94
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle7",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle8": {
+   "category": "prop",
+   "size": [
+    160,
+    129
+   ],
+   "anchor": [
+    17,
+    128
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle8",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_vehicle9": {
+   "category": "prop",
+   "size": [
+    145,
+    70
+   ],
+   "anchor": [
+    103,
+    69
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_vehicle9",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "lossambo_stall1": {
+   "category": "prop",
+   "size": [
+    161,
+    135
+   ],
+   "anchor": [
+    17,
+    133
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_stall1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_stall1.webp",
+   "kind": "stall"
+  },
+  "lossambo_stall2": {
+   "category": "prop",
+   "size": [
+    115,
+    118
+   ],
+   "anchor": [
+    44,
+    117
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_stall2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_stall2.webp",
+   "kind": "stall"
+  },
+  "lossambo_stall3": {
+   "category": "prop",
+   "size": [
+    111,
+    109
+   ],
+   "anchor": [
+    40,
+    108
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_stall3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_stall3.webp",
+   "kind": "stall"
+  },
+  "lossambo_small6": {
+   "category": "prop",
+   "size": [
+    246,
+    119
+   ],
+   "anchor": [
+    108,
+    117
+   ],
+   "footprint": [
+    1.5,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small6",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small6.webp",
+   "kind": "small"
+  },
+  "lossambo_stall4": {
+   "category": "prop",
+   "size": [
+    149,
+    148
+   ],
+   "anchor": [
+    83,
+    146
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_stall4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_stall4.webp",
+   "kind": "stall"
+  },
+  "lossambo_stall5": {
+   "category": "prop",
+   "size": [
+    226,
+    122
+   ],
+   "anchor": [
+    101,
+    120
+   ],
+   "footprint": [
+    1.4,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_stall5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_stall5.webp",
+   "kind": "stall"
+  },
+  "lossambo_small7": {
+   "category": "prop",
+   "size": [
+    138,
+    104
+   ],
+   "anchor": [
+    84,
+    103
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small7",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small7.webp",
+   "kind": "small"
+  },
+  "lossambo_small8": {
+   "category": "prop",
+   "size": [
+    128,
+    101
+   ],
+   "anchor": [
+    82,
+    99
+   ],
+   "footprint": [
+    1.1,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small8",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small8.webp",
+   "kind": "small"
+  },
+  "lossambo_small9": {
+   "category": "prop",
+   "size": [
+    242,
+    142
+   ],
+   "anchor": [
+    107,
+    140
+   ],
+   "footprint": [
+    1.4,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small9",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small9.webp",
+   "kind": "small"
+  },
+  "lossambo_small10": {
+   "category": "prop",
+   "size": [
+    276,
+    144
+   ],
+   "anchor": [
+    218,
+    138
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small10",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small10.webp",
+   "kind": "small"
+  },
+  "lossambo_tree11": {
+   "category": "prop",
+   "size": [
+    201,
+    177
+   ],
+   "anchor": [
+    100,
+    175
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree11",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree11.webp",
+   "kind": "tree"
+  },
+  "lossambo_small11": {
+   "category": "prop",
+   "size": [
+    278,
+    130
+   ],
+   "anchor": [
+    243,
+    126
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small11",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small11.webp",
+   "kind": "small"
+  },
+  "lossambo_small12": {
+   "category": "prop",
+   "size": [
+    222,
+    167
+   ],
+   "anchor": [
+    134,
+    165
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small12",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small12.webp",
+   "kind": "small"
+  },
+  "lossambo_small13": {
+   "category": "prop",
+   "size": [
+    230,
+    148
+   ],
+   "anchor": [
+    79,
+    145
+   ],
+   "footprint": [
+    1.0,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small13",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small13.webp",
+   "kind": "small"
+  },
+  "lossambo_tree12": {
+   "category": "prop",
+   "size": [
+    109,
+    124
+   ],
+   "anchor": [
+    53,
+    123
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_tree12",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_tree12.webp",
+   "kind": "tree"
+  },
+  "lossambo_small14": {
+   "category": "prop",
+   "size": [
+    98,
+    110
+   ],
+   "anchor": [
+    42,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small14",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small14.webp",
+   "kind": "small"
+  },
+  "lossambo_small15": {
+   "category": "prop",
+   "size": [
+    197,
+    174
+   ],
+   "anchor": [
+    67,
+    172
+   ],
+   "footprint": [
+    0.9,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small15",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small15.webp",
+   "kind": "small"
+  },
+  "lossambo_small16": {
+   "category": "prop",
+   "size": [
+    72,
+    111
+   ],
+   "anchor": [
+    28,
+    110
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small16",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small16.webp",
+   "kind": "small"
+  },
+  "lossambo_small17": {
+   "category": "prop",
+   "size": [
+    216,
+    144
+   ],
+   "anchor": [
+    113,
+    142
+   ],
+   "footprint": [
+    1.5,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small17",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small17.webp",
+   "kind": "small"
+  },
+  "lossambo_small18": {
+   "category": "prop",
+   "size": [
+    86,
+    101
+   ],
+   "anchor": [
+    35,
+    100
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small18",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small18.webp",
+   "kind": "small"
+  },
+  "lossambo_small19": {
+   "category": "prop",
+   "size": [
+    225,
+    166
+   ],
+   "anchor": [
+    152,
+    164
+   ],
+   "footprint": [
+    2.1,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small19",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small19.webp",
+   "kind": "small"
+  },
+  "lossambo_small20": {
+   "category": "prop",
+   "size": [
+    147,
+    91
+   ],
+   "anchor": [
+    23,
+    90
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small20",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small20.webp",
+   "kind": "small"
+  },
+  "lossambo_small21": {
+   "category": "prop",
+   "size": [
+    145,
+    90
+   ],
+   "anchor": [
+    21,
+    89
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small21",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small21.webp",
+   "kind": "small"
+  },
+  "lossambo_small22": {
+   "category": "prop",
+   "size": [
+    147,
+    95
+   ],
+   "anchor": [
+    19,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small22",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small22.webp",
+   "kind": "small"
+  },
+  "lossambo_small23": {
+   "category": "prop",
+   "size": [
+    130,
+    81
+   ],
+   "anchor": [
+    50,
+    80
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small23",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small23.webp",
+   "kind": "small"
+  },
+  "lossambo_small24": {
+   "category": "prop",
+   "size": [
+    131,
+    92
+   ],
+   "anchor": [
+    66,
+    90
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small24",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small24.webp",
+   "kind": "small"
+  },
+  "lossambo_small25": {
+   "category": "prop",
+   "size": [
+    150,
+    90
+   ],
+   "anchor": [
+    52,
+    88
+   ],
+   "footprint": [
+    0.7,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small25",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small25.webp",
+   "kind": "small"
+  },
+  "lossambo_small26": {
+   "category": "prop",
+   "size": [
+    170,
+    88
+   ],
+   "anchor": [
+    68,
+    87
+   ],
+   "footprint": [
+    0.9,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small26",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small26.webp",
+   "kind": "small"
+  },
+  "lossambo_small27": {
+   "category": "prop",
+   "size": [
+    169,
+    89
+   ],
+   "anchor": [
+    65,
+    87
+   ],
+   "footprint": [
+    0.9,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small27",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small27.webp",
+   "kind": "small"
+  },
+  "lossambo_small28": {
+   "category": "prop",
+   "size": [
+    74,
+    87
+   ],
+   "anchor": [
+    35,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small28",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small28.webp",
+   "kind": "small"
+  },
+  "lossambo_small29": {
+   "category": "prop",
+   "size": [
+    76,
+    87
+   ],
+   "anchor": [
+    38,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small29",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small29.webp",
+   "kind": "small"
+  },
+  "lossambo_small30": {
+   "category": "prop",
+   "size": [
+    74,
+    88
+   ],
+   "anchor": [
+    36,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small30",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small30.webp",
+   "kind": "small"
+  },
+  "lossambo_small31": {
+   "category": "prop",
+   "size": [
+    93,
+    95
+   ],
+   "anchor": [
+    33,
+    93
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small31",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small31.webp",
+   "kind": "small"
+  },
+  "lossambo_small32": {
+   "category": "prop",
+   "size": [
+    78,
+    83
+   ],
+   "anchor": [
+    31,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small32",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small32.webp",
+   "kind": "small"
+  },
+  "lossambo_small33": {
+   "category": "prop",
+   "size": [
+    82,
+    82
+   ],
+   "anchor": [
+    36,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small33",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small33.webp",
+   "kind": "small"
+  },
+  "lossambo_small34": {
+   "category": "prop",
+   "size": [
+    103,
+    96
+   ],
+   "anchor": [
+    55,
+    93
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small34",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small34.webp",
+   "kind": "small"
+  },
+  "lossambo_small35": {
+   "category": "prop",
+   "size": [
+    100,
+    96
+   ],
+   "anchor": [
+    56,
+    93
+   ],
+   "footprint": [
+    0.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small35",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small35.webp",
+   "kind": "small"
+  },
+  "lossambo_small36": {
+   "category": "prop",
+   "size": [
+    156,
+    106
+   ],
+   "anchor": [
+    73,
+    104
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small36",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small36.webp",
+   "kind": "small"
+  },
+  "lossambo_small37": {
+   "category": "prop",
+   "size": [
+    155,
+    106
+   ],
+   "anchor": [
+    73,
+    104
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small37",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small37.webp",
+   "kind": "small"
+  },
+  "lossambo_small38": {
+   "category": "prop",
+   "size": [
+    105,
+    223
+   ],
+   "anchor": [
+    25,
+    222
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small38",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small38.webp",
+   "kind": "small"
+  },
+  "lossambo_small39": {
+   "category": "prop",
+   "size": [
+    108,
+    223
+   ],
+   "anchor": [
+    23,
+    222
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small39",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small39.webp",
+   "kind": "small"
+  },
+  "lossambo_small40": {
+   "category": "prop",
+   "size": [
+    183,
+    144
+   ],
+   "anchor": [
+    127,
+    143
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small40",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small40.webp",
+   "kind": "small"
+  },
+  "lossambo_small41": {
+   "category": "prop",
+   "size": [
+    174,
+    143
+   ],
+   "anchor": [
+    119,
+    142
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small41",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small41.webp",
+   "kind": "small"
+  },
+  "lossambo_small42": {
+   "category": "prop",
+   "size": [
+    171,
+    143
+   ],
+   "anchor": [
+    120,
+    142
+   ],
+   "footprint": [
+    1.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small42",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small42.webp",
+   "kind": "small"
+  },
+  "lossambo_small43": {
+   "category": "prop",
+   "size": [
+    128,
+    130
+   ],
+   "anchor": [
+    57,
+    129
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small43",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small43.webp",
+   "kind": "small"
+  },
+  "lossambo_small44": {
+   "category": "prop",
+   "size": [
+    126,
+    150
+   ],
+   "anchor": [
+    54,
+    149
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small44",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small44.webp",
+   "kind": "small"
+  },
+  "lossambo_small45": {
+   "category": "prop",
+   "size": [
+    191,
+    133
+   ],
+   "anchor": [
+    97,
+    132
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small45",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small45.webp",
+   "kind": "small"
+  },
+  "lossambo_small46": {
+   "category": "prop",
+   "size": [
+    217,
+    116
+   ],
+   "anchor": [
+    36,
+    113
+   ],
+   "footprint": [
+    0.6,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small46",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small46.webp",
+   "kind": "small"
+  },
+  "lossambo_small47": {
+   "category": "prop",
+   "size": [
+    205,
+    115
+   ],
+   "anchor": [
+    35,
+    112
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small47",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small47.webp",
+   "kind": "small"
+  },
+  "lossambo_small48": {
+   "category": "prop",
+   "size": [
+    87,
+    116
+   ],
+   "anchor": [
+    31,
+    115
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small48",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small48.webp",
+   "kind": "small"
+  },
+  "lossambo_small49": {
+   "category": "prop",
+   "size": [
+    87,
+    116
+   ],
+   "anchor": [
+    35,
+    115
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small49",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small49.webp",
+   "kind": "small"
+  },
+  "lossambo_small50": {
+   "category": "prop",
+   "size": [
+    357,
+    125
+   ],
+   "anchor": [
+    87,
+    123
+   ],
+   "footprint": [
+    1.2,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small50",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small50.webp",
+   "kind": "small"
+  },
+  "lossambo_small51": {
+   "category": "prop",
+   "size": [
+    482,
+    130
+   ],
+   "anchor": [
+    424,
+    129
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small51",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small51.webp",
+   "kind": "small"
+  },
+  "lossambo_small52": {
+   "category": "prop",
+   "size": [
+    482,
+    132
+   ],
+   "anchor": [
+    442,
+    131
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "lossambo_small52",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_small52.webp",
+   "kind": "small"
   }
  },
- "version": "51dbcc8ee661"
+ "version": "5f386405e6a7"
 }

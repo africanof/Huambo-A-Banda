@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "canata_escola",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_escola.png",
-   "name": "Escola Primária de Canata"
+   "path": "res://assets/kits/kit_canata/canata_escola.webp",
+   "name": "Escola Primária de Canata",
+   "venue": "escola"
   },
   "canata_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "canata_saude",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_saude.png",
-   "name": "Centro de Saúde de Canata"
+   "path": "res://assets/kits/kit_canata/canata_saude.webp",
+   "name": "Centro de Saúde de Canata",
+   "venue": "saude"
   },
   "canata_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "canata_igreja",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_igreja.png",
-   "name": "Igreja Evangélica de Canata"
+   "path": "res://assets/kits/kit_canata/canata_igreja.webp",
+   "name": "Igreja Evangélica de Canata",
+   "venue": "igreja"
   },
   "canata_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "canata_mercado",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_mercado.png",
-   "name": "Mercado de Canata"
+   "path": "res://assets/kits/kit_canata/canata_mercado.webp",
+   "name": "Mercado de Canata",
+   "venue": "mercado"
   },
   "canata_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "canata_cantina",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_cantina.png",
-   "name": "Cantina do Kota Zé"
+   "path": "res://assets/kits/kit_canata/canata_cantina.webp",
+   "name": "Cantina do Kota Zé",
+   "venue": "cantina"
   },
   "canata_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "canata_farmacia",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_farmacia.png",
-   "name": "Farmácia Canata"
+   "path": "res://assets/kits/kit_canata/canata_farmacia.webp",
+   "name": "Farmácia Canata",
+   "venue": "farmacia"
   },
   "canata_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "canata_administracao",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_administracao.png",
-   "name": "Administração de Canata"
+   "path": "res://assets/kits/kit_canata/canata_administracao.webp",
+   "name": "Administração de Canata",
+   "venue": "administracao"
   },
   "canata_churrasqueira": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "canata_churrasqueira",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_churrasqueira.png",
-   "name": "Churrasqueira Canata"
+   "path": "res://assets/kits/kit_canata/canata_churrasqueira.webp",
+   "name": "Churrasqueira Canata",
+   "venue": "churrasqueira"
   },
   "canata_loja_telecom": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "canata_loja_telecom",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_loja_telecom.png",
-   "name": "Loja Unitel Canata"
+   "path": "res://assets/kits/kit_canata/canata_loja_telecom.webp",
+   "name": "Loja Unitel Canata",
+   "venue": "loja_telecom"
   },
   "canata_discoteca": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "canata_discoteca",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_discoteca.png",
-   "name": "Discoteca Canata"
+   "path": "res://assets/kits/kit_canata/canata_discoteca.webp",
+   "name": "Discoteca Canata",
+   "venue": "discoteca"
   },
   "canata_apartamentos": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "canata_apartamentos",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_apartamentos.png",
-   "name": "Prédio Canata"
+   "path": "res://assets/kits/kit_canata/canata_apartamentos.webp",
+   "name": "Prédio Canata",
+   "venue": "apartamentos"
   },
   "canata_casa1": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "canata_casa1",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_canata/canata_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "canata_casa2": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "canata_casa2",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_canata/canata_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "canata_casa3": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "canata_casa3",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_canata/canata_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "canata_casa4": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "canata_casa4",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_canata/canata_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "canata_casa5": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "canata_casa5",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_canata/canata_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "canata_casa6": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "canata_casa6",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_canata/canata_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "canata_casa7": {
    "category": "building",
@@ -358,9 +375,1773 @@
    "scale": 1.6,
    "out": "canata_casa7",
    "kit": "kit_canata",
-   "path": "res://assets/kits/kit_canata/canata_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_canata/canata_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "canata_tree1": {
+   "category": "prop",
+   "size": [
+    278,
+    239
+   ],
+   "anchor": [
+    139,
+    238
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree1.webp",
+   "kind": "tree"
+  },
+  "canata_small1": {
+   "category": "prop",
+   "size": [
+    197,
+    243
+   ],
+   "anchor": [
+    94,
+    241
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "canata_small1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small1.webp",
+   "kind": "small"
+  },
+  "canata_tree2": {
+   "category": "prop",
+   "size": [
+    185,
+    242
+   ],
+   "anchor": [
+    92,
+    240
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree2.webp",
+   "kind": "tree"
+  },
+  "canata_tree3": {
+   "category": "prop",
+   "size": [
+    194,
+    233
+   ],
+   "anchor": [
+    96,
+    231
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree3.webp",
+   "kind": "tree"
+  },
+  "canata_tree4": {
+   "category": "prop",
+   "size": [
+    307,
+    241
+   ],
+   "anchor": [
+    153,
+    238
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree4.webp",
+   "kind": "tree"
+  },
+  "canata_tree5": {
+   "category": "prop",
+   "size": [
+    229,
+    236
+   ],
+   "anchor": [
+    114,
+    234
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree5",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree5.webp",
+   "kind": "tree"
+  },
+  "canata_tree6": {
+   "category": "prop",
+   "size": [
+    212,
+    226
+   ],
+   "anchor": [
+    105,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree6",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree6.webp",
+   "kind": "tree"
+  },
+  "canata_tree7": {
+   "category": "prop",
+   "size": [
+    189,
+    199
+   ],
+   "anchor": [
+    94,
+    197
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree7",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree7.webp",
+   "kind": "tree"
+  },
+  "canata_tree8": {
+   "category": "prop",
+   "size": [
+    209,
+    208
+   ],
+   "anchor": [
+    103,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree8",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree8.webp",
+   "kind": "tree"
+  },
+  "canata_small2": {
+   "category": "prop",
+   "size": [
+    243,
+    202
+   ],
+   "anchor": [
+    112,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small2.webp",
+   "kind": "small"
+  },
+  "canata_pole1": {
+   "category": "prop",
+   "size": [
+    97,
+    223
+   ],
+   "anchor": [
+    48,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole1.webp",
+   "kind": "pole"
+  },
+  "canata_lamp1": {
+   "category": "prop",
+   "size": [
+    81,
+    208
+   ],
+   "anchor": [
+    40,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_lamp1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "canata_lamp2": {
+   "category": "prop",
+   "size": [
+    53,
+    220
+   ],
+   "anchor": [
+    26,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_lamp2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "canata_pole2": {
+   "category": "prop",
+   "size": [
+    75,
+    217
+   ],
+   "anchor": [
+    37,
+    215
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole2.webp",
+   "kind": "pole"
+  },
+  "canata_lamp3": {
+   "category": "prop",
+   "size": [
+    94,
+    213
+   ],
+   "anchor": [
+    46,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_lamp3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "canata_pole3": {
+   "category": "prop",
+   "size": [
+    56,
+    209
+   ],
+   "anchor": [
+    28,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole3.webp",
+   "kind": "pole"
+  },
+  "canata_pole4": {
+   "category": "prop",
+   "size": [
+    105,
+    235
+   ],
+   "anchor": [
+    52,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole4.webp",
+   "kind": "pole"
+  },
+  "canata_pole5": {
+   "category": "prop",
+   "size": [
+    101,
+    219
+   ],
+   "anchor": [
+    50,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole5",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole5.webp",
+   "kind": "pole"
+  },
+  "canata_pole6": {
+   "category": "prop",
+   "size": [
+    97,
+    226
+   ],
+   "anchor": [
+    48,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole6",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole6.webp",
+   "kind": "pole"
+  },
+  "canata_pole7": {
+   "category": "prop",
+   "size": [
+    93,
+    232
+   ],
+   "anchor": [
+    46,
+    230
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "canata_pole7",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_pole7.webp",
+   "kind": "pole"
+  },
+  "canata_vehicle1": {
+   "category": "prop",
+   "size": [
+    320,
+    178
+   ],
+   "anchor": [
+    115,
+    177
+   ],
+   "footprint": [
+    1.5,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle2": {
+   "category": "prop",
+   "size": [
+    324,
+    173
+   ],
+   "anchor": [
+    111,
+    171
+   ],
+   "footprint": [
+    1.5,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle3": {
+   "category": "prop",
+   "size": [
+    152,
+    127
+   ],
+   "anchor": [
+    17,
+    125
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle4": {
+   "category": "prop",
+   "size": [
+    130,
+    117
+   ],
+   "anchor": [
+    14,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle5": {
+   "category": "prop",
+   "size": [
+    122,
+    114
+   ],
+   "anchor": [
+    13,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle5",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle6": {
+   "category": "prop",
+   "size": [
+    127,
+    114
+   ],
+   "anchor": [
+    13,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle6",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle7": {
+   "category": "prop",
+   "size": [
+    235,
+    111
+   ],
+   "anchor": [
+    71,
+    109
+   ],
+   "footprint": [
+    0.9,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle7",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle8": {
+   "category": "prop",
+   "size": [
+    263,
+    136
+   ],
+   "anchor": [
+    101,
+    134
+   ],
+   "footprint": [
+    1.4,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle8",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "canata_vehicle9": {
+   "category": "prop",
+   "size": [
+    256,
+    130
+   ],
+   "anchor": [
+    98,
+    128
+   ],
+   "footprint": [
+    1.3,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "canata_vehicle9",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "canata_stall1": {
+   "category": "prop",
+   "size": [
+    188,
+    171
+   ],
+   "anchor": [
+    117,
+    170
+   ],
+   "footprint": [
+    1.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_stall1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_stall1.webp",
+   "kind": "stall"
+  },
+  "canata_tree9": {
+   "category": "prop",
+   "size": [
+    184,
+    168
+   ],
+   "anchor": [
+    92,
+    166
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree9",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree9.webp",
+   "kind": "tree"
+  },
+  "canata_stall2": {
+   "category": "prop",
+   "size": [
+    243,
+    166
+   ],
+   "anchor": [
+    131,
+    164
+   ],
+   "footprint": [
+    1.8,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_stall2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_stall2.webp",
+   "kind": "stall"
+  },
+  "canata_stall3": {
+   "category": "prop",
+   "size": [
+    235,
+    166
+   ],
+   "anchor": [
+    150,
+    163
+   ],
+   "footprint": [
+    2.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "canata_stall3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_stall3.webp",
+   "kind": "stall"
+  },
+  "canata_tree10": {
+   "category": "prop",
+   "size": [
+    196,
+    171
+   ],
+   "anchor": [
+    97,
+    170
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree10",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree10.webp",
+   "kind": "tree"
+  },
+  "canata_stall4": {
+   "category": "prop",
+   "size": [
+    182,
+    171
+   ],
+   "anchor": [
+    99,
+    169
+   ],
+   "footprint": [
+    1.3,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "canata_stall4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_stall4.webp",
+   "kind": "stall"
+  },
+  "canata_small3": {
+   "category": "prop",
+   "size": [
+    156,
+    122
+   ],
+   "anchor": [
+    97,
+    120
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small3.webp",
+   "kind": "small"
+  },
+  "canata_small4": {
+   "category": "prop",
+   "size": [
+    146,
+    122
+   ],
+   "anchor": [
+    90,
+    120
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small4.webp",
+   "kind": "small"
+  },
+  "canata_small5": {
+   "category": "prop",
+   "size": [
+    135,
+    120
+   ],
+   "anchor": [
+    84,
+    118
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small5",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small5.webp",
+   "kind": "small"
+  },
+  "canata_small6": {
+   "category": "prop",
+   "size": [
+    93,
+    117
+   ],
+   "anchor": [
+    39,
+    116
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small6",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small6.webp",
+   "kind": "small"
+  },
+  "canata_small7": {
+   "category": "prop",
+   "size": [
+    179,
+    75
+   ],
+   "anchor": [
+    43,
+    73
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small7",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small7.webp",
+   "kind": "small"
+  },
+  "canata_small8": {
+   "category": "prop",
+   "size": [
+    163,
+    95
+   ],
+   "anchor": [
+    122,
+    94
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small8",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small8.webp",
+   "kind": "small"
+  },
+  "canata_small9": {
+   "category": "prop",
+   "size": [
+    161,
+    96
+   ],
+   "anchor": [
+    119,
+    95
+   ],
+   "footprint": [
+    1.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small9",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small9.webp",
+   "kind": "small"
+  },
+  "canata_small10": {
+   "category": "prop",
+   "size": [
+    159,
+    68
+   ],
+   "anchor": [
+    109,
+    67
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small10",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small10.webp",
+   "kind": "small"
+  },
+  "canata_small11": {
+   "category": "prop",
+   "size": [
+    138,
+    158
+   ],
+   "anchor": [
+    74,
+    156
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small11",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small11.webp",
+   "kind": "small"
+  },
+  "canata_small12": {
+   "category": "prop",
+   "size": [
+    129,
+    154
+   ],
+   "anchor": [
+    70,
+    152
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small12",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small12.webp",
+   "kind": "small"
+  },
+  "canata_small13": {
+   "category": "prop",
+   "size": [
+    133,
+    151
+   ],
+   "anchor": [
+    75,
+    149
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small13",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small13.webp",
+   "kind": "small"
+  },
+  "canata_small14": {
+   "category": "prop",
+   "size": [
+    145,
+    113
+   ],
+   "anchor": [
+    73,
+    111
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small14",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small14.webp",
+   "kind": "small"
+  },
+  "canata_small15": {
+   "category": "prop",
+   "size": [
+    139,
+    110
+   ],
+   "anchor": [
+    72,
+    108
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small15",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small15.webp",
+   "kind": "small"
+  },
+  "canata_small16": {
+   "category": "prop",
+   "size": [
+    310,
+    143
+   ],
+   "anchor": [
+    244,
+    131
+   ],
+   "footprint": [
+    3.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small16",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small16.webp",
+   "kind": "small"
+  },
+  "canata_small17": {
+   "category": "prop",
+   "size": [
+    286,
+    142
+   ],
+   "anchor": [
+    200,
+    130
+   ],
+   "footprint": [
+    2.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "canata_small17",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small17.webp",
+   "kind": "small"
+  },
+  "canata_tree11": {
+   "category": "prop",
+   "size": [
+    112,
+    111
+   ],
+   "anchor": [
+    56,
+    110
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree11",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree11.webp",
+   "kind": "tree"
+  },
+  "canata_tree12": {
+   "category": "prop",
+   "size": [
+    118,
+    125
+   ],
+   "anchor": [
+    58,
+    124
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree12",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree12.webp",
+   "kind": "tree"
+  },
+  "canata_tree13": {
+   "category": "prop",
+   "size": [
+    123,
+    110
+   ],
+   "anchor": [
+    61,
+    109
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree13",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree13.webp",
+   "kind": "tree"
+  },
+  "canata_tree14": {
+   "category": "prop",
+   "size": [
+    130,
+    121
+   ],
+   "anchor": [
+    65,
+    120
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "canata_tree14",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_tree14.webp",
+   "kind": "tree"
+  },
+  "canata_small18": {
+   "category": "prop",
+   "size": [
+    154,
+    103
+   ],
+   "anchor": [
+    22,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small18",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small18.webp",
+   "kind": "small"
+  },
+  "canata_small19": {
+   "category": "prop",
+   "size": [
+    150,
+    102
+   ],
+   "anchor": [
+    22,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small19",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small19.webp",
+   "kind": "small"
+  },
+  "canata_small20": {
+   "category": "prop",
+   "size": [
+    147,
+    103
+   ],
+   "anchor": [
+    20,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small20",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small20.webp",
+   "kind": "small"
+  },
+  "canata_small21": {
+   "category": "prop",
+   "size": [
+    101,
+    83
+   ],
+   "anchor": [
+    44,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small21",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small21.webp",
+   "kind": "small"
+  },
+  "canata_small22": {
+   "category": "prop",
+   "size": [
+    127,
+    90
+   ],
+   "anchor": [
+    50,
+    88
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "canata_small22",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small22.webp",
+   "kind": "small"
+  },
+  "canata_small23": {
+   "category": "prop",
+   "size": [
+    125,
+    82
+   ],
+   "anchor": [
+    55,
+    80
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small23",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small23.webp",
+   "kind": "small"
+  },
+  "canata_small24": {
+   "category": "prop",
+   "size": [
+    136,
+    82
+   ],
+   "anchor": [
+    57,
+    80
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "canata_small24",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small24.webp",
+   "kind": "small"
+  },
+  "canata_small25": {
+   "category": "prop",
+   "size": [
+    164,
+    96
+   ],
+   "anchor": [
+    26,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small25",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small25.webp",
+   "kind": "small"
+  },
+  "canata_small26": {
+   "category": "prop",
+   "size": [
+    159,
+    96
+   ],
+   "anchor": [
+    32,
+    95
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small26",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small26.webp",
+   "kind": "small"
+  },
+  "canata_small27": {
+   "category": "prop",
+   "size": [
+    63,
+    75
+   ],
+   "anchor": [
+    26,
+    73
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small27",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small27.webp",
+   "kind": "small"
+  },
+  "canata_small28": {
+   "category": "prop",
+   "size": [
+    59,
+    73
+   ],
+   "anchor": [
+    27,
+    72
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small28",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small28.webp",
+   "kind": "small"
+  },
+  "canata_small29": {
+   "category": "prop",
+   "size": [
+    48,
+    54
+   ],
+   "anchor": [
+    19,
+    53
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small29",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small29.webp",
+   "kind": "small"
+  },
+  "canata_small30": {
+   "category": "prop",
+   "size": [
+    84,
+    97
+   ],
+   "anchor": [
+    30,
+    95
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small30",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small30.webp",
+   "kind": "small"
+  },
+  "canata_small31": {
+   "category": "prop",
+   "size": [
+    76,
+    81
+   ],
+   "anchor": [
+    30,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small31",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small31.webp",
+   "kind": "small"
+  },
+  "canata_small32": {
+   "category": "prop",
+   "size": [
+    78,
+    83
+   ],
+   "anchor": [
+    28,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small32",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small32.webp",
+   "kind": "small"
+  },
+  "canata_small33": {
+   "category": "prop",
+   "size": [
+    123,
+    108
+   ],
+   "anchor": [
+    63,
+    106
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small33",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small33.webp",
+   "kind": "small"
+  },
+  "canata_small34": {
+   "category": "prop",
+   "size": [
+    126,
+    98
+   ],
+   "anchor": [
+    48,
+    96
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "canata_small34",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small34.webp",
+   "kind": "small"
+  },
+  "canata_small35": {
+   "category": "prop",
+   "size": [
+    132,
+    117
+   ],
+   "anchor": [
+    62,
+    115
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small35",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small35.webp",
+   "kind": "small"
+  },
+  "canata_small36": {
+   "category": "prop",
+   "size": [
+    130,
+    115
+   ],
+   "anchor": [
+    62,
+    114
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small36",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small36.webp",
+   "kind": "small"
+  },
+  "canata_small37": {
+   "category": "prop",
+   "size": [
+    87,
+    133
+   ],
+   "anchor": [
+    8,
+    131
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "canata_small37",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small37.webp",
+   "kind": "small"
+  },
+  "canata_small38": {
+   "category": "prop",
+   "size": [
+    77,
+    132
+   ],
+   "anchor": [
+    8,
+    130
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small38",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small38.webp",
+   "kind": "small"
+  },
+  "canata_small39": {
+   "category": "prop",
+   "size": [
+    154,
+    145
+   ],
+   "anchor": [
+    101,
+    144
+   ],
+   "footprint": [
+    1.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small39",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small39.webp",
+   "kind": "small"
+  },
+  "canata_small40": {
+   "category": "prop",
+   "size": [
+    158,
+    146
+   ],
+   "anchor": [
+    99,
+    144
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "canata_small40",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small40.webp",
+   "kind": "small"
+  },
+  "canata_small41": {
+   "category": "prop",
+   "size": [
+    155,
+    144
+   ],
+   "anchor": [
+    99,
+    143
+   ],
+   "footprint": [
+    1.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small41",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small41.webp",
+   "kind": "small"
+  },
+  "canata_small42": {
+   "category": "prop",
+   "size": [
+    119,
+    144
+   ],
+   "anchor": [
+    42,
+    143
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "canata_small42",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small42.webp",
+   "kind": "small"
+  },
+  "canata_small43": {
+   "category": "prop",
+   "size": [
+    115,
+    143
+   ],
+   "anchor": [
+    44,
+    142
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small43",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small43.webp",
+   "kind": "small"
+  },
+  "canata_small44": {
+   "category": "prop",
+   "size": [
+    150,
+    145
+   ],
+   "anchor": [
+    82,
+    143
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "canata_small44",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small44.webp",
+   "kind": "small"
+  },
+  "canata_small45": {
+   "category": "prop",
+   "size": [
+    243,
+    132
+   ],
+   "anchor": [
+    194,
+    114
+   ],
+   "footprint": [
+    2.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small45",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small45.webp",
+   "kind": "small"
+  },
+  "canata_small46": {
+   "category": "prop",
+   "size": [
+    234,
+    132
+   ],
+   "anchor": [
+    130,
+    125
+   ],
+   "footprint": [
+    1.8,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "canata_small46",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small46.webp",
+   "kind": "small"
+  },
+  "canata_small47": {
+   "category": "prop",
+   "size": [
+    76,
+    123
+   ],
+   "anchor": [
+    31,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small47",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small47.webp",
+   "kind": "small"
+  },
+  "canata_small48": {
+   "category": "prop",
+   "size": [
+    76,
+    123
+   ],
+   "anchor": [
+    31,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small48",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small48.webp",
+   "kind": "small"
+  },
+  "canata_small49": {
+   "category": "prop",
+   "size": [
+    286,
+    133
+   ],
+   "anchor": [
+    25,
+    131
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "canata_small49",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small49.webp",
+   "kind": "small"
+  },
+  "canata_small50": {
+   "category": "prop",
+   "size": [
+    519,
+    143
+   ],
+   "anchor": [
+    467,
+    142
+   ],
+   "footprint": [
+    3.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "canata_small50",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small50.webp",
+   "kind": "small"
+  },
+  "canata_small51": {
+   "category": "prop",
+   "size": [
+    494,
+    164
+   ],
+   "anchor": [
+    450,
+    163
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "canata_small51",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_small51.webp",
+   "kind": "small"
   }
  },
- "version": "2c528f7de033"
+ "version": "d6fb701fd93c"
 }

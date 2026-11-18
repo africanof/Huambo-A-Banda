@@ -2,137 +2,579 @@
  "id": "aviacao",
  "name": "Aviação",
  "size": [
-  150,
-  130
+  160.0,
+  160.0
  ],
  "tile": 4,
  "ground": [
   {
-   "kind": "asfalto",
-   "y": [
-    34,
-    40
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    80,
-    85
-   ]
-  },
-  {
-   "kind": "terra",
-   "y": [
-    114,
-    119
-   ]
-  },
-  {
-   "kind": "terra",
-   "x": [
-    44,
-    49
-   ]
-  },
-  {
-   "kind": "asfalto",
-   "x": [
-    92,
-    97
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    32.0,
-    34
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    40,
-    42.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    78.0,
-    80
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    85,
-    87.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    112.0,
-    114
-   ]
-  },
-  {
-   "kind": "calcada",
-   "y": [
-    119,
-    121.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    42.0,
-    44
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    49,
-    51.0
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    90.0,
-    92
-   ]
-  },
-  {
-   "kind": "calcada",
-   "x": [
-    97,
-    99.0
-   ]
-  },
-  {
-   "kind": "relva",
-   "x": [
-    56,
-    88
-   ],
-   "y": [
-    44,
-    62
-   ]
-  },
-  {
    "kind": "terra"
   }
  ],
+ "osm": true,
+ "roads": [
+  {
+   "pts": [
+    [
+     219.16,
+     36.58
+    ],
+    [
+     220.04,
+     85.78
+    ],
+    [
+     219.51,
+     89.52
+    ],
+    [
+     217.96,
+     92.02
+    ],
+    [
+     214.28,
+     94.6
+    ],
+    [
+     209.64,
+     96.49
+    ],
+    [
+     167.04,
+     99.11
+    ],
+    [
+     92.74,
+     103.55
+    ],
+    [
+     -6.32,
+     106.57
+    ],
+    [
+     -76.43,
+     106.1
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     201.93,
+     180.56
+    ],
+    [
+     205.65,
+     200.66
+    ],
+    [
+     211.9,
+     235.38
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -3.35,
+     151.85
+    ],
+    [
+     -1.91,
+     200.2
+    ],
+    [
+     -1.99,
+     205.59
+    ],
+    [
+     -1.53,
+     207.52
+    ],
+    [
+     -0.5,
+     209.54
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     190.62,
+     119.43
+    ],
+    [
+     199.88,
+     168.11
+    ],
+    [
+     201.93,
+     180.56
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -73.3,
+     -29.25
+    ],
+    [
+     -12.16,
+     -14.22
+    ],
+    [
+     98.42,
+     9.72
+    ],
+    [
+     167.94,
+     31.94
+    ],
+    [
+     186.07,
+     38.01
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -0.5,
+     209.54
+    ],
+    [
+     2.03,
+     211.07
+    ],
+    [
+     4.58,
+     211.56
+    ],
+    [
+     60.73,
+     203.35
+    ],
+    [
+     104.77,
+     195.25
+    ],
+    [
+     152.87,
+     190.34
+    ],
+    [
+     201.93,
+     180.56
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     98.42,
+     9.72
+    ],
+    [
+     93.11,
+     43.93
+    ],
+    [
+     92.74,
+     103.55
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     199.88,
+     168.11
+    ],
+    [
+     224.95,
+     164.65
+    ],
+    [
+     281.82,
+     153.69
+    ],
+    [
+     329.94,
+     146.72
+    ],
+    [
+     399.24,
+     136.77
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -3.35,
+     151.85
+    ],
+    [
+     94.17,
+     138.01
+    ],
+    [
+     94.24,
+     137.99
+    ],
+    [
+     148.76,
+     128.22
+    ],
+    [
+     190.62,
+     119.43
+    ],
+    [
+     212.69,
+     115.07
+    ],
+    [
+     301.62,
+     97.79
+    ],
+    [
+     352.9,
+     89.02
+    ],
+    [
+     372.86,
+     88.0
+    ],
+    [
+     401.05,
+     87.0
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -12.16,
+     -14.22
+    ],
+    [
+     -10.57,
+     45.29
+    ],
+    [
+     -6.32,
+     106.57
+    ],
+    [
+     -4.18,
+     145.58
+    ],
+    [
+     -3.35,
+     151.85
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     209.67,
+     -198.16
+    ],
+    [
+     206.43,
+     -175.44
+    ],
+    [
+     199.94,
+     -139.29
+    ],
+    [
+     195.83,
+     -113.77
+    ],
+    [
+     193.3,
+     -95.12
+    ],
+    [
+     189.31,
+     -63.49
+    ],
+    [
+     184.43,
+     -40.84
+    ],
+    [
+     181.98,
+     -28.26
+    ],
+    [
+     167.94,
+     31.94
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     181.98,
+     -28.26
+    ],
+    [
+     162.34,
+     -33.08
+    ],
+    [
+     121.14,
+     -43.4
+    ],
+    [
+     99.16,
+     -48.05
+    ],
+    [
+     70.23,
+     -54.78
+    ],
+    [
+     43.08,
+     -60.93
+    ],
+    [
+     28.83,
+     -65.14
+    ],
+    [
+     1.17,
+     -69.9
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     1142.63,
+     5.55
+    ],
+    [
+     1134.43,
+     6.32
+    ],
+    [
+     1128.46,
+     6.66
+    ],
+    [
+     1119.06,
+     6.86
+    ],
+    [
+     1096.54,
+     7.64
+    ],
+    [
+     1072.81,
+     9.58
+    ],
+    [
+     1022.17,
+     9.88
+    ],
+    [
+     776.4,
+     19.33
+    ],
+    [
+     725.86,
+     19.15
+    ],
+    [
+     661.12,
+     22.12
+    ],
+    [
+     651.48,
+     22.45
+    ],
+    [
+     549.54,
+     27.14
+    ],
+    [
+     476.97,
+     29.69
+    ],
+    [
+     454.8,
+     30.61
+    ],
+    [
+     397.62,
+     31.52
+    ],
+    [
+     289.59,
+     35.13
+    ],
+    [
+     219.16,
+     36.58
+    ],
+    [
+     186.07,
+     38.01
+    ],
+    [
+     93.11,
+     43.93
+    ],
+    [
+     -10.57,
+     45.29
+    ],
+    [
+     -78.25,
+     45.7
+    ],
+    [
+     -133.1,
+     46.69
+    ],
+    [
+     -160.19,
+     46.91
+    ],
+    [
+     -183.76,
+     48.11
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     94.24,
+     137.99
+    ],
+    [
+     104.77,
+     195.25
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -3.35,
+     151.85
+    ],
+    [
+     -73.8,
+     158.95
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     -67.64,
+     -62.41
+    ],
+    [
+     -3.29,
+     -51.27
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  },
+  {
+   "pts": [
+    [
+     7.56,
+     -104.51
+    ],
+    [
+     1.17,
+     -69.9
+    ],
+    [
+     -3.29,
+     -51.27
+    ],
+    [
+     -12.16,
+     -14.22
+    ]
+   ],
+   "w": 7,
+   "paved": false,
+   "name": ""
+  }
+ ],
+ "areas": [],
+ "geo": {
+  "lat": -12.785,
+  "lon": 15.7208,
+  "rot_deg": -28.0,
+  "cx": -20,
+  "cy": -50
+ },
  "buildings": [
   {
    "id": "aviacao_escola",
    "at": [
-    2.0,
-    19.3
+    71.9,
+    85.8
    ],
    "venue": {
     "venue": "escola",
@@ -140,10 +582,22 @@
    }
   },
   {
+   "id": "aviacao_mercado",
+   "at": [
+    55.6,
+    87.6
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
+  {
    "id": "aviacao_saude",
    "at": [
-    17.0,
-    23.8
+    39.2,
+    91.3
    ],
    "venue": {
     "venue": "saude",
@@ -153,8 +607,8 @@
   {
    "id": "aviacao_igreja",
    "at": [
-    51.0,
-    23.5
+    99.0,
+    88.8
    ],
    "venue": {
     "venue": "igreja",
@@ -162,22 +616,33 @@
    }
   },
   {
-   "id": "aviacao_mercado",
+   "id": "aviacao_churrasqueira",
    "at": [
-    64.0,
-    20.6
+    111.7,
+    91.0
    ],
    "venue": {
-    "venue": "mercado",
-    "job": "vendedor_mercado",
-    "shop": "mercado"
+    "venue": "churrasqueira",
+    "job": "grelhador",
+    "shop": "churrasqueira"
+   }
+  },
+  {
+   "id": "aviacao_apartamentos",
+   "at": [
+    74.4,
+    33.0
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
    }
   },
   {
    "id": "aviacao_cantina",
    "at": [
-    34.7,
-    2.0
+    80.1,
+    76.9
    ],
    "venue": {
     "venue": "cantina",
@@ -186,10 +651,33 @@
    }
   },
   {
+   "id": "aviacao_hotel",
+   "at": [
+    65.1,
+    32.5
+   ],
+   "venue": {
+    "venue": "hotel",
+    "job": "rececionista",
+    "shop": "hotel"
+   }
+  },
+  {
+   "id": "aviacao_loja_telecom",
+   "at": [
+    80.8,
+    69.0
+   ],
+   "venue": {
+    "venue": "loja_telecom",
+    "job": "vendedor_loja"
+   }
+  },
+  {
    "id": "aviacao_farmacia",
    "at": [
-    33.0,
-    26.5
+    57.7,
+    33.4
    ],
    "venue": {
     "venue": "farmacia",
@@ -199,8 +687,8 @@
   {
    "id": "aviacao_administracao",
    "at": [
-    80.0,
-    29.0
+    27.9,
+    96.9
    ],
    "venue": {
     "venue": "administracao",
@@ -208,56 +696,10 @@
    }
   },
   {
-   "id": "aviacao_hotel",
-   "at": [
-    99.0,
-    25.8
-   ],
-   "venue": {
-    "venue": "hotel",
-    "job": "rececionista",
-    "shop": "hotel"
-   }
-  },
-  {
-   "id": "aviacao_churrasqueira",
-   "at": [
-    108.0,
-    26.4
-   ],
-   "venue": {
-    "venue": "churrasqueira",
-    "job": "grelhador",
-    "shop": "churrasqueira"
-   }
-  },
-  {
-   "id": "aviacao_loja_telecom",
-   "at": [
-    35.4,
-    10.0
-   ],
-   "venue": {
-    "venue": "loja_telecom",
-    "job": "vendedor_loja"
-   }
-  },
-  {
-   "id": "aviacao_apartamentos",
-   "at": [
-    120.0,
-    26.4
-   ],
-   "venue": {
-    "venue": "apartamentos",
-    "units": 4
-   }
-  },
-  {
    "id": "aviacao_casa1",
    "at": [
-    131.0,
-    25.7
+    2.2,
+    138.6
    ],
    "venue": {
     "venue": "casa",
@@ -266,58 +708,10 @@
    "label": "Casa 1"
   },
   {
-   "id": "aviacao_casa2",
-   "at": [
-    2.0,
-    73.1
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 2"
-  },
-  {
-   "id": "aviacao_casa3",
-   "at": [
-    12.0,
-    73.8
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 3"
-  },
-  {
-   "id": "aviacao_casa4",
-   "at": [
-    22.0,
-    72.6
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 4"
-  },
-  {
-   "id": "aviacao_casa5",
-   "at": [
-    141.0,
-    26.3
-   ],
-   "venue": {
-    "venue": "casa",
-    "units": 1
-   },
-   "label": "Casa 5"
-  },
-  {
    "id": "aviacao_casa6",
    "at": [
-    32.0,
-    72.2
+    8.3,
+    33.7
    ],
    "venue": {
     "venue": "casa",
@@ -328,705 +722,462 @@
   {
    "id": "aviacao_casa7",
    "at": [
-    51.0,
-    72.3
+    14.2,
+    137.5
    ],
    "venue": {
     "venue": "casa",
     "units": 1
    },
    "label": "Casa 7"
+  },
+  {
+   "id": "aviacao_casa4",
+   "at": [
+    26.3,
+    136.1
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
+   "id": "aviacao_casa5",
+   "at": [
+    150.9,
+    115.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 5"
+  },
+  {
+   "id": "aviacao_casa2",
+   "at": [
+    142.6,
+    14.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
+  },
+  {
+   "id": "aviacao_casa3",
+   "at": [
+    137.8,
+    31.1
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
   }
  ],
  "props": [
   [
-   "f_candeeiro",
+   "aviacao_pole4",
    [
-    6,
-    32.5
+    146.7,
+    94.4
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_pole4",
    [
-    12.5,
-    41.4
+    130.8,
+    95.4
    ]
   ],
   [
-   "f_candeeiro",
+   "aviacao_tree10",
    [
-    19,
-    32.5
+    131.5,
+    108.1
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_tree7",
    [
-    25.5,
-    41.4
+    115.5,
+    109.1
    ]
   ],
   [
-   "f_candeeiro",
+   "aviacao_pole1",
    [
-    32,
-    32.5
+    98.8,
+    97.3
    ]
   ],
   [
-   "f_palmeira",
+   "aviacao_tree2",
    [
-    38.5,
-    41.4
+    99.6,
+    110.1
    ]
   ],
   [
-   "f_candeeiro",
+   "aviacao_pole2",
    [
-    45,
-    32.5
+    88.6,
+    97.8
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_tree13",
    [
-    51.5,
-    41.4
+    41.0,
+    112.0
    ]
   ],
   [
-   "f_palmeira",
+   "aviacao_pole4",
    [
-    64.5,
-    41.4
+    24.6,
+    99.7
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_tree9",
    [
-    77.5,
-    41.4
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    90.5,
-    41.4
-   ]
-  ],
-  [
-   "f_candeeiro",
-   [
-    97,
-    32.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    103.5,
-    41.4
-   ]
-  ],
-  [
-   "f_candeeiro",
-   [
-    110,
-    32.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    116.5,
-    41.4
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    129.5,
-    41.4
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    142.5,
-    41.4
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    12.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    19,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    25.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    32,
-    78.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    38.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    45,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    51.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    58,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    64.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    71,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    77.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    84,
-    78.5
-   ]
-  ],
-  [
-   "f_palmeira",
-   [
-    90.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    97,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    103.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    110,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    116.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    123,
-    78.5
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    129.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    136,
-    78.5
-   ]
-  ],
-  [
-   "f_eucalipto",
-   [
-    142.5,
-    86.4
-   ]
-  ],
-  [
-   "f_poste",
-   [
-    6,
+    25.0,
     112.5
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_pole4",
    [
-    12.5,
-    120.4
+    8.6,
+    100.2
    ]
   ],
   [
-   "f_poste",
+   "aviacao_tree10",
    [
-    19,
-    112.5
+    9.0,
+    113.0
    ]
   ],
   [
-   "f_jacaranda",
+   "aviacao_pole3",
    [
-    25.5,
-    120.4
+    37.4,
+    2.5
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole4",
    [
-    32,
-    112.5
+    53.1,
+    5.9
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_pole2",
    [
-    38.5,
-    120.4
+    68.7,
+    9.3
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole4",
    [
-    45,
-    112.5
+    84.3,
+    12.7
    ]
   ],
   [
-   "f_palmeira",
+   "aviacao_tree5",
    [
-    51.5,
-    120.4
+    104.3,
+    4.4
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole3",
    [
-    58,
-    112.5
+    115.7,
+    21.4
    ]
   ],
   [
-   "f_palmeira",
+   "aviacao_pole3",
    [
-    64.5,
-    120.4
+    130.9,
+    26.3
    ]
   ],
   [
-   "f_poste",
+   "aviacao_tree3",
    [
-    71,
-    112.5
+    134.8,
+    14.1
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_pole4",
    [
-    77.5,
-    120.4
+    92.0,
+    12.8
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole3",
    [
-    84,
-    112.5
+    89.5,
+    28.6
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_tree8",
    [
-    90.5,
-    120.4
+    102.2,
+    30.5
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole4",
    [
-    97,
-    112.5
+    87.2,
+    47.9
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_pole1",
    [
-    103.5,
-    120.4
+    87.1,
+    63.9
    ]
   ],
   [
-   "f_poste",
+   "aviacao_tree5",
    [
-    110,
-    112.5
+    99.8,
+    80.0
    ]
   ],
   [
-   "f_jacaranda2",
+   "aviacao_pole2",
    [
-    116.5,
-    120.4
+    86.9,
+    95.9
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole1",
    [
-    123,
-    112.5
+    17.3,
+    154.9
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_pole2",
    [
-    129.5,
-    120.4
+    33.1,
+    152.6
    ]
   ],
   [
-   "f_poste",
+   "aviacao_pole1",
    [
-    136,
-    112.5
+    49.0,
+    150.4
    ]
   ],
   [
-   "f_eucalipto",
+   "aviacao_pole1",
    [
-    142.5,
-    120.4
+    64.8,
+    148.1
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_tree2",
    [
-    50.5,
-    8
+    63.0,
+    135.5
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_pole3",
    [
-    50.5,
-    22
+    80.6,
+    145.9
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_pole1",
    [
-    50.5,
-    36
+    99.2,
+    143.1
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_tree11",
    [
-    50.5,
-    50
+    97.0,
+    130.5
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_pole4",
    [
-    50.5,
-    64
+    115.0,
+    140.3
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_tree6",
    [
-    50.5,
-    78
+    112.7,
+    127.7
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_pole3",
    [
-    50.5,
-    92
+    130.7,
+    137.4
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_pole2",
    [
-    50.5,
-    106
+    146.5,
+    134.6
    ]
   ],
   [
-   "f_poste2",
+   "aviacao_tree1",
    [
-    50.5,
-    120
+    144.2,
+    122.0
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_pole4",
    [
-    98.5,
-    8
+    153.9,
+    133.2
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_pole2",
    [
-    98.5,
-    22
+    149.8,
+    34.4
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_pole2",
    [
-    98.5,
-    36
+    133.8,
+    35.4
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_pole1",
    [
-    98.5,
-    50
+    117.8,
+    36.4
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_tree1",
    [
-    98.5,
-    64
+    118.6,
+    49.2
    ]
   ],
   [
-   "f_candeeiro2",
+   "aviacao_pole1",
    [
-    98.5,
-    78
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    92
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    106
-   ]
-  ],
-  [
-   "f_candeeiro2",
-   [
-    98.5,
-    120
-   ]
-  ],
-  [
-   "f_mulemba",
-   [
-    60,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    84,
-    47
-   ]
-  ],
-  [
-   "f_jacaranda2",
-   [
-    60,
-    59
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    84,
-    59
-   ]
-  ],
-  [
-   "f_chafariz",
-   [
-    72,
-    53
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    66,
-    50
-   ]
-  ],
-  [
-   "f_banco_jardim2",
-   [
-    78,
-    50
-   ]
-  ],
-  [
-   "f_banco_madeira",
-   [
-    66,
-    57
-   ]
-  ],
-  [
-   "f_banco_jardim",
-   [
-    78,
-    57
-   ]
-  ],
-  [
-   "f_bandeira",
-   [
-    72,
-    46
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    58,
-    53
-   ]
-  ],
-  [
-   "f_buganvilia",
-   [
-    86,
-    53
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    56,
-    37.0
-   ]
-  ],
-  [
-   "f_candongueiro",
-   [
-    64,
-    37.0
-   ]
-  ],
-  [
-   "f_kupapata",
-   [
-    100,
-    41.6
-   ],
-   {
-    "kind": "work",
-    "job": "kupapata"
-   }
-  ],
-  [
-   "f_kupapata2",
-   [
-    102,
-    41.6
-   ]
-  ],
-  [
-   "f_carro",
-   [
-    120,
+    101.9,
     37.5
    ]
   ],
   [
-   "f_hilux",
+   "aviacao_tree2",
    [
-    30,
-    83.0
+    102.7,
+    50.2
    ]
   ],
   [
-   "f_carro2",
+   "aviacao_pole4",
    [
-    128,
-    83.0
+    89.0,
+    38.1
    ]
   ],
   [
-   "f_banca",
+   "aviacao_tree9",
    [
-    22,
-    42.2
+    73.2,
+    51.1
+   ]
+  ],
+  [
+   "aviacao_pole2",
+   [
+    57.0,
+    38.5
+   ]
+  ],
+  [
+   "aviacao_tree11",
+   [
+    57.2,
+    51.3
+   ]
+  ],
+  [
+   "aviacao_pole1",
+   [
+    41.0,
+    38.7
+   ]
+  ],
+  [
+   "aviacao_pole3",
+   [
+    25.0,
+    38.9
+   ]
+  ],
+  [
+   "aviacao_pole3",
+   [
+    89.2,
+    143.0
+   ]
+  ],
+  [
+   "aviacao_tree7",
+   [
+    104.6,
+    156.4
+   ]
+  ],
+  [
+   "aviacao_vehicle6",
+   [
+    94.6,
+    152.0
+   ]
+  ],
+  [
+   "aviacao_stall1",
+   [
+    61.8,
+    108.3
    ],
    {
     "kind": "work",
@@ -1034,224 +1185,584 @@
    }
   ],
   [
-   "f_banca3",
+   "aviacao_stall4",
    [
-    30,
-    42.2
+    55.9,
+    109.3
    ]
   ],
   [
-   "f_banca_roupa",
+   "aviacao_stall2",
    [
-    34,
-    42.2
+    66.2,
+    109.3
    ]
   ],
   [
-   "f_contentor",
+   "aviacao_stall4",
    [
-    8,
-    42.2
+    70.0,
+    108.7
    ]
   ],
   [
-   "f_contentor2",
+   "aviacao_stall5",
    [
-    140,
-    87.2
+    75.0,
+    108.6
    ]
   ],
   [
-   "f_galinha",
+   "aviacao_stall4",
    [
-    12,
+    60.0,
+    108.4
+   ]
+  ],
+  [
+   "aviacao_small22",
+   [
+    76.7,
+    149.0
+   ]
+  ],
+  [
+   "aviacao_small29",
+   [
+    34.0,
+    31.0
+   ]
+  ],
+  [
+   "aviacao_small22",
+   [
+    17.7,
+    75.7
+   ]
+  ],
+  [
+   "aviacao_small17",
+   [
+    68.0,
+    126.6
+   ]
+  ],
+  [
+   "aviacao_small19",
+   [
+    23.4,
+    97.4
+   ]
+  ],
+  [
+   "aviacao_small42",
+   [
+    91.4,
+    113.7
+   ]
+  ],
+  [
+   "aviacao_small34",
+   [
+    42.0,
+    128.7
+   ]
+  ],
+  [
+   "aviacao_small33",
+   [
+    97.1,
+    107.7
+   ]
+  ],
+  [
+   "aviacao_small52",
+   [
+    41.4,
+    89.2
+   ]
+  ],
+  [
+   "aviacao_small2",
+   [
+    122.5,
+    147.2
+   ]
+  ],
+  [
+   "aviacao_small18",
+   [
+    103.4,
+    28.9
+   ]
+  ],
+  [
+   "aviacao_small12",
+   [
+    31.1,
+    64.9
+   ]
+  ],
+  [
+   "aviacao_small32",
+   [
+    41.5,
+    60.4
+   ]
+  ],
+  [
+   "aviacao_small27",
+   [
+    66.2,
+    126.7
+   ]
+  ],
+  [
+   "aviacao_small48",
+   [
+    53.5,
+    40.4
+   ]
+  ],
+  [
+   "aviacao_small52",
+   [
+    108.8,
+    148.1
+   ]
+  ],
+  [
+   "aviacao_small9",
+   [
+    121.6,
+    112.1
+   ]
+  ],
+  [
+   "aviacao_small35",
+   [
+    138.6,
+    5.7
+   ]
+  ],
+  [
+   "aviacao_small31",
+   [
+    119.7,
+    26.7
+   ]
+  ],
+  [
+   "aviacao_small24",
+   [
+    34.4,
+    112.8
+   ]
+  ],
+  [
+   "aviacao_small1",
+   [
+    136.9,
+    146.9
+   ]
+  ],
+  [
+   "aviacao_small40",
+   [
+    140.3,
+    46.9
+   ]
+  ],
+  [
+   "aviacao_small27",
+   [
+    131.5,
+    36.6
+   ]
+  ],
+  [
+   "aviacao_small10",
+   [
+    69.8,
+    66.7
+   ]
+  ],
+  [
+   "aviacao_small10",
+   [
+    144.9,
+    54.5
+   ]
+  ],
+  [
+   "aviacao_small29",
+   [
+    119.1,
+    129.0
+   ]
+  ],
+  [
+   "aviacao_small45",
+   [
+    80.6,
+    124.3
+   ]
+  ],
+  [
+   "aviacao_small1",
+   [
+    6.9,
+    48.9
+   ]
+  ],
+  [
+   "aviacao_small50",
+   [
+    5.5,
+    31.7
+   ]
+  ],
+  [
+   "aviacao_small21",
+   [
+    101.7,
+    153.8
+   ]
+  ],
+  [
+   "aviacao_small32",
+   [
+    123.0,
+    113.9
+   ]
+  ],
+  [
+   "aviacao_small7",
+   [
+    118.9,
+    67.6
+   ]
+  ],
+  [
+   "aviacao_small38",
+   [
+    24.3,
+    83.5
+   ]
+  ],
+  [
+   "aviacao_small38",
+   [
+    131.6,
+    72.4
+   ]
+  ],
+  [
+   "aviacao_small5",
+   [
+    57.5,
+    14.1
+   ]
+  ],
+  [
+   "aviacao_small40",
+   [
+    60.4,
+    152.9
+   ]
+  ],
+  [
+   "aviacao_small43",
+   [
+    12.4,
+    109.8
+   ]
+  ],
+  [
+   "aviacao_small6",
+   [
+    67.9,
+    147.9
+   ]
+  ],
+  [
+   "aviacao_small49",
+   [
+    28.1,
+    71.3
+   ]
+  ],
+  [
+   "aviacao_small9",
+   [
+    125.6,
+    28.1
+   ]
+  ],
+  [
+   "aviacao_small26",
+   [
+    133.3,
+    71.2
+   ]
+  ],
+  [
+   "aviacao_small40",
+   [
+    53.6,
+    81.8
+   ]
+  ],
+  [
+   "aviacao_tree11",
+   [
+    45.9,
+    34.3
+   ]
+  ],
+  [
+   "aviacao_tree5",
+   [
+    146.0,
+    60.2
+   ]
+  ],
+  [
+   "aviacao_tree13",
+   [
+    4.8,
+    82.2
+   ]
+  ],
+  [
+   "aviacao_tree12",
+   [
+    142.2,
+    110.1
+   ]
+  ],
+  [
+   "aviacao_tree8",
+   [
+    94.2,
+    113.4
+   ]
+  ],
+  [
+   "aviacao_tree5",
+   [
+    28.4,
+    89.3
+   ]
+  ],
+  [
+   "aviacao_tree1",
+   [
+    65.6,
+    17.6
+   ]
+  ],
+  [
+   "aviacao_tree2",
+   [
+    149.3,
+    58.4
+   ]
+  ],
+  [
+   "aviacao_tree12",
+   [
+    52.1,
+    114.8
+   ]
+  ],
+  [
+   "aviacao_tree12",
+   [
+    131.5,
+    59.4
+   ]
+  ],
+  [
+   "aviacao_tree9",
+   [
+    32.0,
+    32.6
+   ]
+  ],
+  [
+   "aviacao_tree7",
+   [
+    47.9,
+    126.1
+   ]
+  ],
+  [
+   "aviacao_tree7",
+   [
+    37.4,
+    136.1
+   ]
+  ],
+  [
+   "aviacao_tree1",
+   [
+    13.9,
+    13.7
+   ]
+  ],
+  [
+   "aviacao_tree8",
+   [
+    30.1,
+    69.5
+   ]
+  ],
+  [
+   "aviacao_tree2",
+   [
+    58.1,
+    147.2
+   ]
+  ],
+  [
+   "aviacao_tree13",
+   [
+    23.0,
     88.5
    ]
   ],
   [
-   "f_galinha2",
+   "aviacao_tree9",
    [
-    14,
-    89.4
+    5.8,
+    94.8
    ]
   ],
   [
-   "f_cabra",
+   "aviacao_tree4",
    [
-    20,
-    90.0
-   ]
-  ],
-  [
-   "f_bidao",
-   [
-    46,
-    88.0
-   ]
-  ],
-  [
-   "f_carvao",
-   [
-    60,
-    88.0
-   ]
-  ],
-  [
-   "f_blocos",
-   [
-    138,
-    106
-   ]
-  ],
-  [
-   "f_bicicleta",
-   [
-    88,
-    88.0
-   ]
-  ],
-  [
-   "f_tanque",
-   [
-    140,
-    64
-   ]
-  ],
-  [
-   "f_carroca",
-   [
-    70,
-    88.0
-   ]
-  ],
-  [
-   "f_mesa_plastico2",
-   [
-    108,
-    88.4
-   ]
-  ],
-  [
-   "f_eucalipto2",
-   [
-    51.6,
-    21.0
-   ]
-  ],
-  [
-   "f_eucalipto2",
-   [
-    101.2,
-    80.3
-   ]
-  ],
-  [
-   "f_eucalipto2",
-   [
-    84.9,
-    92.1
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    49.1,
-    113.6
-   ]
-  ],
-  [
-   "f_eucalipto2",
-   [
-    34.6,
-    53.1
-   ]
-  ],
-  [
-   "f_abacateiro",
-   [
-    56.2,
-    62.9
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    138.2,
-    70.9
-   ]
-  ],
-  [
-   "f_palmeira2",
-   [
-    90.2,
-    92.0
-   ]
-  ],
-  [
-   "f_mangueira",
-   [
-    128.3,
-    47.1
-   ]
-  ],
-  [
-   "f_abacateiro",
-   [
-    137.6,
-    98.6
-   ]
-  ],
-  [
-   "f_jacaranda",
-   [
-    27.5,
+    135.9,
     91.3
    ]
   ],
   [
-   "f_abacateiro",
+   "aviacao_tree6",
    [
-    131.9,
-    55.6
+    21.0,
+    63.9
    ]
   ],
   [
-   "f_palmeira2",
+   "aviacao_tree11",
    [
-    21.8,
-    82.9
+    135.4,
+    28.3
    ]
   ],
   [
-   "f_abacateiro",
+   "aviacao_tree11",
    [
-    138.1,
-    51.5
+    113.6,
+    80.1
    ]
   ],
   [
-   "f_abacateiro",
+   "aviacao_tree13",
    [
-    62.8,
-    116.4
+    52.7,
+    20.9
+   ]
+  ],
+  [
+   "aviacao_tree1",
+   [
+    114.2,
+    75.3
    ]
   ]
  ],
  "spawns": [
   {
-   "id": "avenida",
-   "name": "Avenida (paragem)",
+   "id": "centro",
+   "name": "Centro de Aviação",
    "at": [
-    46.5,
-    37.0
+    92.7,
+    103.5
+   ]
+  }
+ ],
+ "portals": [
+  {
+   "to": "bairro_academico",
+   "name": "Bairro Académico",
+   "at": [
+    156.0,
+    39.9
+   ],
+   "arrive": [
+    150.5,
+    40.3
    ]
   },
   {
-   "id": "largo",
-   "name": "Praça do Bairro",
+   "to": "bairro_fatima",
+   "name": "Bairro de Fátima",
    "at": [
-    72,
-    64
+    156.1,
+    28.1
+   ],
+   "arrive": [
+    150.8,
+    26.5
+   ]
+  },
+  {
+   "to": "bairro_militar",
+   "name": "Bairro Militar",
+   "at": [
+    156.0,
+    126.7
+   ],
+   "arrive": [
+    150.6,
+    127.8
+   ]
+  },
+  {
+   "to": "cacoio",
+   "name": "Cacoio",
+   "at": [
+    66.5,
+    2.8
+   ],
+   "arrive": [
+    71.9,
+    4.0
+   ]
+  },
+  {
+   "to": "cidade_alta",
+   "name": "Cidade Alta",
+   "at": [
+    156.0,
+    99.8
+   ],
+   "arrive": [
+    150.5,
+    100.1
+   ]
+  },
+  {
+   "to": "kapango",
+   "name": "Kapango",
+   "at": [
+    97.6,
+    156.0
+   ],
+   "arrive": [
+    96.6,
+    150.6
    ]
   }
  ]

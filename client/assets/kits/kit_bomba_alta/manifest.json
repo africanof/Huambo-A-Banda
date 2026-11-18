@@ -18,8 +18,9 @@
    "scale": 1.6,
    "out": "bomba_alta_escola",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_escola.png",
-   "name": "Escola Primária da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_escola.webp",
+   "name": "Escola Primária da Bomba Alta",
+   "venue": "escola"
   },
   "bomba_alta_saude": {
    "category": "building",
@@ -38,8 +39,9 @@
    "scale": 1.6,
    "out": "bomba_alta_saude",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_saude.png",
-   "name": "Centro de Saúde da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_saude.webp",
+   "name": "Centro de Saúde da Bomba Alta",
+   "venue": "saude"
   },
   "bomba_alta_igreja": {
    "category": "building",
@@ -58,8 +60,9 @@
    "scale": 1.6,
    "out": "bomba_alta_igreja",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_igreja.png",
-   "name": "Igreja Adventista da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_igreja.webp",
+   "name": "Igreja Adventista da Bomba Alta",
+   "venue": "igreja"
   },
   "bomba_alta_mercado": {
    "category": "building",
@@ -78,8 +81,9 @@
    "scale": 1.6,
    "out": "bomba_alta_mercado",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_mercado.png",
-   "name": "Mercado da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_mercado.webp",
+   "name": "Mercado da Bomba Alta",
+   "venue": "mercado"
   },
   "bomba_alta_cantina": {
    "category": "building",
@@ -98,8 +102,9 @@
    "scale": 1.6,
    "out": "bomba_alta_cantina",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_cantina.png",
-   "name": "Cantina da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_cantina.webp",
+   "name": "Cantina da Bomba Alta",
+   "venue": "cantina"
   },
   "bomba_alta_farmacia": {
    "category": "building",
@@ -118,8 +123,9 @@
    "scale": 1.6,
    "out": "bomba_alta_farmacia",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_farmacia.png",
-   "name": "Farmácia Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_farmacia.webp",
+   "name": "Farmácia Bomba Alta",
+   "venue": "farmacia"
   },
   "bomba_alta_administracao": {
    "category": "building",
@@ -138,8 +144,9 @@
    "scale": 1.6,
    "out": "bomba_alta_administracao",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_administracao.png",
-   "name": "Administração da Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_administracao.webp",
+   "name": "Administração da Bomba Alta",
+   "venue": "administracao"
   },
   "bomba_alta_padaria": {
    "category": "building",
@@ -158,8 +165,9 @@
    "scale": 1.6,
    "out": "bomba_alta_padaria",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_padaria.png",
-   "name": "Padaria Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_padaria.webp",
+   "name": "Padaria Bomba Alta",
+   "venue": "padaria"
   },
   "bomba_alta_churrasqueira": {
    "category": "building",
@@ -178,8 +186,9 @@
    "scale": 1.6,
    "out": "bomba_alta_churrasqueira",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_churrasqueira.png",
-   "name": "Churrasqueira Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_churrasqueira.webp",
+   "name": "Churrasqueira Bomba Alta",
+   "venue": "churrasqueira"
   },
   "bomba_alta_apartamentos": {
    "category": "building",
@@ -198,8 +207,9 @@
    "scale": 1.6,
    "out": "bomba_alta_apartamentos",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_apartamentos.png",
-   "name": "Prédio Bomba Alta"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_apartamentos.webp",
+   "name": "Prédio Bomba Alta",
+   "venue": "apartamentos"
   },
   "bomba_alta_casa1": {
    "category": "building",
@@ -218,8 +228,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa1",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa1.png",
-   "name": "Casa 1"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
   },
   "bomba_alta_casa2": {
    "category": "building",
@@ -238,8 +249,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa2",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa2.png",
-   "name": "Casa 2"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
   },
   "bomba_alta_casa3": {
    "category": "building",
@@ -258,8 +270,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa3",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa3.png",
-   "name": "Casa 3"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
   },
   "bomba_alta_casa4": {
    "category": "building",
@@ -278,8 +291,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa4",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa4.png",
-   "name": "Casa 4"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa4.webp",
+   "name": "Casa 4",
+   "venue": "casa"
   },
   "bomba_alta_casa5": {
    "category": "building",
@@ -298,8 +312,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa5",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa5.png",
-   "name": "Casa 5"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa5.webp",
+   "name": "Casa 5",
+   "venue": "casa"
   },
   "bomba_alta_casa6": {
    "category": "building",
@@ -318,8 +333,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa6",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa6.png",
-   "name": "Casa 6"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa6.webp",
+   "name": "Casa 6",
+   "venue": "casa"
   },
   "bomba_alta_casa7": {
    "category": "building",
@@ -338,8 +354,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa7",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa7.png",
-   "name": "Casa 7"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa7.webp",
+   "name": "Casa 7",
+   "venue": "casa"
   },
   "bomba_alta_casa8": {
    "category": "building",
@@ -358,8 +375,9 @@
    "scale": 1.6,
    "out": "bomba_alta_casa8",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa8.png",
-   "name": "Casa 8"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa8.webp",
+   "name": "Casa 8",
+   "venue": "casa"
   },
   "bomba_alta_casa9": {
    "category": "building",
@@ -378,9 +396,1736 @@
    "scale": 1.6,
    "out": "bomba_alta_casa9",
    "kit": "kit_bomba_alta",
-   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa9.png",
-   "name": "Casa 9"
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa9.webp",
+   "name": "Casa 9",
+   "venue": "casa"
+  },
+  "bomba_alta_tree1": {
+   "category": "prop",
+   "size": [
+    277,
+    233
+   ],
+   "anchor": [
+    138,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree1.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree2": {
+   "category": "prop",
+   "size": [
+    248,
+    229
+   ],
+   "anchor": [
+    123,
+    227
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree2.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree3": {
+   "category": "prop",
+   "size": [
+    168,
+    260
+   ],
+   "anchor": [
+    83,
+    258
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree3.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree4": {
+   "category": "prop",
+   "size": [
+    369,
+    243
+   ],
+   "anchor": [
+    184,
+    241
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree4.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree5": {
+   "category": "prop",
+   "size": [
+    226,
+    231
+   ],
+   "anchor": [
+    112,
+    230
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree5.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree6": {
+   "category": "prop",
+   "size": [
+    208,
+    216
+   ],
+   "anchor": [
+    103,
+    215
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree6",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree6.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree7": {
+   "category": "prop",
+   "size": [
+    178,
+    247
+   ],
+   "anchor": [
+    88,
+    246
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree7",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree7.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree8": {
+   "category": "prop",
+   "size": [
+    167,
+    206
+   ],
+   "anchor": [
+    82,
+    204
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree8",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree8.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree9": {
+   "category": "prop",
+   "size": [
+    207,
+    214
+   ],
+   "anchor": [
+    103,
+    212
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree9",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree9.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree10": {
+   "category": "prop",
+   "size": [
+    210,
+    202
+   ],
+   "anchor": [
+    104,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree10",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree10.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_lamp1": {
+   "category": "prop",
+   "size": [
+    105,
+    226
+   ],
+   "anchor": [
+    52,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_lamp2": {
+   "category": "prop",
+   "size": [
+    89,
+    234
+   ],
+   "anchor": [
+    43,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_lamp3": {
+   "category": "prop",
+   "size": [
+    59,
+    206
+   ],
+   "anchor": [
+    29,
+    205
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_lamp4": {
+   "category": "prop",
+   "size": [
+    47,
+    206
+   ],
+   "anchor": [
+    23,
+    205
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp4.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_lamp5": {
+   "category": "prop",
+   "size": [
+    85,
+    229
+   ],
+   "anchor": [
+    42,
+    228
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp5.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_lamp6": {
+   "category": "prop",
+   "size": [
+    50,
+    206
+   ],
+   "anchor": [
+    24,
+    204
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_lamp6",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_lamp6.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bomba_alta_pole1": {
+   "category": "prop",
+   "size": [
+    90,
+    227
+   ],
+   "anchor": [
+    44,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_pole1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_pole1.webp",
+   "kind": "pole"
+  },
+  "bomba_alta_pole2": {
+   "category": "prop",
+   "size": [
+    87,
+    228
+   ],
+   "anchor": [
+    43,
+    227
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_pole2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_pole2.webp",
+   "kind": "pole"
+  },
+  "bomba_alta_pole3": {
+   "category": "prop",
+   "size": [
+    86,
+    232
+   ],
+   "anchor": [
+    42,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_pole3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_pole3.webp",
+   "kind": "pole"
+  },
+  "bomba_alta_pole4": {
+   "category": "prop",
+   "size": [
+    85,
+    237
+   ],
+   "anchor": [
+    41,
+    235
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_pole4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_pole4.webp",
+   "kind": "pole"
+  },
+  "bomba_alta_vehicle1": {
+   "category": "prop",
+   "size": [
+    302,
+    168
+   ],
+   "anchor": [
+    114,
+    166
+   ],
+   "footprint": [
+    1.5,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle1.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle2": {
+   "category": "prop",
+   "size": [
+    309,
+    170
+   ],
+   "anchor": [
+    115,
+    168
+   ],
+   "footprint": [
+    1.5,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle2.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle3": {
+   "category": "prop",
+   "size": [
+    173,
+    136
+   ],
+   "anchor": [
+    22,
+    135
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle3.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle4": {
+   "category": "prop",
+   "size": [
+    162,
+    136
+   ],
+   "anchor": [
+    19,
+    135
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle4.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle5": {
+   "category": "prop",
+   "size": [
+    168,
+    137
+   ],
+   "anchor": [
+    17,
+    136
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle5.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle6": {
+   "category": "prop",
+   "size": [
+    306,
+    144
+   ],
+   "anchor": [
+    97,
+    142
+   ],
+   "footprint": [
+    1.3,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle6",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle6.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle7": {
+   "category": "prop",
+   "size": [
+    246,
+    118
+   ],
+   "anchor": [
+    99,
+    116
+   ],
+   "footprint": [
+    1.3,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle7",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle7.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle8": {
+   "category": "prop",
+   "size": [
+    216,
+    116
+   ],
+   "anchor": [
+    93,
+    114
+   ],
+   "footprint": [
+    1.3,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle8",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle8.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_vehicle9": {
+   "category": "prop",
+   "size": [
+    196,
+    175
+   ],
+   "anchor": [
+    114,
+    173
+   ],
+   "footprint": [
+    1.5,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_vehicle9",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_vehicle9.webp",
+   "kind": "vehicle"
+  },
+  "bomba_alta_stall1": {
+   "category": "prop",
+   "size": [
+    183,
+    166
+   ],
+   "anchor": [
+    69,
+    164
+   ],
+   "footprint": [
+    0.9,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_stall1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_stall1.webp",
+   "kind": "stall"
+  },
+  "bomba_alta_stall2": {
+   "category": "prop",
+   "size": [
+    246,
+    168
+   ],
+   "anchor": [
+    58,
+    166
+   ],
+   "footprint": [
+    0.8,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_stall2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_stall2.webp",
+   "kind": "stall"
+  },
+  "bomba_alta_stall3": {
+   "category": "prop",
+   "size": [
+    201,
+    171
+   ],
+   "anchor": [
+    106,
+    169
+   ],
+   "footprint": [
+    1.4,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_stall3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_stall3.webp",
+   "kind": "stall"
+  },
+  "bomba_alta_tree11": {
+   "category": "prop",
+   "size": [
+    211,
+    173
+   ],
+   "anchor": [
+    105,
+    171
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree11",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree11.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_stall4": {
+   "category": "prop",
+   "size": [
+    203,
+    163
+   ],
+   "anchor": [
+    80,
+    162
+   ],
+   "footprint": [
+    1.1,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_stall4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_stall4.webp",
+   "kind": "stall"
+  },
+  "bomba_alta_stall5": {
+   "category": "prop",
+   "size": [
+    177,
+    152
+   ],
+   "anchor": [
+    82,
+    150
+   ],
+   "footprint": [
+    1.1,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_stall5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_stall5.webp",
+   "kind": "stall"
+  },
+  "bomba_alta_small1": {
+   "category": "prop",
+   "size": [
+    137,
+    142
+   ],
+   "anchor": [
+    67,
+    140
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small1.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small2": {
+   "category": "prop",
+   "size": [
+    131,
+    140
+   ],
+   "anchor": [
+    64,
+    138
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small2.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small3": {
+   "category": "prop",
+   "size": [
+    85,
+    120
+   ],
+   "anchor": [
+    36,
+    119
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small3.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small4": {
+   "category": "prop",
+   "size": [
+    193,
+    114
+   ],
+   "anchor": [
+    58,
+    111
+   ],
+   "footprint": [
+    0.8,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small4.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small5": {
+   "category": "prop",
+   "size": [
+    184,
+    141
+   ],
+   "anchor": [
+    54,
+    139
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small5.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small6": {
+   "category": "prop",
+   "size": [
+    171,
+    134
+   ],
+   "anchor": [
+    51,
+    132
+   ],
+   "footprint": [
+    0.7,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small6",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small6.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small7": {
+   "category": "prop",
+   "size": [
+    171,
+    110
+   ],
+   "anchor": [
+    49,
+    108
+   ],
+   "footprint": [
+    0.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small7",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small7.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small8": {
+   "category": "prop",
+   "size": [
+    178,
+    165
+   ],
+   "anchor": [
+    101,
+    163
+   ],
+   "footprint": [
+    1.4,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small8",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small8.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small9": {
+   "category": "prop",
+   "size": [
+    147,
+    170
+   ],
+   "anchor": [
+    72,
+    168
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small9",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small9.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small10": {
+   "category": "prop",
+   "size": [
+    152,
+    158
+   ],
+   "anchor": [
+    89,
+    157
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small10",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small10.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small11": {
+   "category": "prop",
+   "size": [
+    150,
+    119
+   ],
+   "anchor": [
+    81,
+    118
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small11",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small11.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small12": {
+   "category": "prop",
+   "size": [
+    143,
+    113
+   ],
+   "anchor": [
+    89,
+    112
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small12",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small12.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small13": {
+   "category": "prop",
+   "size": [
+    289,
+    170
+   ],
+   "anchor": [
+    235,
+    168
+   ],
+   "footprint": [
+    3.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small13",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small13.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small14": {
+   "category": "prop",
+   "size": [
+    289,
+    163
+   ],
+   "anchor": [
+    215,
+    161
+   ],
+   "footprint": [
+    2.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small14",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small14.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small15": {
+   "category": "prop",
+   "size": [
+    110,
+    134
+   ],
+   "anchor": [
+    44,
+    133
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small15",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small15.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small16": {
+   "category": "prop",
+   "size": [
+    127,
+    133
+   ],
+   "anchor": [
+    51,
+    131
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small16",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small16.webp",
+   "kind": "small"
+  },
+  "bomba_alta_tree12": {
+   "category": "prop",
+   "size": [
+    91,
+    136
+   ],
+   "anchor": [
+    45,
+    134
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree12",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree12.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_tree13": {
+   "category": "prop",
+   "size": [
+    125,
+    127
+   ],
+   "anchor": [
+    62,
+    126
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_tree13",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_tree13.webp",
+   "kind": "tree"
+  },
+  "bomba_alta_small17": {
+   "category": "prop",
+   "size": [
+    175,
+    112
+   ],
+   "anchor": [
+    26,
+    110
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small17",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small17.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small18": {
+   "category": "prop",
+   "size": [
+    178,
+    113
+   ],
+   "anchor": [
+    28,
+    112
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small18",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small18.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small19": {
+   "category": "prop",
+   "size": [
+    184,
+    110
+   ],
+   "anchor": [
+    31,
+    109
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small19",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small19.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small20": {
+   "category": "prop",
+   "size": [
+    158,
+    114
+   ],
+   "anchor": [
+    68,
+    112
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small20",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small20.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small21": {
+   "category": "prop",
+   "size": [
+    122,
+    88
+   ],
+   "anchor": [
+    60,
+    86
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small21",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small21.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small22": {
+   "category": "prop",
+   "size": [
+    153,
+    110
+   ],
+   "anchor": [
+    65,
+    108
+   ],
+   "footprint": [
+    0.9,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small22",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small22.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small23": {
+   "category": "prop",
+   "size": [
+    164,
+    105
+   ],
+   "anchor": [
+    26,
+    103
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small23",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small23.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small24": {
+   "category": "prop",
+   "size": [
+    161,
+    102
+   ],
+   "anchor": [
+    29,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small24",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small24.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small25": {
+   "category": "prop",
+   "size": [
+    89,
+    99
+   ],
+   "anchor": [
+    36,
+    97
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small25",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small25.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small26": {
+   "category": "prop",
+   "size": [
+    70,
+    83
+   ],
+   "anchor": [
+    28,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small26",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small26.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small27": {
+   "category": "prop",
+   "size": [
+    51,
+    60
+   ],
+   "anchor": [
+    17,
+    58
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small27",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small27.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small28": {
+   "category": "prop",
+   "size": [
+    98,
+    105
+   ],
+   "anchor": [
+    50,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small28",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small28.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small29": {
+   "category": "prop",
+   "size": [
+    83,
+    83
+   ],
+   "anchor": [
+    39,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small29",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small29.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small30": {
+   "category": "prop",
+   "size": [
+    92,
+    93
+   ],
+   "anchor": [
+    40,
+    91
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small30",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small30.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small31": {
+   "category": "prop",
+   "size": [
+    125,
+    112
+   ],
+   "anchor": [
+    57,
+    110
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small31",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small31.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small32": {
+   "category": "prop",
+   "size": [
+    122,
+    109
+   ],
+   "anchor": [
+    54,
+    107
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small32",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small32.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small33": {
+   "category": "prop",
+   "size": [
+    146,
+    117
+   ],
+   "anchor": [
+    69,
+    116
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small33",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small33.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small34": {
+   "category": "prop",
+   "size": [
+    160,
+    113
+   ],
+   "anchor": [
+    79,
+    111
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small34",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small34.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small35": {
+   "category": "prop",
+   "size": [
+    97,
+    138
+   ],
+   "anchor": [
+    9,
+    137
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small35",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small35.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small36": {
+   "category": "prop",
+   "size": [
+    95,
+    137
+   ],
+   "anchor": [
+    9,
+    135
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small36",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small36.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small37": {
+   "category": "prop",
+   "size": [
+    193,
+    159
+   ],
+   "anchor": [
+    121,
+    158
+   ],
+   "footprint": [
+    1.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small37",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small37.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small38": {
+   "category": "prop",
+   "size": [
+    194,
+    163
+   ],
+   "anchor": [
+    121,
+    162
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small38",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small38.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small39": {
+   "category": "prop",
+   "size": [
+    193,
+    161
+   ],
+   "anchor": [
+    120,
+    160
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small39",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small39.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small40": {
+   "category": "prop",
+   "size": [
+    117,
+    130
+   ],
+   "anchor": [
+    44,
+    129
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small40",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small40.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small41": {
+   "category": "prop",
+   "size": [
+    122,
+    138
+   ],
+   "anchor": [
+    43,
+    136
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small41",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small41.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small42": {
+   "category": "prop",
+   "size": [
+    176,
+    149
+   ],
+   "anchor": [
+    91,
+    147
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small42",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small42.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small43": {
+   "category": "prop",
+   "size": [
+    201,
+    119
+   ],
+   "anchor": [
+    40,
+    117
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small43",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small43.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small44": {
+   "category": "prop",
+   "size": [
+    199,
+    121
+   ],
+   "anchor": [
+    41,
+    119
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small44",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small44.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small45": {
+   "category": "prop",
+   "size": [
+    81,
+    126
+   ],
+   "anchor": [
+    27,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small45",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small45.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small46": {
+   "category": "prop",
+   "size": [
+    81,
+    126
+   ],
+   "anchor": [
+    23,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small46",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small46.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small47": {
+   "category": "prop",
+   "size": [
+    336,
+    137
+   ],
+   "anchor": [
+    209,
+    135
+   ],
+   "footprint": [
+    2.9,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small47",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small47.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small48": {
+   "category": "prop",
+   "size": [
+    516,
+    138
+   ],
+   "anchor": [
+    342,
+    137
+   ],
+   "footprint": [
+    3.0,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small48",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small48.webp",
+   "kind": "small"
+  },
+  "bomba_alta_small49": {
+   "category": "prop",
+   "size": [
+    523,
+    143
+   ],
+   "anchor": [
+    167,
+    142
+   ],
+   "footprint": [
+    2.3,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_small49",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_small49.webp",
+   "kind": "small"
   }
  },
- "version": "7c6623a8b852"
+ "version": "d99c4b966ff8"
 }

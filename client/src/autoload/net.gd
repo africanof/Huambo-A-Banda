@@ -42,7 +42,7 @@ func is_connected_to_world() -> bool:
 
 
 ## Entra num bairro. Devolve "" em caso de sucesso, ou a mensagem de erro.
-func join_district(district: String) -> String:
+func join_district(district: String, spawn: String = "") -> String:
 	await Auth.ensure_fresh_token()
 	leave()
 	_client.endpoint = AppConfig.server_url
@@ -50,7 +50,7 @@ func join_district(district: String) -> String:
 	var res: ColyseusClient.JoinResult = await _client.join_or_create(ROOM_DISTRICT, {
 		"v": Protocol.PROTOCOL_VERSION,
 		"district": district,
-	})
+	}.merged({"spawn": spawn} if spawn != "" else {}))
 	if res.room == null:
 		return _humanize(res.code, res.error)
 	room = res.room
