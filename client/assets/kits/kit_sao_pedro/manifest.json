@@ -2122,7 +2122,6373 @@
    "kit": "kit_sao_pedro",
    "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small59.webp",
    "kind": "small"
+  },
+  "sao_pedro_escola@1": {
+   "category": "building",
+   "size": [
+    1027,
+    459
+   ],
+   "anchor": [
+    360,
+    453
+   ],
+   "footprint": [
+    9.0,
+    16.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_escola@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_escola@1.webp",
+   "name": "Escola Primária de São Pedro",
+   "venue": "escola"
+  },
+  "sao_pedro_saude@1": {
+   "category": "building",
+   "size": [
+    749,
+    417
+   ],
+   "anchor": [
+    277,
+    413
+   ],
+   "footprint": [
+    6.9,
+    11.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_saude@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_saude@1.webp",
+   "name": "Centro de Saúde de São Pedro",
+   "venue": "saude"
+  },
+  "sao_pedro_igreja@1": {
+   "category": "building",
+   "size": [
+    756,
+    464
+   ],
+   "anchor": [
+    283,
+    460
+   ],
+   "footprint": [
+    7.0,
+    11.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_igreja@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_igreja@1.webp",
+   "name": "Igreja de São Pedro",
+   "venue": "igreja"
+  },
+  "sao_pedro_mercado@1": {
+   "category": "building",
+   "size": [
+    1096,
+    441
+   ],
+   "anchor": [
+    464,
+    431
+   ],
+   "footprint": [
+    11.5,
+    15.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_mercado@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_mercado@1.webp",
+   "name": "Mercado de São Pedro",
+   "venue": "mercado"
+  },
+  "sao_pedro_cantina@1": {
+   "category": "building",
+   "size": [
+    541,
+    363
+   ],
+   "anchor": [
+    256,
+    359
+   ],
+   "footprint": [
+    6.4,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_cantina@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_cantina@1.webp",
+   "name": "Cantina da Tia Joana",
+   "venue": "cantina"
+  },
+  "sao_pedro_farmacia@1": {
+   "category": "building",
+   "size": [
+    475,
+    365
+   ],
+   "anchor": [
+    251,
+    361
+   ],
+   "footprint": [
+    6.2,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_farmacia@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_farmacia@1.webp",
+   "name": "Farmácia São Pedro",
+   "venue": "farmacia"
+  },
+  "sao_pedro_administracao@1": {
+   "category": "building",
+   "size": [
+    609,
+    417
+   ],
+   "anchor": [
+    267,
+    413
+   ],
+   "footprint": [
+    6.6,
+    8.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_administracao@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_administracao@1.webp",
+   "name": "Administração de São Pedro",
+   "venue": "administracao"
+  },
+  "sao_pedro_esquadra@1": {
+   "category": "building",
+   "size": [
+    540,
+    361
+   ],
+   "anchor": [
+    231,
+    357
+   ],
+   "footprint": [
+    5.7,
+    7.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_esquadra@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_esquadra@1.webp",
+   "name": "Esquadra Policial de São Pedro",
+   "venue": "esquadra"
+  },
+  "sao_pedro_padaria@1": {
+   "category": "building",
+   "size": [
+    482,
+    361
+   ],
+   "anchor": [
+    209,
+    358
+   ],
+   "footprint": [
+    5.2,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_padaria@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_padaria@1.webp",
+   "name": "Padaria São Pedro",
+   "venue": "padaria"
+  },
+  "sao_pedro_correios@1": {
+   "category": "building",
+   "size": [
+    454,
+    356
+   ],
+   "anchor": [
+    193,
+    352
+   ],
+   "footprint": [
+    4.8,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_correios@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_correios@1.webp",
+   "name": "Correios de São Pedro",
+   "venue": "correios"
+  },
+  "sao_pedro_apartamentos@1": {
+   "category": "building",
+   "size": [
+    526,
+    503
+   ],
+   "anchor": [
+    179,
+    499
+   ],
+   "footprint": [
+    4.4,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_apartamentos@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_apartamentos@1.webp",
+   "name": "Prédio São Pedro",
+   "venue": "apartamentos"
+  },
+  "sao_pedro_casa1@1": {
+   "category": "building",
+   "size": [
+    532,
+    339
+   ],
+   "anchor": [
+    202,
+    336
+   ],
+   "footprint": [
+    5.0,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa1@1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "sao_pedro_casa2@1": {
+   "category": "building",
+   "size": [
+    505,
+    328
+   ],
+   "anchor": [
+    169,
+    324
+   ],
+   "footprint": [
+    4.2,
+    8.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa2@1.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "sao_pedro_casa3@1": {
+   "category": "building",
+   "size": [
+    555,
+    330
+   ],
+   "anchor": [
+    188,
+    327
+   ],
+   "footprint": [
+    4.6,
+    9.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa3@1.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "sao_pedro_casa4@1": {
+   "category": "building",
+   "size": [
+    527,
+    317
+   ],
+   "anchor": [
+    162,
+    313
+   ],
+   "footprint": [
+    4.0,
+    9.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa4@1.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "sao_pedro_casa5@1": {
+   "category": "building",
+   "size": [
+    510,
+    322
+   ],
+   "anchor": [
+    157,
+    319
+   ],
+   "footprint": [
+    3.9,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa5@1.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "sao_pedro_casa6@1": {
+   "category": "building",
+   "size": [
+    504,
+    325
+   ],
+   "anchor": [
+    156,
+    322
+   ],
+   "footprint": [
+    3.9,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa6@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa6@1.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "sao_pedro_casa7@1": {
+   "category": "building",
+   "size": [
+    546,
+    314
+   ],
+   "anchor": [
+    181,
+    311
+   ],
+   "footprint": [
+    4.5,
+    9.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa7@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa7@1.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_pedro_tree1@1": {
+   "category": "prop",
+   "size": [
+    262,
+    254
+   ],
+   "anchor": [
+    130,
+    253
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree1@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_small1@1": {
+   "category": "prop",
+   "size": [
+    173,
+    259
+   ],
+   "anchor": [
+    80,
+    257
+   ],
+   "footprint": [
+    1.1,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small1@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_tree2@1": {
+   "category": "prop",
+   "size": [
+    208,
+    208
+   ],
+   "anchor": [
+    103,
+    206
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree2@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree3@1": {
+   "category": "prop",
+   "size": [
+    166,
+    239
+   ],
+   "anchor": [
+    82,
+    238
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree3@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree4@1": {
+   "category": "prop",
+   "size": [
+    318,
+    241
+   ],
+   "anchor": [
+    158,
+    239
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree4@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree5@1": {
+   "category": "prop",
+   "size": [
+    189,
+    206
+   ],
+   "anchor": [
+    93,
+    205
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree5@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree6@1": {
+   "category": "prop",
+   "size": [
+    180,
+    208
+   ],
+   "anchor": [
+    89,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree6@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree6@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree7@1": {
+   "category": "prop",
+   "size": [
+    183,
+    196
+   ],
+   "anchor": [
+    91,
+    194
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree7@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree7@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree8@1": {
+   "category": "prop",
+   "size": [
+    173,
+    201
+   ],
+   "anchor": [
+    86,
+    200
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree8@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree8@1.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_lamp1@1": {
+   "category": "prop",
+   "size": [
+    84,
+    221
+   ],
+   "anchor": [
+    41,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp1@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp2@1": {
+   "category": "prop",
+   "size": [
+    52,
+    204
+   ],
+   "anchor": [
+    25,
+    203
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp2@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp3@1": {
+   "category": "prop",
+   "size": [
+    94,
+    209
+   ],
+   "anchor": [
+    46,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp3@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp4@1": {
+   "category": "prop",
+   "size": [
+    53,
+    219
+   ],
+   "anchor": [
+    26,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp4@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_pole1@1": {
+   "category": "prop",
+   "size": [
+    69,
+    215
+   ],
+   "anchor": [
+    34,
+    213
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole1@1.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole2@1": {
+   "category": "prop",
+   "size": [
+    87,
+    222
+   ],
+   "anchor": [
+    43,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole2@1.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole3@1": {
+   "category": "prop",
+   "size": [
+    90,
+    223
+   ],
+   "anchor": [
+    44,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole3@1.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole4@1": {
+   "category": "prop",
+   "size": [
+    92,
+    224
+   ],
+   "anchor": [
+    46,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole4@1.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole5@1": {
+   "category": "prop",
+   "size": [
+    92,
+    223
+   ],
+   "anchor": [
+    45,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole5@1.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_vehicle1@1": {
+   "category": "prop",
+   "size": [
+    336,
+    206
+   ],
+   "anchor": [
+    183,
+    204
+   ],
+   "footprint": [
+    2.5,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle1@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle2@1": {
+   "category": "prop",
+   "size": [
+    341,
+    206
+   ],
+   "anchor": [
+    190,
+    204
+   ],
+   "footprint": [
+    2.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle2@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_small2@1": {
+   "category": "prop",
+   "size": [
+    133,
+    125
+   ],
+   "anchor": [
+    101,
+    124
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small2@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small3@1": {
+   "category": "prop",
+   "size": [
+    130,
+    125
+   ],
+   "anchor": [
+    99,
+    124
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small3@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small4@1": {
+   "category": "prop",
+   "size": [
+    128,
+    125
+   ],
+   "anchor": [
+    97,
+    124
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small4@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small5@1": {
+   "category": "prop",
+   "size": [
+    138,
+    125
+   ],
+   "anchor": [
+    105,
+    124
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small5@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_vehicle3@1": {
+   "category": "prop",
+   "size": [
+    237,
+    123
+   ],
+   "anchor": [
+    128,
+    122
+   ],
+   "footprint": [
+    1.8,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle3@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle4@1": {
+   "category": "prop",
+   "size": [
+    243,
+    122
+   ],
+   "anchor": [
+    131,
+    121
+   ],
+   "footprint": [
+    1.8,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle4@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle5@1": {
+   "category": "prop",
+   "size": [
+    300,
+    155
+   ],
+   "anchor": [
+    159,
+    153
+   ],
+   "footprint": [
+    2.1,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle5@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_stall1@1": {
+   "category": "prop",
+   "size": [
+    170,
+    185
+   ],
+   "anchor": [
+    75,
+    183
+   ],
+   "footprint": [
+    1.0,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall1@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall1@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall2@1": {
+   "category": "prop",
+   "size": [
+    161,
+    179
+   ],
+   "anchor": [
+    90,
+    177
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall2@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall2@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall3@1": {
+   "category": "prop",
+   "size": [
+    217,
+    183
+   ],
+   "anchor": [
+    116,
+    180
+   ],
+   "footprint": [
+    1.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall3@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall3@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall4@1": {
+   "category": "prop",
+   "size": [
+    222,
+    180
+   ],
+   "anchor": [
+    127,
+    178
+   ],
+   "footprint": [
+    1.7,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall4@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall4@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall5@1": {
+   "category": "prop",
+   "size": [
+    218,
+    181
+   ],
+   "anchor": [
+    122,
+    179
+   ],
+   "footprint": [
+    1.7,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall5@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall5@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall6@1": {
+   "category": "prop",
+   "size": [
+    206,
+    180
+   ],
+   "anchor": [
+    108,
+    178
+   ],
+   "footprint": [
+    1.5,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall6@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall6@1.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_small6@1": {
+   "category": "prop",
+   "size": [
+    146,
+    141
+   ],
+   "anchor": [
+    75,
+    139
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small6@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small6@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small7@1": {
+   "category": "prop",
+   "size": [
+    117,
+    139
+   ],
+   "anchor": [
+    60,
+    137
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small7@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small7@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small8@1": {
+   "category": "prop",
+   "size": [
+    121,
+    139
+   ],
+   "anchor": [
+    61,
+    137
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small8@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small8@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small9@1": {
+   "category": "prop",
+   "size": [
+    98,
+    123
+   ],
+   "anchor": [
+    40,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small9@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small9@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small10@1": {
+   "category": "prop",
+   "size": [
+    206,
+    124
+   ],
+   "anchor": [
+    55,
+    122
+   ],
+   "footprint": [
+    0.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small10@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small10@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small11@1": {
+   "category": "prop",
+   "size": [
+    188,
+    135
+   ],
+   "anchor": [
+    58,
+    133
+   ],
+   "footprint": [
+    0.8,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small11@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small11@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small12@1": {
+   "category": "prop",
+   "size": [
+    196,
+    130
+   ],
+   "anchor": [
+    53,
+    128
+   ],
+   "footprint": [
+    0.7,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small12@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small12@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small13@1": {
+   "category": "prop",
+   "size": [
+    201,
+    127
+   ],
+   "anchor": [
+    49,
+    125
+   ],
+   "footprint": [
+    0.7,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small13@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small13@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small14@1": {
+   "category": "prop",
+   "size": [
+    140,
+    155
+   ],
+   "anchor": [
+    49,
+    154
+   ],
+   "footprint": [
+    0.7,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small14@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small14@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small15@1": {
+   "category": "prop",
+   "size": [
+    186,
+    169
+   ],
+   "anchor": [
+    78,
+    168
+   ],
+   "footprint": [
+    1.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small15@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small15@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small16@1": {
+   "category": "prop",
+   "size": [
+    154,
+    144
+   ],
+   "anchor": [
+    70,
+    142
+   ],
+   "footprint": [
+    0.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small16@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small16@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small17@1": {
+   "category": "prop",
+   "size": [
+    150,
+    117
+   ],
+   "anchor": [
+    71,
+    116
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small17@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small17@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small18@1": {
+   "category": "prop",
+   "size": [
+    135,
+    117
+   ],
+   "anchor": [
+    66,
+    115
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small18@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small18@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small19@1": {
+   "category": "prop",
+   "size": [
+    252,
+    153
+   ],
+   "anchor": [
+    174,
+    151
+   ],
+   "footprint": [
+    2.4,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small19@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small19@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small20@1": {
+   "category": "prop",
+   "size": [
+    296,
+    155
+   ],
+   "anchor": [
+    217,
+    148
+   ],
+   "footprint": [
+    3.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small20@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small20@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small21@1": {
+   "category": "prop",
+   "size": [
+    94,
+    120
+   ],
+   "anchor": [
+    41,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small21@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small21@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small22@1": {
+   "category": "prop",
+   "size": [
+    91,
+    115
+   ],
+   "anchor": [
+    43,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small22@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small22@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small23@1": {
+   "category": "prop",
+   "size": [
+    102,
+    115
+   ],
+   "anchor": [
+    40,
+    113
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small23@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small23@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small24@1": {
+   "category": "prop",
+   "size": [
+    99,
+    122
+   ],
+   "anchor": [
+    44,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small24@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small24@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small25@1": {
+   "category": "prop",
+   "size": [
+    200,
+    135
+   ],
+   "anchor": [
+    30,
+    134
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small25@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small25@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small26@1": {
+   "category": "prop",
+   "size": [
+    195,
+    136
+   ],
+   "anchor": [
+    27,
+    135
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small26@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small26@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small27@1": {
+   "category": "prop",
+   "size": [
+    183,
+    134
+   ],
+   "anchor": [
+    27,
+    133
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small27@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small27@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small28@1": {
+   "category": "prop",
+   "size": [
+    190,
+    135
+   ],
+   "anchor": [
+    28,
+    134
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small28@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small28@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small29@1": {
+   "category": "prop",
+   "size": [
+    143,
+    121
+   ],
+   "anchor": [
+    61,
+    119
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small29@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small29@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small30@1": {
+   "category": "prop",
+   "size": [
+    151,
+    115
+   ],
+   "anchor": [
+    58,
+    113
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small30@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small30@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small31@1": {
+   "category": "prop",
+   "size": [
+    149,
+    113
+   ],
+   "anchor": [
+    58,
+    112
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small31@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small31@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small32@1": {
+   "category": "prop",
+   "size": [
+    154,
+    108
+   ],
+   "anchor": [
+    60,
+    107
+   ],
+   "footprint": [
+    0.8,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small32@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small32@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small33@1": {
+   "category": "prop",
+   "size": [
+    179,
+    110
+   ],
+   "anchor": [
+    51,
+    109
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small33@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small33@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small34@1": {
+   "category": "prop",
+   "size": [
+    183,
+    116
+   ],
+   "anchor": [
+    51,
+    115
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small34@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small34@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small35@1": {
+   "category": "prop",
+   "size": [
+    81,
+    103
+   ],
+   "anchor": [
+    33,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small35@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small35@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small36@1": {
+   "category": "prop",
+   "size": [
+    72,
+    92
+   ],
+   "anchor": [
+    26,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small36@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small36@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small37@1": {
+   "category": "prop",
+   "size": [
+    69,
+    84
+   ],
+   "anchor": [
+    27,
+    83
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small37@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small37@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small38@1": {
+   "category": "prop",
+   "size": [
+    106,
+    126
+   ],
+   "anchor": [
+    43,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small38@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small38@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small39@1": {
+   "category": "prop",
+   "size": [
+    92,
+    94
+   ],
+   "anchor": [
+    37,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small39@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small39@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small40@1": {
+   "category": "prop",
+   "size": [
+    90,
+    100
+   ],
+   "anchor": [
+    38,
+    98
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small40@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small40@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small41@1": {
+   "category": "prop",
+   "size": [
+    129,
+    119
+   ],
+   "anchor": [
+    79,
+    117
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small41@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small41@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small42@1": {
+   "category": "prop",
+   "size": [
+    133,
+    121
+   ],
+   "anchor": [
+    36,
+    119
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small42@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small42@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small43@1": {
+   "category": "prop",
+   "size": [
+    174,
+    141
+   ],
+   "anchor": [
+    75,
+    139
+   ],
+   "footprint": [
+    1.0,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small43@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small43@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small44@1": {
+   "category": "prop",
+   "size": [
+    191,
+    139
+   ],
+   "anchor": [
+    83,
+    138
+   ],
+   "footprint": [
+    1.1,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small44@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small44@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small45@1": {
+   "category": "prop",
+   "size": [
+    104,
+    159
+   ],
+   "anchor": [
+    10,
+    158
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small45@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small45@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small46@1": {
+   "category": "prop",
+   "size": [
+    103,
+    162
+   ],
+   "anchor": [
+    10,
+    160
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small46@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small46@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small47@1": {
+   "category": "prop",
+   "size": [
+    192,
+    157
+   ],
+   "anchor": [
+    140,
+    156
+   ],
+   "footprint": [
+    1.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small47@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small47@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small48@1": {
+   "category": "prop",
+   "size": [
+    191,
+    159
+   ],
+   "anchor": [
+    134,
+    157
+   ],
+   "footprint": [
+    1.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small48@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small48@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small49@1": {
+   "category": "prop",
+   "size": [
+    199,
+    157
+   ],
+   "anchor": [
+    143,
+    155
+   ],
+   "footprint": [
+    1.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small49@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small49@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small50@1": {
+   "category": "prop",
+   "size": [
+    144,
+    155
+   ],
+   "anchor": [
+    59,
+    154
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small50@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small50@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small51@1": {
+   "category": "prop",
+   "size": [
+    142,
+    154
+   ],
+   "anchor": [
+    57,
+    153
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small51@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small51@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small52@1": {
+   "category": "prop",
+   "size": [
+    204,
+    161
+   ],
+   "anchor": [
+    116,
+    159
+   ],
+   "footprint": [
+    1.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small52@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small52@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small53@1": {
+   "category": "prop",
+   "size": [
+    272,
+    134
+   ],
+   "anchor": [
+    40,
+    131
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small53@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small53@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small54@1": {
+   "category": "prop",
+   "size": [
+    245,
+    136
+   ],
+   "anchor": [
+    38,
+    127
+   ],
+   "footprint": [
+    0.6,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small54@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small54@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small55@1": {
+   "category": "prop",
+   "size": [
+    101,
+    144
+   ],
+   "anchor": [
+    44,
+    143
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small55@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small55@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small56@1": {
+   "category": "prop",
+   "size": [
+    101,
+    144
+   ],
+   "anchor": [
+    39,
+    143
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small56@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small56@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small57@1": {
+   "category": "prop",
+   "size": [
+    367,
+    145
+   ],
+   "anchor": [
+    149,
+    143
+   ],
+   "footprint": [
+    2.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small57@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small57@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small58@1": {
+   "category": "prop",
+   "size": [
+    643,
+    139
+   ],
+   "anchor": [
+    318,
+    137
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small58@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small58@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small59@1": {
+   "category": "prop",
+   "size": [
+    675,
+    133
+   ],
+   "anchor": [
+    497,
+    131
+   ],
+   "footprint": [
+    3.0,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small59@1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small59@1.webp",
+   "kind": "small"
+  },
+  "sao_pedro_escola@2": {
+   "category": "building",
+   "size": [
+    1004,
+    442
+   ],
+   "anchor": [
+    660,
+    436
+   ],
+   "footprint": [
+    16.4,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_escola@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_escola@2.webp",
+   "name": "Escola Primária de São Pedro",
+   "venue": "escola"
+  },
+  "sao_pedro_saude@2": {
+   "category": "building",
+   "size": [
+    756,
+    368
+   ],
+   "anchor": [
+    516,
+    363
+   ],
+   "footprint": [
+    12.9,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_saude@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_saude@2.webp",
+   "name": "Centro de Saúde de São Pedro",
+   "venue": "saude"
+  },
+  "sao_pedro_igreja@2": {
+   "category": "building",
+   "size": [
+    764,
+    458
+   ],
+   "anchor": [
+    339,
+    453
+   ],
+   "footprint": [
+    8.4,
+    10.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_igreja@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_igreja@2.webp",
+   "name": "Igreja de São Pedro",
+   "venue": "igreja"
+  },
+  "sao_pedro_mercado@2": {
+   "category": "building",
+   "size": [
+    1013,
+    410
+   ],
+   "anchor": [
+    602,
+    401
+   ],
+   "footprint": [
+    15.0,
+    10.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_mercado@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_mercado@2.webp",
+   "name": "Mercado de São Pedro",
+   "venue": "mercado"
+  },
+  "sao_pedro_cantina@2": {
+   "category": "building",
+   "size": [
+    537,
+    372
+   ],
+   "anchor": [
+    294,
+    369
+   ],
+   "footprint": [
+    7.3,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_cantina@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_cantina@2.webp",
+   "name": "Cantina da Tia Joana",
+   "venue": "cantina"
+  },
+  "sao_pedro_farmacia@2": {
+   "category": "building",
+   "size": [
+    490,
+    362
+   ],
+   "anchor": [
+    253,
+    359
+   ],
+   "footprint": [
+    6.3,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_farmacia@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_farmacia@2.webp",
+   "name": "Farmácia São Pedro",
+   "venue": "farmacia"
+  },
+  "sao_pedro_administracao@2": {
+   "category": "building",
+   "size": [
+    606,
+    437
+   ],
+   "anchor": [
+    397,
+    433
+   ],
+   "footprint": [
+    9.9,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_administracao@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_administracao@2.webp",
+   "name": "Administração de São Pedro",
+   "venue": "administracao"
+  },
+  "sao_pedro_esquadra@2": {
+   "category": "building",
+   "size": [
+    549,
+    363
+   ],
+   "anchor": [
+    243,
+    360
+   ],
+   "footprint": [
+    6.0,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_esquadra@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_esquadra@2.webp",
+   "name": "Esquadra Policial de São Pedro",
+   "venue": "esquadra"
+  },
+  "sao_pedro_padaria@2": {
+   "category": "building",
+   "size": [
+    477,
+    343
+   ],
+   "anchor": [
+    284,
+    341
+   ],
+   "footprint": [
+    7.1,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_padaria@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_padaria@2.webp",
+   "name": "Padaria São Pedro",
+   "venue": "padaria"
+  },
+  "sao_pedro_correios@2": {
+   "category": "building",
+   "size": [
+    450,
+    346
+   ],
+   "anchor": [
+    198,
+    342
+   ],
+   "footprint": [
+    4.9,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_correios@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_correios@2.webp",
+   "name": "Correios de São Pedro",
+   "venue": "correios"
+  },
+  "sao_pedro_apartamentos@2": {
+   "category": "building",
+   "size": [
+    505,
+    509
+   ],
+   "anchor": [
+    283,
+    506
+   ],
+   "footprint": [
+    7.0,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_apartamentos@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_apartamentos@2.webp",
+   "name": "Prédio São Pedro",
+   "venue": "apartamentos"
+  },
+  "sao_pedro_casa1@2": {
+   "category": "building",
+   "size": [
+    559,
+    312
+   ],
+   "anchor": [
+    346,
+    309
+   ],
+   "footprint": [
+    8.6,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa1@2.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "sao_pedro_casa2@2": {
+   "category": "building",
+   "size": [
+    537,
+    319
+   ],
+   "anchor": [
+    326,
+    317
+   ],
+   "footprint": [
+    8.1,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa2@2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "sao_pedro_casa3@2": {
+   "category": "building",
+   "size": [
+    530,
+    323
+   ],
+   "anchor": [
+    328,
+    320
+   ],
+   "footprint": [
+    8.2,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa3@2.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "sao_pedro_casa4@2": {
+   "category": "building",
+   "size": [
+    531,
+    310
+   ],
+   "anchor": [
+    351,
+    308
+   ],
+   "footprint": [
+    8.7,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa4@2.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "sao_pedro_casa5@2": {
+   "category": "building",
+   "size": [
+    514,
+    318
+   ],
+   "anchor": [
+    329,
+    316
+   ],
+   "footprint": [
+    8.2,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa5@2.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "sao_pedro_casa6@2": {
+   "category": "building",
+   "size": [
+    516,
+    332
+   ],
+   "anchor": [
+    311,
+    330
+   ],
+   "footprint": [
+    7.7,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa6@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa6@2.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "sao_pedro_casa7@2": {
+   "category": "building",
+   "size": [
+    567,
+    309
+   ],
+   "anchor": [
+    353,
+    307
+   ],
+   "footprint": [
+    8.8,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa7@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa7@2.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_pedro_tree1@2": {
+   "category": "prop",
+   "size": [
+    256,
+    243
+   ],
+   "anchor": [
+    127,
+    242
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree1@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_small1@2": {
+   "category": "prop",
+   "size": [
+    160,
+    253
+   ],
+   "anchor": [
+    79,
+    251
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small1@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_tree2@2": {
+   "category": "prop",
+   "size": [
+    202,
+    206
+   ],
+   "anchor": [
+    100,
+    204
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree2@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree3@2": {
+   "category": "prop",
+   "size": [
+    154,
+    127
+   ],
+   "anchor": [
+    76,
+    121
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree3@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree4@2": {
+   "category": "prop",
+   "size": [
+    471,
+    239
+   ],
+   "anchor": [
+    236,
+    237
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree4@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree5@2": {
+   "category": "prop",
+   "size": [
+    188,
+    207
+   ],
+   "anchor": [
+    93,
+    206
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree5@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree6@2": {
+   "category": "prop",
+   "size": [
+    181,
+    209
+   ],
+   "anchor": [
+    90,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree6@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree6@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree7@2": {
+   "category": "prop",
+   "size": [
+    182,
+    194
+   ],
+   "anchor": [
+    90,
+    192
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree7@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree7@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree8@2": {
+   "category": "prop",
+   "size": [
+    178,
+    203
+   ],
+   "anchor": [
+    88,
+    202
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree8@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree8@2.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_lamp1@2": {
+   "category": "prop",
+   "size": [
+    92,
+    233
+   ],
+   "anchor": [
+    45,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp1@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp2@2": {
+   "category": "prop",
+   "size": [
+    54,
+    203
+   ],
+   "anchor": [
+    26,
+    202
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp2@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp3@2": {
+   "category": "prop",
+   "size": [
+    89,
+    215
+   ],
+   "anchor": [
+    44,
+    214
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp3@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp4@2": {
+   "category": "prop",
+   "size": [
+    54,
+    220
+   ],
+   "anchor": [
+    26,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp4@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_pole1@2": {
+   "category": "prop",
+   "size": [
+    75,
+    226
+   ],
+   "anchor": [
+    37,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole1@2.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole2@2": {
+   "category": "prop",
+   "size": [
+    76,
+    218
+   ],
+   "anchor": [
+    37,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole2@2.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole3@2": {
+   "category": "prop",
+   "size": [
+    81,
+    221
+   ],
+   "anchor": [
+    39,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole3@2.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole4@2": {
+   "category": "prop",
+   "size": [
+    84,
+    222
+   ],
+   "anchor": [
+    41,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole4@2.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole5@2": {
+   "category": "prop",
+   "size": [
+    73,
+    220
+   ],
+   "anchor": [
+    36,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole5@2.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_vehicle1@2": {
+   "category": "prop",
+   "size": [
+    348,
+    214
+   ],
+   "anchor": [
+    161,
+    212
+   ],
+   "footprint": [
+    2.2,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle1@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle2@2": {
+   "category": "prop",
+   "size": [
+    348,
+    214
+   ],
+   "anchor": [
+    159,
+    212
+   ],
+   "footprint": [
+    2.1,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle2@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_small2@2": {
+   "category": "prop",
+   "size": [
+    140,
+    147
+   ],
+   "anchor": [
+    19,
+    146
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small2@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small3@2": {
+   "category": "prop",
+   "size": [
+    132,
+    144
+   ],
+   "anchor": [
+    19,
+    142
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small3@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small4@2": {
+   "category": "prop",
+   "size": [
+    131,
+    144
+   ],
+   "anchor": [
+    16,
+    142
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small4@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small5@2": {
+   "category": "prop",
+   "size": [
+    142,
+    142
+   ],
+   "anchor": [
+    19,
+    140
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small5@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_vehicle3@2": {
+   "category": "prop",
+   "size": [
+    238,
+    133
+   ],
+   "anchor": [
+    102,
+    131
+   ],
+   "footprint": [
+    1.4,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle3@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle4@2": {
+   "category": "prop",
+   "size": [
+    241,
+    135
+   ],
+   "anchor": [
+    109,
+    134
+   ],
+   "footprint": [
+    1.5,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle4@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle5@2": {
+   "category": "prop",
+   "size": [
+    282,
+    151
+   ],
+   "anchor": [
+    126,
+    149
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle5@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_stall1@2": {
+   "category": "prop",
+   "size": [
+    170,
+    190
+   ],
+   "anchor": [
+    77,
+    188
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall1@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall1@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall2@2": {
+   "category": "prop",
+   "size": [
+    166,
+    184
+   ],
+   "anchor": [
+    88,
+    182
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall2@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall2@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall3@2": {
+   "category": "prop",
+   "size": [
+    207,
+    182
+   ],
+   "anchor": [
+    126,
+    180
+   ],
+   "footprint": [
+    1.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall3@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall3@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall4@2": {
+   "category": "prop",
+   "size": [
+    221,
+    183
+   ],
+   "anchor": [
+    132,
+    181
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall4@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall4@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall5@2": {
+   "category": "prop",
+   "size": [
+    214,
+    183
+   ],
+   "anchor": [
+    128,
+    181
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall5@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall5@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall6@2": {
+   "category": "prop",
+   "size": [
+    201,
+    181
+   ],
+   "anchor": [
+    124,
+    179
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall6@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall6@2.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_small6@2": {
+   "category": "prop",
+   "size": [
+    162,
+    152
+   ],
+   "anchor": [
+    95,
+    150
+   ],
+   "footprint": [
+    1.3,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small6@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small6@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small7@2": {
+   "category": "prop",
+   "size": [
+    113,
+    133
+   ],
+   "anchor": [
+    62,
+    131
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small7@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small7@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small8@2": {
+   "category": "prop",
+   "size": [
+    116,
+    130
+   ],
+   "anchor": [
+    62,
+    129
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small8@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small8@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small9@2": {
+   "category": "prop",
+   "size": [
+    101,
+    119
+   ],
+   "anchor": [
+    41,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small9@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small9@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small10@2": {
+   "category": "prop",
+   "size": [
+    204,
+    109
+   ],
+   "anchor": [
+    51,
+    107
+   ],
+   "footprint": [
+    0.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small10@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small10@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small11@2": {
+   "category": "prop",
+   "size": [
+    186,
+    122
+   ],
+   "anchor": [
+    44,
+    120
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small11@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small11@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small12@2": {
+   "category": "prop",
+   "size": [
+    181,
+    124
+   ],
+   "anchor": [
+    44,
+    123
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small12@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small12@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small13@2": {
+   "category": "prop",
+   "size": [
+    188,
+    115
+   ],
+   "anchor": [
+    37,
+    113
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small13@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small13@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small14@2": {
+   "category": "prop",
+   "size": [
+    135,
+    151
+   ],
+   "anchor": [
+    45,
+    149
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small14@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small14@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small15@2": {
+   "category": "prop",
+   "size": [
+    184,
+    165
+   ],
+   "anchor": [
+    77,
+    163
+   ],
+   "footprint": [
+    1.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small15@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small15@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small16@2": {
+   "category": "prop",
+   "size": [
+    143,
+    142
+   ],
+   "anchor": [
+    68,
+    141
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small16@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small16@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small17@2": {
+   "category": "prop",
+   "size": [
+    139,
+    114
+   ],
+   "anchor": [
+    85,
+    112
+   ],
+   "footprint": [
+    1.2,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small17@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small17@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small18@2": {
+   "category": "prop",
+   "size": [
+    132,
+    115
+   ],
+   "anchor": [
+    80,
+    114
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small18@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small18@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small19@2": {
+   "category": "prop",
+   "size": [
+    242,
+    161
+   ],
+   "anchor": [
+    184,
+    160
+   ],
+   "footprint": [
+    2.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small19@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small19@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small20@2": {
+   "category": "prop",
+   "size": [
+    291,
+    164
+   ],
+   "anchor": [
+    232,
+    162
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small20@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small20@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small21@2": {
+   "category": "prop",
+   "size": [
+    89,
+    115
+   ],
+   "anchor": [
+    40,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small21@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small21@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small22@2": {
+   "category": "prop",
+   "size": [
+    87,
+    112
+   ],
+   "anchor": [
+    36,
+    111
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small22@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small22@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small23@2": {
+   "category": "prop",
+   "size": [
+    94,
+    113
+   ],
+   "anchor": [
+    36,
+    112
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small23@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small23@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small24@2": {
+   "category": "prop",
+   "size": [
+    94,
+    121
+   ],
+   "anchor": [
+    38,
+    119
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small24@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small24@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small25@2": {
+   "category": "prop",
+   "size": [
+    185,
+    129
+   ],
+   "anchor": [
+    25,
+    127
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small25@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small25@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small26@2": {
+   "category": "prop",
+   "size": [
+    186,
+    129
+   ],
+   "anchor": [
+    27,
+    128
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small26@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small26@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small27@2": {
+   "category": "prop",
+   "size": [
+    176,
+    126
+   ],
+   "anchor": [
+    25,
+    125
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small27@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small27@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small28@2": {
+   "category": "prop",
+   "size": [
+    181,
+    128
+   ],
+   "anchor": [
+    25,
+    127
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small28@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small28@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small29@2": {
+   "category": "prop",
+   "size": [
+    138,
+    116
+   ],
+   "anchor": [
+    57,
+    114
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small29@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small29@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small30@2": {
+   "category": "prop",
+   "size": [
+    143,
+    108
+   ],
+   "anchor": [
+    58,
+    106
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small30@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small30@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small31@2": {
+   "category": "prop",
+   "size": [
+    138,
+    107
+   ],
+   "anchor": [
+    57,
+    105
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small31@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small31@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small32@2": {
+   "category": "prop",
+   "size": [
+    144,
+    99
+   ],
+   "anchor": [
+    57,
+    97
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small32@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small32@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small33@2": {
+   "category": "prop",
+   "size": [
+    180,
+    111
+   ],
+   "anchor": [
+    40,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small33@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small33@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small34@2": {
+   "category": "prop",
+   "size": [
+    179,
+    118
+   ],
+   "anchor": [
+    42,
+    116
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small34@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small34@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small35@2": {
+   "category": "prop",
+   "size": [
+    71,
+    94
+   ],
+   "anchor": [
+    30,
+    93
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small35@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small35@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small36@2": {
+   "category": "prop",
+   "size": [
+    68,
+    86
+   ],
+   "anchor": [
+    31,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small36@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small36@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small37@2": {
+   "category": "prop",
+   "size": [
+    65,
+    76
+   ],
+   "anchor": [
+    24,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small37@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small37@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small38@2": {
+   "category": "prop",
+   "size": [
+    100,
+    121
+   ],
+   "anchor": [
+    33,
+    120
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small38@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small38@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small39@2": {
+   "category": "prop",
+   "size": [
+    82,
+    87
+   ],
+   "anchor": [
+    33,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small39@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small39@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small40@2": {
+   "category": "prop",
+   "size": [
+    98,
+    101
+   ],
+   "anchor": [
+    44,
+    100
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small40@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small40@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small41@2": {
+   "category": "prop",
+   "size": [
+    135,
+    116
+   ],
+   "anchor": [
+    82,
+    114
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small41@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small41@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small42@2": {
+   "category": "prop",
+   "size": [
+    134,
+    118
+   ],
+   "anchor": [
+    44,
+    116
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small42@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small42@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small43@2": {
+   "category": "prop",
+   "size": [
+    174,
+    141
+   ],
+   "anchor": [
+    82,
+    140
+   ],
+   "footprint": [
+    1.1,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small43@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small43@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small44@2": {
+   "category": "prop",
+   "size": [
+    189,
+    139
+   ],
+   "anchor": [
+    85,
+    138
+   ],
+   "footprint": [
+    1.2,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small44@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small44@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small45@2": {
+   "category": "prop",
+   "size": [
+    103,
+    161
+   ],
+   "anchor": [
+    10,
+    160
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small45@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small45@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small46@2": {
+   "category": "prop",
+   "size": [
+    103,
+    161
+   ],
+   "anchor": [
+    10,
+    159
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small46@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small46@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small47@2": {
+   "category": "prop",
+   "size": [
+    190,
+    169
+   ],
+   "anchor": [
+    126,
+    167
+   ],
+   "footprint": [
+    1.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small47@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small47@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small48@2": {
+   "category": "prop",
+   "size": [
+    195,
+    167
+   ],
+   "anchor": [
+    125,
+    165
+   ],
+   "footprint": [
+    1.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small48@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small48@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small49@2": {
+   "category": "prop",
+   "size": [
+    200,
+    167
+   ],
+   "anchor": [
+    130,
+    165
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small49@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small49@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small50@2": {
+   "category": "prop",
+   "size": [
+    143,
+    153
+   ],
+   "anchor": [
+    61,
+    152
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small50@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small50@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small51@2": {
+   "category": "prop",
+   "size": [
+    143,
+    150
+   ],
+   "anchor": [
+    59,
+    149
+   ],
+   "footprint": [
+    0.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small51@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small51@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small52@2": {
+   "category": "prop",
+   "size": [
+    190,
+    159
+   ],
+   "anchor": [
+    109,
+    158
+   ],
+   "footprint": [
+    1.5,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small52@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small52@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small53@2": {
+   "category": "prop",
+   "size": [
+    269,
+    142
+   ],
+   "anchor": [
+    42,
+    129
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small53@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small53@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small54@2": {
+   "category": "prop",
+   "size": [
+    257,
+    139
+   ],
+   "anchor": [
+    156,
+    129
+   ],
+   "footprint": [
+    2.1,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small54@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small54@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small55@2": {
+   "category": "prop",
+   "size": [
+    96,
+    145
+   ],
+   "anchor": [
+    38,
+    144
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small55@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small55@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small56@2": {
+   "category": "prop",
+   "size": [
+    96,
+    145
+   ],
+   "anchor": [
+    34,
+    144
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small56@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small56@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small57@2": {
+   "category": "prop",
+   "size": [
+    382,
+    142
+   ],
+   "anchor": [
+    139,
+    140
+   ],
+   "footprint": [
+    1.9,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small57@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small57@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small58@2": {
+   "category": "prop",
+   "size": [
+    638,
+    136
+   ],
+   "anchor": [
+    300,
+    134
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small58@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small58@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small59@2": {
+   "category": "prop",
+   "size": [
+    672,
+    129
+   ],
+   "anchor": [
+    210,
+    127
+   ],
+   "footprint": [
+    2.9,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small59@2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small59@2.webp",
+   "kind": "small"
+  },
+  "sao_pedro_escola@3": {
+   "category": "building",
+   "size": [
+    996,
+    465
+   ],
+   "anchor": [
+    461,
+    459
+   ],
+   "footprint": [
+    11.5,
+    13.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_escola@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_escola@3.webp",
+   "name": "Escola Primária de São Pedro",
+   "venue": "escola"
+  },
+  "sao_pedro_saude@3": {
+   "category": "building",
+   "size": [
+    740,
+    399
+   ],
+   "anchor": [
+    369,
+    395
+   ],
+   "footprint": [
+    9.2,
+    9.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_saude@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_saude@3.webp",
+   "name": "Centro de Saúde de São Pedro",
+   "venue": "saude"
+  },
+  "sao_pedro_igreja@3": {
+   "category": "building",
+   "size": [
+    821,
+    481
+   ],
+   "anchor": [
+    322,
+    477
+   ],
+   "footprint": [
+    8.0,
+    12.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_igreja@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_igreja@3.webp",
+   "name": "Igreja de São Pedro",
+   "venue": "igreja"
+  },
+  "sao_pedro_mercado@3": {
+   "category": "building",
+   "size": [
+    1099,
+    436
+   ],
+   "anchor": [
+    452,
+    427
+   ],
+   "footprint": [
+    11.2,
+    16.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_mercado@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_mercado@3.webp",
+   "name": "Mercado de São Pedro",
+   "venue": "mercado"
+  },
+  "sao_pedro_cantina@3": {
+   "category": "building",
+   "size": [
+    584,
+    410
+   ],
+   "anchor": [
+    297,
+    406
+   ],
+   "footprint": [
+    7.4,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_cantina@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_cantina@3.webp",
+   "name": "Cantina da Tia Joana",
+   "venue": "cantina"
+  },
+  "sao_pedro_farmacia@3": {
+   "category": "building",
+   "size": [
+    494,
+    387
+   ],
+   "anchor": [
+    224,
+    385
+   ],
+   "footprint": [
+    5.6,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_farmacia@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_farmacia@3.webp",
+   "name": "Farmácia São Pedro",
+   "venue": "farmacia"
+  },
+  "sao_pedro_administracao@3": {
+   "category": "building",
+   "size": [
+    607,
+    390
+   ],
+   "anchor": [
+    268,
+    387
+   ],
+   "footprint": [
+    6.7,
+    8.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_administracao@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_administracao@3.webp",
+   "name": "Administração de São Pedro",
+   "venue": "administracao"
+  },
+  "sao_pedro_esquadra@3": {
+   "category": "building",
+   "size": [
+    528,
+    379
+   ],
+   "anchor": [
+    211,
+    376
+   ],
+   "footprint": [
+    5.2,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_esquadra@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_esquadra@3.webp",
+   "name": "Esquadra Policial de São Pedro",
+   "venue": "esquadra"
+  },
+  "sao_pedro_padaria@3": {
+   "category": "building",
+   "size": [
+    527,
+    360
+   ],
+   "anchor": [
+    200,
+    357
+   ],
+   "footprint": [
+    5.0,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_padaria@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_padaria@3.webp",
+   "name": "Padaria São Pedro",
+   "venue": "padaria"
+  },
+  "sao_pedro_correios@3": {
+   "category": "building",
+   "size": [
+    481,
+    377
+   ],
+   "anchor": [
+    182,
+    374
+   ],
+   "footprint": [
+    4.5,
+    7.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_correios@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_correios@3.webp",
+   "name": "Correios de São Pedro",
+   "venue": "correios"
+  },
+  "sao_pedro_apartamentos@3": {
+   "category": "building",
+   "size": [
+    526,
+    505
+   ],
+   "anchor": [
+    221,
+    503
+   ],
+   "footprint": [
+    5.5,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_apartamentos@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_apartamentos@3.webp",
+   "name": "Prédio São Pedro",
+   "venue": "apartamentos"
+  },
+  "sao_pedro_casa1@3": {
+   "category": "building",
+   "size": [
+    571,
+    329
+   ],
+   "anchor": [
+    256,
+    325
+   ],
+   "footprint": [
+    6.4,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa1@3.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "sao_pedro_casa2@3": {
+   "category": "building",
+   "size": [
+    525,
+    319
+   ],
+   "anchor": [
+    233,
+    316
+   ],
+   "footprint": [
+    5.8,
+    7.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa2@3.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "sao_pedro_casa3@3": {
+   "category": "building",
+   "size": [
+    540,
+    331
+   ],
+   "anchor": [
+    225,
+    328
+   ],
+   "footprint": [
+    5.6,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa3@3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "sao_pedro_casa4@3": {
+   "category": "building",
+   "size": [
+    555,
+    329
+   ],
+   "anchor": [
+    241,
+    325
+   ],
+   "footprint": [
+    6.0,
+    7.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa4@3.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "sao_pedro_casa5@3": {
+   "category": "building",
+   "size": [
+    550,
+    328
+   ],
+   "anchor": [
+    261,
+    324
+   ],
+   "footprint": [
+    6.5,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa5@3.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "sao_pedro_casa6@3": {
+   "category": "building",
+   "size": [
+    513,
+    356
+   ],
+   "anchor": [
+    205,
+    352
+   ],
+   "footprint": [
+    5.1,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa6@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa6@3.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "sao_pedro_casa7@3": {
+   "category": "building",
+   "size": [
+    532,
+    332
+   ],
+   "anchor": [
+    192,
+    328
+   ],
+   "footprint": [
+    4.8,
+    8.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa7@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa7@3.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_pedro_tree1@3": {
+   "category": "prop",
+   "size": [
+    263,
+    252
+   ],
+   "anchor": [
+    131,
+    250
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree1@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_small1@3": {
+   "category": "prop",
+   "size": [
+    165,
+    254
+   ],
+   "anchor": [
+    78,
+    252
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small1@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_tree2@3": {
+   "category": "prop",
+   "size": [
+    221,
+    210
+   ],
+   "anchor": [
+    110,
+    209
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree2@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree3@3": {
+   "category": "prop",
+   "size": [
+    165,
+    245
+   ],
+   "anchor": [
+    82,
+    243
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree3@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree4@3": {
+   "category": "prop",
+   "size": [
+    332,
+    241
+   ],
+   "anchor": [
+    165,
+    238
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree4@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree5@3": {
+   "category": "prop",
+   "size": [
+    186,
+    208
+   ],
+   "anchor": [
+    92,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree5@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree6@3": {
+   "category": "prop",
+   "size": [
+    179,
+    211
+   ],
+   "anchor": [
+    88,
+    209
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree6@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree6@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree7@3": {
+   "category": "prop",
+   "size": [
+    183,
+    195
+   ],
+   "anchor": [
+    91,
+    194
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree7@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree7@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_tree8@3": {
+   "category": "prop",
+   "size": [
+    180,
+    201
+   ],
+   "anchor": [
+    89,
+    200
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_tree8@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_tree8@3.webp",
+   "kind": "tree"
+  },
+  "sao_pedro_lamp1@3": {
+   "category": "prop",
+   "size": [
+    90,
+    227
+   ],
+   "anchor": [
+    44,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp1@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp2@3": {
+   "category": "prop",
+   "size": [
+    56,
+    204
+   ],
+   "anchor": [
+    27,
+    203
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp2@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp3@3": {
+   "category": "prop",
+   "size": [
+    96,
+    217
+   ],
+   "anchor": [
+    47,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp3@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_lamp4@3": {
+   "category": "prop",
+   "size": [
+    55,
+    219
+   ],
+   "anchor": [
+    27,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_lamp4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_lamp4@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_pedro_pole1@3": {
+   "category": "prop",
+   "size": [
+    75,
+    223
+   ],
+   "anchor": [
+    37,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole1@3.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole2@3": {
+   "category": "prop",
+   "size": [
+    85,
+    221
+   ],
+   "anchor": [
+    42,
+    220
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole2@3.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole3@3": {
+   "category": "prop",
+   "size": [
+    90,
+    223
+   ],
+   "anchor": [
+    44,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole3@3.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole4@3": {
+   "category": "prop",
+   "size": [
+    88,
+    224
+   ],
+   "anchor": [
+    43,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole4@3.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_pole5@3": {
+   "category": "prop",
+   "size": [
+    92,
+    222
+   ],
+   "anchor": [
+    45,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_pole5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_pole5@3.webp",
+   "kind": "pole"
+  },
+  "sao_pedro_vehicle1@3": {
+   "category": "prop",
+   "size": [
+    334,
+    204
+   ],
+   "anchor": [
+    171,
+    202
+   ],
+   "footprint": [
+    2.3,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle1@3.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle2@3": {
+   "category": "prop",
+   "size": [
+    334,
+    205
+   ],
+   "anchor": [
+    169,
+    203
+   ],
+   "footprint": [
+    2.3,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle2@3.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_small2@3": {
+   "category": "prop",
+   "size": [
+    146,
+    159
+   ],
+   "anchor": [
+    21,
+    157
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small2@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small3@3": {
+   "category": "prop",
+   "size": [
+    140,
+    155
+   ],
+   "anchor": [
+    20,
+    154
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small3@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small4@3": {
+   "category": "prop",
+   "size": [
+    138,
+    156
+   ],
+   "anchor": [
+    19,
+    154
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small4@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small5@3": {
+   "category": "prop",
+   "size": [
+    150,
+    157
+   ],
+   "anchor": [
+    19,
+    156
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small5@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_vehicle3@3": {
+   "category": "prop",
+   "size": [
+    231,
+    134
+   ],
+   "anchor": [
+    101,
+    132
+   ],
+   "footprint": [
+    1.4,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle3@3.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle4@3": {
+   "category": "prop",
+   "size": [
+    244,
+    142
+   ],
+   "anchor": [
+    104,
+    140
+   ],
+   "footprint": [
+    1.4,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle4@3.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_vehicle5@3": {
+   "category": "prop",
+   "size": [
+    283,
+    158
+   ],
+   "anchor": [
+    117,
+    156
+   ],
+   "footprint": [
+    1.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_vehicle5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_vehicle5@3.webp",
+   "kind": "vehicle"
+  },
+  "sao_pedro_stall1@3": {
+   "category": "prop",
+   "size": [
+    167,
+    195
+   ],
+   "anchor": [
+    64,
+    193
+   ],
+   "footprint": [
+    0.9,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall1@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall1@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall2@3": {
+   "category": "prop",
+   "size": [
+    154,
+    184
+   ],
+   "anchor": [
+    89,
+    183
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall2@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall2@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall3@3": {
+   "category": "prop",
+   "size": [
+    200,
+    178
+   ],
+   "anchor": [
+    62,
+    176
+   ],
+   "footprint": [
+    0.8,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall3@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall3@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall4@3": {
+   "category": "prop",
+   "size": [
+    221,
+    178
+   ],
+   "anchor": [
+    43,
+    174
+   ],
+   "footprint": [
+    0.6,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall4@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall4@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall5@3": {
+   "category": "prop",
+   "size": [
+    203,
+    181
+   ],
+   "anchor": [
+    115,
+    179
+   ],
+   "footprint": [
+    1.5,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall5@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall5@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_stall6@3": {
+   "category": "prop",
+   "size": [
+    195,
+    181
+   ],
+   "anchor": [
+    123,
+    179
+   ],
+   "footprint": [
+    1.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_stall6@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_stall6@3.webp",
+   "kind": "stall"
+  },
+  "sao_pedro_small6@3": {
+   "category": "prop",
+   "size": [
+    157,
+    145
+   ],
+   "anchor": [
+    92,
+    143
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small6@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small6@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small7@3": {
+   "category": "prop",
+   "size": [
+    111,
+    136
+   ],
+   "anchor": [
+    60,
+    134
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small7@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small7@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small8@3": {
+   "category": "prop",
+   "size": [
+    112,
+    136
+   ],
+   "anchor": [
+    59,
+    134
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small8@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small8@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small9@3": {
+   "category": "prop",
+   "size": [
+    97,
+    122
+   ],
+   "anchor": [
+    43,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small9@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small9@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small10@3": {
+   "category": "prop",
+   "size": [
+    197,
+    117
+   ],
+   "anchor": [
+    50,
+    115
+   ],
+   "footprint": [
+    0.7,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small10@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small10@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small11@3": {
+   "category": "prop",
+   "size": [
+    183,
+    130
+   ],
+   "anchor": [
+    60,
+    129
+   ],
+   "footprint": [
+    0.8,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small11@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small11@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small12@3": {
+   "category": "prop",
+   "size": [
+    186,
+    124
+   ],
+   "anchor": [
+    43,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small12@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small12@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small13@3": {
+   "category": "prop",
+   "size": [
+    189,
+    119
+   ],
+   "anchor": [
+    41,
+    117
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small13@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small13@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small14@3": {
+   "category": "prop",
+   "size": [
+    136,
+    157
+   ],
+   "anchor": [
+    54,
+    155
+   ],
+   "footprint": [
+    0.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small14@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small14@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small15@3": {
+   "category": "prop",
+   "size": [
+    178,
+    166
+   ],
+   "anchor": [
+    75,
+    164
+   ],
+   "footprint": [
+    1.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small15@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small15@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small16@3": {
+   "category": "prop",
+   "size": [
+    146,
+    143
+   ],
+   "anchor": [
+    67,
+    141
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small16@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small16@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small17@3": {
+   "category": "prop",
+   "size": [
+    148,
+    112
+   ],
+   "anchor": [
+    87,
+    110
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small17@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small17@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small18@3": {
+   "category": "prop",
+   "size": [
+    134,
+    111
+   ],
+   "anchor": [
+    82,
+    109
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small18@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small18@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small19@3": {
+   "category": "prop",
+   "size": [
+    259,
+    155
+   ],
+   "anchor": [
+    54,
+    153
+   ],
+   "footprint": [
+    0.7,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small19@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small19@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small20@3": {
+   "category": "prop",
+   "size": [
+    285,
+    157
+   ],
+   "anchor": [
+    53,
+    153
+   ],
+   "footprint": [
+    0.7,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small20@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small20@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small21@3": {
+   "category": "prop",
+   "size": [
+    97,
+    118
+   ],
+   "anchor": [
+    39,
+    116
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small21@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small21@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small22@3": {
+   "category": "prop",
+   "size": [
+    91,
+    115
+   ],
+   "anchor": [
+    40,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small22@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small22@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small23@3": {
+   "category": "prop",
+   "size": [
+    101,
+    114
+   ],
+   "anchor": [
+    41,
+    113
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small23@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small23@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small24@3": {
+   "category": "prop",
+   "size": [
+    99,
+    120
+   ],
+   "anchor": [
+    39,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small24@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small24@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small25@3": {
+   "category": "prop",
+   "size": [
+    192,
+    135
+   ],
+   "anchor": [
+    31,
+    134
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small25@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small25@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small26@3": {
+   "category": "prop",
+   "size": [
+    196,
+    134
+   ],
+   "anchor": [
+    31,
+    133
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small26@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small26@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small27@3": {
+   "category": "prop",
+   "size": [
+    179,
+    130
+   ],
+   "anchor": [
+    28,
+    129
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small27@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small27@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small28@3": {
+   "category": "prop",
+   "size": [
+    189,
+    132
+   ],
+   "anchor": [
+    30,
+    131
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small28@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small28@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small29@3": {
+   "category": "prop",
+   "size": [
+    137,
+    122
+   ],
+   "anchor": [
+    57,
+    120
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small29@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small29@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small30@3": {
+   "category": "prop",
+   "size": [
+    137,
+    112
+   ],
+   "anchor": [
+    58,
+    110
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small30@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small30@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small31@3": {
+   "category": "prop",
+   "size": [
+    140,
+    109
+   ],
+   "anchor": [
+    55,
+    107
+   ],
+   "footprint": [
+    0.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small31@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small31@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small32@3": {
+   "category": "prop",
+   "size": [
+    142,
+    105
+   ],
+   "anchor": [
+    55,
+    103
+   ],
+   "footprint": [
+    0.7,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small32@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small32@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small33@3": {
+   "category": "prop",
+   "size": [
+    172,
+    114
+   ],
+   "anchor": [
+    46,
+    112
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small33@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small33@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small34@3": {
+   "category": "prop",
+   "size": [
+    177,
+    119
+   ],
+   "anchor": [
+    49,
+    118
+   ],
+   "footprint": [
+    0.7,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small34@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small34@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small35@3": {
+   "category": "prop",
+   "size": [
+    155,
+    109
+   ],
+   "anchor": [
+    113,
+    107
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small35@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small35@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small36@3": {
+   "category": "prop",
+   "size": [
+    67,
+    87
+   ],
+   "anchor": [
+    27,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small36@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small36@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small37@3": {
+   "category": "prop",
+   "size": [
+    64,
+    75
+   ],
+   "anchor": [
+    25,
+    73
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small37@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small37@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small38@3": {
+   "category": "prop",
+   "size": [
+    104,
+    128
+   ],
+   "anchor": [
+    46,
+    126
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small38@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small38@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small39@3": {
+   "category": "prop",
+   "size": [
+    88,
+    94
+   ],
+   "anchor": [
+    38,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small39@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small39@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small40@3": {
+   "category": "prop",
+   "size": [
+    91,
+    99
+   ],
+   "anchor": [
+    34,
+    97
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small40@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small40@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small41@3": {
+   "category": "prop",
+   "size": [
+    126,
+    121
+   ],
+   "anchor": [
+    74,
+    119
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small41@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small41@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small42@3": {
+   "category": "prop",
+   "size": [
+    126,
+    128
+   ],
+   "anchor": [
+    32,
+    126
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small42@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small42@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small43@3": {
+   "category": "prop",
+   "size": [
+    175,
+    143
+   ],
+   "anchor": [
+    80,
+    142
+   ],
+   "footprint": [
+    1.1,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small43@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small43@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small44@3": {
+   "category": "prop",
+   "size": [
+    197,
+    141
+   ],
+   "anchor": [
+    86,
+    140
+   ],
+   "footprint": [
+    1.2,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small44@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small44@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small45@3": {
+   "category": "prop",
+   "size": [
+    107,
+    163
+   ],
+   "anchor": [
+    11,
+    162
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small45@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small45@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small46@3": {
+   "category": "prop",
+   "size": [
+    107,
+    163
+   ],
+   "anchor": [
+    11,
+    161
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small46@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small46@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small47@3": {
+   "category": "prop",
+   "size": [
+    187,
+    167
+   ],
+   "anchor": [
+    131,
+    165
+   ],
+   "footprint": [
+    1.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small47@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small47@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small48@3": {
+   "category": "prop",
+   "size": [
+    187,
+    169
+   ],
+   "anchor": [
+    131,
+    167
+   ],
+   "footprint": [
+    1.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small48@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small48@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small49@3": {
+   "category": "prop",
+   "size": [
+    193,
+    170
+   ],
+   "anchor": [
+    128,
+    168
+   ],
+   "footprint": [
+    1.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small49@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small49@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small50@3": {
+   "category": "prop",
+   "size": [
+    141,
+    154
+   ],
+   "anchor": [
+    53,
+    153
+   ],
+   "footprint": [
+    0.7,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small50@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small50@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small51@3": {
+   "category": "prop",
+   "size": [
+    140,
+    153
+   ],
+   "anchor": [
+    41,
+    152
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small51@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small51@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small52@3": {
+   "category": "prop",
+   "size": [
+    189,
+    159
+   ],
+   "anchor": [
+    116,
+    157
+   ],
+   "footprint": [
+    1.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small52@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small52@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small53@3": {
+   "category": "prop",
+   "size": [
+    268,
+    141
+   ],
+   "anchor": [
+    40,
+    137
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small53@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small53@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small54@3": {
+   "category": "prop",
+   "size": [
+    253,
+    142
+   ],
+   "anchor": [
+    208,
+    137
+   ],
+   "footprint": [
+    2.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small54@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small54@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small55@3": {
+   "category": "prop",
+   "size": [
+    97,
+    144
+   ],
+   "anchor": [
+    41,
+    143
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small55@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small55@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small56@3": {
+   "category": "prop",
+   "size": [
+    99,
+    145
+   ],
+   "anchor": [
+    36,
+    144
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small56@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small56@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small57@3": {
+   "category": "prop",
+   "size": [
+    359,
+    148
+   ],
+   "anchor": [
+    159,
+    146
+   ],
+   "footprint": [
+    2.1,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small57@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small57@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small58@3": {
+   "category": "prop",
+   "size": [
+    639,
+    139
+   ],
+   "anchor": [
+    317,
+    138
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small58@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small58@3.webp",
+   "kind": "small"
+  },
+  "sao_pedro_small59@3": {
+   "category": "prop",
+   "size": [
+    678,
+    131
+   ],
+   "anchor": [
+    398,
+    128
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_small59@3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_small59@3.webp",
+   "kind": "small"
   }
  },
- "version": "2f36c351f35b"
+ "version": "fa980d300a6e"
 }
