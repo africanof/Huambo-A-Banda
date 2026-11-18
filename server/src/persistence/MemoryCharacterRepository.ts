@@ -19,6 +19,7 @@ export class MemoryCharacterRepository implements CharacterRepository {
       district: null,
       x: null,
       y: null,
+      life: null,
     };
     // Limite defensivo: convidados não devem fazer crescer a memória sem fim.
     if (this.byOwner.size > 20_000) {
@@ -44,6 +45,7 @@ export class MemoryCharacterRepository implements CharacterRepository {
         rec.district = u.district;
         rec.x = u.x;
         rec.y = u.y;
+        if (u.life !== undefined) rec.life = u.life;
       }
     }
   }

@@ -1,6 +1,6 @@
 import type { Env } from "./config/env.js";
 import type { TokenVerifier } from "./auth/TokenVerifier.js";
-import type { CharacterRepository } from "./persistence/index.js";
+import type { CharacterRepository, WalletRepository } from "./persistence/index.js";
 
 /**
  * Contentor de dependências partilhadas pelas salas.
@@ -11,6 +11,7 @@ export interface Services {
   env: Env;
   verifier: TokenVerifier;
   characters: CharacterRepository;
+  wallets: WalletRepository;
 }
 
 let current: Services | undefined;

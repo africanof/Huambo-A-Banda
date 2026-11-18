@@ -23,6 +23,8 @@ export const C2S = {
   MOVE_PATH: 3,
   /** direção contínua (joystick / teclado) */
   MOVE_DIR: 4,
+  /** ação de vida: comer, trabalhar, estudar, dormir, emprego, pais… */
+  ACTION: 5,
 } as const;
 
 /** Servidor -> Cliente */
@@ -32,6 +34,10 @@ export const S2C = {
   DESPAWN: 102,
   SNAPSHOT: 103,
   NOTICE: 104,
+  /** o meu estado: dinheiro, necessidades, emprego, ação em curso */
+  SELF: 105,
+  /** aviso curto para o jogador */
+  TOAST: 106,
 } as const;
 
 /** Códigos de erro de aplicação (enviados em NOTICE ou como motivo de recusa). */
@@ -57,6 +63,14 @@ export const MovePathSchema = z
 export const MoveDirSchema = z
   .object({ x: z.number().int().min(-100).max(100), y: z.number().int().min(-100).max(100) })
   .strict();
+
+export const ActionSchema = z
+  .object({
+    a: z.enum(["self", "eat", "work", "study", "sleep", "sleep_rua", "cancel", "take_job", "quit_job", "parents"]),
+    i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
+  })
+  .strict();
+export type ActionMessage = z.infer<typeof ActionSchema>;
 
 export const AppearanceSchema = z
   .object({
@@ -108,6 +122,8 @@ export interface WelcomeMessage {
     bairros: Array<{ id: string; name: string }>;
   };
   speed: number;
+  /** catálogo de empregos, ementas e preços (bairros com sistema de vida) */
+  catalog?: unknown;
   simHz: number;
   snapshotHz: number;
   serverTime: number;

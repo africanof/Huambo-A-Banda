@@ -3,7 +3,7 @@ extends Node
 ## Ativado com:  godot --headless --path client -- --autotest [--name=Robo] [--expect-peers=2]
 ## Sai com código 0 em sucesso, 1 em falha (usado pelo CI).
 
-const TIMEOUT_S := 40.0
+const TIMEOUT_S := 90.0
 
 var _started := 0
 
@@ -64,7 +64,66 @@ func _run() -> void:
 		# Fica mais um pouco para os outros clientes também nos verem.
 		await tree.create_timer(3.0).timeout
 
+	if bairro and AppConfig.has_flag("life"):
+		await _life_loop(world)
+
 	_finish(true, "")
+
+
+## Ciclo de vida completo contra o servidor real: dinheiro inicial → pais → emprego → turno pago.
+func _life_loop(world: Node) -> void:
+	await _wait_for(func() -> Variant: return true if Net.me.has("money") else null)
+	var m0 := int(Net.me.money)
+	print("[autotest] família: %s · dinheiro inicial: %d Kz" % [Net.me.familyLabel, m0])
+	Net.action("parents")
+	await _wait_for(func() -> Variant: return true if bool(Net.me.get("parentsToday", false)) else null)
+	print("[autotest] pais: %d → %d Kz" % [m0, int(Net.me.money)])
+	Net.action("take_job", "zunga")
+	await _wait_for(func() -> Variant: return true if str(Net.me.get("job", "")) == "zunga" else null)
+	print("[autotest] emprego aceite: zunga")
+	world.hud._open_phone("vagas")
+	await _shot("jogo_telemovel_vagas")
+	world.hud._open_phone("perfil")
+	await _shot("jogo_telemovel_perfil")
+	world.hud.phone.visible = false
+	for wp: Vector2 in [Vector2(21.5, 27.0), Vector2(21.5, 32.0)]:
+		world.request_move(wp)
+		await _wait_for(func() -> Variant:
+			var me: Variant = Net.entities.get(Net.self_id)
+			return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(wp) < 0.05 else null)
+	await get_tree().create_timer(0.5).timeout
+	var before := int(Net.me.money)
+	Net.action("work")
+	await _wait_for(func() -> Variant: return true if typeof(Net.me.get("busy")) == TYPE_DICTIONARY else null)
+	print("[autotest] a trabalhar…")
+	await get_tree().create_timer(4.0).timeout
+	await _shot("jogo_a_trabalhar")
+	await _wait_for(func() -> Variant: return true if int(Net.me.get("shifts", 0)) >= 1 else null)
+	var gained := int(Net.me.money) - before
+	print("[autotest] turno pago: +%d Kz" % gained)
+	await _shot("jogo_turno_pago")
+	# ir à cantina e abrir a ementa
+	for wp: Vector2 in [Vector2(30.0, 24.0), Vector2(38.0, 16.0)]:
+		world.request_move(wp)
+		await _wait_for(func() -> Variant:
+			var me: Variant = Net.entities.get(Net.self_id)
+			return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(wp) < 0.05 else null)
+	await get_tree().create_timer(0.6).timeout
+	world.hud._open_menu()
+	await _shot("jogo_cantina_ementa")
+	world.hud.menu_panel.visible = false
+	if gained != 2000:
+		_finish(false, "pagamento inesperado: %d" % gained)
+
+
+## Capturas de ecrã opcionais (CAPTURE_DIR) para revisão visual.
+func _shot(name: String) -> void:
+	var dir := OS.get_environment("CAPTURE_DIR")
+	if dir == "" or DisplayServer.get_name() == "headless":
+		return
+	await get_tree().process_frame
+	await get_tree().process_frame
+	get_tree().root.get_texture().get_image().save_png(dir + "/" + name + ".png")
 
 
 func _wait_for(cond: Callable) -> Variant:

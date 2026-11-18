@@ -1,0 +1,205 @@
+/**
+ * Regras de vida do Huambo É A Banda — funções puras, sem rede nem base de dados.
+ *
+ * Mecânicas inspiradas nos simuladores de vida social (família de origem sorteada,
+ * necessidades, comer/dormir, empregos por turnos com pagamento decrescente, pedir
+ * dinheiro aos pais), adaptadas à realidade do Huambo: empregos e comida locais, Kz.
+ */
+
+export type FamilyClass = "humilde" | "media" | "rica" | "muito_rica";
+
+export interface Needs {
+  hunger: number; // 100 = saciado
+  energy: number;
+  mood: number;
+  health: number;
+}
+
+export interface LifeState {
+  needs: Needs;
+  family: FamilyClass;
+  education: number; // 0..4
+  study: number; // aulas feitas para o próximo nível
+  jobId: string | null;
+  shiftsDay: string; // dia (Angola) do contador de turnos
+  shiftsCount: number;
+  parentsDay: string | null; // último dia em que pediu dinheiro aos pais
+}
+
+export interface Job {
+  id: string;
+  name: string;
+  where: string; // texto para o jogador
+  place: string; // "job" do lugar no mapa onde se trabalha
+  pay: number; // Kz por turno completo
+  education: number;
+}
+
+/** Empregos do Huambo (um por lugar de trabalho do bairro). */
+export const JOBS: Job[] = [
+  { id: "zunga", name: "Zungueiro(a)", where: "Banca da zungueira", place: "zunga", pay: 2000, education: 0 },
+  { id: "vendedor_mercado", name: "Vendedor(a) do mercado", where: "Banca do mercado", place: "vendedor_mercado", pay: 3000, education: 0 },
+  { id: "kupapata", name: "Kupapata (moto-táxi)", where: "Praça das kupapatas", place: "kupapata", pay: 3500, education: 0 },
+  { id: "carteiro", name: "Carteiro(a)", where: "Correios", place: "carteiro", pay: 5000, education: 1 },
+  { id: "vendedor_loja", name: "Vendedor(a) de telemóveis", where: "Loja Kanda Móvel", place: "vendedor_loja", pay: 6000, education: 1 },
+  { id: "caixa_banco", name: "Caixa de banco", where: "Banco Planalto", place: "caixa_banco", pay: 8500, education: 2 },
+  { id: "funcionario_publico", name: "Funcionário(a) público(a)", where: "Governo Provincial", place: "funcionario_publico", pay: 9000, education: 2 },
+  { id: "professor", name: "Professor(a) primário(a)", where: "Escola Primária", place: "professor", pay: 10000, education: 3 },
+];
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  price: number;
+  hunger: number;
+  energy?: number;
+  mood?: number;
+}
+
+/** Comida real do planalto, preços em Kz. */
+export const MENUS: Record<string, MenuItem[]> = {
+  cantina: [
+    { id: "funge_peixe", name: "Funge com peixe seco", price: 1500, hunger: 45, mood: 5 },
+    { id: "arroz_feijao", name: "Arroz com feijão", price: 1000, hunger: 35 },
+    { id: "pirao_galinha", name: "Pirão com galinha", price: 2500, hunger: 60, mood: 10 },
+    { id: "refrigerante", name: "Refrigerante", price: 300, hunger: 5, mood: 5 },
+  ],
+  padaria: [
+    { id: "pao_chourico", name: "Pão com chouriço", price: 400, hunger: 15 },
+    { id: "bolo", name: "Bolo", price: 600, hunger: 10, mood: 10 },
+    { id: "cafe_leite", name: "Café com leite", price: 300, hunger: 5, energy: 8 },
+  ],
+};
+
+export const HOTEL_PRICE = 2500;
+export const STUDY_PRICE = 2000;
+export const LESSONS_PER_LEVEL = 3;
+export const MAX_EDUCATION = 4;
+
+/** Duração (s) das ações com tempo. */
+export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15 } as const;
+
+/** Pagamento por turno do dia: os 2 primeiros por inteiro, depois decresce. */
+export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
+export const SHIFT_FLOOR = 0.2;
+
+export function shiftFactor(shiftIndex: number): number {
+  return SHIFT_CURVE[shiftIndex] ?? SHIFT_FLOOR;
+}
+
+/** Família de origem sorteada (rand ∈ [0,1)). */
+export function rollFamily(rand: number): FamilyClass {
+  if (rand < 0.55) return "humilde";
+  if (rand < 0.85) return "media";
+  if (rand < 0.97) return "rica";
+  return "muito_rica";
+}
+
+export const FAMILY_LABEL: Record<FamilyClass, string> = {
+  humilde: "Família humilde do bairro",
+  media: "Família de classe média",
+  rica: "Família rica",
+  muito_rica: "Família muito rica",
+};
+
+export const STARTING_MONEY: Record<FamilyClass, number> = {
+  humilde: 3000,
+  media: 20000,
+  rica: 15_000_000,
+  muito_rica: 250_000_000,
+};
+
+const PARENTS: Record<FamilyClass, [number, number]> = {
+  humilde: [1000, 3000],
+  media: [5000, 15000],
+  rica: [50000, 150000],
+  muito_rica: [1_000_000, 3_000_000],
+};
+
+/** Quanto os pais mandam hoje (0 = disseram que não). */
+export function parentsGift(family: FamilyClass, rand1: number, rand2: number): number {
+  if (rand1 < 0.2) return 0;
+  const [lo, hi] = PARENTS[family];
+  return Math.round((lo + (hi - lo) * rand2) / 100) * 100;
+}
+
+/** Dia civil em Angola (UTC+1), formato AAAA-MM-DD. */
+export function angolaDay(nowMs: number): string {
+  return new Date(nowMs + 3600_000).toISOString().slice(0, 10);
+}
+
+export function newLife(rand: () => number = Math.random, nowMs = Date.now()): LifeState {
+  return {
+    needs: { hunger: 80, energy: 90, mood: 75, health: 100 },
+    family: rollFamily(rand()),
+    education: 0,
+    study: 0,
+    jobId: null,
+    shiftsDay: angolaDay(nowMs),
+    shiftsCount: 0,
+    parentsDay: null,
+  };
+}
+
+const clamp = (v: number) => Math.max(0, Math.min(100, v));
+
+/**
+ * Desgaste enquanto o jogador está ligado (por minuto real): fome e energia descem;
+ * a saúde cai se a fome ou a energia chegarem a zero e recupera devagar quando não;
+ * o humor aproxima-se da média das outras necessidades.
+ */
+export function decay(n: Needs, minutes: number): Needs {
+  const hunger = clamp(n.hunger - 0.35 * minutes);
+  const energy = clamp(n.energy - 0.25 * minutes);
+  const starving = hunger <= 0 || energy <= 0;
+  const health = clamp(n.health + (starving ? -0.6 : 0.1) * minutes);
+  const target = (hunger + energy + health) / 3;
+  const mood = clamp(n.mood + (target - n.mood) * Math.min(1, 0.05 * minutes));
+  return { hunger, energy, mood, health };
+}
+
+export function applyFood(n: Needs, item: MenuItem): Needs {
+  return {
+    hunger: clamp(n.hunger + item.hunger),
+    energy: clamp(n.energy + (item.energy ?? 0)),
+    mood: clamp(n.mood + (item.mood ?? 0)),
+    health: n.health,
+  };
+}
+
+/** Novo dia em Angola → o contador de turnos recomeça. */
+export function rollDay(life: LifeState, nowMs: number): void {
+  const d = angolaDay(nowMs);
+  if (life.shiftsDay !== d) {
+    life.shiftsDay = d;
+    life.shiftsCount = 0;
+  }
+}
+
+export function jobById(id: string | null | undefined): Job | undefined {
+  return JOBS.find((j) => j.id === id);
+}
+
+/** Valida e normaliza um estado guardado (dados antigos ou corrompidos não rebentam o jogo). */
+export function sanitizeLife(raw: unknown, rand: () => number = Math.random): LifeState {
+  const base = newLife(rand);
+  if (!raw || typeof raw !== "object") return base;
+  const r = raw as Partial<LifeState>;
+  const num = (v: unknown, d: number, lo = 0, hi = 100) => (typeof v === "number" && Number.isFinite(v) ? Math.max(lo, Math.min(hi, v)) : d);
+  const needs = (r.needs ?? {}) as Partial<Needs>;
+  return {
+    needs: {
+      hunger: num(needs.hunger, base.needs.hunger),
+      energy: num(needs.energy, base.needs.energy),
+      mood: num(needs.mood, base.needs.mood),
+      health: num(needs.health, base.needs.health),
+    },
+    family: (["humilde", "media", "rica", "muito_rica"] as const).includes(r.family as FamilyClass) ? (r.family as FamilyClass) : base.family,
+    education: Math.round(num(r.education, 0, 0, MAX_EDUCATION)),
+    study: Math.round(num(r.study, 0, 0, LESSONS_PER_LEVEL)),
+    jobId: jobById(r.jobId) ? (r.jobId as string) : null,
+    shiftsDay: typeof r.shiftsDay === "string" ? r.shiftsDay : base.shiftsDay,
+    shiftsCount: Math.round(num(r.shiftsCount, 0, 0, 1000)),
+    parentsDay: typeof r.parentsDay === "string" ? r.parentsDay : null,
+  };
+}

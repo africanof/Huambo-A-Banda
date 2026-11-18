@@ -4,7 +4,7 @@ import { RedisPresence } from "@colyseus/redis-presence";
 import { RedisDriver } from "@colyseus/redis-driver";
 import type { Env } from "./config/env.js";
 import { TokenVerifier } from "./auth/TokenVerifier.js";
-import { createCharacterRepository, type CharacterRepository } from "./persistence/index.js";
+import { createRepositories, type CharacterRepository, type WalletRepository } from "./persistence/index.js";
 import { DistrictRoom } from "./rooms/DistrictRoom.js";
 import { registerRoutes } from "./http/routes.js";
 import { setServices, type Services } from "./services.js";
@@ -14,6 +14,7 @@ export const ROOM_DISTRICT = "district";
 
 export interface CreateServerOverrides {
   characters?: CharacterRepository;
+  wallets?: WalletRepository;
 }
 
 /**
@@ -24,7 +25,10 @@ export function createGameServer(env: Env, overrides: CreateServerOverrides = {}
   const svc: Services = {
     env,
     verifier: new TokenVerifier(env),
-    characters: overrides.characters ?? createCharacterRepository(env),
+    ...(() => {
+      const repos = createRepositories(env);
+      return { characters: overrides.characters ?? repos.characters, wallets: overrides.wallets ?? repos.wallets };
+    })(),
   };
   setServices(svc);
 

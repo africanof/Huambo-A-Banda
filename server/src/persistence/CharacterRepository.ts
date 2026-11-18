@@ -9,6 +9,8 @@ export interface CharacterRecord {
   district: string | null;
   x: number | null;
   y: number | null;
+  /** estado de vida (necessidades, família, emprego…); null em personagens novas */
+  life: unknown | null;
 }
 
 export interface PositionUpdate {
@@ -16,6 +18,7 @@ export interface PositionUpdate {
   district: string;
   x: number;
   y: number;
+  life?: unknown;
 }
 
 /**

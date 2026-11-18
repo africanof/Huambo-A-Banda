@@ -12,7 +12,7 @@ const SEND_INTERVAL_MS := 100
 var view := BairroView.new()
 var canvas_mod := CanvasModulate.new()
 var camera := Camera2D.new()
-var hud: DemoHud
+var hud: GameHud
 var avatars: Dictionary = {} ## eid -> DemoCharacter
 var buffers: Dictionary = {} ## eid -> Array[[t_servidor, Vector2 m]]
 var local_char: DemoCharacter
@@ -36,11 +36,11 @@ func _ready() -> void:
 	add_child(canvas_mod)
 	speed_m = float(w.get("speed", 150)) / UNIT
 	snapshot_hz = int(w.get("snapshotHz", 10))
-	hud = DemoHud.new()
-	hud.button_specs = [["zoom_mais", "Aproximar", "plus"], ["zoom_menos", "Afastar", "minus"], ["sair", "Sair", "door"]]
+	hud = GameHud.new()
 	hud.place_text = str(w.get("district", {}).get("name", ""))
+	hud.catalog = w.get("catalog", {}) if typeof(w.get("catalog")) == TYPE_DICTIONARY else {}
 	add_child(hud)
-	hud.action.connect(_on_hud_action)
+	hud.ui_action.connect(_on_hud_action)
 	camera.zoom = Vector2(0.5, 0.5)
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 6.0
@@ -122,10 +122,7 @@ func _process(delta: float) -> void:
 	_update_remotes(delta)
 	if local_char:
 		camera.position = local_char.position + Vector2(0, -70)
-		var near := view.place_near(local_char.world_pos)
-		hud.set_door_visible(false)
-		if not near.is_empty():
-			hud.door_btn.visible = near.kind == "home"
+		hud.set_context(view.place_near(local_char.world_pos))
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
 	var minutes := float(now.hour * 60 + now.minute) + float(now.second) / 60.0
 	view.apply_hour(minutes / 60.0, canvas_mod)
@@ -146,6 +143,9 @@ func _update_local(delta: float) -> void:
 	if local_char == null:
 		return
 	var kdir := Iso.screen_dir_to_world(_keyboard_dir())
+	if hud.is_busy():
+		kdir = Vector2.ZERO # ocupado(a): não anda (andar interromperia a ação no servidor)
+		_click_target = null
 	var wdir := kdir
 	if kdir != Vector2.ZERO:
 		_click_target = null
@@ -216,7 +216,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 ## Andar até um ponto (metros). O servidor valida o destino; a personagem segue-o localmente.
 func request_move(target_m: Vector2) -> void:
-	if local_char == null:
+	if local_char == null or hud.is_busy():
 		return
 	_click_target = target_m
 	if Net.room:

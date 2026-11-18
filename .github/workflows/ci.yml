@@ -81,7 +81,7 @@ jobs:
         run: |
           (cd server && ALLOW_GUESTS=true GUEST_TOKEN_SECRET=ci-guest-secret-0123456789abcdef0123 LOG_LEVEL=warn npx tsx src/index.ts &)
           for i in $(seq 1 30); do curl -sf localhost:2567/health && break; sleep 1; done
-          godot --headless --path client -- --autotest --name=CI1 --expect-peers=2 & A=$!
+          godot --headless --path client -- --autotest --life --name=CI1 --expect-peers=2 & A=$!
           sleep 1
           godot --headless --path client -- --autotest --name=CI2 --expect-peers=2 & B=$!
           wait $A && wait $B

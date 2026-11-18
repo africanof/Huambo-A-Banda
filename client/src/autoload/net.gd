@@ -9,6 +9,8 @@ signal snapshot_received(server_time: int, flat: Array)
 signal notice(code: int, text: String)
 signal disconnected(reason: String)
 signal latency_updated(rtt_ms: int)
+signal self_updated(me: Dictionary)
+signal toast(text: String, ok: bool)
 
 const ROOM_DISTRICT := "district"
 
@@ -18,6 +20,8 @@ var self_id := -1
 ## Mantido aqui para que a cena do mundo possa ser criada depois das primeiras mensagens.
 var entities: Dictionary = {}
 var last_error := ""
+## O meu estado de vida (dinheiro, necessidades, emprego…) enviado pelo servidor.
+var me: Dictionary = {}
 var welcome: Dictionary = {}
 var rtt_ms := 0
 
@@ -68,7 +72,17 @@ func leave() -> void:
 		room = null
 	self_id = -1
 	welcome = {}
+	me = {}
 	entities.clear()
+
+
+## Pede uma ação de vida ao servidor (o servidor decide).
+func action(a: String, item: String = "") -> void:
+	if room:
+		var msg := {"a": a}
+		if item != "":
+			msg["i"] = item
+		room.send(Protocol.C2S_ACTION, msg)
 
 
 func move_to(world_pos: Vector2) -> void:
@@ -108,6 +122,13 @@ func _on_message(type: Variant, payload: Variant) -> void:
 				if ent != null:
 					ent.pos = Vector2(flat[i + 1], flat[i + 2])
 			snapshot_received.emit(int(payload.get("t", 0)), flat)
+		Protocol.S2C_SELF:
+			if typeof(payload) == TYPE_DICTIONARY:
+				me = payload
+				self_updated.emit(me)
+		Protocol.S2C_TOAST:
+			if typeof(payload) == TYPE_DICTIONARY:
+				toast.emit(str(payload.get("t", "")), bool(payload.get("ok", true)))
 		Protocol.S2C_NOTICE:
 			if typeof(payload) == TYPE_DICTIONARY:
 				notice.emit(int(payload.get("code", 0)), str(payload.get("msg", "")))

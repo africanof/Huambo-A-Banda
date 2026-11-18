@@ -4,6 +4,7 @@ import { getDistrict, type District } from "../game/districts.js";
 import { randomSpawn, sanitizeTarget, step, isWalkable, validatePath, type Mover } from "../game/movement.js";
 import { SpatialGrid } from "../game/SpatialGrid.js";
 import { GameLoop } from "../game/GameLoop.js";
+import { LifeController, lifeCatalog } from "../game/LifeController.js";
 import {
   C2S,
   ErrorCodes,
@@ -11,6 +12,7 @@ import {
   MoveToSchema,
   MovePathSchema,
   MoveDirSchema,
+  ActionSchema,
   PROTOCOL_VERSION,
   S2C,
   type Appearance,
@@ -47,6 +49,8 @@ export class DistrictRoom extends Room {
 
   private district!: District;
   private loop!: GameLoop;
+  private life?: LifeController;
+  private lifeTimer: NodeJS.Timeout | undefined;
   private persistTimer: NodeJS.Timeout | undefined;
   private readonly players = new Map<number, Player>();
   private readonly byUser = new Map<string, Player>();
@@ -78,6 +82,13 @@ export class DistrictRoom extends Room {
     if (!district) throw new ServerError(ErrorCodes.INVALID_DISTRICT, "unknown district");
     this.district = district;
     this.grid = new SpatialGrid(district.aoiCell ?? AOI_CELL);
+    if (district.places?.length) {
+      this.life = new LifeController(district, services().wallets, {
+        self: (actor, state) => this.clientOf(actor as Player)?.send(S2C.SELF, state),
+        toast: (actor, text, ok) => this.clientOf(actor as Player)?.send(S2C.TOAST, { t: text, ok }),
+      });
+      this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
+    }
 
     const { env } = services();
     this.maxClients = env.ROOM_MAX_CLIENTS;
@@ -115,6 +126,19 @@ export class DistrictRoom extends Room {
       p.ty = ok[1]!;
       p.path = ok.slice(2);
       p.dx = p.dy = 0;
+    });
+
+    // Ações de vida (comer, trabalhar…): validadas e aplicadas pelo LifeController.
+    this.onMessage(C2S.ACTION, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = ActionSchema.safeParse(raw);
+      if (!p || !msg.success || !this.life) return;
+      if (msg.data.a !== "self" && msg.data.a !== "cancel") {
+        p.tx = p.ty = null;
+        p.path = undefined;
+        p.dx = p.dy = 0;
+      }
+      void this.life.handle(p, msg.data).catch((err) => log().error({ err }, "life action"));
     });
 
     // Joystick / teclado: direção contínua até nova ordem.
@@ -182,6 +206,7 @@ export class DistrictRoom extends Room {
     this.grid.upsert(eid, player.x, player.y);
 
     this.sendWelcome(client, player);
+    await this.life?.join(player, character.life);
     log().info({ roomId: this.roomId, sessionId: client.sessionId, userId: auth.userId, eid }, "player joined");
   }
 
@@ -207,11 +232,13 @@ export class DistrictRoom extends Room {
     const p = this.playerOf(client);
     if (!p) return;
     this.players.delete(p.eid);
+    const lifeState = this.life?.lifeOf(p);
     if (this.byUser.get(p.userId) === p) this.byUser.delete(p.userId);
     this.grid.remove(p.eid);
     this.movedThisWindow.delete(p.eid);
     // Os outros recebem DESPAWN no próximo snapshot porque o jogador já não está no AOI.
-    await this.persist([p]);
+    await this.persist([p], lifeState);
+    this.life?.leave(p);
     log().info({ roomId: this.roomId, sessionId: client.sessionId, eid: p.eid }, "player left");
   }
 
@@ -223,6 +250,7 @@ export class DistrictRoom extends Room {
   override async onDispose(): Promise<void> {
     this.loop?.stop();
     clearInterval(this.persistTimer);
+    clearInterval(this.lifeTimer);
     await this.presence.unsubscribe(KICK_CHANNEL, this.onKick);
     await this.flushPersistence(true);
   }
@@ -293,11 +321,16 @@ export class DistrictRoom extends Room {
         bairros: this.district.spawns.map((b) => ({ id: b.id, name: b.name })),
       },
       speed: this.district.speed,
+      catalog: this.life ? lifeCatalog() : undefined,
       simHz: env.SIM_TICK_HZ,
       snapshotHz: env.SNAPSHOT_HZ,
       serverTime: Math.round(this.loop.now()),
     };
     client.send(S2C.WELCOME, welcome);
+  }
+
+  private clientOf(p: Player): DistrictClient | undefined {
+    return this.clients.getById(p.sessionId) as DistrictClient | undefined;
   }
 
   private playerOf(client: DistrictClient): Player | undefined {
@@ -323,13 +356,16 @@ export class DistrictRoom extends Room {
   }
 
   private async flushPersistence(all = false): Promise<void> {
-    const batch = [...this.players.values()].filter((p) => all || p.dirtyPersist);
+    const batch = [...this.players.values()].filter((p) => all || p.dirtyPersist || (this.life?.lifeOf(p) !== undefined && this.life.isBusy(p) === false));
     await this.persist(batch);
   }
 
-  private async persist(players: Player[]): Promise<void> {
+  private async persist(players: Player[], leavingLife?: unknown): Promise<void> {
     if (players.length === 0) return;
-    const updates: PositionUpdate[] = players.map((p) => ({ id: p.characterId, district: this.district.id, x: p.x, y: p.y }));
+    const updates: PositionUpdate[] = players.map((p) => {
+      const life = leavingLife ?? (this.life?.takeDirty(p) ? this.life.lifeOf(p) : undefined);
+      return { id: p.characterId, district: this.district.id, x: p.x, y: p.y, ...(life ? { life } : {}) };
+    });
     for (const p of players) p.dirtyPersist = false;
     try {
       await services().characters.savePositions(updates);

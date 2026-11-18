@@ -39,6 +39,10 @@ static func make(kind: String, color: Color) -> Texture2D:
 			_poly(img, [Vector2(10, 48), Vector2(34, 22), Vector2(34, 74)], c)
 			_poly(img, [Vector2(86, 48), Vector2(62, 22), Vector2(62, 74)], c)
 			_rect(img, Rect2(44, 14, 8, 68), c)
+		"phone":
+			_rect(img, Rect2(28, 6, 40, 84), c)
+			_rect(img, Rect2(33, 16, 30, 58), Color(0, 0, 0, 0))
+			_circle(img, Vector2(48, 82), 4, Color(0, 0, 0, 0))
 		"trash":
 			_rect(img, Rect2(22, 30, 52, 58), c)
 			_rect(img, Rect2(14, 18, 68, 8), c)

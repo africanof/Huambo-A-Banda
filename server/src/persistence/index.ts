@@ -3,6 +3,7 @@ import type { Identity } from "../auth/TokenVerifier.js";
 import type { CharacterRecord, CharacterRepository, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";
 import { MemoryCharacterRepository } from "./MemoryCharacterRepository.js";
 import { SupabaseCharacterRepository } from "./SupabaseCharacterRepository.js";
+import { MemoryWalletRepository, RoutingWalletRepository, SupabaseWalletRepository, type WalletRepository } from "./WalletRepository.js";
 
 /** Encaminha convidados para memória e contas reais para o Supabase (quando configurado). */
 class RoutingCharacterRepository implements CharacterRepository {
@@ -27,11 +28,22 @@ class RoutingCharacterRepository implements CharacterRepository {
 }
 
 export function createCharacterRepository(env: Env): CharacterRepository {
+  return createRepositories(env).characters;
+}
+
+/** Personagens + carteiras: convidados em memória, contas no Supabase (quando configurado). */
+export function createRepositories(env: Env): { characters: CharacterRepository; wallets: WalletRepository } {
   const guests = new MemoryCharacterRepository();
+  const guestWallets = new MemoryWalletRepository();
   if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY) {
-    return new RoutingCharacterRepository(new SupabaseCharacterRepository(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY), guests);
+    const supa = new SupabaseCharacterRepository(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+    return {
+      characters: new RoutingCharacterRepository(supa, guests),
+      wallets: new RoutingWalletRepository(new SupabaseWalletRepository(supa.db), guestWallets),
+    };
   }
-  return guests;
+  return { characters: guests, wallets: guestWallets };
 }
 
 export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";
+export { InsufficientFunds, type WalletRepository } from "./WalletRepository.js";
