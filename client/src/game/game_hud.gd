@@ -384,6 +384,8 @@ func _rebuild_actions() -> void:
 			actions_box.add_child(_button("Entrar — %s" % _context.name, "home" if home else "door", ACCENT, INK, func() -> void: Net.action("enter")))
 		"exit":
 			pass # o botão "Sair" está sempre visível lá dentro
+		"car":
+			actions_box.add_child(_button("Viajar de carro", "pin", ACCENT, INK, func() -> void: _open_map()))
 		"portal":
 			var to := str(_context.get("to", ""))
 			actions_box.add_child(_button(str(_context.name), "pin", ACCENT, INK, func() -> void: Net.action("travel", to)))
@@ -480,6 +482,8 @@ func _go(id: String, walk: bool) -> void:
 	_panel("Como queres ir?")
 	for tr: Dictionary in catalog.get("transports", [{"id": "candongueiro", "name": "Candongueiro", "price": 200}]):
 		var how := str(tr.id)
+		if how == "carro" and Net.me.get("car") == null:
+			continue
 		menu_body.add_child(_button("%s · %s Kz" % [tr.name, DemoHud._money(int(tr.price))], "pin", ACCENT, INK, func() -> void:
 			Net.action_travel(id, how)
 			menu_panel.visible = false))
@@ -590,7 +594,7 @@ func _rebuild_phone() -> void:
 		c.queue_free()
 	var tabs := HBoxContainer.new()
 	tabs.add_theme_constant_override("separation", 6)
-	for t: Array in [["perfil", "Perfil"], ["casa", "Casa"], ["vagas", "Vagas"], ["ajuda", "Ajuda"]]:
+	for t: Array in [["perfil", "Perfil"], ["casa", "Casa"], ["loja", "Loja"], ["vagas", "Vagas"], ["ajuda", "Ajuda"]]:
 		var tab_id: String = t[0]
 		var active := tab_id == phone_tab
 		tabs.add_child(_button(t[1], "", ACCENT if active else Color(1, 1, 1, 0.08), INK if active else Color.WHITE, func() -> void: _open_phone(tab_id)))
@@ -598,6 +602,7 @@ func _rebuild_phone() -> void:
 	match phone_tab:
 		"perfil": _phone_profile()
 		"casa": _phone_home()
+		"loja": _phone_shop()
 		"vagas": _phone_jobs()
 		"ajuda": _phone_help()
 
@@ -639,6 +644,22 @@ func _phone_home() -> void:
 		var until := "comprada" if hm.tenure == "buy" else "renda paga até %s" % Time.get_datetime_string_from_unix_time(int(float(hm.paidUntil) / 1000.0) + 3600, true).substr(0, 16)
 		phone_body.add_child(_label("%s — %s" % [hm.name, until], 16, Color.WHITE, FONT, true))
 	phone_body.add_child(_label("Em casa: dorme de graça na tua cama e cozinha por 500 Kz.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+
+
+## Loja: carros (ficam estacionados à porta de casa; tocar no carro → Viajar).
+func _phone_shop() -> void:
+	phone_body.add_child(_label("Carros", 20, ACCENT, FONT_BOLD))
+	var mine := str(Net.me.get("car", "")) if Net.me.get("car") != null else ""
+	for c: Dictionary in catalog.get("cars", []):
+		var box := VBoxContainer.new()
+		box.add_child(_label("%s — %s Kz" % [c.name, DemoHud._money(int(c.price))], 16, Color.WHITE, FONT, true))
+		var id := str(c.id)
+		if id == mine:
+			box.add_child(_label("É o teu carro.", 14, Color("8fe08a"), FONT_REG, true))
+		else:
+			box.add_child(_button("Comprar", "bag", ACCENT, INK, func() -> void: Net.action("buy_car", id)))
+		phone_body.add_child(box)
+	phone_body.add_child(_label("Precisas de casa para o estacionar. Viajar de carro custa só o combustível (300 Kz).", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
 
 
 func _phone_jobs() -> void:

@@ -28,6 +28,8 @@ export interface LifeState {
   docs: { bi: boolean; registo: boolean; residencia: boolean };
   /** saldo de telemóvel (Kz) carregado na loja de telecomunicações */
   phoneCredit: number;
+  /** carro que a personagem tem (id de CARS) ou null */
+  car: string | null;
 }
 
 export interface Job {
@@ -120,9 +122,18 @@ export const TRAVEL_PRICE = 200;
 
 /** Meios de transporte entre bairros (viagem vista de dentro, como no Vida na Banda). */
 export const TRANSPORTS = [
+  { id: "autocarro", name: "Autocarro", price: 100, seconds: 16 },
   { id: "candongueiro", name: "Candongueiro", price: 200, seconds: 9 },
   { id: "kupapata", name: "Kupapata", price: 500, seconds: 13 },
   { id: "taxi", name: "Táxi", price: 1500, seconds: 9 },
+  { id: "carro", name: "O teu carro", price: 300, seconds: 9 }, // combustível; só para quem tem carro
+] as const;
+
+/** Carros à venda (telemóvel → Loja → Carros). Ficam estacionados à porta de casa. */
+export const CARS = [
+  { id: "corolla_usado", name: "Toyota Corolla usado", price: 2_500_000 },
+  { id: "hilux", name: "Toyota Hilux", price: 9_000_000 },
+  { id: "jipe", name: "Jipe Land Cruiser", price: 25_000_000 },
 ] as const;
 export type TransportId = (typeof TRANSPORTS)[number]["id"];
 
@@ -234,6 +245,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     parentsDay: null,
     docs: { bi: false, registo: false, residencia: false },
     phoneCredit: 0,
+    car: null,
   };
 }
 
@@ -299,5 +311,6 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     parentsDay: typeof r.parentsDay === "string" ? r.parentsDay : null,
     docs: { bi: r.docs?.bi === true, registo: r.docs?.registo === true, residencia: r.docs?.residencia === true },
     phoneCredit: Math.round(num(r.phoneCredit, 0, 0, 1e9)),
+    car: CARS.some((c) => c.id === r.car) ? (r.car as string) : null,
   };
 }

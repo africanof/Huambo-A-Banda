@@ -1,0 +1,36 @@
+{
+ "spec": {
+  "id": "kit_personagens",
+  "kind": "sheet",
+  "context_only": true,
+  "refs": [
+   "ref_homem",
+   "ref_mulher"
+  ],
+  "size": "3840x2160",
+  "quality": "high",
+  "prompt": "Character ANIMATION SHEET for a 2D life-simulation game set in Huambo, Angola. The two attached images show the two characters (the man and the woman): keep EXACTLY the same faces, hair, skin tone, clothes, colours and proportions. Draw a strict grid of 6 ROWS and 18 COLUMNS, every cell the same size, one full-body figure per cell (feet visible, same baseline and same scale in every cell), transparent background, nothing touching the neighbouring cells, no text, no grid lines.\nROW 1: the MAN seen from the FRONT (facing the viewer). ROW 2: the MAN in PROFILE walking to the RIGHT. ROW 3: the MAN seen from the BACK (walking away). ROW 4: the WOMAN from the FRONT. ROW 5: the WOMAN in PROFILE walking to the RIGHT. ROW 6: the WOMAN from the BACK.\nIn every row, the 18 columns are: columns 1-8 = a smooth WALK CYCLE (8 frames: contact, down, passing, up, contact with the other foot, down, passing, up); column 9 = standing still; column 10 = sitting on an invisible chair; columns 11-14 = working (4 frames, hands busy at waist height); columns 15-18 = waving hello (4 frames). Natural Angolan everyday look, same isometric-style shading and light (from top-left) as the references, slightly high camera."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nSprite sheet on a transparent background: the SAME character repeated identically (same face, hair, clothes, colors, size) in each cell, cells evenly spaced in a single horizontal row, all characters standing on the same baseline and the same scale, nothing overlapping, no text, no grid lines, no labels.\nCharacter ANIMATION SHEET for a 2D life-simulation game set in Huambo, Angola. The two attached images show the two characters (the man and the woman): keep EXACTLY the same faces, hair, skin tone, clothes, colours and proportions. Draw a strict grid of 6 ROWS and 18 COLUMNS, every cell the same size, one full-body figure per cell (feet visible, same baseline and same scale in every cell), transparent background, nothing touching the neighbouring cells, no text, no grid lines.\nROW 1: the MAN seen from the FRONT (facing the viewer). ROW 2: the MAN in PROFILE walking to the RIGHT. ROW 3: the MAN seen from the BACK (walking away). ROW 4: the WOMAN from the FRONT. ROW 5: the WOMAN in PROFILE walking to the RIGHT. ROW 6: the WOMAN from the BACK.\nIn every row, the 18 columns are: columns 1-8 = a smooth WALK CYCLE (8 frames: contact, down, passing, up, contact with the other foot, down, passing, up); column 9 = standing still; column 10 = sitting on an invisible chair; columns 11-14 = working (4 frames, hands busy at waist height); columns 15-18 = waving hello (4 frames). Natural Angolan everyday look, same isometric-style shading and light (from top-left) as the references, slightly high camera.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "3840x2160",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 3651,
+  "input_tokens_details": {
+   "image_tokens": 3072,
+   "text_tokens": 579
+  },
+  "output_tokens": 3336,
+  "output_tokens_details": {
+   "image_tokens": 3336,
+   "text_tokens": 0
+  },
+  "total_tokens": 6987
+ }
+}

@@ -60,6 +60,14 @@ static func texture_of(id: String) -> Texture2D:
 	return tex(id + ".png")
 
 
+## Arte deste objeto vista do ângulo r (0–3); se não houver, a de frente.
+static func angle_id(id: String, r: int) -> String:
+	if r == 0:
+		return id
+	var a := "%s@%d" % [id, r]
+	return a if not object(a).is_empty() else id
+
+
 ## Sprite de um objeto com a âncora (base mais à frente) na origem do nó.
 static func make_sprite(id: String) -> Sprite2D:
 	var o := object(id)
@@ -86,7 +94,9 @@ static func character_frames(cid: String) -> SpriteFrames:
 	var fh := int(c.frame_size[1])
 	var sf := SpriteFrames.new()
 	sf.remove_animation("default")
-	for d: String in ["down", "up"]:
+	for d: String in ["down", "up", "front", "side", "back"]:
+		if not c.anims.has(d):
+			continue
 		var a: Dictionary = c.anims[d]
 		var sheet := tex(a.file)
 		sf.add_animation("idle_" + d)

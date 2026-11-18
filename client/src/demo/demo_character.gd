@@ -98,6 +98,7 @@ func step(dir_world: Vector2, delta: float) -> void:
 	if _moving:
 		last_dir = (world_pos - before).normalized()
 		var s := Iso.to_screen(world_pos - before)
+		screen_dir = s.normalized()
 		if absf(s.y) > 0.01:
 			facing_up = s.y < 0
 		if absf(s.x) > 0.01:
@@ -120,6 +121,7 @@ func drive(new_pos: Vector2, delta: float) -> void:
 	if _moving:
 		last_dir = d.normalized()
 		var s := Iso.to_screen(d)
+		screen_dir = s.normalized()
 		if absf(s.y) > 0.01:
 			facing_up = s.y < 0
 		if absf(s.x) > 0.01:
@@ -155,11 +157,28 @@ func _free(p: Vector2) -> bool:
 	return true
 
 
+## Direção no ecrã do último movimento (para escolher entre 8 direções).
+var screen_dir := Vector2(0, 1)
+
+
 func _update_anim() -> void:
-	var anim := ("walk_" if _moving else "idle_") + ("up" if facing_up else "down")
+	var dir := ("up" if facing_up else "down")
+	var flip := facing_left
+	# 8 direções: na horizontal do ecrã usa o perfil; na vertical, frente ou costas; nas diagonais, 3/4
+	var a := rad_to_deg(screen_dir.angle()) # 0 = direita, 90 = baixo
+	var frames := body.sprite_frames
+	if frames and frames.has_animation("walk_side"):
+		if absf(a) < 22.5 or absf(a) > 157.5:
+			dir = "side"
+			flip = absf(a) > 90.0
+		elif absf(a - 90.0) < 22.5:
+			dir = "front"
+		elif absf(a + 90.0) < 22.5:
+			dir = "back"
+	var anim := ("walk_" if _moving else "idle_") + dir
 	if body.animation != anim:
 		body.play(anim)
-	body.flip_h = facing_left
+	body.flip_h = flip
 	# a âncora fica no centro, por isso o espelho não desloca a personagem
 	body.offset.x = -float(DemoAssets.manifest().characters[cid].anchor[0])
 

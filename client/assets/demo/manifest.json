@@ -679,6 +679,69 @@
      "idle_frame": 0,
      "walk_from": 1,
      "stride_m": 0.949
+    },
+    "front": {
+     "file": "homem_front.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.5,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
+    },
+    "side": {
+     "file": "homem_side.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.35,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
+    },
+    "back": {
+     "file": "homem_back.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.5,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
     }
    }
   },
@@ -706,6 +769,69 @@
      "idle_frame": 0,
      "walk_from": 1,
      "stride_m": 0.465
+    },
+    "front": {
+     "file": "mulher_front.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.5,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
+    },
+    "side": {
+     "file": "mulher_side.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.453,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
+    },
+    "back": {
+     "file": "mulher_back.png",
+     "frames": 9,
+     "idle_frame": 0,
+     "walk_from": 1,
+     "stride_m": 0.5,
+     "extra": {
+      "sit": 9,
+      "work": [
+       10,
+       11,
+       12,
+       13
+      ],
+      "wave": [
+       14,
+       15,
+       16
+      ]
+     }
     }
    }
   }

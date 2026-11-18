@@ -66,6 +66,8 @@ def main(cfg_path):
     os.makedirs(OUT, exist_ok=True)
     man_path = os.path.join(OUT, "manifest.json")
     man = {"kit": kit, "objects": {}}
+    if cfg.get("merge") and os.path.exists(man_path):  # outro ângulo do mesmo kit: junta ao manifesto
+        man = json.load(open(man_path))
     base_scale = scale
     for e in cfg["items"]:
         scale = float(e.get("scale", base_scale))

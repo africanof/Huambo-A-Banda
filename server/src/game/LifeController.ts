@@ -10,6 +10,7 @@ import {
   SERVICES,
   rentPrice,
   TRANSPORTS,
+  CARS,
   TRAVEL_PRICE,
   JOBS,
   LESSONS_PER_LEVEL,
@@ -104,6 +105,7 @@ export interface SelfState {
   bank: number;
   docs: { bi: boolean; registo: boolean; residencia: boolean };
   phoneCredit: number;
+  car: string | null;
   /** interior onde estou (null = na rua) */
   inside: { id: string; venue: string; name: string; unit?: number } | null;
   homes: Array<{ unit: string; name: string; tenure: "buy" | "rent"; paidUntil: number | null }>;
@@ -118,6 +120,7 @@ export function lifeCatalog() {
     menus: MENUS,
     prices: { hotel: HOTEL_PRICE, study: STUDY_PRICE, homeMeal: HOME_MEAL.price, travel: TRAVEL_PRICE },
     transports: TRANSPORTS,
+    cars: CARS,
     durations: DURATION,
     lessonsPerLevel: LESSONS_PER_LEVEL,
     services: SERVICES,
@@ -262,6 +265,9 @@ export class LifeController {
           break;
         case "home_eat":
           await this.homeEat(actor, e);
+          break;
+        case "buy_car":
+          await this.buyCar(actor, e, msg.i);
           break;
         case "travel":
           await this.travel(actor, e, msg.i, msg.t);
@@ -487,13 +493,25 @@ export class LifeController {
     if (!d || d.id === this.district.id || !d.places?.length) return this.out.toast(actor, "Esse bairro não existe.", false);
     // a pé, no fim da rua que dá para esse bairro: grátis
     const onFoot = this.near(actor, (p) => p.kind === "portal" && p.to === d.id);
-    const tr = TRANSPORTS.find((x) => x.id === how) ?? TRANSPORTS[0];
+    const tr = TRANSPORTS.find((x) => x.id === how) ?? TRANSPORTS.find((x) => x.id === "candongueiro")!;
+    if (tr.id === "carro" && !e.life.car) return this.out.toast(actor, "Ainda não tens carro. Compra um no telemóvel → Loja.", false);
     if (!onFoot) {
       e.money = await this.wallets.apply(actor.characterId, -tr.price, `travel.${tr.id}`, `travel:${actor.characterId}:${this.op()}`);
     }
     e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot, ...(onFoot ? {} : { by: tr.id, seconds: tr.seconds }) };
     e.dirty = true;
     this.out.toast(actor, onFoot ? `A caminho de ${d.name} a pé.` : `${tr.name} para ${d.name} (−${tr.price.toLocaleString("pt-PT")} Kz).`, true);
+  }
+
+  private async buyCar(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    const car = CARS.find((c) => c.id === id);
+    if (!car) return this.out.toast(actor, "Esse carro não existe.", false);
+    if (e.life.car === car.id) return this.out.toast(actor, "Já tens este carro.", false);
+    if (!e.homes.length) return this.out.toast(actor, "Primeiro precisas de uma casa para estacionar o carro.", false);
+    e.money = await this.wallets.apply(actor.characterId, -car.price, `car.${car.id}`, `car:${actor.characterId}:${this.op()}`);
+    e.life.car = car.id;
+    e.dirty = true;
+    this.out.toast(actor, `Compraste: ${car.name}. Está estacionado à porta de casa.`, true);
   }
 
   private async homeEat(actor: LifeActor, e: Entry): Promise<void> {
@@ -596,6 +614,7 @@ export class LifeController {
       bank: e.bank,
       docs: { ...e.life.docs },
       phoneCredit: e.life.phoneCredit,
+      car: e.life.car,
       inside: (() => {
         const i = interiorAt(this.district, actor.x, actor.y);
         return i ? { id: i.id, venue: i.venue, name: i.name, ...(i.unit ? { unit: i.unit } : {}) } : null;

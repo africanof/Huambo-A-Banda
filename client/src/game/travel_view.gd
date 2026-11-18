@@ -57,7 +57,7 @@ func _ready() -> void:
 	cam.position = Vector3(1.2 if by != "kupapata" else 0.6, 1.5 if by != "kupapata" else 1.7, 0)
 	root.add_child(cam)
 	_rng.seed = hash(dest_name)
-	speed = {"candongueiro": 13.0, "taxi": 15.0, "kupapata": 11.0}.get(by, 13.0)
+	speed = {"candongueiro": 13.0, "taxi": 15.0, "kupapata": 11.0, "autocarro": 10.0, "carro": 15.0}.get(by, 13.0)
 	_build_road()
 	for i in 70:
 		_spawn(-float(i) * 4.0 - 6.0)
@@ -68,7 +68,7 @@ func _ready() -> void:
 	_frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_frame)
-	_caption.text = "%s para %s" % [{"candongueiro": "Candongueiro", "taxi": "Táxi", "kupapata": "Kupapata"}.get(by, by), dest_name]
+	_caption.text = "%s para %s" % [{"candongueiro": "Candongueiro", "taxi": "Táxi", "kupapata": "Kupapata", "autocarro": "Autocarro", "carro": "O teu carro"}.get(by, by), dest_name]
 	_caption.add_theme_font_override("font", preload("res://assets/fonts/Inter-Bold.otf"))
 	_caption.add_theme_font_size_override("font_size", 22)
 	_caption.add_theme_color_override("font_outline_color", Color.BLACK)

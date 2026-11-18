@@ -284,7 +284,8 @@ for src in sorted(glob.glob(os.path.join(HERE, "*.json"))):
     used = {objs[b["id"]].get("kit") for b in out["buildings"]} | {objs[p["id"]].get("kit") for p in out["props"]}
     used |= {objs[f["id"]].get("kit") for i in out["interiors"] for f in i["furniture"]}
     used |= {objs[i["room"]].get("kit") for i in out["interiors"] if i["room"] in objs}
-    used.add("kit_viagens")  # viagens na primeira pessoa (candongueiro, táxi, kupapata) a partir de qualquer bairro
+    used.add("kit_viagens")
+    used.add("bairro_fatima")  # carros particulares estacionados à porta de casa  # viagens na primeira pessoa (candongueiro, táxi, kupapata) a partir de qualquer bairro
     out["kits"] = sorted(k for k in used if k)
     out["kit_versions"] = {k: KIT_VERSIONS[k] for k in out["kits"]}
     body = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":"))

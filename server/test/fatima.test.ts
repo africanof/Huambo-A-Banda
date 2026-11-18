@@ -154,3 +154,32 @@ describe("meios de transporte", () => {
     expect(selves.get(a)!.money).toBe(m0 - 2000);
   });
 });
+
+describe("autocarro e carro", () => {
+  it("autocarro é o mais barato; carro só para quem tem, e comprar carro pede casa", async () => {
+    const wallets = new MemoryWalletRepository();
+    const selves = new Map<LifeActor, SelfState>();
+    const toasts: string[] = [];
+    const ca = getDistrict("cidade_alta")!;
+    const life = new LifeController(ca, wallets, { self: (a, s) => selves.set(a, s), toast: (_a, t) => toasts.push(t) }, () => Date.UTC(2026, 10, 18), () => 0.9);
+    const a: LifeActor = { characterId: "mem-c", x: ca.spawns[0]!.x, y: ca.spawns[0]!.y };
+    await life.join(a, null);
+    const m0 = selves.get(a)!.money;
+    await life.handle(a, { a: "travel", i: "xipuli", t: "autocarro" });
+    expect(selves.get(a)!.money).toBe(m0 - 100);
+    await life.handle(a, { a: "travel", i: "xipuli", t: "carro" });
+    expect(toasts.at(-1)).toMatch(/não tens carro/);
+    await life.handle(a, { a: "buy_car", i: "hilux" });
+    expect(toasts.at(-1)).toMatch(/casa/);
+    const door = ca.places!.find((p) => p.kind === "door" && p.venue === "casa")!;
+    Object.assign(a, { x: door.x, y: door.y });
+    await life.handle(a, { a: "buy_house", i: door.interiors![0]! });
+    await life.handle(a, { a: "exit" });
+    await life.handle(a, { a: "buy_car", i: "hilux" });
+    expect(selves.get(a)!.car).toBe("hilux");
+    const m1 = selves.get(a)!.money;
+    await life.handle(a, { a: "travel", i: "xipuli", t: "carro" });
+    expect(selves.get(a)!.money).toBe(m1 - 300);
+    expect(selves.get(a)!.travel).toMatchObject({ by: "carro" });
+  });
+});

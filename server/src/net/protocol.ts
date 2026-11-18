@@ -87,14 +87,15 @@ export const ActionSchema = z
       "bank_out",
       "service",
       "home_eat",
-      // viajar para outro bairro (candongueiro)
+      // viajar para outro bairro (candongueiro, autocarro, carro…)
       "travel",
+      "buy_car",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */
     n: z.number().int().min(1).max(1_000_000_000).optional(),
     /** meio de transporte (viagens) */
-    t: z.enum(["candongueiro", "kupapata", "taxi"]).optional(),
+    t: z.enum(["autocarro", "candongueiro", "kupapata", "taxi", "carro"]).optional(),
   })
   .strict();
 export type ActionMessage = z.infer<typeof ActionSchema>;

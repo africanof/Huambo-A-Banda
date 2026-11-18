@@ -1,0 +1,35 @@
+{
+ "spec": {
+  "id": "kit_sao_pedro_r1",
+  "kind": "bairro_kit",
+  "context_only": true,
+  "refs": [
+   "kit_sao_pedro"
+  ],
+  "size": "3840x2160",
+  "quality": "high",
+  "prompt": "EDIT the attached asset sheet. Keep EXACTLY the same objects, the same number of objects, in the SAME positions and order on the sheet, the same sizes, colours, materials and the same isometric camera elevation (2:1 dimetric), transparent background, every object separated by transparent space. ONLY change the viewing direction: Show every building from its RIGHT-BACK corner: the FRONT facade (the one with the shop sign and the main door) must NOT be visible. The side wall that was on the RIGHT side in the original image is now drawn on the LEFT side, and on the RIGHT side you now see the BACK wall of the building (back door, back windows, water tank, yard). Other objects (trees, cars, stalls, people) are seen from that same new side."
+ },
+ "request": {
+  "model": "gpt-image-2.6-sunburst",
+  "prompt": "High-definition 2D game art for a modern, polished life-simulation game (cozy, detailed, professional mobile game quality). Clean digital illustration with crisp edges, soft painterly shading, gentle ambient occlusion, warm natural daylight coming from the top-left. Consistent isometric camera: 2:1 dimetric projection (about 30 degrees elevation, rotated 45 degrees), as in classic isometric life-sim games.\nHuge game ASSET SHEET for ONE whole Huambo neighbourhood: many separate, fully isolated isometric game assets laid out in a loose grid on a fully transparent background, each asset completely visible and separated from the others by clear empty space (no overlapping, no ground between them, no streets, no shadows connecting them). All assets share the same isometric camera, light direction and scale (a 2-storey house is about 1.5 times the height of a person-sized street lamp ratio as in reality). Bigger buildings first in the upper rows, smaller props below.\nEDIT the attached asset sheet. Keep EXACTLY the same objects, the same number of objects, in the SAME positions and order on the sheet, the same sizes, colours, materials and the same isometric camera elevation (2:1 dimetric), transparent background, every object separated by transparent space. ONLY change the viewing direction: Show every building from its RIGHT-BACK corner: the FRONT facade (the one with the shop sign and the main door) must NOT be visible. The side wall that was on the RIGHT side in the original image is now drawn on the LEFT side, and on the RIGHT side you now see the BACK wall of the building (back door, back windows, water tank, yard). Other objects (trees, cars, stalls, people) are seen from that same new side.\nSetting: the real city of Huambo, Angola, exactly as shown in the attached reference photographs of present-day Huambo. Reproduce the real architecture, materials, colors, wear, signage style, vegetation, street furniture, vehicles and the way people dress as seen in those photos. Do not invent a generic city.\nAvoid: pixel art, low resolution, blur, photo-realism, 3D render look, watermarks, extra limbs, cropped parts, background scenery.",
+  "size": "3840x2160",
+  "quality": "high",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1
+ },
+ "usage": {
+  "input_tokens": 1986,
+  "input_tokens_details": {
+   "image_tokens": 1508,
+   "text_tokens": 478
+  },
+  "output_tokens": 3336,
+  "output_tokens_details": {
+   "image_tokens": 3336,
+   "text_tokens": 0
+  },
+  "total_tokens": 5322
+ }
+}

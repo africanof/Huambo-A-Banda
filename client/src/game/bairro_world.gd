@@ -66,6 +66,7 @@ func _ready() -> void:
 		if not _travelling:
 			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn"))
 	Net.self_updated.connect(_on_self)
+	Net.self_updated.connect(func(_m: Dictionary) -> void: _update_parked_car())
 	for id: int in Net.entities:
 		var e: Dictionary = Net.entities[id]
 		_spawn(id, e.name, e.pos, e.appearance)
@@ -145,6 +146,8 @@ func _process(delta: float) -> void:
 				camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
 		if mode3d != "" and view3d:
+			var room := view.interior_at(local_char.world_pos)
+			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
 			view3d.sync_people(avatars, Net.self_id)
 			view3d.update_camera(local_char.world_pos, delta)
 		view.update_occlusion(local_char.position, delta)
@@ -196,6 +199,36 @@ func _on_self(me: Dictionary) -> void:
 
 
 var _bairro_id := ""
+var _car_sprite: Node2D
+var _car_key := ""
+const CAR_SPRITES := {"corolla_usado": "f_carro", "hilux": "f_hilux", "jipe": "f_carro2"}
+
+
+## O meu carro fica estacionado à frente da minha casa neste bairro (tocar → Viajar de carro).
+func _update_parked_car() -> void:
+	var car: Variant = Net.me.get("car")
+	var home_door := Vector2.INF
+	for h: Dictionary in Net.me.get("homes", []):
+		for i: Dictionary in view.interiors:
+			if str(i.id) == str(h.unit):
+				for p: Dictionary in view.places:
+					if str(p.id) == str(i.get("building", "")):
+						home_door = Vector2(p.at[0], p.at[1])
+	var key := "%s|%s|%d" % [car, home_door, Iso.rot]
+	if key == _car_key:
+		return
+	_car_key = key
+	if _car_sprite:
+		_car_sprite.queue_free()
+		_car_sprite = null
+	view.places = view.places.filter(func(p: Dictionary) -> bool: return str(p.kind) != "car")
+	if car == null or home_door == Vector2.INF:
+		return
+	var at := home_door + Vector2(2.6, 1.4)
+	_car_sprite = DemoAssets.make_sprite(CAR_SPRITES.get(str(car), "f_carro"))
+	_car_sprite.position = Iso.to_screen(at)
+	view.objects.add_child(_car_sprite)
+	view.places.append({"id": "car", "kind": "car", "name": "O teu carro", "at": [at.x, at.y], "radius": 2.4})
 
 
 func _district_name(id: String) -> String:
@@ -236,8 +269,9 @@ func _save_rot() -> void:
 
 ## 🔄 Rodar a vista 90° (o mundo e o servidor ficam iguais: só muda a projeção).
 func rotate_view() -> void:
-	if _inside_id != "" and _inside_id != "?":
-		hud.show_toast("Dentro dos edifícios a vista não roda.", false)
+	var inside := view.interior_at(local_char.world_pos) if local_char else {}
+	if not inside.is_empty() and not view.room_has_angle(inside, (_rot_user + 1) % 4):
+		hud.show_toast("Esta sala ainda não tem arte dos outros lados.", false)
 		return
 	_rot_user = (_rot_user + 1) % 4
 	_save_rot()
@@ -265,6 +299,9 @@ func _apply_rot(r: int, animate: bool) -> void:
 	if local_char:
 		local_char.obstacles = view.obstacles
 	old.queue_free()
+	_car_key = ""
+	_car_sprite = null
+	_update_parked_car()
 	var inside := _inside_id
 	_inside_id = "?"
 	_set_street_limits()
@@ -290,9 +327,7 @@ func _update_inside() -> void:
 	var id := str(i.get("id", ""))
 	if id == _inside_id:
 		return
-	if not i.is_empty() and mode3d != "":
-		_set_mode3d("")
-	var want := 0 if not i.is_empty() else _rot_user
+	var want := _rot_user if i.is_empty() or view.room_has_angle(i, _rot_user) else 0
 	if want != Iso.rot:
 		_apply_rot(want, false)
 		i = view.interior_at(local_char.world_pos)
@@ -331,9 +366,6 @@ func _update_inside() -> void:
 
 
 func _set_mode3d(m: String) -> void:
-	if m != "" and _inside_id != "" and _inside_id != "?":
-		hud.show_toast("Dentro dos edifícios usa-se a vista de cima.", false)
-		return
 	mode3d = m
 	if m == "":
 		if view3d:

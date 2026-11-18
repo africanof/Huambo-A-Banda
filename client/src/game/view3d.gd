@@ -24,6 +24,30 @@ var _joy_knob: Control
 var _joy_finger := -1
 var _look_finger := -1
 var _view: BairroView
+var room_bounds := Rect2() ## dentro de uma sala: a câmara não sai das paredes
+var _boards: Array = [] ## [Sprite3D, id base] — painéis que mudam de arte com o lado da câmara
+var _board_rot := -1
+
+
+## Projeção isométrica relativa (px do jogo) de um deslocamento no chão, vista do ângulo r.
+static func rel(r: int, dx: float, dy: float) -> Vector2:
+	var v := Vector2(dx, dy)
+	match r:
+		1: v = Vector2(-dy, dx)
+		2: v = Vector2(-dx, -dy)
+		3: v = Vector2(dy, -dx)
+	return Vector2((v.x - v.y) * 64.0, (v.x + v.y) * 32.0)
+
+
+## Ângulo de arte (0–3) mais parecido com a direção para onde a câmara 3D olha.
+func art_rot() -> int:
+	var fwd := Vector2(sin(yaw), cos(yaw))
+	var looks := [Vector2(-1, -1), Vector2(-1, 1), Vector2(1, 1), Vector2(1, -1)]
+	var best := 0
+	for r in 4:
+		if fwd.dot(looks[r].normalized()) > fwd.dot(looks[best].normalized()):
+			best = r
+	return best
 
 
 func _ready() -> void:
@@ -69,6 +93,8 @@ func build(v: BairroView) -> void:
 		_billboard(str(p.id), Vector2(p.at[0], p.at[1]))
 	for pt: Dictionary in data.get("portals", []):
 		_label3d("→ " + str(pt.name), Vector3(pt.at[0], 2.2, pt.at[1]), 64)
+	for i: Dictionary in v.interiors:
+		_room(i)
 
 
 func _mat(kind: String) -> StandardMaterial3D:
@@ -175,13 +201,27 @@ func _building(b: Dictionary) -> void:
 	var tsz := texture.get_size()
 	# faces: [cantos 3D (u0v0, u1v0, u1v1, u0v1), p0, eu, ev, sombra]
 	var faces := [
-		[[Vector3(x, 0, y + d), Vector3(x + w, 0, y + d), Vector3(x + w, hm, y + d), Vector3(x, hm, y + d)], A, F - A, up, 1.0], # frente-esquerda
-		[[Vector3(x + w, 0, y), Vector3(x + w, 0, y + d), Vector3(x + w, hm, y + d), Vector3(x + w, hm, y)], B, F - B, up, 0.88], # frente-direita
-		[[Vector3(x + w, 0, y), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x + w, hm, y)], A, F - A, up, 0.8], # traseiras (repete a frente)
-		[[Vector3(x, 0, y + d), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x, hm, y + d)], B, F - B, up, 0.75],
+		[[Vector3(x, 0, y + d), Vector3(x + w, 0, y + d), Vector3(x + w, hm, y + d), Vector3(x, hm, y + d)], A, F - A, up, 1.0, texture], # frente-esquerda
+		[[Vector3(x + w, 0, y), Vector3(x + w, 0, y + d), Vector3(x + w, hm, y + d), Vector3(x + w, hm, y)], B, F - B, up, 0.88, texture], # frente-direita
 		[[Vector3(x, hm, y), Vector3(x + w, hm, y), Vector3(x + w, hm, y + d), Vector3(x, hm, y + d)],
-			F + rel.call(-w, -d) + up, rel.call(w, 0.0), rel.call(0.0, d), 1.0], # telhado
+			F + rel.call(-w, -d) + up, rel.call(w, 0.0), rel.call(0.0, d), 1.0, texture], # telhado
 	]
+	var back_id := DemoAssets.angle_id(str(b.id), 2)
+	if back_id != str(b.id):
+		# traseiras verdadeiras: a arte vista por trás (canto da frente = (x, y))
+		var ob := DemoAssets.object(back_id)
+		var tb := DemoAssets.texture_of(back_id)
+		var sb := float(ob.get("scale", sc))
+		var F2 := Vector2(ob.anchor[0], ob.anchor[1])
+		var Pyw: Vector2 = F2 + View3D.rel(2, w, 0) / sb # (x+w, y)
+		var Pxd: Vector2 = F2 + View3D.rel(2, 0, d) / sb # (x, y+d)
+		var h2 := _wall_height_px(tb, Pyw, Pxd)
+		var up2 := Vector2(0, -hpx * sc / sb)
+		faces.append([[Vector3(x + w, 0, y), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x + w, hm, y)], Pyw, F2 - Pyw, up2, 0.8, tb])
+		faces.append([[Vector3(x, 0, y + d), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x, hm, y + d)], Pxd, F2 - Pxd, up2, 0.75, tb])
+	else:
+		faces.append([[Vector3(x + w, 0, y), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x + w, hm, y)], A, F - A, up, 0.8, texture])
+		faces.append([[Vector3(x, 0, y + d), Vector3(x, 0, y), Vector3(x, hm, y), Vector3(x, hm, y + d)], B, F - B, up, 0.75, texture])
 	for f: Array in faces:
 		var st := SurfaceTool.new()
 		st.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -194,8 +234,8 @@ func _building(b: Dictionary) -> void:
 		mi.mesh = st.commit()
 		var mat := ShaderMaterial.new()
 		mat.shader = FACADE
-		mat.set_shader_parameter("tex", texture)
-		mat.set_shader_parameter("tsize", tsz)
+		mat.set_shader_parameter("tex", f[5])
+		mat.set_shader_parameter("tsize", (f[5] as Texture2D).get_size())
 		mat.set_shader_parameter("p0", f[1])
 		mat.set_shader_parameter("eu", f[2])
 		mat.set_shader_parameter("ev", f[3])
@@ -241,6 +281,99 @@ func _billboard(id: String, at: Vector2) -> void:
 	s.offset = Vector2(-float(o.anchor[0]), -(s.texture.get_height() - float(o.anchor[1])))
 	s.position = Vector3(at.x, 0, at.y)
 	root.add_child(s)
+	_boards.append([s, id])
+
+
+## Troca a arte dos painéis (árvores, carros, bancas, móveis) para o lado de onde a câmara olha.
+func _update_boards() -> void:
+	var r := art_rot()
+	if r == _board_rot:
+		return
+	_board_rot = r
+	for bd: Array in _boards:
+		var s: Sprite3D = bd[0]
+		var aid := DemoAssets.angle_id(str(bd[1]), r)
+		var o := DemoAssets.object(aid)
+		s.texture = DemoAssets.texture_of(aid)
+		s.pixel_size = float(o.get("scale", 1.0)) / PX_PER_M
+		s.offset = Vector2(-float(o.anchor[0]), -(s.texture.get_height() - float(o.anchor[1])))
+
+
+## Sala 3D: chão e as 4 paredes pintados com a arte da sala (as paredes da frente vêm da arte
+## da sala vista do outro lado, quando existe); a mobília em painéis.
+func _room(i: Dictionary) -> void:
+	var rid := str(i.get("room", ""))
+	var o := DemoAssets.object(rid)
+	if o.is_empty():
+		return
+	var r: Array = i.rect
+	var x := float(r[0])
+	var y := float(r[1])
+	var w := float(r[2])
+	var d := float(r[3])
+	var t0 := DemoAssets.texture_of(rid)
+	var s0 := float(o.get("scale", 1.0))
+	var F := Vector2(o.anchor[0], o.anchor[1])
+	var back: Vector2 = F + View3D.rel(0, -w, -d) / s0
+	var hpx := _top_above(t0, back)
+	var hm := clampf(hpx * s0 / PX_PER_M, 2.6, 4.0)
+	var up := Vector2(0, -hm * PX_PER_M / s0)
+	var faces := [
+		[[Vector3(x, 0, y), Vector3(x + w, 0, y), Vector3(x + w, 0, y + d), Vector3(x, 0, y + d)], back, View3D.rel(0, w, 0) / s0, View3D.rel(0, 0, d) / s0, 1.0, t0], # chão
+		[[Vector3(x, 0, y), Vector3(x, 0, y + d), Vector3(x, hm, y + d), Vector3(x, hm, y)], back, View3D.rel(0, 0, d) / s0, up, 0.9, t0], # parede x0
+		[[Vector3(x, 0, y), Vector3(x + w, 0, y), Vector3(x + w, hm, y), Vector3(x, hm, y)], back, View3D.rel(0, w, 0) / s0, up, 1.0, t0], # parede y0
+	]
+	var rid2 := DemoAssets.angle_id(rid, 2)
+	var o2 := DemoAssets.object(rid2)
+	var t2 := DemoAssets.texture_of(rid2)
+	var s2 := float(o2.get("scale", s0))
+	var back2: Vector2 = Vector2(o2.anchor[0], o2.anchor[1]) + View3D.rel(2, w, d) / s2 if rid2 != rid else back
+	var up2 := Vector2(0, -hm * PX_PER_M / s2)
+	var r2 := 2 if rid2 != rid else 0
+	faces.append([[Vector3(x + w, 0, y + d), Vector3(x + w, 0, y), Vector3(x + w, hm, y), Vector3(x + w, hm, y + d)], back2,
+		View3D.rel(r2, 0, -d if r2 == 2 else d) / s2, up2, 0.9, t2]) # parede x0+w
+	faces.append([[Vector3(x + w, 0, y + d), Vector3(x, 0, y + d), Vector3(x, hm, y + d), Vector3(x + w, hm, y + d)], back2,
+		View3D.rel(r2, -w if r2 == 2 else w, 0) / s2, up2, 1.0, t2]) # parede y0+d
+	for f: Array in faces:
+		var st := SurfaceTool.new()
+		st.begin(Mesh.PRIMITIVE_TRIANGLES)
+		var c: Array = f[0]
+		var uvs := [Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1)]
+		for k: int in [0, 1, 2, 0, 2, 3]:
+			st.set_uv(uvs[k])
+			st.add_vertex(c[k])
+		var mi := MeshInstance3D.new()
+		mi.mesh = st.commit()
+		var mat := ShaderMaterial.new()
+		mat.shader = FACADE
+		mat.set_shader_parameter("tex", f[5])
+		mat.set_shader_parameter("tsize", (f[5] as Texture2D).get_size())
+		mat.set_shader_parameter("p0", f[1])
+		mat.set_shader_parameter("eu", f[2])
+		mat.set_shader_parameter("ev", f[3])
+		mat.set_shader_parameter("shade", f[4])
+		mi.material_override = mat
+		root.add_child(mi)
+	for fu: Dictionary in i.get("furniture", []):
+		var fo := DemoAssets.object(str(fu.id))
+		if fo.is_empty():
+			continue
+		var fp := Vector2(fo.footprint[0], fo.footprint[1])
+		_billboard(str(fu.id), Vector2(fu.at[0], fu.at[1]) + fp / 2.0)
+
+
+## Altura (px) da arte por cima de um ponto da imagem (canto do fundo da sala).
+func _top_above(texture: Texture2D, p: Vector2) -> float:
+	var img := texture.get_image()
+	if img == null:
+		return 300.0
+	if img.is_compressed():
+		img.decompress()
+	var cx := clampi(int(p.x), 0, img.get_width() - 1)
+	for yy in range(0, int(p.y)):
+		if img.get_pixel(cx, yy).a > 0.5:
+			return p.y - yy
+	return 300.0
 
 
 func _label3d(text: String, at: Vector3, fs: int) -> void:
@@ -273,6 +406,9 @@ func sync_people(avatars: Dictionary, self_id: int) -> void:
 			s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 			s.pixel_size = 0.5 / PX_PER_M
 			s.centered = false
+			var rm := ShaderMaterial.new()
+			rm.shader = preload("res://src/demo/recolor3d.gdshader")
+			s.material_override = rm
 			var tag := Label3D.new()
 			tag.text = c.tag.text
 			tag.font_size = 40
@@ -290,25 +426,42 @@ func sync_people(avatars: Dictionary, self_id: int) -> void:
 		if tex:
 			s3.offset = Vector2(-tex.get_width() * 0.5, 0)
 		var moving := str(c.body.animation).begins_with("walk")
+		# 8 direções: ângulo entre para onde a pessoa vai e para onde a câmara olha
 		var fwd := Vector2(sin(yaw), cos(yaw))
-		var toward_cam := c.last_dir.dot(fwd) < 0.0 if c.last_dir != Vector2.ZERO else true
-		var anim := ("walk_" if moving else "idle_") + ("down" if toward_cam else "up")
+		var rel := rad_to_deg(fwd.angle_to(c.last_dir)) # 0 = de costas para nós, ±180 = de frente
+		var ar := absf(rel)
+		var dir := "back" if ar < 22.5 else ("up" if ar < 67.5 else ("side" if ar < 112.5 else ("down" if ar < 157.5 else "front")))
+		if not s3.sprite_frames.has_animation("walk_" + dir):
+			dir = "up" if ar < 90.0 else "down"
+		var anim := ("walk_" if moving else "idle_") + dir
 		if s3.animation != anim:
 			s3.play(anim)
 		s3.speed_scale = c.body.speed_scale
-		s3.flip_h = c.last_dir.cross(fwd) > 0.0 if toward_cam else c.last_dir.cross(fwd) < 0.0
+		s3.flip_h = rel < 0.0 if dir != "side" else rel > 0.0
+		# a mesma cor de roupa escolhida pelo jogador
+		var m2: ShaderMaterial = c.body.material
+		var m3: ShaderMaterial = s3.material_override
+		if m2 and m3:
+			m3.set_shader_parameter("enabled", m2.get_shader_parameter("enabled"))
+			m3.set_shader_parameter("target_hue", m2.get_shader_parameter("target_hue"))
+			m3.set_shader_parameter("source_hue", m2.get_shader_parameter("source_hue"))
 		s3.visible = not (mode == "olhos" and id == self_id)
 
 
 # ------------------------------------------------------------------ câmara e controlos
 
 func update_camera(me: Vector2, delta: float) -> void:
+	_update_boards()
 	var fwd := Vector3(sin(yaw), 0, cos(yaw))
 	var eye := Vector3(me.x, 1.6, me.y)
 	if mode == "olhos":
 		cam.position = eye
 	else:
 		var want := Vector3(me.x, 2.3, me.y) - fwd * 3.6
+		if room_bounds.has_area():
+			# dentro de uma sala: a câmara fica entre as paredes (mais perto da personagem)
+			var g := room_bounds.grow(-0.3)
+			want = Vector3(clampf(want.x, g.position.x, g.end.x), 2.2, clampf(want.z, g.position.y, g.end.y))
 		cam.position = cam.position.lerp(want, clampf(delta * 8.0, 0.0, 1.0)) if cam.position != Vector3.ZERO else want
 	var look := eye + fwd * 10.0 + Vector3(0, tan(pitch) * 10.0, 0)
 	cam.look_at(look, Vector3.UP)
