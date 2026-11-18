@@ -1,0 +1,366 @@
+{
+ "kit": "kit_sao_pedro",
+ "objects": {
+  "sao_pedro_escola": {
+   "category": "building",
+   "size": [
+    1052,
+    417
+   ],
+   "anchor": [
+    678,
+    412
+   ],
+   "footprint": [
+    16.9,
+    9.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_escola",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_escola.png",
+   "name": "Escola Primária de São Pedro"
+  },
+  "sao_pedro_saude": {
+   "category": "building",
+   "size": [
+    749,
+    374
+   ],
+   "anchor": [
+    275,
+    370
+   ],
+   "footprint": [
+    6.8,
+    11.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_saude",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_saude.png",
+   "name": "Centro de Saúde de São Pedro"
+  },
+  "sao_pedro_igreja": {
+   "category": "building",
+   "size": [
+    794,
+    456
+   ],
+   "anchor": [
+    548,
+    452
+   ],
+   "footprint": [
+    13.7,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_igreja",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_igreja.png",
+   "name": "Igreja de São Pedro"
+  },
+  "sao_pedro_mercado": {
+   "category": "building",
+   "size": [
+    1041,
+    396
+   ],
+   "anchor": [
+    587,
+    391
+   ],
+   "footprint": [
+    14.6,
+    11.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_mercado",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_mercado.png",
+   "name": "Mercado de São Pedro"
+  },
+  "sao_pedro_cantina": {
+   "category": "building",
+   "size": [
+    561,
+    375
+   ],
+   "anchor": [
+    307,
+    372
+   ],
+   "footprint": [
+    7.6,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_cantina",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_cantina.png",
+   "name": "Cantina da Tia Joana"
+  },
+  "sao_pedro_farmacia": {
+   "category": "building",
+   "size": [
+    482,
+    358
+   ],
+   "anchor": [
+    292,
+    355
+   ],
+   "footprint": [
+    7.2,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_farmacia",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_farmacia.png",
+   "name": "Farmácia São Pedro"
+  },
+  "sao_pedro_administracao": {
+   "category": "building",
+   "size": [
+    601,
+    375
+   ],
+   "anchor": [
+    443,
+    373
+   ],
+   "footprint": [
+    11.0,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_administracao",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_administracao.png",
+   "name": "Administração de São Pedro"
+  },
+  "sao_pedro_esquadra": {
+   "category": "building",
+   "size": [
+    552,
+    361
+   ],
+   "anchor": [
+    372,
+    359
+   ],
+   "footprint": [
+    9.2,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_esquadra",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_esquadra.png",
+   "name": "Esquadra Policial de São Pedro"
+  },
+  "sao_pedro_padaria": {
+   "category": "building",
+   "size": [
+    498,
+    353
+   ],
+   "anchor": [
+    339,
+    350
+   ],
+   "footprint": [
+    8.4,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_padaria",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_padaria.png",
+   "name": "Padaria São Pedro"
+  },
+  "sao_pedro_correios": {
+   "category": "building",
+   "size": [
+    447,
+    356
+   ],
+   "anchor": [
+    319,
+    354
+   ],
+   "footprint": [
+    7.9,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_correios",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_correios.png",
+   "name": "Correios de São Pedro"
+  },
+  "sao_pedro_apartamentos": {
+   "category": "building",
+   "size": [
+    520,
+    547
+   ],
+   "anchor": [
+    331,
+    544
+   ],
+   "footprint": [
+    8.2,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_apartamentos",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_apartamentos.png",
+   "name": "Prédio São Pedro"
+  },
+  "sao_pedro_casa1": {
+   "category": "building",
+   "size": [
+    559,
+    296
+   ],
+   "anchor": [
+    361,
+    294
+   ],
+   "footprint": [
+    9.0,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa1",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa1.png",
+   "name": "Casa 1"
+  },
+  "sao_pedro_casa2": {
+   "category": "building",
+   "size": [
+    522,
+    295
+   ],
+   "anchor": [
+    365,
+    294
+   ],
+   "footprint": [
+    9.1,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa2",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa2.png",
+   "name": "Casa 2"
+  },
+  "sao_pedro_casa3": {
+   "category": "building",
+   "size": [
+    523,
+    307
+   ],
+   "anchor": [
+    372,
+    305
+   ],
+   "footprint": [
+    9.2,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa3",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa3.png",
+   "name": "Casa 3"
+  },
+  "sao_pedro_casa4": {
+   "category": "building",
+   "size": [
+    522,
+    302
+   ],
+   "anchor": [
+    366,
+    300
+   ],
+   "footprint": [
+    9.1,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa4",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa4.png",
+   "name": "Casa 4"
+  },
+  "sao_pedro_casa5": {
+   "category": "building",
+   "size": [
+    498,
+    309
+   ],
+   "anchor": [
+    327,
+    307
+   ],
+   "footprint": [
+    8.1,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa5",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa5.png",
+   "name": "Casa 5"
+  },
+  "sao_pedro_casa6": {
+   "category": "building",
+   "size": [
+    511,
+    323
+   ],
+   "anchor": [
+    350,
+    321
+   ],
+   "footprint": [
+    8.7,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa6",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa6.png",
+   "name": "Casa 6"
+  },
+  "sao_pedro_casa7": {
+   "category": "building",
+   "size": [
+    553,
+    293
+   ],
+   "anchor": [
+    384,
+    292
+   ],
+   "footprint": [
+    9.6,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "sao_pedro_casa7",
+   "kit": "kit_sao_pedro",
+   "path": "res://assets/kits/kit_sao_pedro/sao_pedro_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "b62b8343c160"
+}

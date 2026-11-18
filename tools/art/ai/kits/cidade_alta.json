@@ -1,0 +1,147 @@
+{
+ "id": "kit_cidade_alta",
+ "cuts": "raw/kit_cidade_alta_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "cidade_alta_escola",
+   "name": "Escola Primária da Cidade Alta",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "cidade_alta_saude",
+   "name": "Hospital Geral do Huambo",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "cidade_alta_igreja",
+   "name": "Sé Catedral de Nossa Senhora da Conceição",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "cidade_alta_mercado",
+   "name": "Mercado da Cidade Alta",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "cidade_alta_cantina",
+   "name": "Cantina Planalto",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "cidade_alta_farmacia",
+   "name": "Farmácia Cidade Alta",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "cidade_alta_administracao",
+   "name": "Administração da Cidade Alta",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "cidade_alta_governo",
+   "name": "Palácio do Governo Provincial do Huambo",
+   "cat": "building",
+   "venue": "governo"
+  },
+  {
+   "n": 8,
+   "id": "cidade_alta_banco",
+   "name": "Banco BAI",
+   "cat": "building",
+   "venue": "banco"
+  },
+  {
+   "n": 9,
+   "id": "cidade_alta_hotel",
+   "name": "Hotel Cidade Alta",
+   "cat": "building",
+   "venue": "hotel"
+  },
+  {
+   "n": 10,
+   "id": "cidade_alta_correios",
+   "name": "Correios da Cidade Alta",
+   "cat": "building",
+   "venue": "correios"
+  },
+  {
+   "n": 11,
+   "id": "cidade_alta_tribunal",
+   "name": "Tribunal Provincial do Huambo",
+   "cat": "building",
+   "venue": "tribunal"
+  },
+  {
+   "n": 12,
+   "id": "cidade_alta_apartamentos",
+   "name": "Prédio Cidade Alta",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 13,
+   "id": "cidade_alta_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "cidade_alta_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "cidade_alta_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "cidade_alta_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "cidade_alta_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "cidade_alta_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 19,
+   "id": "cidade_alta_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

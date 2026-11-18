@@ -1,0 +1,386 @@
+{
+ "kit": "kit_salucombo",
+ "objects": {
+  "salucombo_escola": {
+   "category": "building",
+   "size": [
+    960,
+    457
+   ],
+   "anchor": [
+    585,
+    451
+   ],
+   "footprint": [
+    14.6,
+    9.3
+   ],
+   "scale": 1.6,
+   "out": "salucombo_escola",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_escola.png",
+   "name": "Escola Primária do Salucombo"
+  },
+  "salucombo_saude": {
+   "category": "building",
+   "size": [
+    780,
+    358
+   ],
+   "anchor": [
+    488,
+    355
+   ],
+   "footprint": [
+    12.2,
+    7.3
+   ],
+   "scale": 1.6,
+   "out": "salucombo_saude",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_saude.png",
+   "name": "Centro de Saúde do Salucombo"
+  },
+  "salucombo_igreja": {
+   "category": "building",
+   "size": [
+    697,
+    434
+   ],
+   "anchor": [
+    436,
+    431
+   ],
+   "footprint": [
+    10.9,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_igreja",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_igreja.png",
+   "name": "Igreja Evangélica do Salucombo"
+  },
+  "salucombo_mercado": {
+   "category": "building",
+   "size": [
+    922,
+    422
+   ],
+   "anchor": [
+    478,
+    418
+   ],
+   "footprint": [
+    11.9,
+    11.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_mercado",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_mercado.png",
+   "name": "Mercado do Salucombo"
+  },
+  "salucombo_cantina": {
+   "category": "building",
+   "size": [
+    631,
+    380
+   ],
+   "anchor": [
+    448,
+    377
+   ],
+   "footprint": [
+    11.2,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_cantina",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_cantina.png",
+   "name": "Cantina do Salucombo"
+  },
+  "salucombo_farmacia": {
+   "category": "building",
+   "size": [
+    523,
+    339
+   ],
+   "anchor": [
+    339,
+    336
+   ],
+   "footprint": [
+    8.4,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_farmacia",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_farmacia.png",
+   "name": "Farmácia Salucombo"
+  },
+  "salucombo_administracao": {
+   "category": "building",
+   "size": [
+    628,
+    412
+   ],
+   "anchor": [
+    418,
+    409
+   ],
+   "footprint": [
+    10.4,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "salucombo_administracao",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_administracao.png",
+   "name": "Administração do Salucombo"
+  },
+  "salucombo_padaria": {
+   "category": "building",
+   "size": [
+    555,
+    346
+   ],
+   "anchor": [
+    411,
+    343
+   ],
+   "footprint": [
+    10.2,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_padaria",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_padaria.png",
+   "name": "Padaria Salucombo"
+  },
+  "salucombo_discoteca": {
+   "category": "building",
+   "size": [
+    640,
+    397
+   ],
+   "anchor": [
+    412,
+    394
+   ],
+   "footprint": [
+    10.2,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_discoteca",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_discoteca.png",
+   "name": "Discoteca Salucombo"
+  },
+  "salucombo_apartamentos": {
+   "category": "building",
+   "size": [
+    580,
+    634
+   ],
+   "anchor": [
+    335,
+    630
+   ],
+   "footprint": [
+    8.3,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "salucombo_apartamentos",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_apartamentos.png",
+   "name": "Prédio Salucombo"
+  },
+  "salucombo_casa1": {
+   "category": "building",
+   "size": [
+    449,
+    296
+   ],
+   "anchor": [
+    259,
+    292
+   ],
+   "footprint": [
+    6.4,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa1",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa1.png",
+   "name": "Casa 1"
+  },
+  "salucombo_casa2": {
+   "category": "building",
+   "size": [
+    396,
+    272
+   ],
+   "anchor": [
+    250,
+    269
+   ],
+   "footprint": [
+    6.2,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa2",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa2.png",
+   "name": "Casa 2"
+  },
+  "salucombo_casa3": {
+   "category": "building",
+   "size": [
+    379,
+    267
+   ],
+   "anchor": [
+    295,
+    264
+   ],
+   "footprint": [
+    7.3,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa3",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa3.png",
+   "name": "Casa 3"
+  },
+  "salucombo_casa4": {
+   "category": "building",
+   "size": [
+    401,
+    263
+   ],
+   "anchor": [
+    238,
+    261
+   ],
+   "footprint": [
+    5.9,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa4",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa4.png",
+   "name": "Casa 4"
+  },
+  "salucombo_casa5": {
+   "category": "building",
+   "size": [
+    430,
+    293
+   ],
+   "anchor": [
+    251,
+    290
+   ],
+   "footprint": [
+    6.2,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa5",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa5.png",
+   "name": "Casa 5"
+  },
+  "salucombo_casa6": {
+   "category": "building",
+   "size": [
+    421,
+    278
+   ],
+   "anchor": [
+    255,
+    274
+   ],
+   "footprint": [
+    6.3,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa6",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa6.png",
+   "name": "Casa 6"
+  },
+  "salucombo_casa7": {
+   "category": "building",
+   "size": [
+    382,
+    258
+   ],
+   "anchor": [
+    240,
+    256
+   ],
+   "footprint": [
+    6.0,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa7",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa7.png",
+   "name": "Casa 7"
+  },
+  "salucombo_casa8": {
+   "category": "building",
+   "size": [
+    430,
+    271
+   ],
+   "anchor": [
+    265,
+    267
+   ],
+   "footprint": [
+    6.6,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa8",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa8.png",
+   "name": "Casa 8"
+  },
+  "salucombo_casa9": {
+   "category": "building",
+   "size": [
+    444,
+    281
+   ],
+   "anchor": [
+    274,
+    280
+   ],
+   "footprint": [
+    6.8,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "salucombo_casa9",
+   "kit": "kit_salucombo",
+   "path": "res://assets/kits/kit_salucombo/salucombo_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "6a6fe0b16722"
+}

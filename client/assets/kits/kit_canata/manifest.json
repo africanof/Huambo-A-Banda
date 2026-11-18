@@ -1,0 +1,366 @@
+{
+ "kit": "kit_canata",
+ "objects": {
+  "canata_escola": {
+   "category": "building",
+   "size": [
+    949,
+    434
+   ],
+   "anchor": [
+    580,
+    429
+   ],
+   "footprint": [
+    14.5,
+    9.2
+   ],
+   "scale": 1.6,
+   "out": "canata_escola",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_escola.png",
+   "name": "Escola Primária de Canata"
+  },
+  "canata_saude": {
+   "category": "building",
+   "size": [
+    883,
+    385
+   ],
+   "anchor": [
+    570,
+    379
+   ],
+   "footprint": [
+    14.2,
+    7.8
+   ],
+   "scale": 1.6,
+   "out": "canata_saude",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_saude.png",
+   "name": "Centro de Saúde de Canata"
+  },
+  "canata_igreja": {
+   "category": "building",
+   "size": [
+    796,
+    500
+   ],
+   "anchor": [
+    443,
+    497
+   ],
+   "footprint": [
+    11.0,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "canata_igreja",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_igreja.png",
+   "name": "Igreja Evangélica de Canata"
+  },
+  "canata_mercado": {
+   "category": "building",
+   "size": [
+    1028,
+    460
+   ],
+   "anchor": [
+    583,
+    453
+   ],
+   "footprint": [
+    14.5,
+    11.1
+   ],
+   "scale": 1.6,
+   "out": "canata_mercado",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_mercado.png",
+   "name": "Mercado de Canata"
+  },
+  "canata_cantina": {
+   "category": "building",
+   "size": [
+    558,
+    388
+   ],
+   "anchor": [
+    368,
+    385
+   ],
+   "footprint": [
+    9.2,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "canata_cantina",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_cantina.png",
+   "name": "Cantina do Kota Zé"
+  },
+  "canata_farmacia": {
+   "category": "building",
+   "size": [
+    454,
+    362
+   ],
+   "anchor": [
+    273,
+    359
+   ],
+   "footprint": [
+    6.8,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "canata_farmacia",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_farmacia.png",
+   "name": "Farmácia Canata"
+  },
+  "canata_administracao": {
+   "category": "building",
+   "size": [
+    608,
+    393
+   ],
+   "anchor": [
+    397,
+    389
+   ],
+   "footprint": [
+    9.9,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "canata_administracao",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_administracao.png",
+   "name": "Administração de Canata"
+  },
+  "canata_churrasqueira": {
+   "category": "building",
+   "size": [
+    568,
+    379
+   ],
+   "anchor": [
+    390,
+    376
+   ],
+   "footprint": [
+    9.7,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "canata_churrasqueira",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_churrasqueira.png",
+   "name": "Churrasqueira Canata"
+  },
+  "canata_loja_telecom": {
+   "category": "building",
+   "size": [
+    490,
+    375
+   ],
+   "anchor": [
+    331,
+    372
+   ],
+   "footprint": [
+    8.2,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "canata_loja_telecom",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_loja_telecom.png",
+   "name": "Loja Unitel Canata"
+  },
+  "canata_discoteca": {
+   "category": "building",
+   "size": [
+    487,
+    383
+   ],
+   "anchor": [
+    320,
+    381
+   ],
+   "footprint": [
+    8.0,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "canata_discoteca",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_discoteca.png",
+   "name": "Discoteca Canata"
+  },
+  "canata_apartamentos": {
+   "category": "building",
+   "size": [
+    484,
+    528
+   ],
+   "anchor": [
+    278,
+    525
+   ],
+   "footprint": [
+    6.9,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "canata_apartamentos",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_apartamentos.png",
+   "name": "Prédio Canata"
+  },
+  "canata_casa1": {
+   "category": "building",
+   "size": [
+    527,
+    291
+   ],
+   "anchor": [
+    362,
+    289
+   ],
+   "footprint": [
+    9.0,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "canata_casa1",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa1.png",
+   "name": "Casa 1"
+  },
+  "canata_casa2": {
+   "category": "building",
+   "size": [
+    511,
+    297
+   ],
+   "anchor": [
+    310,
+    295
+   ],
+   "footprint": [
+    7.7,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "canata_casa2",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa2.png",
+   "name": "Casa 2"
+  },
+  "canata_casa3": {
+   "category": "building",
+   "size": [
+    529,
+    303
+   ],
+   "anchor": [
+    342,
+    301
+   ],
+   "footprint": [
+    8.5,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "canata_casa3",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa3.png",
+   "name": "Casa 3"
+  },
+  "canata_casa4": {
+   "category": "building",
+   "size": [
+    498,
+    300
+   ],
+   "anchor": [
+    321,
+    298
+   ],
+   "footprint": [
+    8.0,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "canata_casa4",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa4.png",
+   "name": "Casa 4"
+  },
+  "canata_casa5": {
+   "category": "building",
+   "size": [
+    526,
+    305
+   ],
+   "anchor": [
+    328,
+    301
+   ],
+   "footprint": [
+    8.2,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "canata_casa5",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa5.png",
+   "name": "Casa 5"
+  },
+  "canata_casa6": {
+   "category": "building",
+   "size": [
+    517,
+    296
+   ],
+   "anchor": [
+    327,
+    293
+   ],
+   "footprint": [
+    8.1,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "canata_casa6",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa6.png",
+   "name": "Casa 6"
+  },
+  "canata_casa7": {
+   "category": "building",
+   "size": [
+    578,
+    287
+   ],
+   "anchor": [
+    325,
+    284
+   ],
+   "footprint": [
+    8.1,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "canata_casa7",
+   "kit": "kit_canata",
+   "path": "res://assets/kits/kit_canata/canata_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "2c528f7de033"
+}

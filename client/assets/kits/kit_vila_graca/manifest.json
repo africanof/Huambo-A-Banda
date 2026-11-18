@@ -1,0 +1,386 @@
+{
+ "kit": "kit_vila_graca",
+ "objects": {
+  "vila_graca_escola": {
+   "category": "building",
+   "size": [
+    923,
+    458
+   ],
+   "anchor": [
+    596,
+    454
+   ],
+   "footprint": [
+    14.9,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_escola",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_escola.png",
+   "name": "Escola Primária da Vila Graça"
+  },
+  "vila_graca_saude": {
+   "category": "building",
+   "size": [
+    873,
+    423
+   ],
+   "anchor": [
+    548,
+    419
+   ],
+   "footprint": [
+    13.7,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_saude",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_saude.png",
+   "name": "Centro de Saúde da Vila Graça"
+  },
+  "vila_graca_igreja": {
+   "category": "building",
+   "size": [
+    716,
+    535
+   ],
+   "anchor": [
+    430,
+    531
+   ],
+   "footprint": [
+    10.7,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_igreja",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_igreja.png",
+   "name": "Igreja Evangélica da Vila Graça"
+  },
+  "vila_graca_mercado": {
+   "category": "building",
+   "size": [
+    1185,
+    503
+   ],
+   "anchor": [
+    685,
+    498
+   ],
+   "footprint": [
+    17.1,
+    12.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_mercado",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_mercado.png",
+   "name": "Mercado da Vila Graça"
+  },
+  "vila_graca_cantina": {
+   "category": "building",
+   "size": [
+    640,
+    399
+   ],
+   "anchor": [
+    404,
+    396
+   ],
+   "footprint": [
+    10.0,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_cantina",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_cantina.png",
+   "name": "Cantina da Vila Graça"
+  },
+  "vila_graca_farmacia": {
+   "category": "building",
+   "size": [
+    591,
+    385
+   ],
+   "anchor": [
+    360,
+    382
+   ],
+   "footprint": [
+    9.0,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_farmacia",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_farmacia.png",
+   "name": "Farmácia Vila Graça"
+  },
+  "vila_graca_administracao": {
+   "category": "building",
+   "size": [
+    706,
+    430
+   ],
+   "anchor": [
+    492,
+    427
+   ],
+   "footprint": [
+    12.2,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_administracao",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_administracao.png",
+   "name": "Administração da Vila Graça"
+  },
+  "vila_graca_padaria": {
+   "category": "building",
+   "size": [
+    582,
+    396
+   ],
+   "anchor": [
+    373,
+    394
+   ],
+   "footprint": [
+    9.2,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_padaria",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_padaria.png",
+   "name": "Padaria Vila Graça"
+  },
+  "vila_graca_loja_telecom": {
+   "category": "building",
+   "size": [
+    547,
+    397
+   ],
+   "anchor": [
+    348,
+    393
+   ],
+   "footprint": [
+    8.7,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_loja_telecom",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_loja_telecom.png",
+   "name": "Loja Unitel Vila Graça"
+  },
+  "vila_graca_apartamentos": {
+   "category": "building",
+   "size": [
+    512,
+    500
+   ],
+   "anchor": [
+    321,
+    497
+   ],
+   "footprint": [
+    8.0,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_apartamentos",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_apartamentos.png",
+   "name": "Prédio Vila Graça"
+  },
+  "vila_graca_casa1": {
+   "category": "building",
+   "size": [
+    433,
+    285
+   ],
+   "anchor": [
+    285,
+    282
+   ],
+   "footprint": [
+    7.1,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa1",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa1.png",
+   "name": "Casa 1"
+  },
+  "vila_graca_casa2": {
+   "category": "building",
+   "size": [
+    397,
+    278
+   ],
+   "anchor": [
+    260,
+    277
+   ],
+   "footprint": [
+    6.5,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa2",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa2.png",
+   "name": "Casa 2"
+  },
+  "vila_graca_casa3": {
+   "category": "building",
+   "size": [
+    409,
+    270
+   ],
+   "anchor": [
+    264,
+    268
+   ],
+   "footprint": [
+    6.6,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa3",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa3.png",
+   "name": "Casa 3"
+  },
+  "vila_graca_casa4": {
+   "category": "building",
+   "size": [
+    385,
+    272
+   ],
+   "anchor": [
+    236,
+    269
+   ],
+   "footprint": [
+    5.9,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa4",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa4.png",
+   "name": "Casa 4"
+  },
+  "vila_graca_casa5": {
+   "category": "building",
+   "size": [
+    334,
+    262
+   ],
+   "anchor": [
+    203,
+    259
+   ],
+   "footprint": [
+    5.0,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa5",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa5.png",
+   "name": "Casa 5"
+  },
+  "vila_graca_casa6": {
+   "category": "building",
+   "size": [
+    432,
+    291
+   ],
+   "anchor": [
+    283,
+    289
+   ],
+   "footprint": [
+    7.0,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa6",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa6.png",
+   "name": "Casa 6"
+  },
+  "vila_graca_casa7": {
+   "category": "building",
+   "size": [
+    410,
+    270
+   ],
+   "anchor": [
+    268,
+    267
+   ],
+   "footprint": [
+    6.7,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa7",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa7.png",
+   "name": "Casa 7"
+  },
+  "vila_graca_casa8": {
+   "category": "building",
+   "size": [
+    366,
+    282
+   ],
+   "anchor": [
+    227,
+    279
+   ],
+   "footprint": [
+    5.6,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa8",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa8.png",
+   "name": "Casa 8"
+  },
+  "vila_graca_casa9": {
+   "category": "building",
+   "size": [
+    527,
+    285
+   ],
+   "anchor": [
+    310,
+    281
+   ],
+   "footprint": [
+    7.7,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "vila_graca_casa9",
+   "kit": "kit_vila_graca",
+   "path": "res://assets/kits/kit_vila_graca/vila_graca_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "217886ab3ca0"
+}

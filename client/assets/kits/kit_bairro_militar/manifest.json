@@ -1,0 +1,366 @@
+{
+ "kit": "kit_bairro_militar",
+ "objects": {
+  "bairro_militar_escola": {
+   "category": "building",
+   "size": [
+    1007,
+    424
+   ],
+   "anchor": [
+    694,
+    421
+   ],
+   "footprint": [
+    17.3,
+    7.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_escola",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_escola.png",
+   "name": "Escola Primária do Bairro Militar"
+  },
+  "bairro_militar_saude": {
+   "category": "building",
+   "size": [
+    881,
+    384
+   ],
+   "anchor": [
+    383,
+    379
+   ],
+   "footprint": [
+    9.5,
+    12.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_saude",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude.png",
+   "name": "Centro de Saúde do Bairro Militar"
+  },
+  "bairro_militar_igreja": {
+   "category": "building",
+   "size": [
+    847,
+    463
+   ],
+   "anchor": [
+    531,
+    459
+   ],
+   "footprint": [
+    13.2,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_igreja",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_igreja.png",
+   "name": "Igreja Metodista do Bairro Militar"
+  },
+  "bairro_militar_mercado": {
+   "category": "building",
+   "size": [
+    977,
+    445
+   ],
+   "anchor": [
+    593,
+    440
+   ],
+   "footprint": [
+    14.8,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_mercado",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_mercado.png",
+   "name": "Mercado do Bairro Militar"
+  },
+  "bairro_militar_cantina": {
+   "category": "building",
+   "size": [
+    565,
+    349
+   ],
+   "anchor": [
+    386,
+    346
+   ],
+   "footprint": [
+    9.6,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_cantina",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_cantina.png",
+   "name": "Cantina do Quartel"
+  },
+  "bairro_militar_farmacia": {
+   "category": "building",
+   "size": [
+    535,
+    366
+   ],
+   "anchor": [
+    328,
+    363
+   ],
+   "footprint": [
+    8.2,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_farmacia",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_farmacia.png",
+   "name": "Farmácia Bairro Militar"
+  },
+  "bairro_militar_administracao": {
+   "category": "building",
+   "size": [
+    609,
+    412
+   ],
+   "anchor": [
+    407,
+    409
+   ],
+   "footprint": [
+    10.1,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_administracao",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_administracao.png",
+   "name": "Administração do Bairro Militar"
+  },
+  "bairro_militar_esquadra": {
+   "category": "building",
+   "size": [
+    597,
+    369
+   ],
+   "anchor": [
+    394,
+    366
+   ],
+   "footprint": [
+    9.8,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_esquadra",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_esquadra.png",
+   "name": "Comando da Polícia do Bairro Militar"
+  },
+  "bairro_militar_saude_8": {
+   "category": "building",
+   "size": [
+    723,
+    368
+   ],
+   "anchor": [
+    335,
+    365
+   ],
+   "footprint": [
+    8.3,
+    9.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_saude_8",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_saude_8.png",
+   "name": "Hospital Militar do Huambo"
+  },
+  "bairro_militar_padaria": {
+   "category": "building",
+   "size": [
+    535,
+    385
+   ],
+   "anchor": [
+    344,
+    382
+   ],
+   "footprint": [
+    8.6,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_padaria",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_padaria.png",
+   "name": "Padaria do Bairro Militar"
+  },
+  "bairro_militar_apartamentos": {
+   "category": "building",
+   "size": [
+    424,
+    402
+   ],
+   "anchor": [
+    242,
+    398
+   ],
+   "footprint": [
+    6.0,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_apartamentos",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_apartamentos.png",
+   "name": "Prédio Bairro Militar"
+  },
+  "bairro_militar_casa1": {
+   "category": "building",
+   "size": [
+    487,
+    314
+   ],
+   "anchor": [
+    304,
+    311
+   ],
+   "footprint": [
+    7.5,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa1",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa1.png",
+   "name": "Casa 1"
+  },
+  "bairro_militar_casa2": {
+   "category": "building",
+   "size": [
+    486,
+    283
+   ],
+   "anchor": [
+    309,
+    280
+   ],
+   "footprint": [
+    7.7,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa2",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa2.png",
+   "name": "Casa 2"
+  },
+  "bairro_militar_casa3": {
+   "category": "building",
+   "size": [
+    450,
+    289
+   ],
+   "anchor": [
+    267,
+    287
+   ],
+   "footprint": [
+    6.6,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa3",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa3.png",
+   "name": "Casa 3"
+  },
+  "bairro_militar_casa4": {
+   "category": "building",
+   "size": [
+    466,
+    297
+   ],
+   "anchor": [
+    301,
+    294
+   ],
+   "footprint": [
+    7.5,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa4",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa4.png",
+   "name": "Casa 4"
+  },
+  "bairro_militar_casa5": {
+   "category": "building",
+   "size": [
+    478,
+    312
+   ],
+   "anchor": [
+    334,
+    310
+   ],
+   "footprint": [
+    8.3,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa5",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa5.png",
+   "name": "Casa 5"
+  },
+  "bairro_militar_casa6": {
+   "category": "building",
+   "size": [
+    468,
+    280
+   ],
+   "anchor": [
+    300,
+    277
+   ],
+   "footprint": [
+    7.5,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa6",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa6.png",
+   "name": "Casa 6"
+  },
+  "bairro_militar_casa7": {
+   "category": "building",
+   "size": [
+    433,
+    296
+   ],
+   "anchor": [
+    290,
+    293
+   ],
+   "footprint": [
+    7.2,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_militar_casa7",
+   "kit": "kit_bairro_militar",
+   "path": "res://assets/kits/kit_bairro_militar/bairro_militar_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "50b1d55b4525"
+}

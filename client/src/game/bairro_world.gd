@@ -159,7 +159,9 @@ func _on_self(me: Dictionary) -> void:
 		return
 	_travelling = true
 	hud.show_toast("A viajar para o outro bairro…", true)
-	var err: String = await Net.join_district(str(t.district))
+	var err: String = await Packs.ensure_bairro(str(t.district))
+	if err == "":
+		err = await Net.join_district(str(t.district))
 	if err != "":
 		_travelling = false
 		hud.show_toast(err, false)

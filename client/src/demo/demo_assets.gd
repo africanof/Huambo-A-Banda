@@ -22,14 +22,49 @@ static func tex(file: String) -> Texture2D:
 
 
 static func object(id: String) -> Dictionary:
-	return manifest().objects.get(id, {})
+	var o: Dictionary = manifest().objects.get(id, {})
+	return o if not o.is_empty() else _kit_objects.get(id, {})
+
+
+## Objetos dos kits de bairro (pacotes descarregados sob pedido, ver Packs).
+static var _kit_objects := {}
+static var _kits_loaded := {}
+
+const KITS_DIR := "res://assets/kits/"
+
+
+static func kit_available(kit: String) -> bool:
+	return FileAccess.file_exists(KITS_DIR + kit + "/manifest.json")
+
+
+## Junta os objetos de um kit ao catálogo (o pacote já tem de estar carregado).
+static func load_kit(kit: String) -> bool:
+	if _kits_loaded.has(kit):
+		return true
+	if not kit_available(kit):
+		return false
+	var m: Variant = JSON.parse_string(FileAccess.get_file_as_string(KITS_DIR + kit + "/manifest.json"))
+	if typeof(m) != TYPE_DICTIONARY:
+		return false
+	_kit_objects.merge(m.objects, true)
+	_kits_loaded[kit] = true
+	return true
+
+
+static func texture_of(id: String) -> Texture2D:
+	var o := object(id)
+	if o.has("path"):
+		if not _tex.has(o.path):
+			_tex[o.path] = load(o.path)
+		return _tex[o.path]
+	return tex(id + ".png")
 
 
 ## Sprite de um objeto com a âncora (base mais à frente) na origem do nó.
 static func make_sprite(id: String) -> Sprite2D:
 	var o := object(id)
 	var s := Sprite2D.new()
-	s.texture = tex(id + ".png")
+	s.texture = texture_of(id)
 	s.centered = false
 	s.offset = -Vector2(o.anchor[0], o.anchor[1])
 	# kits de bairro: textura no tamanho original, ampliada ao desenhar (menos memória no telemóvel)

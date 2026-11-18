@@ -1,0 +1,133 @@
+{
+ "id": "kit_benfica",
+ "cuts": "raw/kit_benfica_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "benfica_escola",
+   "name": "Escola Primária do Benfica",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "benfica_saude",
+   "name": "Centro de Saúde do Benfica",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "benfica_igreja",
+   "name": "Igreja Católica do Benfica",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "benfica_mercado",
+   "name": "Mercado do Benfica",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "benfica_cantina",
+   "name": "Cantina do Sr. Kalei",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "benfica_farmacia",
+   "name": "Farmácia Benfica",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "benfica_administracao",
+   "name": "Administração do Benfica",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "benfica_discoteca",
+   "name": "Discoteca Benfica",
+   "cat": "building",
+   "venue": "discoteca"
+  },
+  {
+   "n": 8,
+   "id": "benfica_churrasqueira",
+   "name": "Churrasqueira Benfica",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 9,
+   "id": "benfica_banco",
+   "name": "Banco Sol Benfica",
+   "cat": "building",
+   "venue": "banco"
+  },
+  {
+   "n": 10,
+   "id": "benfica_apartamentos",
+   "name": "Prédio Benfica",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 11,
+   "id": "benfica_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "benfica_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "benfica_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "benfica_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "benfica_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "benfica_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "benfica_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

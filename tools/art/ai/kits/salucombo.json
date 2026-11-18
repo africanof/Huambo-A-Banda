@@ -1,0 +1,140 @@
+{
+ "id": "kit_salucombo",
+ "cuts": "raw/kit_salucombo_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 3,
+   "id": "salucombo_escola",
+   "name": "Escola Primária do Salucombo",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 0,
+   "id": "salucombo_saude",
+   "name": "Centro de Saúde do Salucombo",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 1,
+   "id": "salucombo_igreja",
+   "name": "Igreja Evangélica do Salucombo",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 2,
+   "id": "salucombo_mercado",
+   "name": "Mercado do Salucombo",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "salucombo_cantina",
+   "name": "Cantina do Salucombo",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "salucombo_farmacia",
+   "name": "Farmácia Salucombo",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "salucombo_administracao",
+   "name": "Administração do Salucombo",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "salucombo_padaria",
+   "name": "Padaria Salucombo",
+   "cat": "building",
+   "venue": "padaria"
+  },
+  {
+   "n": 8,
+   "id": "salucombo_discoteca",
+   "name": "Discoteca Salucombo",
+   "cat": "building",
+   "venue": "discoteca"
+  },
+  {
+   "n": 9,
+   "id": "salucombo_apartamentos",
+   "name": "Prédio Salucombo",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 10,
+   "id": "salucombo_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "salucombo_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "salucombo_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "salucombo_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "salucombo_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "salucombo_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "salucombo_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "salucombo_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "salucombo_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

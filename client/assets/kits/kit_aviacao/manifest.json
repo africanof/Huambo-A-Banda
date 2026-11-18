@@ -1,0 +1,366 @@
+{
+ "kit": "kit_aviacao",
+ "objects": {
+  "aviacao_escola": {
+   "category": "building",
+   "size": [
+    1034,
+    449
+   ],
+   "anchor": [
+    551,
+    444
+   ],
+   "footprint": [
+    13.7,
+    12.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_escola",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_escola.png",
+   "name": "Escola Primária da Aviação"
+  },
+  "aviacao_saude": {
+   "category": "building",
+   "size": [
+    906,
+    400
+   ],
+   "anchor": [
+    603,
+    398
+   ],
+   "footprint": [
+    15.0,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_saude",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_saude.png",
+   "name": "Centro de Saúde da Aviação"
+  },
+  "aviacao_igreja": {
+   "category": "building",
+   "size": [
+    782,
+    515
+   ],
+   "anchor": [
+    466,
+    513
+   ],
+   "footprint": [
+    11.6,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "aviacao_igreja",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_igreja.png",
+   "name": "Igreja Católica da Aviação"
+  },
+  "aviacao_mercado": {
+   "category": "building",
+   "size": [
+    1003,
+    464
+   ],
+   "anchor": [
+    570,
+    460
+   ],
+   "footprint": [
+    14.2,
+    10.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_mercado",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_mercado.png",
+   "name": "Mercado da Aviação"
+  },
+  "aviacao_cantina": {
+   "category": "building",
+   "size": [
+    543,
+    395
+   ],
+   "anchor": [
+    268,
+    391
+   ],
+   "footprint": [
+    6.7,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_cantina",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_cantina.png",
+   "name": "Cantina do Piloto"
+  },
+  "aviacao_farmacia": {
+   "category": "building",
+   "size": [
+    458,
+    401
+   ],
+   "anchor": [
+    259,
+    400
+   ],
+   "footprint": [
+    6.4,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "aviacao_farmacia",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_farmacia.png",
+   "name": "Farmácia Aviação"
+  },
+  "aviacao_administracao": {
+   "category": "building",
+   "size": [
+    486,
+    407
+   ],
+   "anchor": [
+    386,
+    405
+   ],
+   "footprint": [
+    9.6,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_administracao",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_administracao.png",
+   "name": "Administração da Aviação"
+  },
+  "aviacao_hotel": {
+   "category": "building",
+   "size": [
+    535,
+    533
+   ],
+   "anchor": [
+    308,
+    530
+   ],
+   "footprint": [
+    7.7,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_hotel",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_hotel.png",
+   "name": "Hotel Aviação"
+  },
+  "aviacao_churrasqueira": {
+   "category": "building",
+   "size": [
+    615,
+    392
+   ],
+   "anchor": [
+    412,
+    387
+   ],
+   "footprint": [
+    10.2,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_churrasqueira",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_churrasqueira.png",
+   "name": "Churrasqueira do Aeroporto"
+  },
+  "aviacao_loja_telecom": {
+   "category": "building",
+   "size": [
+    500,
+    414
+   ],
+   "anchor": [
+    241,
+    411
+   ],
+   "footprint": [
+    6.0,
+    6.4
+   ],
+   "scale": 1.6,
+   "out": "aviacao_loja_telecom",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_loja_telecom.png",
+   "name": "Loja de Telemóveis Aviação"
+  },
+  "aviacao_apartamentos": {
+   "category": "building",
+   "size": [
+    579,
+    678
+   ],
+   "anchor": [
+    375,
+    675
+   ],
+   "footprint": [
+    9.3,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "aviacao_apartamentos",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_apartamentos.png",
+   "name": "Prédio Aviação"
+  },
+  "aviacao_casa1": {
+   "category": "building",
+   "size": [
+    584,
+    340
+   ],
+   "anchor": [
+    357,
+    336
+   ],
+   "footprint": [
+    8.9,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa1",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa1.png",
+   "name": "Casa 1"
+  },
+  "aviacao_casa2": {
+   "category": "building",
+   "size": [
+    501,
+    319
+   ],
+   "anchor": [
+    325,
+    317
+   ],
+   "footprint": [
+    8.1,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa2",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa2.png",
+   "name": "Casa 2"
+  },
+  "aviacao_casa3": {
+   "category": "building",
+   "size": [
+    488,
+    302
+   ],
+   "anchor": [
+    341,
+    299
+   ],
+   "footprint": [
+    8.5,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa3",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa3.png",
+   "name": "Casa 3"
+  },
+  "aviacao_casa4": {
+   "category": "building",
+   "size": [
+    527,
+    309
+   ],
+   "anchor": [
+    336,
+    307
+   ],
+   "footprint": [
+    8.3,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa4",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa4.png",
+   "name": "Casa 4"
+  },
+  "aviacao_casa5": {
+   "category": "building",
+   "size": [
+    514,
+    320
+   ],
+   "anchor": [
+    308,
+    317
+   ],
+   "footprint": [
+    7.7,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa5",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa5.png",
+   "name": "Casa 5"
+  },
+  "aviacao_casa6": {
+   "category": "building",
+   "size": [
+    555,
+    307
+   ],
+   "anchor": [
+    346,
+    304
+   ],
+   "footprint": [
+    8.6,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa6",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa6.png",
+   "name": "Casa 6"
+  },
+  "aviacao_casa7": {
+   "category": "building",
+   "size": [
+    550,
+    273
+   ],
+   "anchor": [
+    345,
+    270
+   ],
+   "footprint": [
+    8.6,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "aviacao_casa7",
+   "kit": "kit_aviacao",
+   "path": "res://assets/kits/kit_aviacao/aviacao_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "fc560b50e63e"
+}

@@ -201,10 +201,13 @@ func _places_loop(world: Node) -> void:
 ## Candongueiro para o Bairro de Fátima, e lá: Centro de Saúde (consulta).
 func _travel_loop() -> void:
 	var tree := get_tree()
-	Net.action("travel", "bairro_fatima")
+	var dest := str(AppConfig.args.get("travel", "true"))
+	if dest == "true" or dest == "1":
+		dest = "bairro_fatima"
+	Net.action("travel", dest)
 	var world: Node = await _wait_for(func() -> Variant:
 		var s := tree.current_scene
-		return s if s and s.name == "BairroWorld" and s.local_char != null and str(Net.welcome.get("district", {}).get("id", "")) == "bairro_fatima" and Net.entities.has(Net.self_id) else null)
+		return s if s and s.name == "BairroWorld" and s.local_char != null and str(Net.welcome.get("district", {}).get("id", "")) == dest and Net.entities.has(Net.self_id) else null)
 	print("[autotest] cheguei ao %s" % Net.welcome.district.name)
 	await _wait_for(func() -> Variant: return true if Net.me.has("money") else null)
 	await _shot("fatima_chegada")
@@ -218,8 +221,8 @@ func _travel_loop() -> void:
 	print("[autotest] entrei no Centro de Saúde")
 	await _walk(world, [_spot(world, str(Net.me.inside.id), "service")])
 	var m0 := int(Net.me.money)
-	Net.action("service", "consulta")
-	await _wait_for(func() -> Variant: return true if int(Net.me.money) == m0 - 3000 or int(Net.me.money) < m0 else null)
+	Net.action("service", "consulta" if m0 >= 3000 else "vacina")
+	await _wait_for(func() -> Variant: return true if int(Net.me.money) < m0 else null)
 	print("[autotest] consulta feita: %d → %d Kz" % [m0, int(Net.me.money)])
 	Net.action("exit")
 	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)

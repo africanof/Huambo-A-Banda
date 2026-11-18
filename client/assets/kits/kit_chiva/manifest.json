@@ -1,0 +1,386 @@
+{
+ "kit": "kit_chiva",
+ "objects": {
+  "chiva_escola": {
+   "category": "building",
+   "size": [
+    919,
+    404
+   ],
+   "anchor": [
+    651,
+    400
+   ],
+   "footprint": [
+    16.2,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "chiva_escola",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_escola.png",
+   "name": "Escola Primária da Chiva"
+  },
+  "chiva_saude": {
+   "category": "building",
+   "size": [
+    724,
+    381
+   ],
+   "anchor": [
+    414,
+    377
+   ],
+   "footprint": [
+    10.3,
+    7.7
+   ],
+   "scale": 1.6,
+   "out": "chiva_saude",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_saude.png",
+   "name": "Centro de Saúde da Chiva"
+  },
+  "chiva_igreja": {
+   "category": "building",
+   "size": [
+    607,
+    453
+   ],
+   "anchor": [
+    346,
+    451
+   ],
+   "footprint": [
+    8.6,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "chiva_igreja",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_igreja.png",
+   "name": "Igreja Católica da Chiva"
+  },
+  "chiva_mercado": {
+   "category": "building",
+   "size": [
+    892,
+    439
+   ],
+   "anchor": [
+    559,
+    435
+   ],
+   "footprint": [
+    13.9,
+    8.3
+   ],
+   "scale": 1.6,
+   "out": "chiva_mercado",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_mercado.png",
+   "name": "Mercado da Chiva"
+  },
+  "chiva_cantina": {
+   "category": "building",
+   "size": [
+    589,
+    328
+   ],
+   "anchor": [
+    447,
+    326
+   ],
+   "footprint": [
+    11.1,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "chiva_cantina",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_cantina.png",
+   "name": "Cantina da Chiva"
+  },
+  "chiva_farmacia": {
+   "category": "building",
+   "size": [
+    537,
+    330
+   ],
+   "anchor": [
+    371,
+    327
+   ],
+   "footprint": [
+    9.2,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "chiva_farmacia",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_farmacia.png",
+   "name": "Farmácia Chiva"
+  },
+  "chiva_administracao": {
+   "category": "building",
+   "size": [
+    692,
+    349
+   ],
+   "anchor": [
+    505,
+    346
+   ],
+   "footprint": [
+    12.6,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "chiva_administracao",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_administracao.png",
+   "name": "Administração da Chiva"
+  },
+  "chiva_padaria": {
+   "category": "building",
+   "size": [
+    571,
+    348
+   ],
+   "anchor": [
+    377,
+    346
+   ],
+   "footprint": [
+    9.3,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "chiva_padaria",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_padaria.png",
+   "name": "Padaria Chiva"
+  },
+  "chiva_loja_telecom": {
+   "category": "building",
+   "size": [
+    601,
+    352
+   ],
+   "anchor": [
+    467,
+    350
+   ],
+   "footprint": [
+    11.6,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "chiva_loja_telecom",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_loja_telecom.png",
+   "name": "Loja Movicel Chiva"
+  },
+  "chiva_apartamentos": {
+   "category": "building",
+   "size": [
+    558,
+    765
+   ],
+   "anchor": [
+    340,
+    761
+   ],
+   "footprint": [
+    8.5,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "chiva_apartamentos",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_apartamentos.png",
+   "name": "Prédio Chiva"
+  },
+  "chiva_casa1": {
+   "category": "building",
+   "size": [
+    449,
+    279
+   ],
+   "anchor": [
+    241,
+    276
+   ],
+   "footprint": [
+    6.0,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa1",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa1.png",
+   "name": "Casa 1"
+  },
+  "chiva_casa2": {
+   "category": "building",
+   "size": [
+    385,
+    276
+   ],
+   "anchor": [
+    226,
+    274
+   ],
+   "footprint": [
+    5.6,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa2",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa2.png",
+   "name": "Casa 2"
+  },
+  "chiva_casa3": {
+   "category": "building",
+   "size": [
+    405,
+    273
+   ],
+   "anchor": [
+    220,
+    271
+   ],
+   "footprint": [
+    5.5,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa3",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa3.png",
+   "name": "Casa 3"
+  },
+  "chiva_casa4": {
+   "category": "building",
+   "size": [
+    422,
+    272
+   ],
+   "anchor": [
+    245,
+    269
+   ],
+   "footprint": [
+    6.1,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa4",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa4.png",
+   "name": "Casa 4"
+  },
+  "chiva_casa5": {
+   "category": "building",
+   "size": [
+    389,
+    267
+   ],
+   "anchor": [
+    230,
+    265
+   ],
+   "footprint": [
+    5.7,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa5",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa5.png",
+   "name": "Casa 5"
+  },
+  "chiva_casa6": {
+   "category": "building",
+   "size": [
+    409,
+    268
+   ],
+   "anchor": [
+    244,
+    266
+   ],
+   "footprint": [
+    6.1,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa6",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa6.png",
+   "name": "Casa 6"
+  },
+  "chiva_casa7": {
+   "category": "building",
+   "size": [
+    433,
+    277
+   ],
+   "anchor": [
+    236,
+    275
+   ],
+   "footprint": [
+    5.9,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa7",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa7.png",
+   "name": "Casa 7"
+  },
+  "chiva_casa8": {
+   "category": "building",
+   "size": [
+    426,
+    272
+   ],
+   "anchor": [
+    223,
+    271
+   ],
+   "footprint": [
+    5.5,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa8",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa8.png",
+   "name": "Casa 8"
+  },
+  "chiva_casa9": {
+   "category": "building",
+   "size": [
+    391,
+    266
+   ],
+   "anchor": [
+    221,
+    264
+   ],
+   "footprint": [
+    5.5,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "chiva_casa9",
+   "kit": "kit_chiva",
+   "path": "res://assets/kits/kit_chiva/chiva_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "3bd8ee798987"
+}

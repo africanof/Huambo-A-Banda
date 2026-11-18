@@ -1,0 +1,140 @@
+{
+ "id": "kit_cahumba",
+ "cuts": "raw/kit_cahumba_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "cahumba_escola",
+   "name": "Escola Primária da Cahumba",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "cahumba_saude",
+   "name": "Centro de Saúde da Cahumba",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "cahumba_igreja",
+   "name": "Igreja Católica da Cahumba",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "cahumba_mercado",
+   "name": "Mercado da Cahumba",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "cahumba_cantina",
+   "name": "Cantina da Cahumba",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "cahumba_farmacia",
+   "name": "Farmácia Cahumba",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "cahumba_administracao",
+   "name": "Administração da Cahumba",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "cahumba_padaria",
+   "name": "Padaria Cahumba",
+   "cat": "building",
+   "venue": "padaria"
+  },
+  {
+   "n": 8,
+   "id": "cahumba_discoteca",
+   "name": "Discoteca Cahumba",
+   "cat": "building",
+   "venue": "discoteca"
+  },
+  {
+   "n": 9,
+   "id": "cahumba_apartamentos",
+   "name": "Prédio Cahumba",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 10,
+   "id": "cahumba_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "cahumba_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "cahumba_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "cahumba_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "cahumba_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "cahumba_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "cahumba_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "cahumba_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "cahumba_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

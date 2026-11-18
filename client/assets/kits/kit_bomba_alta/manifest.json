@@ -1,0 +1,386 @@
+{
+ "kit": "kit_bomba_alta",
+ "objects": {
+  "bomba_alta_escola": {
+   "category": "building",
+   "size": [
+    953,
+    447
+   ],
+   "anchor": [
+    647,
+    443
+   ],
+   "footprint": [
+    16.1,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_escola",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_escola.png",
+   "name": "Escola Primária da Bomba Alta"
+  },
+  "bomba_alta_saude": {
+   "category": "building",
+   "size": [
+    873,
+    381
+   ],
+   "anchor": [
+    434,
+    378
+   ],
+   "footprint": [
+    10.8,
+    11.0
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_saude",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_saude.png",
+   "name": "Centro de Saúde da Bomba Alta"
+  },
+  "bomba_alta_igreja": {
+   "category": "building",
+   "size": [
+    782,
+    484
+   ],
+   "anchor": [
+    476,
+    482
+   ],
+   "footprint": [
+    11.9,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_igreja",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_igreja.png",
+   "name": "Igreja Adventista da Bomba Alta"
+  },
+  "bomba_alta_mercado": {
+   "category": "building",
+   "size": [
+    1019,
+    467
+   ],
+   "anchor": [
+    518,
+    463
+   ],
+   "footprint": [
+    12.9,
+    12.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_mercado",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_mercado.png",
+   "name": "Mercado da Bomba Alta"
+  },
+  "bomba_alta_cantina": {
+   "category": "building",
+   "size": [
+    612,
+    342
+   ],
+   "anchor": [
+    442,
+    339
+   ],
+   "footprint": [
+    11.0,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_cantina",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_cantina.png",
+   "name": "Cantina da Bomba Alta"
+  },
+  "bomba_alta_farmacia": {
+   "category": "building",
+   "size": [
+    543,
+    335
+   ],
+   "anchor": [
+    346,
+    333
+   ],
+   "footprint": [
+    8.6,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_farmacia",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_farmacia.png",
+   "name": "Farmácia Bomba Alta"
+  },
+  "bomba_alta_administracao": {
+   "category": "building",
+   "size": [
+    598,
+    376
+   ],
+   "anchor": [
+    419,
+    373
+   ],
+   "footprint": [
+    10.4,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_administracao",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_administracao.png",
+   "name": "Administração da Bomba Alta"
+  },
+  "bomba_alta_padaria": {
+   "category": "building",
+   "size": [
+    593,
+    369
+   ],
+   "anchor": [
+    400,
+    367
+   ],
+   "footprint": [
+    10.0,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_padaria",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_padaria.png",
+   "name": "Padaria Bomba Alta"
+  },
+  "bomba_alta_churrasqueira": {
+   "category": "building",
+   "size": [
+    680,
+    362
+   ],
+   "anchor": [
+    502,
+    357
+   ],
+   "footprint": [
+    12.5,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_churrasqueira",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_churrasqueira.png",
+   "name": "Churrasqueira Bomba Alta"
+  },
+  "bomba_alta_apartamentos": {
+   "category": "building",
+   "size": [
+    612,
+    631
+   ],
+   "anchor": [
+    376,
+    627
+   ],
+   "footprint": [
+    9.3,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_apartamentos",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_apartamentos.png",
+   "name": "Prédio Bomba Alta"
+  },
+  "bomba_alta_casa1": {
+   "category": "building",
+   "size": [
+    447,
+    283
+   ],
+   "anchor": [
+    247,
+    280
+   ],
+   "footprint": [
+    6.1,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa1",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa1.png",
+   "name": "Casa 1"
+  },
+  "bomba_alta_casa2": {
+   "category": "building",
+   "size": [
+    370,
+    255
+   ],
+   "anchor": [
+    220,
+    253
+   ],
+   "footprint": [
+    5.5,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa2",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa2.png",
+   "name": "Casa 2"
+  },
+  "bomba_alta_casa3": {
+   "category": "building",
+   "size": [
+    342,
+    279
+   ],
+   "anchor": [
+    189,
+    277
+   ],
+   "footprint": [
+    4.7,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa3",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa3.png",
+   "name": "Casa 3"
+  },
+  "bomba_alta_casa4": {
+   "category": "building",
+   "size": [
+    395,
+    265
+   ],
+   "anchor": [
+    253,
+    262
+   ],
+   "footprint": [
+    6.3,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa4",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa4.png",
+   "name": "Casa 4"
+  },
+  "bomba_alta_casa5": {
+   "category": "building",
+   "size": [
+    363,
+    252
+   ],
+   "anchor": [
+    203,
+    250
+   ],
+   "footprint": [
+    5.0,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa5",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa5.png",
+   "name": "Casa 5"
+  },
+  "bomba_alta_casa6": {
+   "category": "building",
+   "size": [
+    408,
+    271
+   ],
+   "anchor": [
+    259,
+    268
+   ],
+   "footprint": [
+    6.4,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa6",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa6.png",
+   "name": "Casa 6"
+  },
+  "bomba_alta_casa7": {
+   "category": "building",
+   "size": [
+    365,
+    289
+   ],
+   "anchor": [
+    208,
+    286
+   ],
+   "footprint": [
+    5.2,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa7",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa7.png",
+   "name": "Casa 7"
+  },
+  "bomba_alta_casa8": {
+   "category": "building",
+   "size": [
+    368,
+    277
+   ],
+   "anchor": [
+    230,
+    274
+   ],
+   "footprint": [
+    5.7,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa8",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa8.png",
+   "name": "Casa 8"
+  },
+  "bomba_alta_casa9": {
+   "category": "building",
+   "size": [
+    387,
+    198
+   ],
+   "anchor": [
+    256,
+    195
+   ],
+   "footprint": [
+    6.4,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "bomba_alta_casa9",
+   "kit": "kit_bomba_alta",
+   "path": "res://assets/kits/kit_bomba_alta/bomba_alta_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "7c6623a8b852"
+}

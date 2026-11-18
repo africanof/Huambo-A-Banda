@@ -1,0 +1,366 @@
+{
+ "kit": "kit_cacilhas",
+ "objects": {
+  "cacilhas_escola": {
+   "category": "building",
+   "size": [
+    1025,
+    417
+   ],
+   "anchor": [
+    719,
+    413
+   ],
+   "footprint": [
+    17.9,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_escola",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_escola.png",
+   "name": "Escola Primária de Cacilhas"
+  },
+  "cacilhas_saude": {
+   "category": "building",
+   "size": [
+    835,
+    417
+   ],
+   "anchor": [
+    562,
+    413
+   ],
+   "footprint": [
+    14.0,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_saude",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_saude.png",
+   "name": "Centro de Saúde de Cacilhas"
+  },
+  "cacilhas_igreja": {
+   "category": "building",
+   "size": [
+    824,
+    477
+   ],
+   "anchor": [
+    575,
+    473
+   ],
+   "footprint": [
+    14.3,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_igreja",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_igreja.png",
+   "name": "Igreja Adventista de Cacilhas"
+  },
+  "cacilhas_mercado": {
+   "category": "building",
+   "size": [
+    1024,
+    457
+   ],
+   "anchor": [
+    619,
+    453
+   ],
+   "footprint": [
+    15.4,
+    10.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_mercado",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_mercado.png",
+   "name": "Mercado de Cacilhas"
+  },
+  "cacilhas_cantina": {
+   "category": "building",
+   "size": [
+    548,
+    396
+   ],
+   "anchor": [
+    323,
+    393
+   ],
+   "footprint": [
+    8.0,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_cantina",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_cantina.png",
+   "name": "Cantina da Mamã Rosa"
+  },
+  "cacilhas_farmacia": {
+   "category": "building",
+   "size": [
+    480,
+    391
+   ],
+   "anchor": [
+    313,
+    388
+   ],
+   "footprint": [
+    7.8,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_farmacia",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_farmacia.png",
+   "name": "Farmácia Cacilhas"
+  },
+  "cacilhas_administracao": {
+   "category": "building",
+   "size": [
+    569,
+    407
+   ],
+   "anchor": [
+    394,
+    404
+   ],
+   "footprint": [
+    9.8,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_administracao",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_administracao.png",
+   "name": "Administração de Cacilhas"
+  },
+  "cacilhas_padaria": {
+   "category": "building",
+   "size": [
+    511,
+    392
+   ],
+   "anchor": [
+    306,
+    389
+   ],
+   "footprint": [
+    7.6,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_padaria",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_padaria.png",
+   "name": "Padaria Cacilhas"
+  },
+  "cacilhas_hotel": {
+   "category": "building",
+   "size": [
+    513,
+    476
+   ],
+   "anchor": [
+    340,
+    473
+   ],
+   "footprint": [
+    8.5,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_hotel",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_hotel.png",
+   "name": "Hospedaria Cacilhas"
+  },
+  "cacilhas_esquadra": {
+   "category": "building",
+   "size": [
+    578,
+    358
+   ],
+   "anchor": [
+    248,
+    355
+   ],
+   "footprint": [
+    6.2,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_esquadra",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_esquadra.png",
+   "name": "Esquadra Policial de Cacilhas"
+  },
+  "cacilhas_apartamentos": {
+   "category": "building",
+   "size": [
+    514,
+    540
+   ],
+   "anchor": [
+    336,
+    537
+   ],
+   "footprint": [
+    8.3,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_apartamentos",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_apartamentos.png",
+   "name": "Prédio Cacilhas"
+  },
+  "cacilhas_casa1": {
+   "category": "building",
+   "size": [
+    535,
+    315
+   ],
+   "anchor": [
+    361,
+    313
+   ],
+   "footprint": [
+    9.0,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa1",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa1.png",
+   "name": "Casa 1"
+  },
+  "cacilhas_casa2": {
+   "category": "building",
+   "size": [
+    491,
+    303
+   ],
+   "anchor": [
+    310,
+    300
+   ],
+   "footprint": [
+    7.7,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa2",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa2.png",
+   "name": "Casa 2"
+  },
+  "cacilhas_casa3": {
+   "category": "building",
+   "size": [
+    533,
+    291
+   ],
+   "anchor": [
+    367,
+    288
+   ],
+   "footprint": [
+    9.1,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa3",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa3.png",
+   "name": "Casa 3"
+  },
+  "cacilhas_casa4": {
+   "category": "building",
+   "size": [
+    515,
+    310
+   ],
+   "anchor": [
+    366,
+    308
+   ],
+   "footprint": [
+    9.1,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa4",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa4.png",
+   "name": "Casa 4"
+  },
+  "cacilhas_casa5": {
+   "category": "building",
+   "size": [
+    539,
+    299
+   ],
+   "anchor": [
+    380,
+    296
+   ],
+   "footprint": [
+    9.4,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa5",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa5.png",
+   "name": "Casa 5"
+  },
+  "cacilhas_casa6": {
+   "category": "building",
+   "size": [
+    542,
+    308
+   ],
+   "anchor": [
+    379,
+    306
+   ],
+   "footprint": [
+    9.4,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa6",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa6.png",
+   "name": "Casa 6"
+  },
+  "cacilhas_casa7": {
+   "category": "building",
+   "size": [
+    500,
+    296
+   ],
+   "anchor": [
+    316,
+    293
+   ],
+   "footprint": [
+    7.8,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "cacilhas_casa7",
+   "kit": "kit_cacilhas",
+   "path": "res://assets/kits/kit_cacilhas/cacilhas_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "4f70abe2f975"
+}

@@ -35,6 +35,8 @@ func build(bairro_id: String) -> bool:
 	if data.is_empty():
 		push_error("BairroView: bairro em falta: " + bairro_id)
 		return false
+	for k: Variant in data.get("kits", []):
+		DemoAssets.load_kit(str(k)) # pacote já carregado por Packs (ou ficheiros locais no editor)
 	size = Vector2(data.size[0], data.size[1])
 	for n: Node2D in [ground, markings, shadows, objects, lights, labels]:
 		add_child(n)

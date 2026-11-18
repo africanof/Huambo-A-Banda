@@ -1,0 +1,406 @@
+{
+ "kit": "kit_cidade_alta",
+ "objects": {
+  "cidade_alta_escola": {
+   "category": "building",
+   "size": [
+    981,
+    509
+   ],
+   "anchor": [
+    616,
+    503
+   ],
+   "footprint": [
+    15.4,
+    9.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_escola",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_escola.png",
+   "name": "Escola Primária da Cidade Alta"
+  },
+  "cidade_alta_saude": {
+   "category": "building",
+   "size": [
+    879,
+    463
+   ],
+   "anchor": [
+    535,
+    457
+   ],
+   "footprint": [
+    13.3,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_saude",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_saude.png",
+   "name": "Hospital Geral do Huambo"
+  },
+  "cidade_alta_igreja": {
+   "category": "building",
+   "size": [
+    833,
+    521
+   ],
+   "anchor": [
+    548,
+    517
+   ],
+   "footprint": [
+    13.7,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_igreja",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_igreja.png",
+   "name": "Sé Catedral de Nossa Senhora da Conceição"
+  },
+  "cidade_alta_mercado": {
+   "category": "building",
+   "size": [
+    987,
+    490
+   ],
+   "anchor": [
+    661,
+    483
+   ],
+   "footprint": [
+    16.5,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_mercado",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_mercado.png",
+   "name": "Mercado da Cidade Alta"
+  },
+  "cidade_alta_cantina": {
+   "category": "building",
+   "size": [
+    559,
+    361
+   ],
+   "anchor": [
+    358,
+    358
+   ],
+   "footprint": [
+    8.9,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_cantina",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_cantina.png",
+   "name": "Cantina Planalto"
+  },
+  "cidade_alta_farmacia": {
+   "category": "building",
+   "size": [
+    467,
+    375
+   ],
+   "anchor": [
+    312,
+    372
+   ],
+   "footprint": [
+    7.8,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_farmacia",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_farmacia.png",
+   "name": "Farmácia Cidade Alta"
+  },
+  "cidade_alta_administracao": {
+   "category": "building",
+   "size": [
+    577,
+    391
+   ],
+   "anchor": [
+    426,
+    388
+   ],
+   "footprint": [
+    10.6,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_administracao",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_administracao.png",
+   "name": "Administração da Cidade Alta"
+  },
+  "cidade_alta_governo": {
+   "category": "building",
+   "size": [
+    849,
+    498
+   ],
+   "anchor": [
+    630,
+    494
+   ],
+   "footprint": [
+    15.7,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_governo",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_governo.png",
+   "name": "Palácio do Governo Provincial do Huambo"
+  },
+  "cidade_alta_banco": {
+   "category": "building",
+   "size": [
+    609,
+    427
+   ],
+   "anchor": [
+    359,
+    424
+   ],
+   "footprint": [
+    8.9,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_banco",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_banco.png",
+   "name": "Banco BAI"
+  },
+  "cidade_alta_hotel": {
+   "category": "building",
+   "size": [
+    628,
+    415
+   ],
+   "anchor": [
+    413,
+    411
+   ],
+   "footprint": [
+    10.3,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_hotel",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_hotel.png",
+   "name": "Hotel Cidade Alta"
+  },
+  "cidade_alta_correios": {
+   "category": "building",
+   "size": [
+    478,
+    317
+   ],
+   "anchor": [
+    333,
+    313
+   ],
+   "footprint": [
+    8.3,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_correios",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_correios.png",
+   "name": "Correios da Cidade Alta"
+  },
+  "cidade_alta_tribunal": {
+   "category": "building",
+   "size": [
+    447,
+    374
+   ],
+   "anchor": [
+    305,
+    371
+   ],
+   "footprint": [
+    7.6,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tribunal",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tribunal.png",
+   "name": "Tribunal Provincial do Huambo"
+  },
+  "cidade_alta_apartamentos": {
+   "category": "building",
+   "size": [
+    391,
+    420
+   ],
+   "anchor": [
+    236,
+    417
+   ],
+   "footprint": [
+    5.9,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_apartamentos",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_apartamentos.png",
+   "name": "Prédio Cidade Alta"
+  },
+  "cidade_alta_casa1": {
+   "category": "building",
+   "size": [
+    390,
+    290
+   ],
+   "anchor": [
+    260,
+    288
+   ],
+   "footprint": [
+    6.4,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa1.png",
+   "name": "Casa 1"
+  },
+  "cidade_alta_casa2": {
+   "category": "building",
+   "size": [
+    348,
+    277
+   ],
+   "anchor": [
+    219,
+    275
+   ],
+   "footprint": [
+    5.4,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa2.png",
+   "name": "Casa 2"
+  },
+  "cidade_alta_casa3": {
+   "category": "building",
+   "size": [
+    344,
+    289
+   ],
+   "anchor": [
+    218,
+    286
+   ],
+   "footprint": [
+    5.4,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa3.png",
+   "name": "Casa 3"
+  },
+  "cidade_alta_casa4": {
+   "category": "building",
+   "size": [
+    338,
+    279
+   ],
+   "anchor": [
+    218,
+    277
+   ],
+   "footprint": [
+    5.4,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa4",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa4.png",
+   "name": "Casa 4"
+  },
+  "cidade_alta_casa5": {
+   "category": "building",
+   "size": [
+    329,
+    263
+   ],
+   "anchor": [
+    207,
+    260
+   ],
+   "footprint": [
+    5.1,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa5",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa5.png",
+   "name": "Casa 5"
+  },
+  "cidade_alta_casa6": {
+   "category": "building",
+   "size": [
+    337,
+    286
+   ],
+   "anchor": [
+    221,
+    283
+   ],
+   "footprint": [
+    5.5,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa6",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa6.png",
+   "name": "Casa 6"
+  },
+  "cidade_alta_casa7": {
+   "category": "building",
+   "size": [
+    328,
+    271
+   ],
+   "anchor": [
+    227,
+    268
+   ],
+   "footprint": [
+    5.6,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa7",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "b8327c866700"
+}

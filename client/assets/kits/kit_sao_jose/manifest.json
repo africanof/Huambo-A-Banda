@@ -1,0 +1,366 @@
+{
+ "kit": "kit_sao_jose",
+ "objects": {
+  "sao_jose_escola": {
+   "category": "building",
+   "size": [
+    953,
+    435
+   ],
+   "anchor": [
+    645,
+    429
+   ],
+   "footprint": [
+    16.1,
+    7.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_escola",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola.png",
+   "name": "Escola Primária de São José"
+  },
+  "sao_jose_saude": {
+   "category": "building",
+   "size": [
+    783,
+    379
+   ],
+   "anchor": [
+    401,
+    375
+   ],
+   "footprint": [
+    10.0,
+    9.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_saude",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_saude.png",
+   "name": "Centro de Saúde de São José"
+  },
+  "sao_jose_igreja": {
+   "category": "building",
+   "size": [
+    715,
+    443
+   ],
+   "anchor": [
+    246,
+    439
+   ],
+   "footprint": [
+    6.1,
+    11.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_igreja",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_igreja.png",
+   "name": "Igreja de São José"
+  },
+  "sao_jose_mercado": {
+   "category": "building",
+   "size": [
+    1116,
+    436
+   ],
+   "anchor": [
+    730,
+    431
+   ],
+   "footprint": [
+    18.2,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_mercado",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_mercado.png",
+   "name": "Mercado de São José"
+  },
+  "sao_jose_cantina": {
+   "category": "building",
+   "size": [
+    624,
+    380
+   ],
+   "anchor": [
+    375,
+    377
+   ],
+   "footprint": [
+    9.3,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_cantina",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_cantina.png",
+   "name": "Cantina São José"
+  },
+  "sao_jose_farmacia": {
+   "category": "building",
+   "size": [
+    589,
+    362
+   ],
+   "anchor": [
+    411,
+    360
+   ],
+   "footprint": [
+    10.2,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_farmacia",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_farmacia.png",
+   "name": "Farmácia São José"
+  },
+  "sao_jose_administracao": {
+   "category": "building",
+   "size": [
+    651,
+    383
+   ],
+   "anchor": [
+    421,
+    380
+   ],
+   "footprint": [
+    10.5,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_administracao",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_administracao.png",
+   "name": "Administração de São José"
+  },
+  "sao_jose_escola_7": {
+   "category": "building",
+   "size": [
+    1056,
+    389
+   ],
+   "anchor": [
+    808,
+    385
+   ],
+   "footprint": [
+    20.1,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_escola_7",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_escola_7.png",
+   "name": "Complexo Escolar São José de Cluny"
+  },
+  "sao_jose_padaria": {
+   "category": "building",
+   "size": [
+    662,
+    384
+   ],
+   "anchor": [
+    450,
+    382
+   ],
+   "footprint": [
+    11.2,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_padaria",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_padaria.png",
+   "name": "Padaria São José"
+  },
+  "sao_jose_banco": {
+   "category": "building",
+   "size": [
+    525,
+    397
+   ],
+   "anchor": [
+    341,
+    394
+   ],
+   "footprint": [
+    8.5,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_banco",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_banco.png",
+   "name": "Banco BFA São José"
+  },
+  "sao_jose_apartamentos": {
+   "category": "building",
+   "size": [
+    419,
+    441
+   ],
+   "anchor": [
+    284,
+    438
+   ],
+   "footprint": [
+    7.1,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_apartamentos",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_apartamentos.png",
+   "name": "Prédio São José"
+  },
+  "sao_jose_casa1": {
+   "category": "building",
+   "size": [
+    417,
+    320
+   ],
+   "anchor": [
+    257,
+    317
+   ],
+   "footprint": [
+    6.4,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa1",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa1.png",
+   "name": "Casa 1"
+  },
+  "sao_jose_casa2": {
+   "category": "building",
+   "size": [
+    396,
+    296
+   ],
+   "anchor": [
+    236,
+    293
+   ],
+   "footprint": [
+    5.8,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa2",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa2.png",
+   "name": "Casa 2"
+  },
+  "sao_jose_casa3": {
+   "category": "building",
+   "size": [
+    386,
+    313
+   ],
+   "anchor": [
+    226,
+    311
+   ],
+   "footprint": [
+    5.6,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa3",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa3.png",
+   "name": "Casa 3"
+  },
+  "sao_jose_casa4": {
+   "category": "building",
+   "size": [
+    414,
+    305
+   ],
+   "anchor": [
+    256,
+    302
+   ],
+   "footprint": [
+    6.4,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa4",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa4.png",
+   "name": "Casa 4"
+  },
+  "sao_jose_casa5": {
+   "category": "building",
+   "size": [
+    398,
+    294
+   ],
+   "anchor": [
+    245,
+    292
+   ],
+   "footprint": [
+    6.1,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa5",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa5.png",
+   "name": "Casa 5"
+  },
+  "sao_jose_casa6": {
+   "category": "building",
+   "size": [
+    392,
+    320
+   ],
+   "anchor": [
+    240,
+    318
+   ],
+   "footprint": [
+    6.0,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa6",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa6.png",
+   "name": "Casa 6"
+  },
+  "sao_jose_casa7": {
+   "category": "building",
+   "size": [
+    386,
+    300
+   ],
+   "anchor": [
+    238,
+    298
+   ],
+   "footprint": [
+    5.9,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "sao_jose_casa7",
+   "kit": "kit_sao_jose",
+   "path": "res://assets/kits/kit_sao_jose/sao_jose_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "beff3e382b51"
+}

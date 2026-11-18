@@ -1,0 +1,386 @@
+{
+ "kit": "kit_cacoio",
+ "objects": {
+  "cacoio_escola": {
+   "category": "building",
+   "size": [
+    987,
+    445
+   ],
+   "anchor": [
+    698,
+    439
+   ],
+   "footprint": [
+    17.4,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_escola",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_escola.png",
+   "name": "Escola Primária do Cacoio"
+  },
+  "cacoio_saude": {
+   "category": "building",
+   "size": [
+    687,
+    427
+   ],
+   "anchor": [
+    394,
+    423
+   ],
+   "footprint": [
+    9.8,
+    7.3
+   ],
+   "scale": 1.6,
+   "out": "cacoio_saude",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_saude.png",
+   "name": "Centro de Saúde do Cacoio"
+  },
+  "cacoio_igreja": {
+   "category": "building",
+   "size": [
+    605,
+    503
+   ],
+   "anchor": [
+    382,
+    499
+   ],
+   "footprint": [
+    9.5,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_igreja",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_igreja.png",
+   "name": "Igreja Evangélica do Cacoio"
+  },
+  "cacoio_mercado": {
+   "category": "building",
+   "size": [
+    832,
+    451
+   ],
+   "anchor": [
+    514,
+    447
+   ],
+   "footprint": [
+    12.8,
+    7.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_mercado",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_mercado.png",
+   "name": "Mercado do Cacoio"
+  },
+  "cacoio_cantina": {
+   "category": "building",
+   "size": [
+    594,
+    386
+   ],
+   "anchor": [
+    312,
+    383
+   ],
+   "footprint": [
+    7.8,
+    7.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_cantina",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_cantina.png",
+   "name": "Cantina do Cacoio"
+  },
+  "cacoio_farmacia": {
+   "category": "building",
+   "size": [
+    575,
+    384
+   ],
+   "anchor": [
+    376,
+    381
+   ],
+   "footprint": [
+    9.3,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_farmacia",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_farmacia.png",
+   "name": "Farmácia Cacoio"
+  },
+  "cacoio_administracao": {
+   "category": "building",
+   "size": [
+    730,
+    402
+   ],
+   "anchor": [
+    460,
+    398
+   ],
+   "footprint": [
+    11.5,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_administracao",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_administracao.png",
+   "name": "Administração do Cacoio"
+  },
+  "cacoio_churrasqueira": {
+   "category": "building",
+   "size": [
+    779,
+    414
+   ],
+   "anchor": [
+    393,
+    409
+   ],
+   "footprint": [
+    9.8,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "cacoio_churrasqueira",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_churrasqueira.png",
+   "name": "Churrasqueira Cacoio"
+  },
+  "cacoio_loja_telecom": {
+   "category": "building",
+   "size": [
+    657,
+    411
+   ],
+   "anchor": [
+    468,
+    407
+   ],
+   "footprint": [
+    11.7,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_loja_telecom",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_loja_telecom.png",
+   "name": "Quiosque Unitel Cacoio"
+  },
+  "cacoio_apartamentos": {
+   "category": "building",
+   "size": [
+    643,
+    714
+   ],
+   "anchor": [
+    441,
+    627
+   ],
+   "footprint": [
+    11.0,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_apartamentos",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_apartamentos.png",
+   "name": "Prédio Cacoio"
+  },
+  "cacoio_casa1": {
+   "category": "building",
+   "size": [
+    896,
+    737
+   ],
+   "anchor": [
+    168,
+    731
+   ],
+   "footprint": [
+    4.2,
+    18.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa1",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa1.png",
+   "name": "Casa 1"
+  },
+  "cacoio_casa2": {
+   "category": "building",
+   "size": [
+    251,
+    227
+   ],
+   "anchor": [
+    184,
+    224
+   ],
+   "footprint": [
+    4.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa2",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa2.png",
+   "name": "Casa 2"
+  },
+  "cacoio_casa3": {
+   "category": "building",
+   "size": [
+    346,
+    229
+   ],
+   "anchor": [
+    223,
+    227
+   ],
+   "footprint": [
+    5.5,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa3",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa3.png",
+   "name": "Casa 3"
+  },
+  "cacoio_casa4": {
+   "category": "building",
+   "size": [
+    341,
+    229
+   ],
+   "anchor": [
+    212,
+    227
+   ],
+   "footprint": [
+    5.2,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa4",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa4.png",
+   "name": "Casa 4"
+  },
+  "cacoio_casa5": {
+   "category": "building",
+   "size": [
+    333,
+    258
+   ],
+   "anchor": [
+    205,
+    256
+   ],
+   "footprint": [
+    5.1,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa5",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa5.png",
+   "name": "Casa 5"
+  },
+  "cacoio_casa6": {
+   "category": "building",
+   "size": [
+    328,
+    225
+   ],
+   "anchor": [
+    170,
+    223
+   ],
+   "footprint": [
+    4.2,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa6",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa6.png",
+   "name": "Casa 6"
+  },
+  "cacoio_casa7": {
+   "category": "building",
+   "size": [
+    342,
+    242
+   ],
+   "anchor": [
+    199,
+    240
+   ],
+   "footprint": [
+    4.9,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa7",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa7.png",
+   "name": "Casa 7"
+  },
+  "cacoio_casa8": {
+   "category": "building",
+   "size": [
+    384,
+    269
+   ],
+   "anchor": [
+    168,
+    266
+   ],
+   "footprint": [
+    4.2,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa8",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa8.png",
+   "name": "Casa 8"
+  },
+  "cacoio_casa9": {
+   "category": "building",
+   "size": [
+    287,
+    238
+   ],
+   "anchor": [
+    157,
+    236
+   ],
+   "footprint": [
+    3.9,
+    3.2
+   ],
+   "scale": 1.6,
+   "out": "cacoio_casa9",
+   "kit": "kit_cacoio",
+   "path": "res://assets/kits/kit_cacoio/cacoio_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "fe412afae86e"
+}

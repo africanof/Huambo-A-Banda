@@ -1,0 +1,366 @@
+{
+ "kit": "kit_benfica",
+ "objects": {
+  "benfica_escola": {
+   "category": "building",
+   "size": [
+    904,
+    419
+   ],
+   "anchor": [
+    643,
+    414
+   ],
+   "footprint": [
+    16.0,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_escola",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_escola.png",
+   "name": "Escola Primária do Benfica"
+  },
+  "benfica_saude": {
+   "category": "building",
+   "size": [
+    708,
+    429
+   ],
+   "anchor": [
+    371,
+    425
+   ],
+   "footprint": [
+    9.2,
+    8.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_saude",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_saude.png",
+   "name": "Centro de Saúde do Benfica"
+  },
+  "benfica_igreja": {
+   "category": "building",
+   "size": [
+    642,
+    501
+   ],
+   "anchor": [
+    412,
+    498
+   ],
+   "footprint": [
+    10.2,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_igreja",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_igreja.png",
+   "name": "Igreja Católica do Benfica"
+  },
+  "benfica_mercado": {
+   "category": "building",
+   "size": [
+    885,
+    465
+   ],
+   "anchor": [
+    539,
+    460
+   ],
+   "footprint": [
+    13.4,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "benfica_mercado",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_mercado.png",
+   "name": "Mercado do Benfica"
+  },
+  "benfica_cantina": {
+   "category": "building",
+   "size": [
+    589,
+    379
+   ],
+   "anchor": [
+    394,
+    376
+   ],
+   "footprint": [
+    9.8,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_cantina",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_cantina.png",
+   "name": "Cantina do Sr. Kalei"
+  },
+  "benfica_farmacia": {
+   "category": "building",
+   "size": [
+    577,
+    433
+   ],
+   "anchor": [
+    371,
+    430
+   ],
+   "footprint": [
+    9.2,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "benfica_farmacia",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_farmacia.png",
+   "name": "Farmácia Benfica"
+  },
+  "benfica_administracao": {
+   "category": "building",
+   "size": [
+    655,
+    452
+   ],
+   "anchor": [
+    411,
+    449
+   ],
+   "footprint": [
+    10.2,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "benfica_administracao",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_administracao.png",
+   "name": "Administração do Benfica"
+  },
+  "benfica_discoteca": {
+   "category": "building",
+   "size": [
+    588,
+    437
+   ],
+   "anchor": [
+    375,
+    434
+   ],
+   "footprint": [
+    9.3,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "benfica_discoteca",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_discoteca.png",
+   "name": "Discoteca Benfica"
+  },
+  "benfica_churrasqueira": {
+   "category": "building",
+   "size": [
+    632,
+    429
+   ],
+   "anchor": [
+    473,
+    426
+   ],
+   "footprint": [
+    11.8,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_churrasqueira",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_churrasqueira.png",
+   "name": "Churrasqueira Benfica"
+  },
+  "benfica_banco": {
+   "category": "building",
+   "size": [
+    635,
+    519
+   ],
+   "anchor": [
+    443,
+    515
+   ],
+   "footprint": [
+    11.0,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "benfica_banco",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_banco.png",
+   "name": "Banco Sol Benfica"
+  },
+  "benfica_apartamentos": {
+   "category": "building",
+   "size": [
+    571,
+    599
+   ],
+   "anchor": [
+    351,
+    595
+   ],
+   "footprint": [
+    8.7,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "benfica_apartamentos",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_apartamentos.png",
+   "name": "Prédio Benfica"
+  },
+  "benfica_casa1": {
+   "category": "building",
+   "size": [
+    547,
+    299
+   ],
+   "anchor": [
+    391,
+    297
+   ],
+   "footprint": [
+    9.7,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa1",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa1.png",
+   "name": "Casa 1"
+  },
+  "benfica_casa2": {
+   "category": "building",
+   "size": [
+    542,
+    294
+   ],
+   "anchor": [
+    403,
+    292
+   ],
+   "footprint": [
+    10.0,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa2",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa2.png",
+   "name": "Casa 2"
+  },
+  "benfica_casa3": {
+   "category": "building",
+   "size": [
+    542,
+    313
+   ],
+   "anchor": [
+    369,
+    311
+   ],
+   "footprint": [
+    9.2,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa3",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa3.png",
+   "name": "Casa 3"
+  },
+  "benfica_casa4": {
+   "category": "building",
+   "size": [
+    518,
+    307
+   ],
+   "anchor": [
+    353,
+    305
+   ],
+   "footprint": [
+    8.8,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa4",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa4.png",
+   "name": "Casa 4"
+  },
+  "benfica_casa5": {
+   "category": "building",
+   "size": [
+    489,
+    310
+   ],
+   "anchor": [
+    334,
+    308
+   ],
+   "footprint": [
+    8.3,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa5",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa5.png",
+   "name": "Casa 5"
+  },
+  "benfica_casa6": {
+   "category": "building",
+   "size": [
+    533,
+    308
+   ],
+   "anchor": [
+    382,
+    306
+   ],
+   "footprint": [
+    9.5,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa6",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa6.png",
+   "name": "Casa 6"
+  },
+  "benfica_casa7": {
+   "category": "building",
+   "size": [
+    524,
+    279
+   ],
+   "anchor": [
+    359,
+    277
+   ],
+   "footprint": [
+    8.9,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "benfica_casa7",
+   "kit": "kit_benfica",
+   "path": "res://assets/kits/kit_benfica/benfica_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "e8d57790369b"
+}

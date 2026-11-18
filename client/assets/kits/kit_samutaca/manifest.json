@@ -1,0 +1,386 @@
+{
+ "kit": "kit_samutaca",
+ "objects": {
+  "samutaca_escola": {
+   "category": "building",
+   "size": [
+    931,
+    429
+   ],
+   "anchor": [
+    625,
+    423
+   ],
+   "footprint": [
+    15.6,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "samutaca_escola",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_escola.png",
+   "name": "Escola Primária da Samutaca"
+  },
+  "samutaca_saude": {
+   "category": "building",
+   "size": [
+    720,
+    407
+   ],
+   "anchor": [
+    475,
+    403
+   ],
+   "footprint": [
+    11.8,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "samutaca_saude",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_saude.png",
+   "name": "Centro de Saúde da Samutaca"
+  },
+  "samutaca_igreja": {
+   "category": "building",
+   "size": [
+    646,
+    479
+   ],
+   "anchor": [
+    339,
+    475
+   ],
+   "footprint": [
+    8.4,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "samutaca_igreja",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_igreja.png",
+   "name": "Igreja Católica da Samutaca"
+  },
+  "samutaca_mercado": {
+   "category": "building",
+   "size": [
+    1064,
+    463
+   ],
+   "anchor": [
+    500,
+    457
+   ],
+   "footprint": [
+    12.5,
+    14.1
+   ],
+   "scale": 1.6,
+   "out": "samutaca_mercado",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_mercado.png",
+   "name": "Mercado da Samutaca"
+  },
+  "samutaca_cantina": {
+   "category": "building",
+   "size": [
+    603,
+    398
+   ],
+   "anchor": [
+    369,
+    394
+   ],
+   "footprint": [
+    9.2,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "samutaca_cantina",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_cantina.png",
+   "name": "Cantina da Samutaca"
+  },
+  "samutaca_farmacia": {
+   "category": "building",
+   "size": [
+    487,
+    378
+   ],
+   "anchor": [
+    332,
+    376
+   ],
+   "footprint": [
+    8.2,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "samutaca_farmacia",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_farmacia.png",
+   "name": "Farmácia Samutaca"
+  },
+  "samutaca_administracao": {
+   "category": "building",
+   "size": [
+    654,
+    425
+   ],
+   "anchor": [
+    423,
+    421
+   ],
+   "footprint": [
+    10.5,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "samutaca_administracao",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_administracao.png",
+   "name": "Administração da Samutaca"
+  },
+  "samutaca_churrasqueira": {
+   "category": "building",
+   "size": [
+    578,
+    412
+   ],
+   "anchor": [
+    431,
+    409
+   ],
+   "footprint": [
+    10.7,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "samutaca_churrasqueira",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_churrasqueira.png",
+   "name": "Churrasqueira Samutaca"
+  },
+  "samutaca_esquadra": {
+   "category": "building",
+   "size": [
+    645,
+    410
+   ],
+   "anchor": [
+    401,
+    406
+   ],
+   "footprint": [
+    10.0,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "samutaca_esquadra",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_esquadra.png",
+   "name": "Posto Policial da Samutaca"
+  },
+  "samutaca_apartamentos": {
+   "category": "building",
+   "size": [
+    634,
+    722
+   ],
+   "anchor": [
+    390,
+    717
+   ],
+   "footprint": [
+    9.7,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "samutaca_apartamentos",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_apartamentos.png",
+   "name": "Prédio Samutaca"
+  },
+  "samutaca_casa1": {
+   "category": "building",
+   "size": [
+    433,
+    264
+   ],
+   "anchor": [
+    264,
+    262
+   ],
+   "footprint": [
+    6.6,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa1",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa1.png",
+   "name": "Casa 1"
+  },
+  "samutaca_casa2": {
+   "category": "building",
+   "size": [
+    379,
+    273
+   ],
+   "anchor": [
+    245,
+    270
+   ],
+   "footprint": [
+    6.1,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa2",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa2.png",
+   "name": "Casa 2"
+  },
+  "samutaca_casa3": {
+   "category": "building",
+   "size": [
+    406,
+    264
+   ],
+   "anchor": [
+    286,
+    262
+   ],
+   "footprint": [
+    7.1,
+    2.9
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa3",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa3.png",
+   "name": "Casa 3"
+  },
+  "samutaca_casa4": {
+   "category": "building",
+   "size": [
+    424,
+    270
+   ],
+   "anchor": [
+    271,
+    267
+   ],
+   "footprint": [
+    6.7,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa4",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa4.png",
+   "name": "Casa 4"
+  },
+  "samutaca_casa5": {
+   "category": "building",
+   "size": [
+    425,
+    271
+   ],
+   "anchor": [
+    278,
+    269
+   ],
+   "footprint": [
+    6.9,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa5",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa5.png",
+   "name": "Casa 5"
+  },
+  "samutaca_casa6": {
+   "category": "building",
+   "size": [
+    394,
+    257
+   ],
+   "anchor": [
+    246,
+    255
+   ],
+   "footprint": [
+    6.1,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa6",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa6.png",
+   "name": "Casa 6"
+  },
+  "samutaca_casa7": {
+   "category": "building",
+   "size": [
+    354,
+    274
+   ],
+   "anchor": [
+    219,
+    272
+   ],
+   "footprint": [
+    5.4,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa7",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa7.png",
+   "name": "Casa 7"
+  },
+  "samutaca_casa8": {
+   "category": "building",
+   "size": [
+    439,
+    252
+   ],
+   "anchor": [
+    307,
+    250
+   ],
+   "footprint": [
+    7.6,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa8",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa8.png",
+   "name": "Casa 8"
+  },
+  "samutaca_casa9": {
+   "category": "building",
+   "size": [
+    397,
+    249
+   ],
+   "anchor": [
+    261,
+    247
+   ],
+   "footprint": [
+    6.5,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "samutaca_casa9",
+   "kit": "kit_samutaca",
+   "path": "res://assets/kits/kit_samutaca/samutaca_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "d69c2a8a776a"
+}

@@ -1,0 +1,386 @@
+{
+ "kit": "kit_xipuli",
+ "objects": {
+  "xipuli_escola": {
+   "category": "building",
+   "size": [
+    955,
+    444
+   ],
+   "anchor": [
+    626,
+    440
+   ],
+   "footprint": [
+    15.6,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "xipuli_escola",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_escola.png",
+   "name": "Escola Primária do Xipuli"
+  },
+  "xipuli_saude": {
+   "category": "building",
+   "size": [
+    731,
+    390
+   ],
+   "anchor": [
+    441,
+    386
+   ],
+   "footprint": [
+    11.0,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "xipuli_saude",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_saude.png",
+   "name": "Centro de Saúde do Xipuli"
+  },
+  "xipuli_igreja": {
+   "category": "building",
+   "size": [
+    652,
+    472
+   ],
+   "anchor": [
+    404,
+    470
+   ],
+   "footprint": [
+    10.1,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_igreja",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_igreja.png",
+   "name": "Igreja Católica do Xipuli"
+  },
+  "xipuli_mercado": {
+   "category": "building",
+   "size": [
+    793,
+    414
+   ],
+   "anchor": [
+    525,
+    411
+   ],
+   "footprint": [
+    13.1,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_mercado",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_mercado.png",
+   "name": "Mercado do Xipuli"
+  },
+  "xipuli_cantina": {
+   "category": "building",
+   "size": [
+    592,
+    399
+   ],
+   "anchor": [
+    306,
+    396
+   ],
+   "footprint": [
+    7.6,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "xipuli_cantina",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_cantina.png",
+   "name": "Cantina do Xipuli"
+  },
+  "xipuli_farmacia": {
+   "category": "building",
+   "size": [
+    536,
+    346
+   ],
+   "anchor": [
+    346,
+    343
+   ],
+   "footprint": [
+    8.6,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_farmacia",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_farmacia.png",
+   "name": "Farmácia Xipuli"
+  },
+  "xipuli_administracao": {
+   "category": "building",
+   "size": [
+    651,
+    397
+   ],
+   "anchor": [
+    438,
+    394
+   ],
+   "footprint": [
+    10.9,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "xipuli_administracao",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_administracao.png",
+   "name": "Administração do Xipuli"
+  },
+  "xipuli_churrasqueira": {
+   "category": "building",
+   "size": [
+    670,
+    351
+   ],
+   "anchor": [
+    314,
+    348
+   ],
+   "footprint": [
+    7.8,
+    8.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_churrasqueira",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_churrasqueira.png",
+   "name": "Churrasqueira Xipuli"
+  },
+  "xipuli_discoteca": {
+   "category": "building",
+   "size": [
+    646,
+    380
+   ],
+   "anchor": [
+    449,
+    377
+   ],
+   "footprint": [
+    11.2,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_discoteca",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_discoteca.png",
+   "name": "Discoteca Xipuli"
+  },
+  "xipuli_apartamentos": {
+   "category": "building",
+   "size": [
+    172,
+    175
+   ],
+   "anchor": [
+    98,
+    174
+   ],
+   "footprint": [
+    2.4,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_apartamentos",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_apartamentos.png",
+   "name": "Prédio Xipuli"
+  },
+  "xipuli_casa1": {
+   "category": "building",
+   "size": [
+    579,
+    513
+   ],
+   "anchor": [
+    389,
+    511
+   ],
+   "footprint": [
+    9.7,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa1",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa1.png",
+   "name": "Casa 1"
+  },
+  "xipuli_casa2": {
+   "category": "building",
+   "size": [
+    454,
+    268
+   ],
+   "anchor": [
+    261,
+    265
+   ],
+   "footprint": [
+    6.5,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa2",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa2.png",
+   "name": "Casa 2"
+  },
+  "xipuli_casa3": {
+   "category": "building",
+   "size": [
+    389,
+    268
+   ],
+   "anchor": [
+    202,
+    265
+   ],
+   "footprint": [
+    5.0,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa3",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa3.png",
+   "name": "Casa 3"
+  },
+  "xipuli_casa4": {
+   "category": "building",
+   "size": [
+    424,
+    255
+   ],
+   "anchor": [
+    250,
+    252
+   ],
+   "footprint": [
+    6.2,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa4",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa4.png",
+   "name": "Casa 4"
+  },
+  "xipuli_casa5": {
+   "category": "building",
+   "size": [
+    415,
+    254
+   ],
+   "anchor": [
+    203,
+    251
+   ],
+   "footprint": [
+    5.0,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa5",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa5.png",
+   "name": "Casa 5"
+  },
+  "xipuli_casa6": {
+   "category": "building",
+   "size": [
+    373,
+    250
+   ],
+   "anchor": [
+    215,
+    247
+   ],
+   "footprint": [
+    5.3,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa6",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa6.png",
+   "name": "Casa 6"
+  },
+  "xipuli_casa7": {
+   "category": "building",
+   "size": [
+    419,
+    248
+   ],
+   "anchor": [
+    238,
+    245
+   ],
+   "footprint": [
+    5.9,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa7",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa7.png",
+   "name": "Casa 7"
+  },
+  "xipuli_casa8": {
+   "category": "building",
+   "size": [
+    397,
+    243
+   ],
+   "anchor": [
+    221,
+    240
+   ],
+   "footprint": [
+    5.5,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa8",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa8.png",
+   "name": "Casa 8"
+  },
+  "xipuli_casa9": {
+   "category": "building",
+   "size": [
+    371,
+    238
+   ],
+   "anchor": [
+    210,
+    235
+   ],
+   "footprint": [
+    5.2,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "xipuli_casa9",
+   "kit": "kit_xipuli",
+   "path": "res://assets/kits/kit_xipuli/xipuli_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "e17440998950"
+}

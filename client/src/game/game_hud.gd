@@ -445,6 +445,7 @@ func _open_map() -> void:
 	if typeof(list) != TYPE_ARRAY:
 		menu_body.add_child(_label("Não foi possível obter os bairros.", 14, Color("ffb4a8"), FONT_REG, true))
 	else:
+		(list as Array).sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
 		for d: Dictionary in list:
 			var map_id := str(d.get("map", {}).get("id", "")) if typeof(d.get("map")) == TYPE_DICTIONARY else ""
 			if not map_id.begins_with("bairro:") or str(d.id) == here:

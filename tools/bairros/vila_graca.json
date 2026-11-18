@@ -1,0 +1,1256 @@
+{
+ "id": "vila_graca",
+ "name": "Vila Graça",
+ "size": [
+  150,
+  130
+ ],
+ "tile": 4,
+ "ground": [
+  {
+   "kind": "terra",
+   "y": [
+    34,
+    40
+   ]
+  },
+  {
+   "kind": "terra",
+   "y": [
+    80,
+    85
+   ]
+  },
+  {
+   "kind": "terra",
+   "y": [
+    114,
+    119
+   ]
+  },
+  {
+   "kind": "terra",
+   "x": [
+    44,
+    49
+   ]
+  },
+  {
+   "kind": "terra",
+   "x": [
+    92,
+    97
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    32.0,
+    34
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    40,
+    42.0
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    78.0,
+    80
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    85,
+    87.0
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    112.0,
+    114
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    119,
+    121.0
+   ]
+  },
+  {
+   "kind": "calcada",
+   "x": [
+    42.0,
+    44
+   ]
+  },
+  {
+   "kind": "calcada",
+   "x": [
+    49,
+    51.0
+   ]
+  },
+  {
+   "kind": "calcada",
+   "x": [
+    90.0,
+    92
+   ]
+  },
+  {
+   "kind": "calcada",
+   "x": [
+    97,
+    99.0
+   ]
+  },
+  {
+   "kind": "relva",
+   "x": [
+    56,
+    88
+   ],
+   "y": [
+    44,
+    62
+   ]
+  },
+  {
+   "kind": "terra"
+  }
+ ],
+ "buildings": [
+  {
+   "id": "vila_graca_escola",
+   "at": [
+    2.0,
+    23.2
+   ],
+   "venue": {
+    "venue": "escola",
+    "job": "professor"
+   }
+  },
+  {
+   "id": "vila_graca_saude",
+   "at": [
+    18.0,
+    23.3
+   ],
+   "venue": {
+    "venue": "saude",
+    "job": "enfermeiro"
+   }
+  },
+  {
+   "id": "vila_graca_igreja",
+   "at": [
+    51.0,
+    24.3
+   ],
+   "venue": {
+    "venue": "igreja",
+    "job": "catequista"
+   }
+  },
+  {
+   "id": "vila_graca_mercado",
+   "at": [
+    63.0,
+    18.9
+   ],
+   "venue": {
+    "venue": "mercado",
+    "job": "vendedor_mercado",
+    "shop": "mercado"
+   }
+  },
+  {
+   "id": "vila_graca_cantina",
+   "at": [
+    99.0,
+    25.5
+   ],
+   "venue": {
+    "venue": "cantina",
+    "job": "cozinheiro",
+    "shop": "cantina"
+   }
+  },
+  {
+   "id": "vila_graca_farmacia",
+   "at": [
+    33.0,
+    25.7
+   ],
+   "venue": {
+    "venue": "farmacia",
+    "job": "farmaceutico"
+   }
+  },
+  {
+   "id": "vila_graca_administracao",
+   "at": [
+    110.0,
+    26.1
+   ],
+   "venue": {
+    "venue": "administracao",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "vila_graca_padaria",
+   "at": [
+    124.0,
+    26.2
+   ],
+   "venue": {
+    "venue": "padaria",
+    "job": "padeiro",
+    "shop": "padaria"
+   }
+  },
+  {
+   "id": "vila_graca_loja_telecom",
+   "at": [
+    135.0,
+    26.5
+   ],
+   "venue": {
+    "venue": "loja_telecom",
+    "job": "vendedor_loja"
+   }
+  },
+  {
+   "id": "vila_graca_apartamentos",
+   "at": [
+    82.0,
+    26.7
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
+   }
+  },
+  {
+   "id": "vila_graca_casa1",
+   "at": [
+    2.0,
+    73.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 1"
+  },
+  {
+   "id": "vila_graca_casa2",
+   "at": [
+    11.0,
+    74.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 2"
+  },
+  {
+   "id": "vila_graca_casa3",
+   "at": [
+    19.0,
+    73.8
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 3"
+  },
+  {
+   "id": "vila_graca_casa4",
+   "at": [
+    27.0,
+    73.7
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 4"
+  },
+  {
+   "id": "vila_graca_casa5",
+   "at": [
+    34.0,
+    74.2
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 5"
+  },
+  {
+   "id": "vila_graca_casa6",
+   "at": [
+    51.0,
+    73.7
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 6"
+  },
+  {
+   "id": "vila_graca_casa7",
+   "at": [
+    59.0,
+    73.9
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 7"
+  },
+  {
+   "id": "vila_graca_casa8",
+   "at": [
+    67.0,
+    74.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 8"
+  },
+  {
+   "id": "vila_graca_casa9",
+   "at": [
+    74.0,
+    72.0
+   ],
+   "venue": {
+    "venue": "casa",
+    "units": 1
+   },
+   "label": "Casa 9"
+  }
+ ],
+ "props": [
+  [
+   "f_poste",
+   [
+    6,
+    32.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    12.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    19,
+    32.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    25.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    32,
+    32.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    38.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    45,
+    32.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    51.5,
+    41.4
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    64.5,
+    41.4
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    77.5,
+    41.4
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    90.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    97,
+    32.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    103.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    110,
+    32.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    116.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    123,
+    32.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    129.5,
+    41.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    136,
+    32.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    142.5,
+    41.4
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    12.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    19,
+    78.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    25.5,
+    86.4
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    38.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    45,
+    78.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    51.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    58,
+    78.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    64.5,
+    86.4
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    77.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    84,
+    78.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    90.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    97,
+    78.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    103.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    110,
+    78.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    116.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    123,
+    78.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    129.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    136,
+    78.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    142.5,
+    86.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    6,
+    112.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    12.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    19,
+    112.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    25.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    32,
+    112.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    38.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    45,
+    112.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    51.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    58,
+    112.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    64.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    71,
+    112.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    77.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    84,
+    112.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    90.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    97,
+    112.5
+   ]
+  ],
+  [
+   "f_eucalipto",
+   [
+    103.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    110,
+    112.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    116.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    123,
+    112.5
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    129.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste",
+   [
+    136,
+    112.5
+   ]
+  ],
+  [
+   "f_palmeira",
+   [
+    142.5,
+    120.4
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    8
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    22
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    36
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    50
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    64
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    78
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    92
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    50.5,
+    106
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    8
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    22
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    36
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    50
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    64
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    78
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    92
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    106
+   ]
+  ],
+  [
+   "f_poste2",
+   [
+    98.5,
+    120
+   ]
+  ],
+  [
+   "f_mulemba",
+   [
+    60,
+    47
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    84,
+    47
+   ]
+  ],
+  [
+   "f_jacaranda2",
+   [
+    60,
+    59
+   ]
+  ],
+  [
+   "f_mangueira",
+   [
+    84,
+    59
+   ]
+  ],
+  [
+   "f_chafariz",
+   [
+    72,
+    53
+   ]
+  ],
+  [
+   "f_banco_jardim",
+   [
+    66,
+    50
+   ]
+  ],
+  [
+   "f_banco_jardim2",
+   [
+    78,
+    50
+   ]
+  ],
+  [
+   "f_banco_madeira",
+   [
+    66,
+    57
+   ]
+  ],
+  [
+   "f_banco_jardim",
+   [
+    78,
+    57
+   ]
+  ],
+  [
+   "f_bandeira",
+   [
+    72,
+    46
+   ]
+  ],
+  [
+   "f_buganvilia",
+   [
+    58,
+    53
+   ]
+  ],
+  [
+   "f_buganvilia",
+   [
+    86,
+    53
+   ]
+  ],
+  [
+   "f_candongueiro",
+   [
+    56,
+    37.0
+   ]
+  ],
+  [
+   "f_candongueiro",
+   [
+    64,
+    37.0
+   ]
+  ],
+  [
+   "f_kupapata",
+   [
+    100,
+    41.6
+   ],
+   {
+    "kind": "work",
+    "job": "kupapata"
+   }
+  ],
+  [
+   "f_kupapata2",
+   [
+    102,
+    41.6
+   ]
+  ],
+  [
+   "f_carro",
+   [
+    120,
+    37.5
+   ]
+  ],
+  [
+   "f_hilux",
+   [
+    30,
+    83.0
+   ]
+  ],
+  [
+   "f_carro2",
+   [
+    128,
+    83.0
+   ]
+  ],
+  [
+   "f_banca",
+   [
+    22,
+    42.2
+   ],
+   {
+    "kind": "work",
+    "job": "zunga"
+   }
+  ],
+  [
+   "f_banca3",
+   [
+    30,
+    42.2
+   ]
+  ],
+  [
+   "f_banca_roupa",
+   [
+    34,
+    42.2
+   ]
+  ],
+  [
+   "f_contentor",
+   [
+    8,
+    42.2
+   ]
+  ],
+  [
+   "f_contentor2",
+   [
+    140,
+    87.2
+   ]
+  ],
+  [
+   "f_galinha",
+   [
+    12,
+    88.5
+   ]
+  ],
+  [
+   "f_galinha2",
+   [
+    14,
+    89.4
+   ]
+  ],
+  [
+   "f_cabra",
+   [
+    20,
+    90.0
+   ]
+  ],
+  [
+   "f_bidao",
+   [
+    46,
+    88.0
+   ]
+  ],
+  [
+   "f_carvao",
+   [
+    60,
+    88.0
+   ]
+  ],
+  [
+   "f_blocos",
+   [
+    138,
+    106
+   ]
+  ],
+  [
+   "f_bicicleta",
+   [
+    88,
+    88.0
+   ]
+  ],
+  [
+   "f_tanque",
+   [
+    140,
+    64
+   ]
+  ],
+  [
+   "f_carroca",
+   [
+    70,
+    88.0
+   ]
+  ],
+  [
+   "f_mesa_plastico2",
+   [
+    108,
+    88.4
+   ]
+  ],
+  [
+   "f_eucalipto2",
+   [
+    70.2,
+    111.0
+   ]
+  ],
+  [
+   "f_mangueira",
+   [
+    121.3,
+    102.3
+   ]
+  ],
+  [
+   "f_eucalipto2",
+   [
+    139.8,
+    78.9
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    50.6,
+    17.2
+   ]
+  ],
+  [
+   "f_mangueira",
+   [
+    105.4,
+    106.4
+   ]
+  ],
+  [
+   "f_abacateiro",
+   [
+    132.3,
+    121.7
+   ]
+  ],
+  [
+   "f_abacateiro",
+   [
+    72.9,
+    92.3
+   ]
+  ],
+  [
+   "f_abacateiro",
+   [
+    40.5,
+    105.8
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    142.8,
+    43.5
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    82.1,
+    109.0
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    4.8,
+    40.1
+   ]
+  ],
+  [
+   "f_palmeira2",
+   [
+    83.0,
+    83.9
+   ]
+  ],
+  [
+   "f_mangueira",
+   [
+    12.3,
+    12.1
+   ]
+  ],
+  [
+   "f_jacaranda",
+   [
+    89.0,
+    15.1
+   ]
+  ]
+ ],
+ "spawns": [
+  {
+   "id": "avenida",
+   "name": "Avenida (paragem)",
+   "at": [
+    46.5,
+    37.0
+   ]
+  },
+  {
+   "id": "largo",
+   "name": "Praça do Bairro",
+   "at": [
+    72,
+    64
+   ]
+  }
+ ]
+}

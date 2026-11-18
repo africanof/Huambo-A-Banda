@@ -1,0 +1,133 @@
+{
+ "id": "kit_aviacao",
+ "cuts": "raw/kit_aviacao_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "aviacao_escola",
+   "name": "Escola Primária da Aviação",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "aviacao_saude",
+   "name": "Centro de Saúde da Aviação",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "aviacao_igreja",
+   "name": "Igreja Católica da Aviação",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "aviacao_mercado",
+   "name": "Mercado da Aviação",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "aviacao_cantina",
+   "name": "Cantina do Piloto",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "aviacao_farmacia",
+   "name": "Farmácia Aviação",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "aviacao_administracao",
+   "name": "Administração da Aviação",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "aviacao_hotel",
+   "name": "Hotel Aviação",
+   "cat": "building",
+   "venue": "hotel"
+  },
+  {
+   "n": 8,
+   "id": "aviacao_churrasqueira",
+   "name": "Churrasqueira do Aeroporto",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 9,
+   "id": "aviacao_loja_telecom",
+   "name": "Loja de Telemóveis Aviação",
+   "cat": "building",
+   "venue": "loja_telecom"
+  },
+  {
+   "n": 10,
+   "id": "aviacao_apartamentos",
+   "name": "Prédio Aviação",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 11,
+   "id": "aviacao_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "aviacao_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "aviacao_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "aviacao_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "aviacao_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "aviacao_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "aviacao_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

@@ -7,11 +7,13 @@ Planta do Bairro de Fátima (Huambo) a partir do kit gerado por IA (tools/art/ai
 Ruas em grelha (avenida asfaltada + ruas de terra, como no Huambo), cada edifício encostado à rua
 do lado da sua porta (fachada mais comprida), adereços nos passeios sem tapar portas.
 """
-import json, os, random
+import glob, json, os, random
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
-objs = json.load(open(os.path.join(ROOT, "client", "assets", "demo", "manifest.json")))["objects"]
+objs = dict(json.load(open(os.path.join(ROOT, "client", "assets", "demo", "manifest.json")))["objects"])
+for _k in glob.glob(os.path.join(ROOT, "client", "assets", "kits", "*", "manifest.json")):
+    objs.update(json.load(open(_k))["objects"])
 rnd = random.Random(7)
 
 W, H = 150, 130

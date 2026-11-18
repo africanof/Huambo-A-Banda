@@ -1,0 +1,366 @@
+{
+ "kit": "kit_kapango",
+ "objects": {
+  "kapango_escola": {
+   "category": "building",
+   "size": [
+    938,
+    419
+   ],
+   "anchor": [
+    577,
+    413
+   ],
+   "footprint": [
+    14.4,
+    9.0
+   ],
+   "scale": 1.6,
+   "out": "kapango_escola",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_escola.png",
+   "name": "Escola Primária do Kapango"
+  },
+  "kapango_saude": {
+   "category": "building",
+   "size": [
+    830,
+    391
+   ],
+   "anchor": [
+    372,
+    387
+   ],
+   "footprint": [
+    9.2,
+    11.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_saude",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_saude.png",
+   "name": "Centro de Saúde do Kapango"
+  },
+  "kapango_igreja": {
+   "category": "building",
+   "size": [
+    759,
+    464
+   ],
+   "anchor": [
+    298,
+    460
+   ],
+   "footprint": [
+    7.4,
+    11.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_igreja",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_igreja.png",
+   "name": "Igreja Católica do Kapango"
+  },
+  "kapango_mercado": {
+   "category": "building",
+   "size": [
+    1138,
+    414
+   ],
+   "anchor": [
+    598,
+    409
+   ],
+   "footprint": [
+    14.9,
+    13.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_mercado",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_mercado.png",
+   "name": "Mercado do Kapango"
+  },
+  "kapango_cantina": {
+   "category": "building",
+   "size": [
+    598,
+    396
+   ],
+   "anchor": [
+    375,
+    392
+   ],
+   "footprint": [
+    9.3,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "kapango_cantina",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_cantina.png",
+   "name": "Cantina do Kapango"
+  },
+  "kapango_farmacia": {
+   "category": "building",
+   "size": [
+    458,
+    362
+   ],
+   "anchor": [
+    262,
+    359
+   ],
+   "footprint": [
+    6.5,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_farmacia",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_farmacia.png",
+   "name": "Farmácia Kapango"
+  },
+  "kapango_administracao": {
+   "category": "building",
+   "size": [
+    530,
+    400
+   ],
+   "anchor": [
+    353,
+    397
+   ],
+   "footprint": [
+    8.8,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_administracao",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_administracao.png",
+   "name": "Administração do Kapango"
+  },
+  "kapango_discoteca": {
+   "category": "building",
+   "size": [
+    495,
+    385
+   ],
+   "anchor": [
+    344,
+    382
+   ],
+   "footprint": [
+    8.6,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_discoteca",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_discoteca.png",
+   "name": "Discoteca Kapango"
+  },
+  "kapango_padaria": {
+   "category": "building",
+   "size": [
+    507,
+    395
+   ],
+   "anchor": [
+    339,
+    392
+   ],
+   "footprint": [
+    8.4,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "kapango_padaria",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_padaria.png",
+   "name": "Padaria Kapango"
+  },
+  "kapango_esquadra": {
+   "category": "building",
+   "size": [
+    532,
+    379
+   ],
+   "anchor": [
+    362,
+    375
+   ],
+   "footprint": [
+    9.0,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_esquadra",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_esquadra.png",
+   "name": "Esquadra Policial do Kapango"
+  },
+  "kapango_apartamentos": {
+   "category": "building",
+   "size": [
+    566,
+    597
+   ],
+   "anchor": [
+    347,
+    594
+   ],
+   "footprint": [
+    8.6,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_apartamentos",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_apartamentos.png",
+   "name": "Prédio Kapango"
+  },
+  "kapango_casa1": {
+   "category": "building",
+   "size": [
+    572,
+    322
+   ],
+   "anchor": [
+    417,
+    320
+   ],
+   "footprint": [
+    10.4,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa1",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa1.png",
+   "name": "Casa 1"
+  },
+  "kapango_casa2": {
+   "category": "building",
+   "size": [
+    500,
+    300
+   ],
+   "anchor": [
+    347,
+    298
+   ],
+   "footprint": [
+    8.6,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa2",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa2.png",
+   "name": "Casa 2"
+  },
+  "kapango_casa3": {
+   "category": "building",
+   "size": [
+    519,
+    293
+   ],
+   "anchor": [
+    386,
+    291
+   ],
+   "footprint": [
+    9.6,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa3",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa3.png",
+   "name": "Casa 3"
+  },
+  "kapango_casa4": {
+   "category": "building",
+   "size": [
+    511,
+    276
+   ],
+   "anchor": [
+    344,
+    273
+   ],
+   "footprint": [
+    8.5,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa4",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa4.png",
+   "name": "Casa 4"
+  },
+  "kapango_casa5": {
+   "category": "building",
+   "size": [
+    468,
+    298
+   ],
+   "anchor": [
+    287,
+    296
+   ],
+   "footprint": [
+    7.1,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa5",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa5.png",
+   "name": "Casa 5"
+  },
+  "kapango_casa6": {
+   "category": "building",
+   "size": [
+    540,
+    306
+   ],
+   "anchor": [
+    350,
+    303
+   ],
+   "footprint": [
+    8.7,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa6",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa6.png",
+   "name": "Casa 6"
+  },
+  "kapango_casa7": {
+   "category": "building",
+   "size": [
+    550,
+    272
+   ],
+   "anchor": [
+    338,
+    269
+   ],
+   "footprint": [
+    8.4,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "kapango_casa7",
+   "kit": "kit_kapango",
+   "path": "res://assets/kits/kit_kapango/kapango_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "f85f41c76e5c"
+}

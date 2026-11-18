@@ -61,4 +61,8 @@ ponta-a-ponta com clientes Godot reais).
 - Bairro de Fátima (1.º kit): escola, liceu, centro de saúde, igreja, mercado, esquadra, farmácia, discoteca,
   hospedaria, cantina, churrasqueira, administração, prédio (4 apartamentos), 8 casas e ~100 adereços — todos funcionais.
 - Viagem entre bairros de candongueiro (200 Kz) pelo Mapa.
-- Próximos kits: Cidade Alta, Bairro Académico, São Pedro, Benfica, São José…
+- Feito: os 21 bairros reais do Huambo que faltavam (nomes do OpenStreetMap): Cidade Alta, Bairro Académico,
+  São Pedro, Aviação, Bairro Militar, Benfica, Cacilhas, Canata, São José, São João, Kapango, Bomba Alta, Cacoio,
+  Cahumba, Cambiote, Chiva, Lossambo, Salucombo, Samutaca, Vila Graça, Xipuli — 1 imagem cada, nomes automáticos
+  (`tools/art/ai/name_kits.py`), plantas (`tools/bairros/gen_bairro.py`).
+- Pacotes por bairro (~1 MB) descarregados só quando se vai lá (`Packs`), guardados no aparelho; jogo base ~22 MB.

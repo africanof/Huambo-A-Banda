@@ -1,0 +1,1121 @@
+{
+ "bairros": [
+  {
+   "id": "cidade_alta",
+   "name": "Cidade Alta",
+   "tipo": "nobre",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Cidade Alta"
+    ],
+    [
+     "saude",
+     "Hospital Geral do Huambo"
+    ],
+    [
+     "igreja",
+     "Sé Catedral de Nossa Senhora da Conceição"
+    ],
+    [
+     "mercado",
+     "Mercado da Cidade Alta"
+    ],
+    [
+     "cantina",
+     "Cantina Planalto"
+    ],
+    [
+     "farmacia",
+     "Farmácia Cidade Alta"
+    ],
+    [
+     "administracao",
+     "Administração da Cidade Alta"
+    ],
+    [
+     "governo",
+     "Palácio do Governo Provincial do Huambo"
+    ],
+    [
+     "banco",
+     "Banco BAI"
+    ],
+    [
+     "hotel",
+     "Hotel Cidade Alta"
+    ],
+    [
+     "correios",
+     "Correios da Cidade Alta"
+    ],
+    [
+     "tribunal",
+     "Tribunal Provincial do Huambo"
+    ],
+    [
+     "apartamentos",
+     "Prédio Cidade Alta"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "bairro_academico",
+   "name": "Bairro Académico",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Bairro Académico"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Bairro Académico"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica do Bairro Académico"
+    ],
+    [
+     "mercado",
+     "Mercado do Bairro Académico"
+    ],
+    [
+     "cantina",
+     "Cantina do Estudante"
+    ],
+    [
+     "farmacia",
+     "Farmácia Bairro Académico"
+    ],
+    [
+     "administracao",
+     "Administração do Bairro Académico"
+    ],
+    [
+     "escola",
+     "Instituto Superior Politécnico do Huambo"
+    ],
+    [
+     "apartamentos",
+     "Residência de Estudantes"
+    ],
+    [
+     "loja_telecom",
+     "Cibercafé Académico"
+    ],
+    [
+     "discoteca",
+     "Discoteca Universitária"
+    ],
+    [
+     "apartamentos",
+     "Prédio Bairro Académico"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "sao_pedro",
+   "name": "São Pedro",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária de São Pedro"
+    ],
+    [
+     "saude",
+     "Centro de Saúde de São Pedro"
+    ],
+    [
+     "igreja",
+     "Igreja de São Pedro"
+    ],
+    [
+     "mercado",
+     "Mercado de São Pedro"
+    ],
+    [
+     "cantina",
+     "Cantina da Tia Joana"
+    ],
+    [
+     "farmacia",
+     "Farmácia São Pedro"
+    ],
+    [
+     "administracao",
+     "Administração de São Pedro"
+    ],
+    [
+     "esquadra",
+     "Esquadra Policial de São Pedro"
+    ],
+    [
+     "padaria",
+     "Padaria São Pedro"
+    ],
+    [
+     "correios",
+     "Correios de São Pedro"
+    ],
+    [
+     "apartamentos",
+     "Prédio São Pedro"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "aviacao",
+   "name": "Aviação",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Aviação"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Aviação"
+    ],
+    [
+     "igreja",
+     "Igreja Católica da Aviação"
+    ],
+    [
+     "mercado",
+     "Mercado da Aviação"
+    ],
+    [
+     "cantina",
+     "Cantina do Piloto"
+    ],
+    [
+     "farmacia",
+     "Farmácia Aviação"
+    ],
+    [
+     "administracao",
+     "Administração da Aviação"
+    ],
+    [
+     "hotel",
+     "Hotel Aviação"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira do Aeroporto"
+    ],
+    [
+     "loja_telecom",
+     "Loja de Telemóveis Aviação"
+    ],
+    [
+     "apartamentos",
+     "Prédio Aviação"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "bairro_militar",
+   "name": "Bairro Militar",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Bairro Militar"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Bairro Militar"
+    ],
+    [
+     "igreja",
+     "Igreja Metodista do Bairro Militar"
+    ],
+    [
+     "mercado",
+     "Mercado do Bairro Militar"
+    ],
+    [
+     "cantina",
+     "Cantina do Quartel"
+    ],
+    [
+     "farmacia",
+     "Farmácia Bairro Militar"
+    ],
+    [
+     "administracao",
+     "Administração do Bairro Militar"
+    ],
+    [
+     "esquadra",
+     "Comando da Polícia do Bairro Militar"
+    ],
+    [
+     "saude",
+     "Hospital Militar do Huambo"
+    ],
+    [
+     "padaria",
+     "Padaria do Bairro Militar"
+    ],
+    [
+     "apartamentos",
+     "Prédio Bairro Militar"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "benfica",
+   "name": "Benfica",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Benfica"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Benfica"
+    ],
+    [
+     "igreja",
+     "Igreja Católica do Benfica"
+    ],
+    [
+     "mercado",
+     "Mercado do Benfica"
+    ],
+    [
+     "cantina",
+     "Cantina do Sr. Kalei"
+    ],
+    [
+     "farmacia",
+     "Farmácia Benfica"
+    ],
+    [
+     "administracao",
+     "Administração do Benfica"
+    ],
+    [
+     "discoteca",
+     "Discoteca Benfica"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Benfica"
+    ],
+    [
+     "banco",
+     "Banco Sol Benfica"
+    ],
+    [
+     "apartamentos",
+     "Prédio Benfica"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "cacilhas",
+   "name": "Cacilhas",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária de Cacilhas"
+    ],
+    [
+     "saude",
+     "Centro de Saúde de Cacilhas"
+    ],
+    [
+     "igreja",
+     "Igreja Adventista de Cacilhas"
+    ],
+    [
+     "mercado",
+     "Mercado de Cacilhas"
+    ],
+    [
+     "cantina",
+     "Cantina da Mamã Rosa"
+    ],
+    [
+     "farmacia",
+     "Farmácia Cacilhas"
+    ],
+    [
+     "administracao",
+     "Administração de Cacilhas"
+    ],
+    [
+     "padaria",
+     "Padaria Cacilhas"
+    ],
+    [
+     "hotel",
+     "Hospedaria Cacilhas"
+    ],
+    [
+     "esquadra",
+     "Esquadra Policial de Cacilhas"
+    ],
+    [
+     "apartamentos",
+     "Prédio Cacilhas"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "canata",
+   "name": "Canata",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária de Canata"
+    ],
+    [
+     "saude",
+     "Centro de Saúde de Canata"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica de Canata"
+    ],
+    [
+     "mercado",
+     "Mercado de Canata"
+    ],
+    [
+     "cantina",
+     "Cantina do Kota Zé"
+    ],
+    [
+     "farmacia",
+     "Farmácia Canata"
+    ],
+    [
+     "administracao",
+     "Administração de Canata"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Canata"
+    ],
+    [
+     "loja_telecom",
+     "Loja Unitel Canata"
+    ],
+    [
+     "discoteca",
+     "Discoteca Canata"
+    ],
+    [
+     "apartamentos",
+     "Prédio Canata"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "sao_jose",
+   "name": "São José",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária de São José"
+    ],
+    [
+     "saude",
+     "Centro de Saúde de São José"
+    ],
+    [
+     "igreja",
+     "Igreja de São José"
+    ],
+    [
+     "mercado",
+     "Mercado de São José"
+    ],
+    [
+     "cantina",
+     "Cantina São José"
+    ],
+    [
+     "farmacia",
+     "Farmácia São José"
+    ],
+    [
+     "administracao",
+     "Administração de São José"
+    ],
+    [
+     "escola",
+     "Complexo Escolar São José de Cluny"
+    ],
+    [
+     "padaria",
+     "Padaria São José"
+    ],
+    [
+     "banco",
+     "Banco BFA São José"
+    ],
+    [
+     "apartamentos",
+     "Prédio São José"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "sao_joao",
+   "name": "São João",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária de São João"
+    ],
+    [
+     "saude",
+     "Centro de Saúde de São João"
+    ],
+    [
+     "igreja",
+     "Igreja de São João"
+    ],
+    [
+     "mercado",
+     "Mercado de São João"
+    ],
+    [
+     "cantina",
+     "Cantina da Avó Maria"
+    ],
+    [
+     "farmacia",
+     "Farmácia São João"
+    ],
+    [
+     "administracao",
+     "Administração de São João"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira São João"
+    ],
+    [
+     "hotel",
+     "Pensão São João"
+    ],
+    [
+     "correios",
+     "Correios de São João"
+    ],
+    [
+     "apartamentos",
+     "Prédio São João"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "kapango",
+   "name": "Kapango",
+   "tipo": "centro",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Kapango"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Kapango"
+    ],
+    [
+     "igreja",
+     "Igreja Católica do Kapango"
+    ],
+    [
+     "mercado",
+     "Mercado do Kapango"
+    ],
+    [
+     "cantina",
+     "Cantina do Kapango"
+    ],
+    [
+     "farmacia",
+     "Farmácia Kapango"
+    ],
+    [
+     "administracao",
+     "Administração do Kapango"
+    ],
+    [
+     "discoteca",
+     "Discoteca Kapango"
+    ],
+    [
+     "padaria",
+     "Padaria Kapango"
+    ],
+    [
+     "esquadra",
+     "Esquadra Policial do Kapango"
+    ],
+    [
+     "apartamentos",
+     "Prédio Kapango"
+    ]
+   ],
+   "houses": 7
+  },
+  {
+   "id": "bomba_alta",
+   "name": "Bomba Alta",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Bomba Alta"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Bomba Alta"
+    ],
+    [
+     "igreja",
+     "Igreja Adventista da Bomba Alta"
+    ],
+    [
+     "mercado",
+     "Mercado da Bomba Alta"
+    ],
+    [
+     "cantina",
+     "Cantina da Bomba Alta"
+    ],
+    [
+     "farmacia",
+     "Farmácia Bomba Alta"
+    ],
+    [
+     "administracao",
+     "Administração da Bomba Alta"
+    ],
+    [
+     "padaria",
+     "Padaria Bomba Alta"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Bomba Alta"
+    ],
+    [
+     "apartamentos",
+     "Prédio Bomba Alta"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "cacoio",
+   "name": "Cacoio",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Cacoio"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Cacoio"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica do Cacoio"
+    ],
+    [
+     "mercado",
+     "Mercado do Cacoio"
+    ],
+    [
+     "cantina",
+     "Cantina do Cacoio"
+    ],
+    [
+     "farmacia",
+     "Farmácia Cacoio"
+    ],
+    [
+     "administracao",
+     "Administração do Cacoio"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Cacoio"
+    ],
+    [
+     "loja_telecom",
+     "Quiosque Unitel Cacoio"
+    ],
+    [
+     "apartamentos",
+     "Prédio Cacoio"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "cahumba",
+   "name": "Cahumba",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Cahumba"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Cahumba"
+    ],
+    [
+     "igreja",
+     "Igreja Católica da Cahumba"
+    ],
+    [
+     "mercado",
+     "Mercado da Cahumba"
+    ],
+    [
+     "cantina",
+     "Cantina da Cahumba"
+    ],
+    [
+     "farmacia",
+     "Farmácia Cahumba"
+    ],
+    [
+     "administracao",
+     "Administração da Cahumba"
+    ],
+    [
+     "padaria",
+     "Padaria Cahumba"
+    ],
+    [
+     "discoteca",
+     "Discoteca Cahumba"
+    ],
+    [
+     "apartamentos",
+     "Prédio Cahumba"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "cambiote",
+   "name": "Cambiote",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Cambiote"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Cambiote"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica do Cambiote"
+    ],
+    [
+     "mercado",
+     "Mercado do Cambiote"
+    ],
+    [
+     "cantina",
+     "Cantina do Cambiote"
+    ],
+    [
+     "farmacia",
+     "Farmácia Cambiote"
+    ],
+    [
+     "administracao",
+     "Administração do Cambiote"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Cambiote"
+    ],
+    [
+     "esquadra",
+     "Posto Policial do Cambiote"
+    ],
+    [
+     "apartamentos",
+     "Prédio Cambiote"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "chiva",
+   "name": "Chiva",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Chiva"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Chiva"
+    ],
+    [
+     "igreja",
+     "Igreja Católica da Chiva"
+    ],
+    [
+     "mercado",
+     "Mercado da Chiva"
+    ],
+    [
+     "cantina",
+     "Cantina da Chiva"
+    ],
+    [
+     "farmacia",
+     "Farmácia Chiva"
+    ],
+    [
+     "administracao",
+     "Administração da Chiva"
+    ],
+    [
+     "padaria",
+     "Padaria Chiva"
+    ],
+    [
+     "loja_telecom",
+     "Loja Movicel Chiva"
+    ],
+    [
+     "apartamentos",
+     "Prédio Chiva"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "lossambo",
+   "name": "Lossambo",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Lossambo"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Lossambo"
+    ],
+    [
+     "igreja",
+     "Igreja Adventista do Lossambo"
+    ],
+    [
+     "mercado",
+     "Mercado do Lossambo"
+    ],
+    [
+     "cantina",
+     "Cantina do Lossambo"
+    ],
+    [
+     "farmacia",
+     "Farmácia Lossambo"
+    ],
+    [
+     "administracao",
+     "Administração do Lossambo"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Lossambo"
+    ],
+    [
+     "hotel",
+     "Hospedaria Lossambo"
+    ],
+    [
+     "apartamentos",
+     "Prédio Lossambo"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "salucombo",
+   "name": "Salucombo",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Salucombo"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Salucombo"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica do Salucombo"
+    ],
+    [
+     "mercado",
+     "Mercado do Salucombo"
+    ],
+    [
+     "cantina",
+     "Cantina do Salucombo"
+    ],
+    [
+     "farmacia",
+     "Farmácia Salucombo"
+    ],
+    [
+     "administracao",
+     "Administração do Salucombo"
+    ],
+    [
+     "padaria",
+     "Padaria Salucombo"
+    ],
+    [
+     "discoteca",
+     "Discoteca Salucombo"
+    ],
+    [
+     "apartamentos",
+     "Prédio Salucombo"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "samutaca",
+   "name": "Samutaca",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Samutaca"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Samutaca"
+    ],
+    [
+     "igreja",
+     "Igreja Católica da Samutaca"
+    ],
+    [
+     "mercado",
+     "Mercado da Samutaca"
+    ],
+    [
+     "cantina",
+     "Cantina da Samutaca"
+    ],
+    [
+     "farmacia",
+     "Farmácia Samutaca"
+    ],
+    [
+     "administracao",
+     "Administração da Samutaca"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Samutaca"
+    ],
+    [
+     "esquadra",
+     "Posto Policial da Samutaca"
+    ],
+    [
+     "apartamentos",
+     "Prédio Samutaca"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "vila_graca",
+   "name": "Vila Graça",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária da Vila Graça"
+    ],
+    [
+     "saude",
+     "Centro de Saúde da Vila Graça"
+    ],
+    [
+     "igreja",
+     "Igreja Evangélica da Vila Graça"
+    ],
+    [
+     "mercado",
+     "Mercado da Vila Graça"
+    ],
+    [
+     "cantina",
+     "Cantina da Vila Graça"
+    ],
+    [
+     "farmacia",
+     "Farmácia Vila Graça"
+    ],
+    [
+     "administracao",
+     "Administração da Vila Graça"
+    ],
+    [
+     "padaria",
+     "Padaria Vila Graça"
+    ],
+    [
+     "loja_telecom",
+     "Loja Unitel Vila Graça"
+    ],
+    [
+     "apartamentos",
+     "Prédio Vila Graça"
+    ]
+   ],
+   "houses": 9
+  },
+  {
+   "id": "xipuli",
+   "name": "Xipuli",
+   "tipo": "periferia",
+   "buildings": [
+    [
+     "escola",
+     "Escola Primária do Xipuli"
+    ],
+    [
+     "saude",
+     "Centro de Saúde do Xipuli"
+    ],
+    [
+     "igreja",
+     "Igreja Católica do Xipuli"
+    ],
+    [
+     "mercado",
+     "Mercado do Xipuli"
+    ],
+    [
+     "cantina",
+     "Cantina do Xipuli"
+    ],
+    [
+     "farmacia",
+     "Farmácia Xipuli"
+    ],
+    [
+     "administracao",
+     "Administração do Xipuli"
+    ],
+    [
+     "churrasqueira",
+     "Churrasqueira Xipuli"
+    ],
+    [
+     "discoteca",
+     "Discoteca Xipuli"
+    ],
+    [
+     "apartamentos",
+     "Prédio Xipuli"
+    ]
+   ],
+   "houses": 9
+  }
+ ],
+ "jobs": {
+  "escola": "professor",
+  "saude": "enfermeiro",
+  "igreja": "catequista",
+  "mercado": "vendedor_mercado",
+  "cantina": "cozinheiro",
+  "farmacia": "farmaceutico",
+  "administracao": "funcionario_publico",
+  "governo": "funcionario_publico",
+  "banco": "caixa_banco",
+  "hotel": "rececionista",
+  "correios": "carteiro",
+  "tribunal": "oficial_justica",
+  "esquadra": "policia",
+  "padaria": "padeiro",
+  "churrasqueira": "grelhador",
+  "discoteca": "barman",
+  "loja_telecom": "vendedor_loja"
+ },
+ "shops": {
+  "mercado": "mercado",
+  "cantina": "cantina",
+  "padaria": "padaria",
+  "churrasqueira": "churrasqueira",
+  "hotel": "hotel"
+ },
+ "look": {
+  "venue": {
+   "escola": "single-storey school building with a covered veranda and the Angolan flag on a pole",
+   "saude": "white and light-blue health centre with a red cross",
+   "igreja": "church with a bell tower and a cross",
+   "mercado": "covered market hall with a zinc roof and fruit stalls inside",
+   "cantina": "small grocery shop (cantina) with a hand-painted sign and soft-drink adverts",
+   "farmacia": "small pharmacy with a green cross",
+   "administracao": "small administration office with the Angolan flag",
+   "governo": "large colonial-era government palace, pink and white, with arches and the Angolan flag",
+   "banco": "two-storey bank branch with glass entrance",
+   "hotel": "two- or three-storey hotel / guesthouse with balconies",
+   "correios": "post office painted yellow and red",
+   "tribunal": "courthouse with columns and a staircase",
+   "esquadra": "police station painted blue and white",
+   "padaria": "bakery with bread on display and a striped awning",
+   "churrasqueira": "grill restaurant with plastic tables under a canopy and a charcoal grill",
+   "discoteca": "night club with a neon sign and dark facade",
+   "loja_telecom": "small mobile-phone and internet shop with operator adverts",
+   "apartamentos": "four-storey apartment block with balconies and water tanks on the roof"
+  },
+  "houses": {
+   "nobre": "elegant colonial villas (vivendas) with tile roofs, gardens, verandas and high walls",
+   "centro": "cement-block and colonial-style family houses with zinc or tile roofs, painted walls and metal gates",
+   "periferia": "modest adobe-brick and cement-block houses with corrugated zinc roofs held by stones, small yards with reed fences, a few unfinished houses"
+  }
+ }
+}

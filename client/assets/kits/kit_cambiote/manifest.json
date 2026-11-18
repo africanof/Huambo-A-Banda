@@ -1,0 +1,386 @@
+{
+ "kit": "kit_cambiote",
+ "objects": {
+  "cambiote_escola": {
+   "category": "building",
+   "size": [
+    868,
+    400
+   ],
+   "anchor": [
+    644,
+    396
+   ],
+   "footprint": [
+    16.0,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "cambiote_escola",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_escola.png",
+   "name": "Escola Primária do Cambiote"
+  },
+  "cambiote_saude": {
+   "category": "building",
+   "size": [
+    713,
+    398
+   ],
+   "anchor": [
+    442,
+    394
+   ],
+   "footprint": [
+    11.0,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "cambiote_saude",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_saude.png",
+   "name": "Centro de Saúde do Cambiote"
+  },
+  "cambiote_igreja": {
+   "category": "building",
+   "size": [
+    747,
+    447
+   ],
+   "anchor": [
+    421,
+    444
+   ],
+   "footprint": [
+    10.5,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "cambiote_igreja",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_igreja.png",
+   "name": "Igreja Evangélica do Cambiote"
+  },
+  "cambiote_mercado": {
+   "category": "building",
+   "size": [
+    834,
+    396
+   ],
+   "anchor": [
+    605,
+    392
+   ],
+   "footprint": [
+    15.1,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "cambiote_mercado",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_mercado.png",
+   "name": "Mercado do Cambiote"
+  },
+  "cambiote_cantina": {
+   "category": "building",
+   "size": [
+    518,
+    331
+   ],
+   "anchor": [
+    336,
+    329
+   ],
+   "footprint": [
+    8.3,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "cambiote_cantina",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_cantina.png",
+   "name": "Cantina do Cambiote"
+  },
+  "cambiote_farmacia": {
+   "category": "building",
+   "size": [
+    627,
+    294
+   ],
+   "anchor": [
+    429,
+    291
+   ],
+   "footprint": [
+    10.7,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cambiote_farmacia",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_farmacia.png",
+   "name": "Farmácia Cambiote"
+  },
+  "cambiote_administracao": {
+   "category": "building",
+   "size": [
+    724,
+    326
+   ],
+   "anchor": [
+    316,
+    323
+   ],
+   "footprint": [
+    7.9,
+    10.2
+   ],
+   "scale": 1.6,
+   "out": "cambiote_administracao",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_administracao.png",
+   "name": "Administração do Cambiote"
+  },
+  "cambiote_churrasqueira": {
+   "category": "building",
+   "size": [
+    734,
+    326
+   ],
+   "anchor": [
+    467,
+    323
+   ],
+   "footprint": [
+    11.6,
+    6.7
+   ],
+   "scale": 1.6,
+   "out": "cambiote_churrasqueira",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_churrasqueira.png",
+   "name": "Churrasqueira Cambiote"
+  },
+  "cambiote_esquadra": {
+   "category": "building",
+   "size": [
+    729,
+    360
+   ],
+   "anchor": [
+    283,
+    357
+   ],
+   "footprint": [
+    7.0,
+    11.1
+   ],
+   "scale": 1.6,
+   "out": "cambiote_esquadra",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_esquadra.png",
+   "name": "Posto Policial do Cambiote"
+  },
+  "cambiote_apartamentos": {
+   "category": "building",
+   "size": [
+    705,
+    756
+   ],
+   "anchor": [
+    444,
+    752
+   ],
+   "footprint": [
+    11.1,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "cambiote_apartamentos",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_apartamentos.png",
+   "name": "Prédio Cambiote"
+  },
+  "cambiote_casa1": {
+   "category": "building",
+   "size": [
+    641,
+    286
+   ],
+   "anchor": [
+    407,
+    283
+   ],
+   "footprint": [
+    10.1,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa1",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa1.png",
+   "name": "Casa 1"
+  },
+  "cambiote_casa2": {
+   "category": "building",
+   "size": [
+    522,
+    264
+   ],
+   "anchor": [
+    369,
+    262
+   ],
+   "footprint": [
+    9.2,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa2",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa2.png",
+   "name": "Casa 2"
+  },
+  "cambiote_casa3": {
+   "category": "building",
+   "size": [
+    510,
+    273
+   ],
+   "anchor": [
+    319,
+    270
+   ],
+   "footprint": [
+    7.9,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa3",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa3.png",
+   "name": "Casa 3"
+  },
+  "cambiote_casa4": {
+   "category": "building",
+   "size": [
+    541,
+    269
+   ],
+   "anchor": [
+    325,
+    267
+   ],
+   "footprint": [
+    8.1,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa4",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa4.png",
+   "name": "Casa 4"
+  },
+  "cambiote_casa5": {
+   "category": "building",
+   "size": [
+    564,
+    279
+   ],
+   "anchor": [
+    403,
+    276
+   ],
+   "footprint": [
+    10.0,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa5",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa5.png",
+   "name": "Casa 5"
+  },
+  "cambiote_casa6": {
+   "category": "building",
+   "size": [
+    550,
+    249
+   ],
+   "anchor": [
+    402,
+    247
+   ],
+   "footprint": [
+    10.0,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa6",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa6.png",
+   "name": "Casa 6"
+  },
+  "cambiote_casa7": {
+   "category": "building",
+   "size": [
+    551,
+    227
+   ],
+   "anchor": [
+    365,
+    225
+   ],
+   "footprint": [
+    9.1,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa7",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa7.png",
+   "name": "Casa 7"
+  },
+  "cambiote_casa8": {
+   "category": "building",
+   "size": [
+    579,
+    258
+   ],
+   "anchor": [
+    421,
+    256
+   ],
+   "footprint": [
+    10.5,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa8",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa8.png",
+   "name": "Casa 8"
+  },
+  "cambiote_casa9": {
+   "category": "building",
+   "size": [
+    689,
+    255
+   ],
+   "anchor": [
+    440,
+    251
+   ],
+   "footprint": [
+    11.0,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "cambiote_casa9",
+   "kit": "kit_cambiote",
+   "path": "res://assets/kits/kit_cambiote/cambiote_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "380e0b8dea08"
+}

@@ -1,0 +1,140 @@
+{
+ "id": "kit_chiva",
+ "cuts": "raw/kit_chiva_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 1,
+   "id": "chiva_escola",
+   "name": "Escola Primária da Chiva",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 0,
+   "id": "chiva_saude",
+   "name": "Centro de Saúde da Chiva",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "chiva_igreja",
+   "name": "Igreja Católica da Chiva",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "chiva_mercado",
+   "name": "Mercado da Chiva",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "chiva_cantina",
+   "name": "Cantina da Chiva",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "chiva_farmacia",
+   "name": "Farmácia Chiva",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "chiva_administracao",
+   "name": "Administração da Chiva",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "chiva_padaria",
+   "name": "Padaria Chiva",
+   "cat": "building",
+   "venue": "padaria"
+  },
+  {
+   "n": 8,
+   "id": "chiva_loja_telecom",
+   "name": "Loja Movicel Chiva",
+   "cat": "building",
+   "venue": "loja_telecom"
+  },
+  {
+   "n": 9,
+   "id": "chiva_apartamentos",
+   "name": "Prédio Chiva",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 10,
+   "id": "chiva_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "chiva_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "chiva_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "chiva_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "chiva_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "chiva_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "chiva_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "chiva_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "chiva_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

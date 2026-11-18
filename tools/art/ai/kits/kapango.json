@@ -1,0 +1,133 @@
+{
+ "id": "kit_kapango",
+ "cuts": "raw/kit_kapango_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 1,
+   "id": "kapango_escola",
+   "name": "Escola Primária do Kapango",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 2,
+   "id": "kapango_saude",
+   "name": "Centro de Saúde do Kapango",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 3,
+   "id": "kapango_igreja",
+   "name": "Igreja Católica do Kapango",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 0,
+   "id": "kapango_mercado",
+   "name": "Mercado do Kapango",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "kapango_cantina",
+   "name": "Cantina do Kapango",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "kapango_farmacia",
+   "name": "Farmácia Kapango",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "kapango_administracao",
+   "name": "Administração do Kapango",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "kapango_discoteca",
+   "name": "Discoteca Kapango",
+   "cat": "building",
+   "venue": "discoteca"
+  },
+  {
+   "n": 8,
+   "id": "kapango_padaria",
+   "name": "Padaria Kapango",
+   "cat": "building",
+   "venue": "padaria"
+  },
+  {
+   "n": 9,
+   "id": "kapango_esquadra",
+   "name": "Esquadra Policial do Kapango",
+   "cat": "building",
+   "venue": "esquadra"
+  },
+  {
+   "n": 10,
+   "id": "kapango_apartamentos",
+   "name": "Prédio Kapango",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 11,
+   "id": "kapango_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "kapango_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "kapango_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "kapango_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "kapango_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "kapango_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "kapango_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

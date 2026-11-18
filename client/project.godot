@@ -25,6 +25,7 @@ UiScale="*res://src/autoload/ui_scale.gd"
 AppConfig="*res://src/autoload/app_config.gd"
 Auth="*res://src/autoload/auth.gd"
 Net="*res://src/autoload/net.gd"
+Packs="*res://src/autoload/packs.gd"
 
 [debug]
 

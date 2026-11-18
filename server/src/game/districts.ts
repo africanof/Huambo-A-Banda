@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 
 /**
  * Catálogo de mapas ("districts"). Cada mapa é um tipo de sala; quando uma
@@ -187,8 +187,11 @@ function ensureDefaults(): void {
   if (defaultsLoaded) return;
   defaultsLoaded = true;
   registerDistrict(loadMapDistrict(new URL("../../data/maps/huambo_centro.json", import.meta.url)));
-  registerDistrict(loadBairroDistrict(new URL("../../data/bairros/cidade_baixa.json", import.meta.url)));
-  registerDistrict(loadBairroDistrict(new URL("../../data/bairros/bairro_fatima.json", import.meta.url)));
+  // todos os bairros HD (tools/bairros → server/data/bairros): Cidade Baixa, Cidade Alta, Fátima…
+  const dir = new URL("../../data/bairros/", import.meta.url);
+  for (const f of readdirSync(dir).filter((n) => n.endsWith(".json")).sort()) {
+    registerDistrict(loadBairroDistrict(new URL(f, dir)));
+  }
 }
 
 /** Interior onde está um ponto (ou undefined = na rua). */

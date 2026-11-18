@@ -1,0 +1,133 @@
+{
+ "id": "kit_sao_joao",
+ "cuts": "raw/kit_sao_joao_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 1,
+   "id": "sao_joao_escola",
+   "name": "Escola Primária de São João",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 2,
+   "id": "sao_joao_saude",
+   "name": "Centro de Saúde de São João",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 3,
+   "id": "sao_joao_igreja",
+   "name": "Igreja de São João",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 4,
+   "id": "sao_joao_mercado",
+   "name": "Mercado de São João",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 0,
+   "id": "sao_joao_cantina",
+   "name": "Cantina da Avó Maria",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "sao_joao_farmacia",
+   "name": "Farmácia São João",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "sao_joao_administracao",
+   "name": "Administração de São João",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "sao_joao_churrasqueira",
+   "name": "Churrasqueira São João",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 8,
+   "id": "sao_joao_hotel",
+   "name": "Pensão São João",
+   "cat": "building",
+   "venue": "hotel"
+  },
+  {
+   "n": 9,
+   "id": "sao_joao_correios",
+   "name": "Correios de São João",
+   "cat": "building",
+   "venue": "correios"
+  },
+  {
+   "n": 10,
+   "id": "sao_joao_apartamentos",
+   "name": "Prédio São João",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 11,
+   "id": "sao_joao_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "sao_joao_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "sao_joao_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "sao_joao_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "sao_joao_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "sao_joao_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "sao_joao_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

@@ -19,10 +19,8 @@ func _ready() -> void:
 		# demonstração do novo estilo gráfico HD (sem servidor)
 		get_tree().change_scene_to_file.call_deferred("res://src/demo/bairro_demo.tscn")
 		return
-	for i in DISTRICTS.size():
-		district_option.add_item(DISTRICTS[i][1], i)
-		if DISTRICTS[i][0] == AppConfig.default_district:
-			district_option.select(i)
+	_fill_districts(DISTRICTS)
+	_load_districts()
 	account_box.visible = Auth.supabase_enabled()
 	guest_button.pressed.connect(_on_guest)
 	login_button.pressed.connect(_on_login)
@@ -36,8 +34,48 @@ func _ready() -> void:
 		get_tree().root.add_child.call_deferred(t)
 
 
+var _districts: Array = []
+
+
+func _fill_districts(list: Array) -> void:
+	_districts = list
+	district_option.clear()
+	for i in list.size():
+		district_option.add_item(list[i][1], i)
+		if list[i][0] == AppConfig.default_district:
+			district_option.select(i)
+
+
+## Lista de bairros do servidor (Cidade Baixa primeiro, depois por ordem alfabética).
+func _load_districts() -> void:
+	var http := HTTPRequest.new()
+	add_child(http)
+	if http.request(AppConfig.server_url + "/districts") != OK:
+		return
+	var r: Array = await http.request_completed
+	http.queue_free()
+	if r[0] != HTTPRequest.RESULT_SUCCESS:
+		return
+	var data: Variant = JSON.parse_string((r[3] as PackedByteArray).get_string_from_utf8())
+	if typeof(data) != TYPE_ARRAY:
+		return
+	var list := []
+	for d: Dictionary in data:
+		var m: Variant = d.get("map")
+		if typeof(m) == TYPE_DICTIONARY and str(m.get("id", "")).begins_with("bairro:"):
+			list.append([str(d.id), str(d.name)])
+	list.sort_custom(func(a: Array, b: Array) -> bool: return a[0] == "cidade_baixa" or (b[0] != "cidade_baixa" and a[1].naturalnocasecmp_to(b[1]) < 0))
+	if not list.is_empty():
+		var sel := _selected_district()
+		_fill_districts(list)
+		for i in list.size():
+			if list[i][0] == sel:
+				district_option.select(i)
+
+
 func _selected_district() -> String:
-	return DISTRICTS[district_option.get_selected_id()][0]
+	var i := district_option.get_selected_id()
+	return _districts[i][0] if i >= 0 and i < _districts.size() else "cidade_baixa"
 
 
 func _on_guest() -> void:
@@ -56,6 +94,11 @@ func _on_signup() -> void:
 func _run(auth_step: Callable) -> void:
 	_set_busy(true, "A autenticar…")
 	var err: String = await auth_step.call()
+	if err != "":
+		_set_busy(false, err)
+		return
+	_set_busy(true, "A preparar o bairro…")
+	err = await Packs.ensure_bairro(_selected_district())
 	if err != "":
 		_set_busy(false, err)
 		return

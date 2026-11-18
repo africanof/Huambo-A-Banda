@@ -107,6 +107,8 @@ cd "$APP/repo/client"
 "$GODOT_DIR/godot" --headless --path . --import >/dev/null 2>&1 || true
 rm -rf "$APP/repo/build/online" && mkdir -p "$APP/repo/build/online"
 "$GODOT_DIR/godot" --headless --path . --export-release "Web Online" ../build/online/index.html
+mkdir -p ../build/online/packs
+for k in $(ls assets/kits 2>/dev/null); do "$GODOT_DIR/godot" --headless --path . --export-pack "Pack $k" "../build/online/packs/$k.pck"; done
 test -s "$APP/repo/build/online/index.wasm"
 rm -rf "$APP/web" && cp -r "$APP/repo/build/online" "$APP/web"
 chown -R huambo:huambo "$APP"

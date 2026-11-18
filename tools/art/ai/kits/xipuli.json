@@ -1,0 +1,140 @@
+{
+ "id": "kit_xipuli",
+ "cuts": "raw/kit_xipuli_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 1,
+   "id": "xipuli_escola",
+   "name": "Escola Primária do Xipuli",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 2,
+   "id": "xipuli_saude",
+   "name": "Centro de Saúde do Xipuli",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 3,
+   "id": "xipuli_igreja",
+   "name": "Igreja Católica do Xipuli",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 0,
+   "id": "xipuli_mercado",
+   "name": "Mercado do Xipuli",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "xipuli_cantina",
+   "name": "Cantina do Xipuli",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "xipuli_farmacia",
+   "name": "Farmácia Xipuli",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "xipuli_administracao",
+   "name": "Administração do Xipuli",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "xipuli_churrasqueira",
+   "name": "Churrasqueira Xipuli",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 8,
+   "id": "xipuli_discoteca",
+   "name": "Discoteca Xipuli",
+   "cat": "building",
+   "venue": "discoteca"
+  },
+  {
+   "n": 51,
+   "id": "xipuli_apartamentos",
+   "name": "Prédio Xipuli",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 9,
+   "id": "xipuli_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 10,
+   "id": "xipuli_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "xipuli_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "xipuli_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "xipuli_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "xipuli_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "xipuli_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "xipuli_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "xipuli_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

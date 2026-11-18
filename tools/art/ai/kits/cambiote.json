@@ -1,0 +1,140 @@
+{
+ "id": "kit_cambiote",
+ "cuts": "raw/kit_cambiote_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "cambiote_escola",
+   "name": "Escola Primária do Cambiote",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "cambiote_saude",
+   "name": "Centro de Saúde do Cambiote",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 4,
+   "id": "cambiote_igreja",
+   "name": "Igreja Evangélica do Cambiote",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 2,
+   "id": "cambiote_mercado",
+   "name": "Mercado do Cambiote",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 3,
+   "id": "cambiote_cantina",
+   "name": "Cantina do Cambiote",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "cambiote_farmacia",
+   "name": "Farmácia Cambiote",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "cambiote_administracao",
+   "name": "Administração do Cambiote",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "cambiote_churrasqueira",
+   "name": "Churrasqueira Cambiote",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 8,
+   "id": "cambiote_esquadra",
+   "name": "Posto Policial do Cambiote",
+   "cat": "building",
+   "venue": "esquadra"
+  },
+  {
+   "n": 16,
+   "id": "cambiote_apartamentos",
+   "name": "Prédio Cambiote",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 9,
+   "id": "cambiote_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 10,
+   "id": "cambiote_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "cambiote_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "cambiote_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "cambiote_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "cambiote_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "cambiote_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "cambiote_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "cambiote_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

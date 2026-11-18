@@ -1,0 +1,148 @@
+{
+ "id": "kit_cacoio",
+ "cuts": "raw/kit_cacoio_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "cacoio_escola",
+   "name": "Escola Primária do Cacoio",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "cacoio_saude",
+   "name": "Centro de Saúde do Cacoio",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "cacoio_igreja",
+   "name": "Igreja Evangélica do Cacoio",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "cacoio_mercado",
+   "name": "Mercado do Cacoio",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "cacoio_cantina",
+   "name": "Cantina do Cacoio",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "cacoio_farmacia",
+   "name": "Farmácia Cacoio",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "cacoio_administracao",
+   "name": "Administração do Cacoio",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "cacoio_churrasqueira",
+   "name": "Churrasqueira Cacoio",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 8,
+   "id": "cacoio_loja_telecom",
+   "name": "Quiosque Unitel Cacoio",
+   "cat": "building",
+   "venue": "loja_telecom"
+  },
+  {
+   "n": 17,
+   "id": "cacoio_apartamentos",
+   "name": "Prédio Cacoio",
+   "cat": "building",
+   "venue": "apartamentos",
+   "xrange": [
+    253,
+    896
+   ]
+  },
+  {
+   "n": 17,
+   "id": "cacoio_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "cacoio_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    0,
+    253
+   ]
+  },
+  {
+   "n": 9,
+   "id": "cacoio_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 10,
+   "id": "cacoio_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "cacoio_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "cacoio_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "cacoio_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "cacoio_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "cacoio_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

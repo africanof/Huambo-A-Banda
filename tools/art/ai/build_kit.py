@@ -9,13 +9,33 @@ guarda "scale" (o motor amplia ao desenhar: 6× menos memória de textura no tel
 gravar ampliado). Pegada no chão (metros) calculada pela forma isométrica do edifício:
 canto da frente = ponto mais baixo; largura à esquerda = w, à direita = d (64 px por metro).
 """
-import json, os, sys
+import hashlib, json, os, sys
 import numpy as np
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
-OUT = os.path.join(ROOT, "client", "assets", "demo")
+KITS = os.path.join(ROOT, "client", "assets", "kits")
+# Godot: texturas dos kits importadas com WebP com perdas (pacote ~4× mais pequeno; arte pintada não se nota)
+IMPORT = """[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+
+[deps]
+
+source_file="res://assets/kits/{kit}/{id}.png"
+
+[params]
+
+compress/mode=1
+compress/high_quality=false
+compress/lossy_quality=0.82
+mipmaps/generate=false
+process/fix_alpha_border=true
+process/premult_alpha=false
+detect_3d/compress_to=0
+"""
 PX_PER_M = 64
 
 
@@ -41,8 +61,11 @@ def main(cfg_path):
     cfg = json.load(open(cfg_path))
     cut_dir = os.path.join(HERE, cfg["cuts"])
     scale = float(cfg["scale"])
+    kit = cfg["id"]
+    OUT = os.path.join(KITS, kit)
+    os.makedirs(OUT, exist_ok=True)
     man_path = os.path.join(OUT, "manifest.json")
-    man = json.load(open(man_path))
+    man = {"kit": kit, "objects": {}}
     for e in cfg["items"]:
         if "file" in e:  # recorte substituído (ex.: letreiro corrigido)
             im = Image.open(os.path.join(HERE, e["file"])).convert("RGBA")
@@ -58,6 +81,12 @@ def main(cfg_path):
             im = im.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
         else:
             im = Image.open(os.path.join(cut_dir, f"{e['n']:03d}.png")).convert("RGBA")
+        if "xrange" in e:  # vários objetos colados no mesmo recorte: colunas desta parte
+            a0, a1 = e["xrange"]
+            im = im.crop((a0, 0, a1, im.height))
+            a = np.asarray(im)[..., 3]
+            ys, xs = np.where(a > 24)
+            im = im.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
         if "split" in e:  # dois objetos colados: [parte, de]
             part, of = e["split"]
             arr = np.asarray(im)[..., 3]
@@ -82,14 +111,23 @@ def main(cfg_path):
             fp = [w_m, d_m]
             anchor = [fx, fy]
         im.save(os.path.join(OUT, e["id"] + ".png"), optimize=True)
+        imp = os.path.join(OUT, e["id"] + ".png.import")
+        if not os.path.exists(imp):
+            open(imp, "w").write(IMPORT.format(kit=kit, id=e["id"]))
         entry = {"category": e.get("cat", "prop"), "size": [im.width, im.height], "anchor": anchor, "footprint": fp,
-                 "scale": scale, "out": e["id"], "kit": cfg["id"]}
+                 "scale": scale, "out": e["id"], "kit": kit, "path": f"res://assets/kits/{kit}/{e['id']}.png"}
         for k in ("name", "light", "floor"):
             if k in e:
                 entry[k] = e[k]
         man["objects"][e["id"]] = entry
         print(f"{e['id']:<24} {im.width}x{im.height}  pegada {fp}")
+    # versão do kit (muda quando a arte muda): o cliente guarda o pacote com este nome
+    h = hashlib.sha256(json.dumps(man["objects"], sort_keys=True).encode())
+    for k in sorted(man["objects"]):
+        h.update(open(os.path.join(OUT, k + ".png"), "rb").read())
+    man["version"] = h.hexdigest()[:12]
     json.dump(man, open(man_path, "w"), ensure_ascii=False, indent=1)
+    print("kit", kit, "versão", man["version"], len(man["objects"]), "objetos")
 
 
 if __name__ == "__main__":

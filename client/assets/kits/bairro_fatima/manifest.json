@@ -1,0 +1,1550 @@
+{
+ "kit": "bairro_fatima",
+ "objects": {
+  "f_escola": {
+   "category": "building",
+   "size": [
+    1099,
+    407
+   ],
+   "anchor": [
+    158,
+    402
+   ],
+   "footprint": [
+    3.9,
+    23.5
+   ],
+   "scale": 1.6,
+   "out": "f_escola",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_escola.png",
+   "name": "Escola Primária do Bairro de Fátima"
+  },
+  "f_liceu": {
+   "category": "building",
+   "size": [
+    915,
+    408
+   ],
+   "anchor": [
+    574,
+    404
+   ],
+   "footprint": [
+    14.3,
+    8.5
+   ],
+   "scale": 1.6,
+   "out": "f_liceu",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_liceu.png",
+   "name": "Liceu do Bairro de Fátima"
+  },
+  "f_centro_saude": {
+   "category": "building",
+   "size": [
+    929,
+    369
+   ],
+   "anchor": [
+    681,
+    366
+   ],
+   "footprint": [
+    17.0,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "f_centro_saude",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_centro_saude.png",
+   "name": "Centro de Saúde do Bairro de Fátima"
+  },
+  "f_igreja": {
+   "category": "building",
+   "size": [
+    767,
+    409
+   ],
+   "anchor": [
+    473,
+    406
+   ],
+   "footprint": [
+    11.8,
+    7.3
+   ],
+   "scale": 1.6,
+   "out": "f_igreja",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_igreja.png",
+   "name": "Igreja Nossa Senhora de Fátima"
+  },
+  "f_esquadra": {
+   "category": "building",
+   "size": [
+    567,
+    326
+   ],
+   "anchor": [
+    410,
+    323
+   ],
+   "footprint": [
+    10.2,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "f_esquadra",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_esquadra.png",
+   "name": "Esquadra Policial de Fátima"
+  },
+  "f_farmacia": {
+   "category": "building",
+   "size": [
+    502,
+    288
+   ],
+   "anchor": [
+    358,
+    286
+   ],
+   "footprint": [
+    8.9,
+    3.6
+   ],
+   "scale": 1.6,
+   "out": "f_farmacia",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_farmacia.png",
+   "name": "Farmácia Fátima"
+  },
+  "f_cantina": {
+   "category": "building",
+   "size": [
+    594,
+    315
+   ],
+   "anchor": [
+    441,
+    313
+   ],
+   "footprint": [
+    11.0,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "f_cantina",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_cantina.png",
+   "name": "Cantina da Dona Rosa"
+  },
+  "f_churrasqueira": {
+   "category": "building",
+   "size": [
+    546,
+    317
+   ],
+   "anchor": [
+    412,
+    315
+   ],
+   "footprint": [
+    10.2,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "f_churrasqueira",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_churrasqueira.png",
+   "name": "Churrasqueira Fátima"
+  },
+  "f_administracao": {
+   "category": "building",
+   "size": [
+    399,
+    299
+   ],
+   "anchor": [
+    307,
+    297
+   ],
+   "footprint": [
+    7.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "f_administracao",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_administracao.png",
+   "name": "Administração do Bairro de Fátima"
+  },
+  "f_predio": {
+   "category": "building",
+   "size": [
+    390,
+    373
+   ],
+   "anchor": [
+    251,
+    371
+   ],
+   "footprint": [
+    6.2,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "f_predio",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_predio.png",
+   "name": "Prédio Fátima"
+  },
+  "f_casa3": {
+   "category": "building",
+   "size": [
+    318,
+    264
+   ],
+   "anchor": [
+    212,
+    263
+   ],
+   "footprint": [
+    5.2,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "f_casa3",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa3.png",
+   "name": "Casa"
+  },
+  "f_casa4": {
+   "category": "building",
+   "size": [
+    303,
+    261
+   ],
+   "anchor": [
+    197,
+    260
+   ],
+   "footprint": [
+    4.9,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "f_casa4",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa4.png",
+   "name": "Casa"
+  },
+  "f_casa5": {
+   "category": "building",
+   "size": [
+    308,
+    268
+   ],
+   "anchor": [
+    203,
+    266
+   ],
+   "footprint": [
+    5.0,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "f_casa5",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa5.png",
+   "name": "Casa"
+  },
+  "f_casa6": {
+   "category": "building",
+   "size": [
+    284,
+    234
+   ],
+   "anchor": [
+    210,
+    233
+   ],
+   "footprint": [
+    5.2,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "f_casa6",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa6.png",
+   "name": "Casa"
+  },
+  "f_casa7": {
+   "category": "building",
+   "size": [
+    306,
+    266
+   ],
+   "anchor": [
+    211,
+    265
+   ],
+   "footprint": [
+    5.2,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "f_casa7",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa7.png",
+   "name": "Casa"
+  },
+  "f_casa8": {
+   "category": "building",
+   "size": [
+    315,
+    270
+   ],
+   "anchor": [
+    210,
+    269
+   ],
+   "footprint": [
+    5.2,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "f_casa8",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa8.png",
+   "name": "Casa"
+  },
+  "f_casa1": {
+   "category": "building",
+   "size": [
+    312,
+    264
+   ],
+   "anchor": [
+    189,
+    262
+   ],
+   "footprint": [
+    4.7,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "f_casa1",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa1.png",
+   "name": "Casa"
+  },
+  "f_casa2": {
+   "category": "building",
+   "size": [
+    311,
+    232
+   ],
+   "anchor": [
+    214,
+    230
+   ],
+   "footprint": [
+    5.4,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "f_casa2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_casa2.png",
+   "name": "Casa"
+  },
+  "f_mercado": {
+   "category": "building",
+   "size": [
+    698,
+    279
+   ],
+   "anchor": [
+    524,
+    276
+   ],
+   "footprint": [
+    13.1,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "f_mercado",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_mercado.png",
+   "name": "Mercado do Bairro de Fátima"
+  },
+  "f_discoteca": {
+   "category": "building",
+   "size": [
+    572,
+    335
+   ],
+   "anchor": [
+    307,
+    333
+   ],
+   "footprint": [
+    7.7,
+    6.6
+   ],
+   "scale": 1.6,
+   "out": "f_discoteca",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_discoteca.png",
+   "name": "Discoteca Kizomba Fátima"
+  },
+  "f_hospedaria": {
+   "category": "building",
+   "size": [
+    546,
+    388
+   ],
+   "anchor": [
+    350,
+    385
+   ],
+   "footprint": [
+    8.7,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "f_hospedaria",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_hospedaria.png",
+   "name": "Hospedaria Fátima"
+  },
+  "f_jacaranda": {
+   "category": "prop",
+   "size": [
+    247,
+    223
+   ],
+   "anchor": [
+    123,
+    221
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "f_jacaranda",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_jacaranda.png"
+  },
+  "f_jacaranda2": {
+   "category": "prop",
+   "size": [
+    243,
+    221
+   ],
+   "anchor": [
+    121,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "f_jacaranda2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_jacaranda2.png"
+  },
+  "f_eucalipto": {
+   "category": "prop",
+   "size": [
+    185,
+    254
+   ],
+   "anchor": [
+    92,
+    252
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "f_eucalipto",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_eucalipto.png"
+  },
+  "f_eucalipto2": {
+   "category": "prop",
+   "size": [
+    162,
+    251
+   ],
+   "anchor": [
+    80,
+    250
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "f_eucalipto2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_eucalipto2.png"
+  },
+  "f_palmeira": {
+   "category": "prop",
+   "size": [
+    159,
+    236
+   ],
+   "anchor": [
+    79,
+    235
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_palmeira",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_palmeira.png"
+  },
+  "f_palmeira2": {
+   "category": "prop",
+   "size": [
+    166,
+    229
+   ],
+   "anchor": [
+    82,
+    227
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_palmeira2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_palmeira2.png"
+  },
+  "f_mulemba": {
+   "category": "prop",
+   "size": [
+    322,
+    242
+   ],
+   "anchor": [
+    161,
+    240
+   ],
+   "footprint": [
+    2.5,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "f_mulemba",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_mulemba.png"
+  },
+  "f_mangueira": {
+   "category": "prop",
+   "size": [
+    194,
+    200
+   ],
+   "anchor": [
+    97,
+    198
+   ],
+   "footprint": [
+    1.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "f_mangueira",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_mangueira.png"
+  },
+  "f_abacateiro": {
+   "category": "prop",
+   "size": [
+    196,
+    198
+   ],
+   "anchor": [
+    97,
+    196
+   ],
+   "footprint": [
+    1.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "f_abacateiro",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_abacateiro.png"
+  },
+  "f_buganvilia": {
+   "category": "prop",
+   "size": [
+    196,
+    163
+   ],
+   "anchor": [
+    97,
+    161
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "f_buganvilia",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_buganvilia.png"
+  },
+  "f_candeeiro": {
+   "category": "prop",
+   "size": [
+    103,
+    213
+   ],
+   "anchor": [
+    51,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_candeeiro",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_candeeiro.png",
+   "light": true
+  },
+  "f_candeeiro2": {
+   "category": "prop",
+   "size": [
+    174,
+    220
+   ],
+   "anchor": [
+    86,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_candeeiro2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_candeeiro2.png",
+   "light": true
+  },
+  "f_candeeiro_solar": {
+   "category": "prop",
+   "size": [
+    77,
+    210
+   ],
+   "anchor": [
+    38,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_candeeiro_solar",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_candeeiro_solar.png",
+   "light": true
+  },
+  "f_poste": {
+   "category": "prop",
+   "size": [
+    85,
+    235
+   ],
+   "anchor": [
+    41,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_poste",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_poste.png"
+  },
+  "f_poste2": {
+   "category": "prop",
+   "size": [
+    88,
+    238
+   ],
+   "anchor": [
+    43,
+    237
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_poste2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_poste2.png"
+  },
+  "f_candongueiro": {
+   "category": "prop",
+   "size": [
+    259,
+    152
+   ],
+   "anchor": [
+    111,
+    150
+   ],
+   "footprint": [
+    1.5,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "f_candongueiro",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_candongueiro.png"
+  },
+  "f_candongueiro2": {
+   "category": "prop",
+   "size": [
+    249,
+    150
+   ],
+   "anchor": [
+    109,
+    148
+   ],
+   "footprint": [
+    1.5,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "f_candongueiro2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_candongueiro2.png"
+  },
+  "f_kupapata": {
+   "category": "prop",
+   "size": [
+    150,
+    132
+   ],
+   "anchor": [
+    16,
+    130
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "f_kupapata",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_kupapata.png"
+  },
+  "f_kupapata2": {
+   "category": "prop",
+   "size": [
+    141,
+    124
+   ],
+   "anchor": [
+    16,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "f_kupapata2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_kupapata2.png"
+  },
+  "f_carro": {
+   "category": "prop",
+   "size": [
+    267,
+    127
+   ],
+   "anchor": [
+    117,
+    125
+   ],
+   "footprint": [
+    1.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "f_carro",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_carro.png"
+  },
+  "f_hilux": {
+   "category": "prop",
+   "size": [
+    275,
+    149
+   ],
+   "anchor": [
+    128,
+    148
+   ],
+   "footprint": [
+    1.8,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "f_hilux",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_hilux.png"
+  },
+  "f_carro2": {
+   "category": "prop",
+   "size": [
+    222,
+    122
+   ],
+   "anchor": [
+    105,
+    120
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "f_carro2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_carro2.png"
+  },
+  "f_banca": {
+   "category": "prop",
+   "size": [
+    206,
+    183
+   ],
+   "anchor": [
+    55,
+    182
+   ],
+   "footprint": [
+    0.7,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "f_banca",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca.png"
+  },
+  "f_banca2": {
+   "category": "prop",
+   "size": [
+    202,
+    176
+   ],
+   "anchor": [
+    92,
+    174
+   ],
+   "footprint": [
+    1.2,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "f_banca2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca2.png"
+  },
+  "f_banca3": {
+   "category": "prop",
+   "size": [
+    234,
+    172
+   ],
+   "anchor": [
+    144,
+    171
+   ],
+   "footprint": [
+    2.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "f_banca3",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca3.png"
+  },
+  "f_banca4": {
+   "category": "prop",
+   "size": [
+    232,
+    155
+   ],
+   "anchor": [
+    84,
+    153
+   ],
+   "footprint": [
+    1.2,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "f_banca4",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca4.png"
+  },
+  "f_banca5": {
+   "category": "prop",
+   "size": [
+    203,
+    170
+   ],
+   "anchor": [
+    103,
+    168
+   ],
+   "footprint": [
+    1.4,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "f_banca5",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca5.png"
+  },
+  "f_banca_roupa": {
+   "category": "prop",
+   "size": [
+    243,
+    160
+   ],
+   "anchor": [
+    136,
+    158
+   ],
+   "footprint": [
+    1.9,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "f_banca_roupa",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banca_roupa.png"
+  },
+  "f_contentor": {
+   "category": "prop",
+   "size": [
+    122,
+    132
+   ],
+   "anchor": [
+    60,
+    130
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_contentor",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_contentor.png"
+  },
+  "f_contentor2": {
+   "category": "prop",
+   "size": [
+    120,
+    131
+   ],
+   "anchor": [
+    59,
+    130
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_contentor2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_contentor2.png"
+  },
+  "f_banco_jardim": {
+   "category": "prop",
+   "size": [
+    171,
+    106
+   ],
+   "anchor": [
+    34,
+    104
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "f_banco_jardim",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banco_jardim.png"
+  },
+  "f_banco_jardim2": {
+   "category": "prop",
+   "size": [
+    155,
+    99
+   ],
+   "anchor": [
+    32,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "f_banco_jardim2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banco_jardim2.png"
+  },
+  "f_banco_madeira": {
+   "category": "prop",
+   "size": [
+    165,
+    107
+   ],
+   "anchor": [
+    33,
+    105
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "f_banco_madeira",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_banco_madeira.png"
+  },
+  "f_tanque": {
+   "category": "prop",
+   "size": [
+    153,
+    175
+   ],
+   "anchor": [
+    76,
+    174
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "f_tanque",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_tanque.png"
+  },
+  "f_gerador": {
+   "category": "prop",
+   "size": [
+    148,
+    112
+   ],
+   "anchor": [
+    73,
+    110
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_gerador",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_gerador.png"
+  },
+  "f_paragem": {
+   "category": "prop",
+   "size": [
+    229,
+    154
+   ],
+   "anchor": [
+    64,
+    152
+   ],
+   "footprint": [
+    0.9,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "f_paragem",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_paragem.png"
+  },
+  "f_paragem2": {
+   "category": "prop",
+   "size": [
+    269,
+    155
+   ],
+   "anchor": [
+    65,
+    139
+   ],
+   "footprint": [
+    0.9,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "f_paragem2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_paragem2.png"
+  },
+  "f_vaso": {
+   "category": "prop",
+   "size": [
+    115,
+    155
+   ],
+   "anchor": [
+    57,
+    154
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "f_vaso",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_vaso.png"
+  },
+  "f_vaso2": {
+   "category": "prop",
+   "size": [
+    126,
+    146
+   ],
+   "anchor": [
+    62,
+    145
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "f_vaso2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_vaso2.png"
+  },
+  "f_vaso3": {
+   "category": "prop",
+   "size": [
+    111,
+    136
+   ],
+   "anchor": [
+    55,
+    135
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "f_vaso3",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_vaso3.png"
+  },
+  "f_bicicleta": {
+   "category": "prop",
+   "size": [
+    178,
+    113
+   ],
+   "anchor": [
+    88,
+    111
+   ],
+   "footprint": [
+    1,
+    0.5
+   ],
+   "scale": 1.6,
+   "out": "f_bicicleta",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_bicicleta.png"
+  },
+  "f_blocos": {
+   "category": "prop",
+   "size": [
+    157,
+    87
+   ],
+   "anchor": [
+    79,
+    85
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_blocos",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_blocos.png"
+  },
+  "f_bidao": {
+   "category": "prop",
+   "size": [
+    74,
+    85
+   ],
+   "anchor": [
+    36,
+    83
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_bidao",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_bidao.png"
+  },
+  "f_galinha": {
+   "category": "prop",
+   "size": [
+    90,
+    100
+   ],
+   "anchor": [
+    44,
+    98
+   ],
+   "footprint": [
+    0.3,
+    0.3
+   ],
+   "scale": 1.6,
+   "out": "f_galinha",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_galinha.png"
+  },
+  "f_galinha2": {
+   "category": "prop",
+   "size": [
+    76,
+    85
+   ],
+   "anchor": [
+    37,
+    84
+   ],
+   "footprint": [
+    0.3,
+    0.3
+   ],
+   "scale": 1.6,
+   "out": "f_galinha2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_galinha2.png"
+  },
+  "f_cabra": {
+   "category": "prop",
+   "size": [
+    123,
+    110
+   ],
+   "anchor": [
+    61,
+    108
+   ],
+   "footprint": [
+    0.6,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_cabra",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_cabra.png"
+  },
+  "f_placa_bairro": {
+   "category": "prop",
+   "size": [
+    150,
+    141
+   ],
+   "anchor": [
+    74,
+    139
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_placa_bairro",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_placa_bairro.png"
+  },
+  "f_bandeira": {
+   "category": "prop",
+   "size": [
+    103,
+    181
+   ],
+   "anchor": [
+    51,
+    179
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_bandeira",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_bandeira.png"
+  },
+  "f_atm": {
+   "category": "prop",
+   "size": [
+    162,
+    182
+   ],
+   "anchor": [
+    80,
+    181
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_atm",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_atm.png"
+  },
+  "f_quiosque_unitel": {
+   "category": "prop",
+   "size": [
+    171,
+    170
+   ],
+   "anchor": [
+    85,
+    169
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_quiosque_unitel",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_quiosque_unitel.png"
+  },
+  "f_quiosque_movicel": {
+   "category": "prop",
+   "size": [
+    163,
+    168
+   ],
+   "anchor": [
+    81,
+    167
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_quiosque_movicel",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_quiosque_movicel.png"
+  },
+  "f_carvao": {
+   "category": "prop",
+   "size": [
+    122,
+    136
+   ],
+   "anchor": [
+    60,
+    135
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "f_carvao",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_carvao.png"
+  },
+  "f_chafariz": {
+   "category": "prop",
+   "size": [
+    174,
+    167
+   ],
+   "anchor": [
+    86,
+    166
+   ],
+   "footprint": [
+    1,
+    1
+   ],
+   "scale": 1.6,
+   "out": "f_chafariz",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_chafariz.png"
+  },
+  "f_mesa_plastico": {
+   "category": "prop",
+   "size": [
+    257,
+    143
+   ],
+   "anchor": [
+    32,
+    140
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "f_mesa_plastico",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_mesa_plastico.png"
+  },
+  "f_mesa_plastico2": {
+   "category": "prop",
+   "size": [
+    260,
+    144
+   ],
+   "anchor": [
+    33,
+    139
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "f_mesa_plastico2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_mesa_plastico2.png"
+  },
+  "f_botija": {
+   "category": "prop",
+   "size": [
+    74,
+    119
+   ],
+   "anchor": [
+    36,
+    118
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "f_botija",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_botija.png"
+  },
+  "f_carroca": {
+   "category": "prop",
+   "size": [
+    405,
+    162
+   ],
+   "anchor": [
+    301,
+    158
+   ],
+   "footprint": [
+    3.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "f_carroca",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_carroca.png"
+  },
+  "f_muro_portao": {
+   "category": "prop",
+   "size": [
+    470,
+    168
+   ],
+   "anchor": [
+    431,
+    167
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "f_muro_portao",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_muro_portao.png"
+  },
+  "f_muro_portao2": {
+   "category": "prop",
+   "size": [
+    524,
+    169
+   ],
+   "anchor": [
+    462,
+    167
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "f_muro_portao2",
+   "kit": "bairro_fatima",
+   "path": "res://assets/kits/bairro_fatima/f_muro_portao2.png"
+  }
+ },
+ "version": "46cd19307e05"
+}

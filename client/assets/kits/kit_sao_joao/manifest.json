@@ -1,0 +1,366 @@
+{
+ "kit": "kit_sao_joao",
+ "objects": {
+  "sao_joao_escola": {
+   "category": "building",
+   "size": [
+    932,
+    443
+   ],
+   "anchor": [
+    685,
+    439
+   ],
+   "footprint": [
+    17.1,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_escola",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_escola.png",
+   "name": "Escola Primária de São João"
+  },
+  "sao_joao_saude": {
+   "category": "building",
+   "size": [
+    747,
+    369
+   ],
+   "anchor": [
+    491,
+    365
+   ],
+   "footprint": [
+    12.2,
+    6.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_saude",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_saude.png",
+   "name": "Centro de Saúde de São João"
+  },
+  "sao_joao_igreja": {
+   "category": "building",
+   "size": [
+    614,
+    438
+   ],
+   "anchor": [
+    375,
+    435
+   ],
+   "footprint": [
+    9.3,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_igreja",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_igreja.png",
+   "name": "Igreja de São João"
+  },
+  "sao_joao_mercado": {
+   "category": "building",
+   "size": [
+    887,
+    451
+   ],
+   "anchor": [
+    539,
+    446
+   ],
+   "footprint": [
+    13.4,
+    8.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_mercado",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_mercado.png",
+   "name": "Mercado de São João"
+  },
+  "sao_joao_cantina": {
+   "category": "building",
+   "size": [
+    581,
+    360
+   ],
+   "anchor": [
+    362,
+    357
+   ],
+   "footprint": [
+    9.0,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_cantina",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_cantina.png",
+   "name": "Cantina da Avó Maria"
+  },
+  "sao_joao_farmacia": {
+   "category": "building",
+   "size": [
+    646,
+    394
+   ],
+   "anchor": [
+    482,
+    391
+   ],
+   "footprint": [
+    12.0,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_farmacia",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_farmacia.png",
+   "name": "Farmácia São João"
+  },
+  "sao_joao_administracao": {
+   "category": "building",
+   "size": [
+    667,
+    468
+   ],
+   "anchor": [
+    428,
+    464
+   ],
+   "footprint": [
+    10.7,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_administracao",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_administracao.png",
+   "name": "Administração de São João"
+  },
+  "sao_joao_churrasqueira": {
+   "category": "building",
+   "size": [
+    661,
+    402
+   ],
+   "anchor": [
+    377,
+    398
+   ],
+   "footprint": [
+    9.4,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_churrasqueira",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_churrasqueira.png",
+   "name": "Churrasqueira São João"
+  },
+  "sao_joao_hotel": {
+   "category": "building",
+   "size": [
+    546,
+    467
+   ],
+   "anchor": [
+    389,
+    464
+   ],
+   "footprint": [
+    9.7,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_hotel",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_hotel.png",
+   "name": "Pensão São João"
+  },
+  "sao_joao_correios": {
+   "category": "building",
+   "size": [
+    593,
+    402
+   ],
+   "anchor": [
+    374,
+    398
+   ],
+   "footprint": [
+    9.3,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_correios",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_correios.png",
+   "name": "Correios de São João"
+  },
+  "sao_joao_apartamentos": {
+   "category": "building",
+   "size": [
+    573,
+    515
+   ],
+   "anchor": [
+    362,
+    511
+   ],
+   "footprint": [
+    9.0,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_apartamentos",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_apartamentos.png",
+   "name": "Prédio São João"
+  },
+  "sao_joao_casa1": {
+   "category": "building",
+   "size": [
+    552,
+    336
+   ],
+   "anchor": [
+    396,
+    334
+   ],
+   "footprint": [
+    9.9,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa1.png",
+   "name": "Casa 1"
+  },
+  "sao_joao_casa2": {
+   "category": "building",
+   "size": [
+    524,
+    325
+   ],
+   "anchor": [
+    349,
+    323
+   ],
+   "footprint": [
+    8.7,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa2.png",
+   "name": "Casa 2"
+  },
+  "sao_joao_casa3": {
+   "category": "building",
+   "size": [
+    507,
+    335
+   ],
+   "anchor": [
+    354,
+    333
+   ],
+   "footprint": [
+    8.8,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa3",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa3.png",
+   "name": "Casa 3"
+  },
+  "sao_joao_casa4": {
+   "category": "building",
+   "size": [
+    512,
+    308
+   ],
+   "anchor": [
+    314,
+    306
+   ],
+   "footprint": [
+    7.8,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa4",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa4.png",
+   "name": "Casa 4"
+  },
+  "sao_joao_casa5": {
+   "category": "building",
+   "size": [
+    522,
+    319
+   ],
+   "anchor": [
+    363,
+    317
+   ],
+   "footprint": [
+    9.0,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa5",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa5.png",
+   "name": "Casa 5"
+  },
+  "sao_joao_casa6": {
+   "category": "building",
+   "size": [
+    503,
+    302
+   ],
+   "anchor": [
+    339,
+    299
+   ],
+   "footprint": [
+    8.4,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa6",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa6.png",
+   "name": "Casa 6"
+  },
+  "sao_joao_casa7": {
+   "category": "building",
+   "size": [
+    532,
+    331
+   ],
+   "anchor": [
+    350,
+    328
+   ],
+   "footprint": [
+    8.7,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa7",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa7.png",
+   "name": "Casa 7"
+  }
+ },
+ "version": "00d587e424b7"
+}

@@ -18,8 +18,9 @@ RUN python3 /tmp/range_unzip.py \
 COPY client /src/client
 WORKDIR /src/client
 RUN (godot --headless --path . --import >/dev/null 2>&1 || true) \
- && mkdir -p /web && godot --headless --path . --export-release "Web Online" /web/index.html \
- && test -s /web/index.wasm && test -s /web/index.pck
+ && mkdir -p /web/packs && godot --headless --path . --export-release "Web Online" /web/index.html \
+ && test -s /web/index.wasm && test -s /web/index.pck \
+ && for k in $(ls assets/kits); do godot --headless --path . --export-pack "Pack $k" /web/packs/$k.pck && test -s /web/packs/$k.pck; done
 
 # ---- 2. servidor (TypeScript → JavaScript)
 FROM node:22-bookworm-slim AS server

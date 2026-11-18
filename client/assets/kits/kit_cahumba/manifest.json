@@ -1,0 +1,386 @@
+{
+ "kit": "kit_cahumba",
+ "objects": {
+  "cahumba_escola": {
+   "category": "building",
+   "size": [
+    1006,
+    447
+   ],
+   "anchor": [
+    645,
+    442
+   ],
+   "footprint": [
+    16.1,
+    9.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_escola",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_escola.png",
+   "name": "Escola Primária da Cahumba"
+  },
+  "cahumba_saude": {
+   "category": "building",
+   "size": [
+    797,
+    424
+   ],
+   "anchor": [
+    461,
+    419
+   ],
+   "footprint": [
+    11.5,
+    8.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_saude",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_saude.png",
+   "name": "Centro de Saúde da Cahumba"
+  },
+  "cahumba_igreja": {
+   "category": "building",
+   "size": [
+    733,
+    478
+   ],
+   "anchor": [
+    402,
+    473
+   ],
+   "footprint": [
+    10.0,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_igreja",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_igreja.png",
+   "name": "Igreja Católica da Cahumba"
+  },
+  "cahumba_mercado": {
+   "category": "building",
+   "size": [
+    1029,
+    481
+   ],
+   "anchor": [
+    508,
+    476
+   ],
+   "footprint": [
+    12.7,
+    13.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_mercado",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_mercado.png",
+   "name": "Mercado da Cahumba"
+  },
+  "cahumba_cantina": {
+   "category": "building",
+   "size": [
+    651,
+    414
+   ],
+   "anchor": [
+    456,
+    410
+   ],
+   "footprint": [
+    11.4,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_cantina",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_cantina.png",
+   "name": "Cantina da Cahumba"
+  },
+  "cahumba_farmacia": {
+   "category": "building",
+   "size": [
+    502,
+    371
+   ],
+   "anchor": [
+    325,
+    367
+   ],
+   "footprint": [
+    8.1,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_farmacia",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_farmacia.png",
+   "name": "Farmácia Cahumba"
+  },
+  "cahumba_administracao": {
+   "category": "building",
+   "size": [
+    608,
+    445
+   ],
+   "anchor": [
+    425,
+    441
+   ],
+   "footprint": [
+    10.6,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_administracao",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_administracao.png",
+   "name": "Administração da Cahumba"
+  },
+  "cahumba_padaria": {
+   "category": "building",
+   "size": [
+    619,
+    401
+   ],
+   "anchor": [
+    419,
+    397
+   ],
+   "footprint": [
+    10.4,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "cahumba_padaria",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_padaria.png",
+   "name": "Padaria Cahumba"
+  },
+  "cahumba_discoteca": {
+   "category": "building",
+   "size": [
+    641,
+    397
+   ],
+   "anchor": [
+    394,
+    394
+   ],
+   "footprint": [
+    9.8,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_discoteca",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_discoteca.png",
+   "name": "Discoteca Cahumba"
+  },
+  "cahumba_apartamentos": {
+   "category": "building",
+   "size": [
+    563,
+    617
+   ],
+   "anchor": [
+    352,
+    612
+   ],
+   "footprint": [
+    8.8,
+    5.2
+   ],
+   "scale": 1.6,
+   "out": "cahumba_apartamentos",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_apartamentos.png",
+   "name": "Prédio Cahumba"
+  },
+  "cahumba_casa1": {
+   "category": "building",
+   "size": [
+    432,
+    288
+   ],
+   "anchor": [
+    236,
+    284
+   ],
+   "footprint": [
+    5.9,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa1",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa1.png",
+   "name": "Casa 1"
+  },
+  "cahumba_casa2": {
+   "category": "building",
+   "size": [
+    391,
+    279
+   ],
+   "anchor": [
+    223,
+    276
+   ],
+   "footprint": [
+    5.5,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa2",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa2.png",
+   "name": "Casa 2"
+  },
+  "cahumba_casa3": {
+   "category": "building",
+   "size": [
+    358,
+    263
+   ],
+   "anchor": [
+    195,
+    260
+   ],
+   "footprint": [
+    4.8,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa3",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa3.png",
+   "name": "Casa 3"
+  },
+  "cahumba_casa4": {
+   "category": "building",
+   "size": [
+    399,
+    295
+   ],
+   "anchor": [
+    237,
+    292
+   ],
+   "footprint": [
+    5.9,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa4",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa4.png",
+   "name": "Casa 4"
+  },
+  "cahumba_casa5": {
+   "category": "building",
+   "size": [
+    415,
+    279
+   ],
+   "anchor": [
+    235,
+    276
+   ],
+   "footprint": [
+    5.8,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa5",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa5.png",
+   "name": "Casa 5"
+  },
+  "cahumba_casa6": {
+   "category": "building",
+   "size": [
+    375,
+    278
+   ],
+   "anchor": [
+    272,
+    277
+   ],
+   "footprint": [
+    6.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa6",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa6.png",
+   "name": "Casa 6"
+  },
+  "cahumba_casa7": {
+   "category": "building",
+   "size": [
+    384,
+    263
+   ],
+   "anchor": [
+    223,
+    260
+   ],
+   "footprint": [
+    5.5,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa7",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa7.png",
+   "name": "Casa 7"
+  },
+  "cahumba_casa8": {
+   "category": "building",
+   "size": [
+    370,
+    276
+   ],
+   "anchor": [
+    218,
+    273
+   ],
+   "footprint": [
+    5.4,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa8",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa8.png",
+   "name": "Casa 8"
+  },
+  "cahumba_casa9": {
+   "category": "building",
+   "size": [
+    471,
+    241
+   ],
+   "anchor": [
+    248,
+    238
+   ],
+   "footprint": [
+    6.2,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "cahumba_casa9",
+   "kit": "kit_cahumba",
+   "path": "res://assets/kits/kit_cahumba/cahumba_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "56424fd0627d"
+}

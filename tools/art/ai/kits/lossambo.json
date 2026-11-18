@@ -1,0 +1,148 @@
+{
+ "id": "kit_lossambo",
+ "cuts": "raw/kit_lossambo_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "lossambo_escola",
+   "name": "Escola Primária do Lossambo",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "lossambo_saude",
+   "name": "Centro de Saúde do Lossambo",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 3,
+   "id": "lossambo_igreja",
+   "name": "Igreja Adventista do Lossambo",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 2,
+   "id": "lossambo_mercado",
+   "name": "Mercado do Lossambo",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "lossambo_cantina",
+   "name": "Cantina do Lossambo",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "lossambo_farmacia",
+   "name": "Farmácia Lossambo",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "lossambo_administracao",
+   "name": "Administração do Lossambo",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "lossambo_churrasqueira",
+   "name": "Churrasqueira Lossambo",
+   "cat": "building",
+   "venue": "churrasqueira"
+  },
+  {
+   "n": 8,
+   "id": "lossambo_hotel",
+   "name": "Hospedaria Lossambo",
+   "cat": "building",
+   "venue": "hotel"
+  },
+  {
+   "n": 14,
+   "id": "lossambo_apartamentos",
+   "name": "Prédio Lossambo",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 9,
+   "id": "lossambo_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 10,
+   "id": "lossambo_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "lossambo_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "lossambo_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "lossambo_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "lossambo_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "lossambo_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "lossambo_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    0,
+    338
+   ]
+  },
+  {
+   "n": 17,
+   "id": "lossambo_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    338,
+    698
+   ]
+  }
+ ]
+}

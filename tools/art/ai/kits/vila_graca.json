@@ -1,0 +1,140 @@
+{
+ "id": "kit_vila_graca",
+ "cuts": "raw/kit_vila_graca_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "vila_graca_escola",
+   "name": "Escola Primária da Vila Graça",
+   "cat": "building",
+   "venue": "escola"
+  },
+  {
+   "n": 1,
+   "id": "vila_graca_saude",
+   "name": "Centro de Saúde da Vila Graça",
+   "cat": "building",
+   "venue": "saude"
+  },
+  {
+   "n": 2,
+   "id": "vila_graca_igreja",
+   "name": "Igreja Evangélica da Vila Graça",
+   "cat": "building",
+   "venue": "igreja"
+  },
+  {
+   "n": 3,
+   "id": "vila_graca_mercado",
+   "name": "Mercado da Vila Graça",
+   "cat": "building",
+   "venue": "mercado"
+  },
+  {
+   "n": 4,
+   "id": "vila_graca_cantina",
+   "name": "Cantina da Vila Graça",
+   "cat": "building",
+   "venue": "cantina"
+  },
+  {
+   "n": 5,
+   "id": "vila_graca_farmacia",
+   "name": "Farmácia Vila Graça",
+   "cat": "building",
+   "venue": "farmacia"
+  },
+  {
+   "n": 6,
+   "id": "vila_graca_administracao",
+   "name": "Administração da Vila Graça",
+   "cat": "building",
+   "venue": "administracao"
+  },
+  {
+   "n": 7,
+   "id": "vila_graca_padaria",
+   "name": "Padaria Vila Graça",
+   "cat": "building",
+   "venue": "padaria"
+  },
+  {
+   "n": 8,
+   "id": "vila_graca_loja_telecom",
+   "name": "Loja Unitel Vila Graça",
+   "cat": "building",
+   "venue": "loja_telecom"
+  },
+  {
+   "n": 9,
+   "id": "vila_graca_apartamentos",
+   "name": "Prédio Vila Graça",
+   "cat": "building",
+   "venue": "apartamentos"
+  },
+  {
+   "n": 10,
+   "id": "vila_graca_casa1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 11,
+   "id": "vila_graca_casa2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 12,
+   "id": "vila_graca_casa3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 13,
+   "id": "vila_graca_casa4",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 14,
+   "id": "vila_graca_casa5",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 15,
+   "id": "vila_graca_casa6",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 16,
+   "id": "vila_graca_casa7",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 17,
+   "id": "vila_graca_casa8",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa"
+  },
+  {
+   "n": 18,
+   "id": "vila_graca_casa9",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa"
+  }
+ ]
+}

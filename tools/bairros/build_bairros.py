@@ -13,7 +13,12 @@ import glob, hashlib, json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 manifest = json.load(open(os.path.join(ROOT, "client", "assets", "demo", "manifest.json")))
-objs = manifest["objects"]
+objs = dict(manifest["objects"])
+KIT_VERSIONS = {}
+for _k in sorted(glob.glob(os.path.join(ROOT, "client", "assets", "kits", "*", "manifest.json"))):
+    _m = json.load(open(_k))
+    objs.update(_m["objects"])
+    KIT_VERSIONS[_m["kit"]] = _m["version"]
 
 
 # ---------------------------------------------------------------- interiores
@@ -103,6 +108,8 @@ def front_point(at, fp):
 
 for src in sorted(glob.glob(os.path.join(HERE, "*.json"))):
     spec = json.load(open(src))
+    if "buildings" not in spec:  # bairros.json (configuração dos kits), não é uma planta
+        continue
     out = {k: spec[k] for k in ("id", "name", "size", "tile", "ground", "spawns")}
     out["buildings"], out["props"], out["obstacles"], out["places"], out["interiors"] = [], [], [], [], []
     n_interior = 0
@@ -140,6 +147,11 @@ for src in sorted(glob.glob(os.path.join(HERE, "*.json"))):
         if len(entry) > 2:
             name = o.get("name", pid)
             out["places"].append({"id": f"{pid}@{at[0]},{at[1]}", "name": name, "at": [at[0], round(at[1] + fp[1] / 2 + 0.8, 2)], "radius": 2.2, **entry[2]})
+    # kits de arte (pacotes descarregados sob pedido) usados por este bairro
+    used = {objs[b["id"]].get("kit") for b in out["buildings"]} | {objs[p["id"]].get("kit") for p in out["props"]}
+    used |= {objs[f["id"]].get("kit") for i in out["interiors"] for f in i["furniture"]}
+    out["kits"] = sorted(k for k in used if k)
+    out["kit_versions"] = {k: KIT_VERSIONS[k] for k in out["kits"]}
     body = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     out["version"] = hashlib.sha256(body.encode()).hexdigest()[:12]
     text = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":"))

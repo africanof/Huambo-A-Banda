@@ -1,0 +1,386 @@
+{
+ "kit": "kit_lossambo",
+ "objects": {
+  "lossambo_escola": {
+   "category": "building",
+   "size": [
+    1037,
+    410
+   ],
+   "anchor": [
+    713,
+    407
+   ],
+   "footprint": [
+    17.8,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_escola",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_escola.png",
+   "name": "Escola Primária do Lossambo"
+  },
+  "lossambo_saude": {
+   "category": "building",
+   "size": [
+    860,
+    378
+   ],
+   "anchor": [
+    570,
+    374
+   ],
+   "footprint": [
+    14.2,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "lossambo_saude",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_saude.png",
+   "name": "Centro de Saúde do Lossambo"
+  },
+  "lossambo_igreja": {
+   "category": "building",
+   "size": [
+    724,
+    461
+   ],
+   "anchor": [
+    336,
+    458
+   ],
+   "footprint": [
+    8.3,
+    9.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_igreja",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_igreja.png",
+   "name": "Igreja Adventista do Lossambo"
+  },
+  "lossambo_mercado": {
+   "category": "building",
+   "size": [
+    995,
+    417
+   ],
+   "anchor": [
+    579,
+    412
+   ],
+   "footprint": [
+    14.4,
+    10.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_mercado",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_mercado.png",
+   "name": "Mercado do Lossambo"
+  },
+  "lossambo_cantina": {
+   "category": "building",
+   "size": [
+    639,
+    351
+   ],
+   "anchor": [
+    475,
+    344
+   ],
+   "footprint": [
+    11.8,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_cantina",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_cantina.png",
+   "name": "Cantina do Lossambo"
+  },
+  "lossambo_farmacia": {
+   "category": "building",
+   "size": [
+    516,
+    350
+   ],
+   "anchor": [
+    308,
+    348
+   ],
+   "footprint": [
+    7.7,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_farmacia",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_farmacia.png",
+   "name": "Farmácia Lossambo"
+  },
+  "lossambo_administracao": {
+   "category": "building",
+   "size": [
+    642,
+    388
+   ],
+   "anchor": [
+    306,
+    385
+   ],
+   "footprint": [
+    7.6,
+    8.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_administracao",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_administracao.png",
+   "name": "Administração do Lossambo"
+  },
+  "lossambo_churrasqueira": {
+   "category": "building",
+   "size": [
+    637,
+    320
+   ],
+   "anchor": [
+    465,
+    306
+   ],
+   "footprint": [
+    11.6,
+    4.3
+   ],
+   "scale": 1.6,
+   "out": "lossambo_churrasqueira",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_churrasqueira.png",
+   "name": "Churrasqueira Lossambo"
+  },
+  "lossambo_hotel": {
+   "category": "building",
+   "size": [
+    605,
+    423
+   ],
+   "anchor": [
+    437,
+    420
+   ],
+   "footprint": [
+    10.9,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "lossambo_hotel",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_hotel.png",
+   "name": "Hospedaria Lossambo"
+  },
+  "lossambo_apartamentos": {
+   "category": "building",
+   "size": [
+    573,
+    616
+   ],
+   "anchor": [
+    374,
+    613
+   ],
+   "footprint": [
+    9.3,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_apartamentos",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_apartamentos.png",
+   "name": "Prédio Lossambo"
+  },
+  "lossambo_casa1": {
+   "category": "building",
+   "size": [
+    565,
+    246
+   ],
+   "anchor": [
+    383,
+    244
+   ],
+   "footprint": [
+    9.5,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa1",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa1.png",
+   "name": "Casa 1"
+  },
+  "lossambo_casa2": {
+   "category": "building",
+   "size": [
+    561,
+    254
+   ],
+   "anchor": [
+    322,
+    251
+   ],
+   "footprint": [
+    8.0,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa2",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa2.png",
+   "name": "Casa 2"
+  },
+  "lossambo_casa3": {
+   "category": "building",
+   "size": [
+    496,
+    255
+   ],
+   "anchor": [
+    280,
+    253
+   ],
+   "footprint": [
+    6.9,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa3",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa3.png",
+   "name": "Casa 3"
+  },
+  "lossambo_casa4": {
+   "category": "building",
+   "size": [
+    586,
+    256
+   ],
+   "anchor": [
+    352,
+    254
+   ],
+   "footprint": [
+    8.8,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa4",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa4.png",
+   "name": "Casa 4"
+  },
+  "lossambo_casa5": {
+   "category": "building",
+   "size": [
+    633,
+    252
+   ],
+   "anchor": [
+    406,
+    249
+   ],
+   "footprint": [
+    10.1,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa5",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa5.png",
+   "name": "Casa 5"
+  },
+  "lossambo_casa6": {
+   "category": "building",
+   "size": [
+    607,
+    220
+   ],
+   "anchor": [
+    406,
+    218
+   ],
+   "footprint": [
+    10.1,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa6",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa6.png",
+   "name": "Casa 6"
+  },
+  "lossambo_casa7": {
+   "category": "building",
+   "size": [
+    606,
+    217
+   ],
+   "anchor": [
+    409,
+    215
+   ],
+   "footprint": [
+    10.2,
+    4.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa7",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa7.png",
+   "name": "Casa 7"
+  },
+  "lossambo_casa8": {
+   "category": "building",
+   "size": [
+    336,
+    225
+   ],
+   "anchor": [
+    299,
+    222
+   ],
+   "footprint": [
+    7.5,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa8",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa8.png",
+   "name": "Casa 8"
+  },
+  "lossambo_casa9": {
+   "category": "building",
+   "size": [
+    360,
+    217
+   ],
+   "anchor": [
+    205,
+    214
+   ],
+   "footprint": [
+    5.1,
+    3.9
+   ],
+   "scale": 1.6,
+   "out": "lossambo_casa9",
+   "kit": "kit_lossambo",
+   "path": "res://assets/kits/kit_lossambo/lossambo_casa9.png",
+   "name": "Casa 9"
+  }
+ },
+ "version": "51dbcc8ee661"
+}
