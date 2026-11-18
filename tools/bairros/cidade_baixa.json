@@ -1,46 +1,522 @@
 {
  "id": "cidade_baixa",
  "name": "Cidade Baixa",
- "size": [96, 48],
+ "size": [
+  96,
+  48
+ ],
  "tile": 4,
  "ground": [
-  {"kind": "asfalto", "y": [20, 28]},
-  {"kind": "calcada", "y": [16, 20]},
-  {"kind": "calcada", "y": [28, 32]},
-  {"kind": "terra", "x": [28, 32]},
-  {"kind": "relva", "x": [12, 28], "y": [0, 16]},
-  {"kind": "relva", "x": [32, 44], "y": [32, 48]},
-  {"kind": "relva", "x": [60, 76], "y": [32, 48]},
-  {"kind": "terra"}
+  {
+   "kind": "asfalto",
+   "y": [
+    20,
+    28
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    16,
+    20
+   ]
+  },
+  {
+   "kind": "calcada",
+   "y": [
+    28,
+    32
+   ]
+  },
+  {
+   "kind": "terra",
+   "x": [
+    28,
+    32
+   ]
+  },
+  {
+   "kind": "relva",
+   "x": [
+    12,
+    28
+   ],
+   "y": [
+    0,
+    16
+   ]
+  },
+  {
+   "kind": "relva",
+   "x": [
+    32,
+    44
+   ],
+   "y": [
+    32,
+    48
+   ]
+  },
+  {
+   "kind": "relva",
+   "x": [
+    60,
+    76
+   ],
+   "y": [
+    32,
+    48
+   ]
+  },
+  {
+   "kind": "terra"
+  }
  ],
  "buildings": [
-  {"id": "correios", "at": [2, 6], "place": {"kind": "work", "job": "carteiro"}},
-  {"id": "casa_colonial", "at": [15, 6], "label": "Casa à venda", "place": {"kind": "home", "door": [20.0, 14.8]}},
-  {"id": "cantina", "at": [35, 9], "place": {"kind": "food", "shop": "cantina"}},
-  {"id": "predio_castanho", "at": [46, 7]},
-  {"id": "banco", "at": [60, 7], "place": {"kind": "work", "job": "caixa_banco"}},
-  {"id": "loja_telecom", "at": [72, 7], "place": {"kind": "work", "job": "vendedor_loja"}},
-  {"id": "predio_rosa", "at": [84, 6], "place": {"kind": "sleep", "shop": "hotel"}},
-  {"id": "governo", "at": [2, 34], "place": {"kind": "work", "job": "funcionario_publico"}},
-  {"id": "padaria", "at": [21, 35], "place": {"kind": "food", "shop": "padaria"}},
-  {"id": "predio_60", "at": [48, 36]},
-  {"id": "escola", "at": [60, 35], "place": {"kind": "work", "job": "professor"}},
-  {"id": "tribunal", "at": [80, 35]}
+  {
+   "id": "correios",
+   "at": [
+    2,
+    6
+   ],
+   "venue": {
+    "venue": "correios",
+    "job": "carteiro"
+   }
+  },
+  {
+   "id": "casa_colonial",
+   "at": [
+    15,
+    6
+   ],
+   "label": "Casa à venda",
+   "venue": {
+    "venue": "casa",
+    "units": 1,
+    "door": [
+     20.0,
+     14.8
+    ]
+   }
+  },
+  {
+   "id": "cantina",
+   "at": [
+    35,
+    9
+   ],
+   "venue": {
+    "venue": "cantina",
+    "job": "cozinheiro",
+    "shop": "cantina"
+   }
+  },
+  {
+   "id": "predio_castanho",
+   "at": [
+    46,
+    7
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
+   }
+  },
+  {
+   "id": "banco",
+   "at": [
+    60,
+    7
+   ],
+   "venue": {
+    "venue": "banco",
+    "job": "caixa_banco"
+   }
+  },
+  {
+   "id": "loja_telecom",
+   "at": [
+    72,
+    7
+   ],
+   "venue": {
+    "venue": "loja_telecom",
+    "job": "vendedor_loja"
+   }
+  },
+  {
+   "id": "predio_rosa",
+   "at": [
+    84,
+    6
+   ],
+   "venue": {
+    "venue": "hotel",
+    "job": "rececionista",
+    "shop": "hotel"
+   }
+  },
+  {
+   "id": "governo",
+   "at": [
+    2,
+    34
+   ],
+   "venue": {
+    "venue": "governo",
+    "job": "funcionario_publico"
+   }
+  },
+  {
+   "id": "padaria",
+   "at": [
+    21,
+    35
+   ],
+   "venue": {
+    "venue": "padaria",
+    "job": "padeiro",
+    "shop": "padaria"
+   }
+  },
+  {
+   "id": "predio_60",
+   "at": [
+    48,
+    36
+   ],
+   "venue": {
+    "venue": "apartamentos",
+    "units": 4
+   }
+  },
+  {
+   "id": "escola",
+   "at": [
+    60,
+    35
+   ],
+   "venue": {
+    "venue": "escola",
+    "job": "professor"
+   }
+  },
+  {
+   "id": "tribunal",
+   "at": [
+    80,
+    35
+   ],
+   "venue": {
+    "venue": "tribunal",
+    "job": "oficial_justica"
+   }
+  }
  ],
  "props": [
-  ["obelisco", [36.5, 41.5]],
-  ["jacaranda", [1.5, 17.6]], ["jacaranda", [13.4, 17.4]], ["arvore_eucalipto", [33.4, 16.8]], ["jacaranda", [43.5, 17.4]],
-  ["palmeira", [6, 30.6]], ["palmeira", [18, 30.6]], ["palmeira", [40, 30.6]], ["palmeira", [54, 30.6]],
-  ["jacaranda", [31.5, 37.5]], ["arvore_eucalipto", [41.5, 45.5]], ["palmeira", [33, 44.5]], ["palmeira", [40.5, 38.5]],
-  ["candeeiro", [8, 19.4]], ["candeeiro", [22, 19.4]], ["candeeiro", [38, 19.4]], ["candeeiro", [52, 19.4]],
-  ["candeeiro", [12, 28.6]], ["candeeiro", [30, 28.6]], ["candeeiro", [48, 28.6]],
-  ["kupapata", [33.5, 20.6], {"kind": "work", "job": "kupapata"}], ["kupapata", [27, 29.8]], ["kupapata", [26, 29.3]],
-  ["bancada_zungueira", [23.5, 30.6], {"kind": "work", "job": "zunga"}],
-  ["bancada_mercado", [70, 30.6], {"kind": "work", "job": "vendedor_mercado"}], ["bancada_mercado", [72.5, 30.6]],
-  ["arvore_avenida", [58.5, 17.6]], ["arvore_avenida", [66, 17.6]], ["arvore_avenida", [78, 17.6]], ["arvore_avenida", [90, 17.6]],
-  ["arvore_avenida", [62, 30.6]], ["arvore_avenida", [78, 30.6]], ["arvore_avenida", [90, 30.6]],
-  ["candeeiro", [70, 19.4]], ["candeeiro", [86, 19.4]], ["candeeiro", [66, 28.6]], ["candeeiro", [84, 28.6]],
-  ["kupapata", [75, 20.6]], ["palmeira", [94, 30.6]]
+  [
+   "obelisco",
+   [
+    36.5,
+    41.5
+   ]
+  ],
+  [
+   "jacaranda",
+   [
+    1.5,
+    17.6
+   ]
+  ],
+  [
+   "jacaranda",
+   [
+    13.4,
+    17.4
+   ]
+  ],
+  [
+   "arvore_eucalipto",
+   [
+    33.4,
+    16.8
+   ]
+  ],
+  [
+   "jacaranda",
+   [
+    43.5,
+    17.4
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    6,
+    30.6
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    18,
+    30.6
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    40,
+    30.6
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    54,
+    30.6
+   ]
+  ],
+  [
+   "jacaranda",
+   [
+    31.5,
+    37.5
+   ]
+  ],
+  [
+   "arvore_eucalipto",
+   [
+    41.5,
+    45.5
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    33,
+    44.5
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    40.5,
+    38.5
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    8,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    22,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    38,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    52,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    12,
+    28.6
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    30,
+    28.6
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    48,
+    28.6
+   ]
+  ],
+  [
+   "kupapata",
+   [
+    33.5,
+    20.6
+   ],
+   {
+    "kind": "work",
+    "job": "kupapata"
+   }
+  ],
+  [
+   "kupapata",
+   [
+    27,
+    29.8
+   ]
+  ],
+  [
+   "kupapata",
+   [
+    26,
+    29.3
+   ]
+  ],
+  [
+   "bancada_zungueira",
+   [
+    23.5,
+    30.6
+   ],
+   {
+    "kind": "work",
+    "job": "zunga"
+   }
+  ],
+  [
+   "bancada_mercado",
+   [
+    70,
+    30.6
+   ],
+   {
+    "kind": "work",
+    "job": "vendedor_mercado"
+   }
+  ],
+  [
+   "bancada_mercado",
+   [
+    72.5,
+    30.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    58.5,
+    17.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    66,
+    17.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    78,
+    17.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    90,
+    17.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    62,
+    30.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    78,
+    30.6
+   ]
+  ],
+  [
+   "arvore_avenida",
+   [
+    90,
+    30.6
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    70,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    86,
+    19.4
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    66,
+    28.6
+   ]
+  ],
+  [
+   "candeeiro",
+   [
+    84,
+    28.6
+   ]
+  ],
+  [
+   "kupapata",
+   [
+    75,
+    20.6
+   ]
+  ],
+  [
+   "palmeira",
+   [
+    94,
+    30.6
+   ]
+  ]
  ],
- "spawns": [{"id": "avenida", "name": "Avenida", "at": [24, 24]}, {"id": "praca", "name": "Praça Agostinho Neto", "at": [36, 34]}]
+ "spawns": [
+  {
+   "id": "avenida",
+   "name": "Avenida",
+   "at": [
+    24,
+    24
+   ]
+  },
+  {
+   "id": "praca",
+   "name": "Praça Agostinho Neto",
+   "at": [
+    36,
+    34
+   ]
+  }
+ ]
 }

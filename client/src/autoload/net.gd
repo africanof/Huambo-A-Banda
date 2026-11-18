@@ -77,11 +77,13 @@ func leave() -> void:
 
 
 ## Pede uma ação de vida ao servidor (o servidor decide).
-func action(a: String, item: String = "") -> void:
+func action(a: String, item: String = "", n: int = 0) -> void:
 	if room:
 		var msg := {"a": a}
 		if item != "":
 			msg["i"] = item
+		if n > 0:
+			msg["n"] = n
 		room.send(Protocol.C2S_ACTION, msg)
 
 

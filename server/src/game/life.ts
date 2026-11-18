@@ -24,6 +24,10 @@ export interface LifeState {
   shiftsDay: string; // dia (Angola) do contador de turnos
   shiftsCount: number;
   parentsDay: string | null; // último dia em que pediu dinheiro aos pais
+  /** documentos tratados no Governo Provincial / Tribunal */
+  docs: { bi: boolean; registo: boolean };
+  /** saldo de telemóvel (Kz) carregado na loja de telecomunicações */
+  phoneCredit: number;
 }
 
 export interface Job {
@@ -33,19 +37,63 @@ export interface Job {
   place: string; // "job" do lugar no mapa onde se trabalha
   pay: number; // Kz por turno completo
   education: number;
+  /** documentos exigidos pelo empregador */
+  docs?: Array<"bi" | "registo">;
 }
 
-/** Empregos do Huambo (um por lugar de trabalho do bairro). */
+/** Empregos do Huambo (cada lugar com nome tem o seu posto de trabalho). */
 export const JOBS: Job[] = [
   { id: "zunga", name: "Zungueiro(a)", where: "Banca da zungueira", place: "zunga", pay: 2000, education: 0 },
   { id: "vendedor_mercado", name: "Vendedor(a) do mercado", where: "Banca do mercado", place: "vendedor_mercado", pay: 3000, education: 0 },
   { id: "kupapata", name: "Kupapata (moto-táxi)", where: "Praça das kupapatas", place: "kupapata", pay: 3500, education: 0 },
-  { id: "carteiro", name: "Carteiro(a)", where: "Correios", place: "carteiro", pay: 5000, education: 1 },
+  { id: "padeiro", name: "Padeiro(a)", where: "Padaria Planalto (forno)", place: "padeiro", pay: 3500, education: 0 },
+  { id: "cozinheiro", name: "Cozinheiro(a)", where: "Cantina Ekuikui (cozinha)", place: "cozinheiro", pay: 4000, education: 0 },
+  { id: "carteiro", name: "Carteiro(a)", where: "Correios (triagem)", place: "carteiro", pay: 5000, education: 1 },
+  { id: "rececionista", name: "Rececionista de hotel", where: "Hotel iU (receção)", place: "rececionista", pay: 5500, education: 1 },
   { id: "vendedor_loja", name: "Vendedor(a) de telemóveis", where: "Loja Kanda Móvel", place: "vendedor_loja", pay: 6000, education: 1 },
-  { id: "caixa_banco", name: "Caixa de banco", where: "Banco Planalto", place: "caixa_banco", pay: 8500, education: 2 },
-  { id: "funcionario_publico", name: "Funcionário(a) público(a)", where: "Governo Provincial", place: "funcionario_publico", pay: 9000, education: 2 },
-  { id: "professor", name: "Professor(a) primário(a)", where: "Escola Primária", place: "professor", pay: 10000, education: 3 },
+  { id: "caixa_banco", name: "Caixa de banco", where: "Banco Planalto (caixa)", place: "caixa_banco", pay: 8500, education: 2, docs: ["bi", "registo"] },
+  { id: "funcionario_publico", name: "Funcionário(a) público(a)", where: "Governo Provincial (secretaria)", place: "funcionario_publico", pay: 9000, education: 2, docs: ["bi"] },
+  { id: "oficial_justica", name: "Oficial de justiça", where: "Tribunal da Comarca", place: "oficial_justica", pay: 9500, education: 3, docs: ["bi", "registo"] },
+  { id: "professor", name: "Professor(a) primário(a)", where: "Escola Primária (sala de aula)", place: "professor", pay: 10000, education: 3, docs: ["bi"] },
 ];
+
+/** Serviços dos balcões (o que cada estabelecimento faz na vida real). */
+export interface Service {
+  id: string;
+  venue: string;
+  name: string;
+  price: number;
+  /** efeito: documento, saldo de telemóvel ou humor */
+  doc?: "bi" | "registo";
+  needsDoc?: "bi";
+  credit?: number;
+  mood?: number;
+}
+
+export const SERVICES: Service[] = [
+  { id: "bi", venue: "governo", name: "Tratar do Bilhete de Identidade", price: 2500, doc: "bi" },
+  { id: "registo", venue: "tribunal", name: "Pedir registo criminal", price: 1500, doc: "registo", needsDoc: "bi" },
+  { id: "encomenda", venue: "correios", name: "Mandar encomenda à família", price: 1000, mood: 12 },
+  { id: "carta", venue: "correios", name: "Mandar carta", price: 200, mood: 4 },
+  { id: "saldo_500", venue: "loja_telecom", name: "Carregar 500 Kz de saldo", price: 500, credit: 500 },
+  { id: "saldo_2000", venue: "loja_telecom", name: "Carregar 2.000 Kz de saldo", price: 2000, credit: 2000 },
+];
+
+export const DOC_LABEL = { bi: "Bilhete de Identidade", registo: "registo criminal" } as const;
+
+/** Habitação: preços em Kz (compra) e renda por dia. */
+export const HOUSING: Record<string, { buy: number; rentPerDay: number }> = {
+  casa: { buy: 3_500_000, rentPerDay: 15_000 },
+  apartamentos: { buy: 1_200_000, rentPerDay: 6_000 },
+};
+export const RENT_OPTIONS = [1, 7] as const;
+/** Renda de vários dias: 7 dias pagam 6. */
+export function rentPrice(perDay: number, days: number): number {
+  return perDay * (days >= 7 ? days - 1 : days);
+}
+
+/** Comer em casa (o que há no frigorífico): barato e sem sair. */
+export const HOME_MEAL = { id: "comida_casa", name: "Refeição em casa", price: 500, hunger: 35 } as const;
 
 export interface MenuItem {
   id: string;
@@ -77,7 +125,7 @@ export const LESSONS_PER_LEVEL = 3;
 export const MAX_EDUCATION = 4;
 
 /** Duração (s) das ações com tempo. */
-export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15 } as const;
+export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15 } as const;
 
 /** Pagamento por turno do dia: os 2 primeiros por inteiro, depois decresce. */
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
@@ -138,6 +186,8 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     shiftsDay: angolaDay(nowMs),
     shiftsCount: 0,
     parentsDay: null,
+    docs: { bi: false, registo: false },
+    phoneCredit: 0,
   };
 }
 
@@ -201,5 +251,7 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     shiftsDay: typeof r.shiftsDay === "string" ? r.shiftsDay : base.shiftsDay,
     shiftsCount: Math.round(num(r.shiftsCount, 0, 0, 1000)),
     parentsDay: typeof r.parentsDay === "string" ? r.parentsDay : null,
+    docs: { bi: r.docs?.bi === true, registo: r.docs?.registo === true },
+    phoneCredit: Math.round(num(r.phoneCredit, 0, 0, 1e9)),
   };
 }

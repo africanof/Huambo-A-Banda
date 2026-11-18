@@ -21,7 +21,8 @@ const MARGIN := 64.0
 ## casas/árvores usadas no casario à volta (sem letreiros únicos)
 const FILLER_BUILDINGS := {"casa_colonial": [10, 8], "predio_castanho": [8, 7], "predio_rosa": [8, 8], "predio_60": [9, 7]}
 const FILLER_TREES := ["palmeira", "arvore_avenida", "jacaranda", "arvore_eucalipto"]
-var occluders: Array[Sprite2D] = [] ## edifícios/árvores que podem tapar a personagem
+var occluders: Array[Sprite2D] = []
+var interiors: Array = [] ## dados dos interiores (rect em metros) ## edifícios/árvores que podem tapar a personagem
 
 
 static func load_data(id: String) -> Dictionary:
@@ -49,6 +50,7 @@ func build(bairro_id: String) -> bool:
 	_build_markings()
 	_build_surroundings()
 	RenderingServer.set_default_clear_color(Color("8a5a3c")) # cor da terra: nunca aparece "vazio"
+	_build_interiors()
 	for b: Dictionary in data.buildings:
 		var fp: Array = b.fp
 		var at := Vector2(b.at[0], b.at[1])
@@ -140,6 +142,39 @@ func _build_ground() -> void:
 		for j in range(-m0, int(size.y / t) + m0):
 			ground.set_cell(Vector2i(i, j), 0, Vector2i(names.find(_ground_kind(i * t, j * t)), 0))
 	ground.position = Iso.to_screen(Vector2(t / 2, t / 2)) - ground.map_to_local(Vector2i(0, 0))
+
+
+## Interiores dos edifícios: sala + mobília, cada um na sua posição longe da rua
+## (o servidor teletransporta a personagem ao entrar/sair).
+func _build_interiors() -> void:
+	interiors = data.get("interiors", [])
+	for i: Dictionary in interiors:
+		var r: Array = i.rect
+		var room := DemoAssets.make_sprite("interior_sala")
+		room.position = Iso.to_screen(Vector2(float(r[0]) + float(r[2]), float(r[1]) + float(r[3])))
+		room.z_index = -10
+		add_child(room)
+		for f: Dictionary in i.furniture:
+			var o := DemoAssets.object(f.id)
+			if o.is_empty():
+				continue
+			var fp := Vector2(o.footprint[0], o.footprint[1])
+			var s := DemoAssets.make_sprite(f.id)
+			s.position = Iso.to_screen(Vector2(f.at[0], f.at[1]) + fp)
+			if o.get("floor", false):
+				s.z_index = -6
+				add_child(s)
+			else:
+				objects.add_child(s)
+
+
+## Interior que contém um ponto (metros), ou {} se estiver na rua.
+func interior_at(p: Vector2) -> Dictionary:
+	for i: Dictionary in interiors:
+		var r: Array = i.rect
+		if Rect2(r[0], r[1], r[2], r[3]).has_point(p):
+			return i
+	return {}
 
 
 ## Casario decorativo à volta do bairro (mesma arte do Huambo, sem letreiros nem interação).

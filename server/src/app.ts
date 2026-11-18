@@ -4,7 +4,7 @@ import { RedisPresence } from "@colyseus/redis-presence";
 import { RedisDriver } from "@colyseus/redis-driver";
 import type { Env } from "./config/env.js";
 import { TokenVerifier } from "./auth/TokenVerifier.js";
-import { createRepositories, type CharacterRepository, type WalletRepository } from "./persistence/index.js";
+import { createRepositories, MemoryBankRepository, MemoryPropertyRepository, type CharacterRepository, type WalletRepository } from "./persistence/index.js";
 import { DistrictRoom } from "./rooms/DistrictRoom.js";
 import { registerRoutes } from "./http/routes.js";
 import { setServices, type Services } from "./services.js";
@@ -27,7 +27,10 @@ export function createGameServer(env: Env, overrides: CreateServerOverrides = {}
     verifier: new TokenVerifier(env),
     ...(() => {
       const repos = createRepositories(env);
-      return { characters: overrides.characters ?? repos.characters, wallets: overrides.wallets ?? repos.wallets };
+      if (!overrides.wallets) return { ...repos, characters: overrides.characters ?? repos.characters };
+      // carteira injetada (testes): casas e banco em memória usam essa mesma carteira
+      const w = overrides.wallets;
+      return { characters: overrides.characters ?? repos.characters, wallets: w, properties: new MemoryPropertyRepository(w), bank: new MemoryBankRepository(w) };
     })(),
   };
   setServices(svc);

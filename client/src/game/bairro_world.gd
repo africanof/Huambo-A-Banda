@@ -134,13 +134,64 @@ func _process(delta: float) -> void:
 	_update_remotes(delta)
 	if local_char:
 		camera.position = local_char.position + Vector2(0, -70)
+		if _room_center != Vector2.INF:
+			camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
 		view.update_occlusion(local_char.position, delta)
+		_update_inside()
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
 	var minutes := float(now.hour * 60 + now.minute) + float(now.second) / 60.0
 	view.apply_hour(minutes / 60.0, canvas_mod)
 	hud.set_clock(minutes)
 	view.scale_labels(camera.zoom.x, avatars.values().map(func(c: DemoCharacter) -> Control: return c.tag))
+
+
+var _inside_id := "?"
+var _room_center := Vector2.INF
+var _street_zoom := 0.0
+var _street_limits := Rect2i()
+
+
+## Dentro de um edifício: limites da sala para andar, câmara presa à sala, fundo escuro.
+func _update_inside() -> void:
+	var i := view.interior_at(local_char.world_pos)
+	var id := str(i.get("id", ""))
+	if id == _inside_id:
+		return
+	if _inside_id == "?":
+		_street_limits = Rect2i(camera.limit_left, camera.limit_top, camera.limit_right - camera.limit_left, camera.limit_bottom - camera.limit_top)
+	_inside_id = id
+	_room_center = Vector2.INF
+	if i.is_empty():
+		if _street_zoom > 0.0:
+			camera.zoom = Vector2(_street_zoom, _street_zoom)
+			_street_zoom = 0.0
+		local_char.bounds = Rect2(Vector2.ZERO, view.size)
+		camera.limit_left = _street_limits.position.x
+		camera.limit_top = _street_limits.position.y
+		camera.limit_right = _street_limits.end.x
+		camera.limit_bottom = _street_limits.end.y
+		RenderingServer.set_default_clear_color(Color("8a5a3c"))
+	else:
+		var r: Array = i.rect
+		var rect := Rect2(r[0], r[1], r[2], r[3])
+		local_char.bounds = rect
+		_room_center = Iso.to_screen(rect.get_center()) + Vector2(0, -90)
+		# a sala inteira tem de caber no ecrã (telemóvel na vertical)
+		var room_w := Iso.to_screen(Vector2(rect.size.x, 0)).x - Iso.to_screen(Vector2(0, rect.size.y)).x
+		var fit := get_viewport().get_visible_rect().size.x / (room_w * 1.15)
+		if _street_zoom == 0.0:
+			_street_zoom = camera.zoom.x
+		camera.zoom = Vector2.ONE * minf(_street_zoom, fit)
+		var bb := Rect2(Iso.to_screen(rect.position), Vector2.ZERO)
+		for c: Vector2 in [Vector2(rect.end.x, rect.position.y), Vector2(rect.position.x, rect.end.y), rect.end]:
+			bb = bb.expand(Iso.to_screen(c))
+		bb = bb.grow(700)
+		camera.limit_left = int(bb.position.x)
+		camera.limit_top = int(bb.position.y)
+		camera.limit_right = int(bb.end.x)
+		camera.limit_bottom = int(bb.end.y)
+		RenderingServer.set_default_clear_color(Color("1c1a1f"))
 
 
 func _keyboard_dir() -> Vector2:
@@ -186,7 +237,13 @@ func _update_local(delta: float) -> void:
 	if me != null:
 		var server_m: Vector2 = (me.pos as Vector2) / UNIT
 		var err := server_m.distance_to(local_char.world_pos)
-		if wdir == Vector2.ZERO:
+		if err > 3.0:
+			# teletransporte (entrar/sair de um edifício): salta já para a nova posição
+			local_char.world_pos = server_m
+			_click_target = null
+			camera.position = Iso.to_screen(server_m) + Vector2(0, -70)
+			camera.reset_smoothing()
+		elif wdir == Vector2.ZERO:
 			local_char.world_pos = local_char.world_pos.lerp(server_m, minf(1.0, delta * 6.0))
 		elif err > speed_m * 0.6 + 0.4:
 			local_char.world_pos = local_char.world_pos.lerp(server_m, 0.25)
@@ -257,7 +314,5 @@ func _on_hud_action(what: String) -> void:
 			Net.leave()
 			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")
 		"entrar":
-			var p := view.place_near(local_char.world_pos) if local_char else {}
-			if not p.is_empty() and p.kind == "home":
-				DemoState.return_scene = "res://src/game/bairro_world.tscn"
-				get_tree().change_scene_to_file("res://src/demo/casa_interior.tscn")
+			# tecla E: entra no edifício (ou sai, se já estiver lá dentro); o servidor decide
+			Net.action("exit" if typeof(Net.me.get("inside")) == TYPE_DICTIONARY else "enter")

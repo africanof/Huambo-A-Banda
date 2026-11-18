@@ -4,6 +4,8 @@ import type { CharacterRecord, CharacterRepository, CharacterUpdate, PositionUpd
 import { MemoryCharacterRepository } from "./MemoryCharacterRepository.js";
 import { SupabaseCharacterRepository } from "./SupabaseCharacterRepository.js";
 import { MemoryWalletRepository, RoutingWalletRepository, SupabaseWalletRepository, type WalletRepository } from "./WalletRepository.js";
+import { MemoryPropertyRepository, RoutingPropertyRepository, SupabasePropertyRepository, type PropertyRepository } from "./PropertyRepository.js";
+import { MemoryBankRepository, RoutingBankRepository, SupabaseBankRepository, type BankRepository } from "./BankRepository.js";
 
 /** Encaminha convidados para memória e contas reais para o Supabase (quando configurado). */
 class RoutingCharacterRepository implements CharacterRepository {
@@ -31,19 +33,34 @@ export function createCharacterRepository(env: Env): CharacterRepository {
   return createRepositories(env).characters;
 }
 
-/** Personagens + carteiras: convidados em memória, contas no Supabase (quando configurado). */
-export function createRepositories(env: Env): { characters: CharacterRepository; wallets: WalletRepository } {
+export interface Repositories {
+  characters: CharacterRepository;
+  wallets: WalletRepository;
+  properties: PropertyRepository;
+  bank: BankRepository;
+}
+
+/**
+ * Convidados em memória, contas no Supabase (quando configurado).
+ * Sem base de dados (testes, demonstração) tudo vive em memória — incluindo casas.
+ */
+export function createRepositories(env: Env): Repositories {
   const guests = new MemoryCharacterRepository();
   const guestWallets = new MemoryWalletRepository();
+  const guestBank = new MemoryBankRepository(guestWallets);
   if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY) {
     const supa = new SupabaseCharacterRepository(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
     return {
       characters: new RoutingCharacterRepository(supa, guests),
       wallets: new RoutingWalletRepository(new SupabaseWalletRepository(supa.db), guestWallets),
+      properties: new RoutingPropertyRepository(new SupabasePropertyRepository(supa.db)),
+      bank: new RoutingBankRepository(new SupabaseBankRepository(supa.db), guestBank),
     };
   }
-  return { characters: guests, wallets: guestWallets };
+  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank };
 }
 
 export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";
 export { InsufficientFunds, type WalletRepository } from "./WalletRepository.js";
+export { PropertyTaken, GuestNotAllowed, MemoryPropertyRepository, type PropertyRepository, type Holding } from "./PropertyRepository.js";
+export { MemoryBankRepository, type BankRepository } from "./BankRepository.js";

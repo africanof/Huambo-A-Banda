@@ -42,3 +42,15 @@ ponta-a-ponta com clientes Godot reais).
 ## Etapa 6 — Escala e operação
 - Teste de carga distribuído a 10 000 CCU, métricas (Prometheus), alertas
 - Moderação: denúncias, banimentos (`profiles.banned_until`), registos de auditoria
+
+
+### Fase B — Lugares funcionais e Casa (feito)
+- Todos os 12 edifícios com nome têm interior caminhável (18 salas, incluindo 4 apartamentos por prédio);
+  entrar/sair = teletransporte no mesmo mundo multijogador (AOI e servidor autoritativo intactos).
+- Cada lugar faz o que o nome diz: cantina/padaria (comer ao balcão), hotel (dormir no quarto), escola (aulas),
+  banco (depositar/levantar, atómico no Supabase), Governo (BI), Tribunal (registo criminal), correios
+  (encomendas/cartas), loja de telemóveis (saldo), e cada um tem o seu posto de trabalho.
+- Casas: comprar ou arrendar (1 ou 7 dias) à porta; só o dono entra; dormir grátis e cozinhar em casa;
+  renda acabada = despejo. Supabase: `game_property_claim` e `game_bank_move` (dinheiro e casa na mesma transação).
+- Pendente: arte própria de cada interior (precisa de fotos reais de interiores do Huambo), decoração em rede,
+  visitas a casas de amigos (Fase C), discoteca e igreja (edifícios novos com arte de referência).

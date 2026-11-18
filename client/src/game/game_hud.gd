@@ -159,7 +159,7 @@ func _ready() -> void:
 	dh.add_theme_constant_override("separation", 4)
 	dock.add_child(dh)
 	dh.add_child(_tab("phone", "Telemóvel", true, func() -> void: _toggle_phone()))
-	dh.add_child(_tab("home", "Casa", false, func() -> void: show_toast("Casa: arrendar e comprar chega na próxima atualização.", true)))
+	dh.add_child(_tab("home", "Casa", false, func() -> void: _open_phone("casa")))
 	dh.add_child(_tab("map", "Mapa", false, func() -> void: ui_action.emit("mapa")))
 	dh.add_child(_tab("hand", "Gestos", false, func() -> void: show_toast("Gestos: brevemente.", true)))
 	dh.add_child(_tab("chat", "Falar", false, func() -> void: show_toast("Conversar: brevemente.", true)))
@@ -314,6 +314,8 @@ func _process(_delta: float) -> void:
 
 
 var _busy_received := 0
+var _offer_key := ""
+var _offer_open := false
 
 
 func refresh() -> void:
@@ -331,6 +333,15 @@ func refresh() -> void:
 			needs_button.icon = DemoIcons.make("bowl", e[2], 28) if needs_button.get_meta("low", "") != low else needs_button.icon
 			needs_button.set_meta("low", low)
 	_rebuild_actions()
+	var offer: Variant = Net.me.get("offer")
+	var key := JSON.stringify(offer) if typeof(offer) == TYPE_DICTIONARY else ""
+	if key != _offer_key:
+		_offer_key = key
+		if key != "":
+			_open_offer(offer)
+		elif menu_panel.visible and _offer_open:
+			menu_panel.visible = false
+		_offer_open = key != ""
 	if phone.visible:
 		_rebuild_phone()
 
@@ -361,17 +372,30 @@ func _rebuild_actions() -> void:
 	if is_busy():
 		actions_box.add_child(_button("Parar", "minus", BG, Color.WHITE, func() -> void: Net.action("cancel")))
 		return
-	if _context.is_empty():
-		return
+	var inside: Variant = Net.me.get("inside")
 	var kind := str(_context.get("kind", ""))
 	var my_job: Dictionary = _job(str(Net.me.get("job", "")))
+	var prices: Dictionary = catalog.get("prices", {})
 	match kind:
+		"door":
+			var home := str(_context.get("venue", "")) in ["casa", "apartamentos"]
+			actions_box.add_child(_button("Entrar — %s" % _context.name, "home" if home else "door", ACCENT, INK, func() -> void: Net.action("enter")))
+		"exit":
+			pass # o botão "Sair" está sempre visível lá dentro
 		"food":
-			actions_box.add_child(_button("Comer — %s" % _context.name, "bag", ACCENT, INK, func() -> void: _open_menu()))
+			actions_box.add_child(_button("Comer — %s" % _interior_name(), "bag", ACCENT, INK, func() -> void: _open_menu()))
 		"sleep":
-			actions_box.add_child(_button("Dormir (%s Kz)" % DemoHud._money(int(catalog.get("prices", {}).get("hotel", 0))), "sun", ACCENT, INK, func() -> void: Net.action("sleep")))
-		"home":
-			actions_box.add_child(_button("Entrar em casa (E)", "home", ACCENT, INK, func() -> void: ui_action.emit("entrar")))
+			actions_box.add_child(_button("Dormir (%s Kz)" % DemoHud._money(int(prices.get("hotel", 0))), "sun", ACCENT, INK, func() -> void: Net.action("sleep")))
+		"study":
+			actions_box.add_child(_button("Estudar (%s Kz)" % DemoHud._money(int(prices.get("study", 0))), "plus", ACCENT, INK, func() -> void: Net.action("study")))
+		"home_sleep":
+			actions_box.add_child(_button("Dormir na tua cama", "sun", ACCENT, INK, func() -> void: Net.action("sleep")))
+		"home_eat":
+			actions_box.add_child(_button("Cozinhar (%s Kz)" % DemoHud._money(int(prices.get("homeMeal", 500))), "bag", ACCENT, INK, func() -> void: Net.action("home_eat")))
+		"bank":
+			actions_box.add_child(_button("Banco", "bag", ACCENT, INK, func() -> void: _open_bank()))
+		"service":
+			actions_box.add_child(_button("Atendimento — %s" % _interior_name(), "person", ACCENT, INK, func() -> void: _open_services()))
 		"work":
 			var job_here := str(_context.get("job", ""))
 			if my_job.get("place", "") == job_here:
@@ -380,8 +404,89 @@ func _rebuild_actions() -> void:
 				var j := _job_by_place(job_here)
 				if not j.is_empty():
 					actions_box.add_child(_button("Vaga: %s" % j.name, "person", BG, Color.WHITE, func() -> void: _open_phone("vagas")))
-			if job_here == "professor":
-				actions_box.add_child(_button("Estudar (%s Kz)" % DemoHud._money(int(catalog.get("prices", {}).get("study", 0))), "plus", BG, Color.WHITE, func() -> void: Net.action("study")))
+	if typeof(inside) == TYPE_DICTIONARY:
+		actions_box.add_child(_button("Sair", "door", BG, Color.WHITE, func() -> void: Net.action("exit")))
+
+
+## Nome do edifício onde está o lugar atual (interior) ou do próprio lugar.
+func _interior_name() -> String:
+	var inside: Variant = Net.me.get("inside")
+	return str(inside.name) if typeof(inside) == TYPE_DICTIONARY else str(_context.get("name", ""))
+
+
+func _panel(title: String) -> void:
+	for c in menu_body.get_children():
+		c.queue_free()
+	menu_body.add_child(_label(title, 22, ACCENT, FONT_BOLD, true))
+	phone.visible = false
+	menu_panel.visible = true
+
+
+func _close_button() -> void:
+	menu_body.add_child(_button("Fechar", "minus", BG, Color.WHITE, func() -> void: menu_panel.visible = false))
+
+
+func _open_bank() -> void:
+	_panel("Banco Planalto")
+	menu_body.add_child(_label("Na carteira: %s Kz\nNo banco: %s Kz" % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], 16, Color.WHITE, FONT_REG, true))
+	menu_body.add_child(_label("Depositar", 16, Color.WHITE, FONT, true))
+	var row := HBoxContainer.new()
+	for v: int in [1000, 10000, 100000]:
+		row.add_child(_button(DemoHud._money(v), "plus", ACCENT, INK, func() -> void: Net.action("bank_in", "", v)))
+	var all_in := int(Net.me.get("money", 0))
+	if all_in > 0:
+		row.add_child(_button("Tudo", "plus", ACCENT, INK, func() -> void: Net.action("bank_in", "", all_in)))
+	menu_body.add_child(row)
+	menu_body.add_child(_label("Levantar", 16, Color.WHITE, FONT, true))
+	var row2 := HBoxContainer.new()
+	for v: int in [1000, 10000, 100000]:
+		row2.add_child(_button(DemoHud._money(v), "minus", BG, Color.WHITE, func() -> void: Net.action("bank_out", "", v)))
+	var all_out := int(Net.me.get("bank", 0))
+	if all_out > 0:
+		row2.add_child(_button("Tudo", "minus", BG, Color.WHITE, func() -> void: Net.action("bank_out", "", all_out)))
+	menu_body.add_child(row2)
+	_close_button()
+
+
+func _open_services() -> void:
+	var inside: Variant = Net.me.get("inside")
+	var venue := str(inside.venue) if typeof(inside) == TYPE_DICTIONARY else ""
+	_panel(_interior_name())
+	var docs: Dictionary = Net.me.get("docs", {})
+	for sv: Dictionary in catalog.get("services", []):
+		if sv.venue != venue:
+			continue
+		var row := HBoxContainer.new()
+		var done := sv.has("doc") and bool(docs.get(sv.doc, false))
+		row.add_child(_label(str(sv.name) + (" ✓" if done else ""), 15, Color.WHITE, FONT_REG, true))
+		var id: String = sv.id
+		if not done:
+			row.add_child(_button("%s Kz" % DemoHud._money(int(sv.price)), "bag", ACCENT, INK, func() -> void:
+				Net.action("service", id)
+				menu_panel.visible = false))
+		menu_body.add_child(row)
+	_close_button()
+
+
+## Casas à porta de um edifício de habitação (chega do servidor depois de "Entrar").
+func _open_offer(offer: Dictionary) -> void:
+	_panel(str(offer.name))
+	var buy := int(offer.buy)
+	var per_day := int(offer.rentPerDay)
+	menu_body.add_child(_label("Renda: %s Kz/dia (7 dias pagam 6) · Comprar: %s Kz" % [DemoHud._money(per_day), DemoHud._money(buy)], 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+	for u: Dictionary in offer.units:
+		var box := VBoxContainer.new()
+		var state := "é tua" if u.mine else ("livre" if u.free else "ocupada")
+		box.add_child(_label("%s — %s" % [u.name, state], 16, Color.WHITE if u.free else Color(1, 1, 1, 0.5), FONT, true))
+		var id: String = u.id
+		if u.free:
+			var row := HBoxContainer.new()
+			row.add_child(_button("1 dia: %s" % DemoHud._money(per_day), "home", ACCENT, INK, func() -> void: Net.action("rent_house", id, 1)))
+			row.add_child(_button("7 dias: %s" % DemoHud._money(per_day * 6), "home", ACCENT, INK, func() -> void: Net.action("rent_house", id, 7)))
+			box.add_child(row)
+			box.add_child(_button("Comprar: %s Kz" % DemoHud._money(buy), "bag", BG, Color.WHITE, func() -> void: Net.action("buy_house", id)))
+		menu_body.add_child(box)
+	_close_button()
 
 
 # ------------------------------------------------------------------ ementa
@@ -425,13 +530,14 @@ func _rebuild_phone() -> void:
 		c.queue_free()
 	var tabs := HBoxContainer.new()
 	tabs.add_theme_constant_override("separation", 6)
-	for t: Array in [["perfil", "Perfil"], ["vagas", "Vagas"], ["ajuda", "Ajuda"]]:
+	for t: Array in [["perfil", "Perfil"], ["casa", "Casa"], ["vagas", "Vagas"], ["ajuda", "Ajuda"]]:
 		var tab_id: String = t[0]
 		var active := tab_id == phone_tab
 		tabs.add_child(_button(t[1], "", ACCENT if active else Color(1, 1, 1, 0.08), INK if active else Color.WHITE, func() -> void: _open_phone(tab_id)))
 	phone_body.add_child(tabs)
 	match phone_tab:
 		"perfil": _phone_profile()
+		"casa": _phone_home()
 		"vagas": _phone_jobs()
 		"ajuda": _phone_help()
 
@@ -445,6 +551,9 @@ func _phone_profile() -> void:
 		"Estudos: nível %d (aulas %d/%d)" % [int(me.get("education", 0)), int(me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))],
 		"Emprego: %s" % (job.name if not job.is_empty() else "sem emprego"),
 		"Turnos hoje: %d" % int(me.get("shifts", 0)),
+		"No banco: %s Kz" % DemoHud._money(int(me.get("bank", 0))),
+		"Saldo do telemóvel: %s Kz" % DemoHud._money(int(me.get("phoneCredit", 0))),
+		"Documentos: BI %s · Registo criminal %s" % ["✓" if me.get("docs", {}).get("bi", false) else "—", "✓" if me.get("docs", {}).get("registo", false) else "—"],
 	]
 	for l: String in lines:
 		phone_body.add_child(_label(l, 16, Color.WHITE, FONT_REG, true))
@@ -458,6 +567,20 @@ func _phone_profile() -> void:
 			phone.visible = false))
 
 
+func _phone_home() -> void:
+	var homes: Array = Net.me.get("homes", [])
+	phone_body.add_child(_label("A minha casa", 20, ACCENT, FONT_BOLD))
+	if homes.is_empty():
+		phone_body.add_child(_label("Ainda não tens casa. Vai à porta da Casa à venda ou de um prédio (Prédio Kuito, Prédio da Rua Cinco) e toca em Entrar para arrendar ou comprar.", 15, Color.WHITE, FONT_REG, true))
+		var h: Dictionary = catalog.get("housing", {})
+		for k: String in h:
+			phone_body.add_child(_label("%s: renda %s Kz/dia · compra %s Kz" % ["Casa" if k == "casa" else "Apartamento", DemoHud._money(int(h[k].rentPerDay)), DemoHud._money(int(h[k].buy))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+	for hm: Dictionary in homes:
+		var until := "comprada" if hm.tenure == "buy" else "renda paga até %s" % Time.get_datetime_string_from_unix_time(int(float(hm.paidUntil) / 1000.0) + 3600, true).substr(0, 16)
+		phone_body.add_child(_label("%s — %s" % [hm.name, until], 16, Color.WHITE, FONT, true))
+	phone_body.add_child(_label("Em casa: dorme de graça na tua cama e cozinha por 500 Kz.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+
+
 func _phone_jobs() -> void:
 	var my := str(Net.me.get("job", ""))
 	var edu := int(Net.me.get("education", 0))
@@ -466,6 +589,8 @@ func _phone_jobs() -> void:
 		var box := VBoxContainer.new()
 		box.add_child(_label("%s — %s Kz/turno" % [j.name, DemoHud._money(int(j.pay))], 16, Color.WHITE, FONT, true))
 		var req := "sem estudos" if int(j.education) == 0 else "estudos nível %d" % int(j.education)
+		for dk: String in j.get("docs", []):
+			req += " · " + ("BI" if dk == "bi" else "registo criminal")
 		box.add_child(_label("%s · %s" % [j.where, req], 13, Color(1, 1, 1, 0.65), FONT_REG, true))
 		var id: String = j.id
 		if id == my:
@@ -479,7 +604,10 @@ func _phone_jobs() -> void:
 func _phone_help() -> void:
 	for l: String in [
 		"Come antes que a fome acabe: a cantina é a refeição mais barata.",
-		"Dorme no hotel para repor a energia. Sem dinheiro, dorme no banco da paragem.",
+		"Todos os edifícios com nome abrem: aproxima-te da porta e toca em Entrar.",
+		"Dorme no Hotel iU ou na tua casa. Sem dinheiro, dorme no banco da paragem.",
+		"Arrenda ou compra casa à porta da Casa à venda ou dos prédios.",
+		"Guarda dinheiro no Banco Planalto. BI no Governo Provincial; registo criminal no Tribunal.",
 		"Aceita uma vaga em Vagas e vai ao local de trabalho para fazer turnos.",
 		"Estuda na Escola Primária para desbloquear empregos melhores.",
 		"Uma vez por dia podes pedir dinheiro aos teus pais.",
@@ -505,7 +633,7 @@ func _job_by_place(place_job: String) -> Dictionary:
 
 
 func _busy_text(kind: String) -> String:
-	return {"work": "A trabalhar", "study": "Na aula", "sleep": "A dormir", "sleep_rua": "A dormir na paragem"}.get(kind, "Ocupado")
+	return {"work": "A trabalhar", "study": "Na aula", "sleep": "A dormir", "sleep_rua": "A dormir na paragem", "sleep_casa": "A dormir em casa"}.get(kind, "Ocupado")
 
 
 func _label(text: String, size: int, color: Color, font: Font, wrap := false) -> Label:

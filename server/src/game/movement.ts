@@ -53,7 +53,8 @@ export function isWalkable(d: District, x: number, y: number): boolean {
   }
   const rad = d.radius ?? PLAYER_RADIUS;
   if (x < rad || y < rad || x > d.width - rad || y > d.height - rad) {
-    return false;
+    // fora da rua: só se estiver dentro de um interior (com folga para as paredes)
+    if (!inInterior(d, x, y, rad)) return false;
   }
   for (const r of d.obstacles) {
     if (pointInRect(x, y, r, rad)) return false;
@@ -61,9 +62,29 @@ export function isWalkable(d: District, x: number, y: number): boolean {
   return true;
 }
 
+function inInterior(d: District, x: number, y: number, rad: number): boolean {
+  for (const i of d.interiors ?? []) {
+    const [rx, ry, rw, rh] = i.rect;
+    if (x >= rx + rad && y >= ry + rad && x <= rx + rw - rad && y <= ry + rh - rad) return true;
+  }
+  return false;
+}
+
 /** Ajusta um destino pedido pelo cliente aos limites do mapa. Devolve null se for inválido. */
 export function sanitizeTarget(d: District, x: number, y: number): { x: number; y: number } | null {
   const rad = d.radius ?? PLAYER_RADIUS;
+  if (y > d.height + rad && d.interiors?.length) {
+    // destino dentro de um interior: limita à sala onde o ponto cai
+    for (const i of d.interiors) {
+      const [rx, ry, rw, rh] = i.rect;
+      if (x >= rx - rad && y >= ry - rad && x <= rx + rw + rad && y <= ry + rh + rad) {
+        const ix = Math.min(Math.max(x, rx + rad), rx + rw - rad);
+        const iy = Math.min(Math.max(y, ry + rad), ry + rh - rad);
+        return isWalkable(d, ix, iy) ? { x: ix, y: iy } : null;
+      }
+    }
+    return null;
+  }
   const cx = Math.min(Math.max(x, rad), d.width - rad);
   const cy = Math.min(Math.max(y, rad), d.height - rad);
   if (!isWalkable(d, cx, cy)) return null;

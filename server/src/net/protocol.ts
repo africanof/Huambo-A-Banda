@@ -51,7 +51,8 @@ export const ErrorCodes = {
 
 // ---------- Validação de entradas do cliente (nunca confiar no cliente) ----------
 
-const coord = z.number().finite().min(-100_000).max(100_000);
+// interiores ficam a ~1 km da rua (y ≈ 100 000 cm): margem até 10 km
+const coord = z.number().finite().min(-1_000_000).max(1_000_000);
 
 export const MoveToSchema = z.object({ x: coord, y: coord }).strict();
 export type MoveTo = z.infer<typeof MoveToSchema>;
@@ -66,8 +67,30 @@ export const MoveDirSchema = z
 
 export const ActionSchema = z
   .object({
-    a: z.enum(["self", "eat", "work", "study", "sleep", "sleep_rua", "cancel", "take_job", "quit_job", "parents"]),
+    a: z.enum([
+      "self",
+      "eat",
+      "work",
+      "study",
+      "sleep",
+      "sleep_rua",
+      "cancel",
+      "take_job",
+      "quit_job",
+      "parents",
+      // Fase B: entrar/sair dos edifícios, casas, banco e balcões de serviço
+      "enter",
+      "exit",
+      "buy_house",
+      "rent_house",
+      "bank_in",
+      "bank_out",
+      "service",
+      "home_eat",
+    ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
+    /** quantia (banco) ou dias (renda) */
+    n: z.number().int().min(1).max(1_000_000_000).optional(),
   })
   .strict();
 export type ActionMessage = z.infer<typeof ActionSchema>;

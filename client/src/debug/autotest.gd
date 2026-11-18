@@ -3,7 +3,7 @@ extends Node
 ## Ativado com:  godot --headless --path client -- --autotest [--name=Robo] [--expect-peers=2]
 ## Sai com código 0 em sucesso, 1 em falha (usado pelo CI).
 
-const TIMEOUT_S := 90.0
+const TIMEOUT_S := 300.0
 
 var _started := 0
 
@@ -66,6 +66,7 @@ func _run() -> void:
 
 	if bairro and AppConfig.has_flag("life"):
 		await _life_loop(world)
+		await _places_loop(world)
 
 	_finish(true, "")
 
@@ -114,6 +115,85 @@ func _life_loop(world: Node) -> void:
 	world.hud.menu_panel.visible = false
 	if gained != 2000:
 		_finish(false, "pagamento inesperado: %d" % gained)
+
+
+## Andar por pontos (metros) e esperar que o servidor confirme cada um.
+func _walk(world: Node, pts: Array) -> void:
+	for wp: Vector2 in pts:
+		world.request_move(wp)
+		var t0 := Time.get_ticks_msec()
+		await _wait_for(func() -> Variant:
+			var me: Variant = Net.entities.get(Net.self_id)
+			if Time.get_ticks_msec() - t0 > 15000:
+				t0 = Time.get_ticks_msec()
+				print("[autotest] ainda a andar para %s; servidor diz %s" % [wp, (me.pos as Vector2) / 100.0 if me != null else null])
+			return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(wp) < 0.08 else null)
+
+
+func _spot(world: Node, interior: String, kind: String) -> Vector2:
+	for p: Dictionary in world.view.places:
+		if str(p.get("interior", "")) == interior and p.kind == kind:
+			return Vector2(p.at[0], p.at[1])
+	return Vector2.ZERO
+
+
+func _inside_venue() -> String:
+	var i: Variant = Net.me.get("inside")
+	return str(i.venue) if typeof(i) == TYPE_DICTIONARY else ""
+
+
+## Edifícios: entrar, usar o que o lugar oferece, sair (cantina, prédio, banco).
+func _places_loop(world: Node) -> void:
+	# já estamos à porta da cantina (fim do ciclo de vida)
+	Net.action("enter")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "cantina" else null)
+	print("[autotest] entrei na cantina")
+	await _walk(world, [_spot(world, "cantina", "food")])
+	var m0 := int(Net.me.money)
+	Net.action("eat", "arroz_feijao")
+	await _wait_for(func() -> Variant: return true if int(Net.me.money) == m0 - 1000 else null)
+	print("[autotest] comi na cantina: %d → %d Kz" % [m0, int(Net.me.money)])
+	await _shot("jogo_dentro_cantina")
+	Net.action("exit")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
+	print("[autotest] saí para a rua")
+	# Prédio Kuito: ver apartamentos (e arrendar se houver dinheiro)
+	await _walk(world, [Vector2(40.0, 15.4), Vector2(40.0, 21.0), Vector2(50.0, 21.0), Vector2(50.0, 15.4)])
+	Net.action("enter")
+	await _wait_for(func() -> Variant: return true if typeof(Net.me.get("offer")) == TYPE_DICTIONARY else null)
+	var offer: Dictionary = Net.me.offer
+	print("[autotest] prédio: %d apartamentos à porta" % offer.units.size())
+	await _shot("jogo_apartamentos_oferta")
+	if int(Net.me.money) >= int(offer.rentPerDay):
+		var unit := str(offer.units[0].id)
+		Net.action("rent_house", unit, 1)
+		await _wait_for(func() -> Variant: return true if _inside_venue() == "apartamentos" else null)
+		print("[autotest] arrendei e entrei: %s" % unit)
+		await _walk(world, [_spot(world, unit, "home_sleep")])
+		Net.action("sleep")
+		await _wait_for(func() -> Variant: return true if typeof(Net.me.get("busy")) == TYPE_DICTIONARY else null)
+		await _shot("jogo_em_casa")
+		Net.action("cancel")
+		await _wait_for(func() -> Variant: return true if Net.me.get("busy") == null else null)
+		Net.action("exit")
+		await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
+	else:
+		print("[autotest] sem dinheiro para arrendar (%d Kz)" % int(Net.me.money))
+		world.hud.menu_panel.visible = false
+	# Banco: depositar 500 Kz
+	await _walk(world, [Vector2(50.0, 21.0), Vector2(64.0, 21.0), Vector2(64.0, 15.4)])
+	Net.action("enter")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "banco" else null)
+	await _walk(world, [_spot(world, "banco", "bank")])
+	Net.action("bank_in", "", 500)
+	await _wait_for(func() -> Variant: return true if int(Net.me.get("bank", 0)) == 500 else null)
+	print("[autotest] depositei 500 Kz no banco")
+	world.hud._open_bank()
+	await _shot("jogo_banco")
+	world.hud.menu_panel.visible = false
+	Net.action("exit")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
+	print("[autotest] edifícios OK")
 
 
 ## Capturas de ecrã opcionais (CAPTURE_DIR) para revisão visual.

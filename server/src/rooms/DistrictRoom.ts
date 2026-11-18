@@ -83,10 +83,27 @@ export class DistrictRoom extends Room {
     this.district = district;
     this.grid = new SpatialGrid(district.aoiCell ?? AOI_CELL);
     if (district.places?.length) {
-      this.life = new LifeController(district, services().wallets, {
-        self: (actor, state) => this.clientOf(actor as Player)?.send(S2C.SELF, state),
-        toast: (actor, text, ok) => this.clientOf(actor as Player)?.send(S2C.TOAST, { t: text, ok }),
-      });
+      this.life = new LifeController(
+        district,
+        services().wallets,
+        {
+          self: (actor, state) => this.clientOf(actor as Player)?.send(S2C.SELF, state),
+          toast: (actor, text, ok) => this.clientOf(actor as Player)?.send(S2C.TOAST, { t: text, ok }),
+          // entrar/sair de um edifício: a posição saltou; para o movimento e atualiza a área de interesse
+          moved: (actor) => {
+            const p = actor as Player;
+            p.tx = p.ty = null;
+            p.path = undefined;
+            p.dx = p.dy = 0;
+            this.grid.upsert(p.eid, p.x, p.y);
+            this.movedThisWindow.add(p.eid);
+            p.dirtyPersist = true;
+          },
+        },
+        Date.now,
+        Math.random,
+        { properties: services().properties, bank: services().bank },
+      );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }
 
