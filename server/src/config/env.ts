@@ -53,9 +53,6 @@ const EnvSchema = z
     if (env.ALLOW_GUESTS && !env.GUEST_TOKEN_SECRET) {
       ctx.addIssue({ code: "custom", path: ["GUEST_TOKEN_SECRET"], message: "obrigatório quando ALLOW_GUESTS=true" });
     }
-    if (env.SUPABASE_URL && !env.SUPABASE_SERVICE_ROLE_KEY && env.NODE_ENV === "production") {
-      ctx.addIssue({ code: "custom", path: ["SUPABASE_SERVICE_ROLE_KEY"], message: "obrigatório em produção" });
-    }
     if (env.NODE_ENV === "production" && env.CORS_ORIGINS.includes("*")) {
       ctx.addIssue({ code: "custom", path: ["CORS_ORIGINS"], message: "'*' não é permitido em produção" });
     }
