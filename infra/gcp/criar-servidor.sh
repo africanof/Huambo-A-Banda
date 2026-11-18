@@ -19,6 +19,23 @@ if [[ -z "$PROJECT" || "$PROJECT" == "(unset)" ]]; then
 fi
 echo "→ Projeto: $PROJECT · zona: $ZONE"
 
+# Faturação: sem uma conta de faturação ATIVA ligada ao projeto a Google não deixa criar máquinas.
+if [[ "$(gcloud billing projects describe "$PROJECT" --format='value(billingEnabled)' 2>/dev/null)" != "True" ]]; then
+  OPEN="$(gcloud billing accounts list --filter='open=true' --format='value(name)' 2>/dev/null | head -n1)"
+  if [[ -n "$OPEN" ]]; then
+    echo "→ A ligar a conta de faturação ${OPEN#billingAccounts/} ao projeto…"
+    gcloud billing projects link "$PROJECT" --billing-account "${OPEN#billingAccounts/}" --quiet
+  else
+    echo
+    echo "✗ Esta conta Google não tem nenhuma conta de faturação ATIVA."
+    gcloud billing accounts list 2>/dev/null || true
+    echo
+    echo "  Abre https://console.cloud.google.com/billing e conclui a ativação"
+    echo "  (se pedir pré-pagamento, ele fica como saldo na conta). Depois volta a correr este comando."
+    exit 1
+  fi
+fi
+
 gcloud services enable compute.googleapis.com --quiet
 
 if ! gcloud compute addresses describe "$VM-ip" --region "$REGION" >/dev/null 2>&1; then
