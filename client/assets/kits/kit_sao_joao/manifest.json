@@ -2142,7 +2142,4291 @@
    "kit": "kit_sao_joao",
    "path": "res://assets/kits/kit_sao_joao/sao_joao_small54.webp",
    "kind": "small"
+  },
+  "sao_joao_escola@1": {
+   "category": "building",
+   "size": [
+    895,
+    459
+   ],
+   "anchor": [
+    402,
+    455
+   ],
+   "footprint": [
+    10.0,
+    12.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_escola@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_escola@1.webp",
+   "name": "Escola Primária de São João",
+   "venue": "escola"
+  },
+  "sao_joao_saude@1": {
+   "category": "building",
+   "size": [
+    727,
+    399
+   ],
+   "anchor": [
+    296,
+    394
+   ],
+   "footprint": [
+    7.3,
+    10.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_saude@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_saude@1.webp",
+   "name": "Centro de Saúde de São João",
+   "venue": "saude"
+  },
+  "sao_joao_igreja@1": {
+   "category": "building",
+   "size": [
+    557,
+    454
+   ],
+   "anchor": [
+    202,
+    451
+   ],
+   "footprint": [
+    5.0,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_igreja@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_igreja@1.webp",
+   "name": "Igreja de São João",
+   "venue": "igreja"
+  },
+  "sao_joao_mercado@1": {
+   "category": "building",
+   "size": [
+    899,
+    453
+   ],
+   "anchor": [
+    352,
+    448
+   ],
+   "footprint": [
+    8.8,
+    13.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_mercado@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_mercado@1.webp",
+   "name": "Mercado de São João",
+   "venue": "mercado"
+  },
+  "sao_joao_cantina@1": {
+   "category": "building",
+   "size": [
+    591,
+    387
+   ],
+   "anchor": [
+    245,
+    383
+   ],
+   "footprint": [
+    6.1,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_cantina@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_cantina@1.webp",
+   "name": "Cantina da Avó Maria",
+   "venue": "cantina"
+  },
+  "sao_joao_farmacia@1": {
+   "category": "building",
+   "size": [
+    613,
+    397
+   ],
+   "anchor": [
+    235,
+    393
+   ],
+   "footprint": [
+    5.8,
+    9.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_farmacia@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_farmacia@1.webp",
+   "name": "Farmácia São João",
+   "venue": "farmacia"
+  },
+  "sao_joao_administracao@1": {
+   "category": "building",
+   "size": [
+    678,
+    481
+   ],
+   "anchor": [
+    240,
+    477
+   ],
+   "footprint": [
+    6.0,
+    10.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_administracao@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_administracao@1.webp",
+   "name": "Administração de São João",
+   "venue": "administracao"
+  },
+  "sao_joao_churrasqueira@1": {
+   "category": "building",
+   "size": [
+    611,
+    385
+   ],
+   "anchor": [
+    279,
+    381
+   ],
+   "footprint": [
+    6.9,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_churrasqueira@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_churrasqueira@1.webp",
+   "name": "Churrasqueira São João",
+   "venue": "churrasqueira"
+  },
+  "sao_joao_hotel@1": {
+   "category": "building",
+   "size": [
+    557,
+    457
+   ],
+   "anchor": [
+    203,
+    454
+   ],
+   "footprint": [
+    5.0,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_hotel@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_hotel@1.webp",
+   "name": "Pensão São João",
+   "venue": "hotel"
+  },
+  "sao_joao_correios@1": {
+   "category": "building",
+   "size": [
+    642,
+    397
+   ],
+   "anchor": [
+    224,
+    392
+   ],
+   "footprint": [
+    5.6,
+    10.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_correios@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_correios@1.webp",
+   "name": "Correios de São João",
+   "venue": "correios"
+  },
+  "sao_joao_apartamentos@1": {
+   "category": "building",
+   "size": [
+    571,
+    476
+   ],
+   "anchor": [
+    202,
+    472
+   ],
+   "footprint": [
+    5.0,
+    9.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_apartamentos@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_apartamentos@1.webp",
+   "name": "Prédio São João",
+   "venue": "apartamentos"
+  },
+  "sao_joao_casa1@1": {
+   "category": "building",
+   "size": [
+    533,
+    349
+   ],
+   "anchor": [
+    176,
+    345
+   ],
+   "footprint": [
+    4.4,
+    8.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa1@1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "sao_joao_casa2@1": {
+   "category": "building",
+   "size": [
+    517,
+    340
+   ],
+   "anchor": [
+    175,
+    336
+   ],
+   "footprint": [
+    4.3,
+    8.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa2@1.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "sao_joao_casa3@1": {
+   "category": "building",
+   "size": [
+    513,
+    345
+   ],
+   "anchor": [
+    154,
+    342
+   ],
+   "footprint": [
+    3.8,
+    8.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa3@1.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "sao_joao_casa4@1": {
+   "category": "building",
+   "size": [
+    516,
+    333
+   ],
+   "anchor": [
+    154,
+    329
+   ],
+   "footprint": [
+    3.8,
+    9.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa4@1.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "sao_joao_casa5@1": {
+   "category": "building",
+   "size": [
+    543,
+    342
+   ],
+   "anchor": [
+    172,
+    338
+   ],
+   "footprint": [
+    4.2,
+    9.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa5@1.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "sao_joao_casa6@1": {
+   "category": "building",
+   "size": [
+    527,
+    319
+   ],
+   "anchor": [
+    155,
+    315
+   ],
+   "footprint": [
+    3.8,
+    9.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa6@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa6@1.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "sao_joao_casa7@1": {
+   "category": "building",
+   "size": [
+    534,
+    339
+   ],
+   "anchor": [
+    156,
+    335
+   ],
+   "footprint": [
+    3.8,
+    9.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa7@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa7@1.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_joao_tree1@1": {
+   "category": "prop",
+   "size": [
+    267,
+    244
+   ],
+   "anchor": [
+    132,
+    242
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree1@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree2@1": {
+   "category": "prop",
+   "size": [
+    244,
+    227
+   ],
+   "anchor": [
+    121,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree2@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree3@1": {
+   "category": "prop",
+   "size": [
+    161,
+    261
+   ],
+   "anchor": [
+    80,
+    260
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree3@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree4@1": {
+   "category": "prop",
+   "size": [
+    281,
+    219
+   ],
+   "anchor": [
+    140,
+    217
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree4@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree5@1": {
+   "category": "prop",
+   "size": [
+    210,
+    228
+   ],
+   "anchor": [
+    105,
+    226
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree5@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree6@1": {
+   "category": "prop",
+   "size": [
+    206,
+    227
+   ],
+   "anchor": [
+    102,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree6@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree6@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree7@1": {
+   "category": "prop",
+   "size": [
+    233,
+    201
+   ],
+   "anchor": [
+    116,
+    199
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree7@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree7@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree8@1": {
+   "category": "prop",
+   "size": [
+    154,
+    240
+   ],
+   "anchor": [
+    76,
+    239
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree8@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree8@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree9@1": {
+   "category": "prop",
+   "size": [
+    184,
+    224
+   ],
+   "anchor": [
+    92,
+    223
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree9@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree9@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree10@1": {
+   "category": "prop",
+   "size": [
+    213,
+    224
+   ],
+   "anchor": [
+    105,
+    223
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree10@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree10@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_lamp1@1": {
+   "category": "prop",
+   "size": [
+    109,
+    233
+   ],
+   "anchor": [
+    54,
+    232
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp1@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp2@1": {
+   "category": "prop",
+   "size": [
+    89,
+    242
+   ],
+   "anchor": [
+    44,
+    241
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp2@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp3@1": {
+   "category": "prop",
+   "size": [
+    60,
+    236
+   ],
+   "anchor": [
+    29,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp3@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp4@1": {
+   "category": "prop",
+   "size": [
+    100,
+    246
+   ],
+   "anchor": [
+    49,
+    245
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp4@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_pole1@1": {
+   "category": "prop",
+   "size": [
+    65,
+    227
+   ],
+   "anchor": [
+    32,
+    226
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole1@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole2@1": {
+   "category": "prop",
+   "size": [
+    78,
+    235
+   ],
+   "anchor": [
+    39,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole2@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole3@1": {
+   "category": "prop",
+   "size": [
+    100,
+    231
+   ],
+   "anchor": [
+    48,
+    230
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole3@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole4@1": {
+   "category": "prop",
+   "size": [
+    88,
+    235
+   ],
+   "anchor": [
+    43,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole4@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole5@1": {
+   "category": "prop",
+   "size": [
+    92,
+    235
+   ],
+   "anchor": [
+    45,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole5@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole6@1": {
+   "category": "prop",
+   "size": [
+    96,
+    231
+   ],
+   "anchor": [
+    47,
+    230
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole6@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole6@1.webp",
+   "kind": "pole"
+  },
+  "sao_joao_vehicle1@1": {
+   "category": "prop",
+   "size": [
+    269,
+    183
+   ],
+   "anchor": [
+    119,
+    181
+   ],
+   "footprint": [
+    1.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle1@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle2@1": {
+   "category": "prop",
+   "size": [
+    279,
+    185
+   ],
+   "anchor": [
+    121,
+    183
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle2@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_small1@1": {
+   "category": "prop",
+   "size": [
+    130,
+    128
+   ],
+   "anchor": [
+    16,
+    127
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small1@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small2@1": {
+   "category": "prop",
+   "size": [
+    126,
+    123
+   ],
+   "anchor": [
+    18,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small2@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small3@1": {
+   "category": "prop",
+   "size": [
+    126,
+    123
+   ],
+   "anchor": [
+    16,
+    121
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small3@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_vehicle3@1": {
+   "category": "prop",
+   "size": [
+    131,
+    127
+   ],
+   "anchor": [
+    15,
+    125
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle3@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle4@1": {
+   "category": "prop",
+   "size": [
+    217,
+    129
+   ],
+   "anchor": [
+    102,
+    128
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle4@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle5@1": {
+   "category": "prop",
+   "size": [
+    192,
+    121
+   ],
+   "anchor": [
+    94,
+    119
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle5@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle6@1": {
+   "category": "prop",
+   "size": [
+    201,
+    131
+   ],
+   "anchor": [
+    95,
+    129
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle6@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle6@1.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_tree11@1": {
+   "category": "prop",
+   "size": [
+    172,
+    167
+   ],
+   "anchor": [
+    85,
+    165
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree11@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree11@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_stall1@1": {
+   "category": "prop",
+   "size": [
+    184,
+    162
+   ],
+   "anchor": [
+    99,
+    160
+   ],
+   "footprint": [
+    1.3,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall1@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall1@1.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall2@1": {
+   "category": "prop",
+   "size": [
+    170,
+    167
+   ],
+   "anchor": [
+    89,
+    165
+   ],
+   "footprint": [
+    1.2,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall2@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall2@1.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall3@1": {
+   "category": "prop",
+   "size": [
+    175,
+    160
+   ],
+   "anchor": [
+    100,
+    158
+   ],
+   "footprint": [
+    1.4,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall3@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall3@1.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall4@1": {
+   "category": "prop",
+   "size": [
+    153,
+    168
+   ],
+   "anchor": [
+    71,
+    166
+   ],
+   "footprint": [
+    0.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall4@1.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall5@1": {
+   "category": "prop",
+   "size": [
+    163,
+    167
+   ],
+   "anchor": [
+    73,
+    166
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall5@1.webp",
+   "kind": "stall"
+  },
+  "sao_joao_small4@1": {
+   "category": "prop",
+   "size": [
+    152,
+    155
+   ],
+   "anchor": [
+    72,
+    154
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small4@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small4@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small5@1": {
+   "category": "prop",
+   "size": [
+    153,
+    157
+   ],
+   "anchor": [
+    74,
+    155
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small5@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small5@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small6@1": {
+   "category": "prop",
+   "size": [
+    155,
+    159
+   ],
+   "anchor": [
+    74,
+    157
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small6@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small6@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small7@1": {
+   "category": "prop",
+   "size": [
+    227,
+    166
+   ],
+   "anchor": [
+    104,
+    163
+   ],
+   "footprint": [
+    1.4,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small7@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small7@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small8@1": {
+   "category": "prop",
+   "size": [
+    185,
+    130
+   ],
+   "anchor": [
+    54,
+    127
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small8@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small8@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small9@1": {
+   "category": "prop",
+   "size": [
+    164,
+    111
+   ],
+   "anchor": [
+    46,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small9@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small9@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small10@1": {
+   "category": "prop",
+   "size": [
+    163,
+    86
+   ],
+   "anchor": [
+    46,
+    85
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small10@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small10@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small11@1": {
+   "category": "prop",
+   "size": [
+    163,
+    108
+   ],
+   "anchor": [
+    44,
+    106
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small11@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small11@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small12@1": {
+   "category": "prop",
+   "size": [
+    111,
+    129
+   ],
+   "anchor": [
+    57,
+    128
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small12@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small12@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small13@1": {
+   "category": "prop",
+   "size": [
+    93,
+    113
+   ],
+   "anchor": [
+    38,
+    111
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small13@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small13@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small14@1": {
+   "category": "prop",
+   "size": [
+    100,
+    121
+   ],
+   "anchor": [
+    36,
+    119
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small14@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small14@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small15@1": {
+   "category": "prop",
+   "size": [
+    135,
+    108
+   ],
+   "anchor": [
+    79,
+    107
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small15@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small15@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small16@1": {
+   "category": "prop",
+   "size": [
+    130,
+    107
+   ],
+   "anchor": [
+    73,
+    105
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small16@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small16@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small17@1": {
+   "category": "prop",
+   "size": [
+    233,
+    158
+   ],
+   "anchor": [
+    49,
+    156
+   ],
+   "footprint": [
+    0.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small17@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small17@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small18@1": {
+   "category": "prop",
+   "size": [
+    231,
+    161
+   ],
+   "anchor": [
+    50,
+    158
+   ],
+   "footprint": [
+    0.7,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small18@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small18@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small19@1": {
+   "category": "prop",
+   "size": [
+    99,
+    115
+   ],
+   "anchor": [
+    42,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small19@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small19@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small20@1": {
+   "category": "prop",
+   "size": [
+    101,
+    118
+   ],
+   "anchor": [
+    45,
+    117
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small20@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small20@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_tree12@1": {
+   "category": "prop",
+   "size": [
+    101,
+    119
+   ],
+   "anchor": [
+    50,
+    118
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree12@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree12@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_small21@1": {
+   "category": "prop",
+   "size": [
+    101,
+    110
+   ],
+   "anchor": [
+    40,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small21@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small21@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small22@1": {
+   "category": "prop",
+   "size": [
+    138,
+    102
+   ],
+   "anchor": [
+    21,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small22@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small22@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small23@1": {
+   "category": "prop",
+   "size": [
+    131,
+    101
+   ],
+   "anchor": [
+    21,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small23@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small23@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small24@1": {
+   "category": "prop",
+   "size": [
+    127,
+    102
+   ],
+   "anchor": [
+    20,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small24@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small24@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small25@1": {
+   "category": "prop",
+   "size": [
+    119,
+    87
+   ],
+   "anchor": [
+    50,
+    84
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small25@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small25@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small26@1": {
+   "category": "prop",
+   "size": [
+    123,
+    92
+   ],
+   "anchor": [
+    58,
+    90
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small26@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small26@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small27@1": {
+   "category": "prop",
+   "size": [
+    131,
+    101
+   ],
+   "anchor": [
+    64,
+    99
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small27@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small27@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small28@1": {
+   "category": "prop",
+   "size": [
+    141,
+    80
+   ],
+   "anchor": [
+    66,
+    78
+   ],
+   "footprint": [
+    0.9,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small28@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small28@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small29@1": {
+   "category": "prop",
+   "size": [
+    163,
+    121
+   ],
+   "anchor": [
+    26,
+    119
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small29@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small29@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_tree13@1": {
+   "category": "prop",
+   "size": [
+    163,
+    117
+   ],
+   "anchor": [
+    81,
+    116
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree13@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree13@1.webp",
+   "kind": "tree"
+  },
+  "sao_joao_small30@1": {
+   "category": "prop",
+   "size": [
+    60,
+    87
+   ],
+   "anchor": [
+    19,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small30@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small30@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small31@1": {
+   "category": "prop",
+   "size": [
+    62,
+    85
+   ],
+   "anchor": [
+    19,
+    84
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small31@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small31@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small32@1": {
+   "category": "prop",
+   "size": [
+    62,
+    85
+   ],
+   "anchor": [
+    17,
+    83
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small32@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small32@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small33@1": {
+   "category": "prop",
+   "size": [
+    88,
+    106
+   ],
+   "anchor": [
+    33,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small33@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small33@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small34@1": {
+   "category": "prop",
+   "size": [
+    67,
+    86
+   ],
+   "anchor": [
+    31,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small34@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small34@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small35@1": {
+   "category": "prop",
+   "size": [
+    83,
+    90
+   ],
+   "anchor": [
+    39,
+    87
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small35@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small35@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small36@1": {
+   "category": "prop",
+   "size": [
+    116,
+    119
+   ],
+   "anchor": [
+    44,
+    117
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small36@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small36@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small37@1": {
+   "category": "prop",
+   "size": [
+    95,
+    119
+   ],
+   "anchor": [
+    39,
+    117
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small37@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small37@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small38@1": {
+   "category": "prop",
+   "size": [
+    117,
+    159
+   ],
+   "anchor": [
+    53,
+    158
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small38@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small38@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small39@1": {
+   "category": "prop",
+   "size": [
+    112,
+    156
+   ],
+   "anchor": [
+    48,
+    155
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small39@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small39@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small40@1": {
+   "category": "prop",
+   "size": [
+    87,
+    171
+   ],
+   "anchor": [
+    8,
+    170
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small40@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small40@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small41@1": {
+   "category": "prop",
+   "size": [
+    89,
+    168
+   ],
+   "anchor": [
+    9,
+    166
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small41@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small41@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small42@1": {
+   "category": "prop",
+   "size": [
+    125,
+    149
+   ],
+   "anchor": [
+    74,
+    148
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small42@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small42@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small43@1": {
+   "category": "prop",
+   "size": [
+    127,
+    150
+   ],
+   "anchor": [
+    75,
+    149
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small43@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small43@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small44@1": {
+   "category": "prop",
+   "size": [
+    129,
+    150
+   ],
+   "anchor": [
+    69,
+    148
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small44@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small44@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small45@1": {
+   "category": "prop",
+   "size": [
+    101,
+    130
+   ],
+   "anchor": [
+    63,
+    128
+   ],
+   "footprint": [
+    0.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small45@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small45@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small46@1": {
+   "category": "prop",
+   "size": [
+    102,
+    129
+   ],
+   "anchor": [
+    49,
+    127
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small46@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small46@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small47@1": {
+   "category": "prop",
+   "size": [
+    126,
+    150
+   ],
+   "anchor": [
+    57,
+    148
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small47@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small47@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small48@1": {
+   "category": "prop",
+   "size": [
+    167,
+    120
+   ],
+   "anchor": [
+    30,
+    118
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small48@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small48@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small49@1": {
+   "category": "prop",
+   "size": [
+    164,
+    117
+   ],
+   "anchor": [
+    31,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small49@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small49@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small50@1": {
+   "category": "prop",
+   "size": [
+    65,
+    112
+   ],
+   "anchor": [
+    24,
+    111
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small50@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small50@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small51@1": {
+   "category": "prop",
+   "size": [
+    67,
+    111
+   ],
+   "anchor": [
+    21,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small51@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small51@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small52@1": {
+   "category": "prop",
+   "size": [
+    216,
+    129
+   ],
+   "anchor": [
+    135,
+    127
+   ],
+   "footprint": [
+    1.8,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small52@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small52@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small53@1": {
+   "category": "prop",
+   "size": [
+    385,
+    167
+   ],
+   "anchor": [
+    229,
+    166
+   ],
+   "footprint": [
+    3.0,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small53@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small53@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_small54@1": {
+   "category": "prop",
+   "size": [
+    346,
+    174
+   ],
+   "anchor": [
+    30,
+    172
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small54@1",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small54@1.webp",
+   "kind": "small"
+  },
+  "sao_joao_escola@2": {
+   "category": "building",
+   "size": [
+    928,
+    475
+   ],
+   "anchor": [
+    593,
+    471
+   ],
+   "footprint": [
+    14.8,
+    8.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_escola@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_escola@2.webp",
+   "name": "Escola Primária de São João",
+   "venue": "escola"
+  },
+  "sao_joao_saude@2": {
+   "category": "building",
+   "size": [
+    757,
+    418
+   ],
+   "anchor": [
+    381,
+    413
+   ],
+   "footprint": [
+    9.5,
+    9.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_saude@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_saude@2.webp",
+   "name": "Centro de Saúde de São João",
+   "venue": "saude"
+  },
+  "sao_joao_igreja@2": {
+   "category": "building",
+   "size": [
+    574,
+    483
+   ],
+   "anchor": [
+    272,
+    480
+   ],
+   "footprint": [
+    6.7,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_igreja@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_igreja@2.webp",
+   "name": "Igreja de São João",
+   "venue": "igreja"
+  },
+  "sao_joao_mercado@2": {
+   "category": "building",
+   "size": [
+    872,
+    446
+   ],
+   "anchor": [
+    417,
+    441
+   ],
+   "footprint": [
+    10.4,
+    11.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_mercado@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_mercado@2.webp",
+   "name": "Mercado de São João",
+   "venue": "mercado"
+  },
+  "sao_joao_cantina@2": {
+   "category": "building",
+   "size": [
+    610,
+    395
+   ],
+   "anchor": [
+    369,
+    392
+   ],
+   "footprint": [
+    9.2,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_cantina@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_cantina@2.webp",
+   "name": "Cantina da Avó Maria",
+   "venue": "cantina"
+  },
+  "sao_joao_farmacia@2": {
+   "category": "building",
+   "size": [
+    633,
+    410
+   ],
+   "anchor": [
+    379,
+    406
+   ],
+   "footprint": [
+    9.4,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_farmacia@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_farmacia@2.webp",
+   "name": "Farmácia São João",
+   "venue": "farmacia"
+  },
+  "sao_joao_administracao@2": {
+   "category": "building",
+   "size": [
+    660,
+    494
+   ],
+   "anchor": [
+    403,
+    491
+   ],
+   "footprint": [
+    10.0,
+    6.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_administracao@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_administracao@2.webp",
+   "name": "Administração de São João",
+   "venue": "administracao"
+  },
+  "sao_joao_churrasqueira@2": {
+   "category": "building",
+   "size": [
+    644,
+    390
+   ],
+   "anchor": [
+    354,
+    386
+   ],
+   "footprint": [
+    8.8,
+    7.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_churrasqueira@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_churrasqueira@2.webp",
+   "name": "Churrasqueira São João",
+   "venue": "churrasqueira"
+  },
+  "sao_joao_hotel@2": {
+   "category": "building",
+   "size": [
+    589,
+    466
+   ],
+   "anchor": [
+    350,
+    463
+   ],
+   "footprint": [
+    8.7,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_hotel@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_hotel@2.webp",
+   "name": "Pensão São João",
+   "venue": "hotel"
+  },
+  "sao_joao_correios@2": {
+   "category": "building",
+   "size": [
+    613,
+    397
+   ],
+   "anchor": [
+    366,
+    393
+   ],
+   "footprint": [
+    9.1,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_correios@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_correios@2.webp",
+   "name": "Correios de São João",
+   "venue": "correios"
+  },
+  "sao_joao_apartamentos@2": {
+   "category": "building",
+   "size": [
+    585,
+    498
+   ],
+   "anchor": [
+    340,
+    494
+   ],
+   "footprint": [
+    8.5,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_apartamentos@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_apartamentos@2.webp",
+   "name": "Prédio São João",
+   "venue": "apartamentos"
+  },
+  "sao_joao_casa1@2": {
+   "category": "building",
+   "size": [
+    546,
+    349
+   ],
+   "anchor": [
+    303,
+    346
+   ],
+   "footprint": [
+    7.5,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa1@2.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "sao_joao_casa2@2": {
+   "category": "building",
+   "size": [
+    522,
+    332
+   ],
+   "anchor": [
+    308,
+    328
+   ],
+   "footprint": [
+    7.7,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa2@2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "sao_joao_casa3@2": {
+   "category": "building",
+   "size": [
+    482,
+    352
+   ],
+   "anchor": [
+    297,
+    349
+   ],
+   "footprint": [
+    7.4,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa3@2.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "sao_joao_casa4@2": {
+   "category": "building",
+   "size": [
+    538,
+    339
+   ],
+   "anchor": [
+    289,
+    335
+   ],
+   "footprint": [
+    7.2,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa4@2.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "sao_joao_casa5@2": {
+   "category": "building",
+   "size": [
+    532,
+    325
+   ],
+   "anchor": [
+    306,
+    322
+   ],
+   "footprint": [
+    7.6,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa5@2.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "sao_joao_casa6@2": {
+   "category": "building",
+   "size": [
+    515,
+    307
+   ],
+   "anchor": [
+    294,
+    305
+   ],
+   "footprint": [
+    7.3,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa6@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa6@2.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "sao_joao_casa7@2": {
+   "category": "building",
+   "size": [
+    551,
+    327
+   ],
+   "anchor": [
+    324,
+    324
+   ],
+   "footprint": [
+    8.1,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_casa7@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_casa7@2.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "sao_joao_tree1@2": {
+   "category": "prop",
+   "size": [
+    273,
+    235
+   ],
+   "anchor": [
+    136,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree1@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree2@2": {
+   "category": "prop",
+   "size": [
+    247,
+    224
+   ],
+   "anchor": [
+    123,
+    222
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree2@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree3@2": {
+   "category": "prop",
+   "size": [
+    172,
+    256
+   ],
+   "anchor": [
+    86,
+    254
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree3@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree4@2": {
+   "category": "prop",
+   "size": [
+    284,
+    217
+   ],
+   "anchor": [
+    141,
+    214
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree4@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree5@2": {
+   "category": "prop",
+   "size": [
+    204,
+    220
+   ],
+   "anchor": [
+    101,
+    217
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree5@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree6@2": {
+   "category": "prop",
+   "size": [
+    206,
+    227
+   ],
+   "anchor": [
+    102,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree6@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree6@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree7@2": {
+   "category": "prop",
+   "size": [
+    237,
+    200
+   ],
+   "anchor": [
+    118,
+    198
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree7@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree7@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree8@2": {
+   "category": "prop",
+   "size": [
+    164,
+    236
+   ],
+   "anchor": [
+    81,
+    235
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree8@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree8@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree9@2": {
+   "category": "prop",
+   "size": [
+    173,
+    217
+   ],
+   "anchor": [
+    86,
+    216
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree9@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree9@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_tree10@2": {
+   "category": "prop",
+   "size": [
+    206,
+    222
+   ],
+   "anchor": [
+    102,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree10@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree10@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_lamp1@2": {
+   "category": "prop",
+   "size": [
+    107,
+    237
+   ],
+   "anchor": [
+    53,
+    235
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp1@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp2@2": {
+   "category": "prop",
+   "size": [
+    86,
+    245
+   ],
+   "anchor": [
+    42,
+    244
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp2@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp3@2": {
+   "category": "prop",
+   "size": [
+    57,
+    236
+   ],
+   "anchor": [
+    27,
+    235
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp3@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_lamp4@2": {
+   "category": "prop",
+   "size": [
+    106,
+    251
+   ],
+   "anchor": [
+    52,
+    249
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_lamp4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_lamp4@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "sao_joao_pole1@2": {
+   "category": "prop",
+   "size": [
+    66,
+    224
+   ],
+   "anchor": [
+    32,
+    223
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole1@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole2@2": {
+   "category": "prop",
+   "size": [
+    79,
+    238
+   ],
+   "anchor": [
+    39,
+    236
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole2@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole3@2": {
+   "category": "prop",
+   "size": [
+    93,
+    237
+   ],
+   "anchor": [
+    46,
+    235
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole3@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole4@2": {
+   "category": "prop",
+   "size": [
+    89,
+    241
+   ],
+   "anchor": [
+    44,
+    240
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole4@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole5@2": {
+   "category": "prop",
+   "size": [
+    92,
+    241
+   ],
+   "anchor": [
+    46,
+    239
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole5@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_pole6@2": {
+   "category": "prop",
+   "size": [
+    85,
+    238
+   ],
+   "anchor": [
+    42,
+    237
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_pole6@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_pole6@2.webp",
+   "kind": "pole"
+  },
+  "sao_joao_vehicle1@2": {
+   "category": "prop",
+   "size": [
+    261,
+    188
+   ],
+   "anchor": [
+    125,
+    187
+   ],
+   "footprint": [
+    1.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle1@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle2@2": {
+   "category": "prop",
+   "size": [
+    262,
+    187
+   ],
+   "anchor": [
+    123,
+    186
+   ],
+   "footprint": [
+    1.7,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle2@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_small1@2": {
+   "category": "prop",
+   "size": [
+    122,
+    131
+   ],
+   "anchor": [
+    16,
+    129
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small1@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small2@2": {
+   "category": "prop",
+   "size": [
+    115,
+    132
+   ],
+   "anchor": [
+    14,
+    130
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small2@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small3@2": {
+   "category": "prop",
+   "size": [
+    111,
+    129
+   ],
+   "anchor": [
+    14,
+    127
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small3@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_vehicle3@2": {
+   "category": "prop",
+   "size": [
+    115,
+    132
+   ],
+   "anchor": [
+    14,
+    131
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle3@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle4@2": {
+   "category": "prop",
+   "size": [
+    225,
+    137
+   ],
+   "anchor": [
+    112,
+    136
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle4@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle5@2": {
+   "category": "prop",
+   "size": [
+    188,
+    122
+   ],
+   "anchor": [
+    94,
+    120
+   ],
+   "footprint": [
+    1.3,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle5@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_vehicle6@2": {
+   "category": "prop",
+   "size": [
+    189,
+    131
+   ],
+   "anchor": [
+    92,
+    129
+   ],
+   "footprint": [
+    1.2,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_vehicle6@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_vehicle6@2.webp",
+   "kind": "vehicle"
+  },
+  "sao_joao_tree11@2": {
+   "category": "prop",
+   "size": [
+    160,
+    172
+   ],
+   "anchor": [
+    79,
+    171
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree11@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree11@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_stall1@2": {
+   "category": "prop",
+   "size": [
+    188,
+    168
+   ],
+   "anchor": [
+    107,
+    166
+   ],
+   "footprint": [
+    1.4,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall1@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall1@2.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall2@2": {
+   "category": "prop",
+   "size": [
+    170,
+    167
+   ],
+   "anchor": [
+    92,
+    165
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall2@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall2@2.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall3@2": {
+   "category": "prop",
+   "size": [
+    163,
+    159
+   ],
+   "anchor": [
+    103,
+    158
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall3@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall3@2.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall4@2": {
+   "category": "prop",
+   "size": [
+    154,
+    167
+   ],
+   "anchor": [
+    74,
+    165
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall4@2.webp",
+   "kind": "stall"
+  },
+  "sao_joao_stall5@2": {
+   "category": "prop",
+   "size": [
+    162,
+    171
+   ],
+   "anchor": [
+    81,
+    169
+   ],
+   "footprint": [
+    1.1,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_stall5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_stall5@2.webp",
+   "kind": "stall"
+  },
+  "sao_joao_small4@2": {
+   "category": "prop",
+   "size": [
+    150,
+    156
+   ],
+   "anchor": [
+    80,
+    155
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small4@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small4@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small5@2": {
+   "category": "prop",
+   "size": [
+    151,
+    159
+   ],
+   "anchor": [
+    79,
+    157
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small5@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small5@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small6@2": {
+   "category": "prop",
+   "size": [
+    150,
+    160
+   ],
+   "anchor": [
+    81,
+    158
+   ],
+   "footprint": [
+    1.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small6@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small6@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small7@2": {
+   "category": "prop",
+   "size": [
+    233,
+    163
+   ],
+   "anchor": [
+    138,
+    160
+   ],
+   "footprint": [
+    1.9,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small7@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small7@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small8@2": {
+   "category": "prop",
+   "size": [
+    179,
+    111
+   ],
+   "anchor": [
+    134,
+    109
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small8@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small8@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small9@2": {
+   "category": "prop",
+   "size": [
+    166,
+    97
+   ],
+   "anchor": [
+    47,
+    95
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small9@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small9@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small10@2": {
+   "category": "prop",
+   "size": [
+    164,
+    92
+   ],
+   "anchor": [
+    49,
+    91
+   ],
+   "footprint": [
+    0.7,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small10@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small10@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small11@2": {
+   "category": "prop",
+   "size": [
+    162,
+    94
+   ],
+   "anchor": [
+    51,
+    92
+   ],
+   "footprint": [
+    0.7,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small11@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small11@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small12@2": {
+   "category": "prop",
+   "size": [
+    109,
+    127
+   ],
+   "anchor": [
+    40,
+    125
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small12@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small12@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small13@2": {
+   "category": "prop",
+   "size": [
+    99,
+    116
+   ],
+   "anchor": [
+    40,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small13@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small13@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small14@2": {
+   "category": "prop",
+   "size": [
+    103,
+    124
+   ],
+   "anchor": [
+    32,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small14@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small14@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small15@2": {
+   "category": "prop",
+   "size": [
+    137,
+    108
+   ],
+   "anchor": [
+    82,
+    107
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small15@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small15@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small16@2": {
+   "category": "prop",
+   "size": [
+    130,
+    107
+   ],
+   "anchor": [
+    77,
+    105
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small16@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small16@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small17@2": {
+   "category": "prop",
+   "size": [
+    216,
+    160
+   ],
+   "anchor": [
+    167,
+    158
+   ],
+   "footprint": [
+    2.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small17@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small17@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small18@2": {
+   "category": "prop",
+   "size": [
+    223,
+    161
+   ],
+   "anchor": [
+    169,
+    158
+   ],
+   "footprint": [
+    2.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small18@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small18@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small19@2": {
+   "category": "prop",
+   "size": [
+    95,
+    116
+   ],
+   "anchor": [
+    42,
+    114
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small19@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small19@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small20@2": {
+   "category": "prop",
+   "size": [
+    99,
+    120
+   ],
+   "anchor": [
+    38,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small20@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small20@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_tree12@2": {
+   "category": "prop",
+   "size": [
+    104,
+    122
+   ],
+   "anchor": [
+    51,
+    121
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree12@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree12@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_small21@2": {
+   "category": "prop",
+   "size": [
+    99,
+    110
+   ],
+   "anchor": [
+    40,
+    109
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small21@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small21@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small22@2": {
+   "category": "prop",
+   "size": [
+    134,
+    100
+   ],
+   "anchor": [
+    21,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small22@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small22@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small23@2": {
+   "category": "prop",
+   "size": [
+    129,
+    101
+   ],
+   "anchor": [
+    17,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small23@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small23@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small24@2": {
+   "category": "prop",
+   "size": [
+    130,
+    103
+   ],
+   "anchor": [
+    17,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small24@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small24@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small25@2": {
+   "category": "prop",
+   "size": [
+    117,
+    83
+   ],
+   "anchor": [
+    54,
+    81
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small25@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small25@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small26@2": {
+   "category": "prop",
+   "size": [
+    118,
+    85
+   ],
+   "anchor": [
+    55,
+    83
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small26@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small26@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small27@2": {
+   "category": "prop",
+   "size": [
+    124,
+    95
+   ],
+   "anchor": [
+    67,
+    94
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small27@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small27@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small28@2": {
+   "category": "prop",
+   "size": [
+    135,
+    75
+   ],
+   "anchor": [
+    64,
+    73
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small28@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small28@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small29@2": {
+   "category": "prop",
+   "size": [
+    160,
+    124
+   ],
+   "anchor": [
+    26,
+    122
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small29@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small29@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_tree13@2": {
+   "category": "prop",
+   "size": [
+    156,
+    117
+   ],
+   "anchor": [
+    77,
+    115
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_tree13@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_tree13@2.webp",
+   "kind": "tree"
+  },
+  "sao_joao_small30@2": {
+   "category": "prop",
+   "size": [
+    61,
+    85
+   ],
+   "anchor": [
+    23,
+    83
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small30@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small30@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small31@2": {
+   "category": "prop",
+   "size": [
+    61,
+    86
+   ],
+   "anchor": [
+    26,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small31@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small31@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small32@2": {
+   "category": "prop",
+   "size": [
+    62,
+    84
+   ],
+   "anchor": [
+    22,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small32@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small32@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small33@2": {
+   "category": "prop",
+   "size": [
+    86,
+    99
+   ],
+   "anchor": [
+    33,
+    97
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small33@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small33@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small34@2": {
+   "category": "prop",
+   "size": [
+    67,
+    85
+   ],
+   "anchor": [
+    31,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small34@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small34@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small35@2": {
+   "category": "prop",
+   "size": [
+    86,
+    88
+   ],
+   "anchor": [
+    41,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small35@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small35@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small36@2": {
+   "category": "prop",
+   "size": [
+    112,
+    114
+   ],
+   "anchor": [
+    47,
+    113
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small36@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small36@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small37@2": {
+   "category": "prop",
+   "size": [
+    101,
+    120
+   ],
+   "anchor": [
+    42,
+    118
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small37@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small37@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small38@2": {
+   "category": "prop",
+   "size": [
+    113,
+    155
+   ],
+   "anchor": [
+    52,
+    153
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small38@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small38@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small39@2": {
+   "category": "prop",
+   "size": [
+    109,
+    157
+   ],
+   "anchor": [
+    49,
+    155
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small39@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small39@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small40@2": {
+   "category": "prop",
+   "size": [
+    84,
+    174
+   ],
+   "anchor": [
+    8,
+    173
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small40@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small40@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small41@2": {
+   "category": "prop",
+   "size": [
+    84,
+    173
+   ],
+   "anchor": [
+    8,
+    171
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small41@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small41@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small42@2": {
+   "category": "prop",
+   "size": [
+    123,
+    151
+   ],
+   "anchor": [
+    75,
+    150
+   ],
+   "footprint": [
+    1.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small42@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small42@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small43@2": {
+   "category": "prop",
+   "size": [
+    123,
+    149
+   ],
+   "anchor": [
+    72,
+    148
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small43@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small43@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small44@2": {
+   "category": "prop",
+   "size": [
+    125,
+    150
+   ],
+   "anchor": [
+    73,
+    148
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small44@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small44@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small45@2": {
+   "category": "prop",
+   "size": [
+    101,
+    133
+   ],
+   "anchor": [
+    54,
+    132
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small45@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small45@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small46@2": {
+   "category": "prop",
+   "size": [
+    105,
+    131
+   ],
+   "anchor": [
+    49,
+    130
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small46@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small46@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small47@2": {
+   "category": "prop",
+   "size": [
+    118,
+    147
+   ],
+   "anchor": [
+    56,
+    145
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small47@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small47@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small48@2": {
+   "category": "prop",
+   "size": [
+    174,
+    116
+   ],
+   "anchor": [
+    36,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small48@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small48@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small49@2": {
+   "category": "prop",
+   "size": [
+    162,
+    115
+   ],
+   "anchor": [
+    33,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small49@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small49@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small50@2": {
+   "category": "prop",
+   "size": [
+    65,
+    108
+   ],
+   "anchor": [
+    23,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small50@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small50@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small51@2": {
+   "category": "prop",
+   "size": [
+    67,
+    108
+   ],
+   "anchor": [
+    19,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small51@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small51@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small52@2": {
+   "category": "prop",
+   "size": [
+    217,
+    129
+   ],
+   "anchor": [
+    132,
+    128
+   ],
+   "footprint": [
+    1.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small52@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small52@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small53@2": {
+   "category": "prop",
+   "size": [
+    388,
+    164
+   ],
+   "anchor": [
+    349,
+    162
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small53@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small53@2.webp",
+   "kind": "small"
+  },
+  "sao_joao_small54@2": {
+   "category": "prop",
+   "size": [
+    357,
+    175
+   ],
+   "anchor": [
+    31,
+    173
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "sao_joao_small54@2",
+   "kit": "kit_sao_joao",
+   "path": "res://assets/kits/kit_sao_joao/sao_joao_small54@2.webp",
+   "kind": "small"
   }
  },
- "version": "741441c66e9a"
+ "version": "4ebe8dbb7d72"
 }
