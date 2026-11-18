@@ -116,4 +116,17 @@ export function registerRoutes(app: Application, svc: Services): void {
     const { token, identity, expiresIn } = await svc.verifier.issueGuestToken((req.body as { name?: unknown } | undefined)?.name);
     res.json({ token, userId: identity.userId, name: identity.displayName, expiresIn });
   });
+
+  // Jogo Web no mesmo endereço (Render / máquina única): só ficheiros que existem;
+  // tudo o resto (matchmaking, WebSocket) continua a passar.
+  if (svc.env.STATIC_DIR) {
+    app.use(
+      express.static(svc.env.STATIC_DIR, {
+        index: "index.html",
+        setHeaders: (res, file) => {
+          res.setHeader("Cache-Control", file.endsWith(".html") ? "no-cache" : "public, max-age=3600");
+        },
+      }),
+    );
+  }
 }

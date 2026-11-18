@@ -1,0 +1,29 @@
+# Render Blueprint (plano grátis): https://render.com → New → Blueprint → este repositório.
+# Uma só máquina serve o jogo Web e o servidor de jogo no mesmo endereço (https://<nome>.onrender.com).
+services:
+  - type: web
+    name: huambo-a-banda
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: ccr-6c9fbaa9-2cpgti
+    dockerfilePath: ./infra/render/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ALLOW_GUESTS
+        value: "true"
+      - key: GUEST_TOKEN_SECRET
+        generateValue: true
+      - key: GUEST_RATE_PER_MIN
+        value: "10"
+      - key: TRUSTED_IP_HEADER
+        value: x-forwarded-for
+      - key: SUPABASE_URL
+        value: https://arhepspapnncsxkfvszt.supabase.co
+      # chave secreta do Supabase: preencher no painel do Render (Environment), nunca no repositório
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false

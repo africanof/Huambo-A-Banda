@@ -39,6 +39,8 @@ const EnvSchema = z
 
     TRUSTED_IP_HEADER: z.string().default(""),
     CORS_ORIGINS: csv,
+    /** pasta com o jogo Web exportado, servido no mesmo endereço (opcional) */
+    STATIC_DIR: z.string().optional(),
 
     /** Jogadores por instância de bairro. Acima disto cria-se outra instância do mesmo bairro. */
     ROOM_MAX_CLIENTS: z.coerce.number().int().min(2).max(500).default(80),
@@ -61,7 +63,9 @@ const EnvSchema = z
 export type Env = z.infer<typeof EnvSchema>;
 
 export function loadEnv(source: Record<string, string | undefined> = process.env): Env {
-  const parsed = EnvSchema.safeParse(source);
+  // variáveis vazias (ex.: definidas no painel mas sem valor) contam como ausentes
+  const clean = Object.fromEntries(Object.entries(source).filter(([, v]) => v !== undefined && v !== ""));
+  const parsed = EnvSchema.safeParse(clean);
   if (!parsed.success) {
     const details = parsed.error.issues.map((i) => `  - ${i.path.join(".")}: ${i.message}`).join("\n");
     throw new Error(`Configuração inválida:\n${details}`);

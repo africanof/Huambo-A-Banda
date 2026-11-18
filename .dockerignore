@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/.godot
+**/build
+.git
+server/test
+server/scripts
+tools/art
+tools/mapgen
+docs
+*.log
+.env
