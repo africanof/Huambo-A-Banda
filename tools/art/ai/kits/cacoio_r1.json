@@ -1,0 +1,770 @@
+{
+ "id": "kit_cacoio",
+ "cuts": "raw/kit_cacoio_r1_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "cacoio_escola@1",
+   "name": "Escola Primária do Cacoio",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "cacoio_saude@1",
+   "name": "Centro de Saúde do Cacoio",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "cacoio_igreja@1",
+   "name": "Igreja Evangélica do Cacoio",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "cacoio_mercado@1",
+   "name": "Mercado do Cacoio",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "cacoio_cantina@1",
+   "name": "Cantina do Cacoio",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "cacoio_farmacia@1",
+   "name": "Farmácia Cacoio",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "cacoio_administracao@1",
+   "name": "Administração do Cacoio",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "cacoio_churrasqueira@1",
+   "name": "Churrasqueira Cacoio",
+   "cat": "building",
+   "venue": "churrasqueira",
+   "n": 7
+  },
+  {
+   "id": "cacoio_loja_telecom@1",
+   "name": "Quiosque Unitel Cacoio",
+   "cat": "building",
+   "venue": "loja_telecom",
+   "n": 8
+  },
+  {
+   "id": "cacoio_apartamentos@1",
+   "name": "Prédio Cacoio",
+   "cat": "building",
+   "venue": "apartamentos",
+   "xrange": [
+    195,
+    693
+   ],
+   "n": 9
+  },
+  {
+   "id": "cacoio_casa1@1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 9
+  },
+  {
+   "id": "cacoio_casa2@1",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    0,
+    195
+   ],
+   "n": 9
+  },
+  {
+   "id": "cacoio_casa3@1",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 10
+  },
+  {
+   "id": "cacoio_casa4@1",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "cacoio_casa5@1",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "cacoio_casa6@1",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "cacoio_casa7@1",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "cacoio_casa8@1",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "cacoio_casa9@1",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "cacoio_tree1@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 17
+  },
+  {
+   "id": "cacoio_tree2@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "cacoio_small1@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 20
+  },
+  {
+   "id": "cacoio_tree3@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "cacoio_tree4@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "cacoio_tree5@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "cacoio_tree6@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "cacoio_tree7@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "cacoio_tree8@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "cacoio_tree9@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 27
+  },
+  {
+   "id": "cacoio_tree10@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 28
+  },
+  {
+   "id": "cacoio_lamp1@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "cacoio_lamp2@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "cacoio_lamp3@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "cacoio_lamp4@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "cacoio_lamp5@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "cacoio_pole1@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "cacoio_pole2@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "cacoio_pole3@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 36
+  },
+  {
+   "id": "cacoio_pole4@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 37
+  },
+  {
+   "id": "cacoio_vehicle1@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 38
+  },
+  {
+   "id": "cacoio_vehicle2@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 39
+  },
+  {
+   "id": "cacoio_vehicle3@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "cacoio_vehicle4@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "cacoio_vehicle5@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "cacoio_vehicle6@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "cacoio_vehicle7@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "cacoio_vehicle8@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 45
+  },
+  {
+   "id": "cacoio_vehicle9@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 46
+  },
+  {
+   "id": "cacoio_tree11@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 47
+  },
+  {
+   "id": "cacoio_stall1@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 48
+  },
+  {
+   "id": "cacoio_stall2@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "cacoio_tree12@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 50
+  },
+  {
+   "id": "cacoio_stall3@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 51
+  },
+  {
+   "id": "cacoio_stall4@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 52
+  },
+  {
+   "id": "cacoio_small2@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "cacoio_small3@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "cacoio_small4@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "cacoio_small5@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "cacoio_small6@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "cacoio_small7@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "cacoio_small8@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "cacoio_small9@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "cacoio_small10@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "cacoio_small11@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "cacoio_small12@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "cacoio_small13@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "cacoio_small14@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "cacoio_small15@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "cacoio_small16@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "cacoio_small17@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "cacoio_tree13@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 69
+  },
+  {
+   "id": "cacoio_small18@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "cacoio_small19@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "cacoio_small20@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "cacoio_small21@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "cacoio_small22@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "cacoio_small23@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "cacoio_small24@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "cacoio_small25@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "cacoio_small26@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "cacoio_small27@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "cacoio_small28@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "cacoio_small29@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "cacoio_small30@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "cacoio_small31@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "cacoio_small32@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "cacoio_small33@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "cacoio_small34@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "cacoio_small35@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "cacoio_small36@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "cacoio_small37@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "cacoio_small38@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "cacoio_small39@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "cacoio_small40@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "cacoio_small41@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "cacoio_small42@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "cacoio_small43@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "cacoio_small44@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "cacoio_small45@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "cacoio_small46@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "cacoio_small47@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "cacoio_small48@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "cacoio_small49@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "cacoio_small50@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "cacoio_small51@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  },
+  {
+   "id": "cacoio_small52@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 104
+  },
+  {
+   "id": "cacoio_small53@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 105
+  }
+ ]
+}

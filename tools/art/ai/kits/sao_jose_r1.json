@@ -1,0 +1,674 @@
+{
+ "id": "kit_sao_jose",
+ "cuts": "raw/kit_sao_jose_r1_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "sao_jose_escola@1",
+   "name": "Escola Primária de São José",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "sao_jose_saude@1",
+   "name": "Centro de Saúde de São José",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "sao_jose_igreja@1",
+   "name": "Igreja de São José",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "sao_jose_mercado@1",
+   "name": "Mercado de São José",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "sao_jose_cantina@1",
+   "name": "Cantina São José",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "sao_jose_farmacia@1",
+   "name": "Farmácia São José",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "sao_jose_administracao@1",
+   "name": "Administração de São José",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "sao_jose_escola_7@1",
+   "name": "Complexo Escolar São José de Cluny",
+   "cat": "building",
+   "venue": "escola",
+   "n": 7
+  },
+  {
+   "id": "sao_jose_padaria@1",
+   "name": "Padaria São José",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 8
+  },
+  {
+   "id": "sao_jose_banco@1",
+   "name": "Banco BFA São José",
+   "cat": "building",
+   "venue": "banco",
+   "n": 9
+  },
+  {
+   "id": "sao_jose_apartamentos@1",
+   "name": "Prédio São José",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "sao_jose_casa1@1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "sao_jose_casa2@1",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "sao_jose_casa3@1",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "sao_jose_casa4@1",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "sao_jose_casa5@1",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "sao_jose_casa6@1",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "sao_jose_casa7@1",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "sao_jose_tree1@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 18
+  },
+  {
+   "id": "sao_jose_tree2@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "sao_jose_tree3@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "sao_jose_tree4@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "sao_jose_tree5@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "sao_jose_tree6@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "sao_jose_tree7@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "sao_jose_tree8@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "sao_jose_tree9@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "sao_jose_tree10@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 27
+  },
+  {
+   "id": "sao_jose_pole1@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "sao_jose_lamp1@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "sao_jose_pole2@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "sao_jose_small1@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 31
+  },
+  {
+   "id": "sao_jose_lamp2@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "sao_jose_pole3@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "sao_jose_pole4@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "sao_jose_pole5@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "sao_jose_pole6@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 36
+  },
+  {
+   "id": "sao_jose_vehicle1@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 50
+  },
+  {
+   "id": "sao_jose_vehicle2@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 37
+  },
+  {
+   "id": "sao_jose_vehicle3@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 38
+  },
+  {
+   "id": "sao_jose_vehicle4@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 39
+  },
+  {
+   "id": "sao_jose_vehicle5@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "sao_jose_vehicle6@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "sao_jose_vehicle7@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "sao_jose_vehicle8@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "sao_jose_tree11@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 64
+  },
+  {
+   "id": "sao_jose_stall1@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 67
+  },
+  {
+   "id": "sao_jose_stall2@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 69
+  },
+  {
+   "id": "sao_jose_stall3@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 72
+  },
+  {
+   "id": "sao_jose_stall4@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 74
+  },
+  {
+   "id": "sao_jose_stall5@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 44
+  },
+  {
+   "id": "sao_jose_small2@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 45
+  },
+  {
+   "id": "sao_jose_small3@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 46
+  },
+  {
+   "id": "sao_jose_small4@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 47
+  },
+  {
+   "id": "sao_jose_small5@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 48
+  },
+  {
+   "id": "sao_jose_small6@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 49
+  },
+  {
+   "id": "sao_jose_small7@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "sao_jose_small8@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "sao_jose_small9@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "sao_jose_small10@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "sao_jose_small11@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "sao_jose_small12@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "sao_jose_small13@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "sao_jose_small14@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "sao_jose_small15@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "sao_jose_small16@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "sao_jose_small17@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "sao_jose_small18@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "sao_jose_small19@1",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_sao_jose_r1_cut/zona_sao_jose_small19.png"
+  },
+  {
+   "id": "sao_jose_small20@1",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_sao_jose_r1_cut/zona_sao_jose_small20.png"
+  },
+  {
+   "id": "sao_jose_small21@1",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_sao_jose_r1_cut/zona_sao_jose_small21.png"
+  },
+  {
+   "id": "sao_jose_small22@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "sao_jose_small23@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "sao_jose_small24@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "sao_jose_small25@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "sao_jose_small26@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "sao_jose_small27@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "sao_jose_small28@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "sao_jose_small29@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "sao_jose_small30@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "sao_jose_small31@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "sao_jose_small32@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "sao_jose_small33@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "sao_jose_small34@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "sao_jose_small35@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "sao_jose_small36@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "sao_jose_small37@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "sao_jose_small38@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "sao_jose_small39@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "sao_jose_small40@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "sao_jose_small41@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "sao_jose_small42@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "sao_jose_small43@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "sao_jose_small44@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "sao_jose_small45@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  }
+ ]
+}

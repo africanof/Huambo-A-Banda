@@ -1,0 +1,758 @@
+{
+ "id": "kit_benfica",
+ "cuts": "raw/kit_benfica_r2_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "benfica_escola@2",
+   "name": "Escola Primária do Benfica",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "benfica_saude@2",
+   "name": "Centro de Saúde do Benfica",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "benfica_igreja@2",
+   "name": "Igreja Católica do Benfica",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "benfica_mercado@2",
+   "name": "Mercado do Benfica",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "benfica_cantina@2",
+   "name": "Cantina do Sr. Kalei",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "benfica_farmacia@2",
+   "name": "Farmácia Benfica",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "benfica_administracao@2",
+   "name": "Administração do Benfica",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "benfica_discoteca@2",
+   "name": "Discoteca Benfica",
+   "cat": "building",
+   "venue": "discoteca",
+   "n": 7
+  },
+  {
+   "id": "benfica_churrasqueira@2",
+   "name": "Churrasqueira Benfica",
+   "cat": "building",
+   "venue": "churrasqueira",
+   "n": 8
+  },
+  {
+   "id": "benfica_banco@2",
+   "name": "Banco Sol Benfica",
+   "cat": "building",
+   "venue": "banco",
+   "n": 9
+  },
+  {
+   "id": "benfica_apartamentos@2",
+   "name": "Prédio Benfica",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "benfica_casa1@2",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "benfica_casa2@2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "benfica_casa3@2",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "file": "raw/kit_benfica_r2_cut/zona_benfica_casa3.png"
+  },
+  {
+   "id": "benfica_casa4@2",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "file": "raw/kit_benfica_r2_cut/zona_benfica_casa4.png"
+  },
+  {
+   "id": "benfica_casa5@2",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "file": "raw/kit_benfica_r2_cut/zona_benfica_casa5.png"
+  },
+  {
+   "id": "benfica_casa6@2",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "file": "raw/kit_benfica_r2_cut/zona_benfica_casa6.png"
+  },
+  {
+   "id": "benfica_casa7@2",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "benfica_tree1@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 16
+  },
+  {
+   "id": "benfica_tree2@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 17
+  },
+  {
+   "id": "benfica_tree3@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 18
+  },
+  {
+   "id": "benfica_tree4@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "benfica_tree5@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "benfica_tree6@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "benfica_tree7@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "benfica_tree8@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "benfica_tree9@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "benfica_tree10@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "benfica_lamp1@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 26
+  },
+  {
+   "id": "benfica_lamp2@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 27
+  },
+  {
+   "id": "benfica_lamp3@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "benfica_lamp4@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "benfica_lamp5@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "benfica_lamp6@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "benfica_pole1@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "benfica_pole2@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "benfica_pole3@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "benfica_pole4@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "benfica_vehicle1@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 36
+  },
+  {
+   "id": "benfica_vehicle2@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 37
+  },
+  {
+   "id": "benfica_vehicle3@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 38
+  },
+  {
+   "id": "benfica_vehicle4@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 39
+  },
+  {
+   "id": "benfica_vehicle5@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "benfica_vehicle6@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "benfica_vehicle7@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "benfica_vehicle8@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "benfica_vehicle9@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "benfica_tree11@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 45
+  },
+  {
+   "id": "benfica_stall1@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 46
+  },
+  {
+   "id": "benfica_stall2@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 47
+  },
+  {
+   "id": "benfica_stall3@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 48
+  },
+  {
+   "id": "benfica_stall4@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "benfica_stall5@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "benfica_small1@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "benfica_small2@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "benfica_small3@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "benfica_small4@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "benfica_small5@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "benfica_small6@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "benfica_small7@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "benfica_small8@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "benfica_small9@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "benfica_small10@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "benfica_small11@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "benfica_small12@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "benfica_small13@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "benfica_small14@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "benfica_small15@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "benfica_small16@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "benfica_small17@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "benfica_small18@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "benfica_small19@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "benfica_small20@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "benfica_small21@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "benfica_small22@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "benfica_small23@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "benfica_small24@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "benfica_small25@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "benfica_small26@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "benfica_small27@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "benfica_small28@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "benfica_small29@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "benfica_small30@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "benfica_small31@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "benfica_small32@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "benfica_small33@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "benfica_small34@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "benfica_small35@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "benfica_small36@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "benfica_small37@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "benfica_small38@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "benfica_small39@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "benfica_small40@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "benfica_small41@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "benfica_small42@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "benfica_small43@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "benfica_small44@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "benfica_small45@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "benfica_small46@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "benfica_small47@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "benfica_small48@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "benfica_small49@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "benfica_small50@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "benfica_small51@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "benfica_small52@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "benfica_small53@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  },
+  {
+   "id": "benfica_small54@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 104
+  }
+ ]
+}

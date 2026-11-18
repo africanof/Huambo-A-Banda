@@ -1,0 +1,744 @@
+{
+ "id": "kit_kapango",
+ "cuts": "raw/kit_kapango_r2_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "kapango_escola@2",
+   "name": "Escola Primária do Kapango",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "kapango_saude@2",
+   "name": "Centro de Saúde do Kapango",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "kapango_igreja@2",
+   "name": "Igreja Católica do Kapango",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "kapango_mercado@2",
+   "name": "Mercado do Kapango",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "kapango_cantina@2",
+   "name": "Cantina do Kapango",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "kapango_farmacia@2",
+   "name": "Farmácia Kapango",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "kapango_administracao@2",
+   "name": "Administração do Kapango",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "kapango_discoteca@2",
+   "name": "Discoteca Kapango",
+   "cat": "building",
+   "venue": "discoteca",
+   "n": 7
+  },
+  {
+   "id": "kapango_padaria@2",
+   "name": "Padaria Kapango",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 8
+  },
+  {
+   "id": "kapango_esquadra@2",
+   "name": "Esquadra Policial do Kapango",
+   "cat": "building",
+   "venue": "esquadra",
+   "n": 9
+  },
+  {
+   "id": "kapango_apartamentos@2",
+   "name": "Prédio Kapango",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "kapango_casa1@2",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "kapango_casa2@2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "kapango_casa3@2",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "kapango_casa4@2",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "kapango_casa5@2",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "kapango_casa6@2",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "kapango_casa7@2",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "kapango_tree1@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 18
+  },
+  {
+   "id": "kapango_tree2@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "kapango_tree3@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "kapango_tree4@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "kapango_tree5@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "kapango_tree6@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "kapango_tree7@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "kapango_tree8@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "kapango_tree9@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "kapango_lamp1@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 27
+  },
+  {
+   "id": "kapango_lamp2@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "kapango_lamp3@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "kapango_lamp4@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "kapango_lamp5@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "kapango_lamp6@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "kapango_pole1@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "kapango_pole2@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "kapango_pole3@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "kapango_vehicle1@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 36
+  },
+  {
+   "id": "kapango_vehicle2@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 37
+  },
+  {
+   "id": "kapango_vehicle3@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 38
+  },
+  {
+   "id": "kapango_vehicle4@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 39
+  },
+  {
+   "id": "kapango_vehicle5@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "kapango_vehicle6@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "kapango_vehicle7@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "kapango_vehicle8@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "kapango_vehicle9@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "kapango_stall1@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 45
+  },
+  {
+   "id": "kapango_stall2@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 46
+  },
+  {
+   "id": "kapango_stall3@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 47
+  },
+  {
+   "id": "kapango_stall4@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 48
+  },
+  {
+   "id": "kapango_stall5@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "kapango_stall6@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "kapango_small1@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "kapango_small2@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "kapango_small3@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "kapango_small4@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "kapango_small5@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "kapango_small6@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "kapango_small7@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "kapango_small8@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "kapango_small9@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "kapango_small10@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "kapango_small11@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "kapango_small12@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "kapango_small13@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "kapango_small14@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "kapango_small15@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "kapango_tree10@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 66
+  },
+  {
+   "id": "kapango_tree11@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 67
+  },
+  {
+   "id": "kapango_tree12@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 68
+  },
+  {
+   "id": "kapango_small16@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "kapango_small17@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "kapango_small18@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "kapango_small19@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "kapango_small20@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "kapango_small21@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "kapango_small22@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "kapango_small23@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "kapango_small24@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "kapango_small25@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "kapango_small26@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "kapango_small27@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "kapango_small28@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "kapango_small29@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "kapango_small30@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "kapango_small31@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "kapango_small32@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "kapango_small33@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "kapango_small34@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "kapango_tree13@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 88
+  },
+  {
+   "id": "kapango_small35@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "kapango_small36@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "kapango_small37@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "kapango_small38@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "kapango_small39@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "kapango_small40@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "kapango_small41@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "kapango_small42@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "kapango_small43@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "kapango_small44@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "kapango_small45@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "kapango_small46@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "kapango_small47@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "kapango_small48@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "kapango_small49@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  }
+ ]
+}

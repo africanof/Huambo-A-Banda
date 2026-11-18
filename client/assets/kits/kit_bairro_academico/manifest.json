@@ -2145,7 +2145,6442 @@
    "kit": "kit_bairro_academico",
    "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small54.webp",
    "kind": "small"
+  },
+  "bairro_academico_escola@1": {
+   "category": "building",
+   "size": [
+    921,
+    478
+   ],
+   "anchor": [
+    352,
+    473
+   ],
+   "footprint": [
+    8.8,
+    14.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola@1.webp",
+   "name": "Escola Primária do Bairro Académico",
+   "venue": "escola"
+  },
+  "bairro_academico_saude@1": {
+   "category": "building",
+   "size": [
+    884,
+    458
+   ],
+   "anchor": [
+    311,
+    453
+   ],
+   "footprint": [
+    7.7,
+    14.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_saude@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_saude@1.webp",
+   "name": "Centro de Saúde do Bairro Académico",
+   "venue": "saude"
+  },
+  "bairro_academico_igreja@1": {
+   "category": "building",
+   "size": [
+    857,
+    493
+   ],
+   "anchor": [
+    299,
+    490
+   ],
+   "footprint": [
+    7.4,
+    13.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_igreja@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_igreja@1.webp",
+   "name": "Igreja Evangélica do Bairro Académico",
+   "venue": "igreja"
+  },
+  "bairro_academico_mercado@1": {
+   "category": "building",
+   "size": [
+    982,
+    461
+   ],
+   "anchor": [
+    324,
+    454
+   ],
+   "footprint": [
+    8.1,
+    16.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_mercado@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_mercado@1.webp",
+   "name": "Mercado do Bairro Académico",
+   "venue": "mercado"
+  },
+  "bairro_academico_cantina@1": {
+   "category": "building",
+   "size": [
+    606,
+    378
+   ],
+   "anchor": [
+    171,
+    374
+   ],
+   "footprint": [
+    4.2,
+    10.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_cantina@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_cantina@1.webp",
+   "name": "Cantina do Estudante",
+   "venue": "cantina"
+  },
+  "bairro_academico_farmacia@1": {
+   "category": "building",
+   "size": [
+    606,
+    372
+   ],
+   "anchor": [
+    203,
+    369
+   ],
+   "footprint": [
+    5.0,
+    10.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_farmacia@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_farmacia@1.webp",
+   "name": "Farmácia Bairro Académico",
+   "venue": "farmacia"
+  },
+  "bairro_academico_administracao@1": {
+   "category": "building",
+   "size": [
+    701,
+    413
+   ],
+   "anchor": [
+    204,
+    408
+   ],
+   "footprint": [
+    5.1,
+    12.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_administracao@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_administracao@1.webp",
+   "name": "Administração do Bairro Académico",
+   "venue": "administracao"
+  },
+  "bairro_academico_escola_7@1": {
+   "category": "building",
+   "size": [
+    986,
+    398
+   ],
+   "anchor": [
+    201,
+    392
+   ],
+   "footprint": [
+    5.0,
+    19.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola_7@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola_7@1.webp",
+   "name": "Instituto Superior Politécnico do Huambo",
+   "venue": "escola"
+  },
+  "bairro_academico_apartamentos@1": {
+   "category": "building",
+   "size": [
+    393,
+    374
+   ],
+   "anchor": [
+    139,
+    372
+   ],
+   "footprint": [
+    3.4,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos@1.webp",
+   "name": "Residência de Estudantes",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_loja_telecom@1": {
+   "category": "building",
+   "size": [
+    626,
+    459
+   ],
+   "anchor": [
+    227,
+    455
+   ],
+   "footprint": [
+    5.6,
+    9.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_loja_telecom@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_loja_telecom@1.webp",
+   "name": "Cibercafé Académico",
+   "venue": "loja_telecom"
+  },
+  "bairro_academico_discoteca@1": {
+   "category": "building",
+   "size": [
+    438,
+    334
+   ],
+   "anchor": [
+    165,
+    331
+   ],
+   "footprint": [
+    4.1,
+    6.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_discoteca@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_discoteca@1.webp",
+   "name": "Discoteca Universitária",
+   "venue": "discoteca"
+  },
+  "bairro_academico_apartamentos_11@1": {
+   "category": "building",
+   "size": [
+    478,
+    343
+   ],
+   "anchor": [
+    177,
+    340
+   ],
+   "footprint": [
+    4.4,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos_11@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos_11@1.webp",
+   "name": "Prédio Bairro Académico",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_casa1@1": {
+   "category": "building",
+   "size": [
+    393,
+    284
+   ],
+   "anchor": [
+    141,
+    281
+   ],
+   "footprint": [
+    3.5,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa1@1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "bairro_academico_casa2@1": {
+   "category": "building",
+   "size": [
+    356,
+    285
+   ],
+   "anchor": [
+    139,
+    282
+   ],
+   "footprint": [
+    3.5,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa2@1.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "bairro_academico_casa3@1": {
+   "category": "building",
+   "size": [
+    345,
+    271
+   ],
+   "anchor": [
+    126,
+    268
+   ],
+   "footprint": [
+    3.2,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa3@1.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "bairro_academico_casa4@1": {
+   "category": "building",
+   "size": [
+    311,
+    276
+   ],
+   "anchor": [
+    122,
+    274
+   ],
+   "footprint": [
+    3.1,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa4@1.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "bairro_academico_casa5@1": {
+   "category": "building",
+   "size": [
+    282,
+    258
+   ],
+   "anchor": [
+    112,
+    255
+   ],
+   "footprint": [
+    2.8,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa5@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa5@1.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "bairro_academico_casa6@1": {
+   "category": "building",
+   "size": [
+    339,
+    274
+   ],
+   "anchor": [
+    101,
+    271
+   ],
+   "footprint": [
+    2.5,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa6@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa6@1.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "bairro_academico_casa7@1": {
+   "category": "building",
+   "size": [
+    320,
+    187
+   ],
+   "anchor": [
+    144,
+    185
+   ],
+   "footprint": [
+    3.6,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa7@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa7@1.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "bairro_academico_tree1@1": {
+   "category": "prop",
+   "size": [
+    275,
+    220
+   ],
+   "anchor": [
+    137,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree1@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree2@1": {
+   "category": "prop",
+   "size": [
+    182,
+    252
+   ],
+   "anchor": [
+    90,
+    250
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree2@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree3@1": {
+   "category": "prop",
+   "size": [
+    166,
+    224
+   ],
+   "anchor": [
+    83,
+    222
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree3@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree4@1": {
+   "category": "prop",
+   "size": [
+    184,
+    219
+   ],
+   "anchor": [
+    91,
+    217
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree4@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree5@1": {
+   "category": "prop",
+   "size": [
+    312,
+    248
+   ],
+   "anchor": [
+    155,
+    246
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree5@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree5@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree6@1": {
+   "category": "prop",
+   "size": [
+    223,
+    221
+   ],
+   "anchor": [
+    110,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree6@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree6@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree7@1": {
+   "category": "prop",
+   "size": [
+    202,
+    209
+   ],
+   "anchor": [
+    100,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree7@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree7@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree8@1": {
+   "category": "prop",
+   "size": [
+    235,
+    209
+   ],
+   "anchor": [
+    116,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree8@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree8@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree9@1": {
+   "category": "prop",
+   "size": [
+    237,
+    219
+   ],
+   "anchor": [
+    118,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree9@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree9@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree10@1": {
+   "category": "prop",
+   "size": [
+    188,
+    206
+   ],
+   "anchor": [
+    93,
+    205
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree10@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree10@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_lamp1@1": {
+   "category": "prop",
+   "size": [
+    79,
+    209
+   ],
+   "anchor": [
+    39,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp1@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp2@1": {
+   "category": "prop",
+   "size": [
+    76,
+    208
+   ],
+   "anchor": [
+    37,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp2@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp3@1": {
+   "category": "prop",
+   "size": [
+    87,
+    219
+   ],
+   "anchor": [
+    43,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp3@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp4@1": {
+   "category": "prop",
+   "size": [
+    52,
+    214
+   ],
+   "anchor": [
+    25,
+    213
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp4@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp5@1": {
+   "category": "prop",
+   "size": [
+    105,
+    210
+   ],
+   "anchor": [
+    52,
+    209
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp5@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp5@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp6@1": {
+   "category": "prop",
+   "size": [
+    54,
+    213
+   ],
+   "anchor": [
+    26,
+    211
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp6@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp6@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_pole1@1": {
+   "category": "prop",
+   "size": [
+    69,
+    222
+   ],
+   "anchor": [
+    34,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole1@1.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole2@1": {
+   "category": "prop",
+   "size": [
+    68,
+    223
+   ],
+   "anchor": [
+    33,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole2@1.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole3@1": {
+   "category": "prop",
+   "size": [
+    65,
+    230
+   ],
+   "anchor": [
+    32,
+    229
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole3@1.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole4@1": {
+   "category": "prop",
+   "size": [
+    71,
+    223
+   ],
+   "anchor": [
+    35,
+    221
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole4@1.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_vehicle1@1": {
+   "category": "prop",
+   "size": [
+    151,
+    133
+   ],
+   "anchor": [
+    23,
+    132
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle1@1.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_vehicle2@1": {
+   "category": "prop",
+   "size": [
+    150,
+    134
+   ],
+   "anchor": [
+    20,
+    132
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle2@1.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_stall1@1": {
+   "category": "prop",
+   "size": [
+    148,
+    138
+   ],
+   "anchor": [
+    23,
+    137
+   ],
+   "footprint": [
+    0.6,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall1@1.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall2@1": {
+   "category": "prop",
+   "size": [
+    143,
+    133
+   ],
+   "anchor": [
+    24,
+    132
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall2@1.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall3@1": {
+   "category": "prop",
+   "size": [
+    283,
+    138
+   ],
+   "anchor": [
+    126,
+    136
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall3@1.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall4@1": {
+   "category": "prop",
+   "size": [
+    177,
+    173
+   ],
+   "anchor": [
+    97,
+    171
+   ],
+   "footprint": [
+    1.3,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall4@1.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_tree11@1": {
+   "category": "prop",
+   "size": [
+    149,
+    166
+   ],
+   "anchor": [
+    74,
+    163
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree11@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree11@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_stall5@1": {
+   "category": "prop",
+   "size": [
+    161,
+    168
+   ],
+   "anchor": [
+    79,
+    166
+   ],
+   "footprint": [
+    1.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall5@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall5@1.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_small1@1": {
+   "category": "prop",
+   "size": [
+    97,
+    103
+   ],
+   "anchor": [
+    51,
+    102
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small1@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small1@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small2@1": {
+   "category": "prop",
+   "size": [
+    96,
+    104
+   ],
+   "anchor": [
+    48,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small2@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small2@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small3@1": {
+   "category": "prop",
+   "size": [
+    96,
+    103
+   ],
+   "anchor": [
+    44,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small3@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small3@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small4@1": {
+   "category": "prop",
+   "size": [
+    94,
+    103
+   ],
+   "anchor": [
+    45,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small4@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small4@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small5@1": {
+   "category": "prop",
+   "size": [
+    318,
+    189
+   ],
+   "anchor": [
+    143,
+    187
+   ],
+   "footprint": [
+    1.9,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small5@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small5@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small6@1": {
+   "category": "prop",
+   "size": [
+    180,
+    67
+   ],
+   "anchor": [
+    128,
+    65
+   ],
+   "footprint": [
+    1.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small6@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small6@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small7@1": {
+   "category": "prop",
+   "size": [
+    176,
+    92
+   ],
+   "anchor": [
+    142,
+    89
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small7@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small7@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small8@1": {
+   "category": "prop",
+   "size": [
+    141,
+    67
+   ],
+   "anchor": [
+    95,
+    66
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small8@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small8@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small9@1": {
+   "category": "prop",
+   "size": [
+    166,
+    87
+   ],
+   "anchor": [
+    15,
+    81
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small9@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small9@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small10@1": {
+   "category": "prop",
+   "size": [
+    134,
+    134
+   ],
+   "anchor": [
+    48,
+    132
+   ],
+   "footprint": [
+    0.7,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small10@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small10@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small11@1": {
+   "category": "prop",
+   "size": [
+    98,
+    103
+   ],
+   "anchor": [
+    36,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small11@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small11@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small12@1": {
+   "category": "prop",
+   "size": [
+    82,
+    82
+   ],
+   "anchor": [
+    39,
+    81
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small12@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small12@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small13@1": {
+   "category": "prop",
+   "size": [
+    291,
+    135
+   ],
+   "anchor": [
+    125,
+    133
+   ],
+   "footprint": [
+    1.7,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small13@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small13@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small14@1": {
+   "category": "prop",
+   "size": [
+    158,
+    108
+   ],
+   "anchor": [
+    101,
+    106
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small14@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small14@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small15@1": {
+   "category": "prop",
+   "size": [
+    156,
+    111
+   ],
+   "anchor": [
+    89,
+    109
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small15@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small15@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small16@1": {
+   "category": "prop",
+   "size": [
+    297,
+    172
+   ],
+   "anchor": [
+    133,
+    170
+   ],
+   "footprint": [
+    1.8,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small16@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small16@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small17@1": {
+   "category": "prop",
+   "size": [
+    297,
+    148
+   ],
+   "anchor": [
+    246,
+    145
+   ],
+   "footprint": [
+    3.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small17@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small17@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small18@1": {
+   "category": "prop",
+   "size": [
+    282,
+    146
+   ],
+   "anchor": [
+    220,
+    143
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small18@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small18@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree12@1": {
+   "category": "prop",
+   "size": [
+    115,
+    119
+   ],
+   "anchor": [
+    57,
+    118
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree12@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree12@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small19@1": {
+   "category": "prop",
+   "size": [
+    277,
+    179
+   ],
+   "anchor": [
+    159,
+    176
+   ],
+   "footprint": [
+    2.1,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small19@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small19@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small20@1": {
+   "category": "prop",
+   "size": [
+    81,
+    121
+   ],
+   "anchor": [
+    28,
+    119
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small20@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small20@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree13@1": {
+   "category": "prop",
+   "size": [
+    81,
+    117
+   ],
+   "anchor": [
+    40,
+    116
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree13@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree13@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small21@1": {
+   "category": "prop",
+   "size": [
+    227,
+    175
+   ],
+   "anchor": [
+    143,
+    173
+   ],
+   "footprint": [
+    1.9,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small21@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small21@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small22@1": {
+   "category": "prop",
+   "size": [
+    81,
+    122
+   ],
+   "anchor": [
+    33,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small22@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small22@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small23@1": {
+   "category": "prop",
+   "size": [
+    227,
+    176
+   ],
+   "anchor": [
+    126,
+    174
+   ],
+   "footprint": [
+    1.7,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small23@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small23@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small24@1": {
+   "category": "prop",
+   "size": [
+    166,
+    98
+   ],
+   "anchor": [
+    28,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small24@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small24@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small25@1": {
+   "category": "prop",
+   "size": [
+    164,
+    104
+   ],
+   "anchor": [
+    25,
+    103
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small25@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small25@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small26@1": {
+   "category": "prop",
+   "size": [
+    159,
+    101
+   ],
+   "anchor": [
+    26,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small26@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small26@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small27@1": {
+   "category": "prop",
+   "size": [
+    146,
+    91
+   ],
+   "anchor": [
+    75,
+    89
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small27@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small27@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small28@1": {
+   "category": "prop",
+   "size": [
+    164,
+    103
+   ],
+   "anchor": [
+    86,
+    101
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small28@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small28@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small29@1": {
+   "category": "prop",
+   "size": [
+    128,
+    92
+   ],
+   "anchor": [
+    66,
+    90
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small29@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small29@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small30@1": {
+   "category": "prop",
+   "size": [
+    132,
+    85
+   ],
+   "anchor": [
+    80,
+    83
+   ],
+   "footprint": [
+    1.1,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small30@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small30@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small31@1": {
+   "category": "prop",
+   "size": [
+    183,
+    88
+   ],
+   "anchor": [
+    59,
+    86
+   ],
+   "footprint": [
+    0.8,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small31@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small31@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small32@1": {
+   "category": "prop",
+   "size": [
+    171,
+    89
+   ],
+   "anchor": [
+    40,
+    88
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small32@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small32@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small33@1": {
+   "category": "prop",
+   "size": [
+    78,
+    97
+   ],
+   "anchor": [
+    38,
+    95
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small33@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small33@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small34@1": {
+   "category": "prop",
+   "size": [
+    67,
+    80
+   ],
+   "anchor": [
+    29,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small34@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small34@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small35@1": {
+   "category": "prop",
+   "size": [
+    61,
+    72
+   ],
+   "anchor": [
+    28,
+    71
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small35@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small35@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small36@1": {
+   "category": "prop",
+   "size": [
+    93,
+    102
+   ],
+   "anchor": [
+    37,
+    100
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small36@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small36@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small37@1": {
+   "category": "prop",
+   "size": [
+    75,
+    75
+   ],
+   "anchor": [
+    34,
+    73
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small37@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small37@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small38@1": {
+   "category": "prop",
+   "size": [
+    73,
+    87
+   ],
+   "anchor": [
+    31,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small38@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small38@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small39@1": {
+   "category": "prop",
+   "size": [
+    122,
+    100
+   ],
+   "anchor": [
+    46,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small39@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small39@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small40@1": {
+   "category": "prop",
+   "size": [
+    121,
+    99
+   ],
+   "anchor": [
+    47,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small40@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small40@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small41@1": {
+   "category": "prop",
+   "size": [
+    228,
+    114
+   ],
+   "anchor": [
+    82,
+    112
+   ],
+   "footprint": [
+    1.1,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small41@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small41@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small42@1": {
+   "category": "prop",
+   "size": [
+    226,
+    114
+   ],
+   "anchor": [
+    129,
+    113
+   ],
+   "footprint": [
+    1.8,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small42@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small42@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree14@1": {
+   "category": "prop",
+   "size": [
+    106,
+    153
+   ],
+   "anchor": [
+    52,
+    151
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree14@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree14@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree15@1": {
+   "category": "prop",
+   "size": [
+    105,
+    153
+   ],
+   "anchor": [
+    52,
+    151
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree15@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree15@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small43@1": {
+   "category": "prop",
+   "size": [
+    169,
+    156
+   ],
+   "anchor": [
+    108,
+    154
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small43@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small43@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small44@1": {
+   "category": "prop",
+   "size": [
+    165,
+    156
+   ],
+   "anchor": [
+    110,
+    154
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small44@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small44@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small45@1": {
+   "category": "prop",
+   "size": [
+    168,
+    158
+   ],
+   "anchor": [
+    110,
+    156
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small45@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small45@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small46@1": {
+   "category": "prop",
+   "size": [
+    108,
+    136
+   ],
+   "anchor": [
+    30,
+    135
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small46@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small46@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small47@1": {
+   "category": "prop",
+   "size": [
+    108,
+    138
+   ],
+   "anchor": [
+    28,
+    137
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small47@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small47@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree16@1": {
+   "category": "prop",
+   "size": [
+    190,
+    153
+   ],
+   "anchor": [
+    94,
+    152
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree16@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree16@1.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small48@1": {
+   "category": "prop",
+   "size": [
+    199,
+    121
+   ],
+   "anchor": [
+    38,
+    119
+   ],
+   "footprint": [
+    0.6,
+    2.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small48@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small48@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small49@1": {
+   "category": "prop",
+   "size": [
+    205,
+    121
+   ],
+   "anchor": [
+    37,
+    119
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small49@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small49@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small50@1": {
+   "category": "prop",
+   "size": [
+    70,
+    107
+   ],
+   "anchor": [
+    27,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small50@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small50@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small51@1": {
+   "category": "prop",
+   "size": [
+    68,
+    109
+   ],
+   "anchor": [
+    21,
+    108
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small51@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small51@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small52@1": {
+   "category": "prop",
+   "size": [
+    284,
+    138
+   ],
+   "anchor": [
+    160,
+    136
+   ],
+   "footprint": [
+    2.1,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small52@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small52@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small53@1": {
+   "category": "prop",
+   "size": [
+    538,
+    139
+   ],
+   "anchor": [
+    222,
+    137
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small53@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small53@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small54@1": {
+   "category": "prop",
+   "size": [
+    499,
+    169
+   ],
+   "anchor": [
+    43,
+    164
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small54@1",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small54@1.webp",
+   "kind": "small"
+  },
+  "bairro_academico_escola@2": {
+   "category": "building",
+   "size": [
+    990,
+    463
+   ],
+   "anchor": [
+    671,
+    457
+   ],
+   "footprint": [
+    16.7,
+    8.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola@2.webp",
+   "name": "Escola Primária do Bairro Académico",
+   "venue": "escola"
+  },
+  "bairro_academico_saude@2": {
+   "category": "building",
+   "size": [
+    874,
+    447
+   ],
+   "anchor": [
+    543,
+    443
+   ],
+   "footprint": [
+    13.5,
+    8.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_saude@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_saude@2.webp",
+   "name": "Centro de Saúde do Bairro Académico",
+   "venue": "saude"
+  },
+  "bairro_academico_igreja@2": {
+   "category": "building",
+   "size": [
+    855,
+    486
+   ],
+   "anchor": [
+    447,
+    482
+   ],
+   "footprint": [
+    11.1,
+    10.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_igreja@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_igreja@2.webp",
+   "name": "Igreja Evangélica do Bairro Académico",
+   "venue": "igreja"
+  },
+  "bairro_academico_mercado@2": {
+   "category": "building",
+   "size": [
+    983,
+    443
+   ],
+   "anchor": [
+    580,
+    435
+   ],
+   "footprint": [
+    14.5,
+    10.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_mercado@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_mercado@2.webp",
+   "name": "Mercado do Bairro Académico",
+   "venue": "mercado"
+  },
+  "bairro_academico_cantina@2": {
+   "category": "building",
+   "size": [
+    618,
+    360
+   ],
+   "anchor": [
+    394,
+    356
+   ],
+   "footprint": [
+    9.8,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_cantina@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_cantina@2.webp",
+   "name": "Cantina do Estudante",
+   "venue": "cantina"
+  },
+  "bairro_academico_farmacia@2": {
+   "category": "building",
+   "size": [
+    598,
+    362
+   ],
+   "anchor": [
+    373,
+    358
+   ],
+   "footprint": [
+    9.3,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_farmacia@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_farmacia@2.webp",
+   "name": "Farmácia Bairro Académico",
+   "venue": "farmacia"
+  },
+  "bairro_academico_administracao@2": {
+   "category": "building",
+   "size": [
+    703,
+    406
+   ],
+   "anchor": [
+    487,
+    402
+   ],
+   "footprint": [
+    12.1,
+    5.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_administracao@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_administracao@2.webp",
+   "name": "Administração do Bairro Académico",
+   "venue": "administracao"
+  },
+  "bairro_academico_escola_7@2": {
+   "category": "building",
+   "size": [
+    1061,
+    439
+   ],
+   "anchor": [
+    761,
+    433
+   ],
+   "footprint": [
+    19.0,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola_7@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola_7@2.webp",
+   "name": "Instituto Superior Politécnico do Huambo",
+   "venue": "escola"
+  },
+  "bairro_academico_apartamentos@2": {
+   "category": "building",
+   "size": [
+    404,
+    396
+   ],
+   "anchor": [
+    280,
+    393
+   ],
+   "footprint": [
+    7.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos@2.webp",
+   "name": "Residência de Estudantes",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_loja_telecom@2": {
+   "category": "building",
+   "size": [
+    605,
+    489
+   ],
+   "anchor": [
+    403,
+    485
+   ],
+   "footprint": [
+    10.0,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_loja_telecom@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_loja_telecom@2.webp",
+   "name": "Cibercafé Académico",
+   "venue": "loja_telecom"
+  },
+  "bairro_academico_discoteca@2": {
+   "category": "building",
+   "size": [
+    436,
+    340
+   ],
+   "anchor": [
+    299,
+    337
+   ],
+   "footprint": [
+    7.4,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_discoteca@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_discoteca@2.webp",
+   "name": "Discoteca Universitária",
+   "venue": "discoteca"
+  },
+  "bairro_academico_apartamentos_11@2": {
+   "category": "building",
+   "size": [
+    473,
+    353
+   ],
+   "anchor": [
+    324,
+    350
+   ],
+   "footprint": [
+    8.1,
+    3.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos_11@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos_11@2.webp",
+   "name": "Prédio Bairro Académico",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_casa1@2": {
+   "category": "building",
+   "size": [
+    377,
+    293
+   ],
+   "anchor": [
+    226,
+    291
+   ],
+   "footprint": [
+    5.7,
+    3.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa1@2.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "bairro_academico_casa2@2": {
+   "category": "building",
+   "size": [
+    367,
+    290
+   ],
+   "anchor": [
+    207,
+    288
+   ],
+   "footprint": [
+    5.2,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa2@2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "bairro_academico_casa3@2": {
+   "category": "building",
+   "size": [
+    360,
+    269
+   ],
+   "anchor": [
+    159,
+    267
+   ],
+   "footprint": [
+    4.0,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa3@2.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "bairro_academico_casa4@2": {
+   "category": "building",
+   "size": [
+    615,
+    267
+   ],
+   "anchor": [
+    438,
+    264
+   ],
+   "footprint": [
+    11.0,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa4@2.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "bairro_academico_casa5@2": {
+   "category": "building",
+   "size": [
+    320,
+    269
+   ],
+   "anchor": [
+    183,
+    267
+   ],
+   "footprint": [
+    4.6,
+    3.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa5@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa5@2.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "bairro_academico_casa6@2": {
+   "category": "building",
+   "size": [
+    340,
+    269
+   ],
+   "anchor": [
+    200,
+    267
+   ],
+   "footprint": [
+    5.0,
+    3.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa6@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa6@2.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "bairro_academico_casa7@2": {
+   "category": "building",
+   "size": [
+    318,
+    192
+   ],
+   "anchor": [
+    159,
+    190
+   ],
+   "footprint": [
+    3.9,
+    4.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa7@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa7@2.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "bairro_academico_tree1@2": {
+   "category": "prop",
+   "size": [
+    285,
+    222
+   ],
+   "anchor": [
+    141,
+    219
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree1@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree2@2": {
+   "category": "prop",
+   "size": [
+    190,
+    263
+   ],
+   "anchor": [
+    95,
+    261
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree2@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree3@2": {
+   "category": "prop",
+   "size": [
+    171,
+    222
+   ],
+   "anchor": [
+    84,
+    221
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree3@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree4@2": {
+   "category": "prop",
+   "size": [
+    186,
+    220
+   ],
+   "anchor": [
+    92,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree4@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree5@2": {
+   "category": "prop",
+   "size": [
+    316,
+    252
+   ],
+   "anchor": [
+    157,
+    250
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree5@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree5@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree6@2": {
+   "category": "prop",
+   "size": [
+    228,
+    224
+   ],
+   "anchor": [
+    114,
+    221
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree6@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree6@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree7@2": {
+   "category": "prop",
+   "size": [
+    205,
+    209
+   ],
+   "anchor": [
+    102,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree7@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree7@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree8@2": {
+   "category": "prop",
+   "size": [
+    248,
+    212
+   ],
+   "anchor": [
+    123,
+    210
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree8@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree8@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree9@2": {
+   "category": "prop",
+   "size": [
+    246,
+    224
+   ],
+   "anchor": [
+    123,
+    223
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree9@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree9@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree10@2": {
+   "category": "prop",
+   "size": [
+    186,
+    209
+   ],
+   "anchor": [
+    93,
+    208
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree10@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree10@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_lamp1@2": {
+   "category": "prop",
+   "size": [
+    81,
+    216
+   ],
+   "anchor": [
+    40,
+    215
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp1@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp2@2": {
+   "category": "prop",
+   "size": [
+    76,
+    215
+   ],
+   "anchor": [
+    37,
+    214
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp2@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp3@2": {
+   "category": "prop",
+   "size": [
+    90,
+    227
+   ],
+   "anchor": [
+    44,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp3@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp4@2": {
+   "category": "prop",
+   "size": [
+    53,
+    219
+   ],
+   "anchor": [
+    26,
+    218
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp4@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp5@2": {
+   "category": "prop",
+   "size": [
+    104,
+    214
+   ],
+   "anchor": [
+    51,
+    213
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp5@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp5@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp6@2": {
+   "category": "prop",
+   "size": [
+    54,
+    218
+   ],
+   "anchor": [
+    26,
+    217
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp6@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp6@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_pole1@2": {
+   "category": "prop",
+   "size": [
+    76,
+    225
+   ],
+   "anchor": [
+    37,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole1@2.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole2@2": {
+   "category": "prop",
+   "size": [
+    77,
+    226
+   ],
+   "anchor": [
+    38,
+    224
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole2@2.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole3@2": {
+   "category": "prop",
+   "size": [
+    75,
+    230
+   ],
+   "anchor": [
+    37,
+    228
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole3@2.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole4@2": {
+   "category": "prop",
+   "size": [
+    44,
+    229
+   ],
+   "anchor": [
+    21,
+    227
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole4@2.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_vehicle1@2": {
+   "category": "prop",
+   "size": [
+    143,
+    130
+   ],
+   "anchor": [
+    26,
+    128
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle1@2.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_vehicle2@2": {
+   "category": "prop",
+   "size": [
+    138,
+    130
+   ],
+   "anchor": [
+    27,
+    128
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle2@2.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_stall1@2": {
+   "category": "prop",
+   "size": [
+    143,
+    130
+   ],
+   "anchor": [
+    26,
+    128
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall1@2.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall2@2": {
+   "category": "prop",
+   "size": [
+    139,
+    131
+   ],
+   "anchor": [
+    24,
+    129
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall2@2.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall3@2": {
+   "category": "prop",
+   "size": [
+    269,
+    135
+   ],
+   "anchor": [
+    133,
+    134
+   ],
+   "footprint": [
+    1.8,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall3@2.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall4@2": {
+   "category": "prop",
+   "size": [
+    181,
+    173
+   ],
+   "anchor": [
+    107,
+    171
+   ],
+   "footprint": [
+    1.4,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall4@2.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_tree11@2": {
+   "category": "prop",
+   "size": [
+    164,
+    168
+   ],
+   "anchor": [
+    81,
+    167
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree11@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree11@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_stall5@2": {
+   "category": "prop",
+   "size": [
+    172,
+    167
+   ],
+   "anchor": [
+    92,
+    165
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall5@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall5@2.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_small1@2": {
+   "category": "prop",
+   "size": [
+    99,
+    105
+   ],
+   "anchor": [
+    53,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small1@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small1@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small2@2": {
+   "category": "prop",
+   "size": [
+    98,
+    105
+   ],
+   "anchor": [
+    53,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small2@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small2@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small3@2": {
+   "category": "prop",
+   "size": [
+    98,
+    105
+   ],
+   "anchor": [
+    53,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small3@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small3@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small4@2": {
+   "category": "prop",
+   "size": [
+    96,
+    105
+   ],
+   "anchor": [
+    52,
+    103
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small4@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small4@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small5@2": {
+   "category": "prop",
+   "size": [
+    314,
+    189
+   ],
+   "anchor": [
+    161,
+    188
+   ],
+   "footprint": [
+    2.2,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small5@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small5@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small6@2": {
+   "category": "prop",
+   "size": [
+    189,
+    68
+   ],
+   "anchor": [
+    136,
+    67
+   ],
+   "footprint": [
+    1.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small6@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small6@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small7@2": {
+   "category": "prop",
+   "size": [
+    174,
+    98
+   ],
+   "anchor": [
+    137,
+    95
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small7@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small7@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small8@2": {
+   "category": "prop",
+   "size": [
+    138,
+    67
+   ],
+   "anchor": [
+    93,
+    65
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small8@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small8@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small9@2": {
+   "category": "prop",
+   "size": [
+    170,
+    94
+   ],
+   "anchor": [
+    139,
+    91
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small9@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small9@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small10@2": {
+   "category": "prop",
+   "size": [
+    137,
+    134
+   ],
+   "anchor": [
+    55,
+    133
+   ],
+   "footprint": [
+    0.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small10@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small10@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small11@2": {
+   "category": "prop",
+   "size": [
+    103,
+    102
+   ],
+   "anchor": [
+    32,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small11@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small11@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small12@2": {
+   "category": "prop",
+   "size": [
+    80,
+    83
+   ],
+   "anchor": [
+    43,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small12@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small12@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small13@2": {
+   "category": "prop",
+   "size": [
+    269,
+    140
+   ],
+   "anchor": [
+    139,
+    138
+   ],
+   "footprint": [
+    1.9,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small13@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small13@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small14@2": {
+   "category": "prop",
+   "size": [
+    155,
+    110
+   ],
+   "anchor": [
+    100,
+    109
+   ],
+   "footprint": [
+    1.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small14@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small14@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small15@2": {
+   "category": "prop",
+   "size": [
+    154,
+    110
+   ],
+   "anchor": [
+    88,
+    107
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small15@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small15@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small16@2": {
+   "category": "prop",
+   "size": [
+    287,
+    172
+   ],
+   "anchor": [
+    142,
+    170
+   ],
+   "footprint": [
+    1.9,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small16@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small16@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small17@2": {
+   "category": "prop",
+   "size": [
+    299,
+    144
+   ],
+   "anchor": [
+    253,
+    142
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small17@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small17@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small18@2": {
+   "category": "prop",
+   "size": [
+    273,
+    143
+   ],
+   "anchor": [
+    213,
+    136
+   ],
+   "footprint": [
+    2.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small18@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small18@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree12@2": {
+   "category": "prop",
+   "size": [
+    117,
+    119
+   ],
+   "anchor": [
+    58,
+    117
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree12@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree12@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small19@2": {
+   "category": "prop",
+   "size": [
+    277,
+    177
+   ],
+   "anchor": [
+    190,
+    171
+   ],
+   "footprint": [
+    2.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small19@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small19@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small20@2": {
+   "category": "prop",
+   "size": [
+    83,
+    123
+   ],
+   "anchor": [
+    32,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small20@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small20@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree13@2": {
+   "category": "prop",
+   "size": [
+    94,
+    122
+   ],
+   "anchor": [
+    45,
+    121
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree13@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree13@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small21@2": {
+   "category": "prop",
+   "size": [
+    228,
+    169
+   ],
+   "anchor": [
+    157,
+    167
+   ],
+   "footprint": [
+    2.1,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small21@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small21@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small22@2": {
+   "category": "prop",
+   "size": [
+    85,
+    123
+   ],
+   "anchor": [
+    37,
+    122
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small22@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small22@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small23@2": {
+   "category": "prop",
+   "size": [
+    208,
+    173
+   ],
+   "anchor": [
+    141,
+    171
+   ],
+   "footprint": [
+    1.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small23@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small23@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small24@2": {
+   "category": "prop",
+   "size": [
+    163,
+    95
+   ],
+   "anchor": [
+    22,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small24@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small24@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small25@2": {
+   "category": "prop",
+   "size": [
+    163,
+    99
+   ],
+   "anchor": [
+    22,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small25@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small25@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small26@2": {
+   "category": "prop",
+   "size": [
+    159,
+    96
+   ],
+   "anchor": [
+    19,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small26@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small26@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small27@2": {
+   "category": "prop",
+   "size": [
+    147,
+    93
+   ],
+   "anchor": [
+    78,
+    91
+   ],
+   "footprint": [
+    1.0,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small27@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small27@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small28@2": {
+   "category": "prop",
+   "size": [
+    164,
+    104
+   ],
+   "anchor": [
+    86,
+    103
+   ],
+   "footprint": [
+    1.2,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small28@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small28@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small29@2": {
+   "category": "prop",
+   "size": [
+    130,
+    93
+   ],
+   "anchor": [
+    70,
+    92
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small29@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small29@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small30@2": {
+   "category": "prop",
+   "size": [
+    133,
+    85
+   ],
+   "anchor": [
+    77,
+    84
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small30@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small30@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small31@2": {
+   "category": "prop",
+   "size": [
+    177,
+    90
+   ],
+   "anchor": [
+    65,
+    88
+   ],
+   "footprint": [
+    0.9,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small31@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small31@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small32@2": {
+   "category": "prop",
+   "size": [
+    168,
+    88
+   ],
+   "anchor": [
+    40,
+    86
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small32@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small32@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small33@2": {
+   "category": "prop",
+   "size": [
+    72,
+    93
+   ],
+   "anchor": [
+    35,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small33@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small33@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small34@2": {
+   "category": "prop",
+   "size": [
+    65,
+    80
+   ],
+   "anchor": [
+    28,
+    78
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small34@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small34@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small35@2": {
+   "category": "prop",
+   "size": [
+    62,
+    75
+   ],
+   "anchor": [
+    24,
+    74
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small35@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small35@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small36@2": {
+   "category": "prop",
+   "size": [
+    107,
+    104
+   ],
+   "anchor": [
+    45,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small36@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small36@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small37@2": {
+   "category": "prop",
+   "size": [
+    84,
+    82
+   ],
+   "anchor": [
+    43,
+    80
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small37@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small37@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small38@2": {
+   "category": "prop",
+   "size": [
+    87,
+    91
+   ],
+   "anchor": [
+    40,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small38@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small38@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small39@2": {
+   "category": "prop",
+   "size": [
+    133,
+    103
+   ],
+   "anchor": [
+    49,
+    101
+   ],
+   "footprint": [
+    0.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small39@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small39@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small40@2": {
+   "category": "prop",
+   "size": [
+    126,
+    101
+   ],
+   "anchor": [
+    41,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small40@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small40@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small41@2": {
+   "category": "prop",
+   "size": [
+    233,
+    114
+   ],
+   "anchor": [
+    98,
+    113
+   ],
+   "footprint": [
+    1.3,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small41@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small41@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small42@2": {
+   "category": "prop",
+   "size": [
+    227,
+    114
+   ],
+   "anchor": [
+    123,
+    112
+   ],
+   "footprint": [
+    1.7,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small42@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small42@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree14@2": {
+   "category": "prop",
+   "size": [
+    101,
+    157
+   ],
+   "anchor": [
+    50,
+    156
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree14@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree14@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree15@2": {
+   "category": "prop",
+   "size": [
+    99,
+    157
+   ],
+   "anchor": [
+    49,
+    156
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree15@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree15@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small43@2": {
+   "category": "prop",
+   "size": [
+    162,
+    157
+   ],
+   "anchor": [
+    104,
+    155
+   ],
+   "footprint": [
+    1.4,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small43@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small43@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small44@2": {
+   "category": "prop",
+   "size": [
+    165,
+    157
+   ],
+   "anchor": [
+    109,
+    155
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small44@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small44@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small45@2": {
+   "category": "prop",
+   "size": [
+    163,
+    156
+   ],
+   "anchor": [
+    108,
+    154
+   ],
+   "footprint": [
+    1.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small45@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small45@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small46@2": {
+   "category": "prop",
+   "size": [
+    107,
+    133
+   ],
+   "anchor": [
+    41,
+    132
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small46@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small46@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small47@2": {
+   "category": "prop",
+   "size": [
+    108,
+    135
+   ],
+   "anchor": [
+    41,
+    134
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small47@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small47@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree16@2": {
+   "category": "prop",
+   "size": [
+    182,
+    151
+   ],
+   "anchor": [
+    90,
+    149
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree16@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree16@2.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small48@2": {
+   "category": "prop",
+   "size": [
+    200,
+    126
+   ],
+   "anchor": [
+    150,
+    124
+   ],
+   "footprint": [
+    2.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small48@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small48@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small49@2": {
+   "category": "prop",
+   "size": [
+    210,
+    127
+   ],
+   "anchor": [
+    41,
+    126
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small49@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small49@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small50@2": {
+   "category": "prop",
+   "size": [
+    68,
+    106
+   ],
+   "anchor": [
+    25,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small50@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small50@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small51@2": {
+   "category": "prop",
+   "size": [
+    68,
+    106
+   ],
+   "anchor": [
+    22,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small51@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small51@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small52@2": {
+   "category": "prop",
+   "size": [
+    293,
+    135
+   ],
+   "anchor": [
+    173,
+    133
+   ],
+   "footprint": [
+    2.4,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small52@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small52@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small53@2": {
+   "category": "prop",
+   "size": [
+    536,
+    137
+   ],
+   "anchor": [
+    218,
+    135
+   ],
+   "footprint": [
+    3.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small53@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small53@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small54@2": {
+   "category": "prop",
+   "size": [
+    506,
+    168
+   ],
+   "anchor": [
+    43,
+    163
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small54@2",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small54@2.webp",
+   "kind": "small"
+  },
+  "bairro_academico_escola@3": {
+   "category": "building",
+   "size": [
+    842,
+    456
+   ],
+   "anchor": [
+    242,
+    452
+   ],
+   "footprint": [
+    6.0,
+    15.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola@3.webp",
+   "name": "Escola Primária do Bairro Académico",
+   "venue": "escola"
+  },
+  "bairro_academico_saude@3": {
+   "category": "building",
+   "size": [
+    733,
+    450
+   ],
+   "anchor": [
+    170,
+    446
+   ],
+   "footprint": [
+    4.2,
+    14.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_saude@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_saude@3.webp",
+   "name": "Centro de Saúde do Bairro Académico",
+   "venue": "saude"
+  },
+  "bairro_academico_igreja@3": {
+   "category": "building",
+   "size": [
+    875,
+    479
+   ],
+   "anchor": [
+    139,
+    474
+   ],
+   "footprint": [
+    3.4,
+    18.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_igreja@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_igreja@3.webp",
+   "name": "Igreja Evangélica do Bairro Académico",
+   "venue": "igreja"
+  },
+  "bairro_academico_mercado@3": {
+   "category": "building",
+   "size": [
+    1139,
+    441
+   ],
+   "anchor": [
+    217,
+    435
+   ],
+   "footprint": [
+    5.4,
+    23.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_mercado@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_mercado@3.webp",
+   "name": "Mercado do Bairro Académico",
+   "venue": "mercado"
+  },
+  "bairro_academico_cantina@3": {
+   "category": "building",
+   "size": [
+    579,
+    370
+   ],
+   "anchor": [
+    203,
+    368
+   ],
+   "footprint": [
+    5.0,
+    9.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_cantina@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_cantina@3.webp",
+   "name": "Cantina do Estudante",
+   "venue": "cantina"
+  },
+  "bairro_academico_farmacia@3": {
+   "category": "building",
+   "size": [
+    567,
+    371
+   ],
+   "anchor": [
+    128,
+    367
+   ],
+   "footprint": [
+    3.2,
+    10.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_farmacia@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_farmacia@3.webp",
+   "name": "Farmácia Bairro Académico",
+   "venue": "farmacia"
+  },
+  "bairro_academico_administracao@3": {
+   "category": "building",
+   "size": [
+    703,
+    403
+   ],
+   "anchor": [
+    166,
+    401
+   ],
+   "footprint": [
+    4.1,
+    13.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_administracao@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_administracao@3.webp",
+   "name": "Administração do Bairro Académico",
+   "venue": "administracao"
+  },
+  "bairro_academico_escola_7@3": {
+   "category": "building",
+   "size": [
+    986,
+    427
+   ],
+   "anchor": [
+    236,
+    423
+   ],
+   "footprint": [
+    5.9,
+    18.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_escola_7@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_escola_7@3.webp",
+   "name": "Instituto Superior Politécnico do Huambo",
+   "venue": "escola"
+  },
+  "bairro_academico_apartamentos@3": {
+   "category": "building",
+   "size": [
+    375,
+    374
+   ],
+   "anchor": [
+    150,
+    371
+   ],
+   "footprint": [
+    3.7,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos@3.webp",
+   "name": "Residência de Estudantes",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_loja_telecom@3": {
+   "category": "building",
+   "size": [
+    671,
+    485
+   ],
+   "anchor": [
+    177,
+    482
+   ],
+   "footprint": [
+    4.4,
+    12.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_loja_telecom@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_loja_telecom@3.webp",
+   "name": "Cibercafé Académico",
+   "venue": "loja_telecom"
+  },
+  "bairro_academico_discoteca@3": {
+   "category": "building",
+   "size": [
+    424,
+    342
+   ],
+   "anchor": [
+    190,
+    339
+   ],
+   "footprint": [
+    4.7,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_discoteca@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_discoteca@3.webp",
+   "name": "Discoteca Universitária",
+   "venue": "discoteca"
+  },
+  "bairro_academico_apartamentos_11@3": {
+   "category": "building",
+   "size": [
+    438,
+    350
+   ],
+   "anchor": [
+    144,
+    347
+   ],
+   "footprint": [
+    3.6,
+    7.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_apartamentos_11@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_apartamentos_11@3.webp",
+   "name": "Prédio Bairro Académico",
+   "venue": "apartamentos"
+  },
+  "bairro_academico_casa1@3": {
+   "category": "building",
+   "size": [
+    394,
+    272
+   ],
+   "anchor": [
+    93,
+    269
+   ],
+   "footprint": [
+    2.3,
+    7.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa1@3.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "bairro_academico_casa2@3": {
+   "category": "building",
+   "size": [
+    362,
+    264
+   ],
+   "anchor": [
+    105,
+    262
+   ],
+   "footprint": [
+    2.6,
+    6.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa2@3.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "bairro_academico_casa3@3": {
+   "category": "building",
+   "size": [
+    334,
+    252
+   ],
+   "anchor": [
+    81,
+    250
+   ],
+   "footprint": [
+    2.0,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa3@3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "bairro_academico_casa4@3": {
+   "category": "building",
+   "size": [
+    347,
+    277
+   ],
+   "anchor": [
+    90,
+    274
+   ],
+   "footprint": [
+    2.2,
+    6.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa4@3.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "bairro_academico_casa5@3": {
+   "category": "building",
+   "size": [
+    329,
+    240
+   ],
+   "anchor": [
+    82,
+    237
+   ],
+   "footprint": [
+    2.1,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa5@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa5@3.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "bairro_academico_casa6@3": {
+   "category": "building",
+   "size": [
+    342,
+    272
+   ],
+   "anchor": [
+    99,
+    269
+   ],
+   "footprint": [
+    2.4,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa6@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa6@3.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "bairro_academico_casa7@3": {
+   "category": "building",
+   "size": [
+    333,
+    188
+   ],
+   "anchor": [
+    102,
+    185
+   ],
+   "footprint": [
+    2.5,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_casa7@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_casa7@3.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "bairro_academico_tree1@3": {
+   "category": "prop",
+   "size": [
+    261,
+    213
+   ],
+   "anchor": [
+    130,
+    212
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree1@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree2@3": {
+   "category": "prop",
+   "size": [
+    164,
+    231
+   ],
+   "anchor": [
+    81,
+    230
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree2@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree3@3": {
+   "category": "prop",
+   "size": [
+    158,
+    209
+   ],
+   "anchor": [
+    78,
+    207
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree3@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree4@3": {
+   "category": "prop",
+   "size": [
+    169,
+    206
+   ],
+   "anchor": [
+    83,
+    205
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree4@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree5@3": {
+   "category": "prop",
+   "size": [
+    301,
+    237
+   ],
+   "anchor": [
+    149,
+    233
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree5@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree5@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree6@3": {
+   "category": "prop",
+   "size": [
+    220,
+    204
+   ],
+   "anchor": [
+    109,
+    202
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree6@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree6@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree7@3": {
+   "category": "prop",
+   "size": [
+    196,
+    202
+   ],
+   "anchor": [
+    97,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree7@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree7@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree8@3": {
+   "category": "prop",
+   "size": [
+    232,
+    203
+   ],
+   "anchor": [
+    115,
+    201
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree8@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree8@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree9@3": {
+   "category": "prop",
+   "size": [
+    239,
+    199
+   ],
+   "anchor": [
+    119,
+    197
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree9@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree9@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree10@3": {
+   "category": "prop",
+   "size": [
+    194,
+    200
+   ],
+   "anchor": [
+    96,
+    198
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree10@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree10@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_lamp1@3": {
+   "category": "prop",
+   "size": [
+    86,
+    197
+   ],
+   "anchor": [
+    42,
+    196
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp1@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp2@3": {
+   "category": "prop",
+   "size": [
+    77,
+    200
+   ],
+   "anchor": [
+    38,
+    198
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp2@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp3@3": {
+   "category": "prop",
+   "size": [
+    94,
+    208
+   ],
+   "anchor": [
+    46,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp3@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp4@3": {
+   "category": "prop",
+   "size": [
+    58,
+    203
+   ],
+   "anchor": [
+    28,
+    201
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp4@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp5@3": {
+   "category": "prop",
+   "size": [
+    57,
+    209
+   ],
+   "anchor": [
+    28,
+    207
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp5@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp5@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_lamp6@3": {
+   "category": "prop",
+   "size": [
+    55,
+    206
+   ],
+   "anchor": [
+    27,
+    204
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_lamp6@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_lamp6@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "bairro_academico_pole1@3": {
+   "category": "prop",
+   "size": [
+    74,
+    210
+   ],
+   "anchor": [
+    36,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole1@3.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole2@3": {
+   "category": "prop",
+   "size": [
+    75,
+    211
+   ],
+   "anchor": [
+    36,
+    209
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole2@3.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole3@3": {
+   "category": "prop",
+   "size": [
+    71,
+    216
+   ],
+   "anchor": [
+    35,
+    214
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole3@3.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_pole4@3": {
+   "category": "prop",
+   "size": [
+    74,
+    214
+   ],
+   "anchor": [
+    36,
+    212
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_pole4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_pole4@3.webp",
+   "kind": "pole"
+  },
+  "bairro_academico_vehicle1@3": {
+   "category": "prop",
+   "size": [
+    165,
+    131
+   ],
+   "anchor": [
+    19,
+    130
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle1@3.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_vehicle2@3": {
+   "category": "prop",
+   "size": [
+    154,
+    125
+   ],
+   "anchor": [
+    19,
+    124
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_vehicle2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_vehicle2@3.webp",
+   "kind": "vehicle"
+  },
+  "bairro_academico_stall1@3": {
+   "category": "prop",
+   "size": [
+    174,
+    129
+   ],
+   "anchor": [
+    19,
+    127
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall1@3.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall2@3": {
+   "category": "prop",
+   "size": [
+    167,
+    124
+   ],
+   "anchor": [
+    22,
+    122
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall2@3.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall3@3": {
+   "category": "prop",
+   "size": [
+    280,
+    135
+   ],
+   "anchor": [
+    95,
+    133
+   ],
+   "footprint": [
+    1.3,
+    2.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall3@3.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_stall4@3": {
+   "category": "prop",
+   "size": [
+    180,
+    177
+   ],
+   "anchor": [
+    86,
+    175
+   ],
+   "footprint": [
+    1.2,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall4@3.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_tree11@3": {
+   "category": "prop",
+   "size": [
+    162,
+    168
+   ],
+   "anchor": [
+    80,
+    167
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree11@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree11@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_stall5@3": {
+   "category": "prop",
+   "size": [
+    171,
+    167
+   ],
+   "anchor": [
+    76,
+    165
+   ],
+   "footprint": [
+    1.0,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_stall5@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_stall5@3.webp",
+   "kind": "stall"
+  },
+  "bairro_academico_small1@3": {
+   "category": "prop",
+   "size": [
+    95,
+    100
+   ],
+   "anchor": [
+    47,
+    99
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small1@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small1@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small2@3": {
+   "category": "prop",
+   "size": [
+    97,
+    102
+   ],
+   "anchor": [
+    44,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small2@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small2@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small3@3": {
+   "category": "prop",
+   "size": [
+    96,
+    102
+   ],
+   "anchor": [
+    46,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small3@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small3@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small4@3": {
+   "category": "prop",
+   "size": [
+    92,
+    100
+   ],
+   "anchor": [
+    45,
+    98
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small4@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small4@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small5@3": {
+   "category": "prop",
+   "size": [
+    333,
+    182
+   ],
+   "anchor": [
+    105,
+    180
+   ],
+   "footprint": [
+    1.4,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small5@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small5@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small6@3": {
+   "category": "prop",
+   "size": [
+    189,
+    78
+   ],
+   "anchor": [
+    141,
+    76
+   ],
+   "footprint": [
+    1.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small6@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small6@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small7@3": {
+   "category": "prop",
+   "size": [
+    177,
+    98
+   ],
+   "anchor": [
+    140,
+    97
+   ],
+   "footprint": [
+    1.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small7@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small7@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small8@3": {
+   "category": "prop",
+   "size": [
+    132,
+    74
+   ],
+   "anchor": [
+    77,
+    71
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small8@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small8@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small9@3": {
+   "category": "prop",
+   "size": [
+    174,
+    91
+   ],
+   "anchor": [
+    144,
+    88
+   ],
+   "footprint": [
+    2.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small9@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small9@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small10@3": {
+   "category": "prop",
+   "size": [
+    133,
+    132
+   ],
+   "anchor": [
+    59,
+    131
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small10@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small10@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small11@3": {
+   "category": "prop",
+   "size": [
+    99,
+    102
+   ],
+   "anchor": [
+    36,
+    101
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small11@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small11@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small12@3": {
+   "category": "prop",
+   "size": [
+    86,
+    87
+   ],
+   "anchor": [
+    34,
+    86
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small12@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small12@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small13@3": {
+   "category": "prop",
+   "size": [
+    281,
+    136
+   ],
+   "anchor": [
+    106,
+    135
+   ],
+   "footprint": [
+    1.4,
+    2.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small13@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small13@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small14@3": {
+   "category": "prop",
+   "size": [
+    156,
+    110
+   ],
+   "anchor": [
+    91,
+    108
+   ],
+   "footprint": [
+    1.2,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small14@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small14@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small15@3": {
+   "category": "prop",
+   "size": [
+    154,
+    108
+   ],
+   "anchor": [
+    81,
+    105
+   ],
+   "footprint": [
+    1.1,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small15@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small15@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small16@3": {
+   "category": "prop",
+   "size": [
+    311,
+    172
+   ],
+   "anchor": [
+    112,
+    170
+   ],
+   "footprint": [
+    1.5,
+    2.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small16@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small16@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small17@3": {
+   "category": "prop",
+   "size": [
+    292,
+    155
+   ],
+   "anchor": [
+    230,
+    152
+   ],
+   "footprint": [
+    3.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small17@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small17@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small18@3": {
+   "category": "prop",
+   "size": [
+    281,
+    146
+   ],
+   "anchor": [
+    214,
+    142
+   ],
+   "footprint": [
+    2.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small18@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small18@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree12@3": {
+   "category": "prop",
+   "size": [
+    118,
+    119
+   ],
+   "anchor": [
+    58,
+    118
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree12@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree12@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small19@3": {
+   "category": "prop",
+   "size": [
+    251,
+    188
+   ],
+   "anchor": [
+    146,
+    185
+   ],
+   "footprint": [
+    2.0,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small19@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small19@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small20@3": {
+   "category": "prop",
+   "size": [
+    81,
+    122
+   ],
+   "anchor": [
+    29,
+    120
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small20@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small20@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree13@3": {
+   "category": "prop",
+   "size": [
+    90,
+    120
+   ],
+   "anchor": [
+    45,
+    119
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree13@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree13@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small21@3": {
+   "category": "prop",
+   "size": [
+    222,
+    180
+   ],
+   "anchor": [
+    125,
+    178
+   ],
+   "footprint": [
+    1.7,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small21@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small21@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small22@3": {
+   "category": "prop",
+   "size": [
+    82,
+    122
+   ],
+   "anchor": [
+    34,
+    121
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small22@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small22@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small23@3": {
+   "category": "prop",
+   "size": [
+    204,
+    179
+   ],
+   "anchor": [
+    108,
+    177
+   ],
+   "footprint": [
+    1.5,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small23@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small23@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small24@3": {
+   "category": "prop",
+   "size": [
+    156,
+    94
+   ],
+   "anchor": [
+    17,
+    92
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small24@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small24@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small25@3": {
+   "category": "prop",
+   "size": [
+    166,
+    102
+   ],
+   "anchor": [
+    20,
+    100
+   ],
+   "footprint": [
+    0.6,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small25@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small25@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small26@3": {
+   "category": "prop",
+   "size": [
+    154,
+    99
+   ],
+   "anchor": [
+    22,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small26@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small26@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small27@3": {
+   "category": "prop",
+   "size": [
+    145,
+    93
+   ],
+   "anchor": [
+    72,
+    92
+   ],
+   "footprint": [
+    1.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small27@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small27@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small28@3": {
+   "category": "prop",
+   "size": [
+    163,
+    103
+   ],
+   "anchor": [
+    77,
+    101
+   ],
+   "footprint": [
+    1.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small28@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small28@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small29@3": {
+   "category": "prop",
+   "size": [
+    128,
+    95
+   ],
+   "anchor": [
+    64,
+    94
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small29@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small29@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small30@3": {
+   "category": "prop",
+   "size": [
+    127,
+    88
+   ],
+   "anchor": [
+    74,
+    87
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small30@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small30@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small31@3": {
+   "category": "prop",
+   "size": [
+    179,
+    84
+   ],
+   "anchor": [
+    52,
+    82
+   ],
+   "footprint": [
+    0.7,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small31@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small31@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small32@3": {
+   "category": "prop",
+   "size": [
+    172,
+    86
+   ],
+   "anchor": [
+    37,
+    84
+   ],
+   "footprint": [
+    0.6,
+    1.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small32@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small32@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small33@3": {
+   "category": "prop",
+   "size": [
+    72,
+    90
+   ],
+   "anchor": [
+    30,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small33@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small33@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small34@3": {
+   "category": "prop",
+   "size": [
+    63,
+    72
+   ],
+   "anchor": [
+    23,
+    70
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small34@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small34@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small35@3": {
+   "category": "prop",
+   "size": [
+    59,
+    71
+   ],
+   "anchor": [
+    26,
+    69
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small35@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small35@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small36@3": {
+   "category": "prop",
+   "size": [
+    106,
+    108
+   ],
+   "anchor": [
+    44,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small36@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small36@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small37@3": {
+   "category": "prop",
+   "size": [
+    81,
+    83
+   ],
+   "anchor": [
+    35,
+    82
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small37@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small37@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small38@3": {
+   "category": "prop",
+   "size": [
+    75,
+    93
+   ],
+   "anchor": [
+    36,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small38@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small38@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small39@3": {
+   "category": "prop",
+   "size": [
+    124,
+    103
+   ],
+   "anchor": [
+    45,
+    101
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small39@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small39@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small40@3": {
+   "category": "prop",
+   "size": [
+    121,
+    109
+   ],
+   "anchor": [
+    45,
+    105
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small40@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small40@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small41@3": {
+   "category": "prop",
+   "size": [
+    229,
+    107
+   ],
+   "anchor": [
+    99,
+    105
+   ],
+   "footprint": [
+    1.3,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small41@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small41@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small42@3": {
+   "category": "prop",
+   "size": [
+    239,
+    108
+   ],
+   "anchor": [
+    127,
+    106
+   ],
+   "footprint": [
+    1.7,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small42@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small42@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree14@3": {
+   "category": "prop",
+   "size": [
+    104,
+    150
+   ],
+   "anchor": [
+    51,
+    149
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree14@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree14@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_tree15@3": {
+   "category": "prop",
+   "size": [
+    103,
+    149
+   ],
+   "anchor": [
+    51,
+    148
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree15@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree15@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small43@3": {
+   "category": "prop",
+   "size": [
+    166,
+    152
+   ],
+   "anchor": [
+    111,
+    151
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small43@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small43@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small44@3": {
+   "category": "prop",
+   "size": [
+    172,
+    152
+   ],
+   "anchor": [
+    109,
+    151
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small44@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small44@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small45@3": {
+   "category": "prop",
+   "size": [
+    171,
+    153
+   ],
+   "anchor": [
+    106,
+    152
+   ],
+   "footprint": [
+    1.4,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small45@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small45@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small46@3": {
+   "category": "prop",
+   "size": [
+    109,
+    133
+   ],
+   "anchor": [
+    64,
+    132
+   ],
+   "footprint": [
+    0.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small46@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small46@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small47@3": {
+   "category": "prop",
+   "size": [
+    107,
+    133
+   ],
+   "anchor": [
+    27,
+    131
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small47@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small47@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_tree16@3": {
+   "category": "prop",
+   "size": [
+    180,
+    146
+   ],
+   "anchor": [
+    89,
+    144
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_tree16@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_tree16@3.webp",
+   "kind": "tree"
+  },
+  "bairro_academico_small48@3": {
+   "category": "prop",
+   "size": [
+    196,
+    124
+   ],
+   "anchor": [
+    147,
+    121
+   ],
+   "footprint": [
+    2.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small48@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small48@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small49@3": {
+   "category": "prop",
+   "size": [
+    204,
+    124
+   ],
+   "anchor": [
+    38,
+    122
+   ],
+   "footprint": [
+    0.6,
+    2.3
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small49@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small49@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small50@3": {
+   "category": "prop",
+   "size": [
+    71,
+    107
+   ],
+   "anchor": [
+    31,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small50@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small50@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small51@3": {
+   "category": "prop",
+   "size": [
+    68,
+    108
+   ],
+   "anchor": [
+    20,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small51@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small51@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small52@3": {
+   "category": "prop",
+   "size": [
+    288,
+    131
+   ],
+   "anchor": [
+    154,
+    129
+   ],
+   "footprint": [
+    2.1,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small52@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small52@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small53@3": {
+   "category": "prop",
+   "size": [
+    514,
+    132
+   ],
+   "anchor": [
+    471,
+    131
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small53@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small53@3.webp",
+   "kind": "small"
+  },
+  "bairro_academico_small54@3": {
+   "category": "prop",
+   "size": [
+    502,
+    157
+   ],
+   "anchor": [
+    43,
+    153
+   ],
+   "footprint": [
+    0.6,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "bairro_academico_small54@3",
+   "kit": "kit_bairro_academico",
+   "path": "res://assets/kits/kit_bairro_academico/bairro_academico_small54@3.webp",
+   "kind": "small"
   }
  },
- "version": "9f5f0c0071d8"
+ "version": "5ed289732149"
 }

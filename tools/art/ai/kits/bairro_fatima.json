@@ -143,7 +143,8 @@
    "id": "f_mercado",
    "name": "Mercado do Bairro de Fátima",
    "cat": "building",
-   "venue": "mercado"
+   "venue": "mercado",
+   "n": 4
   },
   {
    "file": "raw/fix_signs_out.png",
@@ -151,14 +152,16 @@
    "id": "f_discoteca",
    "name": "Discoteca Kizomba Fátima",
    "cat": "building",
-   "venue": "discoteca"
+   "venue": "discoteca",
+   "n": 7
   },
   {
    "file": "raw/fix_pensao_out.png",
    "id": "f_hospedaria",
    "name": "Hospedaria Fátima",
    "cat": "building",
-   "venue": "hotel"
+   "venue": "hotel",
+   "n": 8
   },
   {
    "n": 20,

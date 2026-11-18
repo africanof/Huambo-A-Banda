@@ -2166,7 +2166,6505 @@
    "kit": "kit_cidade_alta",
    "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small52.webp",
    "kind": "small"
+  },
+  "cidade_alta_escola@1": {
+   "category": "building",
+   "size": [
+    938,
+    527
+   ],
+   "anchor": [
+    294,
+    520
+   ],
+   "footprint": [
+    7.3,
+    16.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_escola@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_escola@1.webp",
+   "name": "Escola Primária da Cidade Alta",
+   "venue": "escola"
+  },
+  "cidade_alta_saude@1": {
+   "category": "building",
+   "size": [
+    870,
+    476
+   ],
+   "anchor": [
+    302,
+    469
+   ],
+   "footprint": [
+    7.5,
+    14.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_saude@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_saude@1.webp",
+   "name": "Hospital Geral do Huambo",
+   "venue": "saude"
+  },
+  "cidade_alta_mercado@1": {
+   "category": "building",
+   "size": [
+    981,
+    491
+   ],
+   "anchor": [
+    380,
+    484
+   ],
+   "footprint": [
+    9.5,
+    15.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_mercado@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_mercado@1.webp",
+   "name": "Mercado da Cidade Alta",
+   "venue": "mercado"
+  },
+  "cidade_alta_cantina@1": {
+   "category": "building",
+   "size": [
+    549,
+    388
+   ],
+   "anchor": [
+    161,
+    384
+   ],
+   "footprint": [
+    4.0,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_cantina@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_cantina@1.webp",
+   "name": "Cantina Planalto",
+   "venue": "cantina"
+  },
+  "cidade_alta_farmacia@1": {
+   "category": "building",
+   "size": [
+    496,
+    372
+   ],
+   "anchor": [
+    171,
+    369
+   ],
+   "footprint": [
+    4.2,
+    8.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_farmacia@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_farmacia@1.webp",
+   "name": "Farmácia Cidade Alta",
+   "venue": "farmacia"
+  },
+  "cidade_alta_administracao@1": {
+   "category": "building",
+   "size": [
+    561,
+    425
+   ],
+   "anchor": [
+    175,
+    422
+   ],
+   "footprint": [
+    4.3,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_administracao@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_administracao@1.webp",
+   "name": "Administração da Cidade Alta",
+   "venue": "administracao"
+  },
+  "cidade_alta_banco@1": {
+   "category": "building",
+   "size": [
+    592,
+    426
+   ],
+   "anchor": [
+    207,
+    422
+   ],
+   "footprint": [
+    5.1,
+    9.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_banco@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_banco@1.webp",
+   "name": "Banco BAI",
+   "venue": "banco"
+  },
+  "cidade_alta_hotel@1": {
+   "category": "building",
+   "size": [
+    649,
+    441
+   ],
+   "anchor": [
+    208,
+    436
+   ],
+   "footprint": [
+    5.2,
+    11.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_hotel@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_hotel@1.webp",
+   "name": "Hotel Cidade Alta",
+   "venue": "hotel"
+  },
+  "cidade_alta_correios@1": {
+   "category": "building",
+   "size": [
+    465,
+    346
+   ],
+   "anchor": [
+    159,
+    342
+   ],
+   "footprint": [
+    3.9,
+    7.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_correios@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_correios@1.webp",
+   "name": "Correios da Cidade Alta",
+   "venue": "correios"
+  },
+  "cidade_alta_tribunal@1": {
+   "category": "building",
+   "size": [
+    438,
+    387
+   ],
+   "anchor": [
+    187,
+    384
+   ],
+   "footprint": [
+    4.6,
+    6.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tribunal@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tribunal@1.webp",
+   "name": "Tribunal Provincial do Huambo",
+   "venue": "tribunal"
+  },
+  "cidade_alta_apartamentos@1": {
+   "category": "building",
+   "size": [
+    416,
+    412
+   ],
+   "anchor": [
+    130,
+    409
+   ],
+   "footprint": [
+    3.2,
+    7.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_apartamentos@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_apartamentos@1.webp",
+   "name": "Prédio Cidade Alta",
+   "venue": "apartamentos"
+  },
+  "cidade_alta_casa1@1": {
+   "category": "building",
+   "size": [
+    382,
+    288
+   ],
+   "anchor": [
+    136,
+    286
+   ],
+   "footprint": [
+    3.4,
+    6.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa1@1.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cidade_alta_casa2@1": {
+   "category": "building",
+   "size": [
+    357,
+    286
+   ],
+   "anchor": [
+    153,
+    283
+   ],
+   "footprint": [
+    3.8,
+    5.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa2@1.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cidade_alta_casa3@1": {
+   "category": "building",
+   "size": [
+    348,
+    293
+   ],
+   "anchor": [
+    162,
+    290
+   ],
+   "footprint": [
+    4.0,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa3@1.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cidade_alta_casa4@1": {
+   "category": "building",
+   "size": [
+    321,
+    286
+   ],
+   "anchor": [
+    141,
+    283
+   ],
+   "footprint": [
+    3.5,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa4@1.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cidade_alta_casa5@1": {
+   "category": "building",
+   "size": [
+    328,
+    267
+   ],
+   "anchor": [
+    132,
+    265
+   ],
+   "footprint": [
+    3.2,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa5@1.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cidade_alta_casa6@1": {
+   "category": "building",
+   "size": [
+    340,
+    276
+   ],
+   "anchor": [
+    147,
+    274
+   ],
+   "footprint": [
+    3.6,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa6@1.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cidade_alta_casa7@1": {
+   "category": "building",
+   "size": [
+    334,
+    276
+   ],
+   "anchor": [
+    156,
+    274
+   ],
+   "footprint": [
+    3.8,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa7@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa7@1.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cidade_alta_tree1@1": {
+   "category": "prop",
+   "size": [
+    266,
+    244
+   ],
+   "anchor": [
+    132,
+    242
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree1@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree2@1": {
+   "category": "prop",
+   "size": [
+    219,
+    222
+   ],
+   "anchor": [
+    109,
+    219
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree2@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree3@1": {
+   "category": "prop",
+   "size": [
+    326,
+    235
+   ],
+   "anchor": [
+    162,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree3@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree4@1": {
+   "category": "prop",
+   "size": [
+    159,
+    264
+   ],
+   "anchor": [
+    79,
+    263
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree4@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small1@1": {
+   "category": "prop",
+   "size": [
+    175,
+    252
+   ],
+   "anchor": [
+    86,
+    250
+   ],
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small1@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree5@1": {
+   "category": "prop",
+   "size": [
+    222,
+    226
+   ],
+   "anchor": [
+    111,
+    224
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree5@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree6@1": {
+   "category": "prop",
+   "size": [
+    218,
+    222
+   ],
+   "anchor": [
+    108,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree6@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree7@1": {
+   "category": "prop",
+   "size": [
+    220,
+    253
+   ],
+   "anchor": [
+    109,
+    251
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree7@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree7@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree8@1": {
+   "category": "prop",
+   "size": [
+    201,
+    226
+   ],
+   "anchor": [
+    99,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree8@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree8@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree9@1": {
+   "category": "prop",
+   "size": [
+    205,
+    213
+   ],
+   "anchor": [
+    102,
+    211
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree9@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree9@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_lamp1@1": {
+   "category": "prop",
+   "size": [
+    86,
+    238
+   ],
+   "anchor": [
+    42,
+    236
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp1@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp2@1": {
+   "category": "prop",
+   "size": [
+    116,
+    224
+   ],
+   "anchor": [
+    57,
+    223
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp2@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp3@1": {
+   "category": "prop",
+   "size": [
+    51,
+    220
+   ],
+   "anchor": [
+    25,
+    219
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp3@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp4@1": {
+   "category": "prop",
+   "size": [
+    62,
+    231
+   ],
+   "anchor": [
+    30,
+    230
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp4@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp5@1": {
+   "category": "prop",
+   "size": [
+    71,
+    210
+   ],
+   "anchor": [
+    35,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp5@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp6@1": {
+   "category": "prop",
+   "size": [
+    41,
+    218
+   ],
+   "anchor": [
+    20,
+    216
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp6@1.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_pole1@1": {
+   "category": "prop",
+   "size": [
+    100,
+    243
+   ],
+   "anchor": [
+    49,
+    241
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole1@1.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole2@1": {
+   "category": "prop",
+   "size": [
+    93,
+    243
+   ],
+   "anchor": [
+    46,
+    241
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole2@1.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole3@1": {
+   "category": "prop",
+   "size": [
+    95,
+    249
+   ],
+   "anchor": [
+    47,
+    247
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole3@1.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole4@1": {
+   "category": "prop",
+   "size": [
+    99,
+    246
+   ],
+   "anchor": [
+    49,
+    245
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole4@1.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_vehicle1@1": {
+   "category": "prop",
+   "size": [
+    286,
+    182
+   ],
+   "anchor": [
+    134,
+    180
+   ],
+   "footprint": [
+    1.8,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle1@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle2@1": {
+   "category": "prop",
+   "size": [
+    292,
+    181
+   ],
+   "anchor": [
+    137,
+    179
+   ],
+   "footprint": [
+    1.9,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle2@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle3@1": {
+   "category": "prop",
+   "size": [
+    151,
+    115
+   ],
+   "anchor": [
+    18,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle3@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle4@1": {
+   "category": "prop",
+   "size": [
+    129,
+    111
+   ],
+   "anchor": [
+    13,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle4@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle5@1": {
+   "category": "prop",
+   "size": [
+    125,
+    111
+   ],
+   "anchor": [
+    13,
+    109
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle5@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle6@1": {
+   "category": "prop",
+   "size": [
+    128,
+    112
+   ],
+   "anchor": [
+    14,
+    111
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle6@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle7@1": {
+   "category": "prop",
+   "size": [
+    218,
+    106
+   ],
+   "anchor": [
+    92,
+    104
+   ],
+   "footprint": [
+    1.2,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle7@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle7@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle8@1": {
+   "category": "prop",
+   "size": [
+    225,
+    140
+   ],
+   "anchor": [
+    97,
+    138
+   ],
+   "footprint": [
+    1.3,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle8@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle8@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle9@1": {
+   "category": "prop",
+   "size": [
+    214,
+    107
+   ],
+   "anchor": [
+    98,
+    106
+   ],
+   "footprint": [
+    1.3,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle9@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle9@1.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_stall1@1": {
+   "category": "prop",
+   "size": [
+    197,
+    163
+   ],
+   "anchor": [
+    124,
+    161
+   ],
+   "footprint": [
+    1.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall1@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall1@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall2@1": {
+   "category": "prop",
+   "size": [
+    152,
+    150
+   ],
+   "anchor": [
+    90,
+    148
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall2@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall3@1": {
+   "category": "prop",
+   "size": [
+    171,
+    154
+   ],
+   "anchor": [
+    100,
+    153
+   ],
+   "footprint": [
+    1.4,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall3@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall4@1": {
+   "category": "prop",
+   "size": [
+    146,
+    153
+   ],
+   "anchor": [
+    89,
+    152
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall4@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall5@1": {
+   "category": "prop",
+   "size": [
+    205,
+    162
+   ],
+   "anchor": [
+    123,
+    161
+   ],
+   "footprint": [
+    1.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall5@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall6@1": {
+   "category": "prop",
+   "size": [
+    209,
+    159
+   ],
+   "anchor": [
+    130,
+    158
+   ],
+   "footprint": [
+    1.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall6@1.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_small2@1": {
+   "category": "prop",
+   "size": [
+    120,
+    130
+   ],
+   "anchor": [
+    65,
+    128
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small2@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small2@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small3@1": {
+   "category": "prop",
+   "size": [
+    116,
+    129
+   ],
+   "anchor": [
+    63,
+    127
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small3@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small3@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small4@1": {
+   "category": "prop",
+   "size": [
+    122,
+    133
+   ],
+   "anchor": [
+    65,
+    131
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small4@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small4@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small5@1": {
+   "category": "prop",
+   "size": [
+    180,
+    142
+   ],
+   "anchor": [
+    100,
+    140
+   ],
+   "footprint": [
+    1.3,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small5@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small5@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small6@1": {
+   "category": "prop",
+   "size": [
+    154,
+    88
+   ],
+   "anchor": [
+    108,
+    86
+   ],
+   "footprint": [
+    1.4,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small6@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small6@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small7@1": {
+   "category": "prop",
+   "size": [
+    167,
+    92
+   ],
+   "anchor": [
+    123,
+    90
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small7@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small7@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small8@1": {
+   "category": "prop",
+   "size": [
+    163,
+    90
+   ],
+   "anchor": [
+    116,
+    88
+   ],
+   "footprint": [
+    1.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small8@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small8@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small9@1": {
+   "category": "prop",
+   "size": [
+    159,
+    89
+   ],
+   "anchor": [
+    114,
+    87
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small9@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small9@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small10@1": {
+   "category": "prop",
+   "size": [
+    132,
+    134
+   ],
+   "anchor": [
+    75,
+    133
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small10@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small10@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small11@1": {
+   "category": "prop",
+   "size": [
+    134,
+    137
+   ],
+   "anchor": [
+    71,
+    135
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small11@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small11@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small12@1": {
+   "category": "prop",
+   "size": [
+    113,
+    174
+   ],
+   "anchor": [
+    63,
+    173
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small12@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small12@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small13@1": {
+   "category": "prop",
+   "size": [
+    134,
+    95
+   ],
+   "anchor": [
+    75,
+    93
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small13@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small13@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small14@1": {
+   "category": "prop",
+   "size": [
+    137,
+    98
+   ],
+   "anchor": [
+    77,
+    96
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small14@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small14@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small15@1": {
+   "category": "prop",
+   "size": [
+    226,
+    144
+   ],
+   "anchor": [
+    173,
+    142
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small15@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small15@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small16@1": {
+   "category": "prop",
+   "size": [
+    226,
+    148
+   ],
+   "anchor": [
+    175,
+    146
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small16@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small16@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree10@1": {
+   "category": "prop",
+   "size": [
+    91,
+    143
+   ],
+   "anchor": [
+    44,
+    142
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree10@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree10@1.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small17@1": {
+   "category": "prop",
+   "size": [
+    91,
+    133
+   ],
+   "anchor": [
+    39,
+    132
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small17@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small17@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small18@1": {
+   "category": "prop",
+   "size": [
+    101,
+    128
+   ],
+   "anchor": [
+    45,
+    127
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small18@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small18@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small19@1": {
+   "category": "prop",
+   "size": [
+    126,
+    140
+   ],
+   "anchor": [
+    52,
+    138
+   ],
+   "footprint": [
+    0.7,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small19@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small19@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small20@1": {
+   "category": "prop",
+   "size": [
+    134,
+    98
+   ],
+   "anchor": [
+    22,
+    96
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small20@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small20@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small21@1": {
+   "category": "prop",
+   "size": [
+    120,
+    98
+   ],
+   "anchor": [
+    22,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small21@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small21@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small22@1": {
+   "category": "prop",
+   "size": [
+    119,
+    97
+   ],
+   "anchor": [
+    20,
+    95
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small22@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small22@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small23@1": {
+   "category": "prop",
+   "size": [
+    418,
+    139
+   ],
+   "anchor": [
+    340,
+    137
+   ],
+   "footprint": [
+    3.0,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small23@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small23@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small24@1": {
+   "category": "prop",
+   "size": [
+    341,
+    137
+   ],
+   "anchor": [
+    307,
+    136
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small24@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small24@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small25@1": {
+   "category": "prop",
+   "size": [
+    111,
+    94
+   ],
+   "anchor": [
+    54,
+    92
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small25@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small25@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small26@1": {
+   "category": "prop",
+   "size": [
+    92,
+    93
+   ],
+   "anchor": [
+    39,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small26@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small26@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small27@1": {
+   "category": "prop",
+   "size": [
+    82,
+    81
+   ],
+   "anchor": [
+    32,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small27@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small27@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small28@1": {
+   "category": "prop",
+   "size": [
+    101,
+    85
+   ],
+   "anchor": [
+    50,
+    83
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small28@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small28@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small29@1": {
+   "category": "prop",
+   "size": [
+    144,
+    96
+   ],
+   "anchor": [
+    25,
+    95
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small29@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small29@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small30@1": {
+   "category": "prop",
+   "size": [
+    136,
+    95
+   ],
+   "anchor": [
+    24,
+    93
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small30@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small30@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small31@1": {
+   "category": "prop",
+   "size": [
+    77,
+    79
+   ],
+   "anchor": [
+    39,
+    78
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small31@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small31@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small32@1": {
+   "category": "prop",
+   "size": [
+    52,
+    54
+   ],
+   "anchor": [
+    23,
+    53
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small32@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small32@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small33@1": {
+   "category": "prop",
+   "size": [
+    77,
+    82
+   ],
+   "anchor": [
+    31,
+    77
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small33@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small33@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small34@1": {
+   "category": "prop",
+   "size": [
+    63,
+    66
+   ],
+   "anchor": [
+    34,
+    62
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small34@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small34@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small35@1": {
+   "category": "prop",
+   "size": [
+    75,
+    73
+   ],
+   "anchor": [
+    34,
+    69
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small35@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small35@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small36@1": {
+   "category": "prop",
+   "size": [
+    115,
+    108
+   ],
+   "anchor": [
+    47,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small36@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small36@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small37@1": {
+   "category": "prop",
+   "size": [
+    117,
+    95
+   ],
+   "anchor": [
+    48,
+    93
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small37@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small37@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small38@1": {
+   "category": "prop",
+   "size": [
+    132,
+    119
+   ],
+   "anchor": [
+    64,
+    117
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small38@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small38@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small39@1": {
+   "category": "prop",
+   "size": [
+    127,
+    119
+   ],
+   "anchor": [
+    60,
+    118
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small39@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small39@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small40@1": {
+   "category": "prop",
+   "size": [
+    73,
+    181
+   ],
+   "anchor": [
+    7,
+    179
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small40@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small40@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small41@1": {
+   "category": "prop",
+   "size": [
+    69,
+    181
+   ],
+   "anchor": [
+    7,
+    180
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small41@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small41@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small42@1": {
+   "category": "prop",
+   "size": [
+    114,
+    153
+   ],
+   "anchor": [
+    55,
+    151
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small42@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small42@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small43@1": {
+   "category": "prop",
+   "size": [
+    114,
+    152
+   ],
+   "anchor": [
+    57,
+    150
+   ],
+   "footprint": [
+    0.8,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small43@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small43@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small44@1": {
+   "category": "prop",
+   "size": [
+    111,
+    148
+   ],
+   "anchor": [
+    60,
+    147
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small44@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small44@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small45@1": {
+   "category": "prop",
+   "size": [
+    87,
+    103
+   ],
+   "anchor": [
+    33,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small45@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small45@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small46@1": {
+   "category": "prop",
+   "size": [
+    85,
+    106
+   ],
+   "anchor": [
+    58,
+    104
+   ],
+   "footprint": [
+    0.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small46@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small46@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small47@1": {
+   "category": "prop",
+   "size": [
+    69,
+    109
+   ],
+   "anchor": [
+    23,
+    108
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small47@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small47@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small48@1": {
+   "category": "prop",
+   "size": [
+    121,
+    95
+   ],
+   "anchor": [
+    30,
+    87
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small48@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small48@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small49@1": {
+   "category": "prop",
+   "size": [
+    117,
+    92
+   ],
+   "anchor": [
+    34,
+    82
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small49@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small49@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small50@1": {
+   "category": "prop",
+   "size": [
+    56,
+    90
+   ],
+   "anchor": [
+    15,
+    89
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small50@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small50@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small51@1": {
+   "category": "prop",
+   "size": [
+    58,
+    94
+   ],
+   "anchor": [
+    16,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small51@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small51@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small52@1": {
+   "category": "prop",
+   "size": [
+    177,
+    97
+   ],
+   "anchor": [
+    134,
+    96
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small52@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small52@1.webp",
+   "kind": "small"
+  },
+  "cidade_alta_escola@2": {
+   "category": "building",
+   "size": [
+    970,
+    524
+   ],
+   "anchor": [
+    691,
+    519
+   ],
+   "footprint": [
+    17.2,
+    7.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_escola@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_escola@2.webp",
+   "name": "Escola Primária da Cidade Alta",
+   "venue": "escola"
+  },
+  "cidade_alta_saude@2": {
+   "category": "building",
+   "size": [
+    891,
+    480
+   ],
+   "anchor": [
+    478,
+    473
+   ],
+   "footprint": [
+    11.9,
+    10.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_saude@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_saude@2.webp",
+   "name": "Hospital Geral do Huambo",
+   "venue": "saude"
+  },
+  "cidade_alta_mercado@2": {
+   "category": "building",
+   "size": [
+    1001,
+    475
+   ],
+   "anchor": [
+    604,
+    466
+   ],
+   "footprint": [
+    15.1,
+    9.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_mercado@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_mercado@2.webp",
+   "name": "Mercado da Cidade Alta",
+   "venue": "mercado"
+  },
+  "cidade_alta_cantina@2": {
+   "category": "building",
+   "size": [
+    556,
+    363
+   ],
+   "anchor": [
+    326,
+    359
+   ],
+   "footprint": [
+    8.1,
+    5.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_cantina@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_cantina@2.webp",
+   "name": "Cantina Planalto",
+   "venue": "cantina"
+  },
+  "cidade_alta_farmacia@2": {
+   "category": "building",
+   "size": [
+    455,
+    375
+   ],
+   "anchor": [
+    222,
+    372
+   ],
+   "footprint": [
+    5.5,
+    5.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_farmacia@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_farmacia@2.webp",
+   "name": "Farmácia Cidade Alta",
+   "venue": "farmacia"
+  },
+  "cidade_alta_administracao@2": {
+   "category": "building",
+   "size": [
+    562,
+    395
+   ],
+   "anchor": [
+    347,
+    391
+   ],
+   "footprint": [
+    8.6,
+    5.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_administracao@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_administracao@2.webp",
+   "name": "Administração da Cidade Alta",
+   "venue": "administracao"
+  },
+  "cidade_alta_banco@2": {
+   "category": "building",
+   "size": [
+    595,
+    423
+   ],
+   "anchor": [
+    317,
+    419
+   ],
+   "footprint": [
+    7.9,
+    6.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_banco@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_banco@2.webp",
+   "name": "Banco BAI",
+   "venue": "banco"
+  },
+  "cidade_alta_hotel@2": {
+   "category": "building",
+   "size": [
+    620,
+    420
+   ],
+   "anchor": [
+    379,
+    414
+   ],
+   "footprint": [
+    9.4,
+    6.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_hotel@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_hotel@2.webp",
+   "name": "Hotel Cidade Alta",
+   "venue": "hotel"
+  },
+  "cidade_alta_correios@2": {
+   "category": "building",
+   "size": [
+    468,
+    308
+   ],
+   "anchor": [
+    275,
+    305
+   ],
+   "footprint": [
+    6.8,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_correios@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_correios@2.webp",
+   "name": "Correios da Cidade Alta",
+   "venue": "correios"
+  },
+  "cidade_alta_tribunal@2": {
+   "category": "building",
+   "size": [
+    437,
+    370
+   ],
+   "anchor": [
+    303,
+    367
+   ],
+   "footprint": [
+    7.5,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tribunal@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tribunal@2.webp",
+   "name": "Tribunal Provincial do Huambo",
+   "venue": "tribunal"
+  },
+  "cidade_alta_apartamentos@2": {
+   "category": "building",
+   "size": [
+    390,
+    415
+   ],
+   "anchor": [
+    255,
+    412
+   ],
+   "footprint": [
+    6.3,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_apartamentos@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_apartamentos@2.webp",
+   "name": "Prédio Cidade Alta",
+   "venue": "apartamentos"
+  },
+  "cidade_alta_casa1@2": {
+   "category": "building",
+   "size": [
+    385,
+    284
+   ],
+   "anchor": [
+    249,
+    282
+   ],
+   "footprint": [
+    6.2,
+    3.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa1@2.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cidade_alta_casa2@2": {
+   "category": "building",
+   "size": [
+    354,
+    281
+   ],
+   "anchor": [
+    227,
+    278
+   ],
+   "footprint": [
+    5.6,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa2@2.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cidade_alta_casa3@2": {
+   "category": "building",
+   "size": [
+    330,
+    268
+   ],
+   "anchor": [
+    205,
+    265
+   ],
+   "footprint": [
+    5.1,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa3@2.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cidade_alta_casa4@2": {
+   "category": "building",
+   "size": [
+    333,
+    280
+   ],
+   "anchor": [
+    209,
+    278
+   ],
+   "footprint": [
+    5.2,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa4@2.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cidade_alta_casa5@2": {
+   "category": "building",
+   "size": [
+    325,
+    271
+   ],
+   "anchor": [
+    203,
+    268
+   ],
+   "footprint": [
+    5.0,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa5@2.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cidade_alta_casa6@2": {
+   "category": "building",
+   "size": [
+    343,
+    284
+   ],
+   "anchor": [
+    215,
+    282
+   ],
+   "footprint": [
+    5.3,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa6@2.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cidade_alta_casa7@2": {
+   "category": "building",
+   "size": [
+    331,
+    276
+   ],
+   "anchor": [
+    206,
+    273
+   ],
+   "footprint": [
+    5.1,
+    3.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa7@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa7@2.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cidade_alta_tree1@2": {
+   "category": "prop",
+   "size": [
+    278,
+    243
+   ],
+   "anchor": [
+    138,
+    240
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree1@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree2@2": {
+   "category": "prop",
+   "size": [
+    216,
+    226
+   ],
+   "anchor": [
+    107,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree2@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree3@2": {
+   "category": "prop",
+   "size": [
+    318,
+    238
+   ],
+   "anchor": [
+    159,
+    235
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree3@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree4@2": {
+   "category": "prop",
+   "size": [
+    162,
+    269
+   ],
+   "anchor": [
+    80,
+    268
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree4@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small1@2": {
+   "category": "prop",
+   "size": [
+    178,
+    261
+   ],
+   "anchor": [
+    82,
+    259
+   ],
+   "footprint": [
+    1.1,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small1@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree5@2": {
+   "category": "prop",
+   "size": [
+    234,
+    230
+   ],
+   "anchor": [
+    116,
+    228
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree5@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree6@2": {
+   "category": "prop",
+   "size": [
+    225,
+    231
+   ],
+   "anchor": [
+    112,
+    229
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree6@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree7@2": {
+   "category": "prop",
+   "size": [
+    200,
+    255
+   ],
+   "anchor": [
+    100,
+    253
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree7@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree7@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree8@2": {
+   "category": "prop",
+   "size": [
+    211,
+    230
+   ],
+   "anchor": [
+    105,
+    229
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree8@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree8@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree9@2": {
+   "category": "prop",
+   "size": [
+    218,
+    221
+   ],
+   "anchor": [
+    108,
+    218
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree9@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree9@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_lamp1@2": {
+   "category": "prop",
+   "size": [
+    91,
+    242
+   ],
+   "anchor": [
+    45,
+    241
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp1@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp2@2": {
+   "category": "prop",
+   "size": [
+    123,
+    227
+   ],
+   "anchor": [
+    61,
+    225
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp2@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp3@2": {
+   "category": "prop",
+   "size": [
+    52,
+    234
+   ],
+   "anchor": [
+    25,
+    233
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp3@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp4@2": {
+   "category": "prop",
+   "size": [
+    61,
+    236
+   ],
+   "anchor": [
+    29,
+    235
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp4@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp5@2": {
+   "category": "prop",
+   "size": [
+    72,
+    224
+   ],
+   "anchor": [
+    35,
+    222
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp5@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp6@2": {
+   "category": "prop",
+   "size": [
+    50,
+    235
+   ],
+   "anchor": [
+    24,
+    234
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp6@2.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_pole1@2": {
+   "category": "prop",
+   "size": [
+    100,
+    247
+   ],
+   "anchor": [
+    49,
+    246
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole1@2.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole2@2": {
+   "category": "prop",
+   "size": [
+    100,
+    247
+   ],
+   "anchor": [
+    49,
+    246
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole2@2.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole3@2": {
+   "category": "prop",
+   "size": [
+    100,
+    251
+   ],
+   "anchor": [
+    49,
+    250
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole3@2.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole4@2": {
+   "category": "prop",
+   "size": [
+    107,
+    247
+   ],
+   "anchor": [
+    53,
+    245
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole4@2.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_vehicle1@2": {
+   "category": "prop",
+   "size": [
+    284,
+    195
+   ],
+   "anchor": [
+    123,
+    193
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle1@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle2@2": {
+   "category": "prop",
+   "size": [
+    279,
+    196
+   ],
+   "anchor": [
+    126,
+    194
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle2@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle3@2": {
+   "category": "prop",
+   "size": [
+    118,
+    117
+   ],
+   "anchor": [
+    21,
+    115
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle3@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle4@2": {
+   "category": "prop",
+   "size": [
+    115,
+    115
+   ],
+   "anchor": [
+    21,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle4@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle5@2": {
+   "category": "prop",
+   "size": [
+    112,
+    114
+   ],
+   "anchor": [
+    21,
+    113
+   ],
+   "footprint": [
+    0.6,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle5@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle6@2": {
+   "category": "prop",
+   "size": [
+    114,
+    115
+   ],
+   "anchor": [
+    20,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle6@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle7@2": {
+   "category": "prop",
+   "size": [
+    219,
+    119
+   ],
+   "anchor": [
+    103,
+    117
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle7@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle7@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle8@2": {
+   "category": "prop",
+   "size": [
+    221,
+    149
+   ],
+   "anchor": [
+    104,
+    147
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle8@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle8@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle9@2": {
+   "category": "prop",
+   "size": [
+    205,
+    133
+   ],
+   "anchor": [
+    95,
+    131
+   ],
+   "footprint": [
+    1.3,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle9@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle9@2.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_stall1@2": {
+   "category": "prop",
+   "size": [
+    193,
+    169
+   ],
+   "anchor": [
+    125,
+    167
+   ],
+   "footprint": [
+    1.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall1@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall1@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall2@2": {
+   "category": "prop",
+   "size": [
+    154,
+    156
+   ],
+   "anchor": [
+    100,
+    155
+   ],
+   "footprint": [
+    1.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall2@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall3@2": {
+   "category": "prop",
+   "size": [
+    171,
+    167
+   ],
+   "anchor": [
+    108,
+    165
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall3@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall4@2": {
+   "category": "prop",
+   "size": [
+    152,
+    147
+   ],
+   "anchor": [
+    63,
+    144
+   ],
+   "footprint": [
+    0.8,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall4@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall5@2": {
+   "category": "prop",
+   "size": [
+    198,
+    168
+   ],
+   "anchor": [
+    119,
+    166
+   ],
+   "footprint": [
+    1.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall5@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall6@2": {
+   "category": "prop",
+   "size": [
+    206,
+    169
+   ],
+   "anchor": [
+    125,
+    167
+   ],
+   "footprint": [
+    1.7,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall6@2.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_small2@2": {
+   "category": "prop",
+   "size": [
+    121,
+    136
+   ],
+   "anchor": [
+    67,
+    134
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small2@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small2@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small3@2": {
+   "category": "prop",
+   "size": [
+    119,
+    137
+   ],
+   "anchor": [
+    67,
+    135
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small3@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small3@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small4@2": {
+   "category": "prop",
+   "size": [
+    122,
+    143
+   ],
+   "anchor": [
+    66,
+    141
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small4@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small4@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small5@2": {
+   "category": "prop",
+   "size": [
+    172,
+    149
+   ],
+   "anchor": [
+    103,
+    148
+   ],
+   "footprint": [
+    1.4,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small5@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small5@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small6@2": {
+   "category": "prop",
+   "size": [
+    164,
+    99
+   ],
+   "anchor": [
+    114,
+    97
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small6@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small6@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small7@2": {
+   "category": "prop",
+   "size": [
+    162,
+    93
+   ],
+   "anchor": [
+    126,
+    90
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small7@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small7@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small8@2": {
+   "category": "prop",
+   "size": [
+    162,
+    90
+   ],
+   "anchor": [
+    128,
+    89
+   ],
+   "footprint": [
+    1.8,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small8@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small8@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small9@2": {
+   "category": "prop",
+   "size": [
+    167,
+    94
+   ],
+   "anchor": [
+    127,
+    93
+   ],
+   "footprint": [
+    1.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small9@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small9@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small10@2": {
+   "category": "prop",
+   "size": [
+    134,
+    144
+   ],
+   "anchor": [
+    77,
+    143
+   ],
+   "footprint": [
+    1.0,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small10@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small10@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small11@2": {
+   "category": "prop",
+   "size": [
+    135,
+    146
+   ],
+   "anchor": [
+    72,
+    144
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small11@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small11@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small12@2": {
+   "category": "prop",
+   "size": [
+    110,
+    183
+   ],
+   "anchor": [
+    64,
+    182
+   ],
+   "footprint": [
+    0.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small12@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small12@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small13@2": {
+   "category": "prop",
+   "size": [
+    135,
+    108
+   ],
+   "anchor": [
+    66,
+    107
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small13@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small13@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small14@2": {
+   "category": "prop",
+   "size": [
+    140,
+    107
+   ],
+   "anchor": [
+    70,
+    106
+   ],
+   "footprint": [
+    0.9,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small14@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small14@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small15@2": {
+   "category": "prop",
+   "size": [
+    228,
+    148
+   ],
+   "anchor": [
+    173,
+    146
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small15@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small15@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small16@2": {
+   "category": "prop",
+   "size": [
+    227,
+    147
+   ],
+   "anchor": [
+    178,
+    144
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small16@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small16@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree10@2": {
+   "category": "prop",
+   "size": [
+    106,
+    150
+   ],
+   "anchor": [
+    53,
+    149
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree10@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree10@2.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small17@2": {
+   "category": "prop",
+   "size": [
+    95,
+    138
+   ],
+   "anchor": [
+    37,
+    136
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small17@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small17@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small18@2": {
+   "category": "prop",
+   "size": [
+    97,
+    127
+   ],
+   "anchor": [
+    42,
+    126
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small18@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small18@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small19@2": {
+   "category": "prop",
+   "size": [
+    132,
+    147
+   ],
+   "anchor": [
+    57,
+    146
+   ],
+   "footprint": [
+    0.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small19@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small19@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small20@2": {
+   "category": "prop",
+   "size": [
+    125,
+    101
+   ],
+   "anchor": [
+    15,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small20@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small20@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small21@2": {
+   "category": "prop",
+   "size": [
+    122,
+    103
+   ],
+   "anchor": [
+    17,
+    102
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small21@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small21@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small22@2": {
+   "category": "prop",
+   "size": [
+    115,
+    102
+   ],
+   "anchor": [
+    15,
+    100
+   ],
+   "footprint": [
+    0.6,
+    1.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small22@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small22@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small23@2": {
+   "category": "prop",
+   "size": [
+    411,
+    143
+   ],
+   "anchor": [
+    324,
+    140
+   ],
+   "footprint": [
+    3.0,
+    1.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small23@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small23@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small24@2": {
+   "category": "prop",
+   "size": [
+    344,
+    131
+   ],
+   "anchor": [
+    124,
+    130
+   ],
+   "footprint": [
+    1.7,
+    3.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small24@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small24@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small25@2": {
+   "category": "prop",
+   "size": [
+    108,
+    92
+   ],
+   "anchor": [
+    48,
+    90
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small25@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small25@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small26@2": {
+   "category": "prop",
+   "size": [
+    94,
+    92
+   ],
+   "anchor": [
+    39,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small26@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small26@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small27@2": {
+   "category": "prop",
+   "size": [
+    81,
+    81
+   ],
+   "anchor": [
+    31,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small27@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small27@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small28@2": {
+   "category": "prop",
+   "size": [
+    92,
+    84
+   ],
+   "anchor": [
+    50,
+    82
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small28@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small28@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small29@2": {
+   "category": "prop",
+   "size": [
+    141,
+    97
+   ],
+   "anchor": [
+    25,
+    96
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small29@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small29@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small30@2": {
+   "category": "prop",
+   "size": [
+    136,
+    96
+   ],
+   "anchor": [
+    25,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small30@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small30@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small31@2": {
+   "category": "prop",
+   "size": [
+    125,
+    81
+   ],
+   "anchor": [
+    98,
+    80
+   ],
+   "footprint": [
+    1.3,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small31@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small31@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small32@2": {
+   "category": "prop",
+   "size": [
+    38,
+    54
+   ],
+   "anchor": [
+    4,
+    53
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small32@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small32@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small33@2": {
+   "category": "prop",
+   "size": [
+    80,
+    95
+   ],
+   "anchor": [
+    37,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small33@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small33@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small34@2": {
+   "category": "prop",
+   "size": [
+    60,
+    63
+   ],
+   "anchor": [
+    27,
+    59
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small34@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small34@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small35@2": {
+   "category": "prop",
+   "size": [
+    75,
+    81
+   ],
+   "anchor": [
+    35,
+    79
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small35@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small35@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small36@2": {
+   "category": "prop",
+   "size": [
+    117,
+    113
+   ],
+   "anchor": [
+    50,
+    111
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small36@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small36@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small37@2": {
+   "category": "prop",
+   "size": [
+    115,
+    100
+   ],
+   "anchor": [
+    49,
+    98
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small37@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small37@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small38@2": {
+   "category": "prop",
+   "size": [
+    129,
+    115
+   ],
+   "anchor": [
+    59,
+    113
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small38@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small38@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small39@2": {
+   "category": "prop",
+   "size": [
+    126,
+    115
+   ],
+   "anchor": [
+    58,
+    114
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small39@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small39@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small40@2": {
+   "category": "prop",
+   "size": [
+    75,
+    185
+   ],
+   "anchor": [
+    7,
+    183
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small40@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small40@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small41@2": {
+   "category": "prop",
+   "size": [
+    71,
+    185
+   ],
+   "anchor": [
+    7,
+    184
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small41@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small41@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small42@2": {
+   "category": "prop",
+   "size": [
+    109,
+    150
+   ],
+   "anchor": [
+    57,
+    148
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small42@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small42@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small43@2": {
+   "category": "prop",
+   "size": [
+    106,
+    149
+   ],
+   "anchor": [
+    53,
+    148
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small43@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small43@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small44@2": {
+   "category": "prop",
+   "size": [
+    105,
+    148
+   ],
+   "anchor": [
+    54,
+    146
+   ],
+   "footprint": [
+    0.7,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small44@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small44@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small45@2": {
+   "category": "prop",
+   "size": [
+    83,
+    108
+   ],
+   "anchor": [
+    31,
+    106
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small45@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small45@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small46@2": {
+   "category": "prop",
+   "size": [
+    87,
+    108
+   ],
+   "anchor": [
+    45,
+    107
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small46@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small46@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small47@2": {
+   "category": "prop",
+   "size": [
+    73,
+    117
+   ],
+   "anchor": [
+    27,
+    116
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small47@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small47@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small48@2": {
+   "category": "prop",
+   "size": [
+    123,
+    93
+   ],
+   "anchor": [
+    40,
+    84
+   ],
+   "footprint": [
+    0.6,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small48@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small48@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small49@2": {
+   "category": "prop",
+   "size": [
+    111,
+    90
+   ],
+   "anchor": [
+    39,
+    85
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small49@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small49@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small50@2": {
+   "category": "prop",
+   "size": [
+    55,
+    91
+   ],
+   "anchor": [
+    15,
+    90
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small50@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small50@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small51@2": {
+   "category": "prop",
+   "size": [
+    57,
+    93
+   ],
+   "anchor": [
+    19,
+    92
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small51@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small51@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small52@2": {
+   "category": "prop",
+   "size": [
+    170,
+    102
+   ],
+   "anchor": [
+    38,
+    99
+   ],
+   "footprint": [
+    0.6,
+    1.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small52@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small52@2.webp",
+   "kind": "small"
+  },
+  "cidade_alta_escola@3": {
+   "category": "building",
+   "size": [
+    815,
+    516
+   ],
+   "anchor": [
+    553,
+    513
+   ],
+   "footprint": [
+    13.8,
+    6.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_escola@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_escola@3.webp",
+   "name": "Escola Primária da Cidade Alta",
+   "venue": "escola"
+  },
+  "cidade_alta_saude@3": {
+   "category": "building",
+   "size": [
+    962,
+    460
+   ],
+   "anchor": [
+    599,
+    456
+   ],
+   "footprint": [
+    14.9,
+    9.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_saude@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_saude@3.webp",
+   "name": "Hospital Geral do Huambo",
+   "venue": "saude"
+  },
+  "cidade_alta_mercado@3": {
+   "category": "building",
+   "size": [
+    989,
+    486
+   ],
+   "anchor": [
+    502,
+    479
+   ],
+   "footprint": [
+    12.5,
+    12.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_mercado@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_mercado@3.webp",
+   "name": "Mercado da Cidade Alta",
+   "venue": "mercado"
+  },
+  "cidade_alta_cantina@3": {
+   "category": "building",
+   "size": [
+    564,
+    340
+   ],
+   "anchor": [
+    372,
+    337
+   ],
+   "footprint": [
+    9.2,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_cantina@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_cantina@3.webp",
+   "name": "Cantina Planalto",
+   "venue": "cantina"
+  },
+  "cidade_alta_farmacia@3": {
+   "category": "building",
+   "size": [
+    478,
+    386
+   ],
+   "anchor": [
+    271,
+    383
+   ],
+   "footprint": [
+    6.7,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_farmacia@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_farmacia@3.webp",
+   "name": "Farmácia Cidade Alta",
+   "venue": "farmacia"
+  },
+  "cidade_alta_administracao@3": {
+   "category": "building",
+   "size": [
+    557,
+    383
+   ],
+   "anchor": [
+    336,
+    380
+   ],
+   "footprint": [
+    8.3,
+    5.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_administracao@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_administracao@3.webp",
+   "name": "Administração da Cidade Alta",
+   "venue": "administracao"
+  },
+  "cidade_alta_banco@3": {
+   "category": "building",
+   "size": [
+    674,
+    407
+   ],
+   "anchor": [
+    448,
+    403
+   ],
+   "footprint": [
+    11.2,
+    5.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_banco@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_banco@3.webp",
+   "name": "Banco BAI",
+   "venue": "banco"
+  },
+  "cidade_alta_hotel@3": {
+   "category": "building",
+   "size": [
+    608,
+    399
+   ],
+   "anchor": [
+    353,
+    396
+   ],
+   "footprint": [
+    8.8,
+    6.3
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_hotel@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_hotel@3.webp",
+   "name": "Hotel Cidade Alta",
+   "venue": "hotel"
+  },
+  "cidade_alta_correios@3": {
+   "category": "building",
+   "size": [
+    465,
+    318
+   ],
+   "anchor": [
+    258,
+    315
+   ],
+   "footprint": [
+    6.4,
+    5.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_correios@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_correios@3.webp",
+   "name": "Correios da Cidade Alta",
+   "venue": "correios"
+  },
+  "cidade_alta_tribunal@3": {
+   "category": "building",
+   "size": [
+    425,
+    361
+   ],
+   "anchor": [
+    229,
+    358
+   ],
+   "footprint": [
+    5.7,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tribunal@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tribunal@3.webp",
+   "name": "Tribunal Provincial do Huambo",
+   "venue": "tribunal"
+  },
+  "cidade_alta_apartamentos@3": {
+   "category": "building",
+   "size": [
+    366,
+    401
+   ],
+   "anchor": [
+    181,
+    398
+   ],
+   "footprint": [
+    4.5,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_apartamentos@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_apartamentos@3.webp",
+   "name": "Prédio Cidade Alta",
+   "venue": "apartamentos"
+  },
+  "cidade_alta_casa1@3": {
+   "category": "building",
+   "size": [
+    376,
+    287
+   ],
+   "anchor": [
+    190,
+    285
+   ],
+   "footprint": [
+    4.7,
+    4.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa1@3.webp",
+   "name": "Casa 1",
+   "venue": "casa"
+  },
+  "cidade_alta_casa2@3": {
+   "category": "building",
+   "size": [
+    355,
+    279
+   ],
+   "anchor": [
+    173,
+    276
+   ],
+   "footprint": [
+    4.3,
+    4.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa2@3.webp",
+   "name": "Casa 2",
+   "venue": "casa"
+  },
+  "cidade_alta_casa3@3": {
+   "category": "building",
+   "size": [
+    371,
+    277
+   ],
+   "anchor": [
+    177,
+    274
+   ],
+   "footprint": [
+    4.4,
+    4.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa3@3.webp",
+   "name": "Casa 3",
+   "venue": "casa"
+  },
+  "cidade_alta_casa4@3": {
+   "category": "building",
+   "size": [
+    332,
+    278
+   ],
+   "anchor": [
+    160,
+    275
+   ],
+   "footprint": [
+    4.0,
+    4.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa4@3.webp",
+   "name": "Casa 4",
+   "venue": "casa"
+  },
+  "cidade_alta_casa5@3": {
+   "category": "building",
+   "size": [
+    329,
+    263
+   ],
+   "anchor": [
+    151,
+    260
+   ],
+   "footprint": [
+    3.7,
+    4.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa5@3.webp",
+   "name": "Casa 5",
+   "venue": "casa"
+  },
+  "cidade_alta_casa6@3": {
+   "category": "building",
+   "size": [
+    352,
+    284
+   ],
+   "anchor": [
+    159,
+    282
+   ],
+   "footprint": [
+    3.9,
+    4.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa6@3.webp",
+   "name": "Casa 6",
+   "venue": "casa"
+  },
+  "cidade_alta_casa7@3": {
+   "category": "building",
+   "size": [
+    304,
+    269
+   ],
+   "anchor": [
+    137,
+    265
+   ],
+   "footprint": [
+    3.4,
+    4.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_casa7@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_casa7@3.webp",
+   "name": "Casa 7",
+   "venue": "casa"
+  },
+  "cidade_alta_tree1@3": {
+   "category": "prop",
+   "size": [
+    267,
+    236
+   ],
+   "anchor": [
+    133,
+    234
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree1@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree2@3": {
+   "category": "prop",
+   "size": [
+    222,
+    229
+   ],
+   "anchor": [
+    110,
+    227
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree2@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree3@3": {
+   "category": "prop",
+   "size": [
+    296,
+    230
+   ],
+   "anchor": [
+    147,
+    228
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree3@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree4@3": {
+   "category": "prop",
+   "size": [
+    156,
+    268
+   ],
+   "anchor": [
+    77,
+    267
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree4@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small1@3": {
+   "category": "prop",
+   "size": [
+    167,
+    255
+   ],
+   "anchor": [
+    82,
+    254
+   ],
+   "footprint": [
+    1.1,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small1@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree5@3": {
+   "category": "prop",
+   "size": [
+    225,
+    234
+   ],
+   "anchor": [
+    112,
+    232
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree5@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree6@3": {
+   "category": "prop",
+   "size": [
+    205,
+    226
+   ],
+   "anchor": [
+    102,
+    225
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree6@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree7@3": {
+   "category": "prop",
+   "size": [
+    202,
+    257
+   ],
+   "anchor": [
+    101,
+    256
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree7@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree7@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree8@3": {
+   "category": "prop",
+   "size": [
+    197,
+    222
+   ],
+   "anchor": [
+    98,
+    220
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree8@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree8@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_tree9@3": {
+   "category": "prop",
+   "size": [
+    198,
+    212
+   ],
+   "anchor": [
+    98,
+    210
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree9@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree9@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_lamp1@3": {
+   "category": "prop",
+   "size": [
+    106,
+    233
+   ],
+   "anchor": [
+    52,
+    231
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp1@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp2@3": {
+   "category": "prop",
+   "size": [
+    98,
+    210
+   ],
+   "anchor": [
+    48,
+    208
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp2@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp3@3": {
+   "category": "prop",
+   "size": [
+    51,
+    228
+   ],
+   "anchor": [
+    25,
+    227
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp3@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp4@3": {
+   "category": "prop",
+   "size": [
+    62,
+    241
+   ],
+   "anchor": [
+    30,
+    240
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp4@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp5@3": {
+   "category": "prop",
+   "size": [
+    76,
+    207
+   ],
+   "anchor": [
+    37,
+    205
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp5@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_lamp6@3": {
+   "category": "prop",
+   "size": [
+    45,
+    207
+   ],
+   "anchor": [
+    22,
+    206
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_lamp6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_lamp6@3.webp",
+   "light": true,
+   "kind": "lamp"
+  },
+  "cidade_alta_pole1@3": {
+   "category": "prop",
+   "size": [
+    101,
+    248
+   ],
+   "anchor": [
+    49,
+    247
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole1@3.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole2@3": {
+   "category": "prop",
+   "size": [
+    98,
+    250
+   ],
+   "anchor": [
+    49,
+    249
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole2@3.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole3@3": {
+   "category": "prop",
+   "size": [
+    95,
+    253
+   ],
+   "anchor": [
+    47,
+    252
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole3@3.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_pole4@3": {
+   "category": "prop",
+   "size": [
+    100,
+    252
+   ],
+   "anchor": [
+    49,
+    250
+   ],
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_pole4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_pole4@3.webp",
+   "kind": "pole"
+  },
+  "cidade_alta_vehicle1@3": {
+   "category": "prop",
+   "size": [
+    281,
+    179
+   ],
+   "anchor": [
+    126,
+    178
+   ],
+   "footprint": [
+    1.7,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle1@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle2@3": {
+   "category": "prop",
+   "size": [
+    280,
+    182
+   ],
+   "anchor": [
+    135,
+    180
+   ],
+   "footprint": [
+    1.8,
+    2.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle2@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle3@3": {
+   "category": "prop",
+   "size": [
+    136,
+    120
+   ],
+   "anchor": [
+    17,
+    119
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle3@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle4@3": {
+   "category": "prop",
+   "size": [
+    126,
+    116
+   ],
+   "anchor": [
+    14,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle4@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle5@3": {
+   "category": "prop",
+   "size": [
+    120,
+    112
+   ],
+   "anchor": [
+    12,
+    110
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle5@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle6@3": {
+   "category": "prop",
+   "size": [
+    129,
+    115
+   ],
+   "anchor": [
+    16,
+    114
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle6@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle7@3": {
+   "category": "prop",
+   "size": [
+    219,
+    115
+   ],
+   "anchor": [
+    94,
+    113
+   ],
+   "footprint": [
+    1.3,
+    1.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle7@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle7@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle8@3": {
+   "category": "prop",
+   "size": [
+    222,
+    139
+   ],
+   "anchor": [
+    104,
+    138
+   ],
+   "footprint": [
+    1.4,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle8@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle8@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_vehicle9@3": {
+   "category": "prop",
+   "size": [
+    203,
+    121
+   ],
+   "anchor": [
+    97,
+    119
+   ],
+   "footprint": [
+    1.3,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_vehicle9@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_vehicle9@3.webp",
+   "kind": "vehicle"
+  },
+  "cidade_alta_stall1@3": {
+   "category": "prop",
+   "size": [
+    185,
+    161
+   ],
+   "anchor": [
+    118,
+    159
+   ],
+   "footprint": [
+    1.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall1@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall1@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall2@3": {
+   "category": "prop",
+   "size": [
+    156,
+    152
+   ],
+   "anchor": [
+    95,
+    150
+   ],
+   "footprint": [
+    1.3,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall2@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall3@3": {
+   "category": "prop",
+   "size": [
+    172,
+    154
+   ],
+   "anchor": [
+    108,
+    152
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall3@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall4@3": {
+   "category": "prop",
+   "size": [
+    145,
+    153
+   ],
+   "anchor": [
+    84,
+    151
+   ],
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall4@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall5@3": {
+   "category": "prop",
+   "size": [
+    202,
+    156
+   ],
+   "anchor": [
+    129,
+    154
+   ],
+   "footprint": [
+    1.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall5@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_stall6@3": {
+   "category": "prop",
+   "size": [
+    208,
+    153
+   ],
+   "anchor": [
+    135,
+    151
+   ],
+   "footprint": [
+    1.8,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_stall6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_stall6@3.webp",
+   "kind": "stall"
+  },
+  "cidade_alta_small2@3": {
+   "category": "prop",
+   "size": [
+    124,
+    129
+   ],
+   "anchor": [
+    68,
+    126
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small2@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small2@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small3@3": {
+   "category": "prop",
+   "size": [
+    118,
+    129
+   ],
+   "anchor": [
+    64,
+    127
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small3@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small3@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small4@3": {
+   "category": "prop",
+   "size": [
+    122,
+    131
+   ],
+   "anchor": [
+    68,
+    129
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small4@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small4@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small5@3": {
+   "category": "prop",
+   "size": [
+    170,
+    137
+   ],
+   "anchor": [
+    108,
+    136
+   ],
+   "footprint": [
+    1.5,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small5@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small5@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small6@3": {
+   "category": "prop",
+   "size": [
+    161,
+    97
+   ],
+   "anchor": [
+    109,
+    96
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small6@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small6@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small7@3": {
+   "category": "prop",
+   "size": [
+    164,
+    92
+   ],
+   "anchor": [
+    119,
+    90
+   ],
+   "footprint": [
+    1.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small7@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small7@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small8@3": {
+   "category": "prop",
+   "size": [
+    159,
+    92
+   ],
+   "anchor": [
+    115,
+    91
+   ],
+   "footprint": [
+    1.5,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small8@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small8@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small9@3": {
+   "category": "prop",
+   "size": [
+    160,
+    96
+   ],
+   "anchor": [
+    109,
+    94
+   ],
+   "footprint": [
+    1.5,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small9@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small9@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small10@3": {
+   "category": "prop",
+   "size": [
+    132,
+    132
+   ],
+   "anchor": [
+    69,
+    130
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small10@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small10@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small11@3": {
+   "category": "prop",
+   "size": [
+    132,
+    134
+   ],
+   "anchor": [
+    74,
+    133
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small11@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small11@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small12@3": {
+   "category": "prop",
+   "size": [
+    113,
+    171
+   ],
+   "anchor": [
+    65,
+    170
+   ],
+   "footprint": [
+    0.9,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small12@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small12@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small13@3": {
+   "category": "prop",
+   "size": [
+    128,
+    93
+   ],
+   "anchor": [
+    70,
+    91
+   ],
+   "footprint": [
+    0.9,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small13@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small13@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small14@3": {
+   "category": "prop",
+   "size": [
+    134,
+    95
+   ],
+   "anchor": [
+    72,
+    93
+   ],
+   "footprint": [
+    1.0,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small14@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small14@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small15@3": {
+   "category": "prop",
+   "size": [
+    225,
+    139
+   ],
+   "anchor": [
+    172,
+    135
+   ],
+   "footprint": [
+    2.3,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small15@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small15@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small16@3": {
+   "category": "prop",
+   "size": [
+    226,
+    145
+   ],
+   "anchor": [
+    175,
+    143
+   ],
+   "footprint": [
+    2.4,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small16@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small16@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_tree10@3": {
+   "category": "prop",
+   "size": [
+    93,
+    143
+   ],
+   "anchor": [
+    46,
+    142
+   ],
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_tree10@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_tree10@3.webp",
+   "kind": "tree"
+  },
+  "cidade_alta_small17@3": {
+   "category": "prop",
+   "size": [
+    91,
+    135
+   ],
+   "anchor": [
+    34,
+    133
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small17@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small17@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small18@3": {
+   "category": "prop",
+   "size": [
+    100,
+    125
+   ],
+   "anchor": [
+    43,
+    124
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small18@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small18@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small19@3": {
+   "category": "prop",
+   "size": [
+    122,
+    139
+   ],
+   "anchor": [
+    52,
+    138
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small19@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small19@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small20@3": {
+   "category": "prop",
+   "size": [
+    133,
+    99
+   ],
+   "anchor": [
+    19,
+    97
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small20@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small20@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small21@3": {
+   "category": "prop",
+   "size": [
+    123,
+    99
+   ],
+   "anchor": [
+    20,
+    98
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small21@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small21@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small22@3": {
+   "category": "prop",
+   "size": [
+    121,
+    96
+   ],
+   "anchor": [
+    17,
+    94
+   ],
+   "footprint": [
+    0.6,
+    1.4
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small22@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small22@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small23@3": {
+   "category": "prop",
+   "size": [
+    391,
+    145
+   ],
+   "anchor": [
+    310,
+    143
+   ],
+   "footprint": [
+    3.0,
+    1.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small23@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small23@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small24@3": {
+   "category": "prop",
+   "size": [
+    350,
+    134
+   ],
+   "anchor": [
+    315,
+    133
+   ],
+   "footprint": [
+    3.0,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small24@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small24@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small25@3": {
+   "category": "prop",
+   "size": [
+    112,
+    92
+   ],
+   "anchor": [
+    49,
+    90
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small25@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small25@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small26@3": {
+   "category": "prop",
+   "size": [
+    91,
+    89
+   ],
+   "anchor": [
+    35,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small26@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small26@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small27@3": {
+   "category": "prop",
+   "size": [
+    82,
+    78
+   ],
+   "anchor": [
+    33,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small27@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small27@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small28@3": {
+   "category": "prop",
+   "size": [
+    94,
+    83
+   ],
+   "anchor": [
+    49,
+    81
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small28@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small28@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small29@3": {
+   "category": "prop",
+   "size": [
+    143,
+    95
+   ],
+   "anchor": [
+    25,
+    93
+   ],
+   "footprint": [
+    0.6,
+    1.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small29@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small29@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small30@3": {
+   "category": "prop",
+   "size": [
+    136,
+    94
+   ],
+   "anchor": [
+    26,
+    92
+   ],
+   "footprint": [
+    0.6,
+    1.5
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small30@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small30@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small31@3": {
+   "category": "prop",
+   "size": [
+    91,
+    78
+   ],
+   "anchor": [
+    33,
+    76
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small31@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small31@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small32@3": {
+   "category": "prop",
+   "size": [
+    43,
+    53
+   ],
+   "anchor": [
+    14,
+    52
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small32@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small32@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small33@3": {
+   "category": "prop",
+   "size": [
+    79,
+    83
+   ],
+   "anchor": [
+    34,
+    78
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small33@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small33@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small34@3": {
+   "category": "prop",
+   "size": [
+    220,
+    94
+   ],
+   "anchor": [
+    33,
+    92
+   ],
+   "footprint": [
+    0.6,
+    2.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small34@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small34@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small35@3": {
+   "category": "prop",
+   "size": [
+    76,
+    73
+   ],
+   "anchor": [
+    36,
+    70
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small35@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small35@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small36@3": {
+   "category": "prop",
+   "size": [
+    112,
+    97
+   ],
+   "anchor": [
+    41,
+    93
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small36@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small36@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small37@3": {
+   "category": "prop",
+   "size": [
+    116,
+    94
+   ],
+   "anchor": [
+    43,
+    92
+   ],
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small37@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small37@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small38@3": {
+   "category": "prop",
+   "size": [
+    131,
+    116
+   ],
+   "anchor": [
+    62,
+    114
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small38@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small38@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small39@3": {
+   "category": "prop",
+   "size": [
+    130,
+    116
+   ],
+   "anchor": [
+    61,
+    114
+   ],
+   "footprint": [
+    0.8,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small39@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small39@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small40@3": {
+   "category": "prop",
+   "size": [
+    78,
+    183
+   ],
+   "anchor": [
+    8,
+    181
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small40@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small40@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small41@3": {
+   "category": "prop",
+   "size": [
+    76,
+    184
+   ],
+   "anchor": [
+    7,
+    182
+   ],
+   "footprint": [
+    0.6,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small41@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small41@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small42@3": {
+   "category": "prop",
+   "size": [
+    115,
+    146
+   ],
+   "anchor": [
+    55,
+    144
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small42@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small42@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small43@3": {
+   "category": "prop",
+   "size": [
+    111,
+    145
+   ],
+   "anchor": [
+    57,
+    144
+   ],
+   "footprint": [
+    0.8,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small43@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small43@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small44@3": {
+   "category": "prop",
+   "size": [
+    117,
+    144
+   ],
+   "anchor": [
+    65,
+    143
+   ],
+   "footprint": [
+    0.9,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small44@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small44@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small45@3": {
+   "category": "prop",
+   "size": [
+    88,
+    103
+   ],
+   "anchor": [
+    31,
+    102
+   ],
+   "footprint": [
+    0.6,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small45@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small45@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small46@3": {
+   "category": "prop",
+   "size": [
+    88,
+    109
+   ],
+   "anchor": [
+    49,
+    107
+   ],
+   "footprint": [
+    0.7,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small46@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small46@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small47@3": {
+   "category": "prop",
+   "size": [
+    72,
+    106
+   ],
+   "anchor": [
+    20,
+    105
+   ],
+   "footprint": [
+    0.6,
+    0.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small47@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small47@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small48@3": {
+   "category": "prop",
+   "size": [
+    115,
+    97
+   ],
+   "anchor": [
+    48,
+    93
+   ],
+   "footprint": [
+    0.7,
+    0.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small48@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small48@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small49@3": {
+   "category": "prop",
+   "size": [
+    110,
+    92
+   ],
+   "anchor": [
+    49,
+    89
+   ],
+   "footprint": [
+    0.7,
+    0.8
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small49@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small49@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small50@3": {
+   "category": "prop",
+   "size": [
+    56,
+    89
+   ],
+   "anchor": [
+    21,
+    88
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small50@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small50@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small51@3": {
+   "category": "prop",
+   "size": [
+    57,
+    91
+   ],
+   "anchor": [
+    16,
+    89
+   ],
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small51@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small51@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_small52@3": {
+   "category": "prop",
+   "size": [
+    190,
+    103
+   ],
+   "anchor": [
+    37,
+    100
+   ],
+   "footprint": [
+    0.6,
+    2.1
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_small52@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_small52@3.webp",
+   "kind": "small"
+  },
+  "cidade_alta_igreja@1": {
+   "category": "building",
+   "size": [
+    767,
+    520
+   ],
+   "anchor": [
+    239,
+    515
+   ],
+   "footprint": [
+    6.0,
+    13.2
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_igreja@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_igreja@1.webp",
+   "name": "Sé Catedral de Nossa Senhora da Conceição",
+   "venue": "igreja"
+  },
+  "cidade_alta_governo@1": {
+   "category": "building",
+   "size": [
+    807,
+    454
+   ],
+   "anchor": [
+    207,
+    449
+   ],
+   "footprint": [
+    5.2,
+    15.0
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_governo@1",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_governo@1.webp",
+   "name": "Palácio do Governo Provincial do Huambo",
+   "venue": "governo"
+  },
+  "cidade_alta_igreja@2": {
+   "category": "building",
+   "size": [
+    832,
+    525
+   ],
+   "anchor": [
+    285,
+    523
+   ],
+   "footprint": [
+    7.1,
+    13.7
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_igreja@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_igreja@2.webp",
+   "name": "Sé Catedral de Nossa Senhora da Conceição",
+   "venue": "igreja"
+  },
+  "cidade_alta_governo@2": {
+   "category": "building",
+   "size": [
+    853,
+    442
+   ],
+   "anchor": [
+    618,
+    437
+   ],
+   "footprint": [
+    15.5,
+    5.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_governo@2",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_governo@2.webp",
+   "name": "Palácio do Governo Provincial do Huambo",
+   "venue": "governo"
+  },
+  "cidade_alta_igreja@3": {
+   "category": "building",
+   "size": [
+    819,
+    500
+   ],
+   "anchor": [
+    542,
+    497
+   ],
+   "footprint": [
+    13.6,
+    6.9
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_igreja@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_igreja@3.webp",
+   "name": "Sé Catedral de Nossa Senhora da Conceição",
+   "venue": "igreja"
+  },
+  "cidade_alta_governo@3": {
+   "category": "building",
+   "size": [
+    722,
+    418
+   ],
+   "anchor": [
+    378,
+    414
+   ],
+   "footprint": [
+    9.5,
+    8.6
+   ],
+   "scale": 1.6,
+   "out": "cidade_alta_governo@3",
+   "kit": "kit_cidade_alta",
+   "path": "res://assets/kits/kit_cidade_alta/cidade_alta_governo@3.webp",
+   "name": "Palácio do Governo Provincial do Huambo",
+   "venue": "governo"
   }
  },
- "version": "5026dd818530"
+ "version": "3879628c0fbf"
 }

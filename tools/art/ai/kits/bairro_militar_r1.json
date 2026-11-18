@@ -1,0 +1,747 @@
+{
+ "id": "kit_bairro_militar",
+ "cuts": "raw/kit_bairro_militar_r1_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "bairro_militar_escola@1",
+   "name": "Escola Primária do Bairro Militar",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "bairro_militar_saude@1",
+   "name": "Centro de Saúde do Bairro Militar",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "bairro_militar_igreja@1",
+   "name": "Igreja Metodista do Bairro Militar",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "bairro_militar_mercado@1",
+   "name": "Mercado do Bairro Militar",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "bairro_militar_cantina@1",
+   "name": "Cantina do Quartel",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "bairro_militar_farmacia@1",
+   "name": "Farmácia Bairro Militar",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "bairro_militar_administracao@1",
+   "name": "Administração do Bairro Militar",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "bairro_militar_esquadra@1",
+   "name": "Comando da Polícia do Bairro Militar",
+   "cat": "building",
+   "venue": "esquadra",
+   "n": 7
+  },
+  {
+   "id": "bairro_militar_saude_8@1",
+   "name": "Hospital Militar do Huambo",
+   "cat": "building",
+   "venue": "saude",
+   "n": 8
+  },
+  {
+   "id": "bairro_militar_padaria@1",
+   "name": "Padaria do Bairro Militar",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 9
+  },
+  {
+   "id": "bairro_militar_apartamentos@1",
+   "name": "Prédio Bairro Militar",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "bairro_militar_casa1@1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "bairro_militar_casa2@1",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "bairro_militar_casa3@1",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "bairro_militar_casa4@1",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "bairro_militar_casa5@1",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "bairro_militar_casa6@1",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "bairro_militar_casa7@1",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "bairro_militar_small1@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 18
+  },
+  {
+   "id": "bairro_militar_tree1@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "bairro_militar_lamp1@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 20
+  },
+  {
+   "id": "bairro_militar_pole1@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 39
+  },
+  {
+   "id": "bairro_militar_lamp2@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 40
+  },
+  {
+   "id": "bairro_militar_lamp3@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 42
+  },
+  {
+   "id": "bairro_militar_lamp4@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 44
+  },
+  {
+   "id": "bairro_militar_lamp5@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 45
+  },
+  {
+   "id": "bairro_militar_pole2@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 21
+  },
+  {
+   "id": "bairro_militar_pole3@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 22
+  },
+  {
+   "id": "bairro_militar_pole4@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 23
+  },
+  {
+   "id": "bairro_militar_pole5@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 24
+  },
+  {
+   "id": "bairro_militar_stall1@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 53
+  },
+  {
+   "id": "bairro_militar_tree2@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "bairro_militar_stall2@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 27
+  },
+  {
+   "id": "bairro_militar_stall3@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 28
+  },
+  {
+   "id": "bairro_militar_stall4@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 29
+  },
+  {
+   "id": "bairro_militar_stall5@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 30
+  },
+  {
+   "id": "bairro_militar_small2@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 31
+  },
+  {
+   "id": "bairro_militar_small3@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 32
+  },
+  {
+   "id": "bairro_militar_small4@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 33
+  },
+  {
+   "id": "bairro_militar_tree3@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 34
+  },
+  {
+   "id": "bairro_militar_small5@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "bairro_militar_small6@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 35
+  },
+  {
+   "id": "bairro_militar_tree4@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 36
+  },
+  {
+   "id": "bairro_militar_tree5@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 37
+  },
+  {
+   "id": "bairro_militar_tree6@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 38
+  },
+  {
+   "id": "bairro_militar_small7@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 41
+  },
+  {
+   "id": "bairro_militar_small8@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 43
+  },
+  {
+   "id": "bairro_militar_small9@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 46
+  },
+  {
+   "id": "bairro_militar_small10@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "bairro_militar_small11@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 47
+  },
+  {
+   "id": "bairro_militar_small12@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 48
+  },
+  {
+   "id": "bairro_militar_small13@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 49
+  },
+  {
+   "id": "bairro_militar_small14@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 50
+  },
+  {
+   "id": "bairro_militar_small15@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "bairro_militar_small16@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "bairro_militar_small17@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "bairro_militar_small18@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "bairro_militar_small19@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 26
+  },
+  {
+   "id": "bairro_militar_small20@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "bairro_militar_tree7@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 58
+  },
+  {
+   "id": "bairro_militar_small21@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "bairro_militar_small22@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "bairro_militar_small23@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "bairro_militar_small24@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "bairro_militar_small25@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "bairro_militar_small26@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "bairro_militar_small27@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "bairro_militar_small28@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "bairro_militar_small29@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "bairro_militar_small30@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "bairro_militar_small31@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "bairro_militar_small32@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "bairro_militar_small33@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "bairro_militar_small34@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "bairro_militar_small35@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "bairro_militar_small36@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "bairro_militar_small37@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "bairro_militar_small38@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "bairro_militar_small39@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "bairro_militar_small40@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "bairro_militar_small41@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "bairro_militar_small42@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "bairro_militar_small43@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "bairro_militar_small44@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "bairro_militar_small45@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "bairro_militar_small46@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "bairro_militar_small47@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "bairro_militar_small48@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "bairro_militar_small49@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "bairro_militar_small50@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "bairro_militar_small51@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "bairro_militar_small52@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "bairro_militar_small53@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "bairro_militar_small54@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "bairro_militar_small55@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "bairro_militar_small56@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "bairro_militar_small57@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "bairro_militar_small58@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "bairro_militar_small59@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "bairro_militar_small60@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "bairro_militar_small61@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "bairro_militar_small62@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "bairro_militar_small63@1",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_bairro_militar_r1_cut/zona_bairro_militar_small63.png"
+  },
+  {
+   "id": "bairro_militar_small64@1",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_bairro_militar_r1_cut/zona_bairro_militar_small64.png"
+  },
+  {
+   "id": "bairro_militar_small65@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  },
+  {
+   "id": "bairro_militar_small66@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 104
+  },
+  {
+   "id": "bairro_militar_small67@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 105
+  },
+  {
+   "id": "bairro_militar_small68@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 106
+  }
+ ]
+}

@@ -1,0 +1,710 @@
+{
+ "id": "kit_cacilhas",
+ "cuts": "raw/kit_cacilhas_r1_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "cacilhas_escola@1",
+   "name": "Escola Primária de Cacilhas",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "cacilhas_saude@1",
+   "name": "Centro de Saúde de Cacilhas",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "cacilhas_igreja@1",
+   "name": "Igreja Adventista de Cacilhas",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "cacilhas_mercado@1",
+   "name": "Mercado de Cacilhas",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "cacilhas_cantina@1",
+   "name": "Cantina da Mamã Rosa",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "cacilhas_farmacia@1",
+   "name": "Farmácia Cacilhas",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "cacilhas_administracao@1",
+   "name": "Administração de Cacilhas",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "cacilhas_padaria@1",
+   "name": "Padaria Cacilhas",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 7
+  },
+  {
+   "id": "cacilhas_hotel@1",
+   "name": "Hospedaria Cacilhas",
+   "cat": "building",
+   "venue": "hotel",
+   "n": 8
+  },
+  {
+   "id": "cacilhas_esquadra@1",
+   "name": "Esquadra Policial de Cacilhas",
+   "cat": "building",
+   "venue": "esquadra",
+   "n": 9
+  },
+  {
+   "id": "cacilhas_apartamentos@1",
+   "name": "Prédio Cacilhas",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "cacilhas_casa1@1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "cacilhas_casa2@1",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "cacilhas_casa3@1",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "cacilhas_casa4@1",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "cacilhas_casa5@1",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "cacilhas_casa6@1",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "cacilhas_casa7@1",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "cacilhas_tree1@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "cacilhas_tree2@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 40
+  },
+  {
+   "id": "cacilhas_lamp1@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 21
+  },
+  {
+   "id": "cacilhas_pole1@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 22
+  },
+  {
+   "id": "cacilhas_pole2@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 23
+  },
+  {
+   "id": "cacilhas_pole3@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 24
+  },
+  {
+   "id": "cacilhas_lamp2@1",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 25
+  },
+  {
+   "id": "cacilhas_pole4@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 26
+  },
+  {
+   "id": "cacilhas_pole5@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 27
+  },
+  {
+   "id": "cacilhas_pole6@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "cacilhas_pole7@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "cacilhas_vehicle1@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 18
+  },
+  {
+   "id": "cacilhas_small1@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 19
+  },
+  {
+   "id": "cacilhas_vehicle2@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 30
+  },
+  {
+   "id": "cacilhas_small2@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 31
+  },
+  {
+   "id": "cacilhas_vehicle3@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 32
+  },
+  {
+   "id": "cacilhas_vehicle4@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 33
+  },
+  {
+   "id": "cacilhas_vehicle5@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 34
+  },
+  {
+   "id": "cacilhas_vehicle6@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 35
+  },
+  {
+   "id": "cacilhas_vehicle7@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 36
+  },
+  {
+   "id": "cacilhas_vehicle8@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 37
+  },
+  {
+   "id": "cacilhas_tree3@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 38
+  },
+  {
+   "id": "cacilhas_stall1@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 39
+  },
+  {
+   "id": "cacilhas_small3@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 41
+  },
+  {
+   "id": "cacilhas_stall2@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 42
+  },
+  {
+   "id": "cacilhas_stall3@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 58
+  },
+  {
+   "id": "cacilhas_stall4@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 60
+  },
+  {
+   "id": "cacilhas_small4@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "cacilhas_small5@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 43
+  },
+  {
+   "id": "cacilhas_small6@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 44
+  },
+  {
+   "id": "cacilhas_small7@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 45
+  },
+  {
+   "id": "cacilhas_small8@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 46
+  },
+  {
+   "id": "cacilhas_small9@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 47
+  },
+  {
+   "id": "cacilhas_small10@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 48
+  },
+  {
+   "id": "cacilhas_small11@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 49
+  },
+  {
+   "id": "cacilhas_small12@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 50
+  },
+  {
+   "id": "cacilhas_small13@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "cacilhas_small14@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "cacilhas_small15@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "cacilhas_small16@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "cacilhas_tree4@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 55
+  },
+  {
+   "id": "cacilhas_small17@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "cacilhas_small18@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "cacilhas_small19@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "cacilhas_small20@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "cacilhas_small21@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "cacilhas_small22@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "cacilhas_tree5@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 65
+  },
+  {
+   "id": "cacilhas_small23@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "cacilhas_tree6@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 67
+  },
+  {
+   "id": "cacilhas_small24@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "cacilhas_small25@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "cacilhas_small26@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "cacilhas_small27@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "cacilhas_small28@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "cacilhas_small29@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "cacilhas_small30@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "cacilhas_small31@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "cacilhas_small32@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "cacilhas_small33@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "cacilhas_small34@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "cacilhas_small35@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "cacilhas_small36@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "cacilhas_small37@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "cacilhas_small38@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "cacilhas_small39@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "cacilhas_small40@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "cacilhas_small41@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "cacilhas_small42@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "cacilhas_small43@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "cacilhas_small44@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "cacilhas_small45@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "cacilhas_small46@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "cacilhas_small47@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "cacilhas_small48@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "cacilhas_small49@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "cacilhas_small50@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "cacilhas_tree7@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 95
+  },
+  {
+   "id": "cacilhas_small51@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "cacilhas_small52@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "cacilhas_small53@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "cacilhas_small54@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "cacilhas_small55@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "cacilhas_small56@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "cacilhas_small57@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  }
+ ]
+}

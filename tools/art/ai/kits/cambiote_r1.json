@@ -1,0 +1,743 @@
+{
+ "id": "kit_cambiote",
+ "cuts": "raw/kit_cambiote_r1_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "cambiote_escola@1",
+   "name": "Escola Primária do Cambiote",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "cambiote_saude@1",
+   "name": "Centro de Saúde do Cambiote",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "cambiote_igreja@1",
+   "name": "Igreja Evangélica do Cambiote",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 4
+  },
+  {
+   "id": "cambiote_mercado@1",
+   "name": "Mercado do Cambiote",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 2
+  },
+  {
+   "id": "cambiote_cantina@1",
+   "name": "Cantina do Cambiote",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 3
+  },
+  {
+   "id": "cambiote_farmacia@1",
+   "name": "Farmácia Cambiote",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "cambiote_administracao@1",
+   "name": "Administração do Cambiote",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "cambiote_churrasqueira@1",
+   "name": "Churrasqueira Cambiote",
+   "cat": "building",
+   "venue": "churrasqueira",
+   "n": 7
+  },
+  {
+   "id": "cambiote_esquadra@1",
+   "name": "Posto Policial do Cambiote",
+   "cat": "building",
+   "venue": "esquadra",
+   "n": 8
+  },
+  {
+   "id": "cambiote_apartamentos@1",
+   "name": "Prédio Cambiote",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 14
+  },
+  {
+   "id": "cambiote_casa1@1",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 9
+  },
+  {
+   "id": "cambiote_casa2@1",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 10
+  },
+  {
+   "id": "cambiote_casa3@1",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "cambiote_casa4@1",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "cambiote_casa5@1",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "cambiote_casa6@1",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "cambiote_casa7@1",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "cambiote_casa8@1",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "cambiote_casa9@1",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa",
+   "n": 18
+  },
+  {
+   "id": "cambiote_tree1@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "cambiote_tree2@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "cambiote_small1@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 21
+  },
+  {
+   "id": "cambiote_small2@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 22
+  },
+  {
+   "id": "cambiote_small3@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 23
+  },
+  {
+   "id": "cambiote_small4@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 39
+  },
+  {
+   "id": "cambiote_tree3@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "cambiote_tree4@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "cambiote_tree5@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "cambiote_tree6@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 27
+  },
+  {
+   "id": "cambiote_pole1@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "cambiote_pole2@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "cambiote_pole3@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "cambiote_pole4@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "cambiote_small5@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 32
+  },
+  {
+   "id": "cambiote_pole5@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "cambiote_pole6@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "cambiote_pole7@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "cambiote_pole8@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 36
+  },
+  {
+   "id": "cambiote_pole9@1",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 37
+  },
+  {
+   "id": "cambiote_vehicle1@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "file": "raw/kit_cambiote_r1_cut/zona_cambiote_vehicle1.png"
+  },
+  {
+   "id": "cambiote_vehicle2@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "file": "raw/kit_cambiote_r1_cut/zona_cambiote_vehicle2.png"
+  },
+  {
+   "id": "cambiote_vehicle3@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "cambiote_vehicle4@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "cambiote_vehicle5@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "cambiote_vehicle6@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "cambiote_vehicle7@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "cambiote_vehicle8@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 45
+  },
+  {
+   "id": "cambiote_vehicle9@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 46
+  },
+  {
+   "id": "cambiote_vehicle10@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 47
+  },
+  {
+   "id": "cambiote_vehicle11@1",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 48
+  },
+  {
+   "id": "cambiote_stall1@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 83
+  },
+  {
+   "id": "cambiote_stall2@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "cambiote_stall3@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "cambiote_small6@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "cambiote_stall4@1",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 52
+  },
+  {
+   "id": "cambiote_tree7@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 53
+  },
+  {
+   "id": "cambiote_small7@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "cambiote_tree8@1",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 55
+  },
+  {
+   "id": "cambiote_small8@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "cambiote_small9@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "cambiote_small10@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "cambiote_small11@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "cambiote_small12@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "cambiote_small13@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "cambiote_small14@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "cambiote_small15@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "cambiote_small16@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "cambiote_small17@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "cambiote_small18@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "cambiote_small19@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "cambiote_small20@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "cambiote_small21@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "cambiote_small22@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "cambiote_small23@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "cambiote_small24@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "cambiote_small25@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "cambiote_small26@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "cambiote_small27@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "cambiote_small28@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "cambiote_small29@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "cambiote_small30@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "cambiote_small31@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "cambiote_small32@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "cambiote_small33@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "cambiote_small34@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "cambiote_small35@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "cambiote_small36@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "cambiote_small37@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "cambiote_small38@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "cambiote_small39@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "cambiote_small40@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "cambiote_small41@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "cambiote_small42@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "cambiote_small43@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "cambiote_small44@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "cambiote_small45@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "cambiote_small46@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "cambiote_small47@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "cambiote_small48@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "cambiote_small49@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "cambiote_small50@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "cambiote_small51@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "cambiote_small52@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "cambiote_small53@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "cambiote_small54@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  },
+  {
+   "id": "cambiote_small55@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 104
+  },
+  {
+   "id": "cambiote_small56@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 105
+  },
+  {
+   "id": "cambiote_small57@1",
+   "cat": "prop",
+   "kind": "small",
+   "n": 106
+  }
+ ]
+}

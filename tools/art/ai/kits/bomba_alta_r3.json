@@ -1,0 +1,755 @@
+{
+ "id": "kit_bomba_alta",
+ "cuts": "raw/kit_bomba_alta_r3_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "bomba_alta_escola@3",
+   "name": "Escola Primária da Bomba Alta",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "bomba_alta_saude@3",
+   "name": "Centro de Saúde da Bomba Alta",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "bomba_alta_igreja@3",
+   "name": "Igreja Adventista da Bomba Alta",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "bomba_alta_mercado@3",
+   "name": "Mercado da Bomba Alta",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "bomba_alta_cantina@3",
+   "name": "Cantina da Bomba Alta",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "bomba_alta_farmacia@3",
+   "name": "Farmácia Bomba Alta",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "bomba_alta_administracao@3",
+   "name": "Administração da Bomba Alta",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "bomba_alta_padaria@3",
+   "name": "Padaria Bomba Alta",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 7
+  },
+  {
+   "id": "bomba_alta_churrasqueira@3",
+   "name": "Churrasqueira Bomba Alta",
+   "cat": "building",
+   "venue": "churrasqueira",
+   "n": 8
+  },
+  {
+   "id": "bomba_alta_apartamentos@3",
+   "name": "Prédio Bomba Alta",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 9
+  },
+  {
+   "id": "bomba_alta_casa1@3",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 10
+  },
+  {
+   "id": "bomba_alta_casa2@3",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "bomba_alta_casa3@3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "bomba_alta_casa4@3",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "bomba_alta_casa5@3",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "bomba_alta_casa6@3",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "bomba_alta_casa7@3",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "bomba_alta_casa8@3",
+   "name": "Casa 8",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "bomba_alta_casa9@3",
+   "name": "Casa 9",
+   "cat": "building",
+   "venue": "casa",
+   "n": 18
+  },
+  {
+   "id": "bomba_alta_tree1@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "bomba_alta_tree2@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "bomba_alta_tree3@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "bomba_alta_tree4@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "bomba_alta_tree5@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "bomba_alta_tree6@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "bomba_alta_tree7@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "bomba_alta_tree8@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "bomba_alta_tree9@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 27
+  },
+  {
+   "id": "bomba_alta_tree10@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 28
+  },
+  {
+   "id": "bomba_alta_lamp1@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "bomba_alta_lamp2@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "bomba_alta_lamp3@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "bomba_alta_lamp4@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "bomba_alta_lamp5@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "bomba_alta_lamp6@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "bomba_alta_pole1@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "bomba_alta_pole2@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 36
+  },
+  {
+   "id": "bomba_alta_pole3@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 37
+  },
+  {
+   "id": "bomba_alta_pole4@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 38
+  },
+  {
+   "id": "bomba_alta_vehicle1@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 39
+  },
+  {
+   "id": "bomba_alta_vehicle2@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 40
+  },
+  {
+   "id": "bomba_alta_vehicle3@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 41
+  },
+  {
+   "id": "bomba_alta_vehicle4@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "bomba_alta_vehicle5@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "bomba_alta_vehicle6@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "bomba_alta_vehicle7@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 45
+  },
+  {
+   "id": "bomba_alta_vehicle8@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 46
+  },
+  {
+   "id": "bomba_alta_vehicle9@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 47
+  },
+  {
+   "id": "bomba_alta_stall1@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 48
+  },
+  {
+   "id": "bomba_alta_stall2@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "bomba_alta_stall3@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "bomba_alta_tree11@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 51
+  },
+  {
+   "id": "bomba_alta_stall4@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 52
+  },
+  {
+   "id": "bomba_alta_stall5@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 53
+  },
+  {
+   "id": "bomba_alta_small1@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "bomba_alta_small2@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "bomba_alta_small3@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "bomba_alta_small4@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "bomba_alta_small5@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "bomba_alta_small6@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "bomba_alta_small7@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "bomba_alta_small8@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "bomba_alta_small9@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "bomba_alta_small10@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "bomba_alta_small11@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "bomba_alta_small12@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "bomba_alta_small13@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "bomba_alta_small14@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "bomba_alta_small15@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "bomba_alta_small16@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "bomba_alta_tree12@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 70
+  },
+  {
+   "id": "bomba_alta_tree13@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 71
+  },
+  {
+   "id": "bomba_alta_small17@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "bomba_alta_small18@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "bomba_alta_small19@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "bomba_alta_small20@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "bomba_alta_small21@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "bomba_alta_small22@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "bomba_alta_small23@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "bomba_alta_small24@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "bomba_alta_small25@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "bomba_alta_small26@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "bomba_alta_small27@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "bomba_alta_small28@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "bomba_alta_small29@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "bomba_alta_small30@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "bomba_alta_small31@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "bomba_alta_small32@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "bomba_alta_small33@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "bomba_alta_small34@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "bomba_alta_small35@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "bomba_alta_small36@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "bomba_alta_small37@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "bomba_alta_small38@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "bomba_alta_small39@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "bomba_alta_small40@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "bomba_alta_small41@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "bomba_alta_small42@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "bomba_alta_small43@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "bomba_alta_small44@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "bomba_alta_small45@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "bomba_alta_small46@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "bomba_alta_small47@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "bomba_alta_small48@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  },
+  {
+   "id": "bomba_alta_small49@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 104
+  }
+ ]
+}

@@ -1,0 +1,728 @@
+{
+ "id": "kit_sao_pedro",
+ "cuts": "raw/kit_sao_pedro_r3_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "sao_pedro_escola@3",
+   "name": "Escola Primária de São Pedro",
+   "cat": "building",
+   "venue": "escola",
+   "n": 2
+  },
+  {
+   "id": "sao_pedro_saude@3",
+   "name": "Centro de Saúde de São Pedro",
+   "cat": "building",
+   "venue": "saude",
+   "n": 0
+  },
+  {
+   "id": "sao_pedro_igreja@3",
+   "name": "Igreja de São Pedro",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 3
+  },
+  {
+   "id": "sao_pedro_mercado@3",
+   "name": "Mercado de São Pedro",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 1
+  },
+  {
+   "id": "sao_pedro_cantina@3",
+   "name": "Cantina da Tia Joana",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "sao_pedro_farmacia@3",
+   "name": "Farmácia São Pedro",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "sao_pedro_administracao@3",
+   "name": "Administração de São Pedro",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "sao_pedro_esquadra@3",
+   "name": "Esquadra Policial de São Pedro",
+   "cat": "building",
+   "venue": "esquadra",
+   "n": 7
+  },
+  {
+   "id": "sao_pedro_padaria@3",
+   "name": "Padaria São Pedro",
+   "cat": "building",
+   "venue": "padaria",
+   "n": 8
+  },
+  {
+   "id": "sao_pedro_correios@3",
+   "name": "Correios de São Pedro",
+   "cat": "building",
+   "venue": "correios",
+   "n": 9
+  },
+  {
+   "id": "sao_pedro_apartamentos@3",
+   "name": "Prédio São Pedro",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "sao_pedro_casa1@3",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "n": 11
+  },
+  {
+   "id": "sao_pedro_casa2@3",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "n": 12
+  },
+  {
+   "id": "sao_pedro_casa3@3",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "n": 13
+  },
+  {
+   "id": "sao_pedro_casa4@3",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "n": 14
+  },
+  {
+   "id": "sao_pedro_casa5@3",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "n": 15
+  },
+  {
+   "id": "sao_pedro_casa6@3",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "n": 16
+  },
+  {
+   "id": "sao_pedro_casa7@3",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 17
+  },
+  {
+   "id": "sao_pedro_tree1@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 18
+  },
+  {
+   "id": "sao_pedro_small1@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 19
+  },
+  {
+   "id": "sao_pedro_tree2@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 20
+  },
+  {
+   "id": "sao_pedro_tree3@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 21
+  },
+  {
+   "id": "sao_pedro_tree4@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 22
+  },
+  {
+   "id": "sao_pedro_tree5@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 23
+  },
+  {
+   "id": "sao_pedro_tree6@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 24
+  },
+  {
+   "id": "sao_pedro_tree7@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 25
+  },
+  {
+   "id": "sao_pedro_tree8@3",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 26
+  },
+  {
+   "id": "sao_pedro_lamp1@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 27
+  },
+  {
+   "id": "sao_pedro_lamp2@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 28
+  },
+  {
+   "id": "sao_pedro_lamp3@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 29
+  },
+  {
+   "id": "sao_pedro_lamp4@3",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 30
+  },
+  {
+   "id": "sao_pedro_pole1@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 31
+  },
+  {
+   "id": "sao_pedro_pole2@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 32
+  },
+  {
+   "id": "sao_pedro_pole3@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 33
+  },
+  {
+   "id": "sao_pedro_pole4@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 34
+  },
+  {
+   "id": "sao_pedro_pole5@3",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 35
+  },
+  {
+   "id": "sao_pedro_vehicle1@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 36
+  },
+  {
+   "id": "sao_pedro_vehicle2@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 37
+  },
+  {
+   "id": "sao_pedro_small2@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 38
+  },
+  {
+   "id": "sao_pedro_small3@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 39
+  },
+  {
+   "id": "sao_pedro_small4@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 40
+  },
+  {
+   "id": "sao_pedro_small5@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 41
+  },
+  {
+   "id": "sao_pedro_vehicle3@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 42
+  },
+  {
+   "id": "sao_pedro_vehicle4@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 43
+  },
+  {
+   "id": "sao_pedro_vehicle5@3",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 44
+  },
+  {
+   "id": "sao_pedro_stall1@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 45
+  },
+  {
+   "id": "sao_pedro_stall2@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 46
+  },
+  {
+   "id": "sao_pedro_stall3@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 47
+  },
+  {
+   "id": "sao_pedro_stall4@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 48
+  },
+  {
+   "id": "sao_pedro_stall5@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 49
+  },
+  {
+   "id": "sao_pedro_stall6@3",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "sao_pedro_small6@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "sao_pedro_small7@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "sao_pedro_small8@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "sao_pedro_small9@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "sao_pedro_small10@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "sao_pedro_small11@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "sao_pedro_small12@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "sao_pedro_small13@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "sao_pedro_small14@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 59
+  },
+  {
+   "id": "sao_pedro_small15@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 60
+  },
+  {
+   "id": "sao_pedro_small16@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 61
+  },
+  {
+   "id": "sao_pedro_small17@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "sao_pedro_small18@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "sao_pedro_small19@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 64
+  },
+  {
+   "id": "sao_pedro_small20@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "sao_pedro_small21@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "sao_pedro_small22@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "sao_pedro_small23@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "sao_pedro_small24@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "sao_pedro_small25@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "sao_pedro_small26@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "sao_pedro_small27@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "sao_pedro_small28@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "sao_pedro_small29@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "sao_pedro_small30@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "sao_pedro_small31@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "sao_pedro_small32@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "sao_pedro_small33@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "sao_pedro_small34@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "sao_pedro_small35@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "sao_pedro_small36@3",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_sao_pedro_r3_cut/zona_sao_pedro_small36.png"
+  },
+  {
+   "id": "sao_pedro_small37@3",
+   "cat": "prop",
+   "kind": "small",
+   "file": "raw/kit_sao_pedro_r3_cut/zona_sao_pedro_small37.png"
+  },
+  {
+   "id": "sao_pedro_small38@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "sao_pedro_small39@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "sao_pedro_small40@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "sao_pedro_small41@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "sao_pedro_small42@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "sao_pedro_small43@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 87
+  },
+  {
+   "id": "sao_pedro_small44@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 88
+  },
+  {
+   "id": "sao_pedro_small45@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "sao_pedro_small46@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "sao_pedro_small47@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "sao_pedro_small48@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "sao_pedro_small49@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "sao_pedro_small50@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 94
+  },
+  {
+   "id": "sao_pedro_small51@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "sao_pedro_small52@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "sao_pedro_small53@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "sao_pedro_small54@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "sao_pedro_small55@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "sao_pedro_small56@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "sao_pedro_small57@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  },
+  {
+   "id": "sao_pedro_small58@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 102
+  },
+  {
+   "id": "sao_pedro_small59@3",
+   "cat": "prop",
+   "kind": "small",
+   "n": 103
+  }
+ ]
+}

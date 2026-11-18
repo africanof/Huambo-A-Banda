@@ -1,0 +1,793 @@
+{
+ "id": "kit_bairro_academico",
+ "cuts": "raw/kit_bairro_academico_r2_cut",
+ "scale": 1.6,
+ "merge": true,
+ "items": [
+  {
+   "id": "bairro_academico_escola@2",
+   "name": "Escola Primária do Bairro Académico",
+   "cat": "building",
+   "venue": "escola",
+   "n": 0
+  },
+  {
+   "id": "bairro_academico_saude@2",
+   "name": "Centro de Saúde do Bairro Académico",
+   "cat": "building",
+   "venue": "saude",
+   "n": 1
+  },
+  {
+   "id": "bairro_academico_igreja@2",
+   "name": "Igreja Evangélica do Bairro Académico",
+   "cat": "building",
+   "venue": "igreja",
+   "n": 2
+  },
+  {
+   "id": "bairro_academico_mercado@2",
+   "name": "Mercado do Bairro Académico",
+   "cat": "building",
+   "venue": "mercado",
+   "n": 3
+  },
+  {
+   "id": "bairro_academico_cantina@2",
+   "name": "Cantina do Estudante",
+   "cat": "building",
+   "venue": "cantina",
+   "n": 4
+  },
+  {
+   "id": "bairro_academico_farmacia@2",
+   "name": "Farmácia Bairro Académico",
+   "cat": "building",
+   "venue": "farmacia",
+   "n": 5
+  },
+  {
+   "id": "bairro_academico_administracao@2",
+   "name": "Administração do Bairro Académico",
+   "cat": "building",
+   "venue": "administracao",
+   "n": 6
+  },
+  {
+   "id": "bairro_academico_escola_7@2",
+   "name": "Instituto Superior Politécnico do Huambo",
+   "cat": "building",
+   "venue": "escola",
+   "n": 7
+  },
+  {
+   "id": "bairro_academico_apartamentos@2",
+   "name": "Residência de Estudantes",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 11
+  },
+  {
+   "id": "bairro_academico_loja_telecom@2",
+   "name": "Cibercafé Académico",
+   "cat": "building",
+   "venue": "loja_telecom",
+   "n": 8
+  },
+  {
+   "id": "bairro_academico_discoteca@2",
+   "name": "Discoteca Universitária",
+   "cat": "building",
+   "venue": "discoteca",
+   "n": 9
+  },
+  {
+   "id": "bairro_academico_apartamentos_11@2",
+   "name": "Prédio Bairro Académico",
+   "cat": "building",
+   "venue": "apartamentos",
+   "n": 10
+  },
+  {
+   "id": "bairro_academico_casa1@2",
+   "name": "Casa 1",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    0,
+    379
+   ],
+   "n": 13
+  },
+  {
+   "id": "bairro_academico_casa2@2",
+   "name": "Casa 2",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    379,
+    746
+   ],
+   "n": 13
+  },
+  {
+   "id": "bairro_academico_casa3@2",
+   "name": "Casa 3",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    746,
+    1106
+   ],
+   "n": 13
+  },
+  {
+   "id": "bairro_academico_casa4@2",
+   "name": "Casa 4",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    1106,
+    1721
+   ],
+   "n": 13
+  },
+  {
+   "id": "bairro_academico_casa5@2",
+   "name": "Casa 5",
+   "cat": "building",
+   "venue": "casa",
+   "xrange": [
+    1721,
+    2041
+   ],
+   "n": 13
+  },
+  {
+   "id": "bairro_academico_casa6@2",
+   "name": "Casa 6",
+   "cat": "building",
+   "venue": "casa",
+   "file": "raw/kit_bairro_academico_r2_cut/zona_bairro_academico_casa6.png"
+  },
+  {
+   "id": "bairro_academico_casa7@2",
+   "name": "Casa 7",
+   "cat": "building",
+   "venue": "casa",
+   "n": 39
+  },
+  {
+   "id": "bairro_academico_tree1@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 14
+  },
+  {
+   "id": "bairro_academico_tree2@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 28
+  },
+  {
+   "id": "bairro_academico_tree3@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 15
+  },
+  {
+   "id": "bairro_academico_tree4@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 16
+  },
+  {
+   "id": "bairro_academico_tree5@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 30
+  },
+  {
+   "id": "bairro_academico_tree6@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 33
+  },
+  {
+   "id": "bairro_academico_tree7@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 17
+  },
+  {
+   "id": "bairro_academico_tree8@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 18
+  },
+  {
+   "id": "bairro_academico_tree9@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 35
+  },
+  {
+   "id": "bairro_academico_tree10@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 19
+  },
+  {
+   "id": "bairro_academico_lamp1@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 20
+  },
+  {
+   "id": "bairro_academico_lamp2@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 21
+  },
+  {
+   "id": "bairro_academico_lamp3@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 22
+  },
+  {
+   "id": "bairro_academico_lamp4@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 23
+  },
+  {
+   "id": "bairro_academico_lamp5@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 24
+  },
+  {
+   "id": "bairro_academico_lamp6@2",
+   "cat": "prop",
+   "kind": "lamp",
+   "light": true,
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 25
+  },
+  {
+   "id": "bairro_academico_pole1@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 26
+  },
+  {
+   "id": "bairro_academico_pole2@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 27
+  },
+  {
+   "id": "bairro_academico_pole3@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "n": 37
+  },
+  {
+   "id": "bairro_academico_pole4@2",
+   "cat": "prop",
+   "kind": "pole",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "file": "raw/kit_bairro_academico_r2_cut/zona_bairro_academico_pole4.png"
+  },
+  {
+   "id": "bairro_academico_vehicle1@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 29
+  },
+  {
+   "id": "bairro_academico_vehicle2@2",
+   "cat": "prop",
+   "kind": "vehicle",
+   "n": 31
+  },
+  {
+   "id": "bairro_academico_stall1@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 32
+  },
+  {
+   "id": "bairro_academico_stall2@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 34
+  },
+  {
+   "id": "bairro_academico_stall3@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 50
+  },
+  {
+   "id": "bairro_academico_stall4@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 36
+  },
+  {
+   "id": "bairro_academico_tree11@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 59
+  },
+  {
+   "id": "bairro_academico_stall5@2",
+   "cat": "prop",
+   "kind": "stall",
+   "n": 60
+  },
+  {
+   "id": "bairro_academico_small1@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 40
+  },
+  {
+   "id": "bairro_academico_small2@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 41
+  },
+  {
+   "id": "bairro_academico_small3@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 42
+  },
+  {
+   "id": "bairro_academico_small4@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 43
+  },
+  {
+   "id": "bairro_academico_small5@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 44
+  },
+  {
+   "id": "bairro_academico_small6@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 45
+  },
+  {
+   "id": "bairro_academico_small7@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 46
+  },
+  {
+   "id": "bairro_academico_small8@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 47
+  },
+  {
+   "id": "bairro_academico_small9@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 48
+  },
+  {
+   "id": "bairro_academico_small10@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 49
+  },
+  {
+   "id": "bairro_academico_small11@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 51
+  },
+  {
+   "id": "bairro_academico_small12@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 52
+  },
+  {
+   "id": "bairro_academico_small13@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 53
+  },
+  {
+   "id": "bairro_academico_small14@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 54
+  },
+  {
+   "id": "bairro_academico_small15@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 55
+  },
+  {
+   "id": "bairro_academico_small16@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 56
+  },
+  {
+   "id": "bairro_academico_small17@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 57
+  },
+  {
+   "id": "bairro_academico_small18@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 58
+  },
+  {
+   "id": "bairro_academico_tree12@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 61
+  },
+  {
+   "id": "bairro_academico_small19@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 62
+  },
+  {
+   "id": "bairro_academico_small20@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 63
+  },
+  {
+   "id": "bairro_academico_tree13@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 64
+  },
+  {
+   "id": "bairro_academico_small21@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 65
+  },
+  {
+   "id": "bairro_academico_small22@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 66
+  },
+  {
+   "id": "bairro_academico_small23@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 67
+  },
+  {
+   "id": "bairro_academico_small24@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 68
+  },
+  {
+   "id": "bairro_academico_small25@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 69
+  },
+  {
+   "id": "bairro_academico_small26@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 70
+  },
+  {
+   "id": "bairro_academico_small27@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 71
+  },
+  {
+   "id": "bairro_academico_small28@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 72
+  },
+  {
+   "id": "bairro_academico_small29@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 73
+  },
+  {
+   "id": "bairro_academico_small30@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 74
+  },
+  {
+   "id": "bairro_academico_small31@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 75
+  },
+  {
+   "id": "bairro_academico_small32@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 76
+  },
+  {
+   "id": "bairro_academico_small33@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 77
+  },
+  {
+   "id": "bairro_academico_small34@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 78
+  },
+  {
+   "id": "bairro_academico_small35@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 79
+  },
+  {
+   "id": "bairro_academico_small36@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 80
+  },
+  {
+   "id": "bairro_academico_small37@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 81
+  },
+  {
+   "id": "bairro_academico_small38@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 82
+  },
+  {
+   "id": "bairro_academico_small39@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 83
+  },
+  {
+   "id": "bairro_academico_small40@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 84
+  },
+  {
+   "id": "bairro_academico_small41@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 85
+  },
+  {
+   "id": "bairro_academico_small42@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 86
+  },
+  {
+   "id": "bairro_academico_tree14@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 87
+  },
+  {
+   "id": "bairro_academico_tree15@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 88
+  },
+  {
+   "id": "bairro_academico_small43@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 89
+  },
+  {
+   "id": "bairro_academico_small44@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 90
+  },
+  {
+   "id": "bairro_academico_small45@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 91
+  },
+  {
+   "id": "bairro_academico_small46@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 92
+  },
+  {
+   "id": "bairro_academico_small47@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 93
+  },
+  {
+   "id": "bairro_academico_tree16@2",
+   "cat": "prop",
+   "kind": "tree",
+   "fp": [
+    1.5,
+    1.5
+   ],
+   "n": 94
+  },
+  {
+   "id": "bairro_academico_small48@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 95
+  },
+  {
+   "id": "bairro_academico_small49@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 96
+  },
+  {
+   "id": "bairro_academico_small50@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 97
+  },
+  {
+   "id": "bairro_academico_small51@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 98
+  },
+  {
+   "id": "bairro_academico_small52@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 99
+  },
+  {
+   "id": "bairro_academico_small53@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 100
+  },
+  {
+   "id": "bairro_academico_small54@2",
+   "cat": "prop",
+   "kind": "small",
+   "n": 101
+  }
+ ]
+}
