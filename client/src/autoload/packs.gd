@@ -43,7 +43,10 @@ func _download(url: String, path: String) -> String:
 	DirAccess.make_dir_recursive_absolute(CACHE)
 	var http := HTTPRequest.new()
 	http.download_file = path + ".part"
-	http.timeout = 120.0
+	http.timeout = 180.0
+	# o pedido só lê um bloco por fotograma: com blocos de 64 KB (por omissão) um pacote de 7 MB
+	# demorava minutos num telemóvel lento a desenhar a viagem; com 4 MB são 2-3 fotogramas
+	http.download_chunk_size = 4 * 1024 * 1024
 	add_child(http)
 	var started := http.request(url)
 	if started != OK:

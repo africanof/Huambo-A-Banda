@@ -14,7 +14,6 @@ var shadows := Node2D.new()
 var objects := Node2D.new() ## personagens entram aqui (y-sort)
 var lights := Node2D.new()
 var labels := Node2D.new()
-var lamp_lights: Array[PointLight2D] = []
 ## à volta do bairro jogável desenha-se mais cidade (ruas e casas decorativas),
 ## para que o ecrã do telemóvel fique sempre cheio, sem vazio nas bordas
 const MARGIN := 64.0
@@ -55,7 +54,10 @@ func build(bairro_id: String) -> bool:
 	osm = bool(data.get("osm", false))
 	if osm:
 		_build_road_mask()
-	_build_ground()
+	if osm:
+		_build_flat_ground()
+	else:
+		_build_ground()
 	if osm:
 		_build_roads()
 	else:
@@ -68,13 +70,15 @@ func build(bairro_id: String) -> bool:
 		var fp: Array = b.fp
 		var at := Vector2(b.at[0], b.at[1])
 		var pos := Iso.to_screen(Iso.front_corner(Rect2(at, Vector2(fp[0], fp[1]))))
-		_add_object(b.id, pos)
+		_add_object(b.id, pos, Rect2(at, Vector2(fp[0], fp[1])))
 		if str(b.label) != "":
 			var o := DemoAssets.object(b.id)
 			_add_label(b.label, pos + Vector2(0, -_top(o) - 16), _is_home(b))
 	for p: Dictionary in data.props:
 		var pos := Iso.to_screen(Vector2(p.at[0], p.at[1]))
-		var o := _add_object(p.id, pos)
+		var po := DemoAssets.object(p.id)
+		var pfp := Vector2(po.footprint[0], po.footprint[1]) if po.has("footprint") else Vector2.ONE
+		var o := _add_object(p.id, pos, Rect2(Vector2(p.at[0], p.at[1]) - pfp / 2.0, pfp))
 		if o.get("light", false):
 			_add_lamp_light(pos + Vector2(0, -_top(o) * 0.86))
 		if o.has("name") and o.get("category", "") != "building":
@@ -209,6 +213,24 @@ func interior_at(p: Vector2) -> Dictionary:
 		if Rect2(r[0], r[1], r[2], r[3]).has_point(p):
 			return i
 	return {}
+
+
+## Chão de uma só cor de terreno (bairros de ruas reais): um polígono com a textura a repetir,
+## em vez de milhares de mosaicos (muito mais leve no telemóvel).
+func _build_flat_ground() -> void:
+	var m := MARGIN
+	var r := Rect2(-m, -m, size.x + 2.0 * m, size.y + 2.0 * m)
+	var p := Polygon2D.new()
+	var pts := PackedVector2Array()
+	var uv := PackedVector2Array()
+	for c: Vector2 in [r.position, Vector2(r.end.x, r.position.y), r.end, Vector2(r.position.x, r.end.y)]:
+		pts.append(Iso.to_screen(c))
+		uv.append(c * 128.0)
+	p.polygon = pts
+	p.uv = uv
+	p.texture = load("res://assets/demo/chao_%s.png" % str(data.ground[0].kind))
+	p.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	ground.add_child(p)
 
 
 ## Grelha de 1 m com ruas e passeios (só para decidir onde há casario à volta).
@@ -395,15 +417,31 @@ func _build_markings() -> void:
 
 ## Edifícios e árvores à frente da personagem ficam transparentes (como nos jogos de vida
 ## isométricos), para nunca perderes a tua personagem de vista.
-func update_occlusion(char_pos: Vector2, delta: float) -> void:
+func update_occlusion(char_pos: Vector2, delta: float, char_world := Vector2.INF) -> void:
 	var body := Rect2(char_pos + Vector2(-14, -80), Vector2(28, 76))
 	var k := clampf(delta * 10.0, 0.0, 1.0)
+	var cw := Iso.rotate(char_world) if char_world != Vector2.INF else Vector2.INF
 	for s: Sprite2D in occluders:
 		var r := Rect2(s.position + s.offset * s.scale, s.texture.get_size() * s.scale)
 		var target := 1.0
-		if s.position.y > char_pos.y and r.intersects(body) and _opaque_over(s, body):
-			target = 0.38
+		if s.position.y > char_pos.y and r.intersects(body) and _behind(s, cw) and _opaque_over(s, body):
+			target = 0.42
 		s.modulate.a = lerpf(s.modulate.a, target, k)
+
+
+## A personagem está mesmo ATRÁS do objeto (não à frente das fachadas visíveis)?
+## Na vista (rodada), "à frente" = coordenada maior em x' ou em y' do que a pegada.
+func _behind(s: Sprite2D, cw: Vector2) -> bool:
+	var fp: Rect2 = s.get_meta("fp", Rect2())
+	if cw == Vector2.INF or not fp.has_area():
+		return true
+	var mx := -INF
+	var my := -INF
+	for c: Vector2 in [fp.position, Vector2(fp.end.x, fp.position.y), fp.end, Vector2(fp.position.x, fp.end.y)]:
+		var rc := Iso.rotate(c)
+		mx = maxf(mx, rc.x)
+		my = maxf(my, rc.y)
+	return cw.x < mx - 0.1 and cw.y < my - 0.1
 
 
 ## Verifica se há píxeis opacos do sprite por cima do corpo (evita apagar uma árvore
@@ -432,7 +470,7 @@ func _opaque_over(s: Sprite2D, body: Rect2) -> bool:
 var _images: Dictionary = {}
 
 
-func _add_object(id: String, pos: Vector2) -> Dictionary:
+func _add_object(id: String, pos: Vector2, footprint := Rect2()) -> Dictionary:
 	var o := DemoAssets.object(id)
 	if o.is_empty():
 		return o
@@ -445,6 +483,7 @@ func _add_object(id: String, pos: Vector2) -> Dictionary:
 	s.position = pos
 	objects.add_child(s)
 	if s.texture and s.texture.get_height() * s.scale.y > 90:
+		s.set_meta("fp", footprint)
 		occluders.append(s)
 	var t := DemoAssets.shadow_texture(id)
 	if t:
@@ -458,25 +497,46 @@ func _add_object(id: String, pos: Vector2) -> Dictionary:
 	return o
 
 
+static var _lamp_tex: GradientTexture2D
+static var _lamp_mat: CanvasItemMaterial
+var lamp_glows: Array[Sprite2D] = []
+var _night := 0.0
+const MAX_LIGHTS := 6
+
+
 func _add_lamp_light(at: Vector2) -> void:
-	var l := PointLight2D.new()
-	var g := GradientTexture2D.new()
-	g.width = 512
-	g.height = 512
-	g.fill = GradientTexture2D.FILL_RADIAL
-	g.fill_from = Vector2(0.5, 0.5)
-	g.fill_to = Vector2(1, 0.5)
-	var gr := Gradient.new()
-	gr.set_color(0, Color(1, 0.86, 0.6, 1))
-	gr.set_color(1, Color(1, 0.8, 0.5, 0))
-	g.gradient = gr
-	l.texture = g
-	l.position = at + Vector2(0, 120)
-	l.scale = Vector2(1.4, 0.9)
-	l.energy = 0.0
-	l.blend_mode = Light2D.BLEND_MODE_ADD
-	lights.add_child(l)
-	lamp_lights.append(l)
+	# brilho do candeeiro: sprite aditivo (o mesmo efeito de uma luz 2D, sem redesenhar o que ilumina;
+	# num telemóvel as luzes 2D custavam ~4× o tempo de cada imagem)
+	if _lamp_tex == null:
+		_lamp_tex = GradientTexture2D.new()
+		_lamp_tex.width = 256
+		_lamp_tex.height = 256
+		_lamp_tex.fill = GradientTexture2D.FILL_RADIAL
+		_lamp_tex.fill_from = Vector2(0.5, 0.5)
+		_lamp_tex.fill_to = Vector2(1, 0.5)
+		var gr := Gradient.new()
+		gr.set_color(0, Color(1, 0.86, 0.6, 0.85))
+		gr.set_color(1, Color(1, 0.8, 0.5, 0))
+		_lamp_tex.gradient = gr
+		_lamp_mat = CanvasItemMaterial.new()
+		_lamp_mat.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+	var pool := Sprite2D.new() # mancha de luz no chão
+	pool.texture = _lamp_tex
+	pool.material = _lamp_mat
+	pool.position = at + Vector2(0, 120)
+	pool.scale = Vector2(2.6, 1.3)
+	pool.visible = false
+	shadows.add_child(pool)
+	var bulb := Sprite2D.new() # halo à volta da lâmpada
+	bulb.texture = _lamp_tex
+	bulb.material = _lamp_mat
+	bulb.position = at
+	bulb.scale = Vector2(0.5, 0.5)
+	bulb.z_index = 40
+	bulb.visible = false
+	lights.add_child(bulb)
+	lamp_glows.append(pool)
+	lamp_glows.append(bulb)
 
 
 func _add_label(text: String, at: Vector2, is_home: bool) -> void:
@@ -519,7 +579,9 @@ func apply_hour(h: float, canvas_mod: CanvasModulate) -> float:
 			col = (keys[i][1] as Color).lerp(keys[i + 1][1], (h - keys[i][0]) / (keys[i + 1][0] - keys[i][0]))
 	canvas_mod.color = col
 	var night := clampf((0.8 - col.v) / 0.35, 0.0, 1.0)
-	for l in lamp_lights:
-		l.energy = night * 1.1
-	shadows.modulate.a = 1.0 - night * 0.85
+	_night = night
+	for g in lamp_glows:
+		g.visible = night > 0.02
+		g.modulate = Color(1, 1, 1, night)
+	shadows.modulate.a = 1.0 - night * 0.6
 	return night

@@ -150,11 +150,15 @@ func _process(delta: float) -> void:
 			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
 			view3d.sync_people(avatars, Net.self_id)
 			view3d.update_camera(local_char.world_pos, delta)
-		view.update_occlusion(local_char.position, delta)
+		view.update_occlusion(local_char.position, delta, local_char.world_pos)
 		_update_inside()
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
 	var minutes := float(now.hour * 60 + now.minute) + float(now.second) / 60.0
-	view.apply_hour(minutes / 60.0, canvas_mod)
+	var night := view.apply_hour(minutes / 60.0, canvas_mod)
+	if _inside_id != "" and _inside_id != "?":
+		canvas_mod.color = Color(1.0, 0.97, 0.92) # dentro dos edifícios há luz acesa, de dia ou de noite
+	if view3d and mode3d != "":
+		view3d.set_light(canvas_mod.color, night, _inside_id != "" and _inside_id != "?")
 	hud.set_clock(minutes)
 	view.scale_labels(camera.zoom.x, avatars.values().map(func(c: DemoCharacter) -> Control: return c.tag))
 
@@ -190,8 +194,12 @@ func _on_self(me: Dictionary) -> void:
 		# a pé: aparece no fim da rua que vem do bairro de onde saiu
 		err = await Net.join_district(str(t.district), ("from_" + str(t.get("from", ""))) if on_foot else "")
 	if err != "":
+		# a viagem falhou (sem rede, pacote estragado…): fecha a vista da viagem e avisa
+		print("[viagem] falhou: ", err)
 		_travelling = false
-		hud.show_toast(err, false)
+		if trip:
+			trip.get_parent().queue_free()
+		hud.show_toast(err + " Tenta outra vez.", false)
 		return
 	if Net.welcome.is_empty():
 		await Net.welcomed
@@ -240,6 +248,7 @@ var view3d: View3D ## vistas 3D (ombro / olhos), criadas só quando são pedidas
 var mode3d := "" ## "" = vista aérea isométrica
 var _rot_user := 0 ## rotação escolhida pelo jogador (na rua); dentro dos edifícios a vista fica a 0
 var _fade := ColorRect.new()
+var _rotating := false
 
 
 ## A câmara não sai da cidade desenhada (bairro + casario à volta).
@@ -273,9 +282,13 @@ func rotate_view() -> void:
 	if not inside.is_empty() and not view.room_has_angle(inside, (_rot_user + 1) % 4):
 		hud.show_toast("Esta sala ainda não tem arte dos outros lados.", false)
 		return
+	if _rotating:
+		return # a rodar: ignora toques repetidos (num telemóvel lento sobrepunham-se)
+	_rotating = true
 	_rot_user = (_rot_user + 1) % 4
 	_save_rot()
 	await _apply_rot(_rot_user, true)
+	_rotating = false
 
 
 ## Reconstrói o bairro com a nova projeção e põe as personagens no novo desenho.
@@ -313,6 +326,8 @@ func _apply_rot(r: int, animate: bool) -> void:
 	if animate:
 		var tw2 := create_tween()
 		tw2.tween_property(_fade, "color:a", 0.0, 0.22)
+		await tw2.finished
+	_fade.color.a = 0.0
 
 
 var _inside_id := "?"
@@ -365,6 +380,29 @@ func _update_inside() -> void:
 		RenderingServer.set_default_clear_color(Color("1c1a1f"))
 
 
+## Para onde olhar ao entrar em 3D: dentro de uma sala, para o centro dela; na rua, para a
+## direção com mais espaço livre (a câmara fica atrás, do lado oposto).
+func _best_yaw() -> float:
+	var me := local_char.world_pos
+	var room := view.interior_at(me)
+	if not room.is_empty():
+		var c := Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3]).get_center()
+		var v := c - me
+		if v.length() < 0.5:
+			v = Vector2(-1, -1)
+		return atan2(v.x, v.y)
+	var best := 0.0
+	var score := -INF
+	for i in 16:
+		var a := TAU * i / 16.0
+		var fwd := Vector2(sin(a), cos(a))
+		var sc := view3d._free_distance(me, -fwd, 6.0) * 2.0 + view3d._free_distance(me, fwd, 12.0) + fwd.dot(local_char.last_dir) * 2.0
+		if sc > score:
+			score = sc
+			best = a
+	return best
+
+
 func _set_mode3d(m: String) -> void:
 	mode3d = m
 	if m == "":
@@ -381,6 +419,9 @@ func _set_mode3d(m: String) -> void:
 		if local_char:
 			view3d.yaw = atan2(local_char.last_dir.x, local_char.last_dir.y)
 	view3d.mode = m
+	if local_char:
+		view3d.yaw = _best_yaw()
+		view3d.cam.position = Vector3.ZERO
 	view3d.visible = true
 	view.visible = false
 	hud.show_toast("Por cima do ombro: arrasta para olhar, joystick ou WASD para andar." if m == "ombro" else "Pelos olhos (1.ª pessoa).", true)

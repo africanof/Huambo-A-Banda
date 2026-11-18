@@ -27,6 +27,18 @@ var _view: BairroView
 var room_bounds := Rect2() ## dentro de uma sala: a câmara não sai das paredes
 var _boards: Array = [] ## [Sprite3D, id base] — painéis que mudam de arte com o lado da câmara
 var _board_rot := -1
+var _env: Environment
+var _cam_dist := 3.6 ## distância atual da câmara (encurta quando há uma parede atrás)
+
+
+## Luz do dia/noite igual à vista aérea; lá dentro, luz acesa.
+func set_light(col: Color, night: float, inside: bool) -> void:
+	self_modulate = Color.WHITE if inside else col
+	if _env:
+		var day := Color("9cc6e8")
+		var dusk := Color("1b2140")
+		_env.background_color = day.lerp(dusk, 0.0 if inside else night)
+		_env.fog_light_color = Color("c9dcea").lerp(Color("2a3150"), 0.0 if inside else night)
 
 
 ## Projeção isométrica relativa (px do jogo) de um deslocamento no chão, vista do ângulo r.
@@ -67,6 +79,7 @@ func _ready() -> void:
 	env.fog_density = 0.008
 	var we := WorldEnvironment.new()
 	we.environment = env
+	_env = env
 	root.add_child(we)
 	cam.fov = 70.0
 	cam.near = 0.05
@@ -354,6 +367,18 @@ func _room(i: Dictionary) -> void:
 		mat.set_shader_parameter("shade", f[4])
 		mi.material_override = mat
 		root.add_child(mi)
+	# teto (só se vê de baixo: em 1.ª pessoa já não aparece o céu por cima das paredes)
+	var ceil_mi := MeshInstance3D.new()
+	var pm := PlaneMesh.new()
+	pm.size = Vector2(w, d)
+	pm.flip_faces = true
+	ceil_mi.mesh = pm
+	var cm := StandardMaterial3D.new()
+	cm.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	cm.albedo_color = Color("eae4da")
+	ceil_mi.material_override = cm
+	ceil_mi.position = Vector3(x + w / 2.0, hm, y + d / 2.0)
+	root.add_child(ceil_mi)
 	for fu: Dictionary in i.get("furniture", []):
 		var fo := DemoAssets.object(str(fu.id))
 		if fo.is_empty():
@@ -441,30 +466,95 @@ func sync_people(avatars: Dictionary, self_id: int) -> void:
 		# a mesma cor de roupa escolhida pelo jogador
 		var m2: ShaderMaterial = c.body.material
 		var m3: ShaderMaterial = s3.material_override
+		if m3 and tex:
+			m3.set_shader_parameter("texture_albedo", tex) # o quadro atual da animação
 		if m2 and m3:
 			m3.set_shader_parameter("enabled", m2.get_shader_parameter("enabled"))
 			m3.set_shader_parameter("target_hue", m2.get_shader_parameter("target_hue"))
 			m3.set_shader_parameter("source_hue", m2.get_shader_parameter("source_hue"))
 		s3.visible = not (mode == "olhos" and id == self_id)
+		var lbl: Label3D = s3.get_child(0) if s3.get_child_count() > 0 else null
+		if lbl:
+			lbl.visible = id != self_id
 
 
 # ------------------------------------------------------------------ câmara e controlos
 
 func update_camera(me: Vector2, delta: float) -> void:
 	_update_boards()
+	# telemóvel na vertical: o ângulo de visão fixa-se na largura (senão a imagem fica "apertada")
+	var vs := get_viewport().get_visible_rect().size
+	cam.keep_aspect = Camera3D.KEEP_WIDTH if vs.y > vs.x else Camera3D.KEEP_HEIGHT
+	cam.fov = 80.0 if vs.y > vs.x else 70.0
 	var fwd := Vector3(sin(yaw), 0, cos(yaw))
 	var eye := Vector3(me.x, 1.6, me.y)
 	if mode == "olhos":
 		cam.position = eye
 	else:
-		var want := Vector3(me.x, 2.3, me.y) - fwd * 3.6
+		# por cima do ombro: atrás e acima; se houver parede ou edifício no caminho, a câmara
+		# aproxima-se (nunca entra dentro de um edifício nem sai da sala)
+		var free := _free_distance(me, -Vector2(fwd.x, fwd.z), 4.2)
+		_cam_dist = lerpf(_cam_dist, free, clampf(delta * (12.0 if free < _cam_dist else 3.0), 0.0, 1.0))
+		var h := 2.0 + _cam_dist * 0.22 + maxf(0.0, 2.6 - _cam_dist) * 0.55 # perto de uma parede: sobe
+		var want := Vector3(me.x, h, me.y) - fwd * _cam_dist
 		if room_bounds.has_area():
-			# dentro de uma sala: a câmara fica entre as paredes (mais perto da personagem)
-			var g := room_bounds.grow(-0.3)
-			want = Vector3(clampf(want.x, g.position.x, g.end.x), 2.2, clampf(want.z, g.position.y, g.end.y))
-		cam.position = cam.position.lerp(want, clampf(delta * 8.0, 0.0, 1.0)) if cam.position != Vector3.ZERO else want
+			want.y = 2.7 # salas: câmara junto ao teto, a olhar para baixo
+		cam.position = cam.position.lerp(want, clampf(delta * 10.0, 0.0, 1.0)) if cam.position != Vector3.ZERO else want
+		# a personagem fica sempre à mesma distância mínima (nunca a cara a encher o ecrã)
+		var target := Vector3(me.x, 1.1, me.y) + fwd * clampf(_cam_dist, 1.0, 4.0) # câmara perto → olha mais para a personagem
+		if vs.y > vs.x:
+			target.y -= 0.9 # na vertical a personagem sobe no ecrã (fica acima da barra de baixo)
+		if room_bounds.has_area():
+			target = Vector3(me.x, 0.9, me.y) + fwd * 1.5
+		cam.look_at(target + Vector3(0, tan(pitch) * 4.0, 0), Vector3.UP)
+		return
 	var look := eye + fwd * 10.0 + Vector3(0, tan(pitch) * 10.0, 0)
 	cam.look_at(look, Vector3.UP)
+
+
+## Distância livre (m) da personagem na direção dir, até ao primeiro obstáculo (edifícios, paredes da sala).
+func _free_distance(from: Vector2, dir: Vector2, max_d: float) -> float:
+	var d := max_d
+	var obs: Array = _view.obstacles if _view else []
+	for r: Rect2 in obs:
+		if r.size.x * r.size.y < 2.0:
+			continue # postes e árvores pequenas não empurram a câmara
+		var t := _ray_rect(from, dir, r.grow(0.35))
+		if t >= 0.0 and t < d:
+			d = t
+	if room_bounds.has_area():
+		var g := room_bounds.grow(-0.35)
+		for t: float in [_ray_exit(from.x, dir.x, g.position.x, g.end.x), _ray_exit(from.y, dir.y, g.position.y, g.end.y)]:
+			d = minf(d, t)
+	return maxf(0.6, d - 0.2)
+
+
+static func _ray_exit(p: float, v: float, lo: float, hi: float) -> float:
+	if absf(v) < 1e-6:
+		return INF
+	return ((hi if v > 0 else lo) - p) / v
+
+
+## Interseção raio–retângulo (método das lajes); −1 se não toca. Se o ponto está dentro, 0.
+static func _ray_rect(o: Vector2, d: Vector2, r: Rect2) -> float:
+	var tmin := -INF
+	var tmax := INF
+	for i in 2:
+		var oo := o[i]
+		var dd := d[i]
+		var lo := r.position[i]
+		var hi := r.end[i]
+		if absf(dd) < 1e-9:
+			if oo < lo or oo > hi:
+				return -1.0
+			continue
+		var t1 := (lo - oo) / dd
+		var t2 := (hi - oo) / dd
+		tmin = maxf(tmin, minf(t1, t2))
+		tmax = minf(tmax, maxf(t1, t2))
+	if tmax < 0.0 or tmin > tmax:
+		return -1.0
+	return maxf(0.0, tmin)
 
 
 ## Direção de andar no mundo (metros): joystick/WASD relativos à direção para onde se olha.

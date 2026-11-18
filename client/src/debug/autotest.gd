@@ -69,6 +69,8 @@ func _run() -> void:
 		await _places_loop(world)
 	if bairro and AppConfig.has_flag("travel"):
 		await _travel_loop()
+	if bairro and AppConfig.has_flag("views"):
+		await _views_loop()
 
 	_finish(true, "")
 
@@ -270,8 +272,75 @@ func _walk_loop() -> void:
 		_finish(false, "viagem a pé errada")
 
 
+## Volta pelos modos de vista (rua e interior) com capturas, para revisão visual.
+func _views_loop() -> void:
+	var tree := get_tree()
+	var world: Node = tree.current_scene
+	await tree.create_timer(6.0).timeout
+	print("[autotest] rua estável: %d fps" % Engine.get_frames_per_second())
+	await _shot("rua_aerea")
+	for i in 3:
+		world._on_hud_action("rodar")
+		await tree.create_timer(1.2).timeout
+		await _shot("rua_rodar%d" % (i + 1))
+	world._on_hud_action("rodar")
+	await tree.create_timer(1.2).timeout
+	world._on_hud_action("vista3d")
+	await tree.create_timer(2.5).timeout
+	await _shot("rua_ombro")
+	world.view3d.yaw += PI / 2
+	await tree.create_timer(1.0).timeout
+	await _shot("rua_ombro_lado")
+	world._on_hud_action("vista3d")
+	await tree.create_timer(1.5).timeout
+	await _shot("rua_olhos")
+	world._on_hud_action("vista3d")
+	await tree.create_timer(1.0).timeout
+	# entrar num edifício com nome (o mais perto)
+	var me: Vector2 = (Net.entities[Net.self_id].pos as Vector2) / 100.0
+	var door: Dictionary = {}
+	for p: Dictionary in world.view.places:
+		if p.kind == "door" and str(p.get("venue", "")) not in ["casa", "apartamentos"]:
+			if door.is_empty() or Vector2(p.at[0], p.at[1]).distance_to(me) < Vector2(door.at[0], door.at[1]).distance_to(me):
+				door = p
+	var dp := Vector2(door.at[0], door.at[1])
+	world.request_move(dp)
+	await _wait_for(func() -> Variant:
+		var m: Variant = Net.entities.get(Net.self_id)
+		return true if m != null and ((m.pos as Vector2) / 100.0).distance_to(dp) < 2.0 else null)
+	await _shot("porta")
+	Net.action("enter")
+	await _wait_for(func() -> Variant: return true if _inside_venue() != "" else null)
+	await tree.create_timer(1.5).timeout
+	await _shot("interior_aereo")
+	for i in 3:
+		world._on_hud_action("rodar")
+		await tree.create_timer(1.2).timeout
+		await _shot("interior_rodar%d" % (i + 1))
+	world._on_hud_action("rodar")
+	await tree.create_timer(1.0).timeout
+	world._on_hud_action("vista3d")
+	await tree.create_timer(2.5).timeout
+	await _shot("interior_ombro")
+	world._on_hud_action("vista3d")
+	await tree.create_timer(1.5).timeout
+	await _shot("interior_olhos")
+	world._on_hud_action("vista3d")
+	await tree.create_timer(1.0).timeout
+	print("[autotest] vistas OK")
+
+
 ## Capturas de ecrã opcionais (CAPTURE_DIR) para revisão visual.
 func _shot(name: String) -> void:
+	if OS.has_feature("web"):
+		# no navegador: o Playwright tira a captura quando vê esta linha
+		await get_tree().create_timer(0.8).timeout
+		var w: Node = get_tree().current_scene
+		if w and "_fade" in w:
+			print("[autotest] %s: escurecimento=%.2f rot=%d fps=%d" % [name, w._fade.color.a, Iso.rot, Engine.get_frames_per_second()])
+		print("[shot] " + name)
+		await get_tree().create_timer(0.7).timeout
+		return
 	var dir := OS.get_environment("CAPTURE_DIR")
 	if dir == "" or DisplayServer.get_name() == "headless":
 		return
