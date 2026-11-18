@@ -1,7 +1,7 @@
 extends Control
 ## Ecrã de entrada: convidado ou conta Supabase, e escolha do bairro.
 
-const DISTRICTS := [["cidade_baixa", "Cidade Baixa"], ["huambo_centro", "Huambo — mapa completo (protótipo)"]]
+const DISTRICTS := [["cidade_baixa", "Cidade Baixa"], ["bairro_fatima", "Bairro de Fátima"], ["huambo_centro", "Huambo — mapa completo (protótipo)"]]
 
 @onready var name_edit: LineEdit = %NameEdit
 @onready var district_option: OptionButton = %DistrictOption

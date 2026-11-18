@@ -87,6 +87,8 @@ export const ActionSchema = z
       "bank_out",
       "service",
       "home_eat",
+      // viajar para outro bairro (candongueiro)
+      "travel",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

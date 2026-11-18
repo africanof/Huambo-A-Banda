@@ -59,7 +59,10 @@ func _ready() -> void:
 	Net.entities_spawned.connect(_on_spawned)
 	Net.entities_despawned.connect(_on_despawned)
 	Net.snapshot_received.connect(_on_snapshot)
-	Net.disconnected.connect(func(_r: String) -> void: get_tree().change_scene_to_file("res://src/ui/login_screen.tscn"))
+	Net.disconnected.connect(func(_r: String) -> void:
+		if not _travelling:
+			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn"))
+	Net.self_updated.connect(_on_self)
 	for id: int in Net.entities:
 		var e: Dictionary = Net.entities[id]
 		_spawn(id, e.name, e.pos, e.appearance)
@@ -144,6 +147,26 @@ func _process(delta: float) -> void:
 	view.apply_hour(minutes / 60.0, canvas_mod)
 	hud.set_clock(minutes)
 	view.scale_labels(camera.zoom.x, avatars.values().map(func(c: DemoCharacter) -> Control: return c.tag))
+
+
+var _travelling := false
+
+
+## O servidor cobrou o candongueiro: muda de sala (bairro) e recarrega o mundo.
+func _on_self(me: Dictionary) -> void:
+	var t: Variant = me.get("travel")
+	if _travelling or typeof(t) != TYPE_DICTIONARY:
+		return
+	_travelling = true
+	hud.show_toast("A viajar para o outro bairro…", true)
+	var err: String = await Net.join_district(str(t.district))
+	if err != "":
+		_travelling = false
+		hud.show_toast(err, false)
+		return
+	if Net.welcome.is_empty():
+		await Net.welcomed
+	get_tree().change_scene_to_file("res://src/game/bairro_world.tscn")
 
 
 var _inside_id := "?"

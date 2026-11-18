@@ -67,6 +67,8 @@ func _run() -> void:
 	if bairro and AppConfig.has_flag("life"):
 		await _life_loop(world)
 		await _places_loop(world)
+	if bairro and AppConfig.has_flag("travel"):
+		await _travel_loop()
 
 	_finish(true, "")
 
@@ -194,6 +196,34 @@ func _places_loop(world: Node) -> void:
 	Net.action("exit")
 	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
 	print("[autotest] edifícios OK")
+
+
+## Candongueiro para o Bairro de Fátima, e lá: Centro de Saúde (consulta).
+func _travel_loop() -> void:
+	var tree := get_tree()
+	Net.action("travel", "bairro_fatima")
+	var world: Node = await _wait_for(func() -> Variant:
+		var s := tree.current_scene
+		return s if s and s.name == "BairroWorld" and s.local_char != null and str(Net.welcome.get("district", {}).get("id", "")) == "bairro_fatima" and Net.entities.has(Net.self_id) else null)
+	print("[autotest] cheguei ao %s" % Net.welcome.district.name)
+	await _wait_for(func() -> Variant: return true if Net.me.has("money") else null)
+	await _shot("fatima_chegada")
+	var door := Vector2.ZERO
+	for p: Dictionary in world.view.places:
+		if p.kind == "door" and str(p.get("venue", "")) == "saude":
+			door = Vector2(p.at[0], p.at[1])
+	await _walk(world, [Vector2(47.0, 39.4), Vector2(door.x, 39.4), door + Vector2(0, 0.2)])
+	Net.action("enter")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "saude" else null)
+	print("[autotest] entrei no Centro de Saúde")
+	await _walk(world, [_spot(world, str(Net.me.inside.id), "service")])
+	var m0 := int(Net.me.money)
+	Net.action("service", "consulta")
+	await _wait_for(func() -> Variant: return true if int(Net.me.money) == m0 - 3000 or int(Net.me.money) < m0 else null)
+	print("[autotest] consulta feita: %d → %d Kz" % [m0, int(Net.me.money)])
+	Net.action("exit")
+	await _wait_for(func() -> Variant: return true if _inside_venue() == "" else null)
+	print("[autotest] viagem OK")
 
 
 ## Capturas de ecrã opcionais (CAPTURE_DIR) para revisão visual.

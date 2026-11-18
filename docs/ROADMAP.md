@@ -54,3 +54,11 @@ ponta-a-ponta com clientes Godot reais).
   renda acabada = despejo. Supabase: `game_property_claim` e `game_bank_move` (dinheiro e casa na mesma transação).
 - Pendente: arte própria de cada interior (precisa de fotos reais de interiores do Huambo), decoração em rede,
   visitas a casas de amigos (Fase C), discoteca e igreja (edifícios novos com arte de referência).
+
+### Cidade a crescer — kits de bairro gerados por IA
+- Regra: cada imagem gerada contém um bairro inteiro (>100 objetos, letreiros com o nome do bairro);
+  `tools/art/ai/cut_kit.py` recorta, `build_kit.py` monta (pegada isométrica, escala), `tools/bairros/gen_<bairro>.py` desenha a planta.
+- Bairro de Fátima (1.º kit): escola, liceu, centro de saúde, igreja, mercado, esquadra, farmácia, discoteca,
+  hospedaria, cantina, churrasqueira, administração, prédio (4 apartamentos), 8 casas e ~100 adereços — todos funcionais.
+- Viagem entre bairros de candongueiro (200 Kz) pelo Mapa.
+- Próximos kits: Cidade Alta, Bairro Académico, São Pedro, Benfica, São José…

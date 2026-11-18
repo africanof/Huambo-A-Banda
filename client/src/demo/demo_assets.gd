@@ -32,6 +32,10 @@ static func make_sprite(id: String) -> Sprite2D:
 	s.texture = tex(id + ".png")
 	s.centered = false
 	s.offset = -Vector2(o.anchor[0], o.anchor[1])
+	# kits de bairro: textura no tamanho original, ampliada ao desenhar (menos memória no telemóvel)
+	var k := float(o.get("scale", 1.0))
+	if k != 1.0:
+		s.scale = Vector2(k, k)
 	return s
 
 

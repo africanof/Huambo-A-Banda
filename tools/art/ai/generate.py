@@ -24,15 +24,17 @@ def build_prompt(spec):
     if kind == "texture":
         # texturas: só o pedido + regras de textura (sem câmara isométrica nem cena da cidade)
         return "\n".join([spec["prompt"], STYLE["texture"], "Absolutely no buildings, no people, no vehicles, no city, no perspective: only the material surface seen straight from above, filling the whole image."])
-    parts = [STYLE["base"], STYLE.get(kind, ""), spec["prompt"], STYLE["huambo"], STYLE["negative"]]
+    # com fotografias de referência: reproduzir as fotos; sem elas: contexto real do Huambo descrito em texto
+    setting = STYLE["huambo"] if spec.get("refs") else STYLE["huambo_text"]
+    parts = [STYLE["base"], STYLE.get(kind, ""), spec["prompt"], setting, STYLE["negative"]]
     return "\n".join(p for p in parts if p)
 
 
 def generate(spec, force=False):
     out = os.path.join(RAW, spec["id"] + ".png")
-    # REGRA DO PROJETO (CLAUDE.md): só arte baseada em imagens reais e atuais do Huambo.
-    if not spec.get("refs"):
-        return spec["id"], "RECUSADO: sem fotografias de referência reais do Huambo (campo refs)"
+    # REGRA DO PROJETO (CLAUDE.md): contexto real do Huambo sempre; fotografias de referência quando existirem.
+    if not spec.get("refs") and not spec.get("context_only"):
+        return spec["id"], "RECUSADO: sem fotografias (refs) nem contexto do Huambo declarado (context_only: true)"
     if os.path.exists(out) and not force:
         return spec["id"], "em cache"
     body = {

@@ -33,7 +33,7 @@ LAYOUTS = {
     "padaria": ([("movel_frigorifico", 1.0, 0.2), ("movel_mesa_centro", 3.0, 0.4), ("movel_mesa_centro", 4.0, 0.4), ("movel_planta", 7.0, 0.2)],
                 [("food", 3.8, 2.0, "Balcão do pão"), ("work", 1.6, 1.8, "Forno")]),
     "hotel": ([("movel_mesa_centro", 1.0, 1.0), ("movel_cama", 5.5, 0.3), ("movel_cama", 5.5, 3.0), ("movel_planta", 0.2, 0.2), ("movel_tapete", 2.6, 3.4)],
-              [("work", 1.5, 2.3, "Receção"), ("sleep", 4.6, 2.6, "Quarto")]),
+              [("work", 1.5, 2.8, "Receção"), ("sleep", 4.6, 2.6, "Quarto")]),
     "banco": ([("movel_mesa_jantar", 3.0, 0.4), ("movel_sofa", 0.3, 4.6), ("movel_planta", 7.0, 0.2), ("movel_planta", 0.2, 0.2)],
               [("bank", 3.9, 3.1, "Balcão do banco"), ("work", 5.6, 1.4, "Caixa")]),
     "loja_telecom": ([("movel_tv", 3.0, 0.2), ("movel_mesa_centro", 3.5, 1.6), ("movel_planta", 7.0, 0.2), ("movel_poltrona", 0.4, 4.6)],
@@ -49,6 +49,24 @@ LAYOUTS = {
     "casa": ([("movel_cama", 5.6, 0.3), ("movel_sofa", 0.4, 0.3), ("movel_tv", 0.4, 2.4), ("movel_fogao", 3.0, 0.2), ("movel_frigorifico", 4.0, 0.2), ("movel_tapete", 2.0, 3.0)],
              [("home_sleep", 5.0, 2.8, "Cama"), ("home_eat", 3.5, 1.7, "Cozinha")]),
 }
+LAYOUTS.update({
+    "igreja": ([("f_banco_madeira", 1.0, 2.6), ("f_banco_madeira", 3.0, 2.6), ("f_banco_madeira", 1.0, 4.4), ("f_banco_madeira", 3.0, 4.4),
+                ("movel_mesa_centro", 3.4, 0.4), ("movel_planta", 0.2, 0.2), ("movel_planta", 7.0, 0.2)],
+               [("service", 4.8, 1.8, "Altar"), ("work", 6.2, 1.2, "Sacristia")]),
+    "saude": ([("movel_cama", 5.5, 0.3), ("movel_mesa_centro", 1.0, 1.0), ("movel_poltrona", 0.4, 4.6), ("movel_poltrona", 1.5, 4.6), ("movel_planta", 7.0, 3.0)],
+              [("service", 2.6, 2.4, "Consultório"), ("work", 4.6, 2.8, "Enfermaria")]),
+    "mercado": ([("f_banca", 1.0, 1.0), ("f_banca2", 3.8, 1.0), ("f_banca3", 1.0, 4.0)],
+                [("food", 3.2, 3.6, "Bancas"), ("work", 5.8, 2.2, "Banca")]),
+    "esquadra": ([("movel_mesa_jantar", 3.0, 0.4), ("movel_poltrona", 0.4, 4.4), ("movel_poltrona", 1.5, 4.4), ("movel_planta", 7.0, 0.2)],
+                 [("service", 3.9, 3.1, "Atendimento"), ("work", 5.6, 1.4, "Gabinete")]),
+    "farmacia": ([("movel_frigorifico", 0.6, 0.2), ("movel_frigorifico", 1.8, 0.2), ("movel_mesa_centro", 3.2, 1.4), ("movel_planta", 7.0, 0.2)],
+                 [("service", 3.6, 3.0, "Balcão"), ("work", 5.6, 1.4, "Atrás do balcão")]),
+    "churrasqueira": ([("movel_fogao", 4.0, 0.2), ("f_mesa_plastico", 0.8, 2.4), ("f_mesa_plastico2", 2.4, 2.4), ("movel_frigorifico", 5.2, 0.2)],
+                      [("food", 4.4, 2.0, "Balcão"), ("work", 6.4, 1.6, "Grelha")]),
+    "discoteca": ([("movel_tapete", 2.2, 2.4), ("movel_tv", 5.0, 0.2), ("f_mesa_plastico2", 0.4, 0.4), ("movel_sofa", 0.4, 4.8)],
+                  [("service", 3.2, 3.4, "Pista de dança"), ("work", 5.8, 1.8, "Bar")]),
+})
+LAYOUTS["administracao"] = LAYOUTS["governo"]
 LAYOUTS["apartamentos"] = LAYOUTS["casa"]
 VENUE_NAMES = {"casa": "Casa", "apartamentos": "Apartamento"}
 
@@ -77,8 +95,10 @@ def build_interior(n, ident, venue, name, out, extra=None):
 
 
 def front_point(at, fp):
-    """Ponto do passeio em frente à fachada (lado +y no mundo = em baixo no ecrã)."""
-    return [round(at[0] + fp[0] / 2, 2), round(at[1] + fp[1] + 1.2, 2)]
+    """Ponto do passeio em frente à porta: na fachada mais comprida (+y se w >= d, senão +x)."""
+    if fp[0] >= fp[1]:
+        return [round(at[0] + fp[0] / 2, 2), round(at[1] + fp[1] + 1.2, 2)]
+    return [round(at[0] + fp[0] + 1.2, 2), round(at[1] + fp[1] / 2, 2)]
 
 
 for src in sorted(glob.glob(os.path.join(HERE, "*.json"))):

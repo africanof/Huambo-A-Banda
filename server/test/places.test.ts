@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getDistrict, interiorAt } from "../src/game/districts.js";
+import { getDistrict, interiorAt, listDistricts } from "../src/game/districts.js";
 import { isWalkable, sanitizeTarget } from "../src/game/movement.js";
 import { LifeController, type LifeActor, type SelfState } from "../src/game/LifeController.js";
 import { HOUSING, JOBS, SERVICES, STARTING_MONEY, rentPrice } from "../src/game/life.js";
@@ -51,11 +51,12 @@ describe("todos os edifícios com nome têm interior e funções", () => {
     }
   });
 
-  it("cada posto de trabalho dos interiores corresponde a um emprego", () => {
-    for (const p of d.places!.filter((q) => q.kind === "work")) {
+  it("cada posto de trabalho corresponde a um emprego e cada emprego tem posto num bairro", () => {
+    const all = listDistricts().flatMap((x) => x.places ?? []);
+    for (const p of all.filter((q) => q.kind === "work")) {
       expect(JOBS.some((j) => j.place === p.job)).toBe(true);
     }
-    for (const j of JOBS) expect(d.places!.some((p) => p.kind === "work" && p.job === j.place)).toBe(true);
+    for (const j of JOBS) expect(all.some((p) => p.kind === "work" && p.job === j.place)).toBe(true);
   });
 
   it("dentro de uma sala não se atravessa a parede nem os móveis", () => {
@@ -202,9 +203,10 @@ describe("banco, documentos e balcões", () => {
     expect(t.me(a).job).toBe("caixa_banco");
   });
 
-  it("todos os serviços têm um balcão no bairro", () => {
+  it("todos os serviços têm um balcão num bairro", () => {
     for (const sv of SERVICES) {
-      expect(d.places!.some((p) => p.kind === "service" && d.interiors!.find((i) => i.id === p.interior)?.venue === sv.venue)).toBe(true);
+      const ok = listDistricts().some((x) => x.places?.some((p) => p.kind === "service" && x.interiors!.find((i) => i.id === p.interior)?.venue === sv.venue));
+      expect(ok, sv.id).toBe(true);
     }
   });
 });

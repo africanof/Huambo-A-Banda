@@ -1,0 +1,2 @@
+[{"id": "fix_signs_out", "kind": "object", "context_only": true, "refs": ["fix_signs_in"], "size": "2048x1024", "quality": "high",
+  "prompt": "EDIT the attached image: keep the three buildings EXACTLY as they are (same position, size, camera, colors, details, transparent background). Change ONLY the text of their signs so they read, letter by letter: left building (covered market): 'Mercado do Bairro de Fátima'; middle building (dark night club): 'Discoteca Kizomba Fátima'; right building (yellow guesthouse): 'Pensão Fátima'. Same sign style and colors as before."}]

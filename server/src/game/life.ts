@@ -25,7 +25,7 @@ export interface LifeState {
   shiftsCount: number;
   parentsDay: string | null; // último dia em que pediu dinheiro aos pais
   /** documentos tratados no Governo Provincial / Tribunal */
-  docs: { bi: boolean; registo: boolean };
+  docs: { bi: boolean; registo: boolean; residencia: boolean };
   /** saldo de telemóvel (Kz) carregado na loja de telecomunicações */
   phoneCredit: number;
 }
@@ -38,7 +38,7 @@ export interface Job {
   pay: number; // Kz por turno completo
   education: number;
   /** documentos exigidos pelo empregador */
-  docs?: Array<"bi" | "registo">;
+  docs?: DocId[];
 }
 
 /** Empregos do Huambo (cada lugar com nome tem o seu posto de trabalho). */
@@ -54,7 +54,14 @@ export const JOBS: Job[] = [
   { id: "caixa_banco", name: "Caixa de banco", where: "Banco Planalto (caixa)", place: "caixa_banco", pay: 8500, education: 2, docs: ["bi", "registo"] },
   { id: "funcionario_publico", name: "Funcionário(a) público(a)", where: "Governo Provincial (secretaria)", place: "funcionario_publico", pay: 9000, education: 2, docs: ["bi"] },
   { id: "oficial_justica", name: "Oficial de justiça", where: "Tribunal da Comarca", place: "oficial_justica", pay: 9500, education: 3, docs: ["bi", "registo"] },
-  { id: "professor", name: "Professor(a) primário(a)", where: "Escola Primária (sala de aula)", place: "professor", pay: 10000, education: 3, docs: ["bi"] },
+  { id: "professor", name: "Professor(a)", where: "Escola Primária ou Liceu (sala de aula)", place: "professor", pay: 10000, education: 3, docs: ["bi"] },
+  // Bairro de Fátima
+  { id: "catequista", name: "Catequista", where: "Igreja Nossa Senhora de Fátima", place: "catequista", pay: 2500, education: 1 },
+  { id: "grelhador", name: "Grelhador(a)", where: "Churrasqueira Fátima (grelha)", place: "grelhador", pay: 3500, education: 0 },
+  { id: "barman", name: "Barman / Barmaid", where: "Discoteca Kizomba Fátima (bar)", place: "barman", pay: 4500, education: 0 },
+  { id: "enfermeiro", name: "Enfermeiro(a)", where: "Centro de Saúde do Bairro de Fátima", place: "enfermeiro", pay: 8000, education: 2, docs: ["bi"] },
+  { id: "policia", name: "Agente da Polícia", where: "Esquadra Policial de Fátima", place: "policia", pay: 9000, education: 2, docs: ["bi", "registo"] },
+  { id: "farmaceutico", name: "Farmacêutico(a)", where: "Farmácia Fátima", place: "farmaceutico", pay: 9500, education: 3, docs: ["bi"] },
 ];
 
 /** Serviços dos balcões (o que cada estabelecimento faz na vida real). */
@@ -64,11 +71,15 @@ export interface Service {
   name: string;
   price: number;
   /** efeito: documento, saldo de telemóvel ou humor */
-  doc?: "bi" | "registo";
-  needsDoc?: "bi";
+  doc?: DocId;
+  needsDoc?: DocId;
   credit?: number;
   mood?: number;
+  health?: number;
+  energy?: number;
 }
+
+export type DocId = "bi" | "registo" | "residencia";
 
 export const SERVICES: Service[] = [
   { id: "bi", venue: "governo", name: "Tratar do Bilhete de Identidade", price: 2500, doc: "bi" },
@@ -77,9 +88,21 @@ export const SERVICES: Service[] = [
   { id: "carta", venue: "correios", name: "Mandar carta", price: 200, mood: 4 },
   { id: "saldo_500", venue: "loja_telecom", name: "Carregar 500 Kz de saldo", price: 500, credit: 500 },
   { id: "saldo_2000", venue: "loja_telecom", name: "Carregar 2.000 Kz de saldo", price: 2000, credit: 2000 },
+  // Bairro de Fátima
+  { id: "consulta", venue: "saude", name: "Consulta médica", price: 3000, health: 40 },
+  { id: "vacina", venue: "saude", name: "Vacina e curativo", price: 1000, health: 12 },
+  { id: "missa", venue: "igreja", name: "Assistir à missa", price: 0, mood: 15 },
+  { id: "ofertorio", venue: "igreja", name: "Dar o ofertório", price: 500, mood: 6 },
+  { id: "ocorrencia", venue: "esquadra", name: "Registar uma ocorrência", price: 0, mood: 2 },
+  { id: "medicamentos", venue: "farmacia", name: "Comprar medicamentos", price: 1500, health: 25 },
+  { id: "vitaminas", venue: "farmacia", name: "Comprar vitaminas", price: 800, health: 5, energy: 10 },
+  { id: "dancar", venue: "discoteca", name: "Entrar e dançar kizomba", price: 2000, mood: 25, energy: -10 },
+  { id: "bebida", venue: "discoteca", name: "Bebida no bar", price: 600, mood: 8 },
+  { id: "residencia", venue: "administracao", name: "Pedir atestado de residência", price: 1000, doc: "residencia", needsDoc: "bi" },
+  { id: "bi_admin", venue: "administracao", name: "Tratar do Bilhete de Identidade", price: 2500, doc: "bi" },
 ];
 
-export const DOC_LABEL = { bi: "Bilhete de Identidade", registo: "registo criminal" } as const;
+export const DOC_LABEL: Record<DocId, string> = { bi: "Bilhete de Identidade", registo: "registo criminal", residencia: "atestado de residência" };
 
 /** Habitação: preços em Kz (compra) e renda por dia. */
 export const HOUSING: Record<string, { buy: number; rentPerDay: number }> = {
@@ -91,6 +114,9 @@ export const RENT_OPTIONS = [1, 7] as const;
 export function rentPrice(perDay: number, days: number): number {
   return perDay * (days >= 7 ? days - 1 : days);
 }
+
+/** Bilhete de candongueiro entre bairros (Kz). */
+export const TRAVEL_PRICE = 200;
 
 /** Comer em casa (o que há no frigorífico): barato e sem sair. */
 export const HOME_MEAL = { id: "comida_casa", name: "Refeição em casa", price: 500, hunger: 35 } as const;
@@ -116,6 +142,18 @@ export const MENUS: Record<string, MenuItem[]> = {
     { id: "pao_chourico", name: "Pão com chouriço", price: 400, hunger: 15 },
     { id: "bolo", name: "Bolo", price: 600, hunger: 10, mood: 10 },
     { id: "cafe_leite", name: "Café com leite", price: 300, hunger: 5, energy: 8 },
+  ],
+  mercado: [
+    { id: "banana", name: "Banana pão assada", price: 200, hunger: 10 },
+    { id: "batata_doce", name: "Batata-doce assada", price: 300, hunger: 15 },
+    { id: "fruta", name: "Fruta da época (abacate, manga)", price: 300, hunger: 8, mood: 5 },
+    { id: "peixe_funge", name: "Peixe seco com funge", price: 1200, hunger: 40 },
+  ],
+  churrasqueira: [
+    { id: "frango", name: "Frango grelhado com batata frita", price: 3000, hunger: 60, mood: 10 },
+    { id: "espetada", name: "Espetada mista", price: 2000, hunger: 40, mood: 6 },
+    { id: "cerveja", name: "Cerveja Cuca", price: 500, hunger: 2, mood: 8 },
+    { id: "sumo", name: "Sumo natural", price: 400, hunger: 4, mood: 4 },
   ],
 };
 
@@ -186,7 +224,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     shiftsDay: angolaDay(nowMs),
     shiftsCount: 0,
     parentsDay: null,
-    docs: { bi: false, registo: false },
+    docs: { bi: false, registo: false, residencia: false },
     phoneCredit: 0,
   };
 }
@@ -251,7 +289,7 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     shiftsDay: typeof r.shiftsDay === "string" ? r.shiftsDay : base.shiftsDay,
     shiftsCount: Math.round(num(r.shiftsCount, 0, 0, 1000)),
     parentsDay: typeof r.parentsDay === "string" ? r.parentsDay : null,
-    docs: { bi: r.docs?.bi === true, registo: r.docs?.registo === true },
+    docs: { bi: r.docs?.bi === true, registo: r.docs?.registo === true, residencia: r.docs?.residencia === true },
     phoneCredit: Math.round(num(r.phoneCredit, 0, 0, 1e9)),
   };
 }

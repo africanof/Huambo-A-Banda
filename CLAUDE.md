@@ -1,19 +1,19 @@
 # Huambo É A Banda — regras do projeto
 
 ## Arte (regra obrigatória, definida pelo dono do projeto)
-- **Todas as imagens do jogo têm de ser baseadas SOMENTE em imagens reais e atuais do Huambo, Angola.**
-  Nada de cidades genéricas nem de "imaginação" sem referência.
-- A arte é gerada com o modelo de imagem da OpenAI (tools/art/ai), **sempre a partir de fotografias
-  de referência reais e recentes do Huambo** passadas como imagens de entrada (endpoint de edição),
-  nunca só a partir de texto.
-- Cada recurso gerado regista as fotografias de referência usadas (origem, autor, licença, data) em
-  `tools/art/ai/refs/REFERENCIAS.md`. Usar só fotos com licença que o permita (ex.: Wikimedia Commons
-  CC-BY/CC-BY-SA, Mapillary CC-BY-SA, ou fotos cedidas pelo dono do projeto).
-- Preferir fotografias dos últimos anos (ver data de captura); fotos antigas só como apoio histórico.
+- **Contexto do Huambo (regra atualizada pelo dono do projeto):** nem tudo precisa de ser baseado em
+  fotografias reais. A IA pode gerar arte a partir de texto, **desde que tenha em conta o contexto real
+  do Huambo, Angola** (arquitetura do planalto, materiais, cores, vegetação, comércio, sinalética em
+  português, carros/kupapatas, roupa e pessoas de hoje). Nada de cidades genéricas.
+- Quando existirem fotografias reais de referência (marcos, edifícios conhecidos), usam-se como imagens
+  de entrada (endpoint de edição) e regista-se a origem em `tools/art/ai/refs/REFERENCIAS.md`
+  (só fotos com licença que o permita ou cedidas pelo dono do projeto).
+- **Alargar a cidade (regra do dono do projeto):** cada imagem gerada pela IA GPT deve conter **um bairro
+  inteiro e estruturado** — escolas, hospital/centro de saúde, igreja, mercado, comércio, casas, etc. —
+  com a **designação do bairro** (nome real do bairro do Huambo nas placas/letreiros).
 - **Economia de geração (regra do dono do projeto):** cada imagem pedida à IA GPT tem de conter
-  **mais de 100 itens/objetos** (folha de recursos em grelha, fundo transparente, à resolução máxima
-  disponível); depois o pipeline recorta cada objeto (tools/art/ai/process.py) e regista os recortes
-  no manifesto. Nunca gerar um objeto por imagem.
+  **mais de 100 itens/objetos** (à resolução máxima disponível); depois o pipeline recorta cada objeto
+  (tools/art/ai/process.py) e regista os recortes no manifesto. Nunca gerar um objeto por imagem.
 - Personagens: aparência, roupa e penteados de pessoas reais do Huambo de hoje (sem usar a cara
   de uma pessoa identificável como modelo de uma personagem).
 - Não usar arte desenhada por código para personagens/cenários; o código trata de animação,

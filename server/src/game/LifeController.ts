@@ -1,4 +1,4 @@
-import { interiorAt, type District, type Interior, type Place } from "./districts.js";
+import { getDistrict, interiorAt, type District, type Interior, type Place } from "./districts.js";
 import {
   DOC_LABEL,
   DURATION,
@@ -9,6 +9,7 @@ import {
   RENT_OPTIONS,
   SERVICES,
   rentPrice,
+  TRAVEL_PRICE,
   JOBS,
   LESSONS_PER_LEVEL,
   MAX_EDUCATION,
@@ -65,6 +66,8 @@ interface Entry {
   homes: Holding[];
   /** oferta de casas mostrada à porta de um edifício de habitação */
   offer: Offer | null;
+  /** viagem paga: o cliente muda de bairro quando vê isto */
+  travel: { district: string; n: number } | null;
 }
 
 export interface Offer {
@@ -98,12 +101,13 @@ export interface SelfState {
   parentsToday: boolean;
   busy: { kind: string; msLeft: number; total: number } | null;
   bank: number;
-  docs: { bi: boolean; registo: boolean };
+  docs: { bi: boolean; registo: boolean; residencia: boolean };
   phoneCredit: number;
   /** interior onde estou (null = na rua) */
   inside: { id: string; venue: string; name: string; unit?: number } | null;
   homes: Array<{ unit: string; name: string; tenure: "buy" | "rent"; paidUntil: number | null }>;
   offer: Offer | null;
+  travel: { district: string; n: number } | null;
 }
 
 /** Catálogo enviado no WELCOME (o cliente desenha menus e vagas a partir dele). */
@@ -111,7 +115,7 @@ export function lifeCatalog() {
   return {
     jobs: JOBS,
     menus: MENUS,
-    prices: { hotel: HOTEL_PRICE, study: STUDY_PRICE, homeMeal: HOME_MEAL.price },
+    prices: { hotel: HOTEL_PRICE, study: STUDY_PRICE, homeMeal: HOME_MEAL.price, travel: TRAVEL_PRICE },
     durations: DURATION,
     lessonsPerLevel: LESSONS_PER_LEVEL,
     services: SERVICES,
@@ -159,7 +163,7 @@ export class LifeController {
     rollDay(life, this.now());
     const money = await this.wallets.balance(actor.characterId);
     const bank = await this.bank.balance(actor.characterId);
-    const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null };
+    const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null, travel: null };
     this.entries.set(actor, e);
     await this.refreshHomes(actor, e);
     // voltou a entrar dentro de uma casa que já não é sua (renda acabou): vai para a rua
@@ -257,6 +261,9 @@ export class LifeController {
         case "home_eat":
           await this.homeEat(actor, e);
           break;
+        case "travel":
+          await this.travel(actor, e, msg.i);
+          break;
       }
     } catch (err) {
       if (err instanceof InsufficientFunds) this.out.toast(actor, "Não tens dinheiro suficiente.", false);
@@ -298,7 +305,7 @@ export class LifeController {
     if (!job) return this.out.toast(actor, "Vaga desconhecida.", false);
     if (e.life.education < job.education) return this.out.toast(actor, `Precisas de estudos nível ${job.education}.`, false);
     for (const d of job.docs ?? []) {
-      if (!e.life.docs[d]) return this.out.toast(actor, `Precisas de ${DOC_LABEL[d]} (${d === "bi" ? "Governo Provincial" : "Tribunal da Comarca"}).`, false);
+      if (!e.life.docs[d]) return this.out.toast(actor, `Precisas de ${DOC_LABEL[d]} (${d === "registo" ? "Tribunal da Comarca" : "Governo Provincial ou Administração do Bairro"}).`, false);
     }
     e.life.jobId = job.id;
     e.dirty = true;
@@ -459,13 +466,27 @@ export class LifeController {
     const venue = this.interior(spot?.interior)?.venue;
     if (!sv || !spot || venue !== sv.venue) return this.out.toast(actor, "Esse serviço não é feito neste balcão.", false);
     if (sv.doc && e.life.docs[sv.doc]) return this.out.toast(actor, `Já tens ${DOC_LABEL[sv.doc]}.`, false);
-    if (sv.needsDoc && !e.life.docs[sv.needsDoc]) return this.out.toast(actor, `Primeiro precisas do ${DOC_LABEL[sv.needsDoc]} (Governo Provincial).`, false);
-    e.money = await this.wallets.apply(actor.characterId, -sv.price, `service.${sv.id}`, `service:${actor.characterId}:${this.op()}:${sv.id}`);
+    if (sv.needsDoc && !e.life.docs[sv.needsDoc]) return this.out.toast(actor, `Primeiro precisas do ${DOC_LABEL[sv.needsDoc]}.`, false);
+    if (sv.energy && sv.energy < 0 && e.life.needs.energy < -sv.energy) return this.out.toast(actor, "Estás cansado(a) demais. Vai dormir primeiro.", false);
+    if (sv.price > 0) e.money = await this.wallets.apply(actor.characterId, -sv.price, `service.${sv.id}`, `service:${actor.characterId}:${this.op()}:${sv.id}`);
     if (sv.doc) e.life.docs[sv.doc] = true;
     if (sv.credit) e.life.phoneCredit += sv.credit;
-    if (sv.mood) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + sv.mood) };
+    const n = e.life.needs;
+    const c = (v: number) => Math.max(0, Math.min(100, v));
+    e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0)), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
     e.dirty = true;
-    this.out.toast(actor, `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).`, true);
+    this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
+  }
+
+  private async travel(actor: LifeActor, e: Entry, to: string | undefined): Promise<void> {
+    if (e.busy) return this.out.toast(actor, "Estás ocupado(a).", false);
+    if (interiorAt(this.district, actor.x, actor.y)) return this.out.toast(actor, "Sai primeiro para a rua.", false);
+    const d = getDistrict(to ?? "");
+    if (!d || d.id === this.district.id || !d.places?.length) return this.out.toast(actor, "Esse bairro não existe.", false);
+    e.money = await this.wallets.apply(actor.characterId, -TRAVEL_PRICE, "travel.candongueiro", `travel:${actor.characterId}:${this.op()}`);
+    e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1 };
+    e.dirty = true;
+    this.out.toast(actor, `Apanhaste o candongueiro para ${d.name} (−${TRAVEL_PRICE} Kz).`, true);
   }
 
   private async homeEat(actor: LifeActor, e: Entry): Promise<void> {
@@ -574,6 +595,7 @@ export class LifeController {
       })(),
       homes: e.homes.map((h) => ({ unit: h.unit, name: this.interior(h.unit)?.name ?? h.unit, tenure: h.tenure, paidUntil: h.paidUntil })),
       offer: e.offer,
+      travel: e.travel,
     });
   }
 }

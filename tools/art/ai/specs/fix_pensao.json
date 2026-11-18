@@ -1,0 +1,2 @@
+[{"id": "fix_pensao_out", "kind": "object", "context_only": true, "refs": ["fix_pensao_in"], "size": "1024x1024", "quality": "high",
+  "prompt": "EDIT the attached image: keep the yellow two-storey guesthouse EXACTLY as it is (same position, size, camera, colors, details, transparent background). Change ONLY the text of the sign on the balcony so it reads exactly 'Hospedaria Fátima' (H-o-s-p-e-d-a-r-i-a  F-á-t-i-m-a)."}]

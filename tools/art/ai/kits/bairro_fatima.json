@@ -1,0 +1,526 @@
+{
+ "id": "bairro_fatima",
+ "cuts": "raw/kit_bairro_fatima_v2_cut",
+ "scale": 1.6,
+ "items": [
+  {
+   "n": 0,
+   "id": "f_escola",
+   "name": "Escola Primária do Bairro de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 1,
+   "id": "f_liceu",
+   "name": "Liceu do Bairro de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 2,
+   "id": "f_centro_saude",
+   "name": "Centro de Saúde do Bairro de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 3,
+   "id": "f_igreja",
+   "name": "Igreja Nossa Senhora de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 5,
+   "id": "f_esquadra",
+   "name": "Esquadra Policial de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 6,
+   "id": "f_farmacia",
+   "name": "Farmácia Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 9,
+   "id": "f_cantina",
+   "name": "Cantina da Dona Rosa",
+   "cat": "building"
+  },
+  {
+   "n": 10,
+   "id": "f_churrasqueira",
+   "name": "Churrasqueira Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 11,
+   "id": "f_administracao",
+   "name": "Administração do Bairro de Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 12,
+   "id": "f_predio",
+   "name": "Prédio Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 14,
+   "id": "f_casa3",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 15,
+   "id": "f_casa4",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 16,
+   "id": "f_casa5",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 17,
+   "id": "f_casa6",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 18,
+   "id": "f_casa7",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 19,
+   "id": "f_casa8",
+   "name": "Casa",
+   "cat": "building"
+  },
+  {
+   "n": 13,
+   "id": "f_casa1",
+   "name": "Casa",
+   "cat": "building",
+   "split": [
+    0,
+    2
+   ]
+  },
+  {
+   "n": 13,
+   "id": "f_casa2",
+   "name": "Casa",
+   "cat": "building",
+   "split": [
+    1,
+    2
+   ]
+  },
+  {
+   "file": "raw/fix_signs_out.png",
+   "crop": "mercado",
+   "id": "f_mercado",
+   "name": "Mercado do Bairro de Fátima",
+   "cat": "building"
+  },
+  {
+   "file": "raw/fix_signs_out.png",
+   "crop": "discoteca",
+   "id": "f_discoteca",
+   "name": "Discoteca Kizomba Fátima",
+   "cat": "building"
+  },
+  {
+   "file": "raw/fix_pensao_out.png",
+   "id": "f_hospedaria",
+   "name": "Hospedaria Fátima",
+   "cat": "building"
+  },
+  {
+   "n": 20,
+   "id": "f_jacaranda",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 21,
+   "id": "f_jacaranda2",
+   "fp": [
+    1.5,
+    1.5
+   ]
+  },
+  {
+   "n": 22,
+   "id": "f_eucalipto",
+   "fp": [
+    1.2,
+    1.2
+   ]
+  },
+  {
+   "n": 23,
+   "id": "f_eucalipto2",
+   "fp": [
+    1.2,
+    1.2
+   ]
+  },
+  {
+   "n": 24,
+   "id": "f_palmeira",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 25,
+   "id": "f_palmeira2",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 26,
+   "id": "f_mulemba",
+   "fp": [
+    2.5,
+    2.5
+   ]
+  },
+  {
+   "n": 27,
+   "id": "f_mangueira",
+   "fp": [
+    1.6,
+    1.6
+   ]
+  },
+  {
+   "n": 28,
+   "id": "f_abacateiro",
+   "fp": [
+    1.6,
+    1.6
+   ]
+  },
+  {
+   "n": 29,
+   "id": "f_buganvilia",
+   "fp": [
+    1.2,
+    1.2
+   ]
+  },
+  {
+   "n": 30,
+   "id": "f_candeeiro",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "light": true
+  },
+  {
+   "n": 31,
+   "id": "f_candeeiro2",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "light": true
+  },
+  {
+   "n": 34,
+   "id": "f_candeeiro_solar",
+   "fp": [
+    0.4,
+    0.4
+   ],
+   "light": true
+  },
+  {
+   "n": 38,
+   "id": "f_poste",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 40,
+   "id": "f_poste2",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 42,
+   "id": "f_candongueiro"
+  },
+  {
+   "n": 43,
+   "id": "f_candongueiro2"
+  },
+  {
+   "n": 45,
+   "id": "f_kupapata"
+  },
+  {
+   "n": 46,
+   "id": "f_kupapata2"
+  },
+  {
+   "n": 49,
+   "id": "f_carro"
+  },
+  {
+   "n": 50,
+   "id": "f_hilux"
+  },
+  {
+   "n": 51,
+   "id": "f_carro2"
+  },
+  {
+   "n": 52,
+   "id": "f_banca"
+  },
+  {
+   "n": 53,
+   "id": "f_banca2"
+  },
+  {
+   "n": 54,
+   "id": "f_banca3"
+  },
+  {
+   "n": 55,
+   "id": "f_banca4"
+  },
+  {
+   "n": 56,
+   "id": "f_banca5"
+  },
+  {
+   "n": 57,
+   "id": "f_banca_roupa"
+  },
+  {
+   "n": 58,
+   "id": "f_contentor",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 60,
+   "id": "f_contentor2",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 63,
+   "id": "f_banco_jardim"
+  },
+  {
+   "n": 64,
+   "id": "f_banco_jardim2"
+  },
+  {
+   "n": 65,
+   "id": "f_banco_madeira"
+  },
+  {
+   "n": 66,
+   "id": "f_tanque",
+   "fp": [
+    1.2,
+    1.2
+   ]
+  },
+  {
+   "n": 69,
+   "id": "f_gerador",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 71,
+   "id": "f_paragem"
+  },
+  {
+   "n": 72,
+   "id": "f_paragem2"
+  },
+  {
+   "n": 74,
+   "id": "f_vaso",
+   "fp": [
+    0.6,
+    0.6
+   ]
+  },
+  {
+   "n": 75,
+   "id": "f_vaso2",
+   "fp": [
+    0.6,
+    0.6
+   ]
+  },
+  {
+   "n": 76,
+   "id": "f_vaso3",
+   "fp": [
+    0.6,
+    0.6
+   ]
+  },
+  {
+   "n": 78,
+   "id": "f_bicicleta",
+   "fp": [
+    1,
+    0.5
+   ]
+  },
+  {
+   "n": 81,
+   "id": "f_blocos",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 87,
+   "id": "f_bidao",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 90,
+   "id": "f_galinha",
+   "fp": [
+    0.3,
+    0.3
+   ]
+  },
+  {
+   "n": 91,
+   "id": "f_galinha2",
+   "fp": [
+    0.3,
+    0.3
+   ]
+  },
+  {
+   "n": 93,
+   "id": "f_cabra",
+   "fp": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "n": 95,
+   "id": "f_placa_bairro",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 97,
+   "id": "f_bandeira",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 99,
+   "id": "f_atm",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 100,
+   "id": "f_quiosque_unitel",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 101,
+   "id": "f_quiosque_movicel",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 103,
+   "id": "f_carvao",
+   "fp": [
+    0.6,
+    0.6
+   ]
+  },
+  {
+   "n": 105,
+   "id": "f_chafariz",
+   "fp": [
+    1,
+    1
+   ]
+  },
+  {
+   "n": 106,
+   "id": "f_mesa_plastico"
+  },
+  {
+   "n": 107,
+   "id": "f_mesa_plastico2"
+  },
+  {
+   "n": 108,
+   "id": "f_botija",
+   "fp": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "n": 110,
+   "id": "f_carroca"
+  },
+  {
+   "n": 111,
+   "id": "f_muro_portao"
+  },
+  {
+   "n": 112,
+   "id": "f_muro_portao2"
+  }
+ ]
+}

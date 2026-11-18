@@ -102,3 +102,10 @@ Usadas como imagem de referência para a arte do jogo (uso declarado autorizado 
 | oficiais/gov_932.jpg | https://huambo.gov.ao/media/uploads/large_905985101_1467207742254528_760617429225952063_n_541d492cb2.jpg |
 | oficiais/gov_933.jpg | https://huambo.gov.ao/media/uploads/large_906045904_1467207498921219_8797648059318557201_n_db318947a2.jpg |
 | oficiais/gov_940.jpg | https://huambo.gov.ao/media/uploads/large_906473440_1470335188608450_1780595378927106563_n_fa1357091b.jpg |
+
+## Kit "Bairro de Fátima" (kit_bairro_fatima_v2, 2026-11-18)
+- Gerado a partir de texto com o contexto real do Huambo (regra atualizada: `style.json` → `huambo_text`),
+  nomes e equipamentos do bairro tirados do OpenStreetMap (escolas, centros de saúde, igrejas, mercados do Huambo).
+- Imagens de entrada só para fixar o ângulo de câmara: `raw/v3_banco.png` e `raw/v3_predio_castanho.png`
+  (recursos do próprio jogo, gerados antes a partir das fotos oficiais de huambo.gov.ao — ver acima).
+- Correção de letreiros: `fix_signs_fatima` (mercado, discoteca) e `fix_pensao` (Hospedaria Fátima), edições locais.

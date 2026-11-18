@@ -188,6 +188,7 @@ function ensureDefaults(): void {
   defaultsLoaded = true;
   registerDistrict(loadMapDistrict(new URL("../../data/maps/huambo_centro.json", import.meta.url)));
   registerDistrict(loadBairroDistrict(new URL("../../data/bairros/cidade_baixa.json", import.meta.url)));
+  registerDistrict(loadBairroDistrict(new URL("../../data/bairros/bairro_fatima.json", import.meta.url)));
 }
 
 /** Interior onde está um ponto (ou undefined = na rua). */

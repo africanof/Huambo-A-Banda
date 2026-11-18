@@ -58,20 +58,25 @@ func build(bairro_id: String) -> bool:
 		_add_object(b.id, pos)
 		if str(b.label) != "":
 			var o := DemoAssets.object(b.id)
-			_add_label(b.label, pos + Vector2(0, -float(o.anchor[1]) - 16), _is_home(b))
+			_add_label(b.label, pos + Vector2(0, -_top(o) - 16), _is_home(b))
 	for p: Dictionary in data.props:
 		var pos := Iso.to_screen(Vector2(p.at[0], p.at[1]))
 		var o := _add_object(p.id, pos)
 		if o.get("light", false):
-			_add_lamp_light(pos + Vector2(0, -float(o.anchor[1]) * 0.86))
-		if o.has("name"):
-			_add_label(o.name, pos + Vector2(0, -float(o.anchor[1]) - 12), false)
+			_add_lamp_light(pos + Vector2(0, -_top(o) * 0.86))
+		if o.has("name") and o.get("category", "") != "building":
+			_add_label(o.name, pos + Vector2(0, -_top(o) - 12), false)
 	return true
+
+
+## Altura (px no mundo) do topo do objeto acima da sua base.
+func _top(o: Dictionary) -> float:
+	return float(o.anchor[1]) * float(o.get("scale", 1.0))
 
 
 func _is_home(b: Dictionary) -> bool:
 	for p: Dictionary in places:
-		if p.kind == "home" and str(p.id).begins_with(str(b.id) + "@"):
+		if p.kind == "door" and str(p.get("venue", "")) in ["casa", "apartamentos"] and str(p.id).begins_with("%s@%s,%s" % [b.id, b.at[0], b.at[1]]):
 			return true
 	return false
 
@@ -268,7 +273,7 @@ func update_occlusion(char_pos: Vector2, delta: float) -> void:
 	var body := Rect2(char_pos + Vector2(-14, -80), Vector2(28, 76))
 	var k := clampf(delta * 10.0, 0.0, 1.0)
 	for s: Sprite2D in occluders:
-		var r := Rect2(s.position + s.offset, s.texture.get_size())
+		var r := Rect2(s.position + s.offset * s.scale, s.texture.get_size() * s.scale)
 		var target := 1.0
 		if s.position.y > char_pos.y and r.intersects(body) and _opaque_over(s, body):
 			target = 0.38
@@ -288,10 +293,10 @@ func _opaque_over(s: Sprite2D, body: Rect2) -> bool:
 		# máscara reduzida (1/4): pouca memória no telemóvel, chega para saber se tapa
 		img.resize(maxi(1, img.get_width() / 4), maxi(1, img.get_height() / 4), Image.INTERPOLATE_NEAREST)
 		_images[s.texture] = img
-	var origin := s.position + s.offset
+	var origin := s.position + s.offset * s.scale
 	for fx: float in [0.2, 0.5, 0.8]:
 		for fy: float in [0.15, 0.45, 0.75]:
-			var p := (body.position + body.size * Vector2(fx, fy) - origin) / 4.0
+			var p := (body.position + body.size * Vector2(fx, fy) - origin) / s.scale / 4.0
 			if p.x >= 0 and p.y >= 0 and p.x < img.get_width() and p.y < img.get_height():
 				if img.get_pixel(int(p.x), int(p.y)).a > 0.5:
 					return true
@@ -308,7 +313,7 @@ func _add_object(id: String, pos: Vector2) -> Dictionary:
 	var s := DemoAssets.make_sprite(id)
 	s.position = pos
 	objects.add_child(s)
-	if s.texture and s.texture.get_height() > 90:
+	if s.texture and s.texture.get_height() * s.scale.y > 90:
 		occluders.append(s)
 	var t := DemoAssets.shadow_texture(id)
 	if t:

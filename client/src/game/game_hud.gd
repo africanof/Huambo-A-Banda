@@ -160,7 +160,7 @@ func _ready() -> void:
 	dock.add_child(dh)
 	dh.add_child(_tab("phone", "Telemóvel", true, func() -> void: _toggle_phone()))
 	dh.add_child(_tab("home", "Casa", false, func() -> void: _open_phone("casa")))
-	dh.add_child(_tab("map", "Mapa", false, func() -> void: ui_action.emit("mapa")))
+	dh.add_child(_tab("map", "Mapa", false, func() -> void: _open_map()))
 	dh.add_child(_tab("hand", "Gestos", false, func() -> void: show_toast("Gestos: brevemente.", true)))
 	dh.add_child(_tab("chat", "Falar", false, func() -> void: show_toast("Conversar: brevemente.", true)))
 
@@ -424,6 +424,36 @@ func _panel(title: String) -> void:
 
 func _close_button() -> void:
 	menu_body.add_child(_button("Fechar", "minus", BG, Color.WHITE, func() -> void: menu_panel.visible = false))
+
+
+## Mapa: vista geral do bairro e viagem de candongueiro para outros bairros do Huambo.
+func _open_map() -> void:
+	_panel("Mapa do Huambo")
+	menu_body.add_child(_button("Ver o bairro todo / voltar", "map", BG, Color.WHITE, func() -> void:
+		ui_action.emit("mapa")
+		menu_panel.visible = false))
+	menu_body.add_child(_label("Apanhar candongueiro (%s Kz) para:" % DemoHud._money(int(catalog.get("prices", {}).get("travel", 200))), 16, Color.WHITE, FONT, true))
+	var here := str(Net.welcome.get("district", {}).get("id", ""))
+	var http := HTTPRequest.new()
+	add_child(http)
+	http.request(AppConfig.server_url + "/districts")
+	var r: Array = await http.request_completed
+	http.queue_free()
+	if not menu_panel.visible:
+		return
+	var list: Variant = JSON.parse_string((r[3] as PackedByteArray).get_string_from_utf8()) if r[0] == HTTPRequest.RESULT_SUCCESS else null
+	if typeof(list) != TYPE_ARRAY:
+		menu_body.add_child(_label("Não foi possível obter os bairros.", 14, Color("ffb4a8"), FONT_REG, true))
+	else:
+		for d: Dictionary in list:
+			var map_id := str(d.get("map", {}).get("id", "")) if typeof(d.get("map")) == TYPE_DICTIONARY else ""
+			if not map_id.begins_with("bairro:") or str(d.id) == here:
+				continue
+			var id := str(d.id)
+			menu_body.add_child(_button(str(d.name), "pin", ACCENT, INK, func() -> void:
+				Net.action("travel", id)
+				menu_panel.visible = false))
+	_close_button()
 
 
 func _open_bank() -> void:

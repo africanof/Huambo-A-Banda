@@ -83,5 +83,5 @@ jobs:
           for i in $(seq 1 30); do curl -sf localhost:2567/health && break; sleep 1; done
           godot --headless --path client -- --autotest --life --name=CI1 --expect-peers=2 & A=$!
           sleep 1
-          godot --headless --path client -- --autotest --name=CI2 --expect-peers=2 & B=$!
+          godot --headless --path client -- --autotest --travel --name=CI2 --expect-peers=2 & B=$!
           wait $A && wait $B
