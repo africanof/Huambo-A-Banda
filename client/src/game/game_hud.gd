@@ -37,50 +37,91 @@ var _context: Dictionary = {}
 var _toast_until := 0
 var _title: Label
 var _right := VBoxContainer.new()
-var _right_buttons: Array[Button] = []
 var _needs_panel: PanelContainer
+var _portrait := TextureRect.new()
+var money_label := Label.new()
+var needs_button := Button.new()
+var _dock: PanelContainer
+const ACCENT_DARK := Color("b5341f")
 
 
 func _ready() -> void:
-	# --- barra de cima
-	var top := PanelContainer.new()
-	top.add_theme_stylebox_override("panel", _pill(BG, 22))
-	top.position = Vector2(16, 14)
-	add_child(top)
-	var hb := HBoxContainer.new()
-	hb.add_theme_constant_override("separation", 14)
-	top.add_child(hb)
-	_title = _label("Huambo É A Banda", 20, ACCENT, FONT_BOLD)
-	hb.add_child(_title)
+	# --- topo ao centro: retrato + dinheiro (como nos jogos de vida para telemóvel)
+	var money_pill := PanelContainer.new()
+	var msb := _pill(BG, 36, ACCENT_DARK)
+	msb.content_margin_left = 8
+	msb.content_margin_right = 26
+	msb.content_margin_top = 6
+	msb.content_margin_bottom = 6
+	money_pill.add_theme_stylebox_override("panel", msb)
+	money_pill.anchor_left = 0.5
+	money_pill.anchor_right = 0.5
+	money_pill.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	money_pill.offset_top = 12
+	add_child(money_pill)
+	var mh := HBoxContainer.new()
+	mh.add_theme_constant_override("separation", 12)
+	money_pill.add_child(mh)
+	_portrait.custom_minimum_size = Vector2(52, 52)
+	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	var frame := PanelContainer.new()
+	var fsb := _pill(Color("6b2a17"), 28, ACCENT)
+	fsb.set_content_margin_all(2)
+	fsb.shadow_size = 0
+	frame.add_theme_stylebox_override("panel", fsb)
+	frame.clip_children = CanvasItem.CLIP_CHILDREN_AND_DRAW
+	frame.add_child(_portrait)
+	mh.add_child(frame)
+	var mv := VBoxContainer.new()
+	mv.add_theme_constant_override("separation", -2)
+	mv.alignment = BoxContainer.ALIGNMENT_CENTER
+	mh.add_child(mv)
 	top_label.add_theme_font_override("font", FONT)
-	top_label.add_theme_font_size_override("font_size", 18)
-	hb.add_child(top_label)
+	top_label.add_theme_font_size_override("font_size", 13)
+	top_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.7))
+	mv.add_child(top_label)
+	money_label.add_theme_font_override("font", FONT_BOLD)
+	money_label.add_theme_font_size_override("font_size", 26)
+	money_label.add_theme_color_override("font_color", ACCENT)
+	mv.add_child(money_label)
+	_title = top_label
 
-	# --- necessidades
+	# --- topo à esquerda: necessidade mais baixa; tocar abre as quatro
+	needs_button.toggle_mode = true
+	_style_round(needs_button, 26, BG)
+	needs_button.custom_minimum_size = Vector2(150, 56)
+	needs_button.position = Vector2(14, 90)
+	needs_button.icon = DemoIcons.make("bowl", Color("8fe08a"), 28)
+	needs_button.add_theme_font_override("font", FONT_BOLD)
+	needs_button.add_theme_font_size_override("font_size", 18)
+	needs_button.toggled.connect(func(on: bool) -> void: _needs_panel.visible = on)
+	add_child(needs_button)
 	var needs := PanelContainer.new()
 	needs.add_theme_stylebox_override("panel", _pill(BG, 18))
-	needs.position = Vector2(16, 70)
+	needs.position = Vector2(14, 154)
+	needs.visible = false
 	add_child(needs)
 	_needs_panel = needs
 	var nv := VBoxContainer.new()
-	nv.add_theme_constant_override("separation", 6)
+	nv.add_theme_constant_override("separation", 8)
 	needs.add_child(nv)
 	for n: Array in NEEDS:
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 8)
-		var l := _label(n[1], 14, Color.WHITE, FONT)
-		l.custom_minimum_size = Vector2(64, 0)
+		var l := _label(n[1], 15, Color.WHITE, FONT)
+		l.custom_minimum_size = Vector2(70, 0)
 		row.add_child(l)
 		var bar := ProgressBar.new()
-		bar.custom_minimum_size = Vector2(130, 12)
+		bar.custom_minimum_size = Vector2(130, 14)
 		bar.show_percentage = false
 		bar.max_value = 100
 		var fill := StyleBoxFlat.new()
 		fill.bg_color = n[2]
-		fill.set_corner_radius_all(6)
+		fill.set_corner_radius_all(7)
 		var back := StyleBoxFlat.new()
 		back.bg_color = Color(1, 1, 1, 0.12)
-		back.set_corner_radius_all(6)
+		back.set_corner_radius_all(7)
 		bar.add_theme_stylebox_override("fill", fill)
 		bar.add_theme_stylebox_override("background", back)
 		bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
@@ -88,21 +129,40 @@ func _ready() -> void:
 		need_bars[n[0]] = bar
 		nv.add_child(row)
 
-	# --- botões da direita
+	# --- botões redondos à direita
 	var right := _right
-	right.add_theme_constant_override("separation", 10)
+	right.add_theme_constant_override("separation", 12)
 	right.anchor_left = 1.0
 	right.anchor_right = 1.0
-	right.offset_left = -190
-	right.offset_right = -16
-	right.offset_top = 14
+	right.offset_left = -78
+	right.offset_right = -14
+	right.offset_top = 90
 	add_child(right)
-	right.add_child(_button("Telemóvel", "phone_icon", BG, Color.WHITE, func() -> void: _toggle_phone()))
-	right.add_child(_button("Aproximar", "plus", BG, Color.WHITE, func() -> void: ui_action.emit("zoom_mais")))
-	right.add_child(_button("Afastar", "minus", BG, Color.WHITE, func() -> void: ui_action.emit("zoom_menos")))
-	right.add_child(_button("Sair", "door", BG, Color.WHITE, func() -> void: ui_action.emit("sair")))
-	for b: Node in right.get_children():
-		_right_buttons.append(b as Button)
+	right.add_child(_round("pin", "Onde estou", func() -> void: ui_action.emit("centrar")))
+	right.add_child(_round("plus", "Aproximar", func() -> void: ui_action.emit("zoom_mais")))
+	right.add_child(_round("minus", "Afastar", func() -> void: ui_action.emit("zoom_menos")))
+	right.add_child(_round("door", "Sair", func() -> void: ui_action.emit("sair")))
+
+	# --- barra de baixo (separadores)
+	var dock := PanelContainer.new()
+	dock.add_theme_stylebox_override("panel", _pill(BG, 34))
+	dock.anchor_left = 0.5
+	dock.anchor_right = 0.5
+	dock.anchor_top = 1.0
+	dock.anchor_bottom = 1.0
+	dock.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	dock.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	dock.offset_bottom = -14
+	add_child(dock)
+	_dock = dock
+	var dh := HBoxContainer.new()
+	dh.add_theme_constant_override("separation", 4)
+	dock.add_child(dh)
+	dh.add_child(_tab("phone", "Telemóvel", true, func() -> void: _toggle_phone()))
+	dh.add_child(_tab("home", "Casa", false, func() -> void: show_toast("Casa: arrendar e comprar chega na próxima atualização.", true)))
+	dh.add_child(_tab("map", "Mapa", false, func() -> void: ui_action.emit("mapa")))
+	dh.add_child(_tab("hand", "Gestos", false, func() -> void: show_toast("Gestos: brevemente.", true)))
+	dh.add_child(_tab("chat", "Falar", false, func() -> void: show_toast("Conversar: brevemente.", true)))
 
 	# --- ações do lugar (em baixo, ao centro)
 	actions_box.add_theme_constant_override("separation", 10)
@@ -111,8 +171,8 @@ func _ready() -> void:
 	actions_box.anchor_right = 1.0
 	actions_box.anchor_top = 1.0
 	actions_box.anchor_bottom = 1.0
-	actions_box.offset_top = -92
-	actions_box.offset_bottom = -36
+	actions_box.offset_top = -170
+	actions_box.offset_bottom = -114
 	add_child(actions_box)
 
 	# --- ação em curso
@@ -122,8 +182,8 @@ func _ready() -> void:
 	busy_box.anchor_bottom = 1.0
 	busy_box.offset_left = -170
 	busy_box.offset_right = 170
-	busy_box.offset_top = -150
-	busy_box.offset_bottom = -100
+	busy_box.offset_top = -230
+	busy_box.offset_bottom = -180
 	busy_label.add_theme_font_override("font", FONT)
 	busy_label.add_theme_font_size_override("font_size", 16)
 	busy_label.add_theme_color_override("font_outline_color", Color.BLACK)
@@ -194,34 +254,39 @@ func _ready() -> void:
 
 # ------------------------------------------------------------------ disposição
 
-## Ecrãs estreitos (telemóvel na vertical): botões só com ícone, painéis à largura do ecrã.
+## Telemóvel e ementa: painel à direita no ecrã largo; largura do ecrã no estreito.
 func _layout() -> void:
 	var w := get_viewport().get_visible_rect().size.x
 	var compact := w < 900.0
-	_title.visible = not compact
-	for b: Button in _right_buttons:
-		b.text = "" if compact else str(b.get_meta("label", b.text))
-		b.custom_minimum_size = Vector2(46, 46) if compact else Vector2(0, 46)
-		b.tooltip_text = str(b.get_meta("label", ""))
-	_right.offset_left = -62.0 if compact else -190.0
-	var side := 62.0 if compact else 190.0
-	# telemóvel e ementa: à direita no PC; ocupam a largura livre no ecrã estreito
 	for p: PanelContainer in [phone, menu_panel]:
+		p.anchor_bottom = 1.0
+		p.offset_bottom = -110
 		if compact:
 			p.anchor_left = 0.0
 			p.offset_left = 12
-			p.offset_right = -side - 8
-			p.offset_top = 70
+			p.offset_right = -12
+			p.offset_top = 84
 		else:
 			p.anchor_left = 1.0
-			p.offset_left = -560
-			p.offset_right = -206
-			p.offset_top = 14
+			p.offset_left = -470
+			p.offset_right = -92
+			p.offset_top = 84
 	var tw := minf(480.0, w - 40.0)
 	toast_label.custom_minimum_size = Vector2(tw, 0)
 	toast_panel.offset_left = -tw / 2.0 - 20.0
 	toast_panel.offset_right = tw / 2.0 + 20.0
-	toast_panel.offset_top = 70.0 if not compact else 180.0
+	toast_panel.offset_top = 90.0
+
+
+## Retrato da personagem para o topo (recorte da cabeça e tronco da animação parada).
+func set_portrait(tex: Texture2D) -> void:
+	if tex == null:
+		return
+	var at := AtlasTexture.new()
+	at.atlas = tex
+	var sz := tex.get_size()
+	at.region = Rect2(sz.x * 0.18, 0, sz.x * 0.64, sz.y * 0.42)
+	_portrait.texture = at
 
 
 # ------------------------------------------------------------------ atualização
@@ -230,7 +295,8 @@ func set_clock(minutes: float) -> void:
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
 	var money := int(Net.me.get("money", 0))
-	top_label.text = "%s  %s · %02d:%02d   ·   %s Kz" % ["☀" if h >= 6 and h < 18 else "☾", place_text, h, m, DemoHud._money(money)]
+	top_label.text = "%s %s · %02d:%02d" % ["☀" if h >= 6 and h < 18 else "☾", place_text.to_upper(), h, m]
+	money_label.text = "%s Kz" % DemoHud._money(money)
 
 
 func _process(_delta: float) -> void:
@@ -253,8 +319,17 @@ var _busy_received := 0
 func refresh() -> void:
 	_busy_received = Time.get_ticks_msec()
 	var n: Dictionary = Net.me.get("needs", {})
+	var low := ""
 	for k: String in need_bars:
 		(need_bars[k] as ProgressBar).value = float(n.get(k, 0))
+		if low == "" or float(n.get(k, 0)) < float(n.get(low, 0)):
+			low = k
+	# botão das necessidades: mostra a mais urgente
+	for e: Array in NEEDS:
+		if e[0] == low:
+			needs_button.text = "%s %d%%" % [e[1], int(n.get(low, 0))]
+			needs_button.icon = DemoIcons.make("bowl", e[2], 28) if needs_button.get_meta("low", "") != low else needs_button.icon
+			needs_button.set_meta("low", low)
 	_rebuild_actions()
 	if phone.visible:
 		_rebuild_phone()
@@ -445,8 +520,51 @@ func _label(text: String, size: int, color: Color, font: Font, wrap := false) ->
 	return l
 
 
-func _pill(c: Color, r: int) -> StyleBoxFlat:
-	return DemoHud._pill(c, r)
+func _pill(c: Color, r: int, border := Color(0, 0, 0, 0)) -> StyleBoxFlat:
+	var sb := DemoHud._pill(c, r)
+	if border.a > 0.0:
+		sb.border_color = border
+		sb.set_border_width_all(3)
+	return sb
+
+
+func _style_round(b: Button, r: int, bg: Color) -> void:
+	b.add_theme_stylebox_override("normal", _pill(bg, r))
+	b.add_theme_stylebox_override("hover", _pill(bg.lightened(0.12), r))
+	b.add_theme_stylebox_override("pressed", _pill(bg.lightened(0.18), r))
+	b.add_theme_stylebox_override("hover_pressed", _pill(bg.lightened(0.18), r))
+	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	b.focus_mode = Control.FOCUS_NONE
+	for st: String in ["font_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color"]:
+		b.add_theme_color_override(st, Color.WHITE)
+
+
+## Botão redondo só com ícone (coluna da direita).
+func _round(icon: String, tip: String, cb: Callable) -> Button:
+	var b := Button.new()
+	b.icon = DemoIcons.make(icon, ACCENT, 28)
+	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	b.tooltip_text = tip
+	b.custom_minimum_size = Vector2(60, 60)
+	_style_round(b, 30, BG)
+	b.pressed.connect(cb)
+	return b
+
+
+## Separador da barra de baixo: ícone por cima do texto.
+func _tab(icon: String, text: String, main: bool, cb: Callable) -> Button:
+	var b := Button.new()
+	b.text = text
+	b.icon = DemoIcons.make(icon, Color.WHITE, 30)
+	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	b.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
+	b.custom_minimum_size = Vector2(84, 74)
+	b.add_theme_font_override("font", FONT_BOLD)
+	b.add_theme_font_size_override("font_size", 14)
+	b.add_theme_constant_override("h_separation", 2)
+	_style_round(b, 28, ACCENT_DARK if main else Color(0, 0, 0, 0))
+	b.pressed.connect(cb)
+	return b
 
 
 func _button(text: String, icon: String, bg: Color, fg: Color, cb: Callable) -> Button:

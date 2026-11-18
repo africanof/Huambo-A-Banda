@@ -6,7 +6,7 @@ const S := 96 ## resolução interna
 const OUT := 24 ## tamanho final
 
 
-static func make(kind: String, color: Color) -> Texture2D:
+static func make(kind: String, color: Color, out := OUT) -> Texture2D:
 	var img := Image.create(S, S, false, Image.FORMAT_RGBA8)
 	img.fill(Color(0, 0, 0, 0))
 	var c := color
@@ -47,7 +47,34 @@ static func make(kind: String, color: Color) -> Texture2D:
 			_rect(img, Rect2(22, 30, 52, 58), c)
 			_rect(img, Rect2(14, 18, 68, 8), c)
 			_rect(img, Rect2(38, 8, 20, 10), c)
-	img.resize(OUT, OUT, Image.INTERPOLATE_LANCZOS)
+		"pin":
+			_circle(img, Vector2(48, 36), 28, c)
+			_poly(img, [Vector2(24, 50), Vector2(72, 50), Vector2(48, 92)], c)
+			_circle(img, Vector2(48, 36), 11, Color(0, 0, 0, 0))
+		"map":
+			_poly(img, [Vector2(8, 22), Vector2(34, 12), Vector2(34, 76), Vector2(8, 86)], c)
+			_poly(img, [Vector2(38, 12), Vector2(58, 22), Vector2(58, 86), Vector2(38, 76)], c)
+			_poly(img, [Vector2(62, 22), Vector2(88, 12), Vector2(88, 76), Vector2(62, 86)], c)
+		"hand":
+			for i in 4:
+				_rect(img, Rect2(22 + i * 14, 14 + absi(i - 1) * 4, 10, 46), c)
+				_circle(img, Vector2(27 + i * 14, 14 + absi(i - 1) * 4), 5, c)
+			_poly(img, [Vector2(6, 44), Vector2(16, 40), Vector2(26, 58), Vector2(20, 66)], c)
+			_ellipse(img, Vector2(48, 66), 28, 24, c)
+		"chat":
+			_rect(img, Rect2(10, 14, 76, 54), c)
+			_poly(img, [Vector2(24, 66), Vector2(44, 66), Vector2(22, 88)], c)
+			_rect(img, Rect2(20, 26, 56, 30), Color(0, 0, 0, 0))
+		"more":
+			for i in 3:
+				_circle(img, Vector2(20 + i * 28, 48), 9, c)
+		"bowl":
+			_ellipse(img, Vector2(48, 52), 40, 30, c)
+			_rect(img, Rect2(0, 0, 96, 52), Color(0, 0, 0, 0))
+			_rect(img, Rect2(8, 48, 80, 6), c)
+			for i in 3:
+				_rect(img, Rect2(30 + i * 16, 14 + (i % 2) * 6, 6, 26), c)
+	img.resize(out, out, Image.INTERPOLATE_LANCZOS)
 	return ImageTexture.create_from_image(img)
 
 

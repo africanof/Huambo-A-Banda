@@ -235,7 +235,13 @@ def build_tiles(manifest):
         # inversa: u = (X - TW/2)·S/TW + Y·S/TH ; v = -(X - TW/2)·S/TW + Y·S/TH
         a, b, c = S / TW, S / TH, -S / 2
         d, e, f = -S / TW, S / TH, S / 2
-        tile = tex.transform((TW, TH), Image.AFFINE, (a, b, c, d, e, f), resample=Image.BICUBIC).convert("RGBA")
+        # textura repetida 3×3: a borda alargada do losango lê a textura vizinha em vez de
+        # preto (era isso que desenhava linhas escuras entre os mosaicos)
+        tex3 = Image.new("RGB", (S * 3, S * 3))
+        for gx in range(3):
+            for gy in range(3):
+                tex3.paste(tex, (gx * S, gy * S))
+        tile = tex3.transform((TW, TH), Image.AFFINE, (a, b, c + S, d, e, f + S), resample=Image.BICUBIC).convert("RGBA")
         mask = Image.new("L", (TW, TH), 0)
         from PIL import ImageDraw
         e = 2.5  # losango ligeiramente maior: os mosaicos sobrepõem-se e não ficam costuras

@@ -41,7 +41,18 @@ func _ready() -> void:
 	hud.catalog = w.get("catalog", {}) if typeof(w.get("catalog")) == TYPE_DICTIONARY else {}
 	add_child(hud)
 	hud.ui_action.connect(_on_hud_action)
-	camera.zoom = Vector2(0.5, 0.5)
+	# telemóvel na vertical: mais perto, a personagem fica bem visível
+	var z0 := 0.68 if get_viewport().get_visible_rect().size.x < 700.0 else 0.5
+	camera.zoom = Vector2(z0, z0)
+	# a câmara não sai da cidade desenhada (bairro + casario à volta)
+	var m := BairroView.MARGIN - 6.0
+	var bb := Rect2(Iso.to_screen(Vector2(-m, -m)), Vector2.ZERO)
+	for corner: Vector2 in [Vector2(view.size.x + m, -m), Vector2(-m, view.size.y + m), view.size + Vector2(m, m)]:
+		bb = bb.expand(Iso.to_screen(corner))
+	camera.limit_left = int(bb.position.x)
+	camera.limit_right = int(bb.end.x)
+	camera.limit_top = int(bb.position.y)
+	camera.limit_bottom = int(bb.end.y)
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 6.0
 	add_child(camera)
@@ -76,6 +87,7 @@ func _spawn(id: int, display_name: String, pos_cm: Vector2, appearance: Dictiona
 		c.bounds = Rect2(Vector2.ZERO, view.size)
 		camera.position = c.position + Vector2(0, -70)
 		camera.reset_smoothing()
+		hud.set_portrait(c.body.sprite_frames.get_frame_texture("idle_down", 0) if c.body.sprite_frames else null)
 
 
 func _on_spawned(entries: Array) -> void:
@@ -234,6 +246,13 @@ func _on_hud_action(what: String) -> void:
 	match what:
 		"zoom_mais": _zoom(1.25)
 		"zoom_menos": _zoom(0.8)
+		"centrar":
+			if local_char:
+				camera.position = local_char.position + Vector2(0, -70)
+		"mapa":
+			# vista geral do bairro e volta
+			var z := 0.55 if camera.zoom.x < 0.3 else 0.24
+			camera.zoom = Vector2(z, z)
 		"sair":
 			Net.leave()
 			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")

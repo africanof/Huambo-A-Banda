@@ -141,5 +141,7 @@ func _finish(ok: bool, reason: String) -> void:
 		print("AUTOTEST OK")
 	else:
 		printerr("AUTOTEST FAIL: ", reason)
+	if AppConfig.has_flag("stay"):
+		return # continua no mundo (capturas de ecrã)
 	Net.leave()
 	get_tree().quit(0 if ok else 1)

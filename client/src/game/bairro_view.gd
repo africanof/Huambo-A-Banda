@@ -15,6 +15,12 @@ var objects := Node2D.new() ## personagens entram aqui (y-sort)
 var lights := Node2D.new()
 var labels := Node2D.new()
 var lamp_lights: Array[PointLight2D] = []
+## à volta do bairro jogável desenha-se mais cidade (ruas e casas decorativas),
+## para que o ecrã do telemóvel fique sempre cheio, sem vazio nas bordas
+const MARGIN := 64.0
+## casas/árvores usadas no casario à volta (sem letreiros únicos)
+const FILLER_BUILDINGS := {"casa_colonial": [10, 8], "predio_castanho": [8, 7], "predio_rosa": [8, 8], "predio_60": [9, 7]}
+const FILLER_TREES := ["palmeira", "arvore_avenida", "jacaranda", "arvore_eucalipto"]
 var occluders: Array[Sprite2D] = [] ## edifícios/árvores que podem tapar a personagem
 
 
@@ -41,6 +47,8 @@ func build(bairro_id: String) -> bool:
 	places = data.places
 	_build_ground()
 	_build_markings()
+	_build_surroundings()
+	RenderingServer.set_default_clear_color(Color("8a5a3c")) # cor da terra: nunca aparece "vazio"
 	for b: Dictionary in data.buildings:
 		var fp: Array = b.fp
 		var at := Vector2(b.at[0], b.at[1])
@@ -78,7 +86,29 @@ func place_near(world_m: Vector2) -> Dictionary:
 	return best
 
 
+func _inside(x: float, y: float) -> bool:
+	return x >= 0.0 and y >= 0.0 and x < size.x and y < size.y
+
+
+## Fora do bairro: grelha de ruas que continua as do bairro (avenida a y≈24, rua a x≈30).
+func _outer_kind(x: float, y: float) -> String:
+	var dy := fposmod(y - 24.0 + 14.0, 28.0) - 14.0 # distância à avenida mais próxima
+	var dx := fposmod(x - 30.0 + 13.0, 26.0) - 13.0
+	if absf(dy) < 3.0 or absf(dx) < 3.0:
+		return "asfalto"
+	if absf(dy) < 5.0 or absf(dx) < 5.0:
+		return "calcada"
+	return "terra"
+
+
 func _ground_kind(x: float, y: float) -> String:
+	if not _inside(x, y):
+		# a avenida e a rua do bairro continuam com a mesma largura
+		if y >= 20.0 and y < 28.0:
+			return "asfalto"
+		if (y >= 16.0 and y < 20.0) or (y >= 28.0 and y < 32.0):
+			return "calcada"
+		return _outer_kind(x, y)
 	for rule: Dictionary in data.ground:
 		var ok := true
 		if rule.has("x"):
@@ -105,10 +135,57 @@ func _build_ground() -> void:
 		src.create_tile(Vector2i(i, 0))
 	ts.add_source(src, 0)
 	ground.tile_set = ts
-	for i in int(size.x / t):
-		for j in int(size.y / t):
+	var m0 := int(MARGIN / t)
+	for i in range(-m0, int(size.x / t) + m0):
+		for j in range(-m0, int(size.y / t) + m0):
 			ground.set_cell(Vector2i(i, j), 0, Vector2i(names.find(_ground_kind(i * t, j * t)), 0))
 	ground.position = Iso.to_screen(Vector2(t / 2, t / 2)) - ground.map_to_local(Vector2i(0, 0))
+
+
+## Casario decorativo à volta do bairro (mesma arte do Huambo, sem letreiros nem interação).
+func _build_surroundings() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = hash(str(data.get("id", "")))
+	var ids: Array = FILLER_BUILDINGS.keys()
+	var area := Rect2(-MARGIN, -MARGIN, size.x + MARGIN * 2.0, size.y + MARGIN * 2.0)
+	var keep_out := Rect2(-2, -2, size.x + 4, size.y + 4)
+	var y := area.position.y
+	while y < area.end.y:
+		var x := area.position.x
+		while x < area.end.x:
+			var id: String = ids[rng.randi() % ids.size()]
+			var fp: Array = FILLER_BUILDINGS[id]
+			var lot := Rect2(x, y, float(fp[0]), float(fp[1]))
+			if not lot.intersects(keep_out) and _lot_free(lot):
+				if rng.randf() < 0.78:
+					_add_object(id, Iso.to_screen(lot.position + lot.size))
+				else:
+					_add_object(FILLER_TREES[rng.randi() % FILLER_TREES.size()], Iso.to_screen(lot.get_center()))
+				x += lot.size.x + rng.randf_range(1.0, 3.0)
+			else:
+				x += 2.0
+		y += 2.0
+
+
+## Um lote só leva casa se for todo terra (não invade ruas nem passeios).
+func _lot_free(lot: Rect2) -> bool:
+	var px := lot.position.x
+	while px <= lot.end.x:
+		var py := lot.position.y
+		while py <= lot.end.y:
+			if _inside(px, py) or _ground_kind(px, py) != "terra":
+				return false
+			py += 2.0
+		px += 2.0
+	return not _taken.any(func(r: Rect2) -> bool: return r.grow(0.5).intersects(lot)) and _take(lot)
+
+
+var _taken: Array[Rect2] = []
+
+
+func _take(lot: Rect2) -> bool:
+	_taken.append(lot)
+	return true
 
 
 func _quad(r: Rect2, color: Color) -> void:
@@ -254,7 +331,7 @@ func _add_label(text: String, at: Vector2, is_home: bool) -> void:
 
 ## Etiquetas legíveis em qualquer zoom.
 func scale_labels(zoom: float, extra: Array = []) -> void:
-	var k := clampf(0.55 / zoom, 1.0, 2.8)
+	var k := clampf(0.75 / zoom, 1.3, 2.2)
 	for c: Control in labels.get_children() + extra:
 		c.pivot_offset = Vector2(c.size.x / 2, c.size.y)
 		c.scale = Vector2(k, k)
