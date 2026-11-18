@@ -15,6 +15,7 @@ var objects := Node2D.new() ## personagens entram aqui (y-sort)
 var lights := Node2D.new()
 var labels := Node2D.new()
 var lamp_lights: Array[PointLight2D] = []
+var occluders: Array[Sprite2D] = [] ## edifícios/árvores que podem tapar a personagem
 
 
 static func load_data(id: String) -> Dictionary:
@@ -149,6 +150,45 @@ func _build_markings() -> void:
 	_quad(Rect2(0, road_y[1] - 0.4, size.x, 0.25), Color(0, 0, 0, 0.18))
 
 
+## Edifícios e árvores à frente da personagem ficam transparentes (como nos jogos de vida
+## isométricos), para nunca perderes a tua personagem de vista.
+func update_occlusion(char_pos: Vector2, delta: float) -> void:
+	var body := Rect2(char_pos + Vector2(-14, -80), Vector2(28, 76))
+	var k := clampf(delta * 10.0, 0.0, 1.0)
+	for s: Sprite2D in occluders:
+		var r := Rect2(s.position + s.offset, s.texture.get_size())
+		var target := 1.0
+		if s.position.y > char_pos.y and r.intersects(body) and _opaque_over(s, body):
+			target = 0.38
+		s.modulate.a = lerpf(s.modulate.a, target, k)
+
+
+## Verifica se há píxeis opacos do sprite por cima do corpo (evita apagar uma árvore
+## só porque o retângulo da imagem toca na personagem).
+func _opaque_over(s: Sprite2D, body: Rect2) -> bool:
+	var img: Image = _images.get(s.texture)
+	if img == null:
+		img = s.texture.get_image()
+		if img == null:
+			return true
+		if img.is_compressed():
+			img.decompress()
+		# máscara reduzida (1/4): pouca memória no telemóvel, chega para saber se tapa
+		img.resize(maxi(1, img.get_width() / 4), maxi(1, img.get_height() / 4), Image.INTERPOLATE_NEAREST)
+		_images[s.texture] = img
+	var origin := s.position + s.offset
+	for fx: float in [0.2, 0.5, 0.8]:
+		for fy: float in [0.15, 0.45, 0.75]:
+			var p := (body.position + body.size * Vector2(fx, fy) - origin) / 4.0
+			if p.x >= 0 and p.y >= 0 and p.x < img.get_width() and p.y < img.get_height():
+				if img.get_pixel(int(p.x), int(p.y)).a > 0.5:
+					return true
+	return false
+
+
+var _images: Dictionary = {}
+
+
 func _add_object(id: String, pos: Vector2) -> Dictionary:
 	var o := DemoAssets.object(id)
 	if o.is_empty():
@@ -156,6 +196,8 @@ func _add_object(id: String, pos: Vector2) -> Dictionary:
 	var s := DemoAssets.make_sprite(id)
 	s.position = pos
 	objects.add_child(s)
+	if s.texture and s.texture.get_height() > 90:
+		occluders.append(s)
 	var t := DemoAssets.shadow_texture(id)
 	if t:
 		var sh := Sprite2D.new()

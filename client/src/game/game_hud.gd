@@ -35,6 +35,10 @@ var menu_panel := PanelContainer.new()
 var menu_body := VBoxContainer.new()
 var _context: Dictionary = {}
 var _toast_until := 0
+var _title: Label
+var _right := VBoxContainer.new()
+var _right_buttons: Array[Button] = []
+var _needs_panel: PanelContainer
 
 
 func _ready() -> void:
@@ -46,7 +50,8 @@ func _ready() -> void:
 	var hb := HBoxContainer.new()
 	hb.add_theme_constant_override("separation", 14)
 	top.add_child(hb)
-	hb.add_child(_label("Huambo É A Banda", 20, ACCENT, FONT_BOLD))
+	_title = _label("Huambo É A Banda", 20, ACCENT, FONT_BOLD)
+	hb.add_child(_title)
 	top_label.add_theme_font_override("font", FONT)
 	top_label.add_theme_font_size_override("font_size", 18)
 	hb.add_child(top_label)
@@ -56,6 +61,7 @@ func _ready() -> void:
 	needs.add_theme_stylebox_override("panel", _pill(BG, 18))
 	needs.position = Vector2(16, 70)
 	add_child(needs)
+	_needs_panel = needs
 	var nv := VBoxContainer.new()
 	nv.add_theme_constant_override("separation", 6)
 	needs.add_child(nv)
@@ -83,7 +89,7 @@ func _ready() -> void:
 		nv.add_child(row)
 
 	# --- botões da direita
-	var right := VBoxContainer.new()
+	var right := _right
 	right.add_theme_constant_override("separation", 10)
 	right.anchor_left = 1.0
 	right.anchor_right = 1.0
@@ -95,6 +101,8 @@ func _ready() -> void:
 	right.add_child(_button("Aproximar", "plus", BG, Color.WHITE, func() -> void: ui_action.emit("zoom_mais")))
 	right.add_child(_button("Afastar", "minus", BG, Color.WHITE, func() -> void: ui_action.emit("zoom_menos")))
 	right.add_child(_button("Sair", "door", BG, Color.WHITE, func() -> void: ui_action.emit("sair")))
+	for b: Node in right.get_children():
+		_right_buttons.append(b as Button)
 
 	# --- ações do lugar (em baixo, ao centro)
 	actions_box.add_theme_constant_override("separation", 10)
@@ -177,9 +185,43 @@ func _ready() -> void:
 	menu_body.add_theme_constant_override("separation", 10)
 	ms.add_child(menu_body)
 
+	get_viewport().size_changed.connect(_layout)
+	_layout()
 	Net.self_updated.connect(func(_me: Dictionary) -> void: refresh())
 	Net.toast.connect(show_toast)
 	refresh()
+
+
+# ------------------------------------------------------------------ disposição
+
+## Ecrãs estreitos (telemóvel na vertical): botões só com ícone, painéis à largura do ecrã.
+func _layout() -> void:
+	var w := get_viewport().get_visible_rect().size.x
+	var compact := w < 900.0
+	_title.visible = not compact
+	for b: Button in _right_buttons:
+		b.text = "" if compact else str(b.get_meta("label", b.text))
+		b.custom_minimum_size = Vector2(46, 46) if compact else Vector2(0, 46)
+		b.tooltip_text = str(b.get_meta("label", ""))
+	_right.offset_left = -62.0 if compact else -190.0
+	var side := 62.0 if compact else 190.0
+	# telemóvel e ementa: à direita no PC; ocupam a largura livre no ecrã estreito
+	for p: PanelContainer in [phone, menu_panel]:
+		if compact:
+			p.anchor_left = 0.0
+			p.offset_left = 12
+			p.offset_right = -side - 8
+			p.offset_top = 70
+		else:
+			p.anchor_left = 1.0
+			p.offset_left = -560
+			p.offset_right = -206
+			p.offset_top = 14
+	var tw := minf(480.0, w - 40.0)
+	toast_label.custom_minimum_size = Vector2(tw, 0)
+	toast_panel.offset_left = -tw / 2.0 - 20.0
+	toast_panel.offset_right = tw / 2.0 + 20.0
+	toast_panel.offset_top = 70.0 if not compact else 180.0
 
 
 # ------------------------------------------------------------------ atualização
@@ -410,6 +452,7 @@ func _pill(c: Color, r: int) -> StyleBoxFlat:
 func _button(text: String, icon: String, bg: Color, fg: Color, cb: Callable) -> Button:
 	var b := Button.new()
 	b.text = text
+	b.set_meta("label", text)
 	if icon != "":
 		b.icon = DemoIcons.make("phone" if icon == "phone_icon" else icon, fg)
 	b.custom_minimum_size = Vector2(0, 46)

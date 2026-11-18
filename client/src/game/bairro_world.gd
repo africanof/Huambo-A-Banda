@@ -123,6 +123,7 @@ func _process(delta: float) -> void:
 	if local_char:
 		camera.position = local_char.position + Vector2(0, -70)
 		hud.set_context(view.place_near(local_char.world_pos))
+		view.update_occlusion(local_char.position, delta)
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
 	var minutes := float(now.hour * 60 + now.minute) + float(now.second) / 60.0
 	view.apply_hour(minutes / 60.0, canvas_mod)

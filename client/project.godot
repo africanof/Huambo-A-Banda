@@ -21,6 +21,7 @@ boot_splash/bg_color=Color(0.113725, 0.207843, 0.341176, 1)
 
 [autoload]
 
+UiScale="*res://src/autoload/ui_scale.gd"
 AppConfig="*res://src/autoload/app_config.gd"
 Auth="*res://src/autoload/auth.gd"
 Net="*res://src/autoload/net.gd"
