@@ -93,6 +93,16 @@ export function registerRoutes(app: Application, svc: Services): void {
     }
   });
 
+  // Classificados: anúncios abertos (colheita e dólares à venda).
+  app.get("/classificados", async (_req, res) => {
+    try {
+      res.set("Cache-Control", "no-store");
+      res.json(await svc.listings.open(50));
+    } catch {
+      res.status(503).json({ error: "unavailable" });
+    }
+  });
+
   // Ricos: os jogadores com mais dinheiro (carteira + banco), só contas.
   app.get("/ricos", (_req, res) => {
     res.set("Cache-Control", "no-store");

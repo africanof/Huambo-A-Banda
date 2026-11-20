@@ -784,7 +784,8 @@ const APPS := [
 	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
-	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["ajuda", "Ajuda", "more", "d"],
+	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["classificados", "Classificados", "bag", "y"],
+	["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -822,6 +823,7 @@ func _rebuild_phone() -> void:
 		"negocio": _phone_business()
 		"muxima": _phone_muxima()
 		"roupa": _phone_wardrobe()
+		"classificados": _phone_classifieds()
 		"imoveis": _phone_housing()
 		"ambicao": _phone_ambition()
 		"ricos": _phone_rich()
@@ -1054,6 +1056,105 @@ func _phone_health() -> void:
 	c.add_child(_button("Ir à farmácia", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:farmacia")))
+
+
+## Kixikila (na app Grupos): poupança em grupo — todos pagam a quota, quem está na vez recebe tudo.
+var _kixi_asked := -100000
+
+
+func _kixikila_card() -> void:
+	if Time.get_ticks_msec() - _kixi_asked > 10000:
+		_kixi_asked = Time.get_ticks_msec()
+		Net.action("kixi_ver")
+	var k: Variant = Net.me.get("kixikila")
+	var c := _card()
+	c.add_child(_label("Kixikila do grupo", 18, ACCENT, FONT_BOLD))
+	if typeof(k) != TYPE_DICTIONARY or str(k.status) == "acabada":
+		c.add_child(_label("Poupança em grupo: cada volta todos pagam a mesma quota e um de vocês recebe tudo, à vez.", 14, Color.WHITE, FONT_REG, true))
+		var row := HFlowContainer.new()
+		row.add_theme_constant_override("h_separation", 6)
+		row.add_theme_constant_override("v_separation", 6)
+		for i in 3:
+			var q: int = [1000, 5000, 10000][i]
+			var n := i + 1
+			row.add_child(_button("Criar: %s Kz" % DemoHud._money(q), "plus", ACCENT, INK, func() -> void: Net.action("kixi_criar", "", n)))
+		c.add_child(row)
+		return
+	c.add_child(_label("Quota: %s Kz · %d membros: %s" % [DemoHud._money(int(k.quota)), (k.members as Array).size(), ", ".join(k.members)], 14, Color.WHITE, FONT_REG, true))
+	if str(k.status) == "aberta":
+		c.add_child(_label("À espera de membros.", 14, Color(1, 1, 1, 0.65), FONT_REG))
+		if not bool(k.souMembro):
+			c.add_child(_button("Aderir", "plus", ACCENT, INK, func() -> void: Net.action("kixi_aderir")))
+		if bool(k.souCriador):
+			c.add_child(_button("Começar a kixikila", "target", ACCENT, INK, func() -> void: Net.action("kixi_comecar")))
+		return
+	c.add_child(_label("Volta %d · na vez: %s · pagaram %d/%d" % [int(k.round) + 1, k.vez, int(k.paid), (k.members as Array).size()], 15, Color("8fe08a"), FONT_BOLD, true))
+	if bool(k.souMembro) and not bool(k.jaPaguei):
+		c.add_child(_button("Pagar a quota (%s Kz)" % DemoHud._money(int(k.quota)), "bag", ACCENT, INK, func() -> void: Net.action("kixi_pagar")))
+	c.add_child(_button("Receber (se for a tua vez)", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("kixi_receber")))
+
+
+## Classificados: comprar e vender colheita e dólares entre jogadores.
+var _ads: Array = []
+var _ads_at := -100000
+var _sell_item := "milho"
+var _sell_qty := 10
+
+
+func _phone_classifieds() -> void:
+	var c := _card()
+	c.add_child(_label("Vender", 18, ACCENT, FONT_BOLD))
+	var col: Dictionary = Net.me.get("colheita", {})
+	var usd := int(Net.me.get("cambio", {}).get("usd", 0))
+	c.add_child(_label("Tens: %s · %d USD" % [", ".join(col.keys().map(func(k: String) -> String: return "%s %d kg" % [k.replace("_", "-"), int(col[k])])) if not col.is_empty() else "sem colheita", usd], 13, Color(1, 1, 1, 0.7), FONT_REG, true))
+	var items := HFlowContainer.new()
+	items.add_theme_constant_override("h_separation", 6)
+	items.add_theme_constant_override("v_separation", 6)
+	for it: Array in [["milho", "Milho"], ["feijao", "Feijão"], ["batata_doce", "Batata-doce"], ["usd", "Dólares"]]:
+		var id := str(it[0])
+		items.add_child(_button(str(it[1]), "bag", ACCENT if _sell_item == id else Color(1, 1, 1, 0.1), INK if _sell_item == id else Color.WHITE, func() -> void:
+			_sell_item = id
+			_rebuild_phone()))
+	c.add_child(items)
+	var qty := HFlowContainer.new()
+	qty.add_theme_constant_override("h_separation", 6)
+	for q: int in [5, 10, 20, 50]:
+		qty.add_child(_button("%d %s" % [q, "USD" if _sell_item == "usd" else "kg"], "plus", ACCENT if _sell_qty == q else Color(1, 1, 1, 0.1), INK if _sell_qty == q else Color.WHITE, func() -> void:
+			_sell_qty = q
+			_rebuild_phone()))
+	c.add_child(qty)
+	_text_row(c, "Preço total em Kz (ex.: 1500)", 7, "Anunciar", func(t: String) -> void:
+		Net.action_text("classif_vender", str(t.to_int()), _sell_qty, _sell_item)
+		_ads_at = -100000)
+	var f := _card()
+	f.add_child(_label("À venda no Huambo", 18, ACCENT, FONT_BOLD))
+	if Time.get_ticks_msec() - _ads_at > 15000:
+		_ads_at = Time.get_ticks_msec()
+		_load_ads()
+	if _ads.is_empty():
+		f.add_child(_label("Ainda não há anúncios.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+	var my_name := str(Net.entities.get(Net.self_id, {}).get("name", ""))
+	for a: Dictionary in _ads:
+		var what := "%d %s" % [int(a.qty), "USD" if str(a.item) == "usd" else "kg de " + str(a.item).replace("_", "-")]
+		f.add_child(_label("%s — %s Kz" % [what, DemoHud._money(int(a.price))], 15, Color.WHITE, FONT_BOLD, true))
+		f.add_child(_label("%s · %s" % [a.sellerName, a.bairro], 12, Color(1, 1, 1, 0.6), FONT_REG))
+		var aid := str(a.id)
+		if str(a.sellerName) == my_name:
+			f.add_child(_button("Retirar o meu anúncio", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+				Net.action_text("classif_cancelar", aid)
+				_ads_at = -100000))
+		else:
+			f.add_child(_button("Comprar", "bag", ACCENT, INK, func() -> void:
+				Net.action_text("classif_comprar", aid)
+				_ads_at = -100000))
+
+
+func _load_ads() -> void:
+	var r: Variant = await Net.get_json("/classificados")
+	if typeof(r) == TYPE_ARRAY:
+		_ads = r
+		if phone.visible and phone_tab == "classificados":
+			_rebuild_phone()
 
 
 ## SMS recebidos (aparecem como aviso e ficam na app Amigos).
@@ -1516,6 +1617,7 @@ func _phone_groups() -> void:
 		for l: Dictionary in lines.slice(maxi(0, lines.size() - 8)):
 			c.add_child(_label("%s: %s" % [l.n, l.t], 14, Color.WHITE, FONT_REG, true))
 		c.add_child(_button("Sair do grupo", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("grupo_sair")))
+		_kixikila_card()
 		return
 	c.add_child(_label("Ainda não estás num grupo. Junta-te a um ou cria o teu (5.000 Kz, só com conta).", 15, Color.WHITE, FONT_REG, true))
 	_text_row(c, "Nome do grupo (3 a 30 letras)", 30, "Criar", func(t: String) -> void: Net.action_text("grupo_criar", t))

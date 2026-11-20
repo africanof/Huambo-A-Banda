@@ -84,6 +84,8 @@ import { recordNews } from "./news.js";
 import { eventsAt, hasEvent } from "./events.js";
 import { queueSms, takeSms } from "./sms.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
+import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
+import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
 import { forecast, weatherAt } from "./weather.js";
@@ -114,6 +116,8 @@ interface Busy {
 }
 
 interface Entry {
+  /** kixikila do grupo (lida quando a app pede ou depois de cada ação) */
+  kixi?: Kixikila | null;
   /** pedido de namoro recebido / pedido de casamento recebido */
   loveReq?: { from: LifeActor };
   weddingReq?: { from: LifeActor };
@@ -199,6 +203,7 @@ export interface SelfState {
   negocio: { tipo: string; name: string; nivel: number; perHour: number; pendente: number; melhorar: number | null; maxHoras: number } | null;
   imoveis: Entry["imoveis"] | null;
   roupas: number[];
+  kixikila: { quota: number; status: string; round: number; members: string[]; paid: number; vez: string | null; souMembro: boolean; jaPaguei: boolean; souCriador: boolean } | null;
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   visitados: number;
@@ -240,6 +245,8 @@ export class LifeController {
   private readonly bank: BankRepository;
   private readonly groups: GroupRepository;
   private readonly posts: PostRepository;
+  private readonly kixi: KixikilaRepository;
+  private readonly listings: ListingRepository;
   /** Muxima: quantas publicações por pessoa na última hora */
   private readonly postTimes = new Map<string, number[]>();
 
@@ -249,12 +256,14 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
     this.groups = deps.groups ?? new MemoryGroupRepository();
     this.posts = deps.posts ?? new MemoryPostRepository();
+    this.kixi = deps.kixikila ?? new MemoryKixikilaRepository();
+    this.listings = deps.listings ?? new MemoryListingRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -434,6 +443,23 @@ export class LifeController {
           break;
         case "roupa_vestir":
           this.wear(actor, e, (msg.n ?? 0) - 2);
+          break;
+        case "kixi_ver":
+        case "kixi_criar":
+        case "kixi_aderir":
+        case "kixi_comecar":
+        case "kixi_pagar":
+        case "kixi_receber":
+          await this.kixikila(actor, e, msg.a, msg.n ?? 0);
+          break;
+        case "classif_vender":
+          await this.listingCreate(actor, e, msg.i, msg.n ?? 0, Number(msg.s ?? 0));
+          break;
+        case "classif_comprar":
+          await this.listingBuy(actor, e, msg.s);
+          break;
+        case "classif_cancelar":
+          await this.listingCancel(actor, e, msg.s);
           break;
         case "conquistas_recolher":
           await this.claimAchievements(actor, e);
@@ -985,6 +1011,124 @@ export class LifeController {
     }
     e.dirty = true;
     this.out.toast(actor, `Prémios das conquistas: +${total.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  // ---------------------------------------------------------------- kixikila
+
+  private async kixikila(actor: LifeActor, e: Entry, a: string, n: number): Promise<void> {
+    const g = e.life.group;
+    if (!g) {
+      e.kixi = null;
+      if (a !== "kixi_ver") this.out.toast(actor, "A kixikila faz-se com o teu grupo. Entra num grupo primeiro.", false);
+      return;
+    }
+    if (a !== "kixi_ver" && actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para a kixikila precisas de uma conta.", false);
+    let k = await this.kixi.byGroup(g.id);
+    const me = { id: actor.characterId, name: actor.name ?? "Membro" };
+    if (a === "kixi_criar") {
+      if (k && k.status !== "acabada") return this.out.toast(actor, "O grupo já tem uma kixikila.", false);
+      if (k) await this.kixi.remove(k.id);
+      const quota = [1000, 5000, 10000][n - 1];
+      if (!quota) return this.out.toast(actor, "Escolhe a quota.", false);
+      k = await this.kixi.create(g.id, quota, me);
+      this.out.toast(actor, `Kixikila criada: ${quota.toLocaleString("pt-PT")} Kz por volta. Chama o pessoal do grupo para aderir.`, true);
+    } else if (a === "kixi_aderir") {
+      if (!k) return this.out.toast(actor, "O grupo ainda não tem kixikila.", false);
+      const r = await this.kixi.join(k.id, me);
+      if (!r) return this.out.toast(actor, k.status !== "aberta" ? "Esta kixikila já começou." : "Já estás nesta kixikila.", false);
+      k = r;
+      this.out.toast(actor, "Aderiste à kixikila do grupo.", true);
+    } else if (a === "kixi_comecar") {
+      if (!k) return this.out.toast(actor, "O grupo ainda não tem kixikila.", false);
+      const r = await this.kixi.start(k.id, actor.characterId);
+      if (!r) return this.out.toast(actor, k.creator !== actor.characterId ? "Só quem criou a kixikila a pode começar." : "Precisam de ser pelo menos 2.", false);
+      k = r;
+      this.out.toast(actor, "A kixikila começou! Cada um paga a quota da volta; quem está na vez recebe tudo.", true);
+    } else if (a === "kixi_pagar") {
+      if (!k || k.status !== "a_correr") return this.out.toast(actor, "Não há kixikila a correr.", false);
+      if (!k.members.some((m) => m.id === actor.characterId)) return this.out.toast(actor, "Não estás nesta kixikila.", false);
+      if (k.paid.includes(actor.characterId)) return this.out.toast(actor, "Já pagaste esta volta.", false);
+      const key = `kixi:${k.id}:${k.round}:${actor.characterId}`;
+      e.money = await this.wallets.apply(actor.characterId, -k.quota, "kixikila.quota", key);
+      const r = await this.kixi.markPaid(k.id, k.round, actor.characterId);
+      if (!r) {
+        e.money = await this.wallets.apply(actor.characterId, k.quota, "kixikila.devolucao", key + ":devolve");
+        return this.out.toast(actor, "A volta mudou entretanto; devolvemos a quota.", false);
+      }
+      k = r;
+      this.out.toast(actor, `Pagaste a quota (${k.quota.toLocaleString("pt-PT")} Kz).`, true);
+    } else if (a === "kixi_receber") {
+      if (!k || k.status !== "a_correr") return this.out.toast(actor, "Não há kixikila a correr.", false);
+      const turn = k.members[k.round % k.members.length];
+      if (turn?.id !== actor.characterId) return this.out.toast(actor, `Esta volta é de ${turn?.name ?? "outra pessoa"}.`, false);
+      if (k.paid.length < k.members.length) return this.out.toast(actor, `Faltam pagar ${k.members.length - k.paid.length} pessoa(s).`, false);
+      const before = await this.kixi.closeRound(k.id, k.round);
+      if (!before) return this.out.toast(actor, "Esta volta já foi recebida.", false);
+      const pot = before.quota * before.members.length;
+      e.money = await this.wallets.apply(actor.characterId, pot, "kixikila.recebe", `kixi:${before.id}:${before.round}:pote`);
+      recordNews("grupo", this.district.name, `Kixikila do grupo «${g.name}»: ${actor.name ?? "alguém"} recebeu ${pot.toLocaleString("pt-PT")} Kz.`, this.now());
+      this.out.toast(actor, `Recebeste a kixikila: +${pot.toLocaleString("pt-PT")} Kz!`, true);
+      k = await this.kixi.byGroup(g.id);
+    }
+    e.kixi = k;
+  }
+
+  // ---------------------------------------------------------------- classificados
+
+  private async listingCreate(actor: LifeActor, e: Entry, item: string | undefined, qty: number, price: number): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para vender nos Classificados precisas de uma conta.", false);
+    if (!item || !(item === "usd" || item in CROPS)) return this.out.toast(actor, "Só se vende colheita ou dólares.", false);
+    if (!Number.isInteger(qty) || qty < 1) return this.out.toast(actor, "Indica a quantidade.", false);
+    if (!Number.isInteger(price) || price < 100 || price > 1_000_000) return this.out.toast(actor, "O preço tem de estar entre 100 e 1.000.000 Kz.", false);
+    if ((await this.listings.countOpen(actor.characterId)) >= 5) return this.out.toast(actor, "Já tens 5 anúncios abertos.", false);
+    const have = item === "usd" ? e.life.usd : e.life.colheita[item] ?? 0;
+    if (have < qty) return this.out.toast(actor, "Não tens isso tudo.", false);
+    // o que se vende fica guardado no anúncio (não se vende duas vezes)
+    if (item === "usd") e.life.usd -= qty;
+    else {
+      e.life.colheita[item] = have - qty;
+      if (e.life.colheita[item] === 0) delete e.life.colheita[item];
+    }
+    e.dirty = true;
+    await this.listings.create({ seller: actor.characterId, sellerName: actor.name ?? "Vendedor", bairro: this.district.name, item, qty, price });
+    this.out.toast(actor, `Anúncio publicado: ${qty} ${item === "usd" ? "USD" : "kg de " + CROPS[item]!.name} por ${price.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  private async listingBuy(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para comprar nos Classificados precisas de uma conta.", false);
+    if (!id || !/^[0-9a-f-]{36}$/.test(id)) return;
+    const open = (await this.listings.open(200)).find((l) => l.id === id);
+    if (!open) return this.out.toast(actor, "Esse anúncio já não está disponível.", false);
+    if (open.seller === actor.characterId) return this.out.toast(actor, "Esse anúncio é teu.", false);
+    const key = `classif:${id}`;
+    e.money = await this.wallets.apply(actor.characterId, -open.price, "classificados.compra", `${key}:paga:${actor.characterId}`);
+    const l = await this.listings.take(id, actor.characterId);
+    if (!l) {
+      e.money = await this.wallets.apply(actor.characterId, open.price, "classificados.devolucao", `${key}:devolve:${actor.characterId}`);
+      return this.out.toast(actor, "Alguém comprou primeiro. Devolvemos o teu dinheiro.", false);
+    }
+    await this.wallets.apply(l.seller, l.price, "classificados.venda", `${key}:recebe`);
+    if (l.item === "usd") e.life.usd += l.qty;
+    else e.life.colheita[l.item] = (e.life.colheita[l.item] ?? 0) + l.qty;
+    e.dirty = true;
+    this.out.toast(actor, `Compraste ${l.qty} ${l.item === "usd" ? "USD" : "kg de " + (CROPS[l.item]?.name ?? l.item)} a ${l.sellerName}.`, true);
+    const seller = this.actorById(l.seller);
+    if (seller) {
+      const se = this.entries.get(seller)!;
+      se.money = await this.wallets.balance(seller.characterId);
+      this.out.toast(seller, `Vendeste nos Classificados: +${l.price.toLocaleString("pt-PT")} Kz.`, true);
+      this.sendSelf(seller);
+    } else this.out.sms?.(l.seller, "Classificados", `Vendeste ${l.qty} ${l.item === "usd" ? "USD" : "kg"} por ${l.price} Kz.`) || queueSms(l.seller, "Classificados", `Vendeste ${l.qty} ${l.item === "usd" ? "USD" : "kg"} por ${l.price} Kz.`, this.now());
+  }
+
+  private async listingCancel(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    if (!id || !/^[0-9a-f-]{36}$/.test(id)) return;
+    const l = await this.listings.cancel(id, actor.characterId);
+    if (!l) return this.out.toast(actor, "Esse anúncio já não está aberto.", false);
+    if (l.item === "usd") e.life.usd += l.qty;
+    else e.life.colheita[l.item] = (e.life.colheita[l.item] ?? 0) + l.qty;
+    e.dirty = true;
+    this.out.toast(actor, "Anúncio retirado: voltou para ti.", true);
   }
 
   // ---------------------------------------------------------------- Muxima
@@ -1696,6 +1840,19 @@ export class LifeController {
         : null,
       imoveis: e.imoveis ?? null,
       roupas: [...e.life.roupas],
+      kixikila: e.kixi
+        ? {
+            quota: e.kixi.quota,
+            status: e.kixi.status,
+            round: e.kixi.round,
+            members: e.kixi.members.map((m) => m.name),
+            paid: e.kixi.paid.length,
+            vez: e.kixi.status === "a_correr" ? e.kixi.members[e.kixi.round % e.kixi.members.length]?.name ?? null : null,
+            souMembro: e.kixi.members.some((m) => m.id === actor.characterId),
+            jaPaguei: e.kixi.paid.includes(actor.characterId),
+            souCriador: e.kixi.creator === actor.characterId,
+          }
+        : null,
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       visitados: e.life.visitados.length,

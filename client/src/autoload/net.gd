@@ -152,10 +152,12 @@ func radio(text: String) -> void:
 		room.send(Protocol.C2S_RADIO, {"t": text.strip_edges().left(120)})
 
 
-## Ação com texto curto (nome/id de grupo, publicação, SMS); n opcional.
-func action_text(a: String, text: String, n: int = 0) -> void:
+## Ação com texto curto (nome/id de grupo, publicação, SMS); n e item opcionais.
+func action_text(a: String, text: String, n: int = 0, item: String = "") -> void:
 	if room:
 		var msg := {"a": a, "s": text.left(160)}
+		if item != "":
+			msg["i"] = item
 		if n > 0:
 			msg["n"] = n
 		room.send(Protocol.C2S_ACTION, msg)

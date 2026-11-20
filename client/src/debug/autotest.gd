@@ -499,7 +499,7 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["roupa", "perfil", "amigos"]:
+		for app: String in ["classificados", "grupos"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)
