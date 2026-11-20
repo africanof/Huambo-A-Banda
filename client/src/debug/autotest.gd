@@ -435,6 +435,16 @@ func _views_loop() -> void:
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)
 		world.hud.phone.visible = false
+		world.hud._open_map()
+		await tree.create_timer(5.0).timeout
+		var sc: ScrollContainer = world.hud.menu_panel.get_child(0)
+		sc.scroll_vertical = 520
+		await tree.create_timer(2.0).timeout
+		await _shot("mapa_catalogo")
+		sc.scroll_vertical = 1300
+		await tree.create_timer(2.0).timeout
+		await _shot("mapa_catalogo2")
+		world.hud.menu_panel.visible = false
 		world.hud._open_chat()
 		await tree.create_timer(2.0).timeout
 		await _shot("falar_painel")

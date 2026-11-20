@@ -510,13 +510,71 @@ func _open_map() -> void:
 		menu_body.add_child(cm)
 		menu_body.add_child(_label("A amarelo: bairros vizinhos a pé (vai ao fim da rua com a placa). Os outros: candongueiro.", 12, Color(1, 1, 1, 0.7), FONT_REG, true))
 		bairros.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
+		# catálogo com o postal de cada bairro (como as fotografias das cidades no Vida na Banda)
+		menu_body.add_child(_label("Bairros do Huambo", 18, Color.WHITE, FONT_BOLD))
+		var grid := GridContainer.new()
+		grid.columns = 2 # o painel tem a mesma largura no telemóvel e ao lado no computador
+		grid.add_theme_constant_override("h_separation", 10)
+		grid.add_theme_constant_override("v_separation", 10)
 		for d: Dictionary in bairros:
-			if str(d.id) == here:
-				continue
 			var id := str(d.id)
-			var walk := links.has(id)
-			menu_body.add_child(_button(("%s  (a pé)" if walk else "%s") % d.name, "pin", ACCENT if not walk else Color("f2c14e"), INK, func() -> void: _go(id, walk)))
+			grid.add_child(_bairro_card(id, str(d.name), id == here, links.has(id)))
+		menu_body.add_child(grid)
 	_close_button()
+
+
+## Cartão do catálogo: postal do bairro + nome + como se vai (a pé / transporte / estás aqui).
+func _bairro_card(id: String, name: String, here: bool, walk: bool) -> Control:
+	var b := Button.new()
+	b.custom_minimum_size = Vector2(0, 168)
+	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	b.focus_mode = Control.FOCUS_NONE
+	var sb := _pill(Color(1, 1, 1, 0.06), 18, ACCENT if here else Color(0, 0, 0, 0))
+	sb.set_content_margin_all(0)
+	b.add_theme_stylebox_override("normal", sb)
+	var sbh := _pill(Color(1, 1, 1, 0.14), 18, ACCENT)
+	sbh.set_content_margin_all(0)
+	b.add_theme_stylebox_override("hover", sbh)
+	b.add_theme_stylebox_override("pressed", sbh)
+	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	var v := VBoxContainer.new()
+	v.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	v.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	v.add_theme_constant_override("separation", 2)
+	b.add_child(v)
+	var pic := TextureRect.new()
+	var path := "res://assets/bairros/thumbs/%s.webp" % id
+	pic.texture = load(path) if ResourceLoader.exists(path) else null
+	pic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pic.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	pic.custom_minimum_size = Vector2(0, 112)
+	pic.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	pic.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# cantos de cima redondos como o cartão
+	var clip := PanelContainer.new()
+	var cs := StyleBoxFlat.new()
+	cs.bg_color = Color.WHITE
+	cs.corner_radius_top_left = 18
+	cs.corner_radius_top_right = 18
+	clip.add_theme_stylebox_override("panel", cs)
+	clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+	clip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	clip.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	clip.add_child(pic)
+	v.add_child(clip)
+	var t := _label(name, 15, Color.WHITE, FONT_BOLD)
+	t.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	v.add_child(t)
+	var tag := _label("Estás aqui" if here else ("A pé (vizinho)" if walk else "Transporte na paragem"), 12, ACCENT if here else (Color("8fe08a") if walk else Color(1, 1, 1, 0.6)), FONT_REG)
+	tag.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	v.add_child(tag)
+	if here:
+		b.pressed.connect(func() -> void: show_toast("Já estás em %s." % name, true))
+	else:
+		b.pressed.connect(func() -> void: _go(id, walk))
+	return b
 
 
 ## Destino escolhido no mapa: vizinho → mostra o caminho (placa no fim da rua); senão candongueiro.
