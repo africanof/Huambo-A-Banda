@@ -265,10 +265,14 @@ func _doors_loop() -> Array:
 			return false if Time.get_ticks_msec() - t0 > 60000 else null)
 		if not ok:
 			var me_e: Variant = Net.entities.get(Net.self_id)
-			print("[autotest] falhou %s: eu=%s servidor=%s porta=%s tentativas=%d pendente=%s alvo=%s caminho=%d" % [p.name, w.local_char.world_pos, (me_e.pos / 100.0) if me_e else "?", p.at, w._pending_tries, w._pending_station, w._click_target, w._path.size()])
+			print("[autotest] ocupado=%s lotaria=%s" % [w.hud.is_busy(), w._lottery_open])
+			print("[autotest] falhou %s: eu=%s servidor=%s porta=%s tentativas=%d pendente=%s alvo=%s caminho=%d" % [p.name, w.local_char.world_pos, (me_e.pos / 100.0) if me_e else "?", p.at, w._pending_tries, w._pending_station, w._click_target, w._find_path(w.local_char.world_pos, Vector2(p.at[0], p.at[1])).size()])
 			falhas.append("%s (não entrou)" % p.name)
 			continue
 		print("[autotest] entrei: %s (%.1f s)" % [p.name, (Time.get_ticks_msec() - t0) / 1000.0])
+		if AppConfig.has_flag("fotos"):
+			await tree.create_timer(3.0).timeout
+			await _shot("sala_" + str(p.get("venue", "x")))
 		await tree.create_timer(0.4).timeout
 		Net.action("exit")
 		await _wait_for(func() -> Variant: return true if typeof(Net.me.get("inside")) != TYPE_DICTIONARY else null)

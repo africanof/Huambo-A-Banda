@@ -81,7 +81,91 @@ SALAS = {}
 _salas = os.path.join(ROOT, "tools", "art", "ai", "kits", "interiores_salas.json")
 if os.path.exists(_salas):
     SALAS = json.load(open(_salas))
-RS = 7.5  # sala dos kits de interiores (quadrada)
+RS = 10.0  # sala dos kits de interiores (quadrada; a arte foi desenhada para 7,5 m e é ampliada)
+RSCALE = RS / 7.5  # ampliação da sala em relação à arte original
+
+
+def planned_layout(venue, kinds, report=None):
+    """Disposição desenhada à mão (tools/bairros/plantas.py), validada: dentro da sala, sem
+    sobreposições, entrada livre e caminho da porta a cada ponto de interação. None se falhar."""
+    import collections
+    from plantas import PLANTAS
+    plan = PLANTAS.get(venue)
+    if not plan:
+        return None
+    fv = {"administracao": "governo", "apartamentos": "casa", "universidade": "escola"}.get(venue, venue)
+    byname = {}
+    for k, o in objs.items():
+        if o.get("venue") == fv and o.get("category") == "furniture" and "@" not in k:
+            byname[k.split(f"int_{fv}_", 1)[-1] if k.startswith(f"int_{fv}_") else k.split("_", 2)[-1]] = (k, o)
+    problems = []
+    G = 0.25
+    door = (6.2 * RSCALE, 0.9 * RSCALE)
+    keep = [(4.9 * RSCALE, 0.0, RS, 2.7 * RSCALE), (6.2 * RSCALE, 6.2 * RSCALE, RS, RS)]
+    placed, furn, spots = [], [], {}
+    # as plantas foram desenhadas para 7,5 m: o que está encostado às paredes do fundo fica encostado;
+    # o resto afasta-se na proporção da sala maior (mais espaço entre móveis e corredores mais largos)
+    sc = lambda v: v if v <= 0.35 else round(v * RSCALE, 2)
+    plan = [(n, sc(x), sc(y)) for n, x, y in plan]
+    for name, x, y in plan:
+        if name not in byname:
+            problems.append(f"peça desconhecida: {name}")
+            continue
+        k, o = byname[name]
+        w, d = o["footprint"]
+        if x < 0.15 or y < 0.15 or x + w > RS - 0.15 or y + d > RS - 0.15:
+            problems.append(f"{name} fora da sala")
+        for kx0, ky0, kx1, ky1 in keep:
+            if x < kx1 and kx0 < x + w and y < ky1 and ky0 < y + d and not o.get("floor"):
+                problems.append(f"{name} tapa a entrada/canto")
+        for (pn, px, py, pw, pd, fl) in placed:
+            if x < px + pw and px < x + w and y < py + pd and py < y + d and not (fl or o.get("floor")):
+                problems.append(f"{name} sobrepõe {pn}")
+        placed.append((name, x, y, w, d, bool(o.get("floor"))))
+        furn.append((k, x, y))
+        role = str(o.get("role", ""))
+        if role.startswith("main"):
+            r = role.split("_", 1)[1] if "_" in role else ""
+            spots[r] = (round(x + w + 0.6, 2), round(y + d / 2, 2)) if d >= w else (round(x + w / 2, 2), round(y + d + 0.6, 2))
+
+    def walk_ok(px, py, r=0.42):
+        if px < r or py < r or px > RS - r or py > RS - r:
+            return False
+        return all(fl or not (bx - r < px < bx + bw + r and by - r < py < by + bd + r) for _, bx, by, bw, bd, fl in placed)
+
+    start = (round(door[0] / G), round((door[1] + 0.8) / G))
+    seen, q = {start}, collections.deque([start])
+    while q:
+        c = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            n2 = (c[0] + dx, c[1] + dy)
+            if n2 not in seen and walk_ok(n2[0] * G, n2[1] * G):
+                seen.add(n2)
+                q.append(n2)
+
+    def reachable(pt):
+        return any((round(pt[0] / G) + ox, round(pt[1] / G) + oy) in seen for ox in (-1, 0, 1) for oy in (-1, 0, 1))
+
+    for r, sp in list(spots.items()):
+        if not walk_ok(*sp) or not reachable(sp):
+            problems.append(f"ponto «{r}» em {sp} inalcançável")
+    # pontos pedidos sem peça principal: perto do principal, alcançáveis
+    for kind in kinds:
+        if kind in spots:
+            continue
+        for base in list(spots.values()) + [(4.0 * RSCALE, 4.5 * RSCALE)]:
+            for ox, oy in ((0, 1.4), (1.4, 0), (0, -1.4), (-1.4, 0), (1.4, 1.4)):
+                c = (round(base[0] + ox, 2), round(base[1] + oy, 2))
+                if walk_ok(*c) and reachable(c) and all(abs(c[0] - a) + abs(c[1] - b) > 1.2 for a, b in spots.values()):
+                    spots[kind] = c
+                    break
+            if kind in spots:
+                break
+        if kind not in spots:
+            problems.append(f"sem ponto para «{kind}»")
+    if report is not None:
+        report.extend(problems)
+    return None if problems else (furn, spots)
 
 
 def auto_layout(venue, kinds):
@@ -96,8 +180,8 @@ def auto_layout(venue, kinds):
     rest = [(k, o) for k, o in items if not str(o.get("role", "")).startswith("main")]
     rest.sort(key=lambda t: -t[1]["footprint"][0] * t[1]["footprint"][1])
     G = 0.25
-    door = (6.2, 0.9)  # porta na parede da direita (como nas imagens das salas)
-    keep = [(4.9, 0.0, 7.5, 2.7), (5.8, 5.8, 7.5, 7.5)]  # entrada e canto da frente livres
+    door = (6.2 * RSCALE, 0.9 * RSCALE)  # porta na parede da direita (como nas imagens das salas)
+    keep = [(4.9 * RSCALE, 0.0, RS, 2.7 * RSCALE), (5.8 * RSCALE, 5.8 * RSCALE, RS, RS)]  # entrada e canto da frente livres
     placed = []  # (x, y, w, d, floor)
 
     def clear_of(x, y, w, d, pad):
@@ -133,7 +217,7 @@ def auto_layout(venue, kinds):
         return all((round(tx / G), round(ty / G)) in seen for tx, ty in targets)
 
     spots, furn = {}, []
-    centres = [(2.6, 3.0), (3.0, 4.6), (1.6, 4.8), (4.2, 3.6)]
+    centres = [(a * RSCALE, b * RSCALE) for a, b in [(2.6, 3.0), (3.0, 4.6), (1.6, 4.8), (4.2, 3.6)]]
     for i, (k, o) in enumerate(mains):
         w, d = o["footprint"]
         cx, cy = centres[i % len(centres)]
@@ -198,12 +282,20 @@ def build_interior(n, ident, venue, name, out, extra=None):
     x0, y0 = n * INTERIOR_STEP, INTERIOR_Y
     furniture, spots = LAYOUTS[venue]
     kinds = [k for k, *_ in spots]
-    auto = auto_layout(venue, kinds) if SALAS.get(venue) in objs else None
+    auto = None
+    if SALAS.get(venue) in objs:
+        probs = []
+        auto = planned_layout(venue, kinds, probs)
+        if auto is None or not all(k in auto[1] for k in kinds):
+            if probs:
+                print(f"  aviso: planta de {venue} com problemas ({'; '.join(probs[:4])}) — disposição automática")
+            auto = auto_layout(venue, kinds)
     if auto and all(k in auto[1] for k in kinds):
         labels = {k: lab for k, _, _, lab in spots}
         furniture = [(k, x, y) for k, x, y in auto[0]]
         spots = [(k, auto[1][k][0], auto[1][k][1], labels[k]) for k in kinds]
-        room, size, entry, exit_ = SALAS[venue], (RS, RS), (6.2, 1.9), (6.2, 0.9)
+        room, size, entry, exit_ = SALAS[venue], (RS, RS), (6.2 * RSCALE, 1.9 * RSCALE), (6.2 * RSCALE, 0.9 * RSCALE)
+        extra = {**(extra or {}), "room_scale": round(RSCALE, 4)}
     else:
         room, size, entry, exit_ = "interior_sala", ROOM, ENTRY, EXIT
     items = []

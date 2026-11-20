@@ -325,7 +325,8 @@ func _room(i: Dictionary) -> void:
 	var w := float(r[2])
 	var d := float(r[3])
 	var t0 := DemoAssets.texture_of(rid)
-	var s0 := float(o.get("scale", 1.0))
+	var rs := float(i.get("room_scale", 1.0)) # sala maior do que a arte original
+	var s0 := float(o.get("scale", 1.0)) * rs
 	var F := Vector2(o.anchor[0], o.anchor[1])
 	var back: Vector2 = F + View3D.rel(0, -w, -d) / s0
 	var hpx := _top_above(t0, back)
@@ -339,7 +340,7 @@ func _room(i: Dictionary) -> void:
 	var rid2 := DemoAssets.angle_id(rid, 2)
 	var o2 := DemoAssets.object(rid2)
 	var t2 := DemoAssets.texture_of(rid2)
-	var s2 := float(o2.get("scale", s0))
+	var s2 := float(o2.get("scale", s0 / rs)) * rs
 	var back2: Vector2 = Vector2(o2.anchor[0], o2.anchor[1]) + View3D.rel(2, w, d) / s2 if rid2 != rid else back
 	var up2 := Vector2(0, -hm * PX_PER_M / s2)
 	var r2 := 2 if rid2 != rid else 0

@@ -198,6 +198,9 @@ func _process(delta: float) -> void:
 				_pending_tries = 0
 			else:
 				_pending_tries += 1
+			if _pending_tries >= 2 and Net.room:
+				# não avança localmente: pede ao servidor que leve a personagem (a posição dele corrige a nossa)
+				Net.room.send(Protocol.C2S_MOVE_TO, {"x": roundi(float(keep.at[0]) * UNIT), "y": roundi(float(keep.at[1]) * UNIT)})
 			if _pending_tries > 4:
 				_pending_station = ""
 				hud.show_toast("Não consegui chegar a %s. Tenta aproximar-te mais." % str(keep.get("name", "esse sítio")), false)
@@ -574,7 +577,7 @@ func _update_inside() -> void:
 		var rid := DemoAssets.angle_id(room_id, Iso.rot)
 		var flipped := rid == room_id and Iso.rot % 2 == 1 and DemoAssets.mirrorable(room_id)
 		var ro := DemoAssets.object(rid)
-		var k := float(ro.get("scale", 1.0))
+		var k := float(ro.get("scale", 1.0)) * float(i.get("room_scale", 1.0))
 		var room_px := Vector2(ro.size[0], ro.size[1]) * k if not ro.is_empty() else Vector2(900, 700)
 		var vs := get_viewport().get_visible_rect().size
 		var top_ui := 110.0

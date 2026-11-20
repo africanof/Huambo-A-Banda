@@ -238,6 +238,7 @@ func _build_interiors() -> void:
 	for i: Dictionary in interiors:
 		var r: Array = i.rect
 		var room := DemoAssets.make_view_sprite(str(i.get("room", "interior_sala")), Iso.rot)
+		room.scale *= float(i.get("room_scale", 1.0)) # salas maiores do que a arte original
 		room.position = Iso.to_screen(Iso.front_corner(Rect2(r[0], r[1], r[2], r[3])))
 		room.z_index = -10
 		add_child(room)

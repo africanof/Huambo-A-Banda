@@ -80,7 +80,17 @@ export function sanitizeTarget(d: District, x: number, y: number): { x: number; 
       if (x >= rx - rad && y >= ry - rad && x <= rx + rw + rad && y <= ry + rh + rad) {
         const ix = Math.min(Math.max(x, rx + rad), rx + rw - rad);
         const iy = Math.min(Math.max(y, ry + rad), ry + rh - rad);
-        return isWalkable(d, ix, iy) ? { x: ix, y: iy } : null;
+        if (isWalkable(d, ix, iy)) return { x: ix, y: iy };
+        // em cima de um móvel: o ponto livre mais perto dentro da sala (até 1,5 m)
+        for (let r = 25; r <= 150; r += 25) {
+          for (let k = 0; k < 16; k++) {
+            const a = (k / 16) * Math.PI * 2;
+            const px = Math.min(Math.max(ix + Math.cos(a) * r, rx + rad), rx + rw - rad);
+            const py = Math.min(Math.max(iy + Math.sin(a) * r, ry + rad), ry + rh - rad);
+            if (isWalkable(d, px, py)) return { x: Math.round(px), y: Math.round(py) };
+          }
+        }
+        return null;
       }
     }
     return null;
