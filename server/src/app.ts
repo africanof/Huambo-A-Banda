@@ -30,7 +30,7 @@ export function createGameServer(env: Env, overrides: CreateServerOverrides = {}
       if (!overrides.wallets) return { ...repos, characters: overrides.characters ?? repos.characters };
       // carteira injetada (testes): casas e banco em memória usam essa mesma carteira
       const w = overrides.wallets;
-      return { characters: overrides.characters ?? repos.characters, wallets: w, properties: new MemoryPropertyRepository(w), bank: new MemoryBankRepository(w) };
+      return { characters: overrides.characters ?? repos.characters, wallets: w, properties: new MemoryPropertyRepository(w), bank: new MemoryBankRepository(w), groups: repos.groups };
     })(),
   };
   setServices(svc);

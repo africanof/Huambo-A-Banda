@@ -1,3 +1,4 @@
+import type { GroupRepository } from "./persistence/GroupRepository.js";
 import type { Env } from "./config/env.js";
 import type { TokenVerifier } from "./auth/TokenVerifier.js";
 import type { BankRepository, CharacterRepository, PropertyRepository, WalletRepository } from "./persistence/index.js";
@@ -14,6 +15,7 @@ export interface Services {
   wallets: WalletRepository;
   properties: PropertyRepository;
   bank: BankRepository;
+  groups: GroupRepository;
 }
 
 let current: Services | undefined;

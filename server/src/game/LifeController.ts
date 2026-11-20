@@ -30,6 +30,14 @@ import {
   progressMission,
   MISSIONS,
   STREAK_BONUS,
+  BISCATOS,
+  BISCATOS_PER_DAY,
+  cambioPrices,
+  CAMBIO_DAILY_USD,
+  RADIO_PRICE,
+  RADIO_MOOD,
+  MAX_FRIENDS,
+  GROUP_PRICE,
   rollSorte,
   TRANSFER_MAX,
   TRANSFER_MIN,
@@ -50,6 +58,10 @@ import {
   type WalletRepository,
 } from "../persistence/index.js";
 import type { ActionMessage } from "../net/protocol.js";
+import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
+import { recordNews } from "./news.js";
+import { whereIs } from "./presence.js";
+import { sanitizeChat } from "./social.js";
 
 /** O que o controlador precisa de saber de um jogador da sala. */
 export interface LifeActor {
@@ -70,9 +82,15 @@ interface Busy {
   x: number;
   y: number;
   place?: Place;
+  /** biscato em curso */
+  item?: string;
 }
 
 interface Entry {
+  /** pedido de amizade recebido (vale enquanto quem pediu estiver nesta sala) */
+  friendReq?: { from: LifeActor; at: number };
+  /** última vez que ouviu a rádio (ms) */
+  radioAt?: number;
   life: LifeState;
   money: number;
   bank: number;
@@ -129,6 +147,11 @@ export interface SelfState {
   travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number; birth?: boolean } | null;
   birth: { classe: string; pais: string; provincia: string; bairro: string; bairroNome: string; kumbu: number; nova: boolean } | null;
   sorteHoje: boolean;
+  biscatos: { feitos: number; max: number };
+  cambio: { usd: number; rate: number; buy: number; sell: number; usadoHoje: number; limite: number };
+  friends: Array<{ name: string; online: boolean; bairro: string | null; district: string | null; roomId: string | null }>;
+  friendReq: { name: string } | null;
+  group: { id: string; name: string } | null;
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -162,6 +185,7 @@ export class LifeController {
     return `${this.now()}.${++this.seq}`;
   }
   private readonly bank: BankRepository;
+  private readonly groups: GroupRepository;
 
   constructor(
     private readonly district: District,
@@ -169,10 +193,11 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
+    this.groups = deps.groups ?? new MemoryGroupRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -183,6 +208,8 @@ export class LifeController {
     } else {
       life = newLife(this.rand, this.now());
       life.birth = rollBirth(life.family, actor.characterId, (b) => !!getDistrict(b)?.places?.length);
+      if (life.family === "rica" || life.family === "muito_rica")
+        recordNews("nascimento", getDistrict(life.birth.bairro)?.name ?? life.birth.bairro, `Nasceu ${actor.name ?? "uma criança"} numa família ${FAMILY_LABEL[life.family].toLowerCase()} — filho/a de ${life.birth.pais}.`, this.now());
       await this.wallets.apply(actor.characterId, STARTING_MONEY[life.family], "family.start", `family:${actor.characterId}`);
     }
     rollDay(life, this.now());
@@ -231,6 +258,8 @@ export class LifeController {
     try {
       switch (msg.a) {
         case "self":
+          // pedido de estado: relê o saldo (pode ter mudado por fora, ex.: transferência noutra sala)
+          e.money = await this.wallets.balance(actor.characterId);
           break;
         case "eat":
           await this.eat(actor, e, msg.i);
@@ -297,6 +326,35 @@ export class LifeController {
           break;
         case "travel":
           await this.travel(actor, e, msg.i, msg.t);
+          break;
+        case "biscato":
+          this.biscato(actor, e, msg.i);
+          break;
+        case "cambio_compra":
+        case "cambio_venda":
+          await this.cambio(actor, e, msg.a === "cambio_compra" ? (msg.n ?? 0) : -(msg.n ?? 0));
+          break;
+        case "radio_ouvir":
+          this.listenRadio(actor, e);
+          break;
+        case "amigo_pedir":
+          this.friendRequest(actor, e, msg.i);
+          break;
+        case "amigo_aceitar":
+        case "amigo_recusar":
+          this.friendAnswer(actor, e, msg.a === "amigo_aceitar");
+          break;
+        case "amigo_remover":
+          this.friendRemove(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "grupo_criar":
+          await this.groupCreate(actor, e, msg.s);
+          break;
+        case "grupo_entrar":
+          await this.groupJoin(actor, e, msg.s);
+          break;
+        case "grupo_sair":
+          await this.groupLeave(actor, e);
           break;
         case "sorte":
           await this.sorte(actor, e);
@@ -491,6 +549,7 @@ export class LifeController {
     await this.refreshHomes(actor, e);
     e.offer = null;
     this.teleport(actor, e, i.entry.x, i.entry.y);
+    if (h.tenure === "buy") recordNews("casa", this.district.name, `${actor.name ?? "Alguém"} comprou casa: ${i.name} (${this.district.name}).`, this.now());
     this.out.toast(
       actor,
       h.tenure === "buy" ? `Parabéns! Compraste ${i.name} por ${total.toLocaleString("pt-PT")} Kz.` : `Arrendaste ${i.name} por ${days} dia(s) (${total.toLocaleString("pt-PT")} Kz).`,
@@ -560,6 +619,7 @@ export class LifeController {
     e.money = await this.wallets.apply(actor.characterId, -car.price, `car.${car.id}`, `car:${actor.characterId}:${this.op()}`);
     e.life.car = car.id;
     e.dirty = true;
+    recordNews("carro", this.district.name, `${actor.name ?? "Alguém"} comprou um ${car.name} (${this.district.name}).`, this.now());
     this.out.toast(actor, `Compraste: ${car.name}. Está estacionado à porta de casa.`, true);
   }
 
@@ -589,8 +649,9 @@ export class LifeController {
       }
       if (t < e.busy.until) continue;
       const kind = e.busy.kind;
+      const item = e.busy.item;
       e.busy = null;
-      await this.finish(actor, e, kind);
+      await this.finish(actor, e, kind, item);
       this.sendSelf(actor);
     }
     this.lastDecay ??= t;
@@ -608,7 +669,7 @@ export class LifeController {
     }
   }
 
-  private async finish(actor: LifeActor, e: Entry, kind: Busy["kind"]): Promise<void> {
+  private async finish(actor: LifeActor, e: Entry, kind: Busy["kind"], item?: string): Promise<void> {
     const n = e.life.needs;
     e.dirty = true;
     if (kind === "work") {
@@ -623,6 +684,15 @@ export class LifeController {
       const note = idx >= 2 ? ` (turno ${idx + 1} do dia: ${Math.round(shiftFactor(idx) * 100)}%)` : "";
       this.out.toast(actor, `Turno concluído: +${pay.toLocaleString("pt-PT")} Kz${note}.`, true);
       this.mission(actor, e, "trabalhar");
+    } else if (kind === "biscato") {
+      const b = BISCATOS[item ?? ""];
+      if (!b) return;
+      const pay = Math.round((b.pay[0] + (b.pay[1] - b.pay[0]) * this.rand()) / 10) * 10;
+      e.money = await this.wallets.apply(actor.characterId, pay, `biscato.${item}`, `biscato:${actor.characterId}:${e.life.biscatosDay}:${e.life.biscatos}`);
+      e.life.biscatos += 1;
+      e.life.needs = { ...n, energy: Math.max(0, n.energy - b.energy), hunger: Math.max(0, n.hunger - 4) };
+      this.out.toast(actor, `${b.name}: +${pay.toLocaleString("pt-PT")} Kz (${e.life.biscatos}/${BISCATOS_PER_DAY} hoje).`, true);
+      this.mission(actor, e, "biscato");
     } else if (kind === "study") {
       this.mission(actor, e, "estudar");
       e.life.study += 1;
@@ -648,6 +718,185 @@ export class LifeController {
     }
   }
 
+  // ---------------------------------------------------------------- biscatos
+
+  /** Biscato: sem estudos nem documentos; engraxar/lavar na paragem, carregar no mercado, zungar na rua. */
+  private biscato(actor: LifeActor, e: Entry, id: string | undefined): void {
+    const b = BISCATOS[id ?? ""];
+    if (!b) return this.out.toast(actor, "Esse biscato não existe.", false);
+    if (e.busy) return this.out.toast(actor, "Estás ocupado(a).", false);
+    const day = angolaDay(this.now());
+    if (e.life.biscatosDay !== day) {
+      e.life.biscatosDay = day;
+      e.life.biscatos = 0;
+    }
+    if (e.life.biscatos >= BISCATOS_PER_DAY) return this.out.toast(actor, "Já fizeste biscatos que chegue hoje. Descansa!", false);
+    if (e.life.needs.energy < 10) return this.out.toast(actor, "Estás sem forças. Come ou dorme primeiro.", false);
+    const inside = interiorAt(this.district, actor.x, actor.y);
+    if (b.where === "stop" && !this.near(actor, (p) => p.kind === "stop", 2))
+      return this.out.toast(actor, `${b.name} faz-se na paragem do bairro.`, false);
+    if (b.where === "mercado" && !(this.near(actor, (p) => p.kind === "door" && p.venue === "mercado", 2) || inside?.venue === "mercado"))
+      return this.out.toast(actor, "Vai ao mercado do bairro para carregar sacos.", false);
+    if (b.where === "rua" && inside) return this.out.toast(actor, "Para zungar tens de estar na rua.", false);
+    this.startBusy(actor, e, "biscato");
+    const busy = e.busy as Busy | null;
+    if (busy) busy.item = id;
+    e.dirty = true;
+  }
+
+  // ---------------------------------------------------------------- câmbio
+
+  /** Comprar (usd > 0) ou vender (usd < 0) dólares à taxa do dia. */
+  private async cambio(actor: LifeActor, e: Entry, usd: number): Promise<void> {
+    if (!Number.isInteger(usd) || usd === 0 || Math.abs(usd) > 1000) return this.out.toast(actor, "Troca entre 1 e 1.000 USD de cada vez.", false);
+    const day = angolaDay(this.now());
+    if (e.life.cambioDay !== day) {
+      e.life.cambioDay = day;
+      e.life.cambioUsd = 0;
+    }
+    if (e.life.cambioUsd + Math.abs(usd) > CAMBIO_DAILY_USD) return this.out.toast(actor, `Limite do dia: ${CAMBIO_DAILY_USD} USD.`, false);
+    const pr = cambioPrices(day);
+    if (usd > 0) {
+      const kz = usd * pr.buy;
+      e.money = await this.wallets.apply(actor.characterId, -kz, "cambio.compra", `cambio:${actor.characterId}:${this.op()}`);
+      e.life.usd += usd;
+      this.out.toast(actor, `Compraste ${usd} USD por ${kz.toLocaleString("pt-PT")} Kz.`, true);
+    } else {
+      if (e.life.usd < -usd) return this.out.toast(actor, "Não tens esses dólares.", false);
+      const kz = -usd * pr.sell;
+      e.life.usd += usd;
+      e.money = await this.wallets.apply(actor.characterId, kz, "cambio.venda", `cambio:${actor.characterId}:${this.op()}`);
+      this.out.toast(actor, `Vendeste ${-usd} USD por ${kz.toLocaleString("pt-PT")} Kz.`, true);
+    }
+    e.life.cambioUsd += Math.abs(usd);
+    e.dirty = true;
+  }
+
+  // ---------------------------------------------------------------- rádio
+
+  private listenRadio(actor: LifeActor, e: Entry): void {
+    const t = this.now();
+    if (e.radioAt && t - e.radioAt < 20 * 60_000) return this.out.toast(actor, "Já estás a ouvir a rádio. A música faz bem!", true);
+    e.radioAt = t;
+    e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + RADIO_MOOD) };
+    e.dirty = true;
+    this.out.toast(actor, `A ouvir a Rádio do Bairro: o humor sobe (+${RADIO_MOOD}).`, true);
+  }
+
+  /** Dedicatória na rádio: paga e devolve o texto limpo (null = recusado). Quem chama envia a todo o bairro. */
+  async radioDedication(actor: LifeActor, raw: unknown): Promise<string | null> {
+    const e = this.entries.get(actor);
+    if (!e) return null;
+    const text = sanitizeChat(raw);
+    if (!text) return null;
+    try {
+      e.money = await this.wallets.apply(actor.characterId, -RADIO_PRICE, "radio.dedicatoria", `radio:${actor.characterId}:${this.op()}`);
+    } catch (err) {
+      if (err instanceof InsufficientFunds) {
+        this.out.toast(actor, `Uma dedicatória custa ${RADIO_PRICE} Kz.`, false);
+        return null;
+      }
+      throw err;
+    }
+    recordNews("radio", this.district.name, `📻 ${actor.name ?? "Alguém"}: «${text}»`, this.now());
+    this.out.toast(actor, `Dedicatória no ar (−${RADIO_PRICE} Kz).`, true);
+    this.sendSelf(actor);
+    return text;
+  }
+
+  // ---------------------------------------------------------------- amigos
+
+  private byEid(eid: string | undefined): LifeActor | undefined {
+    for (const a of this.entries.keys()) if (String(a.eid) === eid) return a;
+    return undefined;
+  }
+
+  private friendRequest(actor: LifeActor, e: Entry, toEid: string | undefined): void {
+    const target = this.byEid(toEid);
+    if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM * 2) return this.out.toast(actor, "Aproxima-te da pessoa para a convidar.", false);
+    if (e.life.friends.some((f) => f.id === target.characterId)) return this.out.toast(actor, "Já são amigos.", false);
+    if (e.life.friends.length >= MAX_FRIENDS) return this.out.toast(actor, `Já tens ${MAX_FRIENDS} amigos.`, false);
+    const te = this.entries.get(target)!;
+    te.friendReq = { from: actor, at: this.now() };
+    this.out.toast(actor, `Pedido de amizade enviado a ${target.name ?? "alguém"}.`, true);
+    this.out.toast(target, `${actor.name ?? "Alguém"} quer ser teu amigo. Abre Amigos no telemóvel.`, true);
+    this.sendSelf(target);
+  }
+
+  private friendAnswer(actor: LifeActor, e: Entry, yes: boolean): void {
+    const req = e.friendReq;
+    e.friendReq = undefined;
+    if (!req) return this.out.toast(actor, "Não tens pedidos de amizade.", false);
+    const fe = this.entries.get(req.from);
+    if (!yes) return this.out.toast(actor, "Pedido recusado.", true);
+    if (!fe) return this.out.toast(actor, "Essa pessoa já saiu. Pede-lhe outra vez quando a vires.", false);
+    const add = (who: Entry, other: LifeActor) => {
+      if (!who.life.friends.some((f) => f.id === other.characterId) && who.life.friends.length < MAX_FRIENDS) who.life.friends.push({ id: other.characterId, name: other.name ?? "Amigo" });
+      who.dirty = true;
+    };
+    add(e, req.from);
+    add(fe, actor);
+    this.out.toast(actor, `Agora és amigo de ${req.from.name ?? "alguém"}!`, true);
+    this.out.toast(req.from, `${actor.name ?? "Alguém"} aceitou a tua amizade!`, true);
+    this.sendSelf(req.from);
+  }
+
+  private friendRemove(actor: LifeActor, e: Entry, idx: number): void {
+    const f = e.life.friends[idx];
+    if (!f) return;
+    e.life.friends.splice(idx, 1);
+    e.dirty = true;
+    this.out.toast(actor, `${f.name} saiu da tua lista de amigos.`, true);
+  }
+
+  // ---------------------------------------------------------------- grupos
+
+  private async groupCreate(actor: LifeActor, e: Entry, raw: string | undefined): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para criar um grupo precisas de uma conta.", false);
+    if (e.life.group) return this.out.toast(actor, `Já estás no grupo ${e.life.group.name}. Sai primeiro.`, false);
+    const name = sanitizeChat(raw)?.replace(/[*]/g, "").trim() ?? "";
+    if (name.length < 3 || name.length > 30) return this.out.toast(actor, "O nome do grupo tem de ter entre 3 e 30 letras.", false);
+    e.money = await this.wallets.balance(actor.characterId);
+    if (e.money < GROUP_PRICE) return this.out.toast(actor, `Criar um grupo custa ${GROUP_PRICE.toLocaleString("pt-PT")} Kz.`, false);
+    let g;
+    try {
+      g = await this.groups.create(name, actor.characterId);
+    } catch (err) {
+      if (err instanceof GroupNameTaken) return this.out.toast(actor, "Já existe um grupo com esse nome.", false);
+      throw err;
+    }
+    e.money = await this.wallets.apply(actor.characterId, -GROUP_PRICE, "grupo.criar", `grupo:${actor.characterId}:${g.id}`);
+    e.life.group = { id: g.id, name: g.name };
+    e.dirty = true;
+    recordNews("grupo", this.district.name, `Nasceu um grupo novo: «${g.name}», criado por ${actor.name ?? "alguém"}.`, this.now());
+    this.out.toast(actor, `Criaste o grupo «${g.name}».`, true);
+  }
+
+  private async groupJoin(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    if (e.life.group) return this.out.toast(actor, `Já estás no grupo ${e.life.group.name}. Sai primeiro.`, false);
+    const g = id ? await this.groups.get(id) : null;
+    if (!g) return this.out.toast(actor, "Esse grupo não existe.", false);
+    await this.groups.adjust(g.id, 1);
+    e.life.group = { id: g.id, name: g.name };
+    e.dirty = true;
+    this.out.toast(actor, `Entraste no grupo «${g.name}».`, true);
+  }
+
+  private async groupLeave(actor: LifeActor, e: Entry): Promise<void> {
+    const g = e.life.group;
+    if (!g) return this.out.toast(actor, "Não estás em nenhum grupo.", false);
+    await this.groups.adjust(g.id, -1);
+    e.life.group = null;
+    e.dirty = true;
+    this.out.toast(actor, `Saíste do grupo «${g.name}».`, true);
+  }
+
+  /** Grupo da personagem (para a conversa do grupo). */
+  groupOf(actor: LifeActor): { id: string; name: string } | null {
+    return this.entries.get(actor)?.life.group ?? null;
+  }
+
   /** Algo social aconteceu (ex.: falou e alguém ouviu) → missões. */
   social(actor: LifeActor, kind: "conversar"): void {
     const e = this.entries.get(actor);
@@ -666,6 +915,7 @@ export class LifeController {
     e.life.sorteDay = day;
     e.dirty = true;
     if (prize > 0) e.money = await this.wallets.apply(actor.characterId, prize, "sorte.dia", `sorte:${actor.characterId}:${day}`);
+    if (prize >= 2500) recordNews("sorte", this.district.name, `${actor.name ?? "Alguém"} ganhou ${prize.toLocaleString("pt-PT")} Kz na sorte do dia (${this.district.name}).`, this.now());
     this.out.toast(actor, prize > 0 ? `Sorte do dia: ganhaste ${prize.toLocaleString("pt-PT")} Kz!` : "Sorte do dia: hoje não calhou nada. Amanhã há mais!", prize > 0);
   }
 
@@ -715,6 +965,7 @@ export class LifeController {
       const bonus = this.streakBonus(m.streak);
       e.money = await this.wallets.apply(actor.characterId, bonus, "mission.streak", `mission-full:${actor.characterId}:${m.day}`);
       note = ` Dia completo! Sequência de ${m.streak} dia(s): +${bonus.toLocaleString("pt-PT")} Kz.`;
+      if (m.streak >= 3) recordNews("missoes", this.district.name, `${actor.name ?? "Alguém"} já completa as missões há ${m.streak} dias seguidos.`, this.now());
     }
     this.out.toast(actor, `Prémio recolhido: +${reward.toLocaleString("pt-PT")} Kz.${note}`, true);
   }
@@ -763,6 +1014,17 @@ export class LifeController {
           }
         : null,
       sorteHoje: e.life.sorteDay === angolaDay(t),
+      biscatos: { feitos: e.life.biscatosDay === angolaDay(t) ? e.life.biscatos : 0, max: BISCATOS_PER_DAY },
+      cambio: (() => {
+        const pr = cambioPrices(angolaDay(t));
+        return { usd: e.life.usd, rate: pr.rate, buy: pr.buy, sell: pr.sell, usadoHoje: e.life.cambioDay === angolaDay(t) ? e.life.cambioUsd : 0, limite: CAMBIO_DAILY_USD };
+      })(),
+      friends: e.life.friends.map((f) => {
+        const w = whereIs(f.id);
+        return { name: f.name, online: !!w, bairro: w?.districtName ?? null, district: w?.district ?? null, roomId: w?.roomId ?? null };
+      }),
+      friendReq: e.friendReq && this.entries.has(e.friendReq.from) ? { name: e.friendReq.from.name ?? "Alguém" } : null,
+      group: e.life.group,
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,

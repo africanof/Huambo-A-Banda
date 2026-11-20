@@ -36,6 +36,18 @@ export interface LifeState {
   missions: Missions;
   /** último dia (Angola) em que rodou a sorte grátis */
   sorteDay: string | null;
+  /** biscatos feitos hoje (contador do dia) */
+  biscatosDay: string | null;
+  biscatos: number;
+  /** dólares guardados (Câmbio) */
+  usd: number;
+  /** câmbio feito hoje (USD), para o limite diário */
+  cambioDay: string | null;
+  cambioUsd: number;
+  /** amigos (id da personagem + nome) */
+  friends: Array<{ id: string; name: string }>;
+  /** grupo a que pertence */
+  group: { id: string; name: string } | null;
 }
 
 export interface Missions {
@@ -60,6 +72,7 @@ export const MISSIONS: Record<string, { text: string; reward: number }> = {
   dormir: { text: "Dormir numa cama (hotel ou casa)", reward: 400 },
   visitar: { text: "Entrar em 3 sítios diferentes", reward: 500 },
   conversar: { text: "Falar com outro jogador", reward: 300 },
+  biscato: { text: "Fazer um biscato", reward: 300 },
 };
 export const MISSIONS_PER_DAY = 3;
 export const STREAK_BONUS = 1000;
@@ -298,7 +311,7 @@ export const LESSONS_PER_LEVEL = 3;
 export const MAX_EDUCATION = 4;
 
 /** Duração (s) das ações com tempo. */
-export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15 } as const;
+export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15, biscato: 12 } as const;
 
 /** Pagamento por turno do dia: os 2 primeiros por inteiro, depois decresce. */
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
@@ -365,6 +378,13 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     birth: null,
     missions: emptyMissions(),
     sorteDay: null,
+    biscatosDay: null,
+    biscatos: 0,
+    usd: 0,
+    cambioDay: null,
+    cambioUsd: 0,
+    friends: [],
+    group: null,
   };
 }
 
@@ -437,6 +457,18 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
         : null,
     missions: sanitizeMissions(r.missions),
     sorteDay: typeof r.sorteDay === "string" ? r.sorteDay : null,
+    biscatosDay: typeof r.biscatosDay === "string" ? r.biscatosDay : null,
+    biscatos: Math.round(num(r.biscatos, 0, 0, 1000)),
+    usd: Math.round(num(r.usd, 0, 0, 1e9)),
+    cambioDay: typeof r.cambioDay === "string" ? r.cambioDay : null,
+    cambioUsd: Math.round(num(r.cambioUsd, 0, 0, 1e9)),
+    friends: Array.isArray(r.friends)
+      ? r.friends
+          .filter((f): f is { id: string; name: string } => !!f && typeof f.id === "string" && typeof f.name === "string")
+          .slice(0, MAX_FRIENDS)
+          .map((f) => ({ id: f.id.slice(0, 64), name: f.name.slice(0, 40) }))
+      : [],
+    group: r.group && typeof r.group.id === "string" && typeof r.group.name === "string" ? { id: r.group.id.slice(0, 64), name: r.group.name.slice(0, 40) } : null,
   };
 }
 
@@ -475,3 +507,40 @@ export function rollSorte(r: number): number {
 export const TRANSFER_MIN = 100;
 export const TRANSFER_MAX = 100_000;
 export const TRANSFER_NEAR_CM = 800;
+
+// ---------------------------------------------------------------- biscatos («Ganhar dinheiro»)
+
+/** Biscatos: trabalhos rápidos sem estudos nem documentos. `where` diz onde se fazem. */
+export const BISCATOS: Record<string, { name: string; where: "stop" | "mercado" | "rua"; pay: [number, number]; energy: number }> = {
+  engraxar: { name: "Engraxar sapatos", where: "stop", pay: [300, 500], energy: 5 },
+  lavar: { name: "Lavar carros", where: "stop", pay: [500, 800], energy: 8 },
+  carregar: { name: "Carregar sacos no mercado", where: "mercado", pay: [600, 900], energy: 10 },
+  zungar: { name: "Zungar (vender na rua)", where: "rua", pay: [300, 1000], energy: 6 },
+};
+export const BISCATOS_PER_DAY = 6;
+
+// ---------------------------------------------------------------- câmbio
+
+/** Taxa do dia (Kz por 1 USD): anda à volta de 920, muda todos os dias. */
+export function cambioRate(day: string): number {
+  let h = 2166136261;
+  for (const ch of day) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const n = Date.parse(day + "T00:00:00Z") / 86_400_000;
+  const wave = Math.sin(n * 0.37) * 0.03 + Math.sin(n * 0.11) * 0.02;
+  const noise = ((h % 1000) / 1000 - 0.5) * 0.02;
+  return Math.round(920 * (1 + wave + noise));
+}
+/** O cambista ganha na diferença: compra-te dólares mais barato do que te vende. */
+export const CAMBIO_SPREAD = 0.02;
+export const CAMBIO_DAILY_USD = 2000;
+export function cambioPrices(day: string): { rate: number; buy: number; sell: number } {
+  const rate = cambioRate(day);
+  return { rate, buy: Math.round(rate * (1 + CAMBIO_SPREAD)), sell: Math.round(rate * (1 - CAMBIO_SPREAD)) };
+}
+
+// ---------------------------------------------------------------- rádio, amigos, grupos
+
+export const RADIO_PRICE = 500;
+export const RADIO_MOOD = 8;
+export const MAX_FRIENDS = 50;
+export const GROUP_PRICE = 5000;

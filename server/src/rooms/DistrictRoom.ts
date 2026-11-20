@@ -7,6 +7,7 @@ import { GameLoop } from "../game/GameLoop.js";
 import { LifeController, lifeCatalog } from "../game/LifeController.js";
 import { markPlayedToday } from "../game/stats.js";
 import { BurstLimiter, HEAR_RADIUS_CM, sanitizeChat } from "../game/social.js";
+import { setOffline, setOnline } from "../game/presence.js";
 import {
   C2S,
   ErrorCodes,
@@ -46,6 +47,7 @@ type DistrictClient = Client<{ userData: { eid: number }; auth: Identity }>;
 const AOI_CELL = 400;
 const AOI_RADIUS_CELLS = 2;
 const KICK_CHANNEL = "huambo:kick-user";
+const GROUP_CHANNEL = "huambo:group-chat";
 
 export class DistrictRoom extends Room {
   // Proteção anti-flood nativa do Colyseus: acima disto o cliente é desligado.
@@ -56,6 +58,16 @@ export class DistrictRoom extends Room {
   private life?: LifeController;
   private readonly chatLimiter = new BurstLimiter(5, 10_000);
   private readonly emoteLimiter = new BurstLimiter(3, 6_000);
+  private readonly radioLimiter = new BurstLimiter(1, 120_000);
+
+  /** Mensagem do grupo vinda de qualquer sala: entrega aos membros que estão nesta. */
+  private readonly onGroupMessage = (m: { gid: string; gname: string; id: number; n: string; t: string }): void => {
+    if (!this.life) return;
+    for (const client of this.clients as unknown as DistrictClient[]) {
+      const q = this.playerOf(client);
+      if (q && this.life.groupOf(q)?.id === m.gid) client.send(S2C.CHAT, { id: -1, n: `[${m.gname}] ${m.n}`, t: m.t, g: true });
+    }
+  };
   private lifeTimer: NodeJS.Timeout | undefined;
   private persistTimer: NodeJS.Timeout | undefined;
   private readonly players = new Map<number, Player>();
@@ -108,7 +120,7 @@ export class DistrictRoom extends Room {
         },
         Date.now,
         Math.random,
-        { properties: services().properties, bank: services().bank },
+        { properties: services().properties, bank: services().bank, groups: services().groups },
       );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }
@@ -186,8 +198,32 @@ export class DistrictRoom extends Room {
       }
       const text = sanitizeChat(msg.data.t);
       if (!text) return;
+      if (msg.data.g) {
+        // conversa do grupo: chega a todos os membros ligados, em qualquer bairro (via presença)
+        const g = this.life?.groupOf(p);
+        if (!g) {
+          client.send(S2C.TOAST, { t: "Não estás em nenhum grupo.", ok: false });
+          return;
+        }
+        void this.presence.publish(GROUP_CHANNEL, { gid: g.id, gname: g.name, id: p.eid, n: p.name, t: text });
+        return;
+      }
       const heard = this.sendNear(p, S2C.CHAT, { id: p.eid, n: p.name, t: text });
       if (heard > 0) this.life?.social(p, "conversar");
+    });
+
+    // Rádio do bairro: dedicatória paga que todos nesta sala ouvem (1 a cada 2 min por pessoa).
+    this.onMessage(C2S.RADIO, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = ChatSchema.safeParse(raw);
+      if (!p || !msg.success || !this.life) return;
+      if (!this.radioLimiter.take(p.characterId)) {
+        client.send(S2C.TOAST, { t: "A rádio só passa uma dedicatória tua a cada 2 minutos.", ok: false });
+        return;
+      }
+      void this.life.radioDedication(p, msg.data.t).then((text) => {
+        if (text) this.broadcast(S2C.RADIO, { n: p.name, t: text });
+      });
     });
 
     this.onMessage(C2S.EMOTE, (client: DistrictClient, raw: unknown) => {
@@ -206,6 +242,7 @@ export class DistrictRoom extends Room {
     });
 
     void this.presence.subscribe(KICK_CHANNEL, this.onKick);
+    void this.presence.subscribe(GROUP_CHANNEL, this.onGroupMessage);
     log().info({ roomId: this.roomId, district: district.id }, "district room created");
   }
 
@@ -252,6 +289,7 @@ export class DistrictRoom extends Room {
     this.grid.upsert(eid, player.x, player.y);
 
     this.sendWelcome(client, player);
+    setOnline(character.id, { name: character.name, district: this.district.id, districtName: this.district.name, roomId: this.roomId, since: Date.now() });
     await this.life?.join(player, character.life);
     log().info({ roomId: this.roomId, sessionId: client.sessionId, userId: auth.userId, eid }, "player joined");
   }
@@ -278,6 +316,7 @@ export class DistrictRoom extends Room {
     const p = this.playerOf(client);
     if (!p) return;
     this.players.delete(p.eid);
+    setOffline(p.characterId, this.roomId);
     const lifeState = this.life?.lifeOf(p);
     if (this.byUser.get(p.userId) === p) this.byUser.delete(p.userId);
     this.grid.remove(p.eid);
@@ -298,6 +337,7 @@ export class DistrictRoom extends Room {
     clearInterval(this.persistTimer);
     clearInterval(this.lifeTimer);
     await this.presence.unsubscribe(KICK_CHANNEL, this.onKick);
+    await this.presence.unsubscribe(GROUP_CHANNEL, this.onGroupMessage);
     await this.flushPersistence(true);
   }
 

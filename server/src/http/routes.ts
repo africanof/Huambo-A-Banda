@@ -1,4 +1,6 @@
 import { playedToday } from "../game/stats.js";
+import { todaysNews } from "../game/news.js";
+import { angolaDay, cambioPrices } from "../game/life.js";
 import express, { type Application, type Request, type Response, type NextFunction } from "express";
 import { matchMaker } from "@colyseus/core";
 import type { Services } from "../services.js";
@@ -77,6 +79,19 @@ export function registerRoutes(app: Application, svc: Services): void {
     } catch {
       res.status(503).json({ error: "unavailable" });
     }
+  });
+
+  // Jornal do Huambo: notícias de hoje + câmbio do dia + grupos com mais membros.
+  app.get("/jornal", async (_req, res) => {
+    const day = angolaDay(Date.now());
+    let grupos: Array<{ id: string; name: string; members: number }> = [];
+    try {
+      grupos = (await svc.groups.list()).slice(0, 20);
+    } catch {
+      grupos = [];
+    }
+    res.set("Cache-Control", "no-store");
+    res.json({ dia: day, cambio: cambioPrices(day), noticias: todaysNews(), grupos });
   });
 
   // Salas de um bairro (como no Vida na Banda: "📍 bairro · Sala N"), por ordem de criação.

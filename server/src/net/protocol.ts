@@ -29,6 +29,8 @@ export const C2S = {
   CHAT: 6,
   /** gesto (acenar, dançar…) */
   EMOTE: 7,
+  /** dedicatória na rádio do bairro (paga) */
+  RADIO: 8,
 } as const;
 
 /** Servidor -> Cliente */
@@ -46,6 +48,8 @@ export const S2C = {
   CHAT: 107,
   /** alguém perto fez um gesto: { id, e } */
   EMOTE: 108,
+  /** dedicatória na rádio: { n, t } (todo o bairro ouve) */
+  RADIO: 109,
 } as const;
 
 /** Códigos de erro de aplicação (enviados em NOTICE ou como motivo de recusa). */
@@ -62,7 +66,7 @@ export const ErrorCodes = {
 // interiores ficam a ~1 km da rua (y ≈ 100 000 cm): margem até 10 km
 const coord = z.number().finite().min(-1_000_000).max(1_000_000);
 
-export const ChatSchema = z.object({ t: z.string().min(1).max(400) }).strict();
+export const ChatSchema = z.object({ t: z.string().min(1).max(400), g: z.boolean().optional() }).strict();
 export const EmoteSchema = z.object({ e: z.enum(["acenar", "dancar", "aplaudir", "rir", "celebrar", "resmungar"]) }).strict();
 
 export const MoveToSchema = z.object({ x: coord, y: coord }).strict();
@@ -106,10 +110,24 @@ export const ActionSchema = z
       // sorte do dia (grátis, uma vez por dia) e transferir dinheiro a alguém perto (i = id da pessoa, n = quantia)
       "sorte",
       "transfer",
+      // biscatos, câmbio, rádio, amigos e grupos
+      "biscato",
+      "cambio_compra",
+      "cambio_venda",
+      "radio_ouvir",
+      "amigo_pedir",
+      "amigo_aceitar",
+      "amigo_recusar",
+      "amigo_remover",
+      "grupo_criar",
+      "grupo_entrar",
+      "grupo_sair",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */
     n: z.number().int().min(1).max(1_000_000_000).optional(),
+    /** texto livre curto (nome de grupo, id de grupo) — o servidor limpa */
+    s: z.string().min(1).max(60).optional(),
     /** meio de transporte (viagens) */
     t: z.enum(["autocarro", "candongueiro", "kupapata", "taxi", "carro"]).optional(),
   })
