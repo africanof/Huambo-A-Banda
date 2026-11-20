@@ -50,7 +50,7 @@ func _draw() -> void:
 		for q: Array in r.pts:
 			pts.append(_p(Vector2(q[0], q[1])))
 		if pts.size() >= 2:
-			draw_polyline(pts, Color("8d8b86") if bool(r.paved) else Color("c9a27a"), maxf(1.5, float(r.w) * _k * 64.0 * 0.9), true)
+			draw_polyline(pts, Color("8d8b86") if bool(r.paved) else Color("c9a27a"), maxf(1.5, (Iso.to_screen(Vector2(float(r.w), 0)) - Iso.to_screen(Vector2.ZERO)).length() * _k), true)
 	if not view.osm:
 		for rule: Dictionary in view.data.ground:
 			if str(rule.kind) == "asfalto" and rule.has("y"):
@@ -60,7 +60,7 @@ func _draw() -> void:
 	# edifícios: com nome a cor, casas a cinzento
 	for b: Dictionary in view.data.buildings:
 		var r := Rect2(b.at[0], b.at[1], b.fp[0], b.fp[1])
-		var home := str(b.get("label", "")).begins_with("Casa")
+		var home: bool = str(b.get("label", "")) == "" or view._is_home(b)
 		var poly := PackedVector2Array([_p(r.position), _p(Vector2(r.end.x, r.position.y)), _p(r.end), _p(Vector2(r.position.x, r.end.y))])
 		draw_colored_polygon(poly, Color("d9cbb4") if home else Color("f2c14e"))
 	# paragem, saídas e lugares com nome (no mapa grande)
@@ -93,6 +93,4 @@ func _gui_input(e: InputEvent) -> void:
 	if not big:
 		go_to.emit(Vector2.INF) # pede para abrir em grande
 		return
-	var w := Iso.to_world((e.position - _off) / _k)
-	if Rect2(Vector2.ZERO, view.size).has_point(w):
-		go_to.emit(w)
+	go_to.emit(Iso.to_world((e.position - _off) / _k)) # fora do bairro: só fecha

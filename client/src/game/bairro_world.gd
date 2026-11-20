@@ -45,6 +45,15 @@ func _ready() -> void:
 	hud.catalog = w.get("catalog", {}) if typeof(w.get("catalog")) == TYPE_DICTIONARY else {}
 	add_child(hud)
 	hud.ui_action.connect(_on_hud_action)
+	# minimapa no canto (como no Vida na Banda): tocar abre-o; no grande, tocar leva-te lá
+	minimap.view = view
+	minimap.anchor_top = 1.0
+	minimap.anchor_bottom = 1.0
+	_minimap_small()
+	minimap.go_to.connect(_on_minimap)
+	hud.add_child(minimap)
+	if not AppConfig.has_flag("autotest") and not GameHud.guide_seen() and not _lottery_pending():
+		hud.show_guide.call_deferred()
 	# telemóvel na vertical: mais perto, a personagem fica bem visível
 	var z0 := 0.68 if get_viewport().get_visible_rect().size.x < 700.0 else 0.5
 	camera.zoom = Vector2(z0, z0)
@@ -145,6 +154,8 @@ func _process(delta: float) -> void:
 			if _room_center != Vector2.INF:
 				camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
+		minimap.me = local_char.world_pos
+		minimap.visible = mode3d == "" and _room_center == Vector2.INF
 		if mode3d != "" and view3d:
 			var room := view.interior_at(local_char.world_pos)
 			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
@@ -182,6 +193,8 @@ func _on_self(me: Dictionary) -> void:
 		await lot.done
 		_lottery_open = false
 		_show_guide_later = true
+		if not AppConfig.has_flag("autotest") and not GameHud.guide_seen():
+			hud.show_guide()
 		_on_self(Net.me)
 		return
 	if _lottery_open:
@@ -244,6 +257,43 @@ func _on_self(me: Dictionary) -> void:
 var _bairro_id := ""
 var _lottery_open := false
 static var _show_guide_later := false
+var minimap := Minimap.new()
+
+
+func _lottery_pending() -> bool:
+	var b: Variant = Net.me.get("birth")
+	return typeof(b) == TYPE_DICTIONARY and bool(b.get("nova", false)) and not _birth_shown
+
+
+func _minimap_small() -> void:
+	minimap.big = false
+	minimap.anchor_left = 0.0
+	minimap.anchor_right = 0.0
+	minimap.anchor_top = 1.0
+	minimap.anchor_bottom = 1.0
+	minimap.offset_left = 14
+	minimap.offset_right = 14 + 150
+	minimap.offset_top = -250
+	minimap.offset_bottom = -140
+
+
+func _on_minimap(w: Vector2) -> void:
+	if w == Vector2.INF:
+		# abre em grande, ocupa quase o ecrã
+		minimap.big = true
+		minimap.anchor_left = 0.0
+		minimap.anchor_right = 1.0
+		minimap.anchor_top = 0.0
+		minimap.anchor_bottom = 1.0
+		minimap.offset_left = 20
+		minimap.offset_right = -20
+		minimap.offset_top = 130
+		minimap.offset_bottom = -130
+		return
+	_minimap_small()
+	if Rect2(Vector2.ZERO, view.size).has_point(w):
+		request_move(w)
+
 var _car_sprite: Node2D
 var _car_key := ""
 const CAR_SPRITES := {"corolla_usado": "f_carro", "hilux": "f_hilux", "jipe": "f_carro2"}
@@ -707,6 +757,17 @@ func _on_hud_action(what: String) -> void:
 				if p.kind == "portal" and str(p.get("to", "")) == to:
 					request_move(Vector2(p.at[0], p.at[1]))
 					hud.show_toast("A caminho da saída para %s…" % str(p.name).trim_prefix("A pé para "), true)
+		"paragem":
+			for p: Dictionary in view.places:
+				if p.kind == "stop":
+					request_move(Vector2(p.at[0], p.at[1]))
+					hud.show_toast("A caminho da paragem…", true)
+		var w when w.begins_with("sala:"):
+			var err := await Net.join_district(Net.current_district, "", w.trim_prefix("sala:"))
+			if err != "":
+				hud.show_toast(err, false)
+				await Net.join_district(Net.current_district)
+			get_tree().change_scene_to_file("res://src/game/bairro_world.tscn")
 		"rodar":
 			if mode3d != "":
 				_set_mode3d("")

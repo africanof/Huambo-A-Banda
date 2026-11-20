@@ -102,12 +102,15 @@ func _process(delta: float) -> void:
 # ------------------------------------------------------------------ cartão
 
 func _build_ui() -> void:
-	var center := CenterContainer.new()
-	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	add_child(center)
+	# rolagem no ecrã todo; o cartão fica ao centro (e rola no telemóvel baixo)
 	var scroll := ScrollContainer.new()
+	scroll.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	center.add_child(scroll)
+	add_child(scroll)
+	var center := CenterContainer.new()
+	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	center.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.add_child(center)
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = CARD
 	sb.set_corner_radius_all(28)
@@ -115,7 +118,7 @@ func _build_ui() -> void:
 	sb.shadow_color = Color(0, 0, 0, 0.4)
 	sb.shadow_size = 14
 	_card.add_theme_stylebox_override("panel", sb)
-	scroll.add_child(_card)
+	center.add_child(_card)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 12)
 	_card.add_child(v)

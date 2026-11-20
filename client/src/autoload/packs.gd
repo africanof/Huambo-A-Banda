@@ -31,7 +31,8 @@ func ensure(kits: Array, versions: Dictionary) -> String:
 			var err := await _download("%s/packs/%s.pck?v=%s" % [AppConfig.server_url, kit, ver], local)
 			if err != "":
 				return err
-		if not ProjectSettings.load_resource_pack(local, true):
+		# false: o pacote leva também cópias dos autoloads (da altura em que foi feito); nunca sobrepor o código do jogo
+		if not ProjectSettings.load_resource_pack(local, false):
 			DirAccess.remove_absolute(local) # pacote estragado: descarrega de novo da próxima vez
 			return "Não foi possível abrir o pacote do bairro."
 		if not DemoAssets.load_kit(kit):

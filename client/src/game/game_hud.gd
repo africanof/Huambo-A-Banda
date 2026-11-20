@@ -40,6 +40,7 @@ var _right := VBoxContainer.new()
 var _needs_panel: PanelContainer
 var _portrait := TextureRect.new()
 var money_label := Label.new()
+var sala_button := Button.new()
 var needs_button := Button.new()
 var _dock: PanelContainer
 const ACCENT_DARK := Color("b5341f")
@@ -86,6 +87,20 @@ func _ready() -> void:
 	money_label.add_theme_color_override("font_color", ACCENT)
 	mv.add_child(money_label)
 	_title = top_label
+
+	# --- por baixo: "📍 Sala N ▾" — tocar mostra as salas do bairro (como no Vida na Banda)
+	sala_button.anchor_left = 0.5
+	sala_button.anchor_right = 0.5
+	sala_button.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	sala_button.offset_top = 84
+	_style_round(sala_button, 16, Color(0.1, 0.08, 0.07, 0.75))
+	sala_button.add_theme_font_override("font", FONT)
+	sala_button.add_theme_font_size_override("font_size", 14)
+	sala_button.text = "Sala 1"
+	sala_button.icon = DemoIcons.make("pin", Color.WHITE, 18)
+	sala_button.pressed.connect(_open_rooms)
+	add_child(sala_button)
+	_refresh_sala.call_deferred()
 
 	# --- topo à esquerda: necessidade mais baixa; tocar abre as quatro
 	needs_button.toggle_mode = true
@@ -297,7 +312,7 @@ func set_clock(minutes: float) -> void:
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
 	var money := int(Net.me.get("money", 0))
-	top_label.text = "%s %s · %02d:%02d" % ["☀" if h >= 6 and h < 18 else "☾", place_text.to_upper(), h, m]
+	top_label.text = "%s · %s · %02d:%02d" % ["DIA" if h >= 6 and h < 18 else "NOITE", place_text.to_upper(), h, m]
 	money_label.text = "%s Kz" % DemoHud._money(money)
 
 
@@ -386,6 +401,8 @@ func _rebuild_actions() -> void:
 			pass # o botão "Sair" está sempre visível lá dentro
 		"car":
 			actions_box.add_child(_button("Viajar de carro", "pin", ACCENT, INK, func() -> void: _open_map()))
+		"stop":
+			actions_box.add_child(_button("Apanhar transporte (paragem)", "pin", ACCENT, INK, func() -> void: _open_map()))
 		"portal":
 			var to := str(_context.get("to", ""))
 			actions_box.add_child(_button(str(_context.name), "pin", ACCENT, INK, func() -> void: Net.action("travel", to)))
@@ -480,13 +497,85 @@ func _go(id: String, walk: bool) -> void:
 		ui_action.emit("caminho:" + id)
 		return
 	_panel("Como queres ir?")
+	var at_stop := str(_context.get("kind", "")) == "stop"
+	if not at_stop:
+		menu_body.add_child(_label("Os candongueiros, kupapatas, táxis e autocarros param na paragem do bairro.", 14, Color.WHITE, FONT_REG, true))
+		menu_body.add_child(_button("Ir a pé até à paragem", "pin", Color("f2c14e"), INK, func() -> void:
+			ui_action.emit("paragem")
+			menu_panel.visible = false))
 	for tr: Dictionary in catalog.get("transports", [{"id": "candongueiro", "name": "Candongueiro", "price": 200}]):
 		var how := str(tr.id)
 		if how == "carro" and Net.me.get("car") == null:
 			continue
+		if how != "carro" and not at_stop:
+			continue
 		menu_body.add_child(_button("%s · %s Kz" % [tr.name, DemoHud._money(int(tr.price))], "pin", ACCENT, INK, func() -> void:
 			Net.action_travel(id, how)
 			menu_panel.visible = false))
+	_close_button()
+
+
+const GUIDE := [
+	["Bem-vindo ao Huambo!", "Toca no chão para andar (ou usa as setas / WASD). Arrasta com o dedo para olhar à volta; belisca ou usa + e − para o zoom."],
+	["Entra nos sítios", "Todos os edifícios com nome abrem: cantina, banco, escola, igreja, hotel, discoteca… Chega à porta e toca em «Entrar»."],
+	["Andar pela cidade", "As placas no fim das ruas levam-te a pé ao bairro vizinho. Para mais longe, vai à paragem e apanha candongueiro, kupapata, táxi ou autocarro."],
+	["Minimapa e salas", "O minimapa no canto mostra-te onde estás — toca nele para o abrir e escolher para onde ir. Em cima, «Sala» deixa-te mudar de sala para estares com amigos."],
+	["A tua vida", "Cuida da fome, energia e diversão. No telemóvel procuras trabalho, compras casa e carro. Boa banda!"],
+]
+
+
+## Guia de primeira visita (uma vez por aparelho).
+func show_guide(step := 0) -> void:
+	if step >= GUIDE.size():
+		menu_panel.visible = false
+		var cfg := ConfigFile.new()
+		cfg.set_value("guia", "visto", true)
+		cfg.save("user://guia.cfg")
+		return
+	_panel("%s  (%d/%d)" % [GUIDE[step][0], step + 1, GUIDE.size()])
+	menu_body.add_child(_label(GUIDE[step][1], 17, Color.WHITE, FONT_REG, true))
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 10)
+	row.add_child(_button("Saltar", "minus", BG, Color.WHITE, func() -> void: show_guide(GUIDE.size())))
+	row.add_child(_button("Percebi" if step == GUIDE.size() - 1 else "Seguinte", "plus", ACCENT, INK, func() -> void: show_guide(step + 1)))
+	menu_body.add_child(row)
+
+
+static func guide_seen() -> bool:
+	var cfg := ConfigFile.new()
+	return cfg.load("user://guia.cfg") == OK and bool(cfg.get_value("guia", "visto", false))
+
+
+## Número da sala onde estou (ordem de criação no servidor).
+func _refresh_sala() -> void:
+	var rooms: Variant = await Net.get_json("/districts/%s/rooms" % Net.current_district)
+	if typeof(rooms) != TYPE_ARRAY or Net.room == null:
+		return
+	for r: Dictionary in rooms:
+		if str(r.roomId) == Net.room.room_id:
+			sala_button.text = "Sala %d" % int(r.sala)
+
+
+## Lista de salas do bairro: quantos estão em cada uma; tocar muda de sala.
+func _open_rooms() -> void:
+	_panel("Salas — %s" % place_text)
+	menu_body.add_child(_label("Cada bairro tem várias salas com outras pessoas. Muda para estar com os teus amigos.", 14, Color.WHITE, FONT_REG, true))
+	var rooms: Variant = await Net.get_json("/districts/%s/rooms" % Net.current_district)
+	if not menu_panel.visible:
+		return
+	if typeof(rooms) != TYPE_ARRAY:
+		menu_body.add_child(_label("Não foi possível obter as salas.", 14, Color("ffb4a8"), FONT_REG, true))
+	else:
+		for r: Dictionary in rooms:
+			var mine: bool = Net.room != null and str(r.roomId) == Net.room.room_id
+			var full := int(r.clients) >= int(r.maxClients)
+			var rid := str(r.roomId)
+			var txt := "Sala %d · %d/%d pessoas%s" % [int(r.sala), int(r.clients), int(r.maxClients), "  (estás aqui)" if mine else ""]
+			var b := _button(txt, "person", BG if mine or full else ACCENT, Color.WHITE if mine or full else INK, func() -> void:
+				menu_panel.visible = false
+				ui_action.emit("sala:" + rid))
+			b.disabled = mine or full
+			menu_body.add_child(b)
 	_close_button()
 
 

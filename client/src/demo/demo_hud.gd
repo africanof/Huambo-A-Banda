@@ -75,7 +75,7 @@ func _ready() -> void:
 func set_clock(minutes: float) -> void:
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
-	var icon := "☀" if h >= 6 and h < 18 else "☾"
+	var icon := "Dia" if h >= 6 and h < 18 else "Noite"
 	clock.text = "%s  %s · %02d:%02d   ·   %s Kz" % [icon, place_text, h, m, _money(DemoState.wallet)]
 
 
