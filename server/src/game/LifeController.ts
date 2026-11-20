@@ -45,6 +45,20 @@ import {
   ROUPAS,
   SMS_PRICE,
   CONQUISTAS,
+  ANIMAIS,
+  MAX_ANIMAIS,
+  RACAO_PRICE,
+  FEED_MIN,
+  OVO_MIN,
+  OVOS_MAX,
+  OVO_PRICE,
+  FOME_FACTOR,
+  TREINOS,
+  TREINOS_POR_DIA,
+  FORMA_DECAY,
+  PRAZOS,
+  PRAZO_MIN,
+  PRAZO_MAX,
   CURSOS,
   UNI_LESSONS,
   UNI_PRICE,
@@ -210,6 +224,9 @@ export interface SelfState {
   uni: { curso: string | null; cursoNome: string | null; aulas: number; total: number; licenciaturas: string[]; preco: number };
   doenca: { id: string; name: string; texto: string } | null;
   roubo: { amount: number; recuperavel: boolean } | null;
+  criacao: { animais: Array<{ tipo: string; name: string; prontoEmS: number }>; alimentadosS: number; ovos: number; max: number; racao: number };
+  forma: { valor: number; treinosHoje: number; max: number };
+  prazo: { amount: number; termo: string; name: string; rate: number; faltamS: number; total: number } | null;
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -507,6 +524,27 @@ export class LifeController {
           break;
         case "imoveis":
           await this.listHousing(e);
+          break;
+        case "criacao_comprar":
+          await this.animalBuy(actor, e, msg.i);
+          break;
+        case "criacao_alimentar":
+          await this.animalFeed(actor, e);
+          break;
+        case "criacao_ovos":
+          this.animalEggs(actor, e);
+          break;
+        case "criacao_vender":
+          await this.animalSell(actor, e, msg.i);
+          break;
+        case "treinar":
+          this.train(actor, e, msg.i);
+          break;
+        case "prazo_abrir":
+          await this.termOpen(actor, e, msg.n, msg.i);
+          break;
+        case "prazo_levantar":
+          await this.termClose(actor, e);
           break;
         case "lavra_semear":
           await this.lavraPlant(actor, e, msg.i);
@@ -854,6 +892,7 @@ export class LifeController {
       for (const [actor, e] of this.entries) {
         e.life.needs = decay(e.life.needs, minutes);
         this.healthAndCrime(actor, e, minutes, t);
+        e.life.forma = Math.max(0, e.life.forma - FORMA_DECAY * minutes);
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -986,6 +1025,9 @@ export class LifeController {
       milionario: e.money + e.bank >= 1_000_000,
       popular: L.friends.length >= 5,
       elegante: L.roupas.filter((h) => h >= 0).length >= 4,
+      criador: L.criacao.vendidos >= 10,
+      atleta: L.forma >= 80,
+      poupado: L.prazosFeitos > 0,
     };
     for (const [id, ok] of Object.entries(has)) {
       if (!ok || L.conquistas.includes(id)) continue;
@@ -1188,7 +1230,9 @@ export class LifeController {
     const w = weatherAt(t);
     const hour = new Date(t + 3600_000).getUTCHours();
     const night = hour >= 21 || hour < 5;
-    const p = (perMin: number) => this.rand() < 1 - Math.pow(1 - perMin, minutes);
+    // quem está em forma adoece menos (até metade com forma 100)
+    const fit = 1 - e.life.forma / 200;
+    const p = (perMin: number) => this.rand() < 1 - Math.pow(1 - perMin * fit, minutes);
     if (!e.life.doenca && outside) {
       if ((w.ceu === "chuva" || w.ceu === "trovoada" || (w.epoca === "cacimbo" && night)) && p(0.012)) {
         e.life.doenca = { id: "gripe", since: t };
@@ -1405,6 +1449,159 @@ export class LifeController {
       out.push({ door: d.id, name: d.name, venue: d.venue ?? "", free, total: d.interiors.length, buy: price.buy, rentPerDay: price.rentPerDay, x: d.x, y: d.y });
     }
     e.imoveis = out.sort((a, b) => b.free - a.free || a.name.localeCompare(b.name));
+  }
+
+  // ---------------------------------------------------------------- criação de animais
+
+  private atMarket(actor: LifeActor): boolean {
+    const inside = interiorAt(this.district, actor.x, actor.y);
+    return !!this.near(actor, (p) => p.kind === "door" && p.venue === "mercado", 2) || inside?.venue === "mercado";
+  }
+
+  /** Ovos postos desde a última contagem: só enquanto as galinhas estão alimentadas. */
+  private tallyEggs(e: Entry): void {
+    const c = e.life.criacao;
+    const t = this.now();
+    const hens = c.animais.filter((a) => ANIMAIS[a.tipo]?.ovos).length;
+    if (hens === 0) {
+      c.ovosAt = t;
+      return;
+    }
+    const end = Math.min(t, c.fedUntil); // com fome não põem
+    if (end <= c.ovosAt) return;
+    const laid = Math.floor((end - c.ovosAt) / (OVO_MIN * 60_000));
+    if (laid > 0) {
+      c.ovos = Math.min(hens * OVOS_MAX, c.ovos + laid * hens);
+      c.ovosAt += laid * OVO_MIN * 60_000;
+    }
+  }
+
+  private async animalBuy(actor: LifeActor, e: Entry, tipo: string | undefined): Promise<void> {
+    const a = ANIMAIS[tipo ?? ""];
+    if (!a) return this.out.toast(actor, "Esse animal não se vende no mercado.", false);
+    if (!this.atMarket(actor)) return this.out.toast(actor, "Os animais compram-se no mercado do bairro.", false);
+    const c = e.life.criacao;
+    if (c.animais.length >= MAX_ANIMAIS) return this.out.toast(actor, `O quintal já tem ${MAX_ANIMAIS} animais.`, false);
+    if (e.money < a.price) return this.out.toast(actor, `Precisas de ${a.price.toLocaleString("pt-PT")} Kz.`, false);
+    this.tallyEggs(e);
+    e.money = await this.wallets.apply(actor.characterId, -a.price, `criacao.compra.${tipo}`, `criacao:${actor.characterId}:${this.op()}`);
+    c.animais.push({ tipo: tipo!, desde: this.now() });
+    if (c.animais.length === 1) c.ovosAt = this.now();
+    e.dirty = true;
+    this.out.toast(actor, `Compraste ${a.name.toLowerCase() === "galinha" ? "uma galinha" : "um " + a.name.toLowerCase()} (−${a.price.toLocaleString("pt-PT")} Kz). Não te esqueças da ração.`, true);
+  }
+
+  private async animalFeed(actor: LifeActor, e: Entry): Promise<void> {
+    const c = e.life.criacao;
+    if (!c.animais.length) return this.out.toast(actor, "Não tens animais. Compra-os no mercado.", false);
+    const cost = RACAO_PRICE * c.animais.length;
+    if (e.money < cost) return this.out.toast(actor, `A ração custa ${cost.toLocaleString("pt-PT")} Kz.`, false);
+    this.tallyEggs(e);
+    const t = this.now();
+    if (c.fedUntil - t > FEED_MIN * 60_000 * 0.5) return this.out.toast(actor, "Os animais ainda estão de barriga cheia.", false);
+    e.money = await this.wallets.apply(actor.characterId, -cost, "criacao.racao", `racao:${actor.characterId}:${this.op()}`);
+    if (c.fedUntil < t) c.ovosAt = t;
+    c.fedUntil = t + FEED_MIN * 60_000;
+    e.dirty = true;
+    this.out.toast(actor, `Deste ração aos animais (−${cost.toLocaleString("pt-PT")} Kz). Ficam bem durante ${FEED_MIN / 60} horas.`, true);
+  }
+
+  private animalEggs(actor: LifeActor, e: Entry): void {
+    this.tallyEggs(e);
+    const c = e.life.criacao;
+    if (c.ovos <= 0) return this.out.toast(actor, "Ainda não há ovos. Galinhas alimentadas põem um ovo a cada " + OVO_MIN + " min.", false);
+    this.out.toast(actor, `Tens ${c.ovos} ovos guardados. Vende-os no mercado (${OVO_PRICE} Kz cada).`, true);
+  }
+
+  /** Vender um animal crescido (por tipo) ou os ovos ("ovos"), no mercado. */
+  private async animalSell(actor: LifeActor, e: Entry, what: string | undefined): Promise<void> {
+    if (!this.atMarket(actor)) return this.out.toast(actor, "Vende-se no mercado do bairro.", false);
+    this.tallyEggs(e);
+    const c = e.life.criacao;
+    const t = this.now();
+    const feira = hasEvent(t, "feira") ? 1.3 : 1;
+    if (what === "ovos") {
+      if (c.ovos <= 0) return this.out.toast(actor, "Não tens ovos para vender.", false);
+      const total = Math.round(c.ovos * OVO_PRICE * feira);
+      e.money = await this.wallets.apply(actor.characterId, total, "criacao.ovos", `ovos:${actor.characterId}:${this.op()}`);
+      this.out.toast(actor, `Vendeste ${c.ovos} ovos: +${total.toLocaleString("pt-PT")} Kz.`, true);
+      c.ovos = 0;
+      c.vendidos += 1;
+      e.dirty = true;
+      return;
+    }
+    const a = ANIMAIS[what ?? ""];
+    if (!a) return this.out.toast(actor, "O que queres vender?", false);
+    const idx = c.animais.findIndex((x) => x.tipo === what && t - x.desde >= a.growMin * 60_000);
+    if (idx < 0) {
+      const young = c.animais.find((x) => x.tipo === what);
+      return this.out.toast(actor, young ? `O ${a.name.toLowerCase()} ainda está a crescer: faltam ${Math.ceil((young.desde + a.growMin * 60_000 - t) / 60_000)} min.` : `Não tens ${a.name.toLowerCase()}.`, false);
+    }
+    const hungry = t > c.fedUntil;
+    const total = Math.round(a.sell * (hungry ? FOME_FACTOR : 1) * feira);
+    e.money = await this.wallets.apply(actor.characterId, total, `criacao.venda.${what}`, `criacao-venda:${actor.characterId}:${this.op()}`);
+    c.animais.splice(idx, 1);
+    c.vendidos += 1;
+    e.dirty = true;
+    this.out.toast(actor, `Vendeste ${a.name.toLowerCase() === "galinha" ? "uma galinha" : "o " + a.name.toLowerCase()}: +${total.toLocaleString("pt-PT")} Kz${hungry ? " (estava magro de fome)" : ""}.`, true);
+  }
+
+  // ---------------------------------------------------------------- desporto
+
+  private train(actor: LifeActor, e: Entry, id: string | undefined): void {
+    const tr = TREINOS[id ?? ""];
+    if (!tr) return this.out.toast(actor, "Esse treino não existe.", false);
+    const inside = interiorAt(this.district, actor.x, actor.y);
+    if (tr.rua && inside) return this.out.toast(actor, "Sai para a rua para treinar.", false);
+    if (!tr.rua && !(inside && RESIDENTIAL.has(inside.venue))) return this.out.toast(actor, "Os exercícios fazem-se em casa.", false);
+    const L = e.life;
+    const day = angolaDay(this.now());
+    if (L.treinosDay !== day) {
+      L.treinosDay = day;
+      L.treinos = 0;
+    }
+    if (L.treinos >= TREINOS_POR_DIA) return this.out.toast(actor, "Já treinaste muito hoje. O corpo precisa de descanso.", false);
+    if (L.doenca) return this.out.toast(actor, "Estás doente: trata-te primeiro.", false);
+    if (L.needs.energy < tr.energy + 5) return this.out.toast(actor, "Estás sem energia para treinar. Descansa ou come.", false);
+    const n = L.needs;
+    L.needs = { ...n, energy: n.energy - tr.energy, hunger: Math.max(0, n.hunger - tr.hunger), mood: Math.min(100, n.mood + tr.mood), health: Math.min(100, n.health + 2) };
+    L.forma = Math.min(100, L.forma + tr.forma);
+    L.treinos += 1;
+    e.dirty = true;
+    this.out.toast(actor, `${tr.name}: forma ${Math.round(L.forma)}/100 (+${tr.forma}).`, true);
+  }
+
+  // ---------------------------------------------------------------- depósito a prazo
+
+  private async termOpen(actor: LifeActor, e: Entry, amount: number | undefined, termo: string | undefined): Promise<void> {
+    const p = PRAZOS[termo ?? ""];
+    if (!p) return this.out.toast(actor, "Escolhe o prazo.", false);
+    if (e.life.prazo) return this.out.toast(actor, "Já tens um depósito a prazo. Levanta-o primeiro.", false);
+    const n = Math.round(amount ?? 0);
+    if (!Number.isFinite(n) || n < PRAZO_MIN || n > PRAZO_MAX)
+      return this.out.toast(actor, `O depósito a prazo vai de ${PRAZO_MIN.toLocaleString("pt-PT")} a ${PRAZO_MAX.toLocaleString("pt-PT")} Kz.`, false);
+    if (e.money < n) return this.out.toast(actor, "Não tens esse dinheiro na carteira.", false);
+    e.money = await this.wallets.apply(actor.characterId, -n, `prazo.abrir.${termo}`, `prazo:${actor.characterId}:${this.op()}`);
+    const t = this.now();
+    e.life.prazo = { amount: n, start: t, maturesAt: t + p.minutes * 60_000, rate: p.rate, termo: termo! };
+    e.dirty = true;
+    this.out.toast(actor, `Depósito a prazo de ${n.toLocaleString("pt-PT")} Kz por ${p.name} a ${Math.round(p.rate * 100)}%.`, true);
+  }
+
+  private async termClose(actor: LifeActor, e: Entry): Promise<void> {
+    const d = e.life.prazo;
+    if (!d) return this.out.toast(actor, "Não tens depósito a prazo.", false);
+    const ready = this.now() >= d.maturesAt;
+    const total = ready ? Math.round(d.amount * (1 + d.rate)) : d.amount;
+    e.life.prazo = null; // antes de pagar: um segundo pedido não paga duas vezes
+    e.dirty = true;
+    e.money = await this.wallets.apply(actor.characterId, total, ready ? "prazo.juros" : "prazo.antecipado", `prazo-fim:${actor.characterId}:${this.op()}`);
+    if (ready) e.life.prazosFeitos += 1;
+    this.out.toast(
+      actor,
+      ready ? `Levantaste o depósito com juros: +${total.toLocaleString("pt-PT")} Kz (${(total - d.amount).toLocaleString("pt-PT")} Kz de juros).` : `Levantaste antes do fim do prazo: recebes só os ${total.toLocaleString("pt-PT")} Kz, sem juros.`,
+      true,
+    );
   }
 
   // ---------------------------------------------------------------- lavras
@@ -1859,6 +2056,28 @@ export class LifeController {
       uni: { curso: e.life.uni.curso, cursoNome: e.life.uni.curso ? CURSOS[e.life.uni.curso]?.name ?? null : null, aulas: e.life.uni.aulas, total: UNI_LESSONS, licenciaturas: [...e.life.uni.licenciaturas], preco: UNI_PRICE },
       doenca: e.life.doenca ? { id: e.life.doenca.id, name: DOENCAS[e.life.doenca.id]?.name ?? e.life.doenca.id, texto: DOENCAS[e.life.doenca.id]?.texto ?? "" } : null,
       roubo: e.life.roubo && !e.life.roubo.recovered && t - e.life.roubo.at <= ROUBO_RECOVER_MS ? { amount: e.life.roubo.amount, recuperavel: true } : null,
+      criacao: (() => {
+        this.tallyEggs(e);
+        const c = e.life.criacao;
+        return {
+          animais: c.animais.map((a) => ({ tipo: a.tipo, name: ANIMAIS[a.tipo]?.name ?? a.tipo, prontoEmS: Math.max(0, Math.ceil((a.desde + (ANIMAIS[a.tipo]?.growMin ?? 0) * 60_000 - t) / 1000)) })),
+          alimentadosS: Math.max(0, Math.ceil((c.fedUntil - t) / 1000)),
+          ovos: c.ovos,
+          max: MAX_ANIMAIS,
+          racao: RACAO_PRICE,
+        };
+      })(),
+      forma: { valor: Math.round(e.life.forma), treinosHoje: e.life.treinosDay === angolaDay(t) ? e.life.treinos : 0, max: TREINOS_POR_DIA },
+      prazo: e.life.prazo
+        ? {
+            amount: e.life.prazo.amount,
+            termo: e.life.prazo.termo,
+            name: PRAZOS[e.life.prazo.termo]?.name ?? e.life.prazo.termo,
+            rate: e.life.prazo.rate,
+            faltamS: Math.max(0, Math.ceil((e.life.prazo.maturesAt - t) / 1000)),
+            total: Math.round(e.life.prazo.amount * (1 + e.life.prazo.rate)),
+          }
+        : null,
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,

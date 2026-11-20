@@ -74,6 +74,16 @@ export interface LifeState {
   conquistasPagas: string[];
   /** negócio próprio (Empresas) */
   negocio: { tipo: string; nivel: number; lastCollect: number; investido: number } | null;
+  /** capoeira e curral no quintal: animais, até quando estão alimentados e ovos por recolher */
+  criacao: { animais: Array<{ tipo: string; desde: number }>; fedUntil: number; ovosAt: number; ovos: number; vendidos: number };
+  /** forma física (0..100) e treinos de hoje */
+  forma: number;
+  treinosDay: string | null;
+  treinos: number;
+  /** depósito a prazo no banco (o dinheiro sai da carteira e volta com juros no fim do prazo) */
+  prazo: { amount: number; start: number; maturesAt: number; rate: number; termo: string } | null;
+  /** depósitos a prazo levantados com juros */
+  prazosFeitos: number;
 }
 
 export interface Missions {
@@ -433,6 +443,12 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     conquistasPagas: [],
     doenca: null,
     roubo: null,
+    criacao: { animais: [], fedUntil: 0, ovosAt: nowMs, ovos: 0, vendidos: 0 },
+    forma: 30,
+    treinosDay: null,
+    treinos: 0,
+    prazo: null,
+    prazosFeitos: 0,
   };
 }
 
@@ -543,6 +559,26 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
       r.roubo && typeof r.roubo.amount === "number" && typeof r.roubo.at === "number"
         ? { amount: Math.round(num(r.roubo.amount, 0, 0, 1e9)), at: r.roubo.at, recovered: r.roubo.recovered === true }
         : null,
+    criacao: {
+      animais: Array.isArray(r.criacao?.animais)
+        ? r.criacao.animais
+            .filter((a): a is { tipo: string; desde: number } => !!a && typeof a.tipo === "string" && a.tipo in ANIMAIS && typeof a.desde === "number" && Number.isFinite(a.desde))
+            .slice(0, MAX_ANIMAIS)
+            .map((a) => ({ tipo: a.tipo, desde: a.desde }))
+        : [],
+      fedUntil: num(r.criacao?.fedUntil, 0, 0, 1e15),
+      ovosAt: num(r.criacao?.ovosAt, base.criacao.ovosAt, 0, 1e15),
+      ovos: Math.round(num(r.criacao?.ovos, 0, 0, 10_000)),
+      vendidos: Math.round(num(r.criacao?.vendidos, 0, 0, 1e9)),
+    },
+    forma: num(r.forma, base.forma),
+    treinosDay: typeof r.treinosDay === "string" ? r.treinosDay : null,
+    treinos: Math.round(num(r.treinos, 0, 0, TREINOS_POR_DIA)),
+    prazo:
+      r.prazo && typeof r.prazo.amount === "number" && r.prazo.amount > 0 && typeof r.prazo.termo === "string" && r.prazo.termo in PRAZOS && typeof r.prazo.start === "number" && typeof r.prazo.maturesAt === "number"
+        ? { amount: Math.round(num(r.prazo.amount, 0, 0, PRAZO_MAX)), start: r.prazo.start, maturesAt: r.prazo.maturesAt, rate: PRAZOS[r.prazo.termo]!.rate, termo: r.prazo.termo }
+        : null,
+    prazosFeitos: Math.round(num(r.prazosFeitos, 0, 0, 1e9)),
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
@@ -738,4 +774,48 @@ export const CONQUISTAS: Record<string, { name: string; text: string; reward: nu
   milionario: { name: "Milionário/a", text: "Juntaste 1.000.000 Kz", reward: 5000 },
   popular: { name: "Popular", text: "Tens 5 amigos", reward: 1500 },
   elegante: { name: "Elegante", text: "Tens 4 roupas no guarda-roupa", reward: 1000 },
+  criador: { name: "Criador/a", text: "Vendeste 10 animais ou produtos da criação", reward: 1500 },
+  atleta: { name: "Atleta", text: "Chegaste a 80 de forma física", reward: 1500 },
+  poupado: { name: "Poupado/a", text: "Levantaste um depósito a prazo com juros", reward: 1000 },
 };
+
+// ---------------------------------------------------------------- criação de animais (quintal)
+
+/** Animais do quintal: preço no mercado, preço de venda quando crescido, minutos reais até crescer. */
+export const ANIMAIS: Record<string, { name: string; price: number; sell: number; growMin: number; ovos: boolean }> = {
+  galinha: { name: "Galinha", price: 2_500, sell: 3_000, growMin: 0, ovos: true },
+  cabrito: { name: "Cabrito", price: 15_000, sell: 24_000, growMin: 60, ovos: false },
+  porco: { name: "Porco", price: 25_000, sell: 42_000, growMin: 120, ovos: false },
+};
+export const MAX_ANIMAIS = 12;
+/** Ração para um animal (Kz) — fica alimentado durante FEED_MIN minutos reais. */
+export const RACAO_PRICE = 150;
+export const FEED_MIN = 120;
+/** Uma galinha alimentada põe um ovo a cada OVO_MIN minutos; no máximo OVOS_MAX ovos à espera por galinha. */
+export const OVO_MIN = 15;
+export const OVOS_MAX = 8;
+export const OVO_PRICE = 60;
+/** Um animal com fome vende-se a este fator do preço. */
+export const FOME_FACTOR = 0.6;
+
+// ---------------------------------------------------------------- desporto
+
+/** Treinos: o que custa (energia, fome) e quanto dá de forma e humor. Correr e futebol são na rua; os exercícios, em casa. */
+export const TREINOS: Record<string, { name: string; energy: number; hunger: number; forma: number; mood: number; rua: boolean; price: number }> = {
+  correr: { name: "Correr pelo bairro", energy: 12, hunger: 8, forma: 6, mood: 5, rua: true, price: 0 },
+  futebol: { name: "Futebol no campo do bairro", energy: 16, hunger: 10, forma: 8, mood: 10, rua: true, price: 0 },
+  casa: { name: "Exercícios em casa", energy: 10, hunger: 6, forma: 4, mood: 3, rua: false, price: 0 },
+};
+export const TREINOS_POR_DIA = 4;
+/** A forma cai devagar sem treino (pontos por minuto real). */
+export const FORMA_DECAY = 0.02;
+
+// ---------------------------------------------------------------- depósito a prazo
+
+export const PRAZOS: Record<string, { name: string; minutes: number; rate: number }> = {
+  curto: { name: "30 minutos", minutes: 30, rate: 0.02 },
+  medio: { name: "3 horas", minutes: 180, rate: 0.06 },
+  longo: { name: "24 horas", minutes: 1440, rate: 0.15 },
+};
+export const PRAZO_MIN = 5_000;
+export const PRAZO_MAX = 500_000;

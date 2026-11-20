@@ -785,6 +785,7 @@ const APPS := [
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
 	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["classificados", "Classificados", "bag", "y"],
+	["quintal", "Quintal", "home", "y"], ["desporto", "Desporto", "person", "r"],
 	["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
@@ -811,7 +812,9 @@ func _rebuild_phone() -> void:
 		"familia": _phone_family()
 		"vagas": _phone_jobs()
 		"estudos": _phone_studies()
-		"banco": _phone_go("Banco", "Na carteira: %s Kz\nNo banco: %s Kz\nDepositar e levantar faz-se ao balcão do banco." % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], "banco", "Ir ao banco")
+		"banco": _phone_bank()
+		"quintal": _phone_quintal()
+		"desporto": _phone_sport()
 		"casa": _phone_home()
 		"loja": _phone_shop()
 		"saude": _phone_health()
@@ -972,6 +975,124 @@ func _phone_go(_title: String, text: String, venue: String, go_text: String) -> 
 	c.add_child(_button(go_text, "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:" + venue)))
+
+
+## Banco: saldos, ida ao balcão e depósito a prazo (feito no telemóvel, como o internet banking).
+const PRAZO_INFO := [["curto", "30 minutos", "2%"], ["medio", "3 horas", "6%"], ["longo", "24 horas", "15%"]]
+const PRAZO_VALORES := [10000, 50000, 100000, 500000]
+
+
+func _phone_bank() -> void:
+	_phone_go("Banco", "Na carteira: %s Kz\nNo banco: %s Kz\nDepositar e levantar faz-se ao balcão do banco." % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], "banco", "Ir ao banco")
+	var c := _card()
+	c.add_child(_label("Depósito a prazo", 18, ACCENT, FONT_BOLD))
+	var d: Variant = Net.me.get("prazo")
+	if typeof(d) == TYPE_DICTIONARY:
+		var secs := int(d.faltamS)
+		c.add_child(_label("%s Kz a %d%% por %s." % [DemoHud._money(int(d.amount)), roundi(float(d.rate) * 100), d.name], 16, Color.WHITE, FONT_REG, true))
+		if secs > 0:
+			c.add_child(_label("Faltam %s. No fim recebes %s Kz. Se levantares antes, recebes só o que puseste." % [_dur(secs), DemoHud._money(int(d.total))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+			c.add_child(_button("Levantar já (sem juros)", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("prazo_levantar")))
+		else:
+			c.add_child(_label("O prazo acabou! Recebes %s Kz." % DemoHud._money(int(d.total)), 16, Color("8fe08a"), FONT_BOLD, true))
+			c.add_child(_button("Levantar com juros", "bag", ACCENT, INK, func() -> void: Net.action("prazo_levantar")))
+		return
+	c.add_child(_label("Põe dinheiro da carteira a render. Escolhe o prazo e a quantia:", 15, Color.WHITE, FONT_REG, true))
+	for p: Array in PRAZO_INFO:
+		c.add_child(_label("%s · juros de %s" % [p[1], p[2]], 15, Color.WHITE, FONT_BOLD))
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 6)
+		for v: int in PRAZO_VALORES:
+			var termo := str(p[0])
+			var b := _button(_short_kz(v), "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("prazo_abrir", termo, v))
+			b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			row.add_child(b)
+		c.add_child(row)
+
+
+static func _short_kz(v: int) -> String:
+	return ("%dk" % (v / 1000)) if v < 1000000 else ("%dM" % (v / 1000000))
+
+
+static func _dur(secs: int) -> String:
+	if secs >= 3600:
+		return "%d h %02d min" % [secs / 3600, (secs % 3600) / 60]
+	return "%d min %02d s" % [secs / 60, secs % 60]
+
+
+## Quintal: galinhas, cabritos e porcos — compram-se e vendem-se no mercado, a ração dá-se em qualquer lado.
+const ANIMAL_INFO := [["galinha", "Galinha", "2.500 Kz · põe 1 ovo a cada 15 min se tiver ração · vende-se a 3.000 Kz"], ["cabrito", "Cabrito", "15.000 Kz · cresce em 1 hora · vende-se a 24.000 Kz"], ["porco", "Porco", "25.000 Kz · cresce em 2 horas · vende-se a 42.000 Kz"]]
+
+
+func _phone_quintal() -> void:
+	var q: Dictionary = Net.me.get("criacao", {}) if typeof(Net.me.get("criacao")) == TYPE_DICTIONARY else {}
+	var animais: Array = q.get("animais", [])
+	var c := _card()
+	c.add_child(_label("O teu quintal · %d/%d animais" % [animais.size(), int(q.get("max", 12))], 18, ACCENT, FONT_BOLD))
+	if animais.is_empty():
+		c.add_child(_label("Ainda não tens animais. Compra galinhas, cabritos ou porcos no mercado do bairro.", 15, Color.WHITE, FONT_REG, true))
+	else:
+		var counts := {}
+		for a: Dictionary in animais:
+			var k := str(a.name)
+			counts[k] = int(counts.get(k, 0)) + 1
+		var parts: Array[String] = []
+		for k: String in counts:
+			parts.append("%d × %s" % [counts[k], k])
+		c.add_child(_label(" · ".join(parts), 16, Color.WHITE, FONT_REG, true))
+		var fed := int(q.get("alimentadosS", 0))
+		if fed > 0:
+			c.add_child(_label("Alimentados durante mais %s." % _dur(fed), 14, Color("8fe08a"), FONT_REG, true))
+		else:
+			c.add_child(_label("Os animais têm fome! Sem ração as galinhas não põem e os animais vendem-se mais baratos.", 14, Color("ffd27a"), FONT_REG, true))
+		c.add_child(_button("Dar ração (%s Kz)" % DemoHud._money(int(q.get("racao", 150)) * animais.size()), "plus", ACCENT, INK, func() -> void: Net.action("criacao_alimentar")))
+		c.add_child(_label("Ovos guardados: %d" % int(q.get("ovos", 0)), 16, Color.WHITE, FONT_BOLD))
+	var m := _card()
+	m.add_child(_label("No mercado", 16, Color.WHITE, FONT_BOLD))
+	for x: Array in ANIMAL_INFO:
+		var id := str(x[0])
+		m.add_child(_button("Comprar %s" % str(x[1]).to_lower(), "bag", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("criacao_comprar", id)))
+		m.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+	if int(q.get("ovos", 0)) > 0:
+		m.add_child(_button("Vender os ovos", "bag", ACCENT, INK, func() -> void: Net.action("criacao_vender", "ovos")))
+	var seen := {}
+	for a: Dictionary in animais:
+		var tipo := str(a.tipo)
+		if tipo == "galinha" and seen.has(tipo):
+			continue
+		if int(a.prontoEmS) > 0:
+			if not seen.has(tipo + "_cresce"):
+				seen[tipo + "_cresce"] = true
+				m.add_child(_label("%s a crescer: falta %s." % [a.name, _dur(int(a.prontoEmS))], 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+			continue
+		if seen.has(tipo):
+			continue
+		seen[tipo] = true
+		m.add_child(_button("Vender %s" % str(a.name).to_lower(), "bag", ACCENT, INK, func() -> void: Net.action("criacao_vender", tipo)))
+	m.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:mercado")))
+
+
+## Desporto: treinar dá forma física (adoeces menos), humor e saúde; gasta energia e dá fome.
+const SPORT_INFO := [["correr", "Correr pelo bairro", "Na rua · +6 forma · −12 energia"], ["futebol", "Futebol no campo do bairro", "Na rua · +8 forma · +10 humor · −16 energia"], ["casa", "Exercícios em casa", "Em casa · +4 forma · −10 energia"]]
+
+
+func _phone_sport() -> void:
+	var f: Dictionary = Net.me.get("forma", {}) if typeof(Net.me.get("forma")) == TYPE_DICTIONARY else {}
+	var c := _card()
+	c.add_child(_label("Forma física: %d/100" % int(f.get("valor", 0)), 20, ACCENT, FONT_BOLD))
+	var bar := ProgressBar.new()
+	bar.max_value = 100
+	bar.value = int(f.get("valor", 0))
+	bar.show_percentage = false
+	bar.custom_minimum_size = Vector2(0, 14)
+	c.add_child(bar)
+	c.add_child(_label("Treinos hoje: %d/%d. Quem está em forma adoece menos. A forma desce se não treinares." % [int(f.get("treinosHoje", 0)), int(f.get("max", 4))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+	for x: Array in SPORT_INFO:
+		var id := str(x[0])
+		c.add_child(_button(str(x[1]), "person", ACCENT if id != "casa" else Color(1, 1, 1, 0.1), INK if id != "casa" else Color.WHITE, func() -> void: Net.action("treinar", id)))
+		c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
 
 
 ## Caixa de texto + botão (no telemóvel usa a caixa do browser, onde o teclado funciona).

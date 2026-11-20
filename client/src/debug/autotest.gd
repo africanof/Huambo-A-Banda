@@ -503,7 +503,17 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["classificados", "grupos"]:
+		# funções novas: treinar na rua (forma sobe) e depósito a prazo
+		var f0 := int(Net.me.get("forma", {}).get("valor", 0))
+		Net.action("treinar", "correr")
+		if int(Net.me.get("money", 0)) >= 10000:
+			Net.action("prazo_abrir", "curto", 10000)
+		await tree.create_timer(2.0).timeout
+		var f1 := int(Net.me.get("forma", {}).get("valor", 0))
+		print("[autotest] desporto: forma %d → %d; prazo: %s" % [f0, f1, str(Net.me.get("prazo"))])
+		if f1 <= f0:
+			_finish(false, "treinar não subiu a forma")
+		for app: String in ["classificados", "grupos", "quintal", "desporto", "banco"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)

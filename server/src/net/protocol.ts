@@ -165,6 +165,13 @@ export const ActionSchema = z
       "classif_cancelar",
       "muxima_publicar",
       "muxima_gosto",
+      "criacao_comprar",
+      "criacao_alimentar",
+      "criacao_ovos",
+      "criacao_vender",
+      "treinar",
+      "prazo_abrir",
+      "prazo_levantar",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */
