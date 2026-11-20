@@ -23,6 +23,7 @@ var email_edit := LineEdit.new()
 var password_edit := LineEdit.new()
 var _welcome_label := Label.new()
 var _switch_button: Button
+var _version_label := Label.new()
 var adult := CheckBox.new()
 var status_label := Label.new()
 var start_button := Button.new()
@@ -57,6 +58,14 @@ func _ready() -> void:
 		get_tree().root.add_child.call_deferred(t)
 	elif Auth.supabase_enabled():
 		_try_resume()
+	_show_version()
+
+
+## Versão publicada do jogo, no fundo do cartão (para saber se o telemóvel já tem a mais recente).
+func _show_version() -> void:
+	var h: Variant = await Net.get_json("/health")
+	if typeof(h) == TYPE_DICTIONARY and is_instance_valid(_version_label):
+		_version_label.text = "versão %s" % str(h.get("versao", "?"))
 
 
 ## Quem já jogou neste aparelho continua a mesma vida (como no Vida na Banda): sem nome nem email outra vez.
@@ -255,6 +264,9 @@ func _build_ui() -> void:
 		_set_mode("jogar"))
 	_switch_button.visible = false
 	v.add_child(_switch_button)
+	_version_label.add_theme_font_size_override("font_size", 11)
+	_version_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.35))
+	_version_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	guest_button = start_button
 	login_button = start_button
 	signup_button = start_button
@@ -265,6 +277,7 @@ func _build_ui() -> void:
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(status_label)
 	v.add_child(_label("PC: setas ou WASD para andar · E para entrar · R para rodar · V para mudar de vista", 11, Color(1, 1, 1, 0.45), FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
+	v.add_child(_version_label)
 	get_viewport().size_changed.connect(_fit)
 	_fit()
 

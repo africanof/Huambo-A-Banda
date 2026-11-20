@@ -48,7 +48,9 @@ export function registerRoutes(app: Application, svc: Services): void {
   app.get("/health", (_req, res) => {
     // "gravacao": onde ficam as personagens com conta ("supabase") ou só em memória (perde-se ao reiniciar)
     const gravacao = svc.env.SUPABASE_URL && svc.env.SUPABASE_SERVICE_ROLE_KEY ? "supabase" : "memoria";
-    res.json({ ok: true, uptimeS: Math.round((Date.now() - startedAt) / 1000), protocol: PROTOCOL_VERSION, gravacao });
+    // versão publicada (o Render diz qual é o commit); serve para confirmar que o telemóvel tem a mais recente
+    const versao = (process.env.RENDER_GIT_COMMIT ?? process.env.GIT_COMMIT ?? "local").slice(0, 7);
+    res.json({ ok: true, uptimeS: Math.round((Date.now() - startedAt) / 1000), protocol: PROTOCOL_VERSION, gravacao, versao });
   });
 
   app.get("/districts", (_req, res) => {
@@ -164,7 +166,11 @@ export function registerRoutes(app: Application, svc: Services): void {
       express.static(svc.env.STATIC_DIR, {
         index: "index.html",
         setHeaders: (res, file) => {
-          res.setHeader("Cache-Control", file.endsWith(".html") ? "no-cache" : "public, max-age=3600");
+          // O jogo (html, js, wasm, pck) muda a cada publicação: o browser confirma sempre com o servidor
+          // (ETag → 304 se for igual), senão o telemóvel ficava até 1 h com a versão antiga.
+          // Os pacotes dos bairros têm ?v=<versão> no endereço e podem ficar guardados.
+          const packs = /[\\/]packs[\\/]/.test(file);
+          res.setHeader("Cache-Control", packs ? "public, max-age=86400" : "no-cache");
         },
       }),
     );
