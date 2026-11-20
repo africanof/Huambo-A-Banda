@@ -38,6 +38,9 @@ import {
   RADIO_MOOD,
   MAX_FRIENDS,
   GROUP_PRICE,
+  CROPS,
+  DRY_FACTOR,
+  AMBICOES,
   rollSorte,
   TRANSFER_MAX,
   TRANSFER_MIN,
@@ -62,6 +65,8 @@ import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../
 import { recordNews } from "./news.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
+import { forecast, weatherAt } from "./weather.js";
+import { noteWealth } from "./ranking.js";
 
 /** O que o controlador precisa de saber de um jogador da sala. */
 export interface LifeActor {
@@ -152,6 +157,11 @@ export interface SelfState {
   friends: Array<{ name: string; online: boolean; bairro: string | null; district: string | null; roomId: string | null }>;
   friendReq: { name: string } | null;
   group: { id: string; name: string } | null;
+  tempo: ReturnType<typeof weatherAt> & { previsao: ReturnType<typeof forecast> };
+  lavra: { crop: string; name: string; readyInS: number; watered: boolean } | null;
+  colheita: Record<string, number>;
+  ambicao: { id: string; text: string; reward: number; progress: number } | null;
+  ambicoesFeitas: string[];
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -250,7 +260,17 @@ export class LifeController {
 
   // ---------------------------------------------------------------- ações
 
-  async handle(actor: LifeActor, msg: ActionMessage): Promise<void> {
+  /** Ações de cada pessoa em fila: a seguinte só começa quando a anterior acabou (ex.: semear e logo regar). */
+  private readonly queues = new WeakMap<LifeActor, Promise<void>>();
+
+  handle(actor: LifeActor, msg: ActionMessage): Promise<void> {
+    const prev = this.queues.get(actor) ?? Promise.resolve();
+    const next = prev.catch(() => undefined).then(() => this.handleNow(actor, msg));
+    this.queues.set(actor, next);
+    return next;
+  }
+
+  private async handleNow(actor: LifeActor, msg: ActionMessage): Promise<void> {
     const e = this.entries.get(actor);
     if (!e) return;
     rollDay(e.life, this.now());
@@ -355,6 +375,24 @@ export class LifeController {
           break;
         case "grupo_sair":
           await this.groupLeave(actor, e);
+          break;
+        case "lavra_semear":
+          await this.lavraPlant(actor, e, msg.i);
+          break;
+        case "lavra_regar":
+          this.lavraWater(actor, e);
+          break;
+        case "lavra_colher":
+          this.lavraHarvest(actor, e);
+          break;
+        case "lavra_vender":
+          await this.lavraSell(actor, e);
+          break;
+        case "ambicao_escolher":
+          this.ambitionPick(actor, e, msg.i);
+          break;
+        case "ambicao_recolher":
+          await this.ambitionClaim(actor, e);
           break;
         case "sorte":
           await this.sorte(actor, e);
@@ -661,6 +699,10 @@ export class LifeController {
       this.lastDecay = t;
       for (const [actor, e] of this.entries) {
         e.life.needs = decay(e.life.needs, minutes);
+        // chuva na rua estraga o humor (dentro de casa ou de um edifício não)
+        const sky = weatherAt(t).ceu;
+        if ((sky === "chuva" || sky === "trovoada") && !interiorAt(this.district, actor.x, actor.y))
+          e.life.needs = { ...e.life.needs, mood: Math.max(0, e.life.needs.mood - 0.6 * minutes) };
         e.dirty = true;
         const i = interiorAt(this.district, actor.x, actor.y);
         if (i && RESIDENTIAL.has(i.venue)) this.evictIfNeeded(actor, e);
@@ -716,6 +758,102 @@ export class LifeController {
       e.life.needs = { ...n, energy: Math.min(100, n.energy + 40), mood: Math.max(0, n.mood - 15) };
       this.out.toast(actor, "Dormiste no banco da paragem. Estás com o corpo dorido.", true);
     }
+  }
+
+  // ---------------------------------------------------------------- lavras
+
+  private async lavraPlant(actor: LifeActor, e: Entry, crop: string | undefined): Promise<void> {
+    const c = CROPS[crop ?? ""];
+    if (!c) return this.out.toast(actor, "Essa cultura não existe.", false);
+    if (e.life.lavra) return this.out.toast(actor, "A tua lavra já está semeada. Colhe primeiro.", false);
+    e.money = await this.wallets.apply(actor.characterId, -c.seed, `lavra.semente.${crop}`, `lavra:${actor.characterId}:${this.op()}`);
+    const t = this.now();
+    e.life.lavra = { crop: crop!, plantedAt: t, readyAt: t + c.minutes * 60_000, watered: false };
+    e.dirty = true;
+    this.out.toast(actor, `Semeaste ${c.name} (−${c.seed} Kz). Rega e volta daqui a ${c.minutes} minutos.`, true);
+  }
+
+  private lavraWater(actor: LifeActor, e: Entry): void {
+    const l = e.life.lavra;
+    if (!l) return this.out.toast(actor, "A tua lavra está vazia. Semeia primeiro.", false);
+    if (l.watered) return this.out.toast(actor, "Já regaste. Agora é esperar.", true);
+    // na época das chuvas a chuva rega sozinha; senão gasta um pouco de energia (ir buscar água)
+    if (e.life.needs.energy < 5) return this.out.toast(actor, "Estás sem forças para ir regar.", false);
+    l.watered = true;
+    e.life.needs = { ...e.life.needs, energy: Math.max(0, e.life.needs.energy - 4) };
+    e.dirty = true;
+    this.out.toast(actor, "Regaste a lavra.", true);
+  }
+
+  private lavraHarvest(actor: LifeActor, e: Entry): void {
+    const l = e.life.lavra;
+    if (!l) return this.out.toast(actor, "A tua lavra está vazia.", false);
+    const c = CROPS[l.crop]!;
+    const t = this.now();
+    if (t < l.readyAt) return this.out.toast(actor, `${c.name} ainda não está pronto: faltam ${Math.ceil((l.readyAt - t) / 60_000)} min.`, false);
+    // choveu durante o crescimento conta como rega
+    const rained = weatherAt(l.plantedAt).ceu === "chuva" || weatherAt(l.readyAt).ceu === "chuva" || weatherAt(l.plantedAt).ceu === "trovoada";
+    const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR));
+    e.life.colheita[l.crop] = (e.life.colheita[l.crop] ?? 0) + kg;
+    e.life.colhidoTotal += kg;
+    e.life.lavra = null;
+    e.dirty = true;
+    this.out.toast(actor, `Colheste ${kg} kg de ${c.name}${l.watered || rained ? "" : " (sem rega rendeu metade)"}. Vende no mercado.`, true);
+  }
+
+  private async lavraSell(actor: LifeActor, e: Entry): Promise<void> {
+    const inside = interiorAt(this.district, actor.x, actor.y);
+    if (!(this.near(actor, (p) => p.kind === "door" && p.venue === "mercado", 2) || inside?.venue === "mercado"))
+      return this.out.toast(actor, "A colheita vende-se no mercado do bairro.", false);
+    let total = 0;
+    for (const [k, kg] of Object.entries(e.life.colheita)) total += Math.round(kg * (CROPS[k]?.price ?? 0));
+    if (total <= 0) return this.out.toast(actor, "Não tens colheita para vender.", false);
+    e.money = await this.wallets.apply(actor.characterId, total, "lavra.venda", `lavra-venda:${actor.characterId}:${this.op()}`);
+    e.life.colheita = {};
+    e.dirty = true;
+    this.out.toast(actor, `Vendeste a colheita no mercado: +${total.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  // ---------------------------------------------------------------- ambição de vida
+
+  /** Progresso (0..1) de uma ambição, medido no estado real da personagem. */
+  private ambitionProgress(e: Entry, id: string): number {
+    switch (id) {
+      case "rico":
+        return Math.min(1, (e.money + e.bank) / 1_000_000);
+      case "casa":
+        return e.homes.some((h) => h.tenure === "buy") ? 1 : 0;
+      case "doutor":
+        return e.life.education / MAX_EDUCATION;
+      case "popular":
+        return Math.min(1, e.life.friends.length / 10);
+      case "carro":
+        return e.life.car ? 1 : 0;
+      case "agricultor":
+        return Math.min(1, e.life.colhidoTotal / 200);
+    }
+    return 0;
+  }
+
+  private ambitionPick(actor: LifeActor, e: Entry, id: string | undefined): void {
+    if (!id || !AMBICOES[id]) return this.out.toast(actor, "Essa ambição não existe.", false);
+    if (e.life.ambicoesFeitas.includes(id)) return this.out.toast(actor, "Já cumpriste essa ambição. Escolhe outra!", false);
+    e.life.ambicao = id;
+    e.dirty = true;
+    this.out.toast(actor, `A tua ambição agora: ${AMBICOES[id].text}.`, true);
+  }
+
+  private async ambitionClaim(actor: LifeActor, e: Entry): Promise<void> {
+    const id = e.life.ambicao;
+    if (!id) return this.out.toast(actor, "Ainda não escolheste uma ambição.", false);
+    if (this.ambitionProgress(e, id) < 1) return this.out.toast(actor, "Ainda não cumpriste a tua ambição.", false);
+    const a = AMBICOES[id]!;
+    e.money = await this.wallets.apply(actor.characterId, a.reward, `ambicao.${id}`, `ambicao:${actor.characterId}:${id}`);
+    e.life.ambicoesFeitas.push(id);
+    e.life.ambicao = null;
+    e.dirty = true;
+    recordNews("missoes", this.district.name, `${actor.name ?? "Alguém"} cumpriu a ambição de vida: ${a.text}!`, this.now());
+    this.out.toast(actor, `Ambição cumprida! +${a.reward.toLocaleString("pt-PT")} Kz. Escolhe a próxima.`, true);
   }
 
   // ---------------------------------------------------------------- biscatos
@@ -978,6 +1116,7 @@ export class LifeController {
   sendSelf(actor: LifeActor): void {
     const e = this.entries.get(actor);
     if (!e) return;
+    if (actor.name && !actor.userId?.startsWith("guest:")) noteWealth(actor.characterId, actor.name, e.money + e.bank, this.now());
     const r = (v: number) => Math.round(v);
     const t = this.now();
     this.out.self(actor, {
@@ -1025,6 +1164,15 @@ export class LifeController {
       }),
       friendReq: e.friendReq && this.entries.has(e.friendReq.from) ? { name: e.friendReq.from.name ?? "Alguém" } : null,
       group: e.life.group,
+      tempo: { ...weatherAt(t), previsao: forecast(t, 4) },
+      lavra: e.life.lavra
+        ? { crop: e.life.lavra.crop, name: CROPS[e.life.lavra.crop]?.name ?? e.life.lavra.crop, readyInS: Math.max(0, Math.ceil((e.life.lavra.readyAt - t) / 1000)), watered: e.life.lavra.watered }
+        : null,
+      colheita: { ...e.life.colheita },
+      ambicao: e.life.ambicao
+        ? { id: e.life.ambicao, text: AMBICOES[e.life.ambicao]!.text, reward: AMBICOES[e.life.ambicao]!.reward, progress: this.ambitionProgress(e, e.life.ambicao) }
+        : null,
+      ambicoesFeitas: [...e.life.ambicoesFeitas],
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,

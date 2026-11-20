@@ -122,6 +122,13 @@ export const ActionSchema = z
       "grupo_criar",
       "grupo_entrar",
       "grupo_sair",
+      // lavras e ambição de vida
+      "lavra_semear",
+      "lavra_regar",
+      "lavra_colher",
+      "lavra_vender",
+      "ambicao_escolher",
+      "ambicao_recolher",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

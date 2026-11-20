@@ -48,6 +48,15 @@ export interface LifeState {
   friends: Array<{ id: string; name: string }>;
   /** grupo a que pertence */
   group: { id: string; name: string } | null;
+  /** lavra (machamba) na Chipipa: o que está semeado */
+  lavra: { crop: string; plantedAt: number; readyAt: number; watered: boolean } | null;
+  /** colheita guardada (kg por produto), para vender no mercado */
+  colheita: Record<string, number>;
+  /** total colhido desde sempre (kg) */
+  colhidoTotal: number;
+  /** ambição de vida escolhida e quantas já cumpriu */
+  ambicao: string | null;
+  ambicoesFeitas: string[];
 }
 
 export interface Missions {
@@ -385,6 +394,11 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     cambioUsd: 0,
     friends: [],
     group: null,
+    lavra: null,
+    colheita: {},
+    colhidoTotal: 0,
+    ambicao: null,
+    ambicoesFeitas: [],
   };
 }
 
@@ -469,6 +483,18 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
           .map((f) => ({ id: f.id.slice(0, 64), name: f.name.slice(0, 40) }))
       : [],
     group: r.group && typeof r.group.id === "string" && typeof r.group.name === "string" ? { id: r.group.id.slice(0, 64), name: r.group.name.slice(0, 40) } : null,
+    lavra:
+      r.lavra && typeof r.lavra.crop === "string" && r.lavra.crop in CROPS && typeof r.lavra.plantedAt === "number" && typeof r.lavra.readyAt === "number"
+        ? { crop: r.lavra.crop, plantedAt: r.lavra.plantedAt, readyAt: r.lavra.readyAt, watered: r.lavra.watered === true }
+        : null,
+    colheita: Object.fromEntries(
+      Object.entries(r.colheita && typeof r.colheita === "object" ? r.colheita : {})
+        .filter(([k, v]) => k in CROPS && typeof v === "number" && Number.isFinite(v) && v > 0)
+        .map(([k, v]) => [k, Math.min(100_000, Math.round(v as number))]),
+    ),
+    colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
+    ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
+    ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],
   };
 }
 
@@ -544,3 +570,25 @@ export const RADIO_PRICE = 500;
 export const RADIO_MOOD = 8;
 export const MAX_FRIENDS = 50;
 export const GROUP_PRICE = 5000;
+
+// ---------------------------------------------------------------- lavras (o planalto é terra de milho)
+
+/** Culturas da lavra: semente (Kz), tempo até colher (min reais), colheita (kg) e preço no mercado (Kz/kg). */
+export const CROPS: Record<string, { name: string; seed: number; minutes: number; kg: number; price: number }> = {
+  milho: { name: "Milho", seed: 300, minutes: 30, kg: 20, price: 60 },
+  feijao: { name: "Feijão", seed: 400, minutes: 20, kg: 12, price: 110 },
+  batata_doce: { name: "Batata-doce", seed: 250, minutes: 15, kg: 18, price: 45 },
+};
+/** Sem rega a colheita fica a metade. */
+export const DRY_FACTOR = 0.5;
+
+// ---------------------------------------------------------------- ambição de vida
+
+export const AMBICOES: Record<string, { text: string; reward: number }> = {
+  rico: { text: "Juntar 1.000.000 Kz (carteira + banco)", reward: 20_000 },
+  casa: { text: "Ter casa própria (comprada)", reward: 15_000 },
+  doutor: { text: "Chegar ao nível máximo de estudos", reward: 15_000 },
+  popular: { text: "Ter 10 amigos", reward: 10_000 },
+  carro: { text: "Ter carro próprio", reward: 10_000 },
+  agricultor: { text: "Colher 200 kg na lavra", reward: 10_000 },
+};

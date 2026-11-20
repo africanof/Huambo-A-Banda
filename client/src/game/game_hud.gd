@@ -323,7 +323,11 @@ func set_clock(minutes: float) -> void:
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
 	var money := int(Net.me.get("money", 0))
-	top_label.text = "%s · %s · %02d:%02d" % ["DIA" if h >= 6 and h < 18 else "NOITE", place_text.to_upper(), h, m]
+	var w: Dictionary = Net.me.get("tempo", {}) if typeof(Net.me.get("tempo")) == TYPE_DICTIONARY else {}
+	var sky := ""
+	if not w.is_empty():
+		sky = " · %d°C%s" % [int(w.temp), " CHUVA" if w.ceu in ["chuva", "trovoada"] else ""]
+	top_label.text = "%s · %s · %02d:%02d%s" % ["DIA" if h >= 6 and h < 18 else "NOITE", place_text.to_upper(), h, m, sky]
 	money_label.text = "%s Kz" % DemoHud._money(money)
 
 
@@ -776,7 +780,8 @@ const APPS := [
 	["familia", "Família", "home", "d"], ["saude", "Saúde", "plus", "r"], ["amigos", "Amigos", "person", "r"], ["grupos", "Grupos", "hand", "d"],
 	["biscatos", "Ganhar dinheiro", "bag", "y"], ["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "d"],
 	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
-	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["ajuda", "Ajuda", "more", "d"],
+	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
+	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -810,6 +815,10 @@ func _rebuild_phone() -> void:
 		"ajuda": _phone_help()
 		"sorte": _phone_luck()
 		"biscatos": _phone_biscatos()
+		"lavras": _phone_lavras()
+		"ambicao": _phone_ambition()
+		"ricos": _phone_rich()
+		"tempo": _phone_weather()
 		"cambio": _phone_cambio()
 		"radio": _phone_radio()
 		"jornal": _phone_jornal()
@@ -974,6 +983,121 @@ func _text_row(box: Container, placeholder: String, max_len: int, button: String
 	row.add_child(_button(button, "plus", ACCENT, INK, func() -> void: go.call()))
 	box.add_child(row)
 	return le
+
+
+## Lavras: semear, regar, colher na Chipipa e vender no mercado.
+const CROP_INFO := [["milho", "Milho", "Semente 300 Kz · 30 min · 20 kg · 60 Kz/kg"], ["feijao", "Feijão", "Semente 400 Kz · 20 min · 12 kg · 110 Kz/kg"], ["batata_doce", "Batata-doce", "Semente 250 Kz · 15 min · 18 kg · 45 Kz/kg"]]
+
+
+func _phone_lavras() -> void:
+	var c := _card()
+	c.add_child(_label("A tua lavra na Chipipa", 18, ACCENT, FONT_BOLD))
+	var l: Variant = Net.me.get("lavra")
+	if typeof(l) == TYPE_DICTIONARY:
+		var secs := int(l.readyInS)
+		if secs > 0:
+			c.add_child(_label("%s a crescer: pronto daqui a %d min %02d s." % [l.name, secs / 60, secs % 60], 16, Color.WHITE, FONT_REG, true))
+		else:
+			c.add_child(_label("%s pronto para colher!" % l.name, 16, Color("8fe08a"), FONT_BOLD, true))
+		if not bool(l.watered):
+			c.add_child(_label("Ainda não regaste: sem rega (e sem chuva) a colheita fica a metade.", 14, Color("ffd27a"), FONT_REG, true))
+			c.add_child(_button("Regar", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("lavra_regar")))
+		if secs <= 0:
+			c.add_child(_button("Colher", "bag", ACCENT, INK, func() -> void: Net.action("lavra_colher")))
+	else:
+		c.add_child(_label("A lavra está vazia. O que queres semear?", 15, Color.WHITE, FONT_REG, true))
+		for x: Array in CROP_INFO:
+			var id := str(x[0])
+			c.add_child(_button("Semear %s" % x[1], "plus", ACCENT, INK, func() -> void: Net.action("lavra_semear", id)))
+			c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+	var col: Dictionary = Net.me.get("colheita", {})
+	var k := _card()
+	k.add_child(_label("Colheita guardada", 16, Color.WHITE, FONT_BOLD))
+	if col.is_empty():
+		k.add_child(_label("Nada guardado.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+	else:
+		for crop: String in col:
+			k.add_child(_label("%s: %d kg" % [crop.replace("_", "-").capitalize(), int(col[crop])], 15, Color.WHITE, FONT_REG))
+		k.add_child(_button("Vender no mercado", "bag", ACCENT, INK, func() -> void: Net.action("lavra_vender")))
+		k.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			phone.visible = false
+			ui_action.emit("ir:mercado")))
+
+
+## Ambição de vida: um grande objetivo, medido no que tens de verdade.
+const AMBITIONS := [["rico", "Juntar 1.000.000 Kz", "20.000 Kz"], ["casa", "Ter casa própria", "15.000 Kz"], ["doutor", "Nível máximo de estudos", "15.000 Kz"], ["popular", "Ter 10 amigos", "10.000 Kz"], ["carro", "Ter carro próprio", "10.000 Kz"], ["agricultor", "Colher 200 kg na lavra", "10.000 Kz"]]
+
+
+func _phone_ambition() -> void:
+	var a: Variant = Net.me.get("ambicao")
+	var feitas: Array = Net.me.get("ambicoesFeitas", [])
+	var c := _card()
+	if typeof(a) == TYPE_DICTIONARY:
+		c.add_child(_label("A tua ambição", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label(str(a.text), 19, ACCENT, FONT_BOLD, true))
+		var bar := ProgressBar.new()
+		bar.max_value = 100
+		bar.value = float(a.progress) * 100.0
+		bar.custom_minimum_size = Vector2(0, 18)
+		c.add_child(bar)
+		if float(a.progress) >= 1.0:
+			c.add_child(_button("Recolher o prémio (%s Kz)" % DemoHud._money(int(a.reward)), "plus", ACCENT, INK, func() -> void: Net.action("ambicao_recolher")))
+		else:
+			c.add_child(_label("Prémio: %s Kz" % DemoHud._money(int(a.reward)), 14, Color.WHITE, FONT_REG))
+	else:
+		c.add_child(_label("Escolhe a tua ambição de vida. O jogo mede o progresso e paga um prémio quando a cumprires.", 15, Color.WHITE, FONT_REG, true))
+	var l := _card()
+	l.add_child(_label("Ambições", 16, Color.WHITE, FONT_BOLD))
+	for x: Array in AMBITIONS:
+		var id := str(x[0])
+		if feitas.has(id):
+			l.add_child(_label("✓ %s (cumprida)" % x[1], 14, Color("8fe08a"), FONT_REG, true))
+		else:
+			l.add_child(_button("%s · %s" % [x[1], x[2]], "target", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("ambicao_escolher", id)))
+
+
+## Ricos: quem tem mais dinheiro (só contas).
+var _rich: Array = []
+
+
+func _phone_rich() -> void:
+	var c := _card()
+	c.add_child(_label("Os mais ricos do Huambo", 18, ACCENT, FONT_BOLD))
+	if _rich.is_empty():
+		c.add_child(_label("A carregar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		var r: Variant = await Net.get_json("/ricos")
+		if typeof(r) == TYPE_ARRAY:
+			_rich = r if not (r as Array).is_empty() else [{"name": "", "total": -1}]
+			if phone.visible and phone_tab == "ricos":
+				_rebuild_phone()
+		return
+	if _rich.size() == 1 and int(_rich[0].total) < 0:
+		c.add_child(_label("Ainda não há ninguém na lista. Cria conta e junta dinheiro para apareceres aqui!", 15, Color.WHITE, FONT_REG, true))
+	for i in _rich.size():
+		var x: Dictionary = _rich[i]
+		if int(x.total) < 0:
+			continue
+		c.add_child(_label("%d. %s — %s Kz" % [i + 1, x.name, DemoHud._money(int(x.total))], 15, ACCENT if i < 3 else Color.WHITE, FONT_BOLD if i < 3 else FONT_REG, true))
+	c.add_child(_label("Conta a carteira e o banco de quem joga com conta.", 12, Color(1, 1, 1, 0.55), FONT_REG, true))
+	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		_rich = []
+		_rebuild_phone()))
+
+
+## Tempo no Huambo (época das chuvas / cacimbo).
+func _phone_weather() -> void:
+	var w: Dictionary = Net.me.get("tempo", {})
+	if w.is_empty():
+		return
+	var c := _card()
+	c.add_child(_label("%d °C" % int(w.temp), 52, Color("f3ead8"), FONT_BOLD))
+	c.add_child(_label("%s · %s" % [w.texto, "época das chuvas" if w.epoca == "chuvas" else "cacimbo"], 17, Color.WHITE, FONT_REG, true))
+	if w.ceu in ["chuva", "trovoada"]:
+		c.add_child(_label("Na rua a chuva estraga o humor: entra num sítio coberto. A chuva também rega a tua lavra.", 14, Color("ffd27a"), FONT_REG, true))
+	var p := _card()
+	p.add_child(_label("Próximas horas", 16, Color.WHITE, FONT_BOLD))
+	for f: Dictionary in w.get("previsao", []):
+		p.add_child(_label("%02dh — %s, %d °C" % [int(f.hora), f.texto, int(f.temp)], 15, Color.WHITE, FONT_REG, true))
 
 
 ## Ganhar dinheiro: biscatos sem estudos nem documentos.

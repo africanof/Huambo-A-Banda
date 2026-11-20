@@ -128,3 +128,16 @@ ponta-a-ponta com clientes Godot reais).
   (muda de sala no mesmo bairro, ou viagem para outro bairro), remover.
 - Grupos: criar (só com conta, 5.000 Kz, nome único 3–30 letras, Supabase game_groups), entrar, sair e
   conversa do grupo que chega aos membros ligados em qualquer bairro (canal de presença).
+
+### Catálogo dos bairros, Tempo, Lavras, Ambição de vida e Ricos
+- Catálogo do Mapa com o postal de cada bairro (tools/bairros/thumbs.py compõe o centro do bairro com a arte
+  real dos kits, na projeção do jogo) em cartões: estás aqui / a pé / transporte.
+- Tempo do Huambo (determinístico por hora, igual para todos): época das chuvas (out–abr, chuva à tarde,
+  trovoada) e cacimbo (mai–set, seco e frio de madrugada); temperatura no topo do ecrã; chuva a cair na rua;
+  a chuva na rua baixa o humor; previsão na app Tempo.
+- Lavras (na Chipipa): semear milho/feijão/batata-doce (paga a semente), regar (ou a chuva rega), colher em
+  tempo real (15–30 min; sem rega rende metade) e vender a colheita no mercado do bairro.
+- Ambição de vida: escolher um objetivo (1.000.000 Kz, casa comprada, estudos máximos, 10 amigos, carro,
+  200 kg colhidos); progresso medido no estado real; prémio pago uma só vez e notícia no jornal.
+- Ricos (GET /ricos): os mais ricos (carteira + banco) de quem joga com conta.
+- Servidor: as ações de cada pessoa são tratadas em fila (uma de cada vez, por ordem).

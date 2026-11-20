@@ -41,6 +41,7 @@ func _ready() -> void:
 	speed_m = float(w.get("speed", 450)) / UNIT
 	snapshot_hz = int(w.get("snapshotHz", 10))
 	hud = GameHud.new()
+	hud.layer = 2 # a chuva (camada 1) cai por cima do bairro e por baixo dos botões
 	hud.place_text = str(w.get("district", {}).get("name", ""))
 	hud.catalog = w.get("catalog", {}) if typeof(w.get("catalog")) == TYPE_DICTIONARY else {}
 	add_child(hud)
@@ -221,7 +222,58 @@ var _travelling := false
 static var _birth_shown := false
 
 
+var _rain: CPUParticles2D
+var _rain_layer: CanvasLayer
+
+
+## Chuva na rua (época das chuvas): gotas a cair por cima do bairro, por baixo dos botões.
+## Lá dentro (interiores) e nas vistas 3D não chove.
+func _update_rain(me: Dictionary) -> void:
+	var w: Variant = me.get("tempo")
+	var raining: bool = typeof(w) == TYPE_DICTIONARY and str(w.ceu) in ["chuva", "trovoada"] and _room_center == Vector2.INF and mode3d == ""
+	if raining and _rain == null:
+		_rain_layer = CanvasLayer.new()
+		_rain_layer.layer = 1
+		add_child(_rain_layer)
+		_rain = CPUParticles2D.new()
+		_rain.amount = 260
+		_rain.lifetime = 0.9
+		_rain.preprocess = 1.0
+		_rain.emission_shape = CPUParticles2D.EMISSION_SHAPE_RECTANGLE
+		var vs := get_viewport().get_visible_rect().size
+		_rain.position = Vector2(vs.x / 2.0, -20)
+		_rain.emission_rect_extents = Vector2(vs.x * 0.7, 10)
+		_rain.direction = Vector2(-0.18, 1)
+		_rain.spread = 2.0
+		_rain.gravity = Vector2(0, 900)
+		_rain.initial_velocity_min = 700
+		_rain.initial_velocity_max = 900
+		_rain.scale_amount_min = 1.0
+		_rain.scale_amount_max = 1.6
+		var g := GradientTexture2D.new()
+		g.width = 2
+		g.height = 18
+		g.fill_to = Vector2(0, 1)
+		var gr := Gradient.new()
+		gr.set_color(0, Color(1, 1, 1, 0.0))
+		gr.set_color(1, Color(1, 1, 1, 0.8))
+		g.gradient = gr
+		_rain.texture = g
+		_rain.color = Color(0.85, 0.9, 1.0, 0.7)
+		_rain_layer.add_child(_rain)
+		var dim := ColorRect.new()
+		dim.color = Color(0.1, 0.12, 0.18, 0.18)
+		dim.set_anchors_preset(Control.PRESET_FULL_RECT)
+		dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_rain_layer.add_child(dim)
+	elif not raining and _rain != null:
+		_rain_layer.queue_free()
+		_rain = null
+		_rain_layer = null
+
+
 func _on_self(me: Dictionary) -> void:
+	_update_rain(me)
 	var b: Variant = me.get("birth")
 	if typeof(b) == TYPE_DICTIONARY and bool(b.get("nova", false)) and not _birth_shown:
 		# 🎲 a lotaria da vida: primeiro a revelação, depois a ida para o bairro onde cresceu

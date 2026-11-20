@@ -3,7 +3,7 @@ extends Node
 ## Ativado com:  godot --headless --path client -- --autotest [--name=Robo] [--expect-peers=2]
 ## Sai com código 0 em sucesso, 1 em falha (usado pelo CI).
 
-const TIMEOUT_S := 300.0
+const TIMEOUT_S := 600.0
 
 var _started := 0
 
@@ -155,6 +155,20 @@ func _social_loop() -> String:
 	await _wait_for(func() -> Variant: return true if int(Net.me.get("cambio", {}).get("usd", 0)) >= 1 or Time.get_ticks_msec() - t0 > 40000 else null)
 	if int(Net.me.get("cambio", {}).get("usd", 0)) < 1:
 		return "câmbio falhou"
+	# lavra: semear batata-doce e regar; ambição: escolher
+	Net.action("lavra_semear", "batata_doce")
+	Net.action("lavra_regar")
+	Net.action("ambicao_escolher", "agricultor")
+	t0 = Time.get_ticks_msec()
+	var farm: Variant = await _wait_for(func() -> Variant:
+		var l: Variant = Net.me.get("lavra")
+		var a: Variant = Net.me.get("ambicao")
+		if typeof(l) == TYPE_DICTIONARY and bool(l.watered) and typeof(a) == TYPE_DICTIONARY:
+			return true
+		return false if Time.get_ticks_msec() - t0 > 15000 else null)
+	if not farm:
+		return "lavra/ambição falhou"
+	print("[autotest] lavra: %s · ambição: %s · tempo: %s" % [Net.me.lavra, Net.me.ambicao.text, Net.me.tempo.texto])
 	# jornal tem a dedicatória
 	var j: Variant = await Net.get_json("/jornal")
 	if typeof(j) != TYPE_DICTIONARY or not (j.noticias as Array).any(func(n: Dictionary) -> bool: return str(n.kind) == "radio"):
@@ -430,7 +444,7 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["biscatos", "cambio", "radio", "jornal", "amigos", "grupos"]:
+		for app: String in ["lavras", "ambicao", "ricos", "tempo"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)

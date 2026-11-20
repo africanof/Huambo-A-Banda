@@ -1,5 +1,7 @@
 import { playedToday } from "../game/stats.js";
 import { todaysNews } from "../game/news.js";
+import { richest } from "../game/ranking.js";
+import { weatherAt } from "../game/weather.js";
 import { angolaDay, cambioPrices } from "../game/life.js";
 import express, { type Application, type Request, type Response, type NextFunction } from "express";
 import { matchMaker } from "@colyseus/core";
@@ -81,6 +83,12 @@ export function registerRoutes(app: Application, svc: Services): void {
     }
   });
 
+  // Ricos: os jogadores com mais dinheiro (carteira + banco), só contas.
+  app.get("/ricos", (_req, res) => {
+    res.set("Cache-Control", "no-store");
+    res.json(richest(20));
+  });
+
   // Jornal do Huambo: notícias de hoje + câmbio do dia + grupos com mais membros.
   app.get("/jornal", async (_req, res) => {
     const day = angolaDay(Date.now());
@@ -91,7 +99,7 @@ export function registerRoutes(app: Application, svc: Services): void {
       grupos = [];
     }
     res.set("Cache-Control", "no-store");
-    res.json({ dia: day, cambio: cambioPrices(day), noticias: todaysNews(), grupos });
+    res.json({ dia: day, cambio: cambioPrices(day), tempo: weatherAt(Date.now()), noticias: todaysNews(), grupos });
   });
 
   // Salas de um bairro (como no Vida na Banda: "📍 bairro · Sala N"), por ordem de criação.
