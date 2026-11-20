@@ -127,7 +127,7 @@ func drive(new_pos: Vector2, delta: float) -> void:
 		if absf(s.x) > 0.01:
 			facing_left = s.x < 0
 		var cadence := (dist / maxf(delta, 0.0001)) / stride_for(d)
-		body.speed_scale = clampf(cadence, 0.5, 4.0) * 8.0 / BASE_FPS
+		body.speed_scale = clampf(cadence, 0.5, 8.0) * 8.0 / BASE_FPS
 	else:
 		body.speed_scale = 1.0
 	_update_anim()

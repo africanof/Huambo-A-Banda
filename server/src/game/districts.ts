@@ -115,8 +115,11 @@ export function registerDistrict(d: District): void {
   registry.set(d.id, d);
 }
 
+/** Personagens andam 3× mais depressa do que um passo normal (1,5 m/s → 4,5 m/s). */
+export const WALK_FACTOR = 3;
+
 /** Carrega um mapa gerado por tools/mapgen (ficheiro em server/data/maps). */
-export function loadMapDistrict(path: string | URL, speed = 150): District {
+export function loadMapDistrict(path: string | URL, speed = 150 * WALK_FACTOR): District {
   const raw = JSON.parse(readFileSync(path, "utf8")) as MapFile;
   const bits = new Uint8Array(Buffer.from(raw.grid.bits, "base64"));
   if (bits.length * 8 < raw.grid.cols * raw.grid.rows) throw new Error(`mapa ${raw.id}: grelha truncada`);
@@ -159,7 +162,7 @@ export function loadBairroDistrict(path: string | URL): District {
     name: raw.name,
     width: raw.size[0] * u,
     height: raw.size[1] * u,
-    speed: 1.5 * u,
+    speed: 1.5 * WALK_FACTOR * u, // m/s × unidade (3× o passo normal, pedido do dono do projeto)
     radius: 0.35 * u,
     aoiCell: 12 * u,
     // chegadas a pé: "from_<bairro>" aparece na rua que vem desse bairro

@@ -38,7 +38,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")
 		return
 	add_child(canvas_mod)
-	speed_m = float(w.get("speed", 150)) / UNIT
+	speed_m = float(w.get("speed", 450)) / UNIT
 	snapshot_hz = int(w.get("snapshotHz", 10))
 	hud = GameHud.new()
 	hud.place_text = str(w.get("district", {}).get("name", ""))
