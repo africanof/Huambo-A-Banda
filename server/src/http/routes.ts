@@ -1,3 +1,4 @@
+import { playedToday } from "../game/stats.js";
 import express, { type Application, type Request, type Response, type NextFunction } from "express";
 import { matchMaker } from "@colyseus/core";
 import type { Services } from "../services.js";
@@ -60,6 +61,18 @@ export function registerRoutes(app: Application, svc: Services): void {
         bairros: d.spawns.filter((s) => !s.id.startsWith("from_")).map((s) => ({ id: s.id, name: s.name })),
       })),
     );
+  });
+
+  // Ecrã inicial do telemóvel: quantas pessoas estão ligadas agora e quantas jogaram hoje.
+  app.get("/stats", async (_req, res) => {
+    try {
+      const rooms = await matchMaker.query({ name: "district" });
+      const online = rooms.reduce((n, r) => n + (r.clients ?? 0), 0);
+      res.set("Cache-Control", "no-store");
+      res.json({ online, hoje: Math.max(playedToday(), online) });
+    } catch {
+      res.status(503).json({ error: "unavailable" });
+    }
   });
 
   // Salas de um bairro (como no Vida na Banda: "📍 bairro · Sala N"), por ordem de criação.

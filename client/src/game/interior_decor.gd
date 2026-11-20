@@ -83,6 +83,7 @@ func build(view: BairroView, interior: Dictionary) -> void:
 	var r: Array = interior.rect
 	var rect := Rect2(r[0], r[1], r[2], r[3])
 	var venue := str(interior.get("venue", ""))
+	_street_around(view, rect, interior)
 	# nome da divisão no chão, mais para a frente da sala
 	var front := Iso.front_corner(rect)
 	var spot := rect.get_center().lerp(front, 0.55)
@@ -105,6 +106,65 @@ func build(view: BairroView, interior: Dictionary) -> void:
 		add_child(node)
 		_markers.append({"node": node, "base": base, "place": p})
 		_add_staff(view, rect, p, venue)
+
+
+const T_ASFALTO := preload("res://assets/demo/chao_asfalto.png")
+const T_CALCADA := preload("res://assets/demo/chao_calcada.png")
+
+
+## Como no Vida na Banda: a sala vê-se no seu sítio, com o passeio e a rua do lado da porta
+## (só cenário à volta; lá dentro anda-se só na sala).
+func _street_around(view: BairroView, rect: Rect2, interior: Dictionary) -> void:
+	var exit := rect.get_center()
+	for p: Dictionary in view.places:
+		if str(p.get("interior", "")) == str(interior.id) and str(p.kind) == "exit":
+			exit = Vector2(p.at[0], p.at[1])
+	# lado da sala onde está a porta: a rua passa desse lado
+	var d := [exit.x - rect.position.x, rect.end.x - exit.x, exit.y - rect.position.y, rect.end.y - exit.y]
+	var side := d.find(d.min())
+	var L := 14.0
+	var walk := 2.0
+	var road := 8.0
+	var strips: Array = [] # [Rect2, textura]
+	match side:
+		0: # oeste
+			strips = [[Rect2(rect.position.x - walk, rect.position.y - L, walk, rect.size.y + 2 * L), T_CALCADA], [Rect2(rect.position.x - walk - road, rect.position.y - L, road, rect.size.y + 2 * L), T_ASFALTO]]
+		1: # este
+			strips = [[Rect2(rect.end.x, rect.position.y - L, walk, rect.size.y + 2 * L), T_CALCADA], [Rect2(rect.end.x + walk, rect.position.y - L, road, rect.size.y + 2 * L), T_ASFALTO]]
+		2: # norte
+			strips = [[Rect2(rect.position.x - L, rect.position.y - walk, rect.size.x + 2 * L, walk), T_CALCADA], [Rect2(rect.position.x - L, rect.position.y - walk - road, rect.size.x + 2 * L, road), T_ASFALTO]]
+		_: # sul
+			strips = [[Rect2(rect.position.x - L, rect.end.y, rect.size.x + 2 * L, walk), T_CALCADA], [Rect2(rect.position.x - L, rect.end.y + walk, rect.size.x + 2 * L, road), T_ASFALTO]]
+	for st: Array in strips:
+		_ground_poly(st[0], st[1])
+	# traço ao meio da estrada
+	var r: Rect2 = strips[1][0]
+	var along_x := r.size.x > r.size.y
+	var n := int((r.size.x if along_x else r.size.y) / 3.0)
+	for k in n:
+		var seg := Rect2(r.position.x + k * 3.0, r.get_center().y - 0.08, 1.6, 0.16) if along_x else Rect2(r.get_center().x - 0.08, r.position.y + k * 3.0, 0.16, 1.6)
+		var q := Polygon2D.new()
+		q.polygon = Iso.rect_poly(seg)
+		q.color = Color(1, 1, 1, 0.75)
+		q.z_as_relative = false
+		q.z_index = -11
+		add_child(q)
+
+
+func _ground_poly(r: Rect2, t: Texture2D) -> void:
+	var p := Polygon2D.new()
+	var scr := PackedVector2Array()
+	var uv := PackedVector2Array()
+	for w: Vector2 in [r.position, Vector2(r.end.x, r.position.y), r.end, Vector2(r.position.x, r.end.y)]:
+		scr.append(Iso.to_screen(w))
+		uv.append(w * 128.0)
+	p.polygon = scr
+	p.uv = uv
+	p.texture = t
+	p.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	p.z_as_relative = false
+	p.z_index = -12 # por baixo da sala
+	add_child(p)
 
 
 ## Funcionário no posto da estação, um passo para o fundo da sala (atrás do balcão).

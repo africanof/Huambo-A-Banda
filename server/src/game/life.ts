@@ -32,6 +32,86 @@ export interface LifeState {
   car: string | null;
   /** a lotaria da vida: onde e de quem nasceu (sorteado uma vez, ao criar a personagem) */
   birth: Birth | null;
+  /** missões do dia (como o «Hoje 0/3» do Vida na Banda) e a sequência de dias completos */
+  missions: Missions;
+}
+
+export interface Missions {
+  day: string;
+  ids: string[];
+  done: boolean[];
+  claimed: boolean[];
+  /** progresso para missões com contagem (ex.: entrar em 3 sítios diferentes) */
+  seen: string[];
+  streak: number;
+  lastFullDay: string | null;
+}
+
+/** Missões possíveis. Cada uma completa-se com uma ação real validada no servidor. */
+export const MISSIONS: Record<string, { text: string; reward: number }> = {
+  trabalhar: { text: "Fazer um turno no teu trabalho", reward: 800 },
+  comer: { text: "Comer numa cantina, padaria ou churrasqueira", reward: 400 },
+  estudar: { text: "Ir a uma aula na escola", reward: 600 },
+  viajar: { text: "Ir a outro bairro (a pé ou de transporte)", reward: 500 },
+  banco: { text: "Depositar dinheiro no banco", reward: 400 },
+  servico: { text: "Tratar de um assunto num balcão (saúde, documentos, saldo…)", reward: 500 },
+  dormir: { text: "Dormir numa cama (hotel ou casa)", reward: 400 },
+  visitar: { text: "Entrar em 3 sítios diferentes", reward: 500 },
+};
+export const MISSIONS_PER_DAY = 3;
+export const STREAK_BONUS = 1000;
+
+function hashStr(s: string): number {
+  let h = 2166136261;
+  for (const ch of s) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  return h;
+}
+
+/** Missões de hoje para esta personagem (determinístico: a mesma pessoa vê sempre as mesmas no mesmo dia). */
+export function missionsFor(day: string, seed: string): string[] {
+  const pool = Object.keys(MISSIONS);
+  const out: string[] = [];
+  let h = hashStr(day + ":" + seed);
+  while (out.length < MISSIONS_PER_DAY) {
+    const id = pool[h % pool.length]!;
+    if (!out.includes(id)) out.push(id);
+    h = Math.imul(h ^ 0x9e3779b9, 16777619) >>> 0;
+  }
+  return out;
+}
+
+/** Novo dia → novas missões (a sequência mantém-se; quebra se ontem não ficou completo). */
+export function rollMissions(m: Missions, nowMs: number, seed: string): void {
+  const day = angolaDay(nowMs);
+  if (m.day === day && m.ids.length === MISSIONS_PER_DAY) return;
+  const yesterday = angolaDay(nowMs - 86_400_000);
+  if (m.lastFullDay !== yesterday && m.lastFullDay !== day) m.streak = 0;
+  m.day = day;
+  m.ids = missionsFor(day, seed);
+  m.done = m.ids.map(() => false);
+  m.claimed = m.ids.map(() => false);
+  m.seen = [];
+}
+
+/** Marca uma missão como feita. Devolve true se mudou alguma coisa. */
+export function progressMission(m: Missions, kind: string, detail = ""): boolean {
+  const i = m.ids.indexOf(kind);
+  if (i < 0 || m.done[i]) return false;
+  if (kind === "visitar") {
+    if (!detail || m.seen.includes(detail)) return false;
+    m.seen.push(detail);
+    if (m.seen.length < 3) return true;
+  }
+  m.done[i] = true;
+  if (m.done.every(Boolean) && m.lastFullDay !== m.day) {
+    m.streak += 1;
+    m.lastFullDay = m.day;
+  }
+  return true;
+}
+
+export function emptyMissions(): Missions {
+  return { day: "", ids: [], done: [], claimed: [], seen: [], streak: 0, lastFullDay: null };
 }
 
 export interface Birth {
@@ -280,6 +360,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     phoneCredit: 0,
     car: null,
     birth: null,
+    missions: emptyMissions(),
   };
 }
 
@@ -350,5 +431,23 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
       r.birth && typeof r.birth === "object" && typeof r.birth.bairro === "string" && typeof r.birth.pais === "string"
         ? { bairro: r.birth.bairro, pais: r.birth.pais, provincia: String(r.birth.provincia ?? "Huambo") }
         : null,
+    missions: sanitizeMissions(r.missions),
   };
+}
+
+function sanitizeMissions(raw: unknown): Missions {
+  const m = emptyMissions();
+  if (!raw || typeof raw !== "object") return m;
+  const r = raw as Partial<Missions>;
+  const ids = Array.isArray(r.ids) ? r.ids.filter((x): x is string => typeof x === "string" && x in MISSIONS).slice(0, MISSIONS_PER_DAY) : [];
+  if (typeof r.day === "string" && ids.length === MISSIONS_PER_DAY) {
+    m.day = r.day;
+    m.ids = ids;
+    m.done = ids.map((_, i) => Array.isArray(r.done) && r.done[i] === true);
+    m.claimed = ids.map((_, i) => Array.isArray(r.claimed) && r.claimed[i] === true && m.done[i] === true);
+    m.seen = Array.isArray(r.seen) ? r.seen.filter((x): x is string => typeof x === "string").slice(0, 10) : [];
+  }
+  m.streak = typeof r.streak === "number" && Number.isFinite(r.streak) ? Math.max(0, Math.min(10000, Math.round(r.streak))) : 0;
+  m.lastFullDay = typeof r.lastFullDay === "string" ? r.lastFullDay : null;
+  return m;
 }

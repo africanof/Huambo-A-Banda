@@ -1,3 +1,4 @@
+import { markPlayedToday } from "../game/stats.js";
 import { Room, ServerError, type AuthContext, type Client } from "@colyseus/core";
 import type { Identity } from "../auth/TokenVerifier.js";
 import { getDistrict, type District } from "../game/districts.js";
@@ -197,6 +198,7 @@ export class DistrictRoom extends Room {
       pos = { x: character.x, y: character.y };
     }
 
+    markPlayedToday(character.id);
     const eid = this.allocateEid();
     const player: Player = {
       eid,

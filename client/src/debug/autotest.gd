@@ -289,6 +289,15 @@ func _views_loop() -> void:
 	await tree.create_timer(6.0).timeout
 	print("[autotest] rua estável: %d fps" % Engine.get_frames_per_second())
 	await _shot("rua_aerea")
+	# telemóvel (ecrã inicial e uma app)
+	if AppConfig.has_flag("telemovel"):
+		world.hud._open_phone("inicio")
+		await tree.create_timer(4.0).timeout
+		await _shot("tel_inicio")
+		world.hud._open_phone("missoes")
+		await tree.create_timer(2.0).timeout
+		await _shot("tel_missoes")
+		world.hud.phone.visible = false
 	# bordas do bairro: o que se vê para lá dos limites (só paisagem)
 	if AppConfig.has_flag("bordas"):
 		var cam: Camera2D = world.camera

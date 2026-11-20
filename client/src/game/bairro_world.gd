@@ -162,7 +162,7 @@ func _process(delta: float) -> void:
 		if _pending_station != "" and str(hud._context.get("id", "")) == _pending_station and local_char.world_pos.distance_to(_click_target) < 0.4:
 			_pending_station = ""
 			hud.use_context()
-		minimap.visible = mode3d == "" and _room_center == Vector2.INF
+		minimap.visible = mode3d == "" and _room_center == Vector2.INF and not hud.phone.visible and not hud.menu_panel.visible
 		if mode3d != "" and view3d:
 			var room := view.interior_at(local_char.world_pos)
 			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
@@ -280,10 +280,11 @@ func _minimap_small() -> void:
 	minimap.anchor_right = 0.0
 	minimap.anchor_top = 1.0
 	minimap.anchor_bottom = 1.0
+	# canto de baixo à esquerda, por cima da barra (não tapa os botões da direita)
 	minimap.offset_left = 14
-	minimap.offset_right = 14 + 150
-	minimap.offset_top = -250
-	minimap.offset_bottom = -140
+	minimap.offset_right = 14 + 140
+	minimap.offset_top = -270
+	minimap.offset_bottom = -130
 
 
 func _on_minimap(w: Vector2) -> void:
@@ -496,7 +497,7 @@ func _update_inside() -> void:
 		camera.limit_top = int(bb.position.y)
 		camera.limit_right = int(bb.end.x)
 		camera.limit_bottom = int(bb.end.y)
-		RenderingServer.set_default_clear_color(Color("1c1a1f"))
+		RenderingServer.set_default_clear_color(Color("cfc6b4")) # chão claro à volta da sala (como no Vida na Banda)
 
 
 ## Para onde olhar ao entrar em 3D: dentro de uma sala, para o centro dela; na rua, para a
@@ -808,6 +809,25 @@ func _on_hud_action(what: String) -> void:
 				if p.kind == "portal" and str(p.get("to", "")) == to:
 					request_move(Vector2(p.at[0], p.at[1]))
 					hud.show_toast("A caminho da saída para %s…" % str(p.name).trim_prefix("A pé para "), true)
+		var w when w.begins_with("ir:"):
+			# app do telemóvel: leva-te a pé à porta do sítio desse tipo neste bairro (o mais perto)
+			var venue := w.trim_prefix("ir:")
+			var best: Dictionary = {}
+			var bd := INF
+			for p: Dictionary in view.places:
+				if p.kind == "door" and str(p.get("venue", "")) == venue:
+					var d := local_char.world_pos.distance_to(Vector2(p.at[0], p.at[1])) if local_char else 0.0
+					if d < bd:
+						bd = d
+						best = p
+			if best.is_empty():
+				hud.show_toast("Não há esse sítio neste bairro. Abre o Mapa e vai a outro bairro.", false)
+			else:
+				if typeof(Net.me.get("inside")) == TYPE_DICTIONARY:
+					Net.action("exit")
+					await get_tree().create_timer(0.6).timeout
+				request_move(Vector2(best.at[0], best.at[1]))
+				hud.show_toast("A caminho: %s" % str(best.name), true)
 		"paragem":
 			for p: Dictionary in view.places:
 				if p.kind == "stop":

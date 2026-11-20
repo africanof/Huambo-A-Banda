@@ -94,3 +94,13 @@ ponta-a-ponta com clientes Godot reais).
 - Sem arte de um lado, as salas e casas mostram a arte espelhada nas vistas de 90°/270° (nunca o que tem letras).
 - Bordas do bairro: as ruas continuam para lá do limite até ao horizonte, com casario cerrado à volta
   (só paisagem; a personagem não sai do bairro).
+
+### Telemóvel, missões e minimapa (como no Vida na Banda)
+- Ecrã inicial do telemóvel: hora grande, data, dia/noite, bairro, dinheiro e «N pessoas a jogar hoje» (GET /stats).
+- Missões do dia («Hoje · 0/3»): 3 por pessoa e por dia, cada uma completada por uma ação real validada no servidor
+  (turno, refeição, aula, viagem, depósito, balcão, dormir, entrar em 3 sítios); prémio a recolher uma só vez
+  (idempotente) e bónus do dia completo que cresce com a sequência de dias seguidos (até 7).
+- Apps que funcionam: Missões, Perfil, Família (pais, origem, pedir dinheiro), Mapa, Vagas, Estudos, Banco, Casa,
+  Loja, Saúde, Governo (documentos), Ajuda; as apps de sítios levam-te a pé à porta certa do bairro.
+- Minimapa redondo a seguir a personagem, com «N»; tocar abre o bairro todo.
+- Interiores com o passeio e a rua do lado da porta e chão claro à volta.

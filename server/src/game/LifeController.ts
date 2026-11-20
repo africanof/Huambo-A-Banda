@@ -26,6 +26,10 @@ import {
   newLife,
   parentsGift,
   rollDay,
+  rollMissions,
+  progressMission,
+  MISSIONS,
+  STREAK_BONUS,
   sanitizeLife,
   shiftFactor,
   type LifeState,
@@ -115,6 +119,7 @@ export interface SelfState {
   offer: Offer | null;
   travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number; birth?: boolean } | null;
   birth: { classe: string; pais: string; provincia: string; bairro: string; bairroNome: string; kumbu: number; nova: boolean } | null;
+  missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
 /** Catálogo enviado no WELCOME (o cliente desenha menus e vagas a partir dele). */
@@ -171,6 +176,7 @@ export class LifeController {
       await this.wallets.apply(actor.characterId, STARTING_MONEY[life.family], "family.start", `family:${actor.characterId}`);
     }
     rollDay(life, this.now());
+    rollMissions(life.missions, this.now(), actor.characterId);
     const money = await this.wallets.balance(actor.characterId);
     const bank = await this.bank.balance(actor.characterId);
     const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null, travel: null, newborn: !stored };
@@ -211,6 +217,7 @@ export class LifeController {
     const e = this.entries.get(actor);
     if (!e) return;
     rollDay(e.life, this.now());
+    rollMissions(e.life.missions, this.now(), actor.characterId);
     try {
       switch (msg.a) {
         case "self":
@@ -281,6 +288,9 @@ export class LifeController {
         case "travel":
           await this.travel(actor, e, msg.i, msg.t);
           break;
+        case "mission_claim":
+          await this.claimMission(actor, e, (msg.n ?? 0) - 1);
+          break;
       }
     } catch (err) {
       if (err instanceof InsufficientFunds) this.out.toast(actor, "Não tens dinheiro suficiente.", false);
@@ -315,6 +325,7 @@ export class LifeController {
     e.life.needs = applyFood(e.life.needs, item);
     e.dirty = true;
     this.out.toast(actor, `Comeste: ${item.name} (−${item.price} Kz).`, true);
+    this.mission(actor, e, "comer");
   }
 
   private takeJob(actor: LifeActor, e: Entry, jobId: string | undefined): void {
@@ -412,6 +423,7 @@ export class LifeController {
       const i = this.interior(door.interiors[0]);
       if (!i) return;
       this.teleport(actor, e, i.entry.x, i.entry.y);
+      this.mission(actor, e, "visitar", i.id);
       return this.out.toast(actor, `Entraste: ${i.name}.`, true);
     }
     // habitação: só entra quem lá mora
@@ -420,6 +432,7 @@ export class LifeController {
     const target = mine.find((i) => i!.id === unit) ?? mine[0];
     if (target) {
       this.teleport(actor, e, target.entry.x, target.entry.y);
+      this.mission(actor, e, "visitar", target.id);
       return this.out.toast(actor, `Bem-vindo(a) a casa: ${target.name}.`, true);
     }
     e.offer = await this.offerFor(actor, door);
@@ -475,6 +488,7 @@ export class LifeController {
     e.money = r.wallet;
     e.bank = r.bank;
     this.out.toast(actor, amount > 0 ? `Depositaste ${amount.toLocaleString("pt-PT")} Kz.` : `Levantaste ${(-amount).toLocaleString("pt-PT")} Kz.`, true);
+    if (amount > 0) this.mission(actor, e, "banco");
   }
 
   private async service(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
@@ -493,6 +507,7 @@ export class LifeController {
     e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0)), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
     e.dirty = true;
     this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
+    this.mission(actor, e, "servico");
   }
 
   private async travel(actor: LifeActor, e: Entry, to: string | undefined, how: string | undefined): Promise<void> {
@@ -517,6 +532,7 @@ export class LifeController {
     e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot, ...(onFoot ? {} : { by: tr.id, seconds: tr.seconds }) };
     e.dirty = true;
     this.out.toast(actor, onFoot ? `A caminho de ${d.name} a pé.` : `${tr.name} para ${d.name} (−${tr.price.toLocaleString("pt-PT")} Kz).`, true);
+    this.mission(actor, e, "viajar");
   }
 
   private async buyCar(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
@@ -589,7 +605,9 @@ export class LifeController {
       e.life.needs = { ...n, energy: Math.max(0, n.energy - 12), hunger: Math.max(0, n.hunger - 8) };
       const note = idx >= 2 ? ` (turno ${idx + 1} do dia: ${Math.round(shiftFactor(idx) * 100)}%)` : "";
       this.out.toast(actor, `Turno concluído: +${pay.toLocaleString("pt-PT")} Kz${note}.`, true);
+      this.mission(actor, e, "trabalhar");
     } else if (kind === "study") {
+      this.mission(actor, e, "estudar");
       e.life.study += 1;
       if (e.life.study >= LESSONS_PER_LEVEL) {
         e.life.study = 0;
@@ -602,13 +620,50 @@ export class LifeController {
     } else if (kind === "sleep") {
       e.life.needs = { ...n, energy: 100, mood: Math.min(100, n.mood + 10) };
       this.out.toast(actor, "Dormiste bem no hotel.", true);
+      this.mission(actor, e, "dormir");
     } else if (kind === "sleep_casa") {
       e.life.needs = { ...n, energy: 100, mood: Math.min(100, n.mood + 15) };
       this.out.toast(actor, "Dormiste na tua cama. Não há nada como a nossa casa.", true);
+      this.mission(actor, e, "dormir");
     } else if (kind === "sleep_rua") {
       e.life.needs = { ...n, energy: Math.min(100, n.energy + 40), mood: Math.max(0, n.mood - 15) };
       this.out.toast(actor, "Dormiste no banco da paragem. Estás com o corpo dorido.", true);
     }
+  }
+
+  /** Uma ação real conta para a missão do dia (se for uma das de hoje). */
+  private mission(actor: LifeActor, e: Entry, kind: string, detail = ""): void {
+    const m = e.life.missions;
+    const i = m.ids.indexOf(kind);
+    const wasDone = i >= 0 && m.done[i];
+    if (!progressMission(m, kind, detail)) return;
+    e.dirty = true;
+    if (!wasDone && m.done[i]) this.out.toast(actor, `Missão feita: ${MISSIONS[kind]?.text ?? kind}. Recolhe o prémio no telemóvel.`, true);
+  }
+
+  /** Recolher o prémio de uma missão feita (idempotente: cada prémio só se paga uma vez). */
+  private async claimMission(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const m = e.life.missions;
+    if (idx < 0 || idx >= m.ids.length) return this.out.toast(actor, "Missão desconhecida.", false);
+    if (!m.done[idx]) return this.out.toast(actor, "Ainda não fizeste esta missão.", false);
+    if (m.claimed[idx]) return this.out.toast(actor, "Já recolheste este prémio.", false);
+    const id = m.ids[idx]!;
+    const reward = MISSIONS[id]?.reward ?? 0;
+    e.money = await this.wallets.apply(actor.characterId, reward, `mission.${id}`, `mission:${actor.characterId}:${m.day}:${idx}`);
+    m.claimed[idx] = true;
+    e.dirty = true;
+    let note = "";
+    if (m.claimed.every(Boolean)) {
+      const bonus = this.streakBonus(m.streak);
+      e.money = await this.wallets.apply(actor.characterId, bonus, "mission.streak", `mission-full:${actor.characterId}:${m.day}`);
+      note = ` Dia completo! Sequência de ${m.streak} dia(s): +${bonus.toLocaleString("pt-PT")} Kz.`;
+    }
+    this.out.toast(actor, `Prémio recolhido: +${reward.toLocaleString("pt-PT")} Kz.${note}`, true);
+  }
+
+  /** Bónus do dia completo: cresce com a sequência (até 7 dias seguidos). */
+  private streakBonus(streak: number): number {
+    return Math.round(STREAK_BONUS * Math.min(7, Math.max(1, streak)) / 7 / 100) * 100 + STREAK_BONUS / 2;
   }
 
   sendSelf(actor: LifeActor): void {
@@ -649,6 +704,12 @@ export class LifeController {
             nova: e.newborn,
           }
         : null,
+      missions: {
+        items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
+        streak: e.life.missions.streak,
+        streakBonus: this.streakBonus(e.life.missions.streak + (e.life.missions.lastFullDay === e.life.missions.day ? 0 : 1)),
+        progress: e.life.missions.ids.includes("visitar") ? e.life.missions.seen.length : 0,
+      },
     });
   }
 }

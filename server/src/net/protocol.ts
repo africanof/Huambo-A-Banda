@@ -90,6 +90,8 @@ export const ActionSchema = z
       // viajar para outro bairro (candongueiro, autocarro, carro…)
       "travel",
       "buy_car",
+      // missões do dia: recolher o prémio (n = 1..3)
+      "mission_claim",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

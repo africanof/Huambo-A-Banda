@@ -30,7 +30,10 @@ var toast_label := Label.new()
 var toast_panel := PanelContainer.new()
 var phone := PanelContainer.new()
 var phone_body := VBoxContainer.new()
-var phone_tab := "perfil"
+var phone_tab := "inicio"
+var _clock_min := 0.0
+var _stats := {"hoje": 0, "online": 0}
+var _stats_at := -100000
 var menu_panel := PanelContainer.new()
 var menu_body := VBoxContainer.new()
 var _context: Dictionary = {}
@@ -243,7 +246,7 @@ func _ready() -> void:
 	# --- telemóvel e ementa
 	for p: PanelContainer in [phone, menu_panel]:
 		var tall := p == phone
-		p.add_theme_stylebox_override("panel", _pill(Color(0.1, 0.09, 0.09, 0.95), 22))
+		p.add_theme_stylebox_override("panel", _pill(PHONE_BG if tall else Color(0.1, 0.09, 0.09, 0.95), 30 if tall else 22))
 		p.anchor_left = 1.0
 		p.anchor_right = 1.0
 		p.anchor_bottom = 1.0
@@ -316,6 +319,7 @@ func set_portrait(tex: Texture2D) -> void:
 # ------------------------------------------------------------------ atualização
 
 func set_clock(minutes: float) -> void:
+	_clock_min = minutes
 	var h := int(minutes / 60.0)
 	var m := int(minutes) % 60
 	var money := int(Net.me.get("money", 0))
@@ -693,7 +697,7 @@ func _toggle_phone() -> void:
 	if phone.visible:
 		phone.visible = false
 	else:
-		_open_phone(phone_tab)
+		_open_phone("inicio")
 
 
 func _open_phone(tab: String) -> void:
@@ -703,22 +707,190 @@ func _open_phone(tab: String) -> void:
 	_rebuild_phone()
 
 
+## Telemóvel como no Vida na Banda: ecrã inicial (hora, missões do dia, apps) e cada app no seu ecrã.
+const PHONE_BG := Color("1d1517")
+const APP_DARK := Color("2e2426")
+const APP_RED := Color("c8102e")
+const APP_YELLOW := Color("f5c400")
+## [id, nome, ícone, cor]
+const APPS := [
+	["missoes", "Missões", "target", "y"], ["perfil", "Perfil", "person", "d"], ["familia", "Família", "home", "d"], ["mapa", "Mapa", "map", "r"],
+	["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "y"], ["casa", "Casa", "home", "d"],
+	["loja", "Loja", "shirt", "y"], ["saude", "Saúde", "plus", "r"], ["governo", "Governo", "door", "d"], ["ajuda", "Ajuda", "more", "d"],
+]
+const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
+const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+
+
 func _rebuild_phone() -> void:
 	for c in phone_body.get_children():
 		c.queue_free()
-	var tabs := HBoxContainer.new()
-	tabs.add_theme_constant_override("separation", 6)
-	for t: Array in [["perfil", "Perfil"], ["casa", "Casa"], ["loja", "Loja"], ["vagas", "Vagas"], ["ajuda", "Ajuda"]]:
-		var tab_id: String = t[0]
-		var active := tab_id == phone_tab
-		tabs.add_child(_button(t[1], "", ACCENT if active else Color(1, 1, 1, 0.08), INK if active else Color.WHITE, func() -> void: _open_phone(tab_id)))
-	phone_body.add_child(tabs)
+	if phone_tab != "inicio":
+		var head := HBoxContainer.new()
+		head.add_theme_constant_override("separation", 10)
+		head.add_child(_button("Início", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: _open_phone("inicio")))
+		var t := ""
+		for a: Array in APPS:
+			if a[0] == phone_tab:
+				t = a[1]
+		head.add_child(_label(t, 22, ACCENT, FONT_BOLD))
+		phone_body.add_child(head)
 	match phone_tab:
+		"inicio": _phone_start()
+		"missoes": _phone_missions()
 		"perfil": _phone_profile()
+		"familia": _phone_family()
+		"vagas": _phone_jobs()
+		"estudos": _phone_go("Estudos", "Nível %d · aulas %d/%d. Cada nível desbloqueia empregos melhores." % [int(Net.me.get("education", 0)), int(Net.me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))], "escola", "Ir à escola")
+		"banco": _phone_go("Banco", "Na carteira: %s Kz\nNo banco: %s Kz\nDepositar e levantar faz-se ao balcão do banco." % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], "banco", "Ir ao banco")
 		"casa": _phone_home()
 		"loja": _phone_shop()
-		"vagas": _phone_jobs()
+		"saude": _phone_go("Saúde", "Saúde: %d%% · Energia: %d%% · Fome: %d%%\nConsultas no centro de saúde; medicamentos na farmácia." % [int(Net.me.get("needs", {}).get("health", 0)), int(Net.me.get("needs", {}).get("energy", 0)), int(Net.me.get("needs", {}).get("hunger", 0))], "saude", "Ir ao centro de saúde")
+		"governo": _phone_go("Governo", "BI: %s · Registo criminal: %s · Atestado de residência: %s\nTrata dos documentos na Administração do bairro, no Governo Provincial ou no Tribunal." % ["✓" if Net.me.get("docs", {}).get("bi", false) else "—", "✓" if Net.me.get("docs", {}).get("registo", false) else "—", "✓" if Net.me.get("docs", {}).get("residencia", false) else "—"], "administracao", "Ir à Administração")
 		"ajuda": _phone_help()
+	phone_body.add_child(_button("Fechar o telemóvel", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: phone.visible = false))
+
+
+func _card() -> VBoxContainer:
+	var p := PanelContainer.new()
+	var sb := _pill(Color(1, 1, 1, 0.06), 26)
+	sb.set_content_margin_all(18)
+	sb.shadow_size = 0
+	p.add_theme_stylebox_override("panel", sb)
+	var v := VBoxContainer.new()
+	v.add_theme_constant_override("separation", 8)
+	p.add_child(v)
+	phone_body.add_child(p)
+	return v
+
+
+## Ecrã inicial: hora grande, data, cidade, dinheiro, pessoas a jogar hoje, missões e apps.
+func _phone_start() -> void:
+	var c := _card()
+	var h := int(_clock_min / 60.0)
+	c.add_child(_label("%02d:%02d" % [h, int(_clock_min) % 60], 64, Color("f3ead8"), FONT_BOLD))
+	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600)
+	c.add_child(_label("%s, %d de %s" % [WEEKDAYS[int(now.weekday)], int(now.day), MONTHS[int(now.month) - 1]], 17, Color(1, 1, 1, 0.6), FONT_REG))
+	var row := HBoxContainer.new()
+	var city := _label(("Dia" if h >= 6 and h < 18 else "Noite") + " · Huambo · " + place_text, 17, Color.WHITE, FONT_BOLD)
+	city.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_child(city)
+	row.add_child(_label("%s Kz" % DemoHud._money(int(Net.me.get("money", 0))), 18, ACCENT, FONT_BOLD))
+	c.add_child(row)
+	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Color("7ee08a"), FONT))
+	if Time.get_ticks_msec() - _stats_at > 30000:
+		_stats_at = Time.get_ticks_msec()
+		_fetch_stats()
+	# missões do dia
+	var ms: Dictionary = Net.me.get("missions", {}) if typeof(Net.me.get("missions")) == TYPE_DICTIONARY else {}
+	var items: Array = ms.get("items", [])
+	if not items.is_empty():
+		var m := _card()
+		var done := items.filter(func(x: Dictionary) -> bool: return bool(x.done)).size()
+		var to_claim := items.filter(func(x: Dictionary) -> bool: return bool(x.done) and not bool(x.claimed)).size()
+		var hr := HBoxContainer.new()
+		var ht := _label("Hoje · %d/%d" % [done, items.size()], 18, Color.WHITE, FONT_BOLD)
+		ht.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		hr.add_child(ht)
+		if to_claim > 0:
+			hr.add_child(_label("%d por recolher" % to_claim, 16, ACCENT, FONT_BOLD))
+		m.add_child(hr)
+		_mission_rows(m, items, ms)
+	# apps
+	var grid := GridContainer.new()
+	grid.columns = 4
+	grid.add_theme_constant_override("h_separation", 10)
+	grid.add_theme_constant_override("v_separation", 12)
+	for a: Array in APPS:
+		grid.add_child(_app(a))
+	phone_body.add_child(grid)
+
+
+func _app(a: Array) -> Control:
+	var v := VBoxContainer.new()
+	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	v.add_theme_constant_override("separation", 4)
+	var bg: Color = {"y": APP_YELLOW, "r": APP_RED, "d": APP_DARK}[a[3]]
+	var fg := INK if a[3] == "y" else Color.WHITE
+	var b := Button.new()
+	b.icon = DemoIcons.make(str(a[2]), fg, 34)
+	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	b.custom_minimum_size = Vector2(70, 70)
+	b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	_style_round(b, 22, bg)
+	var id := str(a[0])
+	b.pressed.connect(func() -> void:
+		if id == "mapa":
+			_open_map()
+		else:
+			_open_phone(id))
+	v.add_child(b)
+	var l := _label(str(a[1]), 14, Color.WHITE, FONT_BOLD)
+	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	v.add_child(l)
+	if id == "missoes":
+		var ms: Variant = Net.me.get("missions")
+		if typeof(ms) == TYPE_DICTIONARY:
+			var n: int = (ms.get("items", []) as Array).filter(func(x: Dictionary) -> bool: return bool(x.done) and not bool(x.claimed)).size()
+			if n > 0:
+				l.text = "Missões (%d)" % n
+	return v
+
+
+func _mission_rows(box: VBoxContainer, items: Array, ms: Dictionary) -> void:
+	for i in items.size():
+		var it: Dictionary = items[i]
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 8)
+		var mark := "✓" if bool(it.claimed) else ("●" if bool(it.done) else "○")
+		var txt := _label("%s  %s" % [mark, it.text], 15, Color.WHITE if not bool(it.claimed) else Color(1, 1, 1, 0.45), FONT_REG, true)
+		txt.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(txt)
+		if bool(it.done) and not bool(it.claimed):
+			var n := i + 1
+			row.add_child(_button("+%s" % DemoHud._money(int(it.reward)), "plus", ACCENT, INK, func() -> void: Net.action("mission_claim", "", n)))
+		elif not bool(it.done):
+			row.add_child(_label("%s Kz" % DemoHud._money(int(it.reward)), 13, Color(1, 1, 1, 0.5), FONT_REG))
+		box.add_child(row)
+	if int(ms.get("progress", 0)) > 0:
+		box.add_child(_label("Sítios visitados hoje: %d/3" % int(ms.progress), 13, Color(1, 1, 1, 0.55), FONT_REG))
+	box.add_child(_label("Sequência: %d dia(s) completos · dia completo hoje: +%s Kz" % [int(ms.get("streak", 0)), DemoHud._money(int(ms.get("streakBonus", 0)))], 13, ACCENT, FONT_REG, true))
+
+
+func _phone_missions() -> void:
+	var ms: Dictionary = Net.me.get("missions", {}) if typeof(Net.me.get("missions")) == TYPE_DICTIONARY else {}
+	var c := _card()
+	c.add_child(_label("Faz as 3 missões de hoje e recolhe os prémios. Completar o dia seguido aumenta o bónus da sequência (até 7 dias).", 15, Color(1, 1, 1, 0.75), FONT_REG, true))
+	_mission_rows(c, ms.get("items", []), ms)
+
+
+func _phone_family() -> void:
+	var b: Variant = Net.me.get("birth")
+	var c := _card()
+	c.add_child(_label(str(Net.me.get("familyLabel", "")), 18, Color.WHITE, FONT_BOLD, true))
+	if typeof(b) == TYPE_DICTIONARY:
+		c.add_child(_label("Pais: %s\nProvíncia de origem: %s\nCresceste em: %s" % [b.pais, b.provincia, b.bairroNome], 15, Color.WHITE, FONT_REG, true))
+	if bool(Net.me.get("parentsToday", false)):
+		c.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+	else:
+		c.add_child(_button("Pedir dinheiro aos pais", "person", ACCENT, INK, func() -> void: Net.action("parents")))
+
+
+## App que mostra o estado e leva-te a pé ao sítio certo do bairro.
+func _phone_go(_title: String, text: String, venue: String, go_text: String) -> void:
+	var c := _card()
+	c.add_child(_label(text, 16, Color.WHITE, FONT_REG, true))
+	c.add_child(_button(go_text, "pin", ACCENT, INK, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:" + venue)))
+
+
+func _fetch_stats() -> void:
+	var r: Variant = await Net.get_json("/stats")
+	if typeof(r) == TYPE_DICTIONARY:
+		_stats = r
+		if phone.visible and phone_tab == "inicio":
+			_rebuild_phone()
 
 
 func _phone_profile() -> void:

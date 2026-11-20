@@ -118,7 +118,7 @@ cat > /etc/caddy/Caddyfile <<CADDY
 $HOST {
 	encode gzip zstd
 	@ws header Connection *Upgrade*
-	@api path /matchmake/* /auth/* /me/* /health /districts /districts/* /packs/*
+	@api path /matchmake/* /auth/* /me/* /health /stats /districts /districts/* /packs/*
 	handle @ws {
 		reverse_proxy 127.0.0.1:2567
 	}
