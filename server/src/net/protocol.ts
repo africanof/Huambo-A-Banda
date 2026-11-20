@@ -25,6 +25,10 @@ export const C2S = {
   MOVE_DIR: 4,
   /** ação de vida: comer, trabalhar, estudar, dormir, emprego, pais… */
   ACTION: 5,
+  /** conversa: quem está perto ouve */
+  CHAT: 6,
+  /** gesto (acenar, dançar…) */
+  EMOTE: 7,
 } as const;
 
 /** Servidor -> Cliente */
@@ -38,6 +42,10 @@ export const S2C = {
   SELF: 105,
   /** aviso curto para o jogador */
   TOAST: 106,
+  /** alguém perto falou: { id, n, t } */
+  CHAT: 107,
+  /** alguém perto fez um gesto: { id, e } */
+  EMOTE: 108,
 } as const;
 
 /** Códigos de erro de aplicação (enviados em NOTICE ou como motivo de recusa). */
@@ -53,6 +61,9 @@ export const ErrorCodes = {
 
 // interiores ficam a ~1 km da rua (y ≈ 100 000 cm): margem até 10 km
 const coord = z.number().finite().min(-1_000_000).max(1_000_000);
+
+export const ChatSchema = z.object({ t: z.string().min(1).max(400) }).strict();
+export const EmoteSchema = z.object({ e: z.enum(["acenar", "dancar", "aplaudir", "rir", "celebrar", "resmungar"]) }).strict();
 
 export const MoveToSchema = z.object({ x: coord, y: coord }).strict();
 export type MoveTo = z.infer<typeof MoveToSchema>;
@@ -92,6 +103,9 @@ export const ActionSchema = z
       "buy_car",
       // missões do dia: recolher o prémio (n = 1..3)
       "mission_claim",
+      // sorte do dia (grátis, uma vez por dia) e transferir dinheiro a alguém perto (i = id da pessoa, n = quantia)
+      "sorte",
+      "transfer",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

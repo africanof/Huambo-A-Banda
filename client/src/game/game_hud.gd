@@ -188,8 +188,8 @@ func _ready() -> void:
 			_open_phone("casa"))
 	dh.add_child(_home_tab)
 	dh.add_child(_tab("map", "Mapa", false, func() -> void: _open_map()))
-	dh.add_child(_tab("hand", "Gestos", false, func() -> void: show_toast("Gestos: brevemente.", true)))
-	dh.add_child(_tab("chat", "Falar", false, func() -> void: show_toast("Conversar: brevemente.", true)))
+	dh.add_child(_tab("hand", "Gestos", false, func() -> void: _open_emotes()))
+	dh.add_child(_tab("chat", "Falar", false, func() -> void: _open_chat()))
 
 	# --- ações do lugar (em baixo, ao centro)
 	actions_box.add_theme_constant_override("separation", 10)
@@ -716,7 +716,8 @@ const APP_YELLOW := Color("f5c400")
 const APPS := [
 	["missoes", "Missões", "target", "y"], ["perfil", "Perfil", "person", "d"], ["familia", "Família", "home", "d"], ["mapa", "Mapa", "map", "r"],
 	["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "y"], ["casa", "Casa", "home", "d"],
-	["loja", "Loja", "shirt", "y"], ["saude", "Saúde", "plus", "r"], ["governo", "Governo", "door", "d"], ["ajuda", "Ajuda", "more", "d"],
+	["loja", "Loja", "shirt", "y"], ["saude", "Saúde", "plus", "r"], ["governo", "Governo", "door", "d"], ["sorte", "Sorte", "target", "y"],
+	["transferir", "Transferir", "person", "y"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -748,6 +749,8 @@ func _rebuild_phone() -> void:
 		"saude": _phone_go("Saúde", "Saúde: %d%% · Energia: %d%% · Fome: %d%%\nConsultas no centro de saúde; medicamentos na farmácia." % [int(Net.me.get("needs", {}).get("health", 0)), int(Net.me.get("needs", {}).get("energy", 0)), int(Net.me.get("needs", {}).get("hunger", 0))], "saude", "Ir ao centro de saúde")
 		"governo": _phone_go("Governo", "BI: %s · Registo criminal: %s · Atestado de residência: %s\nTrata dos documentos na Administração do bairro, no Governo Provincial ou no Tribunal." % ["✓" if Net.me.get("docs", {}).get("bi", false) else "—", "✓" if Net.me.get("docs", {}).get("registo", false) else "—", "✓" if Net.me.get("docs", {}).get("residencia", false) else "—"], "administracao", "Ir à Administração")
 		"ajuda": _phone_help()
+		"sorte": _phone_luck()
+		"transferir": _phone_transfer()
 	phone_body.add_child(_button("Fechar o telemóvel", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: phone.visible = false))
 
 
@@ -883,6 +886,104 @@ func _phone_go(_title: String, text: String, venue: String, go_text: String) -> 
 	c.add_child(_button(go_text, "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:" + venue)))
+
+
+## Sorte do dia: grátis, uma vez por dia; o servidor sorteia o prémio.
+func _phone_luck() -> void:
+	var c := _card()
+	c.add_child(_label("Roda a sorte uma vez por dia, de graça. Podes ganhar até 10.000 Kz.", 16, Color.WHITE, FONT_REG, true))
+	if bool(Net.me.get("sorteHoje", false)):
+		c.add_child(_label("Já rodaste hoje. Volta amanhã!", 16, ACCENT, FONT_BOLD, true))
+	else:
+		c.add_child(_button("Rodar a sorte", "target", ACCENT, INK, func() -> void: Net.action("sorte")))
+
+
+## Transferir: dar dinheiro a alguém que está perto (cara a cara).
+func _phone_transfer() -> void:
+	var c := _card()
+	c.add_child(_label("Dá dinheiro a uma pessoa que esteja perto de ti (até 8 m). Entre 100 e 100.000 Kz de cada vez.", 15, Color(1, 1, 1, 0.8), FONT_REG, true))
+	if Auth.is_guest:
+		c.add_child(_label("Precisas de uma conta (Criar conta) para transferir dinheiro.", 15, Color("ffb4a8"), FONT_REG, true))
+		return
+	var me: Variant = Net.entities.get(Net.self_id)
+	var near: Array = []
+	for id: int in Net.entities:
+		if id == Net.self_id or me == null:
+			continue
+		var e: Dictionary = Net.entities[id]
+		if (e.pos as Vector2).distance_to(me.pos) <= 800.0:
+			near.append([id, str(e.name)])
+	if near.is_empty():
+		c.add_child(_label("Não há ninguém perto de ti. Aproxima-te de outro jogador.", 15, ACCENT, FONT_REG, true))
+		return
+	for n: Array in near:
+		var who := str(n[1])
+		var eid := int(n[0])
+		c.add_child(_label(who, 18, Color.WHITE, FONT_BOLD))
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 6)
+		for v: int in [500, 1000, 5000, 10000]:
+			row.add_child(_button(DemoHud._money(v), "plus", ACCENT, INK, func() -> void: Net.action("transfer", str(eid), v)))
+		c.add_child(row)
+
+
+## Falar (como no Vida na Banda): quem está perto ouve; frases rápidas ou escrever.
+const QUICK_PHRASES := ["Bom dia!", "Tudo bem, mano?", "Bué fixe!", "Vamos dar uma volta?", "Kota, uma ajuda?", "Até logo!"]
+var _chat_edit: LineEdit
+
+
+func _open_chat() -> void:
+	_panel("Falar")
+	menu_body.add_child(_label("Quem está perto de ti (15 m) ouve o que dizes.", 13, Color(1, 1, 1, 0.65), FONT_REG, true))
+	var log_box := VBoxContainer.new()
+	log_box.add_theme_constant_override("separation", 4)
+	var lines: Array = Net.chat_log.slice(maxi(0, Net.chat_log.size() - 10))
+	if lines.is_empty():
+		log_box.add_child(_label("Ainda ninguém falou aqui.", 14, Color(1, 1, 1, 0.5), FONT_REG, true))
+	for l: Dictionary in lines:
+		log_box.add_child(_label("%s: %s" % [l.n, l.t], 15, ACCENT if int(l.id) == Net.self_id else Color.WHITE, FONT_REG, true))
+	menu_body.add_child(log_box)
+	var grid := GridContainer.new()
+	grid.columns = 2
+	for ph: String in QUICK_PHRASES:
+		var t := ph
+		grid.add_child(_button(t, "chat", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+			Net.say(t)
+			menu_panel.visible = false))
+	menu_body.add_child(grid)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 6)
+	_chat_edit = LineEdit.new()
+	_chat_edit.placeholder_text = "Escreve aqui…"
+	_chat_edit.max_length = 120
+	_chat_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_chat_edit.custom_minimum_size = Vector2(0, 46)
+	_chat_edit.add_theme_font_override("font", FONT_REG)
+	_chat_edit.add_theme_font_size_override("font_size", 16)
+	WebTextInput.attach(_chat_edit, "text")
+	var send := func(_t: String = "") -> void:
+		if _chat_edit.text.strip_edges() != "":
+			Net.say(_chat_edit.text)
+			_chat_edit.text = ""
+			menu_panel.visible = false
+	_chat_edit.text_submitted.connect(send)
+	row.add_child(_chat_edit)
+	row.add_child(_button("Enviar", "chat", ACCENT, INK, func() -> void: send.call()))
+	menu_body.add_child(row)
+	_close_button()
+
+
+func _open_emotes() -> void:
+	_panel("Gestos")
+	var grid := GridContainer.new()
+	grid.columns = 3
+	for e: Array in [["acenar", "Acenar", "hand"], ["dancar", "Dançar", "person"], ["aplaudir", "Aplaudir", "hand"], ["rir", "Rir", "person"], ["celebrar", "Celebrar", "plus"], ["resmungar", "Resmungar", "minus"]]:
+		var id := str(e[0])
+		grid.add_child(_button(str(e[1]), str(e[2]), ACCENT, INK, func() -> void:
+			Net.emote(id)
+			menu_panel.visible = false))
+	menu_body.add_child(grid)
+	_close_button()
 
 
 func _fetch_stats() -> void:

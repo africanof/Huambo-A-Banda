@@ -104,3 +104,12 @@ ponta-a-ponta com clientes Godot reais).
   Loja, Saúde, Governo (documentos), Ajuda; as apps de sítios levam-te a pé à porta certa do bairro.
 - Minimapa redondo a seguir a personagem, com «N»; tocar abre o bairro todo.
 - Interiores com o passeio e a rua do lado da porta e chão claro à volta.
+
+### Falar, gestos, sorte e transferir (como no Vida na Banda)
+- Falar: quem está a até 15 m ouve; texto limpo no servidor (até 120 letras, sem caracteres de controlo,
+  palavrões tapados), máximo 5 mensagens em 10 s; balão por cima da cabeça; frases rápidas; caixa de texto
+  que funciona no telemóvel. Conta para a missão «Falar com outro jogador».
+- Gestos: acenar, dançar, aplaudir, rir, celebrar, resmungar — animação curta da própria personagem, visível a quem está perto.
+- Sorte do dia (telemóvel): grátis, 1×/dia, prémio sorteado no servidor (até 10.000 Kz), pago uma só vez.
+- Transferir (telemóvel): dar 500–10.000 Kz (limites 100–100.000) a quem está a até 8 m; só contas
+  (convidados não enviam nem recebem); débito antes do crédito, com chaves de idempotência.

@@ -1,4 +1,3 @@
-import { markPlayedToday } from "../game/stats.js";
 import { Room, ServerError, type AuthContext, type Client } from "@colyseus/core";
 import type { Identity } from "../auth/TokenVerifier.js";
 import { getDistrict, type District } from "../game/districts.js";
@@ -6,6 +5,8 @@ import { randomSpawn, sanitizeTarget, step, isWalkable, validatePath, type Mover
 import { SpatialGrid } from "../game/SpatialGrid.js";
 import { GameLoop } from "../game/GameLoop.js";
 import { LifeController, lifeCatalog } from "../game/LifeController.js";
+import { markPlayedToday } from "../game/stats.js";
+import { BurstLimiter, HEAR_RADIUS_CM, sanitizeChat } from "../game/social.js";
 import {
   C2S,
   ErrorCodes,
@@ -14,6 +15,8 @@ import {
   MovePathSchema,
   MoveDirSchema,
   ActionSchema,
+  ChatSchema,
+  EmoteSchema,
   PROTOCOL_VERSION,
   S2C,
   type Appearance,
@@ -51,6 +54,8 @@ export class DistrictRoom extends Room {
   private district!: District;
   private loop!: GameLoop;
   private life?: LifeController;
+  private readonly chatLimiter = new BurstLimiter(5, 10_000);
+  private readonly emoteLimiter = new BurstLimiter(3, 6_000);
   private lifeTimer: NodeJS.Timeout | undefined;
   private persistTimer: NodeJS.Timeout | undefined;
   private readonly players = new Map<number, Player>();
@@ -168,6 +173,28 @@ export class DistrictRoom extends Room {
       p.dy = msg.data.y;
       p.tx = p.ty = null;
       p.path = undefined;
+    });
+
+    // Conversa e gestos: só ouve/vê quem está perto (15 m); texto limpo e com limite por pessoa.
+    this.onMessage(C2S.CHAT, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = ChatSchema.safeParse(raw);
+      if (!p || !msg.success) return;
+      if (!this.chatLimiter.take(p.characterId)) {
+        client.send(S2C.TOAST, { t: "Calma! Estás a falar depressa demais.", ok: false });
+        return;
+      }
+      const text = sanitizeChat(msg.data.t);
+      if (!text) return;
+      const heard = this.sendNear(p, S2C.CHAT, { id: p.eid, n: p.name, t: text });
+      if (heard > 0) this.life?.social(p, "conversar");
+    });
+
+    this.onMessage(C2S.EMOTE, (client: DistrictClient, raw: unknown) => {
+      const p = this.playerOf(client);
+      const msg = EmoteSchema.safeParse(raw);
+      if (!p || !msg.success || !this.emoteLimiter.take(p.characterId)) return;
+      this.sendNear(p, S2C.EMOTE, { id: p.eid, e: msg.data.e });
     });
 
     this.onMessage(C2S.STOP, (client: DistrictClient) => {
@@ -350,6 +377,19 @@ export class DistrictRoom extends Room {
 
   private clientOf(p: Player): DistrictClient | undefined {
     return this.clients.getById(p.sessionId) as DistrictClient | undefined;
+  }
+
+  /** Envia a quem está a até 15 m (e ao próprio). Devolve quantos OUTROS receberam. */
+  private sendNear(from: Player, type: number, payload: unknown): number {
+    let others = 0;
+    for (const client of this.clients as unknown as DistrictClient[]) {
+      const q = this.playerOf(client);
+      if (!q) continue;
+      if (q !== from && Math.hypot(q.x - from.x, q.y - from.y) > HEAR_RADIUS_CM) continue;
+      client.send(type, payload);
+      if (q !== from) others++;
+    }
+    return others;
   }
 
   private playerOf(client: DistrictClient): Player | undefined {

@@ -6,6 +6,8 @@ signal welcomed(welcome: Dictionary)
 signal entities_spawned(entries: Array)
 signal entities_despawned(ids: Array)
 signal snapshot_received(server_time: int, flat: Array)
+signal chat_received(id: int, who: String, text: String)
+signal emote_received(id: int, emote: String)
 signal notice(code: int, text: String)
 signal disconnected(reason: String)
 signal latency_updated(rtt_ms: int)
@@ -38,6 +40,7 @@ func _ready() -> void:
 
 
 var current_district := ""
+var chat_log: Array = [] ## últimas mensagens ouvidas (nesta sala)
 
 
 ## Pedido HTTP simples ao servidor de jogo (GET, JSON). Devolve null se falhar.
@@ -78,6 +81,7 @@ func is_connected_to_world() -> bool:
 func join_district(district: String, spawn: String = "", room_id: String = "") -> String:
 	await Auth.ensure_fresh_token()
 	leave()
+	chat_log.clear()
 	_client.endpoint = AppConfig.server_url
 	_client.auth_token = Auth.access_token
 	var opts := {"v": Protocol.PROTOCOL_VERSION, "district": district}.merged({"spawn": spawn} if spawn != "" else {})
@@ -130,6 +134,17 @@ func action_travel(district: String, how: String) -> void:
 		room.send(Protocol.C2S_ACTION, {"a": "travel", "i": district, "t": how})
 
 
+## Falar: quem está perto ouve (o servidor limpa o texto e limita a pressa).
+func say(text: String) -> void:
+	if room and text.strip_edges() != "":
+		room.send(Protocol.C2S_CHAT, {"t": text.strip_edges().left(120)})
+
+
+func emote(e: String) -> void:
+	if room:
+		room.send(Protocol.C2S_EMOTE, {"e": e})
+
+
 func move_to(world_pos: Vector2) -> void:
 	if room:
 		room.send(Protocol.C2S_MOVE_TO, {"x": roundi(world_pos.x), "y": roundi(world_pos.y)})
@@ -177,6 +192,16 @@ func _on_message(type: Variant, payload: Variant) -> void:
 		Protocol.S2C_NOTICE:
 			if typeof(payload) == TYPE_DICTIONARY:
 				notice.emit(int(payload.get("code", 0)), str(payload.get("msg", "")))
+		Protocol.S2C_CHAT:
+			if typeof(payload) == TYPE_DICTIONARY:
+				var line := {"id": int(payload.get("id", -1)), "n": str(payload.get("n", "")), "t": str(payload.get("t", ""))}
+				chat_log.append(line)
+				if chat_log.size() > 50:
+					chat_log.pop_front()
+				chat_received.emit(line.id, line.n, line.t)
+		Protocol.S2C_EMOTE:
+			if typeof(payload) == TYPE_DICTIONARY:
+				emote_received.emit(int(payload.get("id", -1)), str(payload.get("e", "")))
 
 
 func _on_left(code: int, reason: String) -> void:

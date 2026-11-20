@@ -71,6 +71,11 @@ func _run() -> void:
 		await _travel_loop()
 	if bairro and AppConfig.has_flag("views"):
 		await _views_loop()
+	if bairro and AppConfig.has_flag("social"):
+		var why: String = await _social_loop()
+		if why != "":
+			_finish(false, why)
+			return
 	if bairro and AppConfig.has_flag("portas"):
 		var falhas: Array = await _doors_loop()
 		if not falhas.is_empty():
@@ -78,6 +83,36 @@ func _run() -> void:
 			return
 
 	_finish(true, "")
+
+
+## Dois jogadores perto: cada um fala e faz um gesto; tem de ouvir o outro. Também roda a sorte.
+func _social_loop() -> String:
+	var me_name := str(AppConfig.args.get("name", "eu"))
+	var got_emote := [false]
+	Net.emote_received.connect(func(id: int, _e: String) -> void:
+		if id != Net.self_id:
+			got_emote[0] = true)
+	await get_tree().create_timer(1.0).timeout
+	Net.say("Olá, sou o %s!" % me_name)
+	Net.emote("acenar")
+	var t0 := Time.get_ticks_msec()
+	var heard: Variant = await _wait_for(func() -> Variant:
+		for l: Dictionary in Net.chat_log:
+			if int(l.id) != Net.self_id:
+				return true
+		return false if Time.get_ticks_msec() - t0 > 20000 else null)
+	if not heard:
+		return "não ouvi o outro jogador"
+	await _wait_for(func() -> Variant: return true if got_emote[0] or Time.get_ticks_msec() - t0 > 20000 else null)
+	if not got_emote[0]:
+		return "não vi o gesto do outro jogador"
+	print("[autotest] ouvi: %s" % ", ".join(Net.chat_log.map(func(l: Dictionary) -> String: return "%s: %s" % [l.n, l.t])))
+	var m0 := int(Net.me.get("money", 0))
+	Net.action("sorte")
+	await _wait_for(func() -> Variant: return true if bool(Net.me.get("sorteHoje", false)) else null)
+	print("[autotest] sorte do dia: %+d Kz" % (int(Net.me.get("money", 0)) - m0))
+	await get_tree().create_timer(3.0).timeout # deixa o outro também ouvir
+	return ""
 
 
 ## Como um jogador: toca em cada edifício com nome do bairro (a personagem anda até à porta e entra
@@ -346,7 +381,18 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
+		world.hud._open_phone("sorte")
+		await tree.create_timer(2.0).timeout
+		await _shot("tel_sorte")
 		world.hud.phone.visible = false
+		world.hud._open_chat()
+		await tree.create_timer(2.0).timeout
+		await _shot("falar_painel")
+		world.hud.menu_panel.visible = false
+		Net.say("Bom dia, Huambo! Tudo bem?")
+		Net.emote("dancar")
+		await tree.create_timer(1.5).timeout
+		await _shot("falar_balao")
 	# bordas do bairro: o que se vê para lá dos limites (só paisagem)
 	if AppConfig.has_flag("bordas"):
 		var cam: Camera2D = world.camera

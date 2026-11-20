@@ -76,6 +76,15 @@ func _ready() -> void:
 		if not _travelling:
 			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn"))
 	Net.self_updated.connect(_on_self)
+	# falar e gestos: balão por cima de quem falou / anima quem fez o gesto
+	Net.chat_received.connect(func(id: int, _who: String, text: String) -> void:
+		var c: DemoCharacter = avatars.get(id)
+		if c:
+			c.say(text))
+	Net.emote_received.connect(func(id: int, e: String) -> void:
+		var c: DemoCharacter = avatars.get(id)
+		if c:
+			c.play_emote(e))
 	Net.self_updated.connect(func(_m: Dictionary) -> void: _update_parked_car())
 	for id: int in Net.entities:
 		var e: Dictionary = Net.entities[id]

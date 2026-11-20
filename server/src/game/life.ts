@@ -34,6 +34,8 @@ export interface LifeState {
   birth: Birth | null;
   /** missões do dia (como o «Hoje 0/3» do Vida na Banda) e a sequência de dias completos */
   missions: Missions;
+  /** último dia (Angola) em que rodou a sorte grátis */
+  sorteDay: string | null;
 }
 
 export interface Missions {
@@ -57,6 +59,7 @@ export const MISSIONS: Record<string, { text: string; reward: number }> = {
   servico: { text: "Tratar de um assunto num balcão (saúde, documentos, saldo…)", reward: 500 },
   dormir: { text: "Dormir numa cama (hotel ou casa)", reward: 400 },
   visitar: { text: "Entrar em 3 sítios diferentes", reward: 500 },
+  conversar: { text: "Falar com outro jogador", reward: 300 },
 };
 export const MISSIONS_PER_DAY = 3;
 export const STREAK_BONUS = 1000;
@@ -361,6 +364,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     car: null,
     birth: null,
     missions: emptyMissions(),
+    sorteDay: null,
   };
 }
 
@@ -432,6 +436,7 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
         ? { bairro: r.birth.bairro, pais: r.birth.pais, provincia: String(r.birth.provincia ?? "Huambo") }
         : null,
     missions: sanitizeMissions(r.missions),
+    sorteDay: typeof r.sorteDay === "string" ? r.sorteDay : null,
   };
 }
 
@@ -451,3 +456,22 @@ function sanitizeMissions(raw: unknown): Missions {
   m.lastFullDay = typeof r.lastFullDay === "string" ? r.lastFullDay : null;
   return m;
 }
+
+/** Sorte do dia (grátis, 1×/dia): [probabilidade acumulada, prémio]. Média ≈ 400 Kz. */
+export const SORTE_TABLE: Array<[number, number]> = [
+  [0.35, 0],
+  [0.7, 200],
+  [0.88, 500],
+  [0.97, 1000],
+  [0.995, 2500],
+  [1, 10000],
+];
+export function rollSorte(r: number): number {
+  for (const [p, prize] of SORTE_TABLE) if (r < p) return prize;
+  return 0;
+}
+
+/** Transferências entre jogadores: limites contra abusos. */
+export const TRANSFER_MIN = 100;
+export const TRANSFER_MAX = 100_000;
+export const TRANSFER_NEAR_CM = 800;

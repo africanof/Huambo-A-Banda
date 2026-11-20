@@ -11,6 +11,8 @@ const C2S_STOP := 2
 const C2S_MOVE_PATH := 3
 const C2S_MOVE_DIR := 4
 const C2S_ACTION := 5
+const C2S_CHAT := 6
+const C2S_EMOTE := 7
 
 # Servidor -> Cliente
 const S2C_WELCOME := 100
@@ -20,6 +22,8 @@ const S2C_SNAPSHOT := 103
 const S2C_NOTICE := 104
 const S2C_SELF := 105
 const S2C_TOAST := 106
+const S2C_CHAT := 107
+const S2C_EMOTE := 108
 
 # Códigos de erro de aplicação
 const ERR_PROTOCOL_MISMATCH := 4001

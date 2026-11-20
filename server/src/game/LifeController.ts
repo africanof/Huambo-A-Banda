@@ -30,6 +30,10 @@ import {
   progressMission,
   MISSIONS,
   STREAK_BONUS,
+  rollSorte,
+  TRANSFER_MAX,
+  TRANSFER_MIN,
+  TRANSFER_NEAR_CM,
   sanitizeLife,
   shiftFactor,
   type LifeState,
@@ -52,6 +56,11 @@ export interface LifeActor {
   characterId: string;
   x: number;
   y: number;
+  /** id da entidade na sala (para escolher a quem transferir) */
+  eid?: number;
+  /** conta: "guest:…" para convidados */
+  userId?: string;
+  name?: string;
 }
 
 interface Busy {
@@ -119,6 +128,7 @@ export interface SelfState {
   offer: Offer | null;
   travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number; birth?: boolean } | null;
   birth: { classe: string; pais: string; provincia: string; bairro: string; bairroNome: string; kumbu: number; nova: boolean } | null;
+  sorteHoje: boolean;
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -287,6 +297,12 @@ export class LifeController {
           break;
         case "travel":
           await this.travel(actor, e, msg.i, msg.t);
+          break;
+        case "sorte":
+          await this.sorte(actor, e);
+          break;
+        case "transfer":
+          await this.transfer(actor, e, msg.i, msg.n ?? 0);
           break;
         case "mission_claim":
           await this.claimMission(actor, e, (msg.n ?? 0) - 1);
@@ -632,6 +648,47 @@ export class LifeController {
     }
   }
 
+  /** Algo social aconteceu (ex.: falou e alguém ouviu) → missões. */
+  social(actor: LifeActor, kind: "conversar"): void {
+    const e = this.entries.get(actor);
+    if (!e) return;
+    rollMissions(e.life.missions, this.now(), actor.characterId);
+    const before = e.life.missions.done.join();
+    this.mission(actor, e, kind);
+    if (e.life.missions.done.join() !== before) this.sendSelf(actor);
+  }
+
+  /** Sorte do dia: grátis, uma vez por dia (Angola); o prémio é sorteado aqui no servidor. */
+  private async sorte(actor: LifeActor, e: Entry): Promise<void> {
+    const day = angolaDay(this.now());
+    if (e.life.sorteDay === day) return this.out.toast(actor, "Já rodaste a sorte hoje. Volta amanhã!", false);
+    const prize = rollSorte(this.rand());
+    e.life.sorteDay = day;
+    e.dirty = true;
+    if (prize > 0) e.money = await this.wallets.apply(actor.characterId, prize, "sorte.dia", `sorte:${actor.characterId}:${day}`);
+    this.out.toast(actor, prize > 0 ? `Sorte do dia: ganhaste ${prize.toLocaleString("pt-PT")} Kz!` : "Sorte do dia: hoje não calhou nada. Amanhã há mais!", prize > 0);
+  }
+
+  /** Dar dinheiro a alguém que está perto (cara a cara, como na rua). Convidados não podem. */
+  private async transfer(actor: LifeActor, e: Entry, toEid: string | undefined, amount: number): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para transferir dinheiro precisas de uma conta (não convidado).", false);
+    if (!Number.isInteger(amount) || amount < TRANSFER_MIN || amount > TRANSFER_MAX)
+      return this.out.toast(actor, `Podes transferir entre ${TRANSFER_MIN} e ${TRANSFER_MAX.toLocaleString("pt-PT")} Kz de cada vez.`, false);
+    let target: LifeActor | undefined;
+    for (const a of this.entries.keys()) if (String(a.eid) === toEid && a !== actor) target = a;
+    if (!target) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    if (target.userId?.startsWith("guest:")) return this.out.toast(actor, "Essa pessoa joga como convidado e não pode receber dinheiro.", false);
+    if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM) return this.out.toast(actor, "Aproxima-te da pessoa para lhe dar o dinheiro.", false);
+    const te = this.entries.get(target)!;
+    const op = this.op();
+    // primeiro tira (falha sem dinheiro), depois dá; chaves únicas = não se repete
+    e.money = await this.wallets.apply(actor.characterId, -amount, "transfer.out", `transfer:${actor.characterId}:${op}:out`);
+    te.money = await this.wallets.apply(target.characterId, amount, "transfer.in", `transfer:${actor.characterId}:${op}:in`);
+    this.out.toast(actor, `Deste ${amount.toLocaleString("pt-PT")} Kz a ${target.name ?? "alguém"}.`, true);
+    this.out.toast(target, `${actor.name ?? "Alguém"} deu-te ${amount.toLocaleString("pt-PT")} Kz.`, true);
+    this.sendSelf(target);
+  }
+
   /** Uma ação real conta para a missão do dia (se for uma das de hoje). */
   private mission(actor: LifeActor, e: Entry, kind: string, detail = ""): void {
     const m = e.life.missions;
@@ -705,6 +762,7 @@ export class LifeController {
             nova: e.newborn,
           }
         : null,
+      sorteHoje: e.life.sorteDay === angolaDay(t),
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,

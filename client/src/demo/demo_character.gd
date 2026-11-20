@@ -204,3 +204,75 @@ static func _shadow_texture() -> Texture2D:
 	g.gradient = gr
 	var t := g
 	return t
+
+
+# ------------------------------------------------------------------ falar e gestos
+
+const EMOTE_TEXT := {"acenar": "acena", "dancar": "dança", "aplaudir": "aplaude", "rir": "ri-se", "celebrar": "celebra", "resmungar": "resmunga"}
+var _bubble: PanelContainer
+var _bubble_until := 0
+var _emote_tw: Tween
+
+
+## Balão de fala por cima da cabeça (some ao fim de uns segundos).
+func say(text: String, secs := 6.0) -> void:
+	if _bubble == null:
+		_bubble = PanelContainer.new()
+		var sb := StyleBoxFlat.new()
+		sb.bg_color = Color(1, 1, 1, 0.96)
+		sb.set_corner_radius_all(16)
+		sb.content_margin_left = 12
+		sb.content_margin_right = 12
+		sb.content_margin_top = 6
+		sb.content_margin_bottom = 6
+		sb.shadow_color = Color(0, 0, 0, 0.25)
+		sb.shadow_size = 4
+		_bubble.add_theme_stylebox_override("panel", sb)
+		var l := Label.new()
+		l.add_theme_font_override("font", preload("res://assets/fonts/Inter-SemiBold.otf"))
+		l.add_theme_font_size_override("font_size", 17)
+		l.add_theme_color_override("font_color", Color("2a1d10"))
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_bubble.add_child(l)
+		_bubble.z_index = 60
+		_bubble.z_as_relative = false
+		add_child(_bubble)
+	var lab: Label = _bubble.get_child(0)
+	lab.text = text
+	lab.custom_minimum_size = Vector2(minf(260.0, 14.0 + text.length() * 9.0), 0)
+	_bubble.reset_size()
+	_bubble.position = Vector2(-_bubble.size.x / 2.0, tag.position.y - _bubble.size.y - 8.0)
+	_bubble.visible = true
+	_bubble.modulate.a = 1.0
+	_bubble_until = Time.get_ticks_msec() + int(secs * 1000.0)
+	get_tree().create_timer(secs).timeout.connect(func() -> void:
+		if is_instance_valid(_bubble) and Time.get_ticks_msec() >= _bubble_until - 50:
+			_bubble.visible = false)
+
+
+## Gesto: animação curta do próprio desenho da personagem + legenda.
+func play_emote(e: String) -> void:
+	say("*%s*" % EMOTE_TEXT.get(e, e), 3.0)
+	if _emote_tw:
+		_emote_tw.kill()
+	body.rotation = 0.0
+	var base := body.position
+	_emote_tw = create_tween()
+	match e:
+		"dancar":
+			for i in 6:
+				_emote_tw.tween_property(body, "rotation", 0.12 if i % 2 == 0 else -0.12, 0.22)
+			_emote_tw.tween_property(body, "rotation", 0.0, 0.15)
+		"aplaudir", "celebrar", "rir":
+			var hops := 4 if e == "celebrar" else 3
+			for i in hops:
+				_emote_tw.tween_property(body, "position", base + Vector2(0, -14 if e == "celebrar" else -7), 0.12)
+				_emote_tw.tween_property(body, "position", base, 0.12)
+		"resmungar":
+			for i in 4:
+				_emote_tw.tween_property(body, "position", base + Vector2(5 if i % 2 == 0 else -5, 0), 0.07)
+			_emote_tw.tween_property(body, "position", base, 0.07)
+		_: # acenar
+			_emote_tw.tween_property(body, "rotation", 0.08, 0.2)
+			_emote_tw.tween_property(body, "rotation", -0.05, 0.2)
+			_emote_tw.tween_property(body, "rotation", 0.0, 0.2)
