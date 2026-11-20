@@ -41,6 +41,8 @@ var _needs_panel: PanelContainer
 var _portrait := TextureRect.new()
 var money_label := Label.new()
 var sala_button := Button.new()
+var _home_tab: Button
+var _inside := false
 var needs_button := Button.new()
 var _dock: PanelContainer
 const ACCENT_DARK := Color("b5341f")
@@ -176,7 +178,12 @@ func _ready() -> void:
 	dh.add_theme_constant_override("separation", 4)
 	dock.add_child(dh)
 	dh.add_child(_tab("phone", "Telemóvel", true, func() -> void: _toggle_phone()))
-	dh.add_child(_tab("home", "Casa", false, func() -> void: _open_phone("casa")))
+	_home_tab = _tab("home", "Casa", false, func() -> void:
+		if _inside:
+			Net.action("exit")
+		else:
+			_open_phone("casa"))
+	dh.add_child(_home_tab)
 	dh.add_child(_tab("map", "Mapa", false, func() -> void: _open_map()))
 	dh.add_child(_tab("hand", "Gestos", false, func() -> void: show_toast("Gestos: brevemente.", true)))
 	dh.add_child(_tab("chat", "Falar", false, func() -> void: show_toast("Conversar: brevemente.", true)))
@@ -377,6 +384,24 @@ func set_context(place: Dictionary) -> void:
 	_context = place
 	menu_panel.visible = false
 	_rebuild_actions()
+
+
+## Lá dentro o botão «Casa» passa a «Sair» (como no Vida na Banda).
+func set_inside(on: bool) -> void:
+	_inside = on
+	if _home_tab == null:
+		return
+	_home_tab.text = "Sair" if on else "Casa"
+	_home_tab.icon = DemoIcons.make("door" if on else "home", Color.WHITE, 30)
+
+
+## Faz a ação principal do sítio onde estou (o primeiro botão da barra de ações).
+func use_context() -> void:
+	_rebuild_actions()
+	for b in actions_box.get_children():
+		if b is Button and not b.is_queued_for_deletion():
+			(b as Button).pressed.emit()
+			return
 
 
 func is_busy() -> bool:

@@ -289,6 +289,21 @@ func _views_loop() -> void:
 	await tree.create_timer(6.0).timeout
 	print("[autotest] rua estável: %d fps" % Engine.get_frames_per_second())
 	await _shot("rua_aerea")
+	# bordas do bairro: o que se vê para lá dos limites (só paisagem)
+	if AppConfig.has_flag("bordas"):
+		var cam: Camera2D = world.camera
+		var z0: Vector2 = cam.zoom
+		world._follow = false
+		cam.position_smoothing_enabled = false
+		for e: Array in [["longe", Vector2(0.5, 0.5), 0.22], ["borda_e", Vector2(0.0, 0.5), 0.4], ["borda_s", Vector2(0.5, 1.0), 0.4], ["borda_n", Vector2(0.5, 0.0), 0.4]]:
+			cam.zoom = Vector2.ONE * float(e[2])
+			cam.position = Iso.to_screen(world.view.size * (e[1] as Vector2))
+			await tree.process_frame
+			await tree.create_timer(7.0).timeout
+			await _shot("bairro_" + str(e[0]))
+		cam.zoom = z0
+		cam.position_smoothing_enabled = true
+		world._follow = true
 	for i in 3:
 		world._on_hud_action("rodar")
 		await tree.create_timer(1.2).timeout

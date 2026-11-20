@@ -52,6 +52,7 @@ func _ready() -> void:
 	_minimap_small()
 	minimap.go_to.connect(_on_minimap)
 	hud.add_child(minimap)
+	add_child(decor)
 	if not AppConfig.has_flag("autotest") and not GameHud.guide_seen() and not _lottery_pending():
 		hud.show_guide.call_deferred()
 	# telemóvel na vertical: mais perto, a personagem fica bem visível
@@ -155,6 +156,12 @@ func _process(delta: float) -> void:
 				camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
 		minimap.me = local_char.world_pos
+		if decor.is_active():
+			decor.update(local_char.world_pos, delta)
+		# chegou à estação tocada: abre logo o que se faz ali (como no Vida na Banda)
+		if _pending_station != "" and str(hud._context.get("id", "")) == _pending_station and local_char.world_pos.distance_to(_click_target) < 0.4:
+			_pending_station = ""
+			hud.use_context()
 		minimap.visible = mode3d == "" and _room_center == Vector2.INF
 		if mode3d != "" and view3d:
 			var room := view.interior_at(local_char.world_pos)
@@ -258,6 +265,8 @@ var _bairro_id := ""
 var _lottery_open := false
 static var _show_guide_later := false
 var minimap := Minimap.new()
+var decor := InteriorDecor.new()
+var _pending_station := ""
 
 
 func _lottery_pending() -> bool:
@@ -440,6 +449,13 @@ func _update_inside() -> void:
 		i = view.interior_at(local_char.world_pos)
 	_inside_id = id
 	_room_center = Vector2.INF
+	_pending_station = ""
+	if i.is_empty():
+		decor.clear()
+		hud.set_inside(false)
+	else:
+		decor.build(view, i)
+		hud.set_inside(true)
 	if i.is_empty():
 		if _street_zoom > 0.0:
 			camera.zoom = Vector2(_street_zoom, _street_zoom)
@@ -454,13 +470,24 @@ func _update_inside() -> void:
 		var r: Array = i.rect
 		var rect := Rect2(r[0], r[1], r[2], r[3])
 		local_char.bounds = rect
-		_room_center = Iso.to_screen(rect.get_center()) + Vector2(0, -90)
-		# a sala inteira tem de caber no ecrã (telemóvel na vertical)
-		var room_w := Iso.to_screen(Vector2(rect.size.x, 0)).x - Iso.to_screen(Vector2(0, rect.size.y)).x
-		var fit := get_viewport().get_visible_rect().size.x / (room_w * 1.15)
+		# como no Vida na Banda: a sala enche o ecrã (pela largura e pela altura), com espaço para o HUD
+		var room_id := str(i.get("room", "interior_sala"))
+		var rid := DemoAssets.angle_id(room_id, Iso.rot)
+		var flipped := rid == room_id and Iso.rot % 2 == 1 and DemoAssets.mirrorable(room_id)
+		var ro := DemoAssets.object(rid)
+		var k := float(ro.get("scale", 1.0))
+		var room_px := Vector2(ro.size[0], ro.size[1]) * k if not ro.is_empty() else Vector2(900, 700)
+		var vs := get_viewport().get_visible_rect().size
+		var top_ui := 110.0
+		var bottom_ui := 175.0 if vs.x >= 760.0 else 215.0
+		var fit := minf((vs.x - 40.0) / room_px.x, (vs.y - top_ui - bottom_ui) / room_px.y)
 		if _street_zoom == 0.0:
 			_street_zoom = camera.zoom.x
-		camera.zoom = Vector2.ONE * minf(_street_zoom, fit)
+		camera.zoom = Vector2.ONE * clampf(fit, 0.3, 1.4)
+		# centro da arte da sala (a âncora é o canto da frente, em baixo), ajustado ao espaço livre do HUD
+		var anchor := Vector2(ro.anchor[0], ro.anchor[1]) * k if not ro.is_empty() else room_px
+		var dx := room_px.x / 2.0 - anchor.x
+		_room_center = Iso.to_screen(Iso.front_corner(rect)) + Vector2(-dx if flipped else dx, room_px.y / 2.0 - anchor.y) + Vector2(0, (bottom_ui - top_ui) / 2.0 / camera.zoom.x)
 		var bb := Rect2(Iso.to_screen(rect.position), Vector2.ZERO)
 		for c: Vector2 in [Vector2(rect.end.x, rect.position.y), Vector2(rect.position.x, rect.end.y), rect.end]:
 			bb = bb.expand(Iso.to_screen(c))
@@ -632,7 +659,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			_dragging = false
 		else:
 			if not _dragging and _press_pos != Vector2.INF and _touches.size() <= 1:
-				request_move(Iso.to_world(get_global_mouse_position()))
+				var st := decor.hit(get_global_mouse_position()) if decor.is_active() else {}
+				if not st.is_empty():
+					_go_station(st)
+				else:
+					request_move(Iso.to_world(get_global_mouse_position()))
 			_press_pos = Vector2.INF
 			_dragging = false
 		return
@@ -660,9 +691,24 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 ## Andar até um ponto (metros). Com caminho (A*) à volta dos edifícios; o servidor valida cada troço.
+## Tocar numa estação lá dentro: anda até lá e abre o que se faz ali; a porta faz sair.
+func _go_station(p: Dictionary) -> void:
+	if str(p.kind) == "exit":
+		Net.action("exit")
+		return
+	var at := Vector2(p.at[0], p.at[1])
+	if local_char and local_char.world_pos.distance_to(at) < float(p.radius) * 0.8:
+		hud.set_context(p)
+		hud.use_context()
+		return
+	request_move(at)
+	_pending_station = str(p.id)
+
+
 func request_move(target_m: Vector2) -> void:
 	if local_char == null or hud.is_busy():
 		return
+	_pending_station = ""
 	_follow = true
 	var route := _find_path(local_char.world_pos, target_m)
 	if route.size() >= 2 and Net.room:

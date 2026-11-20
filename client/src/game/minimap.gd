@@ -46,6 +46,8 @@ func _draw() -> void:
 	draw_colored_polygon(g, Color("8a5a3c") if str(view.data.ground[0].kind) == "terra" else Color("4f7a3a"))
 	# ruas
 	for r: Dictionary in view.data.get("roads", []):
+		if bool(r.get("fora", false)):
+			continue # para lá do bairro: só paisagem
 		var pts := PackedVector2Array()
 		for q: Array in r.pts:
 			pts.append(_p(Vector2(q[0], q[1])))

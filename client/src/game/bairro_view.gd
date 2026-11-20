@@ -53,6 +53,7 @@ func build(bairro_id: String) -> bool:
 	places = data.places
 	osm = bool(data.get("osm", false))
 	if osm:
+		_extend_roads()
 		_build_road_mask()
 	if osm:
 		_build_flat_ground()
@@ -233,6 +234,33 @@ func _build_flat_ground() -> void:
 	ground.add_child(p)
 
 
+## Como no Vida na Banda: as ruas que chegam ao limite do bairro continuam lá para fora até ao
+## horizonte (só paisagem: a personagem fica sempre dentro do bairro), com casario à volta.
+func _extend_roads() -> void:
+	var roads: Array = (data.get("roads", []) as Array).filter(func(r: Dictionary) -> bool: return not bool(r.get("fora", false)))
+	var inner := Rect2(Vector2.ZERO, size)
+	var extra: Array = []
+	for r: Dictionary in roads:
+		var pts: Array = r.pts
+		if pts.size() < 2:
+			continue
+		for end in [[0, 1], [pts.size() - 1, pts.size() - 2]]:
+			var p := Vector2(pts[end[0]][0], pts[end[0]][1])
+			var q := Vector2(pts[end[1]][0], pts[end[1]][1])
+			var to_edge := minf(minf(p.x, size.x - p.x), minf(p.y, size.y - p.y))
+			if to_edge > 5.0 or p.distance_to(q) < 0.5:
+				continue
+			var dir := (p - q).normalized()
+			# segue para fora: se a rua corre ao longo da borda, vira para o lado de fora mais próximo
+			var out := dir
+			if inner.grow(-0.5).has_point(p + dir * 6.0):
+				out = Vector2(-1, 0) if p.x < 5.0 else (Vector2(1, 0) if size.x - p.x < 5.0 else (Vector2(0, -1) if p.y < 5.0 else Vector2(0, 1)))
+			var far := p + out * (MARGIN + 12.0)
+			var mid := p + out * (MARGIN * 0.45) + out.orthogonal() * sin(p.x + p.y) * 3.0 # curva suave
+			extra.append({"name": str(r.get("name", "")), "paved": r.paved, "w": r.w, "pts": [[p.x, p.y], [mid.x, mid.y], [far.x, far.y]], "fora": true})
+	data["roads"] = roads + extra
+
+
 ## Grelha de 1 m com ruas e passeios (só para decidir onde há casario à volta).
 func _build_road_mask() -> void:
 	_mask_o = Vector2(-MARGIN, -MARGIN)
@@ -349,10 +377,10 @@ func _build_surroundings() -> void:
 					_add_object(id, Iso.to_screen(Iso.front_corner(lot)))
 				else:
 					_add_object(trees[rng.randi() % trees.size()], Iso.to_screen(lot.get_center()))
-				x += lot.size.x + rng.randf_range(1.0, 3.0)
+				x += lot.size.x + rng.randf_range(0.6, 1.6)
 			else:
-				x += 2.0
-		y += 2.0
+				x += 1.5
+		y += 1.5
 
 
 ## Um lote só leva casa se for todo terra (não invade ruas nem passeios).

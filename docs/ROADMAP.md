@@ -84,3 +84,13 @@ ponta-a-ponta com clientes Godot reais).
   própria arte isométrica (shader), árvores/pessoas em painéis; joystick ou WASD; arrastar para olhar (tecla V).
 - Viagens na primeira pessoa: candongueiro (200 Kz, 9 s), kupapata (500 Kz, 13 s) e táxi (1.500 Kz, 9 s), vistas de
   dentro do veículo com a beira da estrada do Huambo e outdoors com anúncios do jogo (kit de IA com >100 objetos).
+
+### Interiores e bordas como no Vida na Banda
+- Lá dentro a sala enche o ecrã (cabe pela largura e pela altura, com espaço para o HUD) sobre fundo escuro.
+- Marcadores a saltitar por cima de cada sítio onde se faz alguma coisa (balcão, cama, quadro, «Sair»), com ícone e
+  nome; tocar leva-te lá e abre logo a ação (o servidor continua a validar).
+- Pessoal da casa no posto (tia da cantina, enfermeira, bancária, professora, rececionista…) que cumprimenta quem chega.
+- Nome da divisão no chão numa plaquinha escura; o botão «Casa» passa a «Sair».
+- Sem arte de um lado, as salas e casas mostram a arte espelhada nas vistas de 90°/270° (nunca o que tem letras).
+- Bordas do bairro: as ruas continuam para lá do limite até ao horizonte, com casario cerrado à volta
+  (só paisagem; a personagem não sai do bairro).
