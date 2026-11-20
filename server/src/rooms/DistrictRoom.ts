@@ -7,7 +7,7 @@ import { GameLoop } from "../game/GameLoop.js";
 import { LifeController, lifeCatalog } from "../game/LifeController.js";
 import { markPlayedToday } from "../game/stats.js";
 import { BurstLimiter, HEAR_RADIUS_CM, sanitizeChat } from "../game/social.js";
-import { setOffline, setOnline } from "../game/presence.js";
+import { setOffline, setOnline, whereIs } from "../game/presence.js";
 import {
   C2S,
   ErrorCodes,
@@ -48,6 +48,7 @@ const AOI_CELL = 400;
 const AOI_RADIUS_CELLS = 2;
 const KICK_CHANNEL = "huambo:kick-user";
 const GROUP_CHANNEL = "huambo:group-chat";
+const SMS_CHANNEL = "huambo:sms";
 
 export class DistrictRoom extends Room {
   // Proteção anti-flood nativa do Colyseus: acima disto o cliente é desligado.
@@ -59,6 +60,14 @@ export class DistrictRoom extends Room {
   private readonly chatLimiter = new BurstLimiter(5, 10_000);
   private readonly emoteLimiter = new BurstLimiter(3, 6_000);
   private readonly radioLimiter = new BurstLimiter(1, 120_000);
+
+  /** SMS vindo de qualquer sala: entrega se a pessoa está nesta. */
+  private readonly onSms = (m: { to: string; from: string; text: string }): void => {
+    for (const client of this.clients as unknown as DistrictClient[]) {
+      const q = this.playerOf(client);
+      if (q && q.characterId === m.to) client.send(S2C.SMS, { n: m.from, t: m.text });
+    }
+  };
 
   /** Mensagem do grupo vinda de qualquer sala: entrega aos membros que estão nesta. */
   private readonly onGroupMessage = (m: { gid: string; gname: string; id: number; n: string; t: string }): void => {
@@ -107,6 +116,23 @@ export class DistrictRoom extends Room {
         {
           self: (actor, state) => this.clientOf(actor as Player)?.send(S2C.SELF, state),
           toast: (actor, text, ok) => this.clientOf(actor as Player)?.send(S2C.TOAST, { t: text, ok }),
+          // mudou de roupa: grava e mostra a quem o vê
+          appearance: (actor, top) => {
+            const p = actor as Player;
+            p.appearance = { ...p.appearance, top };
+            const client = this.clientOf(p);
+            if (client?.auth) void services().characters.update(client.auth, { appearance: p.appearance }).catch((err) => log().warn({ err }, "appearance save"));
+            for (const c of this.clients as unknown as DistrictClient[]) {
+              const q = this.playerOf(c);
+              if (q && (q === p || q.known.has(p.eid))) c.send(S2C.APPEARANCE, { id: p.eid, a: p.appearance });
+            }
+          },
+          // SMS: entregue em qualquer sala do servidor (canal de presença)
+          sms: (to, from, text) => {
+            if (!whereIs(to)) return false;
+            void this.presence.publish(SMS_CHANNEL, { to, from, text });
+            return true;
+          },
           // entrar/sair de um edifício: a posição saltou; para o movimento e atualiza a área de interesse
           moved: (actor) => {
             const p = actor as Player;
@@ -243,6 +269,7 @@ export class DistrictRoom extends Room {
 
     void this.presence.subscribe(KICK_CHANNEL, this.onKick);
     void this.presence.subscribe(GROUP_CHANNEL, this.onGroupMessage);
+    void this.presence.subscribe(SMS_CHANNEL, this.onSms);
     log().info({ roomId: this.roomId, district: district.id }, "district room created");
   }
 
@@ -338,6 +365,7 @@ export class DistrictRoom extends Room {
     clearInterval(this.lifeTimer);
     await this.presence.unsubscribe(KICK_CHANNEL, this.onKick);
     await this.presence.unsubscribe(GROUP_CHANNEL, this.onGroupMessage);
+    await this.presence.unsubscribe(SMS_CHANNEL, this.onSms);
     await this.flushPersistence(true);
   }
 

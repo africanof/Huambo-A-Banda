@@ -42,6 +42,9 @@ import {
   DRY_FACTOR,
   AMBICOES,
   WEDDING_PRICE,
+  ROUPAS,
+  SMS_PRICE,
+  CONQUISTAS,
   CURSOS,
   UNI_LESSONS,
   UNI_PRICE,
@@ -78,6 +81,8 @@ import {
 import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
+import { eventsAt, hasEvent } from "./events.js";
+import { queueSms, takeSms } from "./sms.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
@@ -94,6 +99,7 @@ export interface LifeActor {
   /** conta: "guest:…" para convidados */
   userId?: string;
   name?: string;
+  appearance?: { top?: number };
 }
 
 interface Busy {
@@ -147,6 +153,10 @@ export interface LifeOutput {
   toast(actor: LifeActor, text: string, ok: boolean): void;
   /** posição mudou por teletransporte (entrar/sair): a sala atualiza grelha e movimento */
   moved?(actor: LifeActor): void;
+  /** mudou de roupa: a sala grava a aparência e avisa quem a vê */
+  appearance?(actor: LifeActor, top: number): void;
+  /** SMS para uma personagem (em qualquer sala); devolve true se foi entregue a alguém ligado */
+  sms?(toCharacterId: string, from: string, text: string): boolean;
 }
 
 const RESIDENTIAL = new Set(Object.keys(HOUSING));
@@ -188,6 +198,10 @@ export interface SelfState {
   weddingReq: { name: string } | null;
   negocio: { tipo: string; name: string; nivel: number; perHour: number; pendente: number; melhorar: number | null; maxHoras: number } | null;
   imoveis: Entry["imoveis"] | null;
+  roupas: number[];
+  conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
+  eventos: ReturnType<typeof eventsAt>;
+  visitados: number;
   uni: { curso: string | null; cursoNome: string | null; aulas: number; total: number; licenciaturas: string[]; preco: number };
   doenca: { id: string; name: string; texto: string } | null;
   roubo: { amount: number; recuperavel: boolean } | null;
@@ -257,6 +271,10 @@ export class LifeController {
     }
     rollDay(life, this.now());
     rollMissions(life.missions, this.now(), actor.characterId);
+    if (!life.visitados.includes(this.district.id)) life.visitados.push(this.district.id);
+    // a cor escolhida ao criar a personagem também é roupa dela
+    const top = actor.appearance?.top;
+    if (typeof top === "number" && top >= 0 && !life.roupas.includes(top)) life.roupas.push(top);
     const money = await this.wallets.balance(actor.characterId);
     const bank = await this.bank.balance(actor.characterId);
     const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null, travel: null, newborn: !stored };
@@ -268,6 +286,8 @@ export class LifeController {
     await this.refreshHomes(actor, e);
     // voltou a entrar dentro de uma casa que já não é sua (renda acabou): vai para a rua
     this.evictIfNeeded(actor, e);
+    // SMS que chegaram enquanto estava desligado
+    for (const m of takeSms(actor.characterId)) this.out.toast(actor, `SMS de ${m.from}: «${m.text}»`, true);
     this.sendSelf(actor);
   }
 
@@ -408,6 +428,18 @@ export class LifeController {
           break;
         case "grupo_sair":
           await this.groupLeave(actor, e);
+          break;
+        case "roupa_comprar":
+          await this.buyClothes(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "roupa_vestir":
+          this.wear(actor, e, (msg.n ?? 0) - 2);
+          break;
+        case "conquistas_recolher":
+          await this.claimAchievements(actor, e);
+          break;
+        case "sms":
+          this.sendSms(actor, e, (msg.n ?? 0) - 1, msg.s);
           break;
         case "muxima_publicar":
           await this.post(actor, msg.s);
@@ -697,7 +729,8 @@ export class LifeController {
     if (sv.credit) e.life.phoneCredit += sv.credit;
     const n = e.life.needs;
     const c = (v: number) => Math.max(0, Math.min(100, v));
-    e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0)), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
+    const boost = (sv.venue === "igreja" && hasEvent(this.now(), "missa")) || (sv.venue === "discoteca" && hasEvent(this.now(), "sexta")) ? 2 : 1;
+    e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0) * boost), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
     e.dirty = true;
     this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
     this.mission(actor, e, "servico");
@@ -828,7 +861,8 @@ export class LifeController {
     } else if (kind === "biscato") {
       const b = BISCATOS[item ?? ""];
       if (!b) return;
-      const pay = Math.round((b.pay[0] + (b.pay[1] - b.pay[0]) * this.rand()) / 10) * 10;
+      const sexta = hasEvent(this.now(), "sexta") ? 1.25 : 1;
+      const pay = Math.round(((b.pay[0] + (b.pay[1] - b.pay[0]) * this.rand()) * sexta) / 10) * 10;
       e.money = await this.wallets.apply(actor.characterId, pay, `biscato.${item}`, `biscato:${actor.characterId}:${e.life.biscatosDay}:${e.life.biscatos}`);
       e.life.biscatos += 1;
       e.life.needs = { ...n, energy: Math.max(0, n.energy - b.energy), hunger: Math.max(0, n.hunger - 4) };
@@ -873,6 +907,84 @@ export class LifeController {
       e.life.needs = { ...n, energy: Math.min(100, n.energy + 40), mood: Math.max(0, n.mood - 15) };
       this.out.toast(actor, "Dormiste no banco da paragem. Estás com o corpo dorido.", true);
     }
+  }
+
+  // ---------------------------------------------------------------- roupa, SMS, conquistas
+
+  /** Roupa de fardo: compra-se nas bancas do mercado e fica no guarda-roupa. */
+  private async buyClothes(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const r = ROUPAS[idx];
+    if (!r) return this.out.toast(actor, "Essa roupa não existe.", false);
+    const inside = interiorAt(this.district, actor.x, actor.y);
+    if (!(this.near(actor, (p) => p.kind === "door" && p.venue === "mercado", 2) || inside?.venue === "mercado"))
+      return this.out.toast(actor, "Roupa de fardo compra-se nas bancas do mercado.", false);
+    if (e.life.roupas.includes(r.hue)) return this.wear(actor, e, r.hue);
+    e.money = await this.wallets.apply(actor.characterId, -r.price, "roupa.compra", `roupa:${actor.characterId}:${r.hue}`);
+    e.life.roupas.push(r.hue);
+    e.dirty = true;
+    this.out.toast(actor, `Compraste: ${r.name} (−${r.price.toLocaleString("pt-PT")} Kz).`, true);
+    this.wear(actor, e, r.hue);
+  }
+
+  private wear(actor: LifeActor, e: Entry, hue: number): void {
+    if (!e.life.roupas.includes(hue)) return this.out.toast(actor, "Essa roupa não é tua. Compra no mercado.", false);
+    this.out.appearance?.(actor, hue);
+    this.out.toast(actor, hue < 0 ? "Vestiste a tua roupa de sempre." : `Vestiste: ${ROUPAS.find((x) => x.hue === hue)?.name ?? "roupa nova"}.`, true);
+  }
+
+  /** SMS a um amigo (em qualquer bairro), pago com saldo do telemóvel. */
+  private sendSms(actor: LifeActor, e: Entry, idx: number, raw: string | undefined): void {
+    const f = e.life.friends[idx];
+    if (!f) return this.out.toast(actor, "Escolhe um amigo da lista.", false);
+    const text = sanitizeChat(raw)?.slice(0, 120);
+    if (!text) return this.out.toast(actor, "Escreve a mensagem.", false);
+    if (e.life.phoneCredit < SMS_PRICE) return this.out.toast(actor, "Sem saldo no telemóvel. Carrega na loja de telecomunicações.", false);
+    e.life.phoneCredit -= SMS_PRICE;
+    e.dirty = true;
+    const online = this.out.sms?.(f.id, actor.name ?? "Amigo", text) ?? false;
+    if (!online) queueSms(f.id, actor.name ?? "Amigo", text, this.now());
+    this.out.toast(actor, online ? `SMS enviado a ${f.name}.` : `SMS enviado a ${f.name} (vai ler quando entrar).`, true);
+  }
+
+  /** Conquistas: verificadas no estado real; cada uma paga um prémio uma só vez e sai no jornal. */
+  private checkAchievements(actor: LifeActor, e: Entry): void {
+    const L = e.life;
+    const has: Record<string, boolean> = {
+      primeiro_emprego: !!L.jobId,
+      casa_propria: e.homes.some((h) => h.tenure === "buy"),
+      licenciado: L.uni.licenciaturas.length > 0,
+      casado: !!L.partner?.married,
+      empresario: !!L.negocio,
+      agricultor: L.colhidoTotal >= 100,
+      viajante: L.visitados.length >= 10,
+      milionario: e.money + e.bank >= 1_000_000,
+      popular: L.friends.length >= 5,
+      elegante: L.roupas.filter((h) => h >= 0).length >= 4,
+    };
+    for (const [id, ok] of Object.entries(has)) {
+      if (!ok || L.conquistas.includes(id)) continue;
+      const c = CONQUISTAS[id]!;
+      L.conquistas.push(id);
+      e.dirty = true;
+      this.out.toast(actor, `Conquista: ${c.name}! Recolhe o prémio no Perfil.`, true);
+      recordNews("missoes", this.district.name, `${actor.name ?? "Alguém"} ganhou a conquista «${c.name}».`, this.now());
+    }
+  }
+
+  /** Recolher os prémios das conquistas ganhas (cada prémio paga-se uma só vez). */
+  private async claimAchievements(actor: LifeActor, e: Entry): Promise<void> {
+    const L = e.life;
+    const due = L.conquistas.filter((id) => !L.conquistasPagas.includes(id));
+    if (!due.length) return this.out.toast(actor, "Não tens prémios de conquistas por recolher.", false);
+    let total = 0;
+    for (const id of due) {
+      const c = CONQUISTAS[id]!;
+      e.money = await this.wallets.apply(actor.characterId, c.reward, `conquista.${id}`, `conquista:${actor.characterId}:${id}`);
+      L.conquistasPagas.push(id);
+      total += c.reward;
+    }
+    e.dirty = true;
+    this.out.toast(actor, `Prémios das conquistas: +${total.toLocaleString("pt-PT")} Kz.`, true);
   }
 
   // ---------------------------------------------------------------- Muxima
@@ -1198,7 +1310,8 @@ export class LifeController {
     if (!(this.near(actor, (p) => p.kind === "door" && p.venue === "mercado", 2) || inside?.venue === "mercado"))
       return this.out.toast(actor, "A colheita vende-se no mercado do bairro.", false);
     let total = 0;
-    for (const [k, kg] of Object.entries(e.life.colheita)) total += Math.round(kg * (CROPS[k]?.price ?? 0));
+    const feira = hasEvent(this.now(), "feira") ? 1.3 : 1; // sábado: dia de feira
+    for (const [k, kg] of Object.entries(e.life.colheita)) total += Math.round(kg * (CROPS[k]?.price ?? 0) * feira);
     if (total <= 0) return this.out.toast(actor, "Não tens colheita para vender.", false);
     e.money = await this.wallets.apply(actor.characterId, total, "lavra.venda", `lavra-venda:${actor.characterId}:${this.op()}`);
     e.life.colheita = {};
@@ -1442,7 +1555,7 @@ export class LifeController {
   private async sorte(actor: LifeActor, e: Entry): Promise<void> {
     const day = angolaDay(this.now());
     if (e.life.sorteDay === day) return this.out.toast(actor, "Já rodaste a sorte hoje. Volta amanhã!", false);
-    const prize = rollSorte(this.rand());
+    const prize = rollSorte(this.rand()) * (hasEvent(this.now(), "aniversario") ? 2 : 1);
     e.life.sorteDay = day;
     e.dirty = true;
     if (prize > 0) e.money = await this.wallets.apply(actor.characterId, prize, "sorte.dia", `sorte:${actor.characterId}:${day}`);
@@ -1509,6 +1622,7 @@ export class LifeController {
   sendSelf(actor: LifeActor): void {
     const e = this.entries.get(actor);
     if (!e) return;
+    this.checkAchievements(actor, e);
     if (actor.name && !actor.userId?.startsWith("guest:")) noteWealth(actor.characterId, actor.name, e.money + e.bank, this.now());
     const r = (v: number) => Math.round(v);
     const t = this.now();
@@ -1581,6 +1695,10 @@ export class LifeController {
           }
         : null,
       imoveis: e.imoveis ?? null,
+      roupas: [...e.life.roupas],
+      conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
+      eventos: eventsAt(t),
+      visitados: e.life.visitados.length,
       uni: { curso: e.life.uni.curso, cursoNome: e.life.uni.curso ? CURSOS[e.life.uni.curso]?.name ?? null : null, aulas: e.life.uni.aulas, total: UNI_LESSONS, licenciaturas: [...e.life.uni.licenciaturas], preco: UNI_PRICE },
       doenca: e.life.doenca ? { id: e.life.doenca.id, name: DOENCAS[e.life.doenca.id]?.name ?? e.life.doenca.id, texto: DOENCAS[e.life.doenca.id]?.texto ?? "" } : null,
       roubo: e.life.roubo && !e.life.roubo.recovered && t - e.life.roubo.at <= ROUBO_RECOVER_MS ? { amount: e.life.roubo.amount, recuperavel: true } : null,

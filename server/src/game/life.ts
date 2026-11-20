@@ -65,6 +65,13 @@ export interface LifeState {
   doenca: { id: string; since: number } | null;
   /** último assalto (para recuperar parte na esquadra) */
   roubo: { amount: number; at: number; recovered: boolean } | null;
+  /** roupa comprada (matiz da peça de cima, −1 = a original) */
+  roupas: number[];
+  /** bairros por onde já passou (conquista «Viajante») */
+  visitados: string[];
+  /** conquistas já ganhas e as que já pagaram o prémio */
+  conquistas: string[];
+  conquistasPagas: string[];
   /** negócio próprio (Empresas) */
   negocio: { tipo: string; nivel: number; lastCollect: number; investido: number } | null;
 }
@@ -420,6 +427,10 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     partner: null,
     negocio: null,
     uni: { curso: null, aulas: 0, licenciaturas: [] },
+    roupas: [-1],
+    visitados: [],
+    conquistas: [],
+    conquistasPagas: [],
     doenca: null,
     roubo: null,
   };
@@ -523,6 +534,10 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
       aulas: Math.round(num(r.uni?.aulas, 0, 0, UNI_LESSONS)),
       licenciaturas: Array.isArray(r.uni?.licenciaturas) ? r.uni.licenciaturas.filter((x): x is string => typeof x === "string" && x in CURSOS) : [],
     },
+    roupas: Array.isArray(r.roupas) ? [...new Set([-1, ...r.roupas.filter((h): h is number => typeof h === "number" && Number.isInteger(h) && h >= -1 && h <= 359)])].slice(0, 40) : [-1],
+    visitados: Array.isArray(r.visitados) ? r.visitados.filter((x): x is string => typeof x === "string").slice(0, 60) : [],
+    conquistas: Array.isArray(r.conquistas) ? r.conquistas.filter((x): x is string => typeof x === "string" && x in CONQUISTAS) : [],
+    conquistasPagas: Array.isArray(r.conquistasPagas) ? r.conquistasPagas.filter((x): x is string => typeof x === "string" && x in CONQUISTAS) : [],
     doenca: r.doenca && typeof r.doenca.id === "string" && r.doenca.id in DOENCAS && typeof r.doenca.since === "number" ? { id: r.doenca.id, since: r.doenca.since } : null,
     roubo:
       r.roubo && typeof r.roubo.amount === "number" && typeof r.roubo.at === "number"
@@ -691,3 +706,36 @@ export const DOENCAS: Record<string, { name: string; texto: string; energy: numb
 export const ROUBO_MIN_WALLET = 20_000;
 export const ROUBO_MAX = 10_000;
 export const ROUBO_RECOVER_MS = 30 * 60_000;
+
+// ---------------------------------------------------------------- roupa (fardo do mercado)
+
+/** Roupa de fardo vendida nas bancas do mercado: muda a cor da peça de cima (matiz em graus). */
+export const ROUPAS: Array<{ hue: number; name: string; price: number }> = [
+  { hue: 0, name: "Camisa vermelha", price: 1500 },
+  { hue: 29, name: "Camisa laranja", price: 1500 },
+  { hue: 54, name: "Camisa amarela", price: 1500 },
+  { hue: 119, name: "Camisa verde", price: 1500 },
+  { hue: 180, name: "Camisa azul-turquesa", price: 1500 },
+  { hue: 223, name: "Camisa azul", price: 1500 },
+  { hue: 270, name: "Camisa roxa", price: 1500 },
+  { hue: 317, name: "Camisa cor-de-rosa", price: 1500 },
+];
+
+// ---------------------------------------------------------------- SMS
+
+export const SMS_PRICE = 20; // saldo do telemóvel por mensagem
+
+// ---------------------------------------------------------------- conquistas
+
+export const CONQUISTAS: Record<string, { name: string; text: string; reward: number }> = {
+  primeiro_emprego: { name: "Primeiro emprego", text: "Arranjaste o primeiro emprego", reward: 1000 },
+  casa_propria: { name: "Casa própria", text: "Compraste a tua casa", reward: 3000 },
+  licenciado: { name: "Licenciado/a", text: "Acabaste um curso superior", reward: 3000 },
+  casado: { name: "Casado/a", text: "Casaste na igreja", reward: 2000 },
+  empresario: { name: "Empresário/a", text: "Abriste o teu negócio", reward: 2000 },
+  agricultor: { name: "Agricultor/a", text: "Colheste 100 kg na lavra", reward: 1500 },
+  viajante: { name: "Viajante", text: "Passaste por 10 bairros do Huambo", reward: 2000 },
+  milionario: { name: "Milionário/a", text: "Juntaste 1.000.000 Kz", reward: 5000 },
+  popular: { name: "Popular", text: "Tens 5 amigos", reward: 1500 },
+  elegante: { name: "Elegante", text: "Tens 4 roupas no guarda-roupa", reward: 1000 },
+};

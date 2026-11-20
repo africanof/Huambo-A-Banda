@@ -163,3 +163,13 @@ ponta-a-ponta com clientes Godot reais).
 - Muxima: publicações de até 160 letras com o bairro, «gostos» (um por pessoa), 5 por hora; Supabase
   game_posts/game_post_likes.
 - Praia e kart do Vida na Banda não existem no Huambo (planalto, sem mar nem kartódromo): ficam de fora.
+
+### Guarda-roupa, SMS, Conquistas e Eventos da cidade
+- Roupa de fardo: 8 camisas de cor (1.500 Kz) nas bancas do mercado; guarda-roupa com tudo o que compraste
+  (a cor escolhida ao nascer já é tua); vestir é de graça; a mudança é gravada e quem está perto vê-a (S2C APPEARANCE).
+- SMS: mensagens privadas aos amigos em qualquer bairro (20 Kz de saldo do telemóvel); quem está desligado
+  recebe quando entrar (canal de presença + caixa em memória).
+- Conquistas (10): primeiro emprego, casa própria, licenciado, casado, empresário, agricultor, viajante
+  (10 bairros), milionário, popular, elegante; prémio a recolher uma só vez no Perfil; notícia no jornal.
+- Eventos da cidade: sábado dia de feira (colheita +30%), domingo missa (igreja anima o dobro), sexta à noite
+  (biscatos +25%, discoteca anima o dobro), 8 de agosto aniversário do Huambo (sorte a dobrar).

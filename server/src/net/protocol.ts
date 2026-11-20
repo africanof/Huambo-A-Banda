@@ -50,6 +50,10 @@ export const S2C = {
   EMOTE: 108,
   /** dedicatória na rádio: { n, t } (todo o bairro ouve) */
   RADIO: 109,
+  /** alguém mudou de roupa: { id, a } (aparência nova) */
+  APPEARANCE: 110,
+  /** SMS de um amigo: { n, t } */
+  SMS: 111,
 } as const;
 
 /** Códigos de erro de aplicação (enviados em NOTICE ou como motivo de recusa). */
@@ -144,6 +148,11 @@ export const ActionSchema = z
       "imoveis",
       // universidade e Muxima
       "uni_curso",
+      // roupa e SMS
+      "roupa_comprar",
+      "roupa_vestir",
+      "sms",
+      "conquistas_recolher",
       "muxima_publicar",
       "muxima_gosto",
     ]),

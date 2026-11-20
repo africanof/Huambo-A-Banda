@@ -784,7 +784,7 @@ const APPS := [
 	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
-	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["ajuda", "Ajuda", "more", "d"],
+	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -821,6 +821,7 @@ func _rebuild_phone() -> void:
 		"lavras": _phone_lavras()
 		"negocio": _phone_business()
 		"muxima": _phone_muxima()
+		"roupa": _phone_wardrobe()
 		"imoveis": _phone_housing()
 		"ambicao": _phone_ambition()
 		"ricos": _phone_rich()
@@ -861,6 +862,8 @@ func _phone_start() -> void:
 	row.add_child(_label("%s Kz" % DemoHud._money(int(Net.me.get("money", 0))), 18, ACCENT, FONT_BOLD))
 	c.add_child(row)
 	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Color("7ee08a"), FONT))
+	for ev: Dictionary in Net.me.get("eventos", []):
+		c.add_child(_label("Hoje no Huambo: %s — %s" % [ev.name, ev.texto], 14, ACCENT, FONT_BOLD, true))
 	if Time.get_ticks_msec() - _stats_at > 30000:
 		_stats_at = Time.get_ticks_msec()
 		_fetch_stats()
@@ -1051,6 +1054,55 @@ func _phone_health() -> void:
 	c.add_child(_button("Ir à farmácia", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:farmacia")))
+
+
+## SMS recebidos (aparecem como aviso e ficam na app Amigos).
+var sms_log: Array = []
+
+
+func on_sms(who: String, text: String) -> void:
+	sms_log.append([who, text])
+	if sms_log.size() > 20:
+		sms_log.pop_front()
+	show_toast("SMS de %s: «%s»" % [who, text], true)
+
+
+## Guarda-roupa: roupa de fardo comprada no mercado; vestir é de graça.
+const WARDROBE := [[0, "Camisa vermelha"], [29, "Camisa laranja"], [54, "Camisa amarela"], [119, "Camisa verde"], [180, "Camisa azul-turquesa"], [223, "Camisa azul"], [270, "Camisa roxa"], [317, "Camisa cor-de-rosa"]]
+
+
+func _phone_wardrobe() -> void:
+	var mine: Array = Net.me.get("roupas", [-1])
+	var c := _card()
+	c.add_child(_label("O teu guarda-roupa", 18, ACCENT, FONT_BOLD))
+	var row := HFlowContainer.new()
+	row.add_theme_constant_override("h_separation", 6)
+	row.add_theme_constant_override("v_separation", 6)
+	for h: Variant in mine:
+		var hue := int(h)
+		var name := "Roupa de sempre" if hue < 0 else "Camisa (%d°)" % hue
+		for w: Array in WARDROBE:
+			if int(w[0]) == hue:
+				name = str(w[1])
+		var b := _button("Vestir: " + name, "shirt", Color.from_hsv(hue / 360.0, 0.55, 0.8) if hue >= 0 else Color(1, 1, 1, 0.12), Color.WHITE, func() -> void: Net.action("roupa_vestir", "", hue + 2))
+		row.add_child(b)
+	c.add_child(row)
+	var k := _card()
+	k.add_child(_label("Roupa de fardo — bancas do mercado (1.500 Kz)", 16, Color.WHITE, FONT_BOLD, true))
+	k.add_child(_label("Compra-se estando no mercado do bairro.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	var grid := HFlowContainer.new()
+	grid.add_theme_constant_override("h_separation", 6)
+	grid.add_theme_constant_override("v_separation", 6)
+	for i in WARDROBE.size():
+		var w: Array = WARDROBE[i]
+		if mine.has(int(w[0])):
+			continue
+		var n := i + 1
+		grid.add_child(_button(str(w[1]), "bag", Color.from_hsv(float(w[0]) / 360.0, 0.55, 0.85), Color.WHITE, func() -> void: Net.action("roupa_comprar", "", n)))
+	k.add_child(grid)
+	k.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:mercado")))
 
 
 ## Muxima: o que as pessoas do Huambo publicam (texto + bairro), com «gostos».
@@ -1436,6 +1488,7 @@ func _phone_friends() -> void:
 		var idx := i + 1
 		row.add_child(_button("Remover", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("amigo_remover", "", idx)))
 		c.add_child(row)
+		_text_row(c, "SMS para %s (20 Kz de saldo)" % f.name, 120, "SMS", func(t: String) -> void: Net.action_text("sms", t, idx))
 	# convidar quem está perto
 	var me_e: Variant = Net.entities.get(Net.self_id)
 	var near := []
@@ -1589,7 +1642,25 @@ func _fetch_stats() -> void:
 			_rebuild_phone()
 
 
+func _achievements_card() -> void:
+	var list: Array = Net.me.get("conquistas", [])
+	if list.is_empty():
+		return
+	var c := _card()
+	var done := list.filter(func(x: Dictionary) -> bool: return bool(x.feita))
+	c.add_child(_label("Conquistas %d/%d" % [done.size(), list.size()], 17, ACCENT, FONT_BOLD))
+	var due := list.filter(func(x: Dictionary) -> bool: return bool(x.feita) and not bool(x.paga))
+	if not due.is_empty():
+		var total := 0
+		for x: Dictionary in due:
+			total += int(x.reward)
+		c.add_child(_button("Recolher prémios (+%s Kz)" % DemoHud._money(total), "plus", ACCENT, INK, func() -> void: Net.action("conquistas_recolher")))
+	for x: Dictionary in list:
+		c.add_child(_label(("✓ " if bool(x.feita) else "○ ") + "%s — %s" % [x.name, x.text], 14, Color("8fe08a") if bool(x.feita) else Color(1, 1, 1, 0.6), FONT_REG, true))
+
+
 func _phone_profile() -> void:
+	_achievements_card()
 	var me := Net.me
 	var job := _job(str(me.get("job", "")))
 	var lines := [

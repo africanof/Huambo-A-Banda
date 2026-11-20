@@ -86,6 +86,14 @@ func _ready() -> void:
 		if c:
 			c.say(text))
 	Net.radio_received.connect(func(who: String, text: String) -> void: hud.on_radio(who, text))
+	Net.sms_received.connect(func(who: String, text: String) -> void: hud.on_sms(who, text))
+	Net.appearance_changed.connect(func(id: int, a: Dictionary) -> void:
+		var c: DemoCharacter = avatars.get(id)
+		if c:
+			var top := int(a.get("top", -1))
+			c.set_top_hue(null if top < 0 else top / 360.0)
+			if id == Net.self_id:
+				hud.set_portrait(c.body.sprite_frames.get_frame_texture("idle_down", 0) if c.body.sprite_frames else null))
 	Net.emote_received.connect(func(id: int, e: String) -> void:
 		var c: DemoCharacter = avatars.get(id)
 		if c:

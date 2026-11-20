@@ -9,6 +9,8 @@ signal snapshot_received(server_time: int, flat: Array)
 signal chat_received(id: int, who: String, text: String)
 signal emote_received(id: int, emote: String)
 signal radio_received(who: String, text: String)
+signal appearance_changed(id: int, appearance: Dictionary)
+signal sms_received(who: String, text: String)
 signal notice(code: int, text: String)
 signal disconnected(reason: String)
 signal latency_updated(rtt_ms: int)
@@ -150,10 +152,13 @@ func radio(text: String) -> void:
 		room.send(Protocol.C2S_RADIO, {"t": text.strip_edges().left(120)})
 
 
-## Ação com texto curto (nome/id de grupo).
-func action_text(a: String, text: String) -> void:
+## Ação com texto curto (nome/id de grupo, publicação, SMS); n opcional.
+func action_text(a: String, text: String, n: int = 0) -> void:
 	if room:
-		room.send(Protocol.C2S_ACTION, {"a": a, "s": text.left(60)})
+		var msg := {"a": a, "s": text.left(160)}
+		if n > 0:
+			msg["n"] = n
+		room.send(Protocol.C2S_ACTION, msg)
 
 
 func emote(e: String) -> void:
@@ -215,6 +220,15 @@ func _on_message(type: Variant, payload: Variant) -> void:
 				if chat_log.size() > 50:
 					chat_log.pop_front()
 				chat_received.emit(line.id, line.n, line.t)
+		Protocol.S2C_APPEARANCE:
+			if typeof(payload) == TYPE_DICTIONARY and typeof(payload.get("a")) == TYPE_DICTIONARY:
+				var ent: Variant = entities.get(int(payload.get("id", -1)))
+				if ent != null:
+					ent.appearance = payload.a
+				appearance_changed.emit(int(payload.get("id", -1)), payload.a)
+		Protocol.S2C_SMS:
+			if typeof(payload) == TYPE_DICTIONARY:
+				sms_received.emit(str(payload.get("n", "")), str(payload.get("t", "")))
 		Protocol.S2C_RADIO:
 			if typeof(payload) == TYPE_DICTIONARY:
 				radio_received.emit(str(payload.get("n", "")), str(payload.get("t", "")))

@@ -26,6 +26,8 @@ const S2C_TOAST := 106
 const S2C_CHAT := 107
 const S2C_EMOTE := 108
 const S2C_RADIO := 109
+const S2C_APPEARANCE := 110
+const S2C_SMS := 111
 
 # Códigos de erro de aplicação
 const ERR_PROTOCOL_MISMATCH := 4001

@@ -103,7 +103,17 @@ func _social_loop() -> String:
 		return false if Time.get_ticks_msec() - t0 > 20000 else null)
 	if not heard:
 		return "não ouvi o outro jogador"
-	await _wait_for(func() -> Variant: return true if got_emote[0] or Time.get_ticks_msec() - t0 > 20000 else null)
+	# o outro pode ainda não estar à escuta: repete o gesto (limite do servidor: 3 em 6 s)
+	var last_emote := [Time.get_ticks_msec()]
+	await _wait_for(func() -> Variant:
+		if Time.get_ticks_msec() - last_emote[0] > 2500:
+			last_emote[0] = Time.get_ticks_msec()
+			Net.emote("acenar")
+		return true if got_emote[0] or Time.get_ticks_msec() - t0 > 25000 else null)
+	# continua a acenar mais um pouco para o outro também ver
+	for k in 2:
+		await get_tree().create_timer(2.5).timeout
+		Net.emote("acenar")
 	if not got_emote[0]:
 		return "não vi o gesto do outro jogador"
 	print("[autotest] ouvi: %s" % ", ".join(Net.chat_log.map(func(l: Dictionary) -> String: return "%s: %s" % [l.n, l.t])))
@@ -188,6 +198,25 @@ func _social_loop() -> String:
 	if not farm:
 		return "lavra/ambição falhou"
 	print("[autotest] lavra: %s · ambição: %s · tempo: %s" % [Net.me.lavra, Net.me.ambicao.text, Net.me.tempo.texto])
+	# roupa: cada um veste a roupa de sempre; o outro tem de ver a mudança
+	var saw_look := [false]
+	Net.appearance_changed.connect(func(id: int, _a: Dictionary) -> void:
+		if id == other:
+			saw_look[0] = true)
+	Net.action("roupa_vestir", "", 1)
+	t0 = Time.get_ticks_msec()
+	var last_look := [t0]
+	await _wait_for(func() -> Variant:
+		if Time.get_ticks_msec() - last_look[0] > 3000:
+			last_look[0] = Time.get_ticks_msec()
+			Net.action("roupa_vestir", "", 1)
+		return true if saw_look[0] or Time.get_ticks_msec() - t0 > 20000 else null)
+	for k in 2:
+		await get_tree().create_timer(2.0).timeout
+		Net.action("roupa_vestir", "", 1)
+	if not saw_look[0]:
+		return "não vi a roupa nova do outro"
+	print("[autotest] vi a roupa nova do outro jogador")
 	# Muxima: publica e vê a publicação no feed
 	Net.action_text("muxima_publicar", "Olá Huambo, sou o %s!" % me_name)
 	await get_tree().create_timer(1.0).timeout
@@ -470,7 +499,7 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["estudos", "saude", "muxima"]:
+		for app: String in ["roupa", "perfil", "amigos"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)
