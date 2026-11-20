@@ -59,6 +59,12 @@ export interface LifeState {
   ambicoesFeitas: string[];
   /** namoro ou casamento */
   partner: { id: string; name: string; since: number; married: boolean } | null;
+  /** curso superior em curso e licenciaturas feitas */
+  uni: { curso: string | null; aulas: number; licenciaturas: string[] };
+  /** doença atual */
+  doenca: { id: string; since: number } | null;
+  /** último assalto (para recuperar parte na esquadra) */
+  roubo: { amount: number; at: number; recovered: boolean } | null;
   /** negócio próprio (Empresas) */
   negocio: { tipo: string; nivel: number; lastCollect: number; investido: number } | null;
 }
@@ -175,6 +181,8 @@ export function rollBirth(family: FamilyClass, seed: string, exists: (bairro: st
 }
 
 export interface Job {
+  /** licenciatura exigida (curso superior) */
+  degree?: string;
   id: string;
   name: string;
   where: string; // texto para o jogador
@@ -206,6 +214,12 @@ export const JOBS: Job[] = [
   { id: "enfermeiro", name: "Enfermeiro(a)", where: "Centro de Saúde do Bairro de Fátima", place: "enfermeiro", pay: 8000, education: 2, docs: ["bi"] },
   { id: "policia", name: "Agente da Polícia", where: "Esquadra Policial de Fátima", place: "policia", pay: 9000, education: 2, docs: ["bi", "registo"] },
   { id: "farmaceutico", name: "Farmacêutico(a)", where: "Farmácia Fátima", place: "farmaceutico", pay: 9500, education: 3, docs: ["bi"] },
+  // com curso superior (Instituto Superior Politécnico do Huambo, Bairro Académico)
+  { id: "professor_universitario", name: "Professor(a) universitário(a)", where: "Instituto Superior Politécnico do Huambo", place: "professor_universitario", pay: 15000, education: 4, docs: ["bi"], degree: "*" },
+  { id: "medico", name: "Médico(a)", where: "Centro de Saúde ou Hospital (enfermaria)", place: "enfermeiro", pay: 18000, education: 4, docs: ["bi", "registo"], degree: "medicina" },
+  { id: "advogado", name: "Advogado(a)", where: "Tribunal da Comarca", place: "oficial_justica", pay: 16000, education: 4, docs: ["bi", "registo"], degree: "direito" },
+  { id: "engenheiro_agronomo", name: "Engenheiro(a) agrónomo(a)", where: "Administração do bairro (secretaria)", place: "funcionario_publico", pay: 14000, education: 4, docs: ["bi"], degree: "agronomia" },
+  { id: "tecnico_informatica", name: "Técnico(a) de informática", where: "Loja de telecomunicações", place: "vendedor_loja", pay: 13000, education: 4, docs: ["bi"], degree: "informatica" },
 ];
 
 /** Serviços dos balcões (o que cada estabelecimento faz na vida real). */
@@ -405,6 +419,9 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     ambicoesFeitas: [],
     partner: null,
     negocio: null,
+    uni: { curso: null, aulas: 0, licenciaturas: [] },
+    doenca: null,
+    roubo: null,
   };
 }
 
@@ -501,6 +518,16 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
     ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
     ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],
+    uni: {
+      curso: typeof r.uni?.curso === "string" && r.uni.curso in CURSOS ? r.uni.curso : null,
+      aulas: Math.round(num(r.uni?.aulas, 0, 0, UNI_LESSONS)),
+      licenciaturas: Array.isArray(r.uni?.licenciaturas) ? r.uni.licenciaturas.filter((x): x is string => typeof x === "string" && x in CURSOS) : [],
+    },
+    doenca: r.doenca && typeof r.doenca.id === "string" && r.doenca.id in DOENCAS && typeof r.doenca.since === "number" ? { id: r.doenca.id, since: r.doenca.since } : null,
+    roubo:
+      r.roubo && typeof r.roubo.amount === "number" && typeof r.roubo.at === "number"
+        ? { amount: Math.round(num(r.roubo.amount, 0, 0, 1e9)), at: r.roubo.at, recovered: r.roubo.recovered === true }
+        : null,
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
@@ -638,3 +665,29 @@ export function negocioUpgradeCost(tipo: string, nivel: number): number {
   const n = NEGOCIOS[tipo];
   return n ? n.cost * nivel : 0;
 }
+
+// ---------------------------------------------------------------- universidade
+
+export const CURSOS: Record<string, { name: string }> = {
+  agronomia: { name: "Agronomia" },
+  medicina: { name: "Medicina" },
+  direito: { name: "Direito" },
+  informatica: { name: "Engenharia Informática" },
+};
+export const UNI_LESSONS = 5;
+export const UNI_PRICE = 3000;
+
+// ---------------------------------------------------------------- doenças
+
+/** Doenças comuns no Huambo: gripe (chuva/cacimbo) e paludismo (malária, época das chuvas). */
+export const DOENCAS: Record<string, { name: string; texto: string; energy: number; mood: number; health: number; blocks: boolean; curaFarmacia: boolean; selfHealMin: number | null }> = {
+  gripe: { name: "Gripe", texto: "Estás com gripe: cansas-te mais depressa.", energy: 0.3, mood: 0.2, health: 0, blocks: false, curaFarmacia: true, selfHealMin: 90 },
+  paludismo: { name: "Paludismo (malária)", texto: "Estás com paludismo: vai já a uma consulta no centro de saúde ou hospital!", energy: 0.4, mood: 0.4, health: 0.6, blocks: true, curaFarmacia: false, selfHealMin: null },
+};
+
+// ---------------------------------------------------------------- assaltos
+
+/** À noite, na rua, com muito dinheiro na carteira, há quem seja assaltado (melhor guardar no banco). */
+export const ROUBO_MIN_WALLET = 20_000;
+export const ROUBO_MAX = 10_000;
+export const ROUBO_RECOVER_MS = 30 * 60_000;

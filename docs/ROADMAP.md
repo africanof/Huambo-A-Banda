@@ -150,3 +150,16 @@ ponta-a-ponta com clientes Godot reais).
   rende por hora mesmo sem jogar (junta até 12 h); recolher, melhorar (até nível 3, +50% por nível) e vender
   (metade do investido + lucro por recolher).
 - Imóveis: casas e prédios do bairro com frações livres, preços de compra e renda, e «Ir ver».
+
+### Universidade, Doenças, Assaltos e Polícia, Muxima
+- Universidade: o Instituto Superior Politécnico do Huambo (Bairro Académico) passou a «universidade»
+  (tools/bairros/ensino_superior.py, também no build). Com a escola completa (nível 4): Agronomia, Medicina,
+  Direito, Engenharia Informática — 5 aulas de 3.000 Kz no anfiteatro → licenciatura → vagas novas
+  (médico, advogado, engenheiro agrónomo, técnico de informática, professor universitário); agrónomos colhem +50%.
+- Doenças: gripe (chuva ou noite de cacimbo, passa sozinha em 90 min; cura na farmácia ou consulta) e paludismo
+  (noites da época das chuvas na rua; impede trabalho, estudo e biscatos; só a consulta cura).
+- Assaltos e polícia: à noite, na rua, com 20.000 Kz ou mais na carteira, pode haver assalto (20%, até 10.000 Kz);
+  registar a ocorrência na esquadra nos 30 min seguintes recupera metade; notícia no jornal.
+- Muxima: publicações de até 160 letras com o bairro, «gostos» (um por pessoa), 5 por hora; Supabase
+  game_posts/game_post_likes.
+- Praia e kart do Vida na Banda não existem no Huambo (planalto, sem mar nem kartódromo): ficam de fora.

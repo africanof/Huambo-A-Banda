@@ -142,12 +142,16 @@ export const ActionSchema = z
       "negocio_melhorar",
       "negocio_vender",
       "imoveis",
+      // universidade e Muxima
+      "uni_curso",
+      "muxima_publicar",
+      "muxima_gosto",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */
     n: z.number().int().min(1).max(1_000_000_000).optional(),
     /** texto livre curto (nome de grupo, id de grupo) — o servidor limpa */
-    s: z.string().min(1).max(60).optional(),
+    s: z.string().min(1).max(160).optional(),
     /** meio de transporte (viagens) */
     t: z.enum(["autocarro", "candongueiro", "kupapata", "taxi", "carro"]).optional(),
   })

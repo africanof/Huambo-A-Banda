@@ -120,7 +120,7 @@ export class DistrictRoom extends Room {
         },
         Date.now,
         Math.random,
-        { properties: services().properties, bank: services().bank, groups: services().groups },
+        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts },
       );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }

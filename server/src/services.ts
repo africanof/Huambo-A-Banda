@@ -1,3 +1,4 @@
+import type { PostRepository } from "./persistence/PostRepository.js";
 import type { GroupRepository } from "./persistence/GroupRepository.js";
 import type { Env } from "./config/env.js";
 import type { TokenVerifier } from "./auth/TokenVerifier.js";
@@ -16,6 +17,7 @@ export interface Services {
   properties: PropertyRepository;
   bank: BankRepository;
   groups: GroupRepository;
+  posts: PostRepository;
 }
 
 let current: Services | undefined;

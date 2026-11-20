@@ -16,7 +16,7 @@ const ROOM_NAME := {
 	"igreja": "Nave", "discoteca": "Pista", "hotel": "Receção", "casa": "Sala", "apartamentos": "Sala",
 	"mercado": "Bancas", "farmacia": "Balcão", "administracao": "Atendimento", "esquadra": "Atendimento",
 	"padaria": "Loja", "churrasqueira": "Sala de refeições", "correios": "Balcões", "tribunal": "Sala de audiências",
-	"governo": "Gabinete", "loja_telecom": "Loja",
+	"governo": "Gabinete", "loja_telecom": "Loja", "universidade": "Anfiteatro",
 }
 
 ## Ícone do marcador por tipo de estação.
@@ -50,7 +50,7 @@ const STAFF := {
 		"_": ["Atendente", 1, 100, ["Bom dia, em que posso ajudar?"]],
 	},
 	"sleep": {"hotel": ["Rececionista", 1, 260, ["Bem-vindo ao hotel! Quer um quarto?"]]},
-	"study": {"escola": ["Professora", 1, 120, ["Bom dia, turma! Abram os cadernos.", "Quem fez o trabalho de casa?"]]},
+	"study": {"escola": ["Professora", 1, 120, ["Bom dia, turma! Abram os cadernos.", "Quem fez o trabalho de casa?"]], "universidade": ["Professor Doutor", 0, 220, ["Bom dia, caros estudantes. Hoje há matéria nova.", "O exame é na próxima semana!"]]},
 }
 
 var _interior: Dictionary = {}

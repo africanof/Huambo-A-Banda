@@ -188,6 +188,13 @@ func _social_loop() -> String:
 	if not farm:
 		return "lavra/ambição falhou"
 	print("[autotest] lavra: %s · ambição: %s · tempo: %s" % [Net.me.lavra, Net.me.ambicao.text, Net.me.tempo.texto])
+	# Muxima: publica e vê a publicação no feed
+	Net.action_text("muxima_publicar", "Olá Huambo, sou o %s!" % me_name)
+	await get_tree().create_timer(1.0).timeout
+	var feed: Variant = await Net.get_json("/muxima")
+	if typeof(feed) != TYPE_ARRAY or not (feed as Array).any(func(p: Dictionary) -> bool: return str(p.text).contains(me_name)):
+		return "Muxima sem a publicação"
+	print("[autotest] Muxima: %d publicações" % (feed as Array).size())
 	# jornal tem a dedicatória
 	var j: Variant = await Net.get_json("/jornal")
 	if typeof(j) != TYPE_DICTIONARY or not (j.noticias as Array).any(func(n: Dictionary) -> bool: return str(n.kind) == "radio"):
@@ -463,7 +470,7 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["familia", "negocio", "imoveis"]:
+		for app: String in ["estudos", "saude", "muxima"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)

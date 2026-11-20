@@ -444,7 +444,9 @@ func _rebuild_actions() -> void:
 		"sleep":
 			actions_box.add_child(_button("Dormir (%s Kz)" % DemoHud._money(int(prices.get("hotel", 0))), "sun", ACCENT, INK, func() -> void: Net.action("sleep")))
 		"study":
-			actions_box.add_child(_button("Estudar (%s Kz)" % DemoHud._money(int(prices.get("study", 0))), "plus", ACCENT, INK, func() -> void: Net.action("study")))
+			var uni: bool = typeof(inside) == TYPE_DICTIONARY and str(inside.get("venue", "")) == "universidade"
+			var label := ("Aula de %s (%s Kz)" % [str(Net.me.get("uni", {}).get("cursoNome", "curso")), DemoHud._money(int(Net.me.get("uni", {}).get("preco", 3000)))]) if uni else ("Estudar (%s Kz)" % DemoHud._money(int(prices.get("study", 0))))
+			actions_box.add_child(_button(label, "plus", ACCENT, INK, func() -> void: Net.action("study")))
 		"home_sleep":
 			actions_box.add_child(_button("Dormir na tua cama", "sun", ACCENT, INK, func() -> void: Net.action("sleep")))
 		"home_eat":
@@ -782,7 +784,7 @@ const APPS := [
 	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
-	["imoveis", "Imóveis", "home", "d"], ["ajuda", "Ajuda", "more", "d"],
+	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -807,17 +809,18 @@ func _rebuild_phone() -> void:
 		"perfil": _phone_profile()
 		"familia": _phone_family()
 		"vagas": _phone_jobs()
-		"estudos": _phone_go("Estudos", "Nível %d · aulas %d/%d. Cada nível desbloqueia empregos melhores." % [int(Net.me.get("education", 0)), int(Net.me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))], "escola", "Ir à escola")
+		"estudos": _phone_studies()
 		"banco": _phone_go("Banco", "Na carteira: %s Kz\nNo banco: %s Kz\nDepositar e levantar faz-se ao balcão do banco." % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], "banco", "Ir ao banco")
 		"casa": _phone_home()
 		"loja": _phone_shop()
-		"saude": _phone_go("Saúde", "Saúde: %d%% · Energia: %d%% · Fome: %d%%\nConsultas no centro de saúde; medicamentos na farmácia." % [int(Net.me.get("needs", {}).get("health", 0)), int(Net.me.get("needs", {}).get("energy", 0)), int(Net.me.get("needs", {}).get("hunger", 0))], "saude", "Ir ao centro de saúde")
+		"saude": _phone_health()
 		"governo": _phone_go("Governo", "BI: %s · Registo criminal: %s · Atestado de residência: %s\nTrata dos documentos na Administração do bairro, no Governo Provincial ou no Tribunal." % ["✓" if Net.me.get("docs", {}).get("bi", false) else "—", "✓" if Net.me.get("docs", {}).get("registo", false) else "—", "✓" if Net.me.get("docs", {}).get("residencia", false) else "—"], "administracao", "Ir à Administração")
 		"ajuda": _phone_help()
 		"sorte": _phone_luck()
 		"biscatos": _phone_biscatos()
 		"lavras": _phone_lavras()
 		"negocio": _phone_business()
+		"muxima": _phone_muxima()
 		"imoveis": _phone_housing()
 		"ambicao": _phone_ambition()
 		"ricos": _phone_rich()
@@ -987,6 +990,106 @@ func _text_row(box: Container, placeholder: String, max_len: int, button: String
 	row.add_child(_button(button, "plus", ACCENT, INK, func() -> void: go.call()))
 	box.add_child(row)
 	return le
+
+
+## Estudos: escola (níveis) e Universidade (cursos superiores no Instituto Superior Politécnico do Huambo).
+const COURSES := [["agronomia", "Agronomia", "Engenheiro(a) agrónomo(a) · colhe 50% mais na lavra"], ["medicina", "Medicina", "Médico(a) · 18.000 Kz/turno"], ["direito", "Direito", "Advogado(a) · 16.000 Kz/turno"], ["informatica", "Engenharia Informática", "Técnico(a) de informática · 13.000 Kz/turno"]]
+
+
+func _phone_studies() -> void:
+	var edu := int(Net.me.get("education", 0))
+	var c := _card()
+	c.add_child(_label("Escola: nível %d de 4 (aulas %d/%d)" % [edu, int(Net.me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))], 16, Color.WHITE, FONT_BOLD, true))
+	if edu < 4:
+		c.add_child(_label("Cada nível desbloqueia empregos melhores. Com o nível 4 podes ir para a Universidade.", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+		c.add_child(_button("Ir à escola", "pin", ACCENT, INK, func() -> void:
+			phone.visible = false
+			ui_action.emit("ir:escola")))
+		return
+	var u: Dictionary = Net.me.get("uni", {})
+	var lic: Array = u.get("licenciaturas", [])
+	var k := _card()
+	k.add_child(_label("Universidade", 18, ACCENT, FONT_BOLD))
+	k.add_child(_label("Instituto Superior Politécnico do Huambo (Bairro Académico) · %s Kz por aula · %d aulas por curso" % [DemoHud._money(int(u.get("preco", 3000))), int(u.get("total", 5))], 13, Color(1, 1, 1, 0.7), FONT_REG, true))
+	if u.get("curso") != null:
+		k.add_child(_label("A tirar %s: %d/%d aulas" % [u.cursoNome, int(u.aulas), int(u.total)], 16, Color.WHITE, FONT_BOLD, true))
+	for x: Array in COURSES:
+		var id := str(x[0])
+		if lic.has(id):
+			k.add_child(_label("✓ Licenciado/a em %s" % x[1], 14, Color("8fe08a"), FONT_REG, true))
+		elif str(u.get("curso", "")) != id:
+			k.add_child(_button("Inscrever em %s" % x[1], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("uni_curso", id)))
+			k.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.55), FONT_REG, true))
+	k.add_child(_button("Ir à Universidade", "pin", ACCENT, INK, func() -> void:
+		phone.visible = false
+		if Net.current_district == "bairro_academico":
+			ui_action.emit("ir:universidade")
+		else:
+			_go("bairro_academico", false)))
+
+
+## Saúde: estado, doença atual e onde tratar.
+func _phone_health() -> void:
+	var n: Dictionary = Net.me.get("needs", {})
+	var c := _card()
+	c.add_child(_label("Saúde %d%% · Energia %d%% · Fome %d%% · Humor %d%%" % [int(n.get("health", 0)), int(n.get("energy", 0)), int(n.get("hunger", 0)), int(n.get("mood", 0))], 15, Color.WHITE, FONT_BOLD, true))
+	var d: Variant = Net.me.get("doenca")
+	if typeof(d) == TYPE_DICTIONARY:
+		c.add_child(_label(str(d.name), 18, Color("ff8a7a"), FONT_BOLD))
+		c.add_child(_label(str(d.texto), 14, Color.WHITE, FONT_REG, true))
+	else:
+		c.add_child(_label("Estás de boa saúde. Cuidado com a chuva (gripe) e com os mosquitos à noite na época das chuvas (paludismo).", 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+	var r: Variant = Net.me.get("roubo")
+	if typeof(r) == TYPE_DICTIONARY:
+		c.add_child(_label("Foste assaltado/a (%s Kz). Regista a ocorrência na esquadra nos próximos 30 min para recuperar metade." % DemoHud._money(int(r.amount)), 14, Color("ffd27a"), FONT_REG, true))
+		c.add_child(_button("Ir à esquadra", "pin", ACCENT, INK, func() -> void:
+			phone.visible = false
+			ui_action.emit("ir:esquadra")))
+	c.add_child(_button("Ir ao centro de saúde", "pin", ACCENT, INK, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:saude")))
+	c.add_child(_button("Ir à farmácia", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:farmacia")))
+
+
+## Muxima: o que as pessoas do Huambo publicam (texto + bairro), com «gostos».
+var _feed: Array = []
+var _feed_at := -100000
+
+
+func _phone_muxima() -> void:
+	var c := _card()
+	c.add_child(_label("Publica o que estás a viver no Huambo:", 15, Color.WHITE, FONT_REG, true))
+	_text_row(c, "Escreve a tua publicação…", 160, "Publicar", func(t: String) -> void:
+		Net.action_text("muxima_publicar", t)
+		_feed_at = -100000
+		get_tree().create_timer(0.8).timeout.connect(func() -> void:
+			if phone.visible and phone_tab == "muxima":
+				_rebuild_phone()))
+	var f := _card()
+	f.add_child(_label("Muxima — últimas publicações", 17, ACCENT, FONT_BOLD))
+	if Time.get_ticks_msec() - _feed_at > 15000:
+		_feed_at = Time.get_ticks_msec()
+		_load_feed()
+	if _feed.is_empty():
+		f.add_child(_label("Ainda ninguém publicou. Sê o primeiro!", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+	for p: Dictionary in _feed:
+		f.add_child(_label("%s · %s" % [p.name, p.bairro], 14, ACCENT, FONT_BOLD))
+		f.add_child(_label(str(p.text), 15, Color.WHITE, FONT_REG, true))
+		var pid := str(p.id)
+		f.add_child(_button("Gosto (%d)" % int(p.likes), "plus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+			Net.action_text("muxima_gosto", pid)
+			_feed_at = -100000
+			get_tree().create_timer(0.6).timeout.connect(func() -> void: _load_feed())))
+
+
+func _load_feed() -> void:
+	var r: Variant = await Net.get_json("/muxima")
+	if typeof(r) == TYPE_ARRAY:
+		_feed = r
+		if phone.visible and phone_tab == "muxima":
+			_rebuild_phone()
 
 
 ## Namoro e casamento (na app Família).
@@ -1593,7 +1696,7 @@ func _job_by_place(place_job: String) -> Dictionary:
 
 
 func _busy_text(kind: String) -> String:
-	return {"work": "A trabalhar", "study": "Na aula", "sleep": "A dormir", "sleep_rua": "A dormir na paragem", "sleep_casa": "A dormir em casa"}.get(kind, "Ocupado")
+	return {"work": "A trabalhar", "study": "Na aula", "biscato": "Biscato", "sleep": "A dormir", "sleep_rua": "A dormir na paragem", "sleep_casa": "A dormir em casa"}.get(kind, "Ocupado")
 
 
 func _label(text: String, size: int, color: Color, font: Font, wrap := false) -> Label:

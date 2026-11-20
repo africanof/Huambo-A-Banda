@@ -8,6 +8,7 @@ Resolve as pegadas (footprints) dos edifícios/adereços a partir de client/asse
 calcula os obstáculos de colisão (metros) e os "lugares" interativos (comer, trabalhar, casa…), e
 escreve client/assets/bairros/<id>.json e server/data/bairros/<id>.json (idênticos, com versão).
 """
+import ensino_superior  # noqa: E402  (mesma pasta)
 import glob, hashlib, json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -287,6 +288,7 @@ for src in sorted(glob.glob(os.path.join(HERE, "*.json"))):
     used.add("kit_viagens")
     used.add("bairro_fatima")  # carros particulares estacionados à porta de casa  # viagens na primeira pessoa (candongueiro, táxi, kupapata) a partir de qualquer bairro
     out["kits"] = sorted(k for k in used if k)
+    ensino_superior.apply(out)  # institutos superiores → universidade
     out["kit_versions"] = {k: KIT_VERSIONS[k] for k in out["kits"]}
     body = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     out["version"] = hashlib.sha256(body.encode()).hexdigest()[:12]

@@ -83,6 +83,16 @@ export function registerRoutes(app: Application, svc: Services): void {
     }
   });
 
+  // Muxima: publicações mais recentes dos jogadores.
+  app.get("/muxima", async (_req, res) => {
+    try {
+      res.set("Cache-Control", "no-store");
+      res.json(await svc.posts.latest(40));
+    } catch {
+      res.status(503).json({ error: "unavailable" });
+    }
+  });
+
   // Ricos: os jogadores com mais dinheiro (carteira + banco), só contas.
   app.get("/ricos", (_req, res) => {
     res.set("Cache-Control", "no-store");

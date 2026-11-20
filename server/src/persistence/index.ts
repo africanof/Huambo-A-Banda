@@ -1,3 +1,4 @@
+import { MemoryPostRepository, SupabasePostRepository, type PostRepository } from "./PostRepository.js";
 import { MemoryGroupRepository, SupabaseGroupRepository, type GroupRepository } from "./GroupRepository.js";
 import type { Env } from "../config/env.js";
 import type { Identity } from "../auth/TokenVerifier.js";
@@ -40,6 +41,7 @@ export interface Repositories {
   properties: PropertyRepository;
   bank: BankRepository;
   groups: GroupRepository;
+  posts: PostRepository;
 }
 
 /**
@@ -58,13 +60,15 @@ export function createRepositories(env: Env): Repositories {
       properties: new RoutingPropertyRepository(new SupabasePropertyRepository(supa.db)),
       bank: new RoutingBankRepository(new SupabaseBankRepository(supa.db), guestBank),
       groups: new SupabaseGroupRepository(supa.db),
+      posts: new SupabasePostRepository(supa.db),
     };
   }
-  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository() };
+  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository(), posts: new MemoryPostRepository() };
 }
 
 export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";
 export { InsufficientFunds, type WalletRepository } from "./WalletRepository.js";
 export { PropertyTaken, GuestNotAllowed, MemoryPropertyRepository, type PropertyRepository, type Holding } from "./PropertyRepository.js";
 export { MemoryBankRepository, type BankRepository } from "./BankRepository.js";
+export { MemoryPostRepository, type Post, type PostRepository } from "./PostRepository.js";
 export { MemoryGroupRepository, GroupNameTaken, type Group, type GroupRepository } from "./GroupRepository.js";

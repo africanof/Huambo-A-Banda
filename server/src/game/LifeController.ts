@@ -42,6 +42,13 @@ import {
   DRY_FACTOR,
   AMBICOES,
   WEDDING_PRICE,
+  CURSOS,
+  UNI_LESSONS,
+  UNI_PRICE,
+  DOENCAS,
+  ROUBO_MIN_WALLET,
+  ROUBO_MAX,
+  ROUBO_RECOVER_MS,
   WEDDING_MIN_DATING_MS,
   DIVORCE_PRICE,
   NEGOCIOS,
@@ -71,6 +78,7 @@ import {
 import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
+import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
 import { forecast, weatherAt } from "./weather.js";
@@ -180,6 +188,9 @@ export interface SelfState {
   weddingReq: { name: string } | null;
   negocio: { tipo: string; name: string; nivel: number; perHour: number; pendente: number; melhorar: number | null; maxHoras: number } | null;
   imoveis: Entry["imoveis"] | null;
+  uni: { curso: string | null; cursoNome: string | null; aulas: number; total: number; licenciaturas: string[]; preco: number };
+  doenca: { id: string; name: string; texto: string } | null;
+  roubo: { amount: number; recuperavel: boolean } | null;
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -214,6 +225,9 @@ export class LifeController {
   }
   private readonly bank: BankRepository;
   private readonly groups: GroupRepository;
+  private readonly posts: PostRepository;
+  /** Muxima: quantas publicações por pessoa na última hora */
+  private readonly postTimes = new Map<string, number[]>();
 
   constructor(
     private readonly district: District,
@@ -221,11 +235,12 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
     this.groups = deps.groups ?? new MemoryGroupRepository();
+    this.posts = deps.posts ?? new MemoryPostRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -394,6 +409,15 @@ export class LifeController {
         case "grupo_sair":
           await this.groupLeave(actor, e);
           break;
+        case "muxima_publicar":
+          await this.post(actor, msg.s);
+          break;
+        case "muxima_gosto":
+          await this.likePost(actor, msg.s);
+          break;
+        case "uni_curso":
+          this.uniPick(actor, e, msg.i);
+          break;
         case "namoro_pedir":
           this.loveAsk(actor, e, msg.i);
           break;
@@ -497,6 +521,8 @@ export class LifeController {
     for (const d of job.docs ?? []) {
       if (!e.life.docs[d]) return this.out.toast(actor, `Precisas de ${DOC_LABEL[d]} (${d === "registo" ? "Tribunal da Comarca" : "Governo Provincial ou Administração do Bairro"}).`, false);
     }
+    if (job.degree && !(job.degree === "*" ? e.life.uni.licenciaturas.length > 0 : e.life.uni.licenciaturas.includes(job.degree)))
+      return this.out.toast(actor, job.degree === "*" ? "Precisas de uma licenciatura (Universidade)." : `Precisas da licenciatura em ${CURSOS[job.degree]?.name ?? job.degree}.`, false);
     e.life.jobId = job.id;
     e.dirty = true;
     this.out.toast(actor, `Novo emprego: ${job.name}. Vai a ${job.where} para trabalhar.`, true);
@@ -507,13 +533,16 @@ export class LifeController {
     if (!job) return this.out.toast(actor, "Ainda não tens emprego. Vê as vagas no telemóvel.", false);
     if (!this.near(actor, (p) => p.job === job.place)) return this.out.toast(actor, `Vai a ${job.where} para trabalhar.`, false);
     if (e.life.needs.energy < 10 || e.life.needs.hunger < 5) return this.out.toast(actor, "Estás sem forças. Come ou dorme primeiro.", false);
+    if (this.tooSick(actor, e)) return;
     this.startBusy(actor, e, "work");
   }
 
   private async startPaid(actor: LifeActor, e: Entry, kind: "study" | "sleep", price: number, where: (p: Place) => boolean, hint: string): Promise<void> {
     if (e.busy) return this.out.toast(actor, "Estás ocupado(a).", false);
     if (!this.near(actor, where)) return this.out.toast(actor, hint, false);
-    if (kind === "study" && e.life.education >= MAX_EDUCATION) return this.out.toast(actor, "Já tens o nível máximo de estudos.", false);
+    if (kind === "study" && this.tooSick(actor, e)) return;
+    if (kind === "study" && interiorAt(this.district, actor.x, actor.y)?.venue === "universidade") return this.uniLesson(actor, e);
+    if (kind === "study" && e.life.education >= MAX_EDUCATION) return this.out.toast(actor, "Já tens o nível máximo de estudos. Continua na Universidade (Bairro Académico)!", false);
     e.money = await this.wallets.apply(actor.characterId, -price, `${kind}.pay`, `${kind}:${actor.characterId}:${this.op()}`);
     this.startBusy(actor, e, kind);
   }
@@ -672,6 +701,22 @@ export class LifeController {
     e.dirty = true;
     this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
     this.mission(actor, e, "servico");
+    // consultas e medicamentos curam
+    const d = e.life.doenca;
+    if (d && (sv.id === "consulta" || (sv.id === "medicamentos" && DOENCAS[d.id]?.curaFarmacia))) {
+      e.life.doenca = null;
+      this.out.toast(actor, `Estás curado/a da ${DOENCAS[d.id]?.name.toLowerCase() ?? "doença"}.`, true);
+    } else if (d && sv.id === "medicamentos") {
+      this.out.toast(actor, "Para o paludismo os medicamentos da farmácia não chegam: faz uma consulta.", false);
+    }
+    // ocorrência na esquadra: a polícia recupera metade do que foi roubado (se foi há pouco)
+    const r = e.life.roubo;
+    if (sv.id === "ocorrencia" && r && !r.recovered && this.now() - r.at <= ROUBO_RECOVER_MS) {
+      const back = Math.round(r.amount / 2);
+      e.money = await this.wallets.apply(actor.characterId, back, "policia.recuperado", `roubo-rec:${actor.characterId}:${r.at}`);
+      r.recovered = true;
+      this.out.toast(actor, `A polícia apanhou o ladrão e devolveu-te ${back.toLocaleString("pt-PT")} Kz.`, true);
+    }
   }
 
   private async travel(actor: LifeActor, e: Entry, to: string | undefined, how: string | undefined): Promise<void> {
@@ -749,6 +794,7 @@ export class LifeController {
       this.lastDecay = t;
       for (const [actor, e] of this.entries) {
         e.life.needs = decay(e.life.needs, minutes);
+        this.healthAndCrime(actor, e, minutes, t);
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -788,6 +834,22 @@ export class LifeController {
       e.life.needs = { ...n, energy: Math.max(0, n.energy - b.energy), hunger: Math.max(0, n.hunger - 4) };
       this.out.toast(actor, `${b.name}: +${pay.toLocaleString("pt-PT")} Kz (${e.life.biscatos}/${BISCATOS_PER_DAY} hoje).`, true);
       this.mission(actor, e, "biscato");
+    } else if (kind === "study" && item === "uni") {
+      const u = e.life.uni;
+      if (!u.curso) return;
+      u.aulas += 1;
+      e.life.needs = { ...n, energy: Math.max(0, n.energy - 8) };
+      this.mission(actor, e, "estudar");
+      if (u.aulas >= UNI_LESSONS) {
+        const curso = CURSOS[u.curso]?.name ?? u.curso;
+        if (!u.licenciaturas.includes(u.curso)) u.licenciaturas.push(u.curso);
+        u.curso = null;
+        u.aulas = 0;
+        recordNews("missoes", this.district.name, `${actor.name ?? "Alguém"} licenciou-se em ${curso} no Instituto Superior Politécnico do Huambo!`, this.now());
+        this.out.toast(actor, `Parabéns! És licenciado/a em ${curso}. Vê as vagas novas.`, true);
+      } else {
+        this.out.toast(actor, `Aula concluída (${u.aulas}/${UNI_LESSONS}).`, true);
+      }
     } else if (kind === "study") {
       this.mission(actor, e, "estudar");
       e.life.study += 1;
@@ -810,6 +872,102 @@ export class LifeController {
     } else if (kind === "sleep_rua") {
       e.life.needs = { ...n, energy: Math.min(100, n.energy + 40), mood: Math.max(0, n.mood - 15) };
       this.out.toast(actor, "Dormiste no banco da paragem. Estás com o corpo dorido.", true);
+    }
+  }
+
+  // ---------------------------------------------------------------- Muxima
+
+  private async post(actor: LifeActor, raw: string | undefined): Promise<void> {
+    const text = sanitizeChat(raw)?.slice(0, 160);
+    if (!text || text.length < 2) return this.out.toast(actor, "Escreve alguma coisa para publicar.", false);
+    const t = this.now();
+    const times = (this.postTimes.get(actor.characterId) ?? []).filter((x) => t - x < 3_600_000);
+    if (times.length >= 5) return this.out.toast(actor, "Já publicaste muito nesta hora. Volta mais logo!", false);
+    times.push(t);
+    this.postTimes.set(actor.characterId, times);
+    await this.posts.create(actor.characterId, actor.name ?? "Alguém", this.district.name, text);
+    this.out.toast(actor, "Publicado no Muxima!", true);
+  }
+
+  private async likePost(actor: LifeActor, id: string | undefined): Promise<void> {
+    if (!id || !/^[0-9a-f-]{36}$/.test(id)) return;
+    const ok = await this.posts.like(id, actor.characterId);
+    if (!ok) this.out.toast(actor, "Já gostaste desta publicação.", false);
+  }
+
+  // ---------------------------------------------------------------- universidade e saúde
+
+  private uniPick(actor: LifeActor, e: Entry, curso: string | undefined): void {
+    if (!curso || !CURSOS[curso]) return this.out.toast(actor, "Esse curso não existe.", false);
+    if (e.life.education < MAX_EDUCATION) return this.out.toast(actor, "Para a Universidade precisas de acabar os estudos (nível máximo) na escola.", false);
+    if (e.life.uni.licenciaturas.includes(curso)) return this.out.toast(actor, "Já és licenciado/a nesse curso.", false);
+    if (e.life.uni.curso && e.life.uni.curso !== curso && e.life.uni.aulas > 0) this.out.toast(actor, "Mudaste de curso: as aulas do outro curso perdem-se.", false);
+    e.life.uni = { ...e.life.uni, curso, aulas: e.life.uni.curso === curso ? e.life.uni.aulas : 0 };
+    e.dirty = true;
+    this.out.toast(actor, `Inscreveste-te em ${CURSOS[curso]!.name}. As aulas são no Instituto Superior Politécnico (Bairro Académico).`, true);
+  }
+
+  private async uniLesson(actor: LifeActor, e: Entry): Promise<void> {
+    if (e.life.education < MAX_EDUCATION) return this.out.toast(actor, "Para a Universidade precisas de acabar os estudos na escola.", false);
+    if (!e.life.uni.curso) return this.out.toast(actor, "Primeiro escolhe um curso (app Estudos no telemóvel).", false);
+    e.money = await this.wallets.apply(actor.characterId, -UNI_PRICE, "uni.propina", `uni:${actor.characterId}:${this.op()}`);
+    this.startBusy(actor, e, "study");
+    const busy = e.busy as Busy | null;
+    if (busy) busy.item = "uni";
+  }
+
+  /** Doente demais para trabalhar/estudar? (avisa) */
+  private tooSick(actor: LifeActor, e: Entry): boolean {
+    const d = e.life.doenca ? DOENCAS[e.life.doenca.id] : undefined;
+    if (d?.blocks) {
+      this.out.toast(actor, d.texto, false);
+      return true;
+    }
+    return false;
+  }
+
+  /** A cada minuto de jogo: adoecer (chuva, paludismo à noite na época das chuvas), sintomas, cura natural; assaltos à noite. */
+  private healthAndCrime(actor: LifeActor, e: Entry, minutes: number, t: number): void {
+    const outside = !interiorAt(this.district, actor.x, actor.y);
+    const w = weatherAt(t);
+    const hour = new Date(t + 3600_000).getUTCHours();
+    const night = hour >= 21 || hour < 5;
+    const p = (perMin: number) => this.rand() < 1 - Math.pow(1 - perMin, minutes);
+    if (!e.life.doenca && outside) {
+      if ((w.ceu === "chuva" || w.ceu === "trovoada" || (w.epoca === "cacimbo" && night)) && p(0.012)) {
+        e.life.doenca = { id: "gripe", since: t };
+        this.out.toast(actor, "Apanhaste uma gripe. Na farmácia há medicamentos.", false);
+      } else if (w.epoca === "chuvas" && night && p(0.004)) {
+        e.life.doenca = { id: "paludismo", since: t };
+        this.out.toast(actor, "Picada de mosquito: estás com paludismo! Vai ao centro de saúde ou ao hospital.", false);
+      }
+    }
+    const d = e.life.doenca ? DOENCAS[e.life.doenca.id] : undefined;
+    if (d) {
+      const n = e.life.needs;
+      e.life.needs = {
+        ...n,
+        energy: Math.max(0, n.energy - d.energy * minutes),
+        mood: Math.max(0, n.mood - d.mood * minutes),
+        health: Math.max(0, n.health - d.health * minutes),
+      };
+      if (d.selfHealMin !== null && t - e.life.doenca!.since > d.selfHealMin * 60_000) {
+        e.life.doenca = null;
+        this.out.toast(actor, "Já estás melhor da gripe.", true);
+      }
+    }
+    // assalto: à noite, na rua, com muito dinheiro na carteira
+    if (outside && night && e.money >= ROUBO_MIN_WALLET && p(0.01)) {
+      const amount = Math.min(ROUBO_MAX, Math.round(e.money * 0.2));
+      const key = `roubo:${actor.characterId}:${t}`;
+      void this.wallets.apply(actor.characterId, -amount, "roubo", key).then((m) => {
+        e.money = m;
+        e.life.roubo = { amount, at: t, recovered: false };
+        e.dirty = true;
+        recordNews("sorte", this.district.name, `Assalto à noite em ${this.district.name}: levaram ${amount.toLocaleString("pt-PT")} Kz a ${actor.name ?? "um morador"}. A polícia pede para guardarem o dinheiro no banco.`, t);
+        this.out.toast(actor, `Foste assaltado/a! Levaram ${amount.toLocaleString("pt-PT")} Kz. Vai à esquadra registar a ocorrência (até 30 min).`, false);
+        this.sendSelf(actor);
+      }).catch(() => undefined);
     }
   }
 
@@ -1026,7 +1184,8 @@ export class LifeController {
     if (t < l.readyAt) return this.out.toast(actor, `${c.name} ainda não está pronto: faltam ${Math.ceil((l.readyAt - t) / 60_000)} min.`, false);
     // choveu durante o crescimento conta como rega
     const rained = weatherAt(l.plantedAt).ceu === "chuva" || weatherAt(l.readyAt).ceu === "chuva" || weatherAt(l.plantedAt).ceu === "trovoada";
-    const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR));
+    const agro = e.life.uni.licenciaturas.includes("agronomia") ? 1.5 : 1; // engenheiro agrónomo colhe mais
+    const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR) * agro);
     e.life.colheita[l.crop] = (e.life.colheita[l.crop] ?? 0) + kg;
     e.life.colhidoTotal += kg;
     e.life.lavra = null;
@@ -1103,6 +1262,7 @@ export class LifeController {
     }
     if (e.life.biscatos >= BISCATOS_PER_DAY) return this.out.toast(actor, "Já fizeste biscatos que chegue hoje. Descansa!", false);
     if (e.life.needs.energy < 10) return this.out.toast(actor, "Estás sem forças. Come ou dorme primeiro.", false);
+    if (this.tooSick(actor, e)) return;
     const inside = interiorAt(this.district, actor.x, actor.y);
     if (b.where === "stop" && !this.near(actor, (p) => p.kind === "stop", 2))
       return this.out.toast(actor, `${b.name} faz-se na paragem do bairro.`, false);
@@ -1421,6 +1581,9 @@ export class LifeController {
           }
         : null,
       imoveis: e.imoveis ?? null,
+      uni: { curso: e.life.uni.curso, cursoNome: e.life.uni.curso ? CURSOS[e.life.uni.curso]?.name ?? null : null, aulas: e.life.uni.aulas, total: UNI_LESSONS, licenciaturas: [...e.life.uni.licenciaturas], preco: UNI_PRICE },
+      doenca: e.life.doenca ? { id: e.life.doenca.id, name: DOENCAS[e.life.doenca.id]?.name ?? e.life.doenca.id, texto: DOENCAS[e.life.doenca.id]?.texto ?? "" } : null,
+      roubo: e.life.roubo && !e.life.roubo.recovered && t - e.life.roubo.at <= ROUBO_RECOVER_MS ? { amount: e.life.roubo.amount, recuperavel: true } : null,
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,
