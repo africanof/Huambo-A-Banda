@@ -21,6 +21,8 @@ var hue := -1.0
 var name_edit := LineEdit.new()
 var email_edit := LineEdit.new()
 var password_edit := LineEdit.new()
+var _welcome_label := Label.new()
+var _switch_button: Button
 var adult := CheckBox.new()
 var status_label := Label.new()
 var start_button := Button.new()
@@ -53,6 +55,23 @@ func _ready() -> void:
 		var t := preload("res://src/debug/autotest.gd").new()
 		t.name = "Autotest"
 		get_tree().root.add_child.call_deferred(t)
+	elif Auth.supabase_enabled():
+		_try_resume()
+
+
+## Quem já jogou neste aparelho continua a mesma vida (como no Vida na Banda): sem nome nem email outra vez.
+func _try_resume() -> void:
+	status_label.text = "A procurar a tua vida…"
+	if not await Auth.resume():
+		status_label.text = ""
+		return
+	var me: Variant = await Net.get_json("/me/character")
+	if typeof(me) != TYPE_DICTIONARY or str(me.get("name", "")) == "":
+		status_label.text = ""
+		return
+	_set_mode("voltar")
+	_welcome_label.text = "Bem-vindo de volta, %s!" % str(me.name)
+	_welcome_label.visible = true
 
 
 # ------------------------------------------------------------------ fundo: o bairro vivo
@@ -124,6 +143,13 @@ func _build_ui() -> void:
 	_card.add_child(v)
 	v.add_child(_label("Huambo É A Banda", 34, ACCENT, FONT_BOLD, HORIZONTAL_ALIGNMENT_CENTER))
 	v.add_child(_label("Ninguém escolhe onde nasce: podes nascer na Chiva ou na Cidade Alta. Arranja trabalho, casa, amigos e faz a tua vida no Huambo — com gente real a jogar contigo.", 14, Color(1, 1, 1, 0.8), FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
+	# quem volta: «Bem-vindo de volta, X!»
+	_welcome_label.add_theme_font_override("font", FONT_BOLD)
+	_welcome_label.add_theme_font_size_override("font_size", 22)
+	_welcome_label.add_theme_color_override("font_color", Color.WHITE)
+	_welcome_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_welcome_label.visible = false
+	v.add_child(_welcome_label)
 	# separadores
 	_tabs.alignment = BoxContainer.ALIGNMENT_CENTER
 	_tabs.add_theme_constant_override("separation", 6)
@@ -138,6 +164,8 @@ func _build_ui() -> void:
 	# conta (email + senha)
 	_acc_box.add_theme_constant_override("separation", 8)
 	v.add_child(_acc_box)
+	WebTextInput.attach(email_edit, "email")
+	WebTextInput.attach(password_edit, "password")
 	_style_edit(email_edit, "Email")
 	email_edit.virtual_keyboard_type = LineEdit.KEYBOARD_TYPE_EMAIL_ADDRESS
 	_acc_box.add_child(email_edit)
@@ -149,6 +177,7 @@ func _build_ui() -> void:
 	v.add_child(_char_box)
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 8)
+	WebTextInput.attach(name_edit, "text")
 	_style_edit(name_edit, "Nome da personagem")
 	name_edit.max_length = 20
 	name_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -221,6 +250,11 @@ func _build_ui() -> void:
 	start_button.custom_minimum_size = Vector2(0, 56)
 	start_button.add_theme_font_size_override("font_size", 20)
 	v.add_child(start_button)
+	_switch_button = _button("Não és tu? Começar outra vida", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+		Auth.sign_out()
+		_set_mode("jogar"))
+	_switch_button.visible = false
+	v.add_child(_switch_button)
 	guest_button = start_button
 	login_button = start_button
 	signup_button = start_button
@@ -245,9 +279,12 @@ func _fit() -> void:
 
 func _set_mode(m: String) -> void:
 	mode = m
-	_acc_box.visible = m != "jogar"
-	_char_box.visible = m != "entrar"
-	start_button.text = {"jogar": "Começar a vida", "criar": "Criar conta e começar", "entrar": "Entrar"}[m]
+	_acc_box.visible = m in ["criar", "entrar"]
+	_char_box.visible = m in ["jogar", "criar"]
+	_welcome_label.visible = m == "voltar"
+	_switch_button.visible = m == "voltar"
+	_tabs.visible = m != "voltar"
+	start_button.text = {"jogar": "Começar a vida", "criar": "Criar conta e começar", "entrar": "Entrar", "voltar": "Continuar a vida"}[m]
 	for b: Node in _tabs.get_children():
 		var on: bool = b.get_meta("tab") == m
 		_paint(b, ACCENT if on else Color(1, 1, 1, 0.08), INK if on else Color.WHITE)
@@ -287,6 +324,9 @@ func _on_guest() -> void:
 
 
 func _on_start() -> void:
+	if mode == "voltar":
+		await _run(func() -> String: return "")
+		return
 	if mode != "entrar":
 		if name_edit.text.strip_edges().length() < 2:
 			status_label.text = "Escolhe um nome com pelo menos 2 letras."
@@ -296,7 +336,11 @@ func _on_start() -> void:
 			return
 	var step: Callable
 	match mode:
-		"jogar": step = func() -> String: return await Auth.sign_in_guest(name_edit.text.strip_edges())
+		# conta anónima guardada neste aparelho (progresso fica); os autotestes usam sempre convidado
+		"jogar": step = func() -> String:
+			if AppConfig.has_flag("autotest"):
+				return await Auth.sign_in_guest(name_edit.text.strip_edges())
+			return await Auth.sign_in_quick(name_edit.text.strip_edges())
 		"criar": step = func() -> String: return await Auth.sign_up_email(email_edit.text.strip_edges(), password_edit.text, name_edit.text.strip_edges())
 		_: step = func() -> String: return await Auth.sign_in_email(email_edit.text.strip_edges(), password_edit.text)
 	await _run(step)
@@ -311,7 +355,7 @@ func _run(auth_step: Callable) -> void:
 		_set_busy(false, err)
 		return
 	var district := AppConfig.default_district
-	if mode != "entrar":
+	if mode in ["jogar", "criar"]:
 		var body := {"name": name_edit.text.strip_edges(), "appearance": {"body": 0, "shirt": 0, "model": model, "top": -1 if hue < 0.0 else int(hue * 360.0)}}
 		var res: Variant = await Net.post_json("/me/character", body)
 		if typeof(res) == TYPE_DICTIONARY and res.get("lastDistrict") != null:

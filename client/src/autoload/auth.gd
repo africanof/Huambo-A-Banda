@@ -14,6 +14,8 @@ var display_name := ""
 var user_id := ""
 var is_guest := false
 var _expires_at := 0
+var _anonymous := false
+const SESSION_FILE := "user://sessao.cfg"
 
 
 func is_signed_in() -> bool:
@@ -35,6 +37,41 @@ func sign_in_guest(requested_name: String) -> String:
 	is_guest = true
 	signed_in.emit(display_name)
 	return ""
+
+
+## «Jogar já» com progresso guardado: conta anónima do Supabase (sem email), que fica neste aparelho.
+## Se o projeto não permitir contas anónimas, entra como convidado do servidor (progresso não fica guardado).
+func sign_in_quick(requested_name: String) -> String:
+	if supabase_enabled():
+		var res := await _post_json(AppConfig.supabase_url + "/auth/v1/signup",
+			{"data": {"display_name": requested_name}}, _supabase_headers())
+		if res.status == 200 and res.data.has("access_token"):
+			return _apply_supabase_session(res, "")
+	return await sign_in_guest(requested_name)
+
+
+## Volta a entrar com a sessão guardada neste aparelho (sem pedir email outra vez).
+func resume() -> bool:
+	if not supabase_enabled():
+		return false
+	var cfg := ConfigFile.new()
+	if cfg.load(SESSION_FILE) != OK:
+		return false
+	var rt := str(cfg.get_value("sessao", "refresh_token", ""))
+	if rt == "":
+		return false
+	var res := await _post_json(AppConfig.supabase_url + "/auth/v1/token?grant_type=refresh_token",
+		{"refresh_token": rt}, _supabase_headers())
+	if _apply_supabase_session(res, "") != "":
+		if res.status == 400 or res.status == 401:
+			DirAccess.remove_absolute(SESSION_FILE) # sessão revogada ou caducada
+		return false
+	return true
+
+
+## Conta anónima → conta com email (o progresso continua o mesmo).
+func is_anonymous() -> bool:
+	return _anonymous
 
 
 func sign_in_email(email: String, password: String) -> String:
@@ -67,6 +104,7 @@ func ensure_fresh_token() -> void:
 
 
 func sign_out() -> void:
+	DirAccess.remove_absolute(SESSION_FILE)
 	access_token = ""
 	refresh_token = ""
 	display_name = ""
@@ -84,7 +122,13 @@ func _apply_supabase_session(res: Dictionary, fallback: String) -> String:
 	var user: Dictionary = res.data.get("user", {})
 	user_id = str(user.get("id", ""))
 	display_name = str(user.get("user_metadata", {}).get("display_name", user.get("email", "")))
+	_anonymous = bool(user.get("is_anonymous", false))
 	is_guest = false
+	# guarda a sessão neste aparelho (no Web fica no armazenamento do browser)
+	var cfg := ConfigFile.new()
+	cfg.set_value("sessao", "refresh_token", refresh_token)
+	cfg.set_value("sessao", "nome", display_name)
+	cfg.save(SESSION_FILE)
 	signed_in.emit(display_name)
 	return ""
 

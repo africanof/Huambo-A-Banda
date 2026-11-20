@@ -46,7 +46,9 @@ export function registerRoutes(app: Application, svc: Services): void {
   app.use(express.json({ limit: "4kb" }));
 
   app.get("/health", (_req, res) => {
-    res.json({ ok: true, uptimeS: Math.round((Date.now() - startedAt) / 1000), protocol: PROTOCOL_VERSION });
+    // "gravacao": onde ficam as personagens com conta ("supabase") ou só em memória (perde-se ao reiniciar)
+    const gravacao = svc.env.SUPABASE_URL && svc.env.SUPABASE_SERVICE_ROLE_KEY ? "supabase" : "memoria";
+    res.json({ ok: true, uptimeS: Math.round((Date.now() - startedAt) / 1000), protocol: PROTOCOL_VERSION, gravacao });
   });
 
   app.get("/districts", (_req, res) => {
