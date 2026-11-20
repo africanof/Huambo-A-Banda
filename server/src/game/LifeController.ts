@@ -9,6 +9,7 @@ import {
   RENT_OPTIONS,
   SERVICES,
   rentPrice,
+  rollBirth,
   TRANSPORTS,
   CARS,
   TRAVEL_PRICE,
@@ -69,7 +70,9 @@ interface Entry {
   /** oferta de casas mostrada à porta de um edifício de habitação */
   offer: Offer | null;
   /** viagem paga: o cliente muda de bairro quando vê isto */
-  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number; birth?: boolean } | null;
+  /** acabou de nascer (mostra a lotaria da vida uma vez) */
+  newborn: boolean;
 }
 
 export interface Offer {
@@ -110,7 +113,8 @@ export interface SelfState {
   inside: { id: string; venue: string; name: string; unit?: number } | null;
   homes: Array<{ unit: string; name: string; tenure: "buy" | "rent"; paidUntil: number | null }>;
   offer: Offer | null;
-  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number } | null;
+  travel: { district: string; n: number; from?: string; onFoot?: boolean; by?: string; seconds?: number; birth?: boolean } | null;
+  birth: { classe: string; pais: string; provincia: string; bairro: string; bairroNome: string; kumbu: number; nova: boolean } | null;
 }
 
 /** Catálogo enviado no WELCOME (o cliente desenha menus e vagas a partir dele). */
@@ -163,12 +167,17 @@ export class LifeController {
       life = sanitizeLife(stored, this.rand);
     } else {
       life = newLife(this.rand, this.now());
+      life.birth = rollBirth(life.family, actor.characterId, (b) => !!getDistrict(b)?.places?.length);
       await this.wallets.apply(actor.characterId, STARTING_MONEY[life.family], "family.start", `family:${actor.characterId}`);
     }
     rollDay(life, this.now());
     const money = await this.wallets.balance(actor.characterId);
     const bank = await this.bank.balance(actor.characterId);
-    const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null, travel: null };
+    const e: Entry = { life, money, bank, busy: null, dirty: !stored, homes: [], offer: null, travel: null, newborn: !stored };
+    // personagem nova: a lotaria da vida decide onde cresce; vai para lá de graça depois da revelação
+    if (!stored && life.birth && life.birth.bairro !== this.district.id) {
+      e.travel = { district: life.birth.bairro, n: 1, from: this.district.id, onFoot: false, birth: true };
+    }
     this.entries.set(actor, e);
     await this.refreshHomes(actor, e);
     // voltou a entrar dentro de uma casa que já não é sua (renda acabou): vai para a rua
@@ -282,13 +291,13 @@ export class LifeController {
     this.sendSelf(actor);
   }
 
-  private near(actor: LifeActor, test: (p: Place) => boolean): Place | undefined {
+  private near(actor: LifeActor, test: (p: Place) => boolean, extraM = 0): Place | undefined {
     let best: Place | undefined;
     let bestD = Infinity;
     for (const p of this.district.places ?? []) {
       if (!test(p)) continue;
       const d = Math.hypot(actor.x - p.x, actor.y - p.y);
-      if (d <= p.radius && d < bestD) {
+      if (d <= p.radius + extraM * 100 && d < bestD) {
         best = p;
         bestD = d;
       }
@@ -496,6 +505,13 @@ export class LifeController {
     const tr = TRANSPORTS.find((x) => x.id === how) ?? TRANSPORTS.find((x) => x.id === "candongueiro")!;
     if (tr.id === "carro" && !e.life.car) return this.out.toast(actor, "Ainda não tens carro. Compra um no telemóvel → Loja.", false);
     if (!onFoot) {
+      // como no Vida na Banda: transporte público só na 🚏 paragem do bairro; o carro, à porta de casa
+      const atStop = this.near(actor, (p) => p.kind === "stop");
+      const atHome = tr.id === "carro" && this.near(actor, (p) => p.kind === "door" && (p.interiors ?? []).some((u) => e.homes.some((h) => h.unit === u)), 6);
+      if (tr.id === "carro" ? !atHome && !atStop : !atStop)
+        return this.out.toast(actor, tr.id === "carro" ? "O teu carro está à porta de casa." : "Vai à 🚏 paragem do bairro para apanhar transporte.", false);
+    }
+    if (!onFoot) {
       e.money = await this.wallets.apply(actor.characterId, -tr.price, `travel.${tr.id}`, `travel:${actor.characterId}:${this.op()}`);
     }
     e.travel = { district: d.id, n: (e.travel?.n ?? 0) + 1, from: this.district.id, onFoot: !!onFoot, ...(onFoot ? {} : { by: tr.id, seconds: tr.seconds }) };
@@ -622,6 +638,17 @@ export class LifeController {
       homes: e.homes.map((h) => ({ unit: h.unit, name: this.interior(h.unit)?.name ?? h.unit, tenure: h.tenure, paidUntil: h.paidUntil })),
       offer: e.offer,
       travel: e.travel,
+      birth: e.life.birth
+        ? {
+            classe: e.life.family,
+            pais: e.life.birth.pais,
+            provincia: e.life.birth.provincia,
+            bairro: e.life.birth.bairro,
+            bairroNome: getDistrict(e.life.birth.bairro)?.name ?? e.life.birth.bairro,
+            kumbu: STARTING_MONEY[e.life.family],
+            nova: e.newborn,
+          }
+        : null,
     });
   }
 }

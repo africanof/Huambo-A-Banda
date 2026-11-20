@@ -88,7 +88,8 @@ describe("lugares novos funcionam", () => {
 
   it("viajar de candongueiro: paga e marca a viagem; não se viaja de dentro de um edifício", async () => {
     const t = setup();
-    const a: LifeActor = { characterId: "mem-a", x: f.spawns[0]!.x, y: f.spawns[0]!.y };
+    const stop = f.places!.find((p) => p.kind === "stop")!;
+    const a: LifeActor = { characterId: "mem-a", x: stop.x, y: stop.y };
     await t.life.join(a, null);
     const m0 = t.me(a).money;
     await t.life.handle(a, { a: "travel", i: "cidade_baixa" });
@@ -144,8 +145,12 @@ describe("meios de transporte", () => {
     const selves = new Map<LifeActor, SelfState>();
     const ca = getDistrict("cidade_alta")!;
     const life = new LifeController(ca, wallets, { self: (a, s) => selves.set(a, s), toast: () => {} }, () => Date.UTC(2026, 10, 18), () => 0.6);
-    const a: LifeActor = { characterId: "mem-t", x: ca.spawns[0]!.x, y: ca.spawns[0]!.y };
+    const st = ca.places!.find((p) => p.kind === "stop")!;
+    const a: LifeActor = { characterId: "mem-t", x: st.x, y: st.y };
     await life.join(a, null);
+    Object.assign(a, { x: ca.spawns[0]!.x + 9000, y: ca.spawns[0]!.y });
+    await life.handle(a, { a: "travel", i: "xipuli", t: "taxi" });
+    Object.assign(a, { x: st.x, y: st.y });
     const m0 = selves.get(a)!.money;
     await life.handle(a, { a: "travel", i: "xipuli", t: "taxi" });
     expect(selves.get(a)!.money).toBe(m0 - 1500);
@@ -162,7 +167,8 @@ describe("autocarro e carro", () => {
     const toasts: string[] = [];
     const ca = getDistrict("cidade_alta")!;
     const life = new LifeController(ca, wallets, { self: (a, s) => selves.set(a, s), toast: (_a, t) => toasts.push(t) }, () => Date.UTC(2026, 10, 18), () => 0.9);
-    const a: LifeActor = { characterId: "mem-c", x: ca.spawns[0]!.x, y: ca.spawns[0]!.y };
+    const st = ca.places!.find((p) => p.kind === "stop")!;
+    const a: LifeActor = { characterId: "mem-c", x: st.x, y: st.y };
     await life.join(a, null);
     const m0 = selves.get(a)!.money;
     await life.handle(a, { a: "travel", i: "xipuli", t: "autocarro" });
@@ -177,9 +183,36 @@ describe("autocarro e carro", () => {
     await life.handle(a, { a: "exit" });
     await life.handle(a, { a: "buy_car", i: "hilux" });
     expect(selves.get(a)!.car).toBe("hilux");
+    // o carro parte de casa (estamos à porta)
     const m1 = selves.get(a)!.money;
     await life.handle(a, { a: "travel", i: "xipuli", t: "carro" });
     expect(selves.get(a)!.money).toBe(m1 - 300);
     expect(selves.get(a)!.travel).toMatchObject({ by: "carro" });
+  });
+});
+
+describe("lotaria da vida", () => {
+  it("personagem nova: família decide o bairro onde cresce, pais e província; vai para lá de graça", async () => {
+    const wallets = new MemoryWalletRepository();
+    const selves = new Map<LifeActor, SelfState>();
+    const cb = getDistrict("cidade_baixa")!;
+    for (const [r, classes] of [[0.1, "humilde"], [0.99, "muito_rica"]] as const) {
+      const life = new LifeController(cb, wallets, { self: (a, s) => selves.set(a, s), toast: () => {} }, () => Date.UTC(2026, 10, 20), () => r);
+      const a: LifeActor = { characterId: `mem-n${r}`, x: cb.spawns[0]!.x, y: cb.spawns[0]!.y };
+      await life.join(a, null);
+      const me = selves.get(a)!;
+      expect(me.birth?.classe).toBe(classes);
+      expect(me.birth?.nova).toBe(true);
+      expect(me.birth?.pais).toMatch(/Sr\. .+ e D\. /);
+      expect(getDistrict(me.birth!.bairro)).toBeTruthy();
+      if (classes === "muito_rica") expect(me.birth?.bairro).toBe("cidade_alta");
+      if (me.birth!.bairro !== "cidade_baixa") expect(me.travel).toMatchObject({ district: me.birth!.bairro, birth: true });
+      expect(me.money).toBe(me.birth!.kumbu);
+      // ao voltar (estado guardado) já não é nova nem viaja
+      const life2 = new LifeController(cb, wallets, { self: (x, s) => selves.set(x, s), toast: () => {} }, () => Date.UTC(2026, 10, 20), () => r);
+      await life2.join(a, life.lifeOf(a));
+      expect(selves.get(a)!.birth?.nova).toBe(false);
+      expect(selves.get(a)!.travel).toBeNull();
+    }
   });
 });

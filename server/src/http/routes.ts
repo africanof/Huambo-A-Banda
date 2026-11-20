@@ -1,4 +1,5 @@
 import express, { type Application, type Request, type Response, type NextFunction } from "express";
+import { matchMaker } from "@colyseus/core";
 import type { Services } from "../services.js";
 import { listDistricts } from "../game/districts.js";
 import { KeyedRateLimiter } from "../utils/RateLimiter.js";
@@ -59,6 +60,21 @@ export function registerRoutes(app: Application, svc: Services): void {
         bairros: d.spawns.filter((s) => !s.id.startsWith("from_")).map((s) => ({ id: s.id, name: s.name })),
       })),
     );
+  });
+
+  // Salas de um bairro (como no Vida na Banda: "📍 bairro · Sala N"), por ordem de criação.
+  app.get("/districts/:id/rooms", async (req, res) => {
+    try {
+      const rooms = await matchMaker.query({ name: "district" });
+      const mine = rooms
+        .filter((r) => (r.metadata as { district?: string } | undefined)?.district === req.params.id)
+        .sort((a, b) => +new Date(a.createdAt ?? 0) - +new Date(b.createdAt ?? 0))
+        .map((r, i) => ({ sala: i + 1, roomId: r.roomId, clients: r.clients, maxClients: r.maxClients }));
+      res.set("Cache-Control", "no-store");
+      res.json(mine);
+    } catch {
+      res.status(503).json({ error: "unavailable" });
+    }
   });
 
   const meLimiter = new KeyedRateLimiter(20, 20 / 60);

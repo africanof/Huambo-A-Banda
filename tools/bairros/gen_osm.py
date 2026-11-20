@@ -295,6 +295,19 @@ def make(bid, name, tipo, kit_items, props_by_kind):
     ctr = min(((x, y) for r in R for x, y in r["pts"] if 10 < x < S - 10 and 10 < y < S - 10),
               key=lambda t: math.hypot(t[0] - S / 2, t[1] - S / 2), default=(S / 2, S / 2))
     spawns = [{"id": "centro", "name": f"Centro de {name}", "at": [round(ctr[0], 1), round(ctr[1], 1)]}]
+    # 🚏 paragem (candongueiros, táxis, kupapatas, autocarro) à beira da rua, perto do centro
+    stop_ok = False
+    for rad in (4, 7, 10, 14, 18, 24, 30):
+        for k in range(16):
+            a = 2 * math.pi * k / 16
+            px, py = ctr[0] + math.cos(a) * rad, ctr[1] + math.sin(a) * rad
+            if -0.5 < road_d(px, py, 0.0) < 2.5 and add("f_paragem2", px, py, {"kind": "stop", "name": "Paragem"}, clear=3.0):
+                stop_ok = True
+                break
+        if stop_ok:
+            break
+    if not stop_ok:
+        raise SystemExit(f"{bid}: sem lugar para a paragem")
     spec = {
         "id": bid, "name": name, "size": [S, S], "tile": 4, "ground": [{"kind": "relva" if tipo == "nobre" else "terra"}],
         "osm": True, "roads": R, "areas": A, "geo": {"lat": lat0, "lon": lon0, "rot_deg": round(math.degrees(rot), 1), "cx": cx, "cy": cy},

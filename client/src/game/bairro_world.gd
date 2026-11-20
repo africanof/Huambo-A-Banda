@@ -167,9 +167,44 @@ var _travelling := false
 
 
 ## O servidor cobrou o candongueiro: muda de sala (bairro) e recarrega o mundo.
+static var _birth_shown := false
+
+
 func _on_self(me: Dictionary) -> void:
+	var b: Variant = me.get("birth")
+	if typeof(b) == TYPE_DICTIONARY and bool(b.get("nova", false)) and not _birth_shown:
+		# 🎲 a lotaria da vida: primeiro a revelação, depois a ida para o bairro onde cresceu
+		_birth_shown = true
+		_lottery_open = true
+		var lot := BirthLottery.new()
+		lot.birth = b
+		add_child(lot)
+		await lot.done
+		_lottery_open = false
+		_show_guide_later = true
+		_on_self(Net.me)
+		return
+	if _lottery_open:
+		return
 	var t: Variant = me.get("travel")
 	if _travelling or typeof(t) != TYPE_DICTIONARY:
+		return
+	if bool(t.get("birth", false)):
+		# o autoteste de vida joga no bairro onde entrou (lugares conhecidos), salvo se pedir a lotaria
+		if AppConfig.has_flag("autotest") and not AppConfig.has_flag("lotaria"):
+			return
+		_travelling = true
+		hud.show_toast("A caminho de casa…", true)
+		var e1: String = await Packs.ensure_bairro(str(t.district))
+		if e1 == "":
+			e1 = await Net.join_district(str(t.district))
+		if e1 != "":
+			_travelling = false
+			hud.show_toast(e1, false)
+			return
+		if Net.welcome.is_empty():
+			await Net.welcomed
+		get_tree().change_scene_to_file("res://src/game/bairro_world.tscn")
 		return
 	_travelling = true
 	var on_foot := bool(t.get("onFoot", false))
@@ -207,6 +242,8 @@ func _on_self(me: Dictionary) -> void:
 
 
 var _bairro_id := ""
+var _lottery_open := false
+static var _show_guide_later := false
 var _car_sprite: Node2D
 var _car_key := ""
 const CAR_SPRITES := {"corolla_usado": "f_carro", "hilux": "f_hilux", "jipe": "f_carro2"}

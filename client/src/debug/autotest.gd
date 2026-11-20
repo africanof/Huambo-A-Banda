@@ -206,6 +206,16 @@ func _travel_loop() -> void:
 	var dest := str(AppConfig.args.get("travel", "true"))
 	if dest == "true" or dest == "1":
 		dest = "bairro_fatima"
+	# transporte só na 🚏 paragem
+	var w0: Node = tree.current_scene
+	for p: Dictionary in w0.view.places:
+		if p.kind == "stop":
+			var sp := Vector2(p.at[0], p.at[1])
+			w0.request_move(sp)
+			await _wait_for(func() -> Variant:
+				var me: Variant = Net.entities.get(Net.self_id)
+				return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(sp) < 1.5 else null)
+	print("[autotest] na paragem")
 	Net.action("travel", dest)
 	var world: Node = await _wait_for(func() -> Variant:
 		var s := tree.current_scene

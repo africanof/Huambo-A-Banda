@@ -36,6 +36,7 @@ export type PlaceKind =
   | "service" // atendimento (correios, governo, tribunal, loja de telemóveis)
   | "home_sleep" // cama de casa (grátis para quem lá mora)
   | "home_eat" // cozinha de casa
+  | "stop" // 🚏 paragem: candongueiros, táxis, kupapatas e autocarro
   | "portal"; // fim de rua: ir a pé para o bairro vizinho (to)
 
 /** Lugar interativo do bairro, em unidades do mapa. */

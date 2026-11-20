@@ -30,6 +30,39 @@ export interface LifeState {
   phoneCredit: number;
   /** carro que a personagem tem (id de CARS) ou null */
   car: string | null;
+  /** a lotaria da vida: onde e de quem nasceu (sorteado uma vez, ao criar a personagem) */
+  birth: Birth | null;
+}
+
+export interface Birth {
+  bairro: string;
+  pais: string;
+  provincia: string;
+}
+
+/** Onde se cresce, conforme a família (como no Vida na Banda: musseque, centralidade ou elite). */
+export const BIRTH_BAIRROS: Record<FamilyClass, string[]> = {
+  humilde: ["bomba_alta", "cacoio", "cahumba", "cambiote", "chiva", "lossambo", "salucombo", "samutaca", "vila_graca", "xipuli", "kapango"],
+  media: ["bairro_fatima", "sao_pedro", "aviacao", "bairro_militar", "benfica", "cacilhas", "canata", "sao_jose", "sao_joao", "bairro_academico", "cidade_baixa"],
+  rica: ["cidade_alta", "bairro_academico", "cidade_baixa"],
+  muito_rica: ["cidade_alta"],
+};
+const PAIS_PAI = ["Sr. Chipenda", "Sr. Kalei", "Sr. Sapalo", "Sr. Tchissola", "Sr. Cassoma", "Sr. Ngueve", "Sr. Chilembo", "Sr. Jamba", "Sr. Epalanga", "Sr. Kandjimbo"];
+const PAIS_MAE = ["D. Esperança", "D. Rosa", "D. Florinda", "D. Nhanga", "D. Chilombo", "D. Teresa", "D. Ngueza", "D. Mariana", "D. Lussati", "D. Celeste"];
+const PROVINCIAS = ["Huambo", "Huambo", "Huambo", "Huambo", "Bié", "Benguela", "Cuanza Sul", "Luanda", "Huíla", "Moxico"];
+
+/** Sorteio do nascimento: determinístico pela identidade (o mesmo jogador nasce sempre igual),
+ *  só bairros que existem neste servidor. */
+export function rollBirth(family: FamilyClass, seed: string, exists: (bairro: string) => boolean): Birth {
+  let h = 2166136261;
+  for (const ch of seed) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const pick = <T>(a: readonly T[], k: number) => a[(h >>> k) % a.length]!;
+  const options = BIRTH_BAIRROS[family].filter(exists);
+  return {
+    bairro: options.length ? pick(options, 0) : "cidade_baixa",
+    pais: `${pick(PAIS_PAI, 3)} e ${pick(PAIS_MAE, 7)}`,
+    provincia: pick(PROVINCIAS, 11),
+  };
 }
 
 export interface Job {
@@ -246,6 +279,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     docs: { bi: false, registo: false, residencia: false },
     phoneCredit: 0,
     car: null,
+    birth: null,
   };
 }
 
@@ -312,5 +346,9 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     docs: { bi: r.docs?.bi === true, registo: r.docs?.registo === true, residencia: r.docs?.residencia === true },
     phoneCredit: Math.round(num(r.phoneCredit, 0, 0, 1e9)),
     car: CARS.some((c) => c.id === r.car) ? (r.car as string) : null,
+    birth:
+      r.birth && typeof r.birth === "object" && typeof r.birth.bairro === "string" && typeof r.birth.pais === "string"
+        ? { bairro: r.birth.bairro, pais: r.birth.pais, provincia: String(r.birth.provincia ?? "Huambo") }
+        : null,
   };
 }

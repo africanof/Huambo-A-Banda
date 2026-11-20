@@ -37,20 +37,57 @@ func _ready() -> void:
 	add_child(_ping_timer)
 
 
+var current_district := ""
+
+
+## Pedido HTTP simples ao servidor de jogo (GET, JSON). Devolve null se falhar.
+func get_json(path: String) -> Variant:
+	var http := HTTPRequest.new()
+	add_child(http)
+	var headers := PackedStringArray(["Authorization: Bearer " + Auth.access_token]) if Auth.access_token != "" else PackedStringArray()
+	if http.request(AppConfig.server_url + path, headers) != OK:
+		http.queue_free()
+		return null
+	var r: Array = await http.request_completed
+	http.queue_free()
+	if r[0] != HTTPRequest.RESULT_SUCCESS or int(r[1]) != 200:
+		return null
+	return JSON.parse_string((r[3] as PackedByteArray).get_string_from_utf8())
+
+
+## Envia JSON (POST) ao servidor de jogo, autenticado. Devolve o corpo ou null.
+func post_json(path: String, body: Dictionary) -> Variant:
+	var http := HTTPRequest.new()
+	add_child(http)
+	var headers := PackedStringArray(["Content-Type: application/json", "Authorization: Bearer " + Auth.access_token])
+	if http.request(AppConfig.server_url + path, headers, HTTPClient.METHOD_POST, JSON.stringify(body)) != OK:
+		http.queue_free()
+		return null
+	var r: Array = await http.request_completed
+	http.queue_free()
+	if r[0] != HTTPRequest.RESULT_SUCCESS or int(r[1]) != 200:
+		return null
+	return JSON.parse_string((r[3] as PackedByteArray).get_string_from_utf8())
+
+
 func is_connected_to_world() -> bool:
 	return room != null and room.is_joined()
 
 
 ## Entra num bairro. Devolve "" em caso de sucesso, ou a mensagem de erro.
-func join_district(district: String, spawn: String = "") -> String:
+func join_district(district: String, spawn: String = "", room_id: String = "") -> String:
 	await Auth.ensure_fresh_token()
 	leave()
 	_client.endpoint = AppConfig.server_url
 	_client.auth_token = Auth.access_token
-	var res: ColyseusClient.JoinResult = await _client.join_or_create(ROOM_DISTRICT, {
-		"v": Protocol.PROTOCOL_VERSION,
-		"district": district,
-	}.merged({"spawn": spawn} if spawn != "" else {}))
+	var opts := {"v": Protocol.PROTOCOL_VERSION, "district": district}.merged({"spawn": spawn} if spawn != "" else {})
+	# room_id: entrar numa sala concreta do bairro (Sala 2, a sala de um amigo…)
+	var res: ColyseusClient.JoinResult
+	if room_id != "":
+		res = await _client.join_by_id(room_id, opts)
+	else:
+		res = await _client.join_or_create(ROOM_DISTRICT, opts)
+	current_district = district
 	if res.room == null:
 		return _humanize(res.code, res.error)
 	room = res.room
