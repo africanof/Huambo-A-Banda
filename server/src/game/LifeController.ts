@@ -417,7 +417,8 @@ export class LifeController {
   private async enter(actor: LifeActor, e: Entry, unit: string | undefined): Promise<void> {
     if (e.busy) return this.out.toast(actor, "Estás ocupado(a).", false);
     if (interiorAt(this.district, actor.x, actor.y)) return this.out.toast(actor, "Já estás lá dentro.", false);
-    const door = this.near(actor, (p) => p.kind === "door");
+    // folga de 1 m: no telemóvel a posição chega ao servidor com algum atraso (a personagem já está à porta)
+    const door = this.near(actor, (p) => p.kind === "door", 1);
     if (!door?.interiors?.length) return this.out.toast(actor, "Aproxima-te da porta de um edifício.", false);
     if (!RESIDENTIAL.has(door.venue ?? "")) {
       const i = this.interior(door.interiors[0]);

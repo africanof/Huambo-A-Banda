@@ -71,8 +71,55 @@ func _run() -> void:
 		await _travel_loop()
 	if bairro and AppConfig.has_flag("views"):
 		await _views_loop()
+	if bairro and AppConfig.has_flag("portas"):
+		var falhas: Array = await _doors_loop()
+		if not falhas.is_empty():
+			_finish(false, "portas: " + ", ".join(falhas))
+			return
 
 	_finish(true, "")
+
+
+## Como um jogador: toca em cada edifício com nome do bairro (a personagem anda até à porta e entra
+## sozinha), confirma que ficou lá dentro e sai pelo botão «Sair». Devolve as portas que falharam.
+func _doors_loop() -> Array:
+	var tree := get_tree()
+	var w: Node = tree.current_scene
+	await _wait_for(func() -> Variant: return true if Net.me.has("money") else null)
+	var falhas: Array = []
+	var n := 0
+	for p: Dictionary in w.view.places:
+		if p.kind != "door" or str(p.get("venue", "")) in ["casa", "apartamentos"]:
+			continue
+		n += 1
+		var want := str(p.interiors[0])
+		# toque no edifício (centro da imagem) → anda e entra
+		var sprite_hit := Vector2.INF
+		var entry: Variant = w.view._building_sprites.get(BairroView.door_key(str(p.id)))
+		if entry != null:
+			var sp: Sprite2D = entry[0]
+			sprite_hit = sp.position + Vector2(0, -sp.texture.get_height() * sp.scale.y * 0.35)
+		var target: Dictionary = w.view.door_at(sprite_hit) if sprite_hit != Vector2.INF else {}
+		if str(target.get("id", "")) != str(p.id):
+			falhas.append("%s (toque no edifício não deu a porta certa)" % p.name)
+			target = p
+		w._go_station(target)
+		var t0 := Time.get_ticks_msec()
+		var ok: Variant = await _wait_for(func() -> Variant:
+			var ins: Variant = Net.me.get("inside")
+			if typeof(ins) == TYPE_DICTIONARY and str(ins.id) == want:
+				return true
+			return false if Time.get_ticks_msec() - t0 > 60000 else null)
+		if not ok:
+			falhas.append("%s (não entrou)" % p.name)
+			continue
+		print("[autotest] entrei: %s (%.1f s)" % [p.name, (Time.get_ticks_msec() - t0) / 1000.0])
+		await tree.create_timer(0.4).timeout
+		Net.action("exit")
+		await _wait_for(func() -> Variant: return true if typeof(Net.me.get("inside")) != TYPE_DICTIONARY else null)
+		await tree.create_timer(0.4).timeout
+	print("[autotest] portas: %d, falhas: %d" % [n, falhas.size()])
+	return falhas
 
 
 ## Ciclo de vida completo contra o servidor real: dinheiro inicial → pais → emprego → turno pago.

@@ -159,9 +159,23 @@ func _process(delta: float) -> void:
 		if decor.is_active():
 			decor.update(local_char.world_pos, delta)
 		# chegou à estação tocada: abre logo o que se faz ali (como no Vida na Banda)
-		if _pending_station != "" and str(hud._context.get("id", "")) == _pending_station and local_char.world_pos.distance_to(_click_target) < 0.4:
-			_pending_station = ""
-			hud.use_context()
+		if _pending_station != "" and str(hud._context.get("id", "")) == _pending_station:
+			# chegou (ou parou já ao alcance): faz logo a ação — entrar, comer, dormir…
+			var pc: Dictionary = hud._context
+			var close := local_char.world_pos.distance_to(Vector2(pc.at[0], pc.at[1])) < float(pc.radius) * 0.6
+			if close or (_click_target == null and _path.is_empty()):
+				_pending_station = ""
+				hud.use_context()
+		elif _pending_station != "" and _click_target == null and _path.is_empty() and not _pending_place.is_empty():
+			# caminho longo (as rotas vão aos pedaços): parou a meio, continua até ao sítio
+			_pending_tries += 1
+			var keep := _pending_place
+			if _pending_tries > 6:
+				_pending_station = ""
+				hud.show_toast("Não consegui chegar a %s. Tenta aproximar-te mais." % str(keep.get("name", "esse sítio")), false)
+			else:
+				request_move(Vector2(keep.at[0], keep.at[1]))
+				_pending_station = str(keep.id)
 		minimap.visible = mode3d == "" and _room_center == Vector2.INF and not hud.phone.visible and not hud.menu_panel.visible
 		if mode3d != "" and view3d:
 			var room := view.interior_at(local_char.world_pos)
@@ -267,6 +281,8 @@ static var _show_guide_later := false
 var minimap := Minimap.new()
 var decor := InteriorDecor.new()
 var _pending_station := ""
+var _pending_place: Dictionary = {}
+var _pending_tries := 0
 
 
 func _lottery_pending() -> bool:
@@ -598,6 +614,7 @@ func _update_local(delta: float) -> void:
 			# teletransporte (entrar/sair de um edifício): salta já para a nova posição
 			local_char.world_pos = server_m
 			_click_target = null
+			_path.clear()
 			camera.position = Iso.to_screen(server_m) + Vector2(0, -70)
 			camera.reset_smoothing()
 		elif wdir == Vector2.ZERO:
@@ -660,7 +677,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_dragging = false
 		else:
 			if not _dragging and _press_pos != Vector2.INF and _touches.size() <= 1:
-				var st := decor.hit(get_global_mouse_position()) if decor.is_active() else {}
+				var st := decor.hit(get_global_mouse_position()) if decor.is_active() else view.door_at(get_global_mouse_position())
 				if not st.is_empty():
 					_go_station(st)
 				else:
@@ -704,6 +721,8 @@ func _go_station(p: Dictionary) -> void:
 		return
 	request_move(at)
 	_pending_station = str(p.id)
+	_pending_place = p
+	_pending_tries = 0
 
 
 func request_move(target_m: Vector2) -> void:
@@ -743,7 +762,20 @@ func _find_path(from: Vector2, to: Vector2) -> Array[Vector2]:
 				return false
 		return true
 	if free.call(to) == false:
-		return out
+		# destino tapado (porta encostada à parede, toque em cima de um edifício): o ponto livre mais perto
+		var found := false
+		for rad: float in [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0]:
+			var best := Vector2.INF
+			for k in 16:
+				var c: Vector2 = to + Vector2.from_angle(TAU * k / 16.0) * rad
+				if free.call(c) and (best == Vector2.INF or c.distance_to(from) < best.distance_to(from)):
+					best = c
+			if best != Vector2.INF:
+				to = best
+				found = true
+				break
+		if not found:
+			return out
 	var los := func(a: Vector2, b: Vector2) -> bool:
 		var n := maxi(1, ceili(a.distance_to(b) / 0.25))
 		for i in range(1, n + 1):

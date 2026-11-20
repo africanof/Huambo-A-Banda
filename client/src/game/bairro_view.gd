@@ -72,6 +72,7 @@ func build(bairro_id: String) -> bool:
 		var at := Vector2(b.at[0], b.at[1])
 		var pos := Iso.to_screen(Iso.front_corner(Rect2(at, Vector2(fp[0], fp[1]))))
 		_add_object(b.id, pos, Rect2(at, Vector2(fp[0], fp[1])))
+		_building_sprites[_bkey(str(b.id), float(b.at[0]), float(b.at[1]))] = [objects.get_child(objects.get_child_count() - 1), Rect2(at, Vector2(fp[0], fp[1]))]
 		if str(b.label) != "":
 			var o := DemoAssets.object(b.id)
 			_add_label(b.label, pos + Vector2(0, -_top(o) - 16), _is_home(b))
@@ -94,12 +95,64 @@ func _top(o: Dictionary) -> float:
 
 func _is_home(b: Dictionary) -> bool:
 	for p: Dictionary in places:
-		if p.kind == "door" and str(p.get("venue", "")) in ["casa", "apartamentos"] and str(p.id).begins_with("%s@%s,%s" % [b.id, b.at[0], b.at[1]]):
+		if p.kind == "door" and str(p.get("venue", "")) in ["casa", "apartamentos"] and door_key(str(p.id)) == _bkey(str(b.id), float(b.at[0]), float(b.at[1])):
 			return true
 	return false
 
 
 ## Lugar interativo mais próximo dentro do raio (ou {}).
+var _building_sprites := {} ## chave do edifício → [Sprite2D, pegada]
+
+
+## Chave de um edifício pelo id e posição (números comparados pelo valor: "2" e "2.0" são iguais).
+static func _bkey(id: String, x: float, y: float) -> String:
+	return "%s|%d|%d" % [id, roundi(x * 100.0), roundi(y * 100.0)]
+
+
+## Chave do edifício a que pertence uma porta ("<id>@<x>,<y>…").
+static func door_key(door_id: String) -> String:
+	var at := door_id.find("@")
+	if at < 0:
+		return ""
+	var xy := door_id.substr(at + 1).split(",")
+	if xy.size() < 2:
+		return ""
+	var ystr := xy[1]
+	for i in ystr.length(): # o y pode ter um sufixo (":<unidade>")
+		if not (ystr[i] in "0123456789.-"):
+			ystr = ystr.substr(0, i)
+			break
+	return _bkey(door_id.substr(0, at), xy[0].to_float(), ystr.to_float())
+
+
+## Porta do edifício tocado (como no Vida na Banda: tocar no edifício leva-te lá dentro), ou {}.
+## Aceita o toque na própria imagem do edifício ou na sua pegada no chão; o da frente ganha.
+func door_at(canvas_pos: Vector2) -> Dictionary:
+	var world := Iso.to_world(canvas_pos)
+	var best: Dictionary = {}
+	var best_y := -INF
+	for p: Dictionary in places:
+		if p.kind != "door":
+			continue
+		var hit := false
+		var front_y := 0.0
+		var entry: Variant = _building_sprites.get(door_key(str(p.id)))
+		if entry != null:
+			var sp: Sprite2D = entry[0]
+			var fp: Rect2 = entry[1]
+			front_y = sp.position.y
+			if fp.has_point(world):
+				hit = true
+			elif is_instance_valid(sp) and sp.texture:
+				var r := Rect2(sp.offset, sp.texture.get_size())
+				r = Rect2(sp.position + r.position * sp.scale, r.size * sp.scale).grow(-r.size.x * sp.scale.x * 0.06)
+				hit = r.has_point(canvas_pos)
+		if hit and front_y > best_y:
+			best_y = front_y
+			best = p
+	return best
+
+
 func place_near(world_m: Vector2) -> Dictionary:
 	var best := {}
 	var best_d := INF
