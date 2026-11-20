@@ -111,6 +111,8 @@ func _doors_loop() -> Array:
 				return true
 			return false if Time.get_ticks_msec() - t0 > 60000 else null)
 		if not ok:
+			var me_e: Variant = Net.entities.get(Net.self_id)
+			print("[autotest] falhou %s: eu=%s servidor=%s porta=%s tentativas=%d pendente=%s alvo=%s caminho=%d" % [p.name, w.local_char.world_pos, (me_e.pos / 100.0) if me_e else "?", p.at, w._pending_tries, w._pending_station, w._click_target, w._path.size()])
 			falhas.append("%s (não entrou)" % p.name)
 			continue
 		print("[autotest] entrei: %s (%.1f s)" % [p.name, (Time.get_ticks_msec() - t0) / 1000.0])

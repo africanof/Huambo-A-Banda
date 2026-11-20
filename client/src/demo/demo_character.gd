@@ -85,13 +85,21 @@ func set_top_hue(hue: Variant) -> void:
 		m.set_shader_parameter("target_hue", float(hue))
 
 
-func step(dir_world: Vector2, delta: float) -> void:
+func step(dir_world: Vector2, delta: float, max_dist := INF) -> void:
 	var before := world_pos
 	var cadence := CADENCE_RUN if running else CADENCE_WALK
 	if dir_world != Vector2.ZERO:
 		var spd := fixed_speed * (1.0 if not running else 1.0) if fixed_speed > 0.0 else stride_for(dir_world) * cadence
-		var v := dir_world.normalized() * spd * delta
-		_try_move(v)
+		# passos pequenos (≤ 8 cm): num telemóvel lento um passo inteiro chegava a meio metro,
+		# saltava por cima do ponto do caminho ou batia nas esquinas e ficava "preso"
+		var total := minf(spd * delta, max_dist)
+		var u := dir_world.normalized()
+		var n := maxi(1, ceili(total / 0.08))
+		for i in n:
+			var p0 := world_pos
+			_try_move(u * (total / n))
+			if world_pos == p0:
+				break
 	# só "anda" se de facto saiu do sítio (encostado a uma parede fica parado)
 	var dist := world_pos.distance_to(before)
 	_moving = dist > 0.0001

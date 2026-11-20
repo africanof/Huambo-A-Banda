@@ -168,9 +168,15 @@ func _process(delta: float) -> void:
 				hud.use_context()
 		elif _pending_station != "" and _click_target == null and _path.is_empty() and not _pending_place.is_empty():
 			# caminho longo (as rotas vão aos pedaços): parou a meio, continua até ao sítio
-			_pending_tries += 1
 			var keep := _pending_place
-			if _pending_tries > 6:
+			var dist := local_char.world_pos.distance_to(Vector2(keep.at[0], keep.at[1]))
+			# só conta como tentativa falhada se não se aproximou desde a última vez
+			if dist < _pending_best - 0.5:
+				_pending_best = dist
+				_pending_tries = 0
+			else:
+				_pending_tries += 1
+			if _pending_tries > 4:
 				_pending_station = ""
 				hud.show_toast("Não consegui chegar a %s. Tenta aproximar-te mais." % str(keep.get("name", "esse sítio")), false)
 			else:
@@ -283,6 +289,7 @@ var decor := InteriorDecor.new()
 var _pending_station := ""
 var _pending_place: Dictionary = {}
 var _pending_tries := 0
+var _pending_best := INF
 
 
 func _lottery_pending() -> bool:
@@ -589,7 +596,11 @@ func _update_local(delta: float) -> void:
 		var to: Vector2 = _click_target - local_char.world_pos
 		wdir = Vector2.ZERO if to.length() < 0.1 else to.normalized()
 		if wdir == Vector2.ZERO:
+			# chegou a este ponto do caminho: segue logo para o próximo (no mesmo fotograma)
 			_click_target = _path.pop_front() if not _path.is_empty() else null
+			if _click_target != null:
+				var nxt: Vector2 = _click_target - local_char.world_pos
+				wdir = Vector2.ZERO if nxt.length() < 0.1 else nxt.normalized()
 	# teclado/joystick: direção para o servidor (inteiros −100..100), enviada só quando muda.
 	# (o clique já enviou MOVE_TO; não o sobrepomos com direções)
 	var q := Vector2i(roundi(kdir.x * 100), roundi(kdir.y * 100))
@@ -601,8 +612,11 @@ func _update_local(delta: float) -> void:
 		elif Net.room:
 			Net.room.send(Protocol.C2S_MOVE_DIR, {"x": q.x, "y": q.y})
 	var before := local_char.world_pos
-	local_char.step(wdir, delta)
-	if _click_target != null and local_char.world_pos.distance_to(before) < 0.0005:
+	var left := INF
+	if kdir == Vector2.ZERO and _click_target != null:
+		left = (_click_target as Vector2).distance_to(local_char.world_pos) # não passa do ponto do caminho
+	local_char.step(wdir, delta, left)
+	if _click_target != null and wdir != Vector2.ZERO and local_char.world_pos.distance_to(before) < 0.0005:
 		_click_target = null
 		_path.clear()
 	# reconciliação com a posição autoritativa
@@ -723,6 +737,7 @@ func _go_station(p: Dictionary) -> void:
 	_pending_station = str(p.id)
 	_pending_place = p
 	_pending_tries = 0
+	_pending_best = INF
 
 
 func request_move(target_m: Vector2) -> void:
