@@ -785,7 +785,7 @@ const APPS := [
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
 	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["classificados", "Classificados", "bag", "y"],
-	["quintal", "Quintal", "home", "y"], ["desporto", "Desporto", "person", "r"],
+	["quintal", "Quintal", "home", "y"], ["desporto", "Desporto", "person", "r"], ["quiz", "Saber Huambo", "target", "y"], ["presentes", "Presentes", "hand", "r"],
 	["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
@@ -815,6 +815,8 @@ func _rebuild_phone() -> void:
 		"banco": _phone_bank()
 		"quintal": _phone_quintal()
 		"desporto": _phone_sport()
+		"quiz": _phone_quiz()
+		"presentes": _phone_gifts()
 		"casa": _phone_home()
 		"loja": _phone_shop()
 		"saude": _phone_health()
@@ -1095,6 +1097,56 @@ func _phone_sport() -> void:
 		c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
 
 
+## Saber Huambo: 3 perguntas por dia sobre o Huambo e Angola; cada certa dá dinheiro.
+func _phone_quiz() -> void:
+	var q: Dictionary = Net.me.get("quiz", {}) if typeof(Net.me.get("quiz")) == TYPE_DICTIONARY else {}
+	var c := _card()
+	c.add_child(_label("Pergunta %d de %d · certas hoje: %d" % [mini(int(q.get("n", 0)) + 1, int(q.get("total", 3))), int(q.get("total", 3)), int(q.get("certasHoje", 0))], 15, Color(1, 1, 1, 0.7), FONT_REG))
+	if q.get("pergunta") == null:
+		c.add_child(_label("Já respondeste às perguntas de hoje. Volta amanhã!", 18, ACCENT, FONT_BOLD, true))
+	else:
+		c.add_child(_label(str(q.pergunta), 19, Color.WHITE, FONT_BOLD, true))
+		var ops: Array = q.get("opcoes", [])
+		for k in ops.size():
+			var n := k + 1
+			c.add_child(_button(str(ops[k]), "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("quiz_responder", "", n)))
+		c.add_child(_label("Cada resposta certa vale %s Kz." % DemoHud._money(int(q.get("premio", 500))), 13, Color(1, 1, 1, 0.6), FONT_REG))
+	c.add_child(_label("Certas desde sempre: %d" % int(q.get("certas", 0)), 14, Color(1, 1, 1, 0.6), FONT_REG))
+
+
+## Presentes: oferecer ao par ou a um amigo (chega mesmo que esteja noutro bairro ou desligado).
+const GIFT_INFO := [["chocolate", "Chocolates", 800], ["flores", "Flores", 1500], ["capulana", "Pano (capulana)", 4000], ["perfume", "Perfume", 7000]]
+var _gift_to := 0
+
+
+func _phone_gifts() -> void:
+	var who: Array = []
+	var pa: Variant = Net.me.get("partner")
+	if typeof(pa) == TYPE_DICTIONARY:
+		who.append([1000, "%s (%s)" % [pa.name, "marido/mulher" if bool(pa.married) else "namorado/a"]])
+	var fr: Array = Net.me.get("friends", [])
+	for i in fr.size():
+		who.append([i + 1, str(fr[i].name)])
+	var c := _card()
+	if who.is_empty():
+		c.add_child(_label("Ainda não tens amigos nem par. Faz amigos na rua (toca numa pessoa) para lhes ofereceres presentes.", 15, Color.WHITE, FONT_REG, true))
+		return
+	if not who.any(func(w: Array) -> bool: return int(w[0]) == _gift_to):
+		_gift_to = int(who[0][0])
+	c.add_child(_label("Para quem?", 16, ACCENT, FONT_BOLD))
+	for w: Array in who:
+		var id := int(w[0])
+		var sel := id == _gift_to
+		c.add_child(_button(("✓ " if sel else "") + str(w[1]), "person", ACCENT if sel else Color(1, 1, 1, 0.1), INK if sel else Color.WHITE, func() -> void:
+			_gift_to = id
+			_rebuild_phone()))
+	var g := _card()
+	g.add_child(_label("O quê?", 16, ACCENT, FONT_BOLD))
+	for x: Array in GIFT_INFO:
+		var gid := str(x[0])
+		g.add_child(_button("%s · %s Kz" % [x[1], DemoHud._money(int(x[2]))], "hand", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("presente", gid, _gift_to)))
+
+
 ## Caixa de texto + botão (no telemóvel usa a caixa do browser, onde o teclado funciona).
 func _text_row(box: Container, placeholder: String, max_len: int, button: String, cb: Callable) -> LineEdit:
 	var row := HBoxContainer.new()
@@ -1171,6 +1223,15 @@ func _phone_health() -> void:
 		c.add_child(_button("Ir à esquadra", "pin", ACCENT, INK, func() -> void:
 			phone.visible = false
 			ui_action.emit("ir:esquadra")))
+	var sg: Dictionary = Net.me.get("seguro", {}) if typeof(Net.me.get("seguro")) == TYPE_DICTIONARY else {}
+	var ins := _card()
+	ins.add_child(_label("Seguro de saúde", 18, ACCENT, FONT_BOLD))
+	if bool(sg.get("ativo", false)):
+		ins.add_child(_label("Ativo durante mais %s: consultas, vacinas e medicamentos sem pagar." % _dur(int(sg.get("faltamS", 0))), 15, Color("8fe08a"), FONT_REG, true))
+	else:
+		ins.add_child(_label("Por %s Kz ficas 24 horas com consultas, vacinas e medicamentos pagos pelo seguro." % DemoHud._money(int(sg.get("preco", 4000))), 15, Color.WHITE, FONT_REG, true))
+		ins.add_child(_button("Fazer seguro", "plus", ACCENT, INK, func() -> void: Net.action("seguro_comprar")))
+	c = _card()
 	c.add_child(_button("Ir ao centro de saúde", "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:saude")))

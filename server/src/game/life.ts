@@ -84,6 +84,15 @@ export interface LifeState {
   prazo: { amount: number; start: number; maturesAt: number; rate: number; termo: string } | null;
   /** depósitos a prazo levantados com juros */
   prazosFeitos: number;
+  /** Saber Huambo: dia, quantas respondeu hoje e quantas acertou (hoje e desde sempre) */
+  quizDay: string | null;
+  quizFeitas: number;
+  quizCertasHoje: number;
+  quizCertas: number;
+  /** seguro de saúde pago até (ms) */
+  seguroAte: number;
+  /** presentes enviados (conquista) */
+  presentes: number;
 }
 
 export interface Missions {
@@ -449,6 +458,12 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     treinos: 0,
     prazo: null,
     prazosFeitos: 0,
+    quizDay: null,
+    quizFeitas: 0,
+    quizCertasHoje: 0,
+    quizCertas: 0,
+    seguroAte: 0,
+    presentes: 0,
   };
 }
 
@@ -579,6 +594,12 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
         ? { amount: Math.round(num(r.prazo.amount, 0, 0, PRAZO_MAX)), start: r.prazo.start, maturesAt: r.prazo.maturesAt, rate: PRAZOS[r.prazo.termo]!.rate, termo: r.prazo.termo }
         : null,
     prazosFeitos: Math.round(num(r.prazosFeitos, 0, 0, 1e9)),
+    quizDay: typeof r.quizDay === "string" ? r.quizDay : null,
+    quizFeitas: Math.round(num(r.quizFeitas, 0, 0, QUIZ_POR_DIA)),
+    quizCertasHoje: Math.round(num(r.quizCertasHoje, 0, 0, QUIZ_POR_DIA)),
+    quizCertas: Math.round(num(r.quizCertas, 0, 0, 1e9)),
+    seguroAte: num(r.seguroAte, 0, 0, 1e15),
+    presentes: Math.round(num(r.presentes, 0, 0, 1e9)),
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
@@ -777,7 +798,59 @@ export const CONQUISTAS: Record<string, { name: string; text: string; reward: nu
   criador: { name: "Criador/a", text: "Vendeste 10 animais ou produtos da criação", reward: 1500 },
   atleta: { name: "Atleta", text: "Chegaste a 80 de forma física", reward: 1500 },
   poupado: { name: "Poupado/a", text: "Levantaste um depósito a prazo com juros", reward: 1000 },
+  sabichao: { name: "Sabichão/Sabichona", text: "Acertaste 20 perguntas do Saber Huambo", reward: 1500 },
+  generoso: { name: "Generoso/a", text: "Ofereceste 5 presentes", reward: 1000 },
 };
+
+// ---------------------------------------------------------------- Saber Huambo (perguntas do dia)
+
+/** Perguntas sobre o Huambo e Angola: [pergunta, opções, índice da certa]. */
+export const QUIZ: Array<{ q: string; o: string[]; c: number }> = [
+  { q: "Em que ano foi fundada a cidade do Huambo?", o: ["1912", "1885", "1950", "1975"], c: 0 },
+  { q: "Que nome teve o Huambo no tempo colonial?", o: ["Silva Porto", "Nova Lisboa", "Sá da Bandeira", "Vila Luso"], c: 1 },
+  { q: "Que língua nacional se fala mais no Huambo?", o: ["Kimbundu", "Kikongo", "Umbundu", "Cokwe"], c: 2 },
+  { q: "Quando foi a independência de Angola?", o: ["4 de fevereiro de 1961", "11 de novembro de 1975", "25 de abril de 1974", "4 de abril de 2002"], c: 1 },
+  { q: "Que caminho de ferro passa pelo Huambo?", o: ["Caminho de Ferro de Luanda", "Caminho de Ferro de Moçâmedes", "Caminho de Ferro de Benguela", "Caminho de Ferro do Congo"], c: 2 },
+  { q: "Como se chama o estádio do Huambo?", o: ["Estádio dos Kurikutelas", "Estádio 11 de Novembro", "Estádio da Cidadela", "Estádio do Tafe"], c: 0 },
+  { q: "O que é uma kupapata?", o: ["Um prato de milho", "Um mototáxi", "Uma dança", "Um mercado"], c: 1 },
+  { q: "O que é a kixikila?", o: ["Uma poupança em grupo, à vez", "Um imposto", "Um tipo de pão", "Um instrumento"], c: 0 },
+  { q: "Como se chama a época seca e fria em Angola?", o: ["Monção", "Harmatão", "Cacimbo", "Estiagem"], c: 2 },
+  { q: "Qual é a moeda de Angola?", o: ["Metical", "Kwanza", "Rand", "Escudo"], c: 1 },
+  { q: "Qual é a cultura mais semeada no planalto do Huambo?", o: ["Café", "Cana-de-açúcar", "Milho", "Algodão"], c: 2 },
+  { q: "De onde vem o nome «Huambo»?", o: ["Do reino (e soba) Wambu", "De um rio", "De uma montanha", "De um comboio"], c: 0 },
+  { q: "Qual é a capital de Angola?", o: ["Benguela", "Lubango", "Huambo", "Luanda"], c: 3 },
+  { q: "Que cores tem a bandeira de Angola?", o: ["Verde, branco e vermelho", "Vermelho, preto e amarelo", "Azul, amarelo e verde", "Preto, branco e azul"], c: 1 },
+  { q: "Qual destes é um município da província do Huambo?", o: ["Caála", "Catumbela", "Cacuaco", "Caxito"], c: 0 },
+  { q: "O funge do planalto faz-se sobretudo com farinha de…", o: ["Trigo", "Milho", "Arroz", "Soja"], c: 1 },
+  { q: "O Huambo fica num planalto a cerca de…", o: ["200 m de altitude", "700 m de altitude", "1.700 m de altitude", "3.000 m de altitude"], c: 2 },
+  { q: "Que universidade pública tem sede no Huambo?", o: ["Universidade Agostinho Neto", "Universidade José Eduardo dos Santos", "Universidade Katyavala Bwila", "Universidade Mandume ya Ndemufayo"], c: 1 },
+];
+export const QUIZ_POR_DIA = 3;
+export const QUIZ_PREMIO = 500;
+
+/** As perguntas de hoje (as mesmas para toda a gente nesse dia). */
+export function quizDoDia(day: string): number[] {
+  let h = 0;
+  for (const ch of day) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const out: number[] = [];
+  for (let k = 0; out.length < QUIZ_POR_DIA; k++) {
+    const i = (h + k * 7) % QUIZ.length;
+    if (!out.includes(i)) out.push(i);
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------- presentes e seguro de saúde
+
+export const PRESENTES: Record<string, { name: string; price: number; mood: number }> = {
+  flores: { name: "Flores", price: 1_500, mood: 10 },
+  chocolate: { name: "Chocolates", price: 800, mood: 6 },
+  capulana: { name: "Pano (capulana)", price: 4_000, mood: 15 },
+  perfume: { name: "Perfume", price: 7_000, mood: 20 },
+};
+/** Seguro de saúde: um dia (24 h reais) de consultas, vacinas e medicamentos sem pagar. */
+export const SEGURO_PRICE = 4_000;
+export const SEGURO_MS = 24 * 3600_000;
 
 // ---------------------------------------------------------------- criação de animais (quintal)
 

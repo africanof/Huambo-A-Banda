@@ -59,6 +59,13 @@ import {
   PRAZOS,
   PRAZO_MIN,
   PRAZO_MAX,
+  QUIZ,
+  QUIZ_POR_DIA,
+  QUIZ_PREMIO,
+  quizDoDia,
+  PRESENTES,
+  SEGURO_PRICE,
+  SEGURO_MS,
   CURSOS,
   UNI_LESSONS,
   UNI_PRICE,
@@ -96,7 +103,7 @@ import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
 import { eventsAt, hasEvent } from "./events.js";
-import { queueSms, takeSms } from "./sms.js";
+import { queueGift, queueSms, takeGifts, takeSms } from "./sms.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
 import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
@@ -227,6 +234,8 @@ export interface SelfState {
   criacao: { animais: Array<{ tipo: string; name: string; prontoEmS: number }>; alimentadosS: number; ovos: number; max: number; racao: number };
   forma: { valor: number; treinosHoje: number; max: number };
   prazo: { amount: number; termo: string; name: string; rate: number; faltamS: number; total: number } | null;
+  quiz: { n: number; total: number; certasHoje: number; certas: number; pergunta: string | null; opcoes: string[]; premio: number };
+  seguro: { ativo: boolean; faltamS: number; preco: number };
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -314,6 +323,7 @@ export class LifeController {
     this.evictIfNeeded(actor, e);
     // SMS que chegaram enquanto estava desligado
     for (const m of takeSms(actor.characterId)) this.out.toast(actor, `SMS de ${m.from}: «${m.text}»`, true);
+    for (const g of takeGifts(actor.characterId)) this.receiveGift(actor, g.from, g.name, g.mood);
     this.sendSelf(actor);
   }
 
@@ -542,6 +552,15 @@ export class LifeController {
           break;
         case "prazo_abrir":
           await this.termOpen(actor, e, msg.n, msg.i);
+          break;
+        case "quiz_responder":
+          await this.quizAnswer(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "presente":
+          await this.sendGift(actor, e, (msg.n ?? 0) - 1, msg.i);
+          break;
+        case "seguro_comprar":
+          await this.buyInsurance(actor, e);
           break;
         case "prazo_levantar":
           await this.termClose(actor, e);
@@ -788,7 +807,9 @@ export class LifeController {
     if (sv.doc && e.life.docs[sv.doc]) return this.out.toast(actor, `Já tens ${DOC_LABEL[sv.doc]}.`, false);
     if (sv.needsDoc && !e.life.docs[sv.needsDoc]) return this.out.toast(actor, `Primeiro precisas do ${DOC_LABEL[sv.needsDoc]}.`, false);
     if (sv.energy && sv.energy < 0 && e.life.needs.energy < -sv.energy) return this.out.toast(actor, "Estás cansado(a) demais. Vai dormir primeiro.", false);
-    if (sv.price > 0) e.money = await this.wallets.apply(actor.characterId, -sv.price, `service.${sv.id}`, `service:${actor.characterId}:${this.op()}:${sv.id}`);
+    const covered = this.insured(e) && (sv.venue === "saude" || sv.id === "medicamentos");
+    const price = covered ? 0 : sv.price;
+    if (price > 0) e.money = await this.wallets.apply(actor.characterId, -price, `service.${sv.id}`, `service:${actor.characterId}:${this.op()}:${sv.id}`);
     if (sv.doc) e.life.docs[sv.doc] = true;
     if (sv.credit) e.life.phoneCredit += sv.credit;
     const n = e.life.needs;
@@ -796,7 +817,7 @@ export class LifeController {
     const boost = (sv.venue === "igreja" && hasEvent(this.now(), "missa")) || (sv.venue === "discoteca" && hasEvent(this.now(), "sexta")) ? 2 : 1;
     e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0) * boost), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
     e.dirty = true;
-    this.out.toast(actor, sv.price > 0 ? `${sv.name}: feito (−${sv.price.toLocaleString("pt-PT")} Kz).` : `${sv.name}: feito.`, true);
+    this.out.toast(actor, price > 0 ? `${sv.name}: feito (−${price.toLocaleString("pt-PT")} Kz).` : covered ? `${sv.name}: feito (pago pelo seguro).` : `${sv.name}: feito.`, true);
     this.mission(actor, e, "servico");
     // consultas e medicamentos curam
     const d = e.life.doenca;
@@ -893,6 +914,7 @@ export class LifeController {
         e.life.needs = decay(e.life.needs, minutes);
         this.healthAndCrime(actor, e, minutes, t);
         e.life.forma = Math.max(0, e.life.forma - FORMA_DECAY * minutes);
+        for (const g of takeGifts(actor.characterId)) this.receiveGift(actor, g.from, g.name, g.mood);
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -1028,6 +1050,8 @@ export class LifeController {
       criador: L.criacao.vendidos >= 10,
       atleta: L.forma >= 80,
       poupado: L.prazosFeitos > 0,
+      sabichao: L.quizCertas >= 20,
+      generoso: L.presentes >= 5,
     };
     for (const [id, ok] of Object.entries(has)) {
       if (!ok || L.conquistas.includes(id)) continue;
@@ -1604,6 +1628,84 @@ export class LifeController {
     );
   }
 
+  // ---------------------------------------------------------------- Saber Huambo
+
+  private quizToday(e: Entry): { day: string; ids: number[] } {
+    const day = angolaDay(this.now());
+    if (e.life.quizDay !== day) {
+      e.life.quizDay = day;
+      e.life.quizFeitas = 0;
+      e.life.quizCertasHoje = 0;
+    }
+    return { day, ids: quizDoDia(day) };
+  }
+
+  private async quizAnswer(actor: LifeActor, e: Entry, ans: number): Promise<void> {
+    const { day, ids } = this.quizToday(e);
+    const L = e.life;
+    if (L.quizFeitas >= QUIZ_POR_DIA) return this.out.toast(actor, "Já respondeste às perguntas de hoje. Volta amanhã!", false);
+    const q = QUIZ[ids[L.quizFeitas]!]!;
+    if (!Number.isInteger(ans) || ans < 0 || ans >= q.o.length) return this.out.toast(actor, "Escolhe uma das respostas.", false);
+    const idx = L.quizFeitas;
+    L.quizFeitas += 1; // antes de pagar: não se responde duas vezes à mesma
+    e.dirty = true;
+    if (ans === q.c) {
+      L.quizCertasHoje += 1;
+      L.quizCertas += 1;
+      e.money = await this.wallets.apply(actor.characterId, QUIZ_PREMIO, "quiz.premio", `quiz:${actor.characterId}:${day}:${idx}`);
+      this.out.toast(actor, `Certo! +${QUIZ_PREMIO} Kz.`, true);
+    } else {
+      this.out.toast(actor, `Errado. A resposta certa era: ${q.o[q.c]}.`, false);
+    }
+  }
+
+  // ---------------------------------------------------------------- presentes
+
+  private async sendGift(actor: LifeActor, e: Entry, idx: number, id: string | undefined): Promise<void> {
+    const g = PRESENTES[id ?? ""];
+    if (!g) return this.out.toast(actor, "Esse presente não existe.", false);
+    // n = 1000 é o par; senão o amigo n da lista
+    const to = idx === 999 ? (e.life.partner ? { id: e.life.partner.id, name: e.life.partner.name } : undefined) : e.life.friends[idx];
+    if (!to) return this.out.toast(actor, "Escolhe a quem queres oferecer.", false);
+    if (e.money < g.price) return this.out.toast(actor, `${g.name} custa ${g.price.toLocaleString("pt-PT")} Kz.`, false);
+    e.money = await this.wallets.apply(actor.characterId, -g.price, `presente.${id}`, `presente:${actor.characterId}:${this.op()}`);
+    e.life.presentes += 1;
+    e.dirty = true;
+    const from = actor.name ?? "Alguém";
+    const here = this.actorById(to.id);
+    if (here) this.receiveGift(here, from, g.name, g.mood);
+    else {
+      queueGift(to.id, from, g.name, g.mood);
+      const text = `Mandei-te um presente: ${g.name.toLowerCase()}!`;
+      if (!(this.out.sms?.(to.id, from, text) ?? false)) queueSms(to.id, from, text, this.now());
+    }
+    this.out.toast(actor, `Ofereceste ${g.name.toLowerCase()} a ${to.name} (−${g.price.toLocaleString("pt-PT")} Kz).`, true);
+  }
+
+  private receiveGift(actor: LifeActor, from: string, name: string, mood: number): void {
+    const e = this.entries.get(actor);
+    if (!e) return;
+    e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + mood) };
+    e.dirty = true;
+    this.out.toast(actor, `${from} ofereceu-te ${name.toLowerCase()}! (+${mood} humor)`, true);
+    this.sendSelf(actor);
+  }
+
+  // ---------------------------------------------------------------- seguro de saúde
+
+  private insured(e: Entry): boolean {
+    return e.life.seguroAte > this.now();
+  }
+
+  private async buyInsurance(actor: LifeActor, e: Entry): Promise<void> {
+    if (this.insured(e)) return this.out.toast(actor, "Já tens seguro de saúde ativo.", false);
+    if (e.money < SEGURO_PRICE) return this.out.toast(actor, `O seguro custa ${SEGURO_PRICE.toLocaleString("pt-PT")} Kz.`, false);
+    e.money = await this.wallets.apply(actor.characterId, -SEGURO_PRICE, "seguro.saude", `seguro:${actor.characterId}:${this.op()}`);
+    e.life.seguroAte = this.now() + SEGURO_MS;
+    e.dirty = true;
+    this.out.toast(actor, "Seguro de saúde ativo durante 24 horas: consultas, vacinas e medicamentos sem pagar.", true);
+  }
+
   // ---------------------------------------------------------------- lavras
 
   private async lavraPlant(actor: LifeActor, e: Entry, crop: string | undefined): Promise<void> {
@@ -2067,6 +2169,12 @@ export class LifeController {
           racao: RACAO_PRICE,
         };
       })(),
+      quiz: (() => {
+        const { ids } = this.quizToday(e);
+        const q = e.life.quizFeitas < QUIZ_POR_DIA ? QUIZ[ids[e.life.quizFeitas]!]! : null;
+        return { n: e.life.quizFeitas, total: QUIZ_POR_DIA, certasHoje: e.life.quizCertasHoje, certas: e.life.quizCertas, pergunta: q?.q ?? null, opcoes: q?.o ?? [], premio: QUIZ_PREMIO };
+      })(),
+      seguro: { ativo: this.insured(e), faltamS: Math.max(0, Math.ceil((e.life.seguroAte - t) / 1000)), preco: SEGURO_PRICE },
       forma: { valor: Math.round(e.life.forma), treinosHoje: e.life.treinosDay === angolaDay(t) ? e.life.treinos : 0, max: TREINOS_POR_DIA },
       prazo: e.life.prazo
         ? {

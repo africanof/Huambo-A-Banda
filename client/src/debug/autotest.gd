@@ -513,7 +513,13 @@ func _views_loop() -> void:
 		print("[autotest] desporto: forma %d → %d; prazo: %s" % [f0, f1, str(Net.me.get("prazo"))])
 		if f1 <= f0:
 			_finish(false, "treinar não subiu a forma")
-		for app: String in ["classificados", "grupos", "quintal", "desporto", "banco"]:
+		var q0 := int(Net.me.get("quiz", {}).get("n", 0))
+		Net.action("quiz_responder", "", 1)
+		await tree.create_timer(1.5).timeout
+		print("[autotest] quiz: %d → %d" % [q0, int(Net.me.get("quiz", {}).get("n", 0))])
+		if q0 < 3 and int(Net.me.get("quiz", {}).get("n", 0)) != q0 + 1:
+			_finish(false, "quiz não avançou")
+		for app: String in ["classificados", "grupos", "quintal", "desporto", "banco", "quiz", "presentes", "saude"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)
