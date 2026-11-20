@@ -68,6 +68,46 @@ static func angle_id(id: String, r: int) -> String:
 	return a if not object(a).is_empty() else id
 
 
+## Objetos com escrita (placas, anúncios, letreiros, bandeiras, edifícios com nome): nunca espelhar.
+const NO_MIRROR := ["sign", "billboard", "bairro", "bandeira", "atm", "unitel", "movicel", "kiosk", "paragem", "stop", "facade", "stall", "banca"]
+
+
+## Pode-se mostrar espelhada (arte de IA sem letras) quando falta a arte desse ângulo?
+## Espelhar um objeto isométrico troca os dois lados da base — é o que a vista rodada 90° pede.
+static func mirrorable(id: String) -> bool:
+	var o := object(id)
+	match str(o.get("category", "")):
+		"room", "furniture":
+			return true
+		"building":
+			return str(o.get("venue", "")) == "casa" # casas de família, sem letreiro
+		"prop", "roadside":
+			for w: String in NO_MIRROR:
+				if w in id:
+					return false
+			return true
+	return false
+
+
+## Tem arte para ver este objeto no ângulo r (própria ou espelhada)?
+static func has_view(id: String, r: int) -> bool:
+	return r == 0 or angle_id(id, r) != id or (r % 2 == 1 and mirrorable(id))
+
+
+## Sprite para o ângulo r: a arte desse lado se existir; senão, nos ângulos 90°/270°,
+## a arte original espelhada (se não tiver letras); senão a original.
+static func make_view_sprite(id: String, r: int) -> Sprite2D:
+	var aid := angle_id(id, r)
+	if aid != id:
+		return make_sprite(aid)
+	var s := make_sprite(id)
+	if r % 2 == 1 and s.texture and mirrorable(id):
+		var o := object(id)
+		s.flip_h = true
+		s.offset.x = -(s.texture.get_width() - float(o.anchor[0]))
+	return s
+
+
 ## Sprite de um objeto com a âncora (base mais à frente) na origem do nó.
 static func make_sprite(id: String) -> Sprite2D:
 	var o := object(id)

@@ -183,7 +183,7 @@ func _build_interiors() -> void:
 	interiors = data.get("interiors", [])
 	for i: Dictionary in interiors:
 		var r: Array = i.rect
-		var room := DemoAssets.make_sprite(DemoAssets.angle_id(str(i.get("room", "interior_sala")), Iso.rot))
+		var room := DemoAssets.make_view_sprite(str(i.get("room", "interior_sala")), Iso.rot)
 		room.position = Iso.to_screen(Iso.front_corner(Rect2(r[0], r[1], r[2], r[3])))
 		room.z_index = -10
 		add_child(room)
@@ -192,7 +192,7 @@ func _build_interiors() -> void:
 			if o.is_empty():
 				continue
 			var fp := Vector2(o.footprint[0], o.footprint[1])
-			var s := DemoAssets.make_sprite(DemoAssets.angle_id(str(f.id), Iso.rot))
+			var s := DemoAssets.make_view_sprite(str(f.id), Iso.rot)
 			s.position = Iso.to_screen(Iso.front_corner(Rect2(Vector2(f.at[0], f.at[1]), fp)))
 			if o.get("floor", false):
 				s.z_index = -6
@@ -203,7 +203,7 @@ func _build_interiors() -> void:
 
 ## A sala tem arte para este ângulo (para poder rodar a vista lá dentro)?
 func room_has_angle(i: Dictionary, r: int) -> bool:
-	return r == 0 or DemoAssets.angle_id(str(i.get("room", "")), r) != str(i.get("room", ""))
+	return DemoAssets.has_view(str(i.get("room", "")), r)
 
 
 ## Interior que contém um ponto (metros), ou {} se estiver na rua.
@@ -476,10 +476,10 @@ func _add_object(id: String, pos: Vector2, footprint := Rect2()) -> Dictionary:
 		return o
 	# com a vista rodada, a arte desse lado (se existir)
 	var aid := DemoAssets.angle_id(id, Iso.rot)
+	var s := DemoAssets.make_view_sprite(id, Iso.rot)
 	if aid != id:
 		o = DemoAssets.object(aid)
 		id = aid
-	var s := DemoAssets.make_sprite(id)
 	s.position = pos
 	objects.add_child(s)
 	if s.texture and s.texture.get_height() * s.scale.y > 90:
@@ -491,6 +491,9 @@ func _add_object(id: String, pos: Vector2, footprint := Rect2()) -> Dictionary:
 		sh.texture = t
 		sh.centered = false
 		sh.offset = -Vector2(o.shadow_anchor[0], o.shadow_anchor[1])
+		if s.flip_h:
+			sh.flip_h = true
+			sh.offset.x = -(t.get_width() - float(o.shadow_anchor[0]))
 		sh.position = pos
 		sh.modulate = Color(1, 1, 1, 0.9)
 		shadows.add_child(sh)

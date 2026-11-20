@@ -366,13 +366,18 @@ func _save_rot() -> void:
 ## 🔄 Rodar a vista 90° (o mundo e o servidor ficam iguais: só muda a projeção).
 func rotate_view() -> void:
 	var inside := view.interior_at(local_char.world_pos) if local_char else {}
-	if not inside.is_empty() and not view.room_has_angle(inside, (_rot_user + 1) % 4):
-		hud.show_toast("Esta sala ainda não tem arte dos outros lados.", false)
-		return
+	# lá dentro, salta os lados da sala que ainda não têm arte
+	var step := 1
+	if not inside.is_empty():
+		while step < 4 and not view.room_has_angle(inside, (_rot_user + step) % 4):
+			step += 1
+		if step == 4:
+			hud.show_toast("Esta sala ainda não tem arte dos outros lados.", false)
+			return
 	if _rotating:
 		return # a rodar: ignora toques repetidos (num telemóvel lento sobrepunham-se)
 	_rotating = true
-	_rot_user = (_rot_user + 1) % 4
+	_rot_user = (_rot_user + step) % 4
 	_save_rot()
 	await _apply_rot(_rot_user, true)
 	_rotating = false
