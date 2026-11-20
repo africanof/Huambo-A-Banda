@@ -473,7 +473,9 @@ func _update_inside() -> void:
 		i = view.interior_at(local_char.world_pos)
 	_inside_id = id
 	_room_center = Vector2.INF
-	_pending_station = ""
+	# ao entrar o destino já foi cumprido; ao sair mantém-se (pode já ter tocado noutro edifício)
+	if not i.is_empty() or str(_pending_place.get("interior", "")) != "":
+		_pending_station = ""
 	if i.is_empty():
 		decor.clear()
 		hud.set_inside(false)
