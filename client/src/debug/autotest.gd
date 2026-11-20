@@ -129,6 +129,25 @@ func _social_loop() -> String:
 	if not friends:
 		return "amizade não ficou feita"
 	print("[autotest] amigos: %s" % [Net.me.friends])
+	# namoro: o mesmo que convidou para amigo pede em namoro; o outro aceita
+	if my_name < str(Net.entities[other].name):
+		Net.action("namoro_pedir", str(other))
+	t0 = Time.get_ticks_msec()
+	var love: Variant = await _wait_for(func() -> Variant:
+		if typeof(Net.me.get("loveReq")) == TYPE_DICTIONARY:
+			Net.action("namoro_aceitar")
+		if typeof(Net.me.get("partner")) == TYPE_DICTIONARY:
+			return true
+		return false if Time.get_ticks_msec() - t0 > 20000 else null)
+	if not love:
+		return "namoro não ficou feito"
+	print("[autotest] a namorar com %s" % Net.me.partner.name)
+	Net.action("imoveis")
+	t0 = Time.get_ticks_msec()
+	await _wait_for(func() -> Variant: return true if typeof(Net.me.get("imoveis")) == TYPE_ARRAY or Time.get_ticks_msec() - t0 > 10000 else null)
+	if typeof(Net.me.get("imoveis")) != TYPE_ARRAY:
+		return "imóveis não chegaram"
+	print("[autotest] imóveis no bairro: %d" % (Net.me.imoveis as Array).size())
 	# rádio: dedicatória de cada um; tem de ouvir a do outro
 	var heard_radio := [false]
 	Net.radio_received.connect(func(who: String, _t: String) -> void:
@@ -444,7 +463,7 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		for app: String in ["lavras", "ambicao", "ricos", "tempo"]:
+		for app: String in ["familia", "negocio", "imoveis"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)

@@ -923,6 +923,13 @@ func _on_hud_action(what: String) -> void:
 				if p.kind == "portal" and str(p.get("to", "")) == to:
 					request_move(Vector2(p.at[0], p.at[1]))
 					hud.show_toast("A caminho da saída para %s…" % str(p.name).trim_prefix("A pé para "), true)
+		var w when w.begins_with("ir_ponto:"):
+			var xy := w.trim_prefix("ir_ponto:").split(",")
+			if typeof(Net.me.get("inside")) == TYPE_DICTIONARY:
+				Net.action("exit")
+				await get_tree().create_timer(0.6).timeout
+			request_move(Vector2(xy[0].to_float(), xy[1].to_float()))
+			hud.show_toast("A caminho…", true)
 		var w when w.begins_with("ir:"):
 			# app do telemóvel: leva-te a pé à porta do sítio desse tipo neste bairro (o mais perto)
 			var venue := w.trim_prefix("ir:")

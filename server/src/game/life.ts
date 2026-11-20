@@ -57,6 +57,10 @@ export interface LifeState {
   /** ambição de vida escolhida e quantas já cumpriu */
   ambicao: string | null;
   ambicoesFeitas: string[];
+  /** namoro ou casamento */
+  partner: { id: string; name: string; since: number; married: boolean } | null;
+  /** negócio próprio (Empresas) */
+  negocio: { tipo: string; nivel: number; lastCollect: number; investido: number } | null;
 }
 
 export interface Missions {
@@ -399,6 +403,8 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     colhidoTotal: 0,
     ambicao: null,
     ambicoesFeitas: [],
+    partner: null,
+    negocio: null,
   };
 }
 
@@ -495,6 +501,19 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
     ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
     ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],
+    partner:
+      r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
+        ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
+        : null,
+    negocio:
+      r.negocio && typeof r.negocio.tipo === "string" && r.negocio.tipo in NEGOCIOS && typeof r.negocio.lastCollect === "number"
+        ? {
+            tipo: r.negocio.tipo,
+            nivel: Math.round(num(r.negocio.nivel, 1, 1, NEGOCIO_MAX_NIVEL)),
+            lastCollect: r.negocio.lastCollect,
+            investido: Math.round(num(r.negocio.investido, 0, 0, 1e10)),
+          }
+        : null,
   };
 }
 
@@ -592,3 +611,30 @@ export const AMBICOES: Record<string, { text: string; reward: number }> = {
   carro: { text: "Ter carro próprio", reward: 10_000 },
   agricultor: { text: "Colher 200 kg na lavra", reward: 10_000 },
 };
+
+// ---------------------------------------------------------------- namoro e casamento
+
+/** Casar na igreja (a festa e a cerimónia), pago por quem pede. */
+export const WEDDING_PRICE = 20_000;
+/** Tempo mínimo de namoro antes de casar (ms reais). */
+export const WEDDING_MIN_DATING_MS = 10 * 60_000;
+export const DIVORCE_PRICE = 5_000;
+
+// ---------------------------------------------------------------- negócios (Empresas)
+
+/** Negócios: custo de abrir (Kz), rendimento por hora (nível 1) — o dinheiro junta-se até 12 h. */
+export const NEGOCIOS: Record<string, { name: string; cost: number; perHour: number }> = {
+  quiosque: { name: "Quiosque de saldo e recargas", cost: 50_000, perHour: 2_000 },
+  cantina: { name: "Cantina", cost: 150_000, perHour: 6_000 },
+  candongueiro: { name: "Candongueiro (táxi azul e branco)", cost: 400_000, perHour: 15_000 },
+};
+export const NEGOCIO_MAX_NIVEL = 3;
+export const NEGOCIO_MAX_HOURS = 12;
+export function negocioPerHour(tipo: string, nivel: number): number {
+  const n = NEGOCIOS[tipo];
+  return n ? Math.round(n.perHour * (1 + 0.5 * (nivel - 1))) : 0;
+}
+export function negocioUpgradeCost(tipo: string, nivel: number): number {
+  const n = NEGOCIOS[tipo];
+  return n ? n.cost * nivel : 0;
+}

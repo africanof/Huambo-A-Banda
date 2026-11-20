@@ -781,7 +781,8 @@ const APPS := [
 	["biscatos", "Ganhar dinheiro", "bag", "y"], ["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "d"],
 	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
 	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["lavras", "Lavras", "plus", "y"],
-	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["ajuda", "Ajuda", "more", "d"],
+	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
+	["imoveis", "Imóveis", "home", "d"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -816,6 +817,8 @@ func _rebuild_phone() -> void:
 		"sorte": _phone_luck()
 		"biscatos": _phone_biscatos()
 		"lavras": _phone_lavras()
+		"negocio": _phone_business()
+		"imoveis": _phone_housing()
 		"ambicao": _phone_ambition()
 		"ricos": _phone_rich()
 		"tempo": _phone_weather()
@@ -951,6 +954,7 @@ func _phone_family() -> void:
 		c.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
 	else:
 		c.add_child(_button("Pedir dinheiro aos pais", "person", ACCENT, INK, func() -> void: Net.action("parents")))
+	_love_section()
 
 
 ## App que mostra o estado e leva-te a pé ao sítio certo do bairro.
@@ -983,6 +987,97 @@ func _text_row(box: Container, placeholder: String, max_len: int, button: String
 	row.add_child(_button(button, "plus", ACCENT, INK, func() -> void: go.call()))
 	box.add_child(row)
 	return le
+
+
+## Namoro e casamento (na app Família).
+func _love_section() -> void:
+	var c := _card()
+	c.add_child(_label("Amor", 18, ACCENT, FONT_BOLD))
+	for kind: Array in [["loveReq", "pediu-te em namoro!", "namoro_aceitar", "namoro_recusar"], ["weddingReq", "pediu-te em casamento!", "casar_aceitar", "casar_recusar"]]:
+		var r: Variant = Net.me.get(kind[0])
+		if typeof(r) == TYPE_DICTIONARY:
+			c.add_child(_label("%s %s" % [r.name, kind[1]], 17, Color("ffb3c7"), FONT_BOLD, true))
+			var row := HBoxContainer.new()
+			row.add_theme_constant_override("separation", 6)
+			var yes := str(kind[2])
+			var no := str(kind[3])
+			row.add_child(_button("Aceitar", "plus", ACCENT, INK, func() -> void: Net.action(yes)))
+			row.add_child(_button("Recusar", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action(no)))
+			c.add_child(row)
+	var p: Variant = Net.me.get("partner")
+	if typeof(p) == TYPE_DICTIONARY:
+		c.add_child(_label("%s com %s%s" % ["Casado/a" if bool(p.married) else "A namorar", p.name, " (ligado/a agora)" if bool(p.online) else ""], 16, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Estar perto do teu par anima o humor.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+		if not bool(p.married):
+			c.add_child(_label("Para casar: entrem os dois na igreja do bairro (%s Kz, paga quem pede)." % DemoHud._money(20000), 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+			c.add_child(_button("Pedir em casamento", "plus", ACCENT, INK, func() -> void: Net.action("casar")))
+			c.add_child(_button("Acabar o namoro", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("terminar")))
+		else:
+			c.add_child(_button("Pedir o divórcio (no Tribunal ou Administração)", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("terminar")))
+		return
+	c.add_child(_label("Estás solteiro/a. Pede alguém que esteja perto em namoro:", 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+	var me_e: Variant = Net.entities.get(Net.self_id)
+	var any := false
+	for id: int in Net.entities:
+		if id != Net.self_id and me_e != null and (Net.entities[id].pos as Vector2).distance_to(me_e.pos) <= 800.0:
+			any = true
+			var eid := id
+			c.add_child(_button("Pedir %s em namoro" % Net.entities[id].name, "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("namoro_pedir", str(eid))))
+	if not any:
+		c.add_child(_label("Ninguém perto de ti agora.", 13, Color(1, 1, 1, 0.5), FONT_REG))
+
+
+## Empresas: abrir um negócio na Administração (com BI); rende por hora até 12 h.
+const BUSINESSES := [["quiosque", "Quiosque de saldo e recargas", 50000, 2000], ["cantina", "Cantina", 150000, 6000], ["candongueiro", "Candongueiro (táxi azul e branco)", 400000, 15000]]
+
+
+func _phone_business() -> void:
+	var b: Variant = Net.me.get("negocio")
+	var c := _card()
+	if typeof(b) == TYPE_DICTIONARY:
+		c.add_child(_label(str(b.name), 19, ACCENT, FONT_BOLD, true))
+		c.add_child(_label("Nível %d · %s Kz por hora (junta até %d h)" % [int(b.nivel), DemoHud._money(int(b.perHour)), int(b.maxHoras)], 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Lucro por recolher: %s Kz" % DemoHud._money(int(b.pendente)), 18, Color("8fe08a"), FONT_BOLD))
+		c.add_child(_button("Recolher o lucro", "bag", ACCENT, INK, func() -> void: Net.action("negocio_recolher")))
+		if b.melhorar != null:
+			c.add_child(_button("Melhorar (%s Kz)" % DemoHud._money(int(b.melhorar)), "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("negocio_melhorar")))
+		c.add_child(_button("Vender o negócio (metade do investido)", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("negocio_vender")))
+		return
+	c.add_child(_label("Abre o teu negócio: o dinheiro entra mesmo quando não estás a jogar (até 12 horas). O alvará tira-se na Administração do bairro e precisas de BI.", 15, Color.WHITE, FONT_REG, true))
+	for x: Array in BUSINESSES:
+		var id := str(x[0])
+		c.add_child(_label("%s — %s Kz · %s Kz/hora" % [x[1], DemoHud._money(int(x[2])), DemoHud._money(int(x[3]))], 15, Color.WHITE, FONT_BOLD, true))
+		c.add_child(_button("Abrir (estando na Administração)", "plus", ACCENT, INK, func() -> void: Net.action("negocio_abrir", id)))
+	c.add_child(_button("Ir à Administração", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		phone.visible = false
+		ui_action.emit("ir:administracao")))
+
+
+## Imóveis: casas e prédios do bairro com frações livres, preços e caminho até lá.
+var _housing_asked := 0
+
+
+func _phone_housing() -> void:
+	var c := _card()
+	c.add_child(_label("Imóveis em %s" % place_text, 18, ACCENT, FONT_BOLD, true))
+	var l: Variant = Net.me.get("imoveis")
+	if typeof(l) != TYPE_ARRAY or Time.get_ticks_msec() - _housing_asked > 30000:
+		if Time.get_ticks_msec() - _housing_asked > 3000:
+			_housing_asked = Time.get_ticks_msec()
+			Net.action("imoveis")
+		if typeof(l) != TYPE_ARRAY:
+			c.add_child(_label("A procurar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+			return
+	if (l as Array).is_empty():
+		c.add_child(_label("Não há casas à venda neste bairro.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+	for h: Dictionary in l:
+		c.add_child(_label("%s — %s" % [h.name, ("%d livre(s) de %d" % [int(h.free), int(h.total)]) if int(h.total) > 1 else ("livre" if int(h.free) > 0 else "ocupada")], 15, Color("8fe08a") if int(h.free) > 0 else Color(1, 1, 1, 0.55), FONT_BOLD, true))
+		c.add_child(_label("Comprar %s Kz · arrendar %s Kz/dia" % [DemoHud._money(int(h.buy)), DemoHud._money(int(h.rentPerDay))], 13, Color(1, 1, 1, 0.7), FONT_REG))
+		if int(h.free) > 0:
+			var at := Vector2(float(h.x) / 100.0, float(h.y) / 100.0)
+			c.add_child(_button("Ir ver", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+				phone.visible = false
+				ui_action.emit("ir_ponto:%f,%f" % [at.x, at.y])))
 
 
 ## Lavras: semear, regar, colher na Chipipa e vender no mercado.

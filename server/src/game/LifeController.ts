@@ -41,6 +41,14 @@ import {
   CROPS,
   DRY_FACTOR,
   AMBICOES,
+  WEDDING_PRICE,
+  WEDDING_MIN_DATING_MS,
+  DIVORCE_PRICE,
+  NEGOCIOS,
+  NEGOCIO_MAX_NIVEL,
+  NEGOCIO_MAX_HOURS,
+  negocioPerHour,
+  negocioUpgradeCost,
   rollSorte,
   TRANSFER_MAX,
   TRANSFER_MIN,
@@ -92,6 +100,11 @@ interface Busy {
 }
 
 interface Entry {
+  /** pedido de namoro recebido / pedido de casamento recebido */
+  loveReq?: { from: LifeActor };
+  weddingReq?: { from: LifeActor };
+  /** lista de imóveis do bairro (pedida pela app Imóveis) */
+  imoveis?: Array<{ door: string; name: string; venue: string; free: number; total: number; buy: number; rentPerDay: number; x: number; y: number }>;
   /** pedido de amizade recebido (vale enquanto quem pediu estiver nesta sala) */
   friendReq?: { from: LifeActor; at: number };
   /** última vez que ouviu a rádio (ms) */
@@ -162,6 +175,11 @@ export interface SelfState {
   colheita: Record<string, number>;
   ambicao: { id: string; text: string; reward: number; progress: number } | null;
   ambicoesFeitas: string[];
+  partner: { name: string; married: boolean; online: boolean; desde: number } | null;
+  loveReq: { name: string } | null;
+  weddingReq: { name: string } | null;
+  negocio: { tipo: string; name: string; nivel: number; perHour: number; pendente: number; melhorar: number | null; maxHoras: number } | null;
+  imoveis: Entry["imoveis"] | null;
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
 }
 
@@ -375,6 +393,38 @@ export class LifeController {
           break;
         case "grupo_sair":
           await this.groupLeave(actor, e);
+          break;
+        case "namoro_pedir":
+          this.loveAsk(actor, e, msg.i);
+          break;
+        case "namoro_aceitar":
+        case "namoro_recusar":
+          this.loveAnswer(actor, e, msg.a === "namoro_aceitar");
+          break;
+        case "casar":
+          this.weddingAsk(actor, e);
+          break;
+        case "casar_aceitar":
+        case "casar_recusar":
+          await this.weddingAnswer(actor, e, msg.a === "casar_aceitar");
+          break;
+        case "terminar":
+          await this.breakUp(actor, e);
+          break;
+        case "negocio_abrir":
+          await this.businessOpen(actor, e, msg.i);
+          break;
+        case "negocio_recolher":
+          await this.businessCollect(actor, e);
+          break;
+        case "negocio_melhorar":
+          await this.businessUpgrade(actor, e);
+          break;
+        case "negocio_vender":
+          await this.businessSell(actor, e);
+          break;
+        case "imoveis":
+          await this.listHousing(e);
           break;
         case "lavra_semear":
           await this.lavraPlant(actor, e, msg.i);
@@ -699,6 +749,9 @@ export class LifeController {
       this.lastDecay = t;
       for (const [actor, e] of this.entries) {
         e.life.needs = decay(e.life.needs, minutes);
+        // estar perto do par anima
+        const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
+        if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
         // chuva na rua estraga o humor (dentro de casa ou de um edifício não)
         const sky = weatherAt(t).ceu;
         if ((sky === "chuva" || sky === "trovoada") && !interiorAt(this.district, actor.x, actor.y))
@@ -758,6 +811,186 @@ export class LifeController {
       e.life.needs = { ...n, energy: Math.min(100, n.energy + 40), mood: Math.max(0, n.mood - 15) };
       this.out.toast(actor, "Dormiste no banco da paragem. Estás com o corpo dorido.", true);
     }
+  }
+
+  // ---------------------------------------------------------------- namoro e casamento
+
+  private actorById(characterId: string): LifeActor | undefined {
+    for (const a of this.entries.keys()) if (a.characterId === characterId) return a;
+    return undefined;
+  }
+
+  private loveAsk(actor: LifeActor, e: Entry, toEid: string | undefined): void {
+    const target = this.byEid(toEid);
+    if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM) return this.out.toast(actor, "Aproxima-te da pessoa (assim não, de longe!).", false);
+    if (e.life.partner) return this.out.toast(actor, `Já tens par: ${e.life.partner.name}.`, false);
+    const te = this.entries.get(target)!;
+    if (te.life.partner) return this.out.toast(actor, `${target.name ?? "Essa pessoa"} já tem par.`, false);
+    te.loveReq = { from: actor };
+    this.out.toast(actor, `Pediste ${target.name ?? "alguém"} em namoro. Agora é esperar a resposta…`, true);
+    this.out.toast(target, `${actor.name ?? "Alguém"} pediu-te em namoro! Responde em Família no telemóvel.`, true);
+    this.sendSelf(target);
+  }
+
+  private loveAnswer(actor: LifeActor, e: Entry, yes: boolean): void {
+    const req = e.loveReq;
+    e.loveReq = undefined;
+    if (!req) return this.out.toast(actor, "Não tens pedidos de namoro.", false);
+    const fe = this.entries.get(req.from);
+    if (!yes) {
+      if (fe) this.out.toast(req.from, `${actor.name ?? "A pessoa"} disse que não. Fica para a próxima!`, false);
+      return this.out.toast(actor, "Recusaste o pedido.", true);
+    }
+    if (!fe) return this.out.toast(actor, "Essa pessoa já saiu. Fica para a próxima.", false);
+    if (fe.life.partner || e.life.partner) return this.out.toast(actor, "Um de vocês já tem par.", false);
+    const t = this.now();
+    e.life.partner = { id: req.from.characterId, name: req.from.name ?? "Par", since: t, married: false };
+    fe.life.partner = { id: actor.characterId, name: actor.name ?? "Par", since: t, married: false };
+    e.dirty = fe.dirty = true;
+    this.out.toast(actor, `Agora namoras com ${req.from.name ?? "alguém"}!`, true);
+    this.out.toast(req.from, `${actor.name ?? "A pessoa"} aceitou! Agora namoram.`, true);
+    this.sendSelf(req.from);
+  }
+
+  /** Pedido de casamento: os dois dentro da mesma igreja; paga quem pede (ao aceitar). */
+  private weddingAsk(actor: LifeActor, e: Entry): void {
+    const p = e.life.partner;
+    if (!p) return this.out.toast(actor, "Para casar primeiro tens de namorar.", false);
+    if (p.married) return this.out.toast(actor, "Já são casados!", false);
+    const i = interiorAt(this.district, actor.x, actor.y);
+    if (i?.venue !== "igreja") return this.out.toast(actor, "Casa-se na igreja do bairro: entrem os dois na igreja.", false);
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para casar precisas de uma conta.", false);
+    if (this.now() - p.since < WEDDING_MIN_DATING_MS) return this.out.toast(actor, "Ainda é cedo: namorem mais um bocadinho antes de casar.", false);
+    const pa = this.actorById(p.id);
+    if (!pa || interiorAt(this.district, pa.x, pa.y)?.id !== i.id) return this.out.toast(actor, `${p.name} tem de estar aqui dentro da igreja contigo.`, false);
+    const pe = this.entries.get(pa)!;
+    pe.weddingReq = { from: actor };
+    this.out.toast(actor, `Pediste ${p.name} em casamento! (${WEDDING_PRICE.toLocaleString("pt-PT")} Kz se aceitar)`, true);
+    this.out.toast(pa, `${actor.name ?? "O teu par"} pediu-te em casamento! Responde em Família no telemóvel.`, true);
+    this.sendSelf(pa);
+  }
+
+  private async weddingAnswer(actor: LifeActor, e: Entry, yes: boolean): Promise<void> {
+    const req = e.weddingReq;
+    e.weddingReq = undefined;
+    if (!req) return this.out.toast(actor, "Não tens pedidos de casamento.", false);
+    const fe = this.entries.get(req.from);
+    if (!yes) {
+      if (fe) this.out.toast(req.from, `${actor.name ?? "O teu par"} ainda não quer casar.`, false);
+      return this.out.toast(actor, "Disseste que ainda não.", true);
+    }
+    if (!fe || e.life.partner?.id !== req.from.characterId) return this.out.toast(actor, "O pedido já não vale.", false);
+    const i = interiorAt(this.district, actor.x, actor.y);
+    if (i?.venue !== "igreja" || interiorAt(this.district, req.from.x, req.from.y)?.id !== i.id) return this.out.toast(actor, "Os dois têm de estar dentro da igreja.", false);
+    try {
+      fe.money = await this.wallets.apply(req.from.characterId, -WEDDING_PRICE, "casamento", `casamento:${req.from.characterId}:${actor.characterId}:${this.op()}`);
+    } catch (err) {
+      if (err instanceof InsufficientFunds) {
+        this.out.toast(req.from, `Não tens ${WEDDING_PRICE.toLocaleString("pt-PT")} Kz para o casamento.`, false);
+        return this.out.toast(actor, "O casamento fica para depois (falta dinheiro para a festa).", false);
+      }
+      throw err;
+    }
+    e.life.partner!.married = true;
+    fe.life.partner!.married = true;
+    e.dirty = fe.dirty = true;
+    recordNews("amizade", this.district.name, `Casamento na ${i.name}: ${req.from.name ?? "?"} e ${actor.name ?? "?"} disseram o «sim»!`, this.now());
+    this.out.toast(actor, `Casaste com ${req.from.name ?? "o teu par"}! Felicidades!`, true);
+    this.out.toast(req.from, `Casaste com ${actor.name ?? "o teu par"}! Felicidades!`, true);
+    this.sendSelf(req.from);
+  }
+
+  /** Acabar o namoro (frente a frente) ou divorciar (no tribunal ou na administração, paga quem pede). */
+  private async breakUp(actor: LifeActor, e: Entry): Promise<void> {
+    const p = e.life.partner;
+    if (!p) return this.out.toast(actor, "Não tens par.", false);
+    const pa = this.actorById(p.id);
+    if (!pa) return this.out.toast(actor, `Isso conversa-se frente a frente: espera que ${p.name} esteja no mesmo sítio que tu.`, false);
+    if (p.married) {
+      const v = interiorAt(this.district, actor.x, actor.y)?.venue;
+      if (v !== "tribunal" && v !== "administracao") return this.out.toast(actor, "O divórcio trata-se no Tribunal ou na Administração.", false);
+      e.money = await this.wallets.apply(actor.characterId, -DIVORCE_PRICE, "divorcio", `divorcio:${actor.characterId}:${this.op()}`);
+    }
+    const pe = this.entries.get(pa)!;
+    e.life.partner = null;
+    pe.life.partner = null;
+    e.dirty = pe.dirty = true;
+    this.out.toast(actor, p.married ? "Divórcio tratado. Cada um segue o seu caminho." : "Acabaste o namoro.", true);
+    this.out.toast(pa, p.married ? `${actor.name ?? "O teu par"} pediu o divórcio.` : `${actor.name ?? "O teu par"} acabou o namoro.`, false);
+    this.sendSelf(pa);
+  }
+
+  // ---------------------------------------------------------------- negócios
+
+  private async businessOpen(actor: LifeActor, e: Entry, tipo: string | undefined): Promise<void> {
+    const n = NEGOCIOS[tipo ?? ""];
+    if (!n) return this.out.toast(actor, "Esse negócio não existe.", false);
+    if (e.life.negocio) return this.out.toast(actor, "Já tens um negócio. Vende-o primeiro para abrir outro.", false);
+    if (interiorAt(this.district, actor.x, actor.y)?.venue !== "administracao") return this.out.toast(actor, "O alvará do negócio tira-se na Administração do bairro.", false);
+    if (!e.life.docs.bi) return this.out.toast(actor, "Para abrir um negócio precisas de BI.", false);
+    e.money = await this.wallets.apply(actor.characterId, -n.cost, `negocio.abrir.${tipo}`, `negocio:${actor.characterId}:${this.op()}`);
+    e.life.negocio = { tipo: tipo!, nivel: 1, lastCollect: this.now(), investido: n.cost };
+    e.dirty = true;
+    recordNews("missoes", this.district.name, `${actor.name ?? "Alguém"} abriu um negócio: ${n.name} (${this.district.name}).`, this.now());
+    this.out.toast(actor, `Abriste: ${n.name}. Rende ${negocioPerHour(tipo!, 1).toLocaleString("pt-PT")} Kz por hora.`, true);
+  }
+
+  private businessPending(e: Entry): number {
+    const b = e.life.negocio;
+    if (!b) return 0;
+    const hours = Math.min(NEGOCIO_MAX_HOURS, Math.max(0, (this.now() - b.lastCollect) / 3_600_000));
+    return Math.floor(hours * negocioPerHour(b.tipo, b.nivel));
+  }
+
+  private async businessCollect(actor: LifeActor, e: Entry): Promise<void> {
+    const b = e.life.negocio;
+    if (!b) return this.out.toast(actor, "Ainda não tens negócio.", false);
+    const amount = this.businessPending(e);
+    if (amount < 1) return this.out.toast(actor, "Ainda não há lucro para recolher.", false);
+    e.money = await this.wallets.apply(actor.characterId, amount, `negocio.lucro.${b.tipo}`, `negocio-lucro:${actor.characterId}:${b.lastCollect}`);
+    b.lastCollect = this.now();
+    e.dirty = true;
+    this.out.toast(actor, `Lucro do negócio: +${amount.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  private async businessUpgrade(actor: LifeActor, e: Entry): Promise<void> {
+    const b = e.life.negocio;
+    if (!b) return this.out.toast(actor, "Ainda não tens negócio.", false);
+    if (b.nivel >= NEGOCIO_MAX_NIVEL) return this.out.toast(actor, "O teu negócio já está no máximo.", false);
+    await this.businessCollect(actor, e).catch(() => undefined); // recolhe antes de mudar o rendimento
+    const cost = negocioUpgradeCost(b.tipo, b.nivel);
+    e.money = await this.wallets.apply(actor.characterId, -cost, `negocio.melhorar.${b.tipo}`, `negocio-up:${actor.characterId}:${b.nivel}:${this.op()}`);
+    b.nivel += 1;
+    b.investido += cost;
+    e.dirty = true;
+    this.out.toast(actor, `Negócio melhorado para o nível ${b.nivel}: ${negocioPerHour(b.tipo, b.nivel).toLocaleString("pt-PT")} Kz/hora.`, true);
+  }
+
+  private async businessSell(actor: LifeActor, e: Entry): Promise<void> {
+    const b = e.life.negocio;
+    if (!b) return this.out.toast(actor, "Ainda não tens negócio.", false);
+    const pending = this.businessPending(e);
+    const value = Math.round(b.investido * 0.5) + pending;
+    e.money = await this.wallets.apply(actor.characterId, value, `negocio.venda.${b.tipo}`, `negocio-venda:${actor.characterId}:${b.lastCollect}:${b.investido}`);
+    e.life.negocio = null;
+    e.dirty = true;
+    this.out.toast(actor, `Vendeste o negócio por ${value.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  // ---------------------------------------------------------------- imóveis
+
+  private async listHousing(e: Entry): Promise<void> {
+    const t = this.now();
+    const out: NonNullable<Entry["imoveis"]> = [];
+    for (const d of this.district.places ?? []) {
+      if (d.kind !== "door" || !RESIDENTIAL.has(d.venue ?? "") || !d.interiors?.length) continue;
+      let free = 0;
+      for (const id of d.interiors) if (!(await this.properties.get(this.district.id, id, t))) free++;
+      const price = HOUSING[d.venue ?? ""] ?? { buy: 0, rentPerDay: 0 };
+      out.push({ door: d.id, name: d.name, venue: d.venue ?? "", free, total: d.interiors.length, buy: price.buy, rentPerDay: price.rentPerDay, x: d.x, y: d.y });
+    }
+    e.imoveis = out.sort((a, b) => b.free - a.free || a.name.localeCompare(b.name));
   }
 
   // ---------------------------------------------------------------- lavras
@@ -1173,6 +1406,21 @@ export class LifeController {
         ? { id: e.life.ambicao, text: AMBICOES[e.life.ambicao]!.text, reward: AMBICOES[e.life.ambicao]!.reward, progress: this.ambitionProgress(e, e.life.ambicao) }
         : null,
       ambicoesFeitas: [...e.life.ambicoesFeitas],
+      partner: e.life.partner ? { name: e.life.partner.name, married: e.life.partner.married, online: !!whereIs(e.life.partner.id), desde: e.life.partner.since } : null,
+      loveReq: e.loveReq && this.entries.has(e.loveReq.from) ? { name: e.loveReq.from.name ?? "Alguém" } : null,
+      weddingReq: e.weddingReq && this.entries.has(e.weddingReq.from) ? { name: e.weddingReq.from.name ?? "O teu par" } : null,
+      negocio: e.life.negocio
+        ? {
+            tipo: e.life.negocio.tipo,
+            name: NEGOCIOS[e.life.negocio.tipo]?.name ?? e.life.negocio.tipo,
+            nivel: e.life.negocio.nivel,
+            perHour: negocioPerHour(e.life.negocio.tipo, e.life.negocio.nivel),
+            pendente: this.businessPending(e),
+            melhorar: e.life.negocio.nivel < NEGOCIO_MAX_NIVEL ? negocioUpgradeCost(e.life.negocio.tipo, e.life.negocio.nivel) : null,
+            maxHoras: NEGOCIO_MAX_HOURS,
+          }
+        : null,
+      imoveis: e.imoveis ?? null,
       missions: {
         items: e.life.missions.ids.map((id, i) => ({ id, text: MISSIONS[id]?.text ?? id, reward: MISSIONS[id]?.reward ?? 0, done: e.life.missions.done[i] === true, claimed: e.life.missions.claimed[i] === true })),
         streak: e.life.missions.streak,

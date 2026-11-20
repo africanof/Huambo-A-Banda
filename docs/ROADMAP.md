@@ -141,3 +141,12 @@ ponta-a-ponta com clientes Godot reais).
   200 kg colhidos); progresso medido no estado real; prémio pago uma só vez e notícia no jornal.
 - Ricos (GET /ricos): os mais ricos (carteira + banco) de quem joga com conta.
 - Servidor: as ações de cada pessoa são tratadas em fila (uma de cada vez, por ordem).
+
+### Namoro e casamento, Empresas e Imóveis
+- Namoro: pedir a quem está perto (até 8 m), aceitar/recusar (app Família); estar perto do par anima o humor.
+- Casamento: os dois dentro da igreja do bairro, depois de 10 min de namoro, só contas; quem pede paga 20.000 Kz
+  ao aceitar; notícia no jornal. Acabar o namoro frente a frente; divórcio no Tribunal ou na Administração (5.000 Kz).
+- Empresas: abrir negócio na Administração com BI (quiosque 50.000, cantina 150.000, candongueiro 400.000 Kz);
+  rende por hora mesmo sem jogar (junta até 12 h); recolher, melhorar (até nível 3, +50% por nível) e vender
+  (metade do investido + lucro por recolher).
+- Imóveis: casas e prédios do bairro com frações livres, preços de compra e renda, e «Ir ver».
