@@ -111,7 +111,56 @@ func _social_loop() -> String:
 	Net.action("sorte")
 	await _wait_for(func() -> Variant: return true if bool(Net.me.get("sorteHoje", false)) else null)
 	print("[autotest] sorte do dia: %+d Kz" % (int(Net.me.get("money", 0)) - m0))
-	await get_tree().create_timer(3.0).timeout # deixa o outro também ouvir
+	# amizade: o primeiro (ordem alfabética) convida, o outro aceita
+	var other := -1
+	for id: int in Net.entities:
+		if id != Net.self_id:
+			other = id
+	var my_name := str(Net.entities.get(Net.self_id, {}).get("name", me_name))
+	if my_name < str(Net.entities[other].name):
+		Net.action("amigo_pedir", str(other))
+	t0 = Time.get_ticks_msec()
+	var friends: Variant = await _wait_for(func() -> Variant:
+		if typeof(Net.me.get("friendReq")) == TYPE_DICTIONARY:
+			Net.action("amigo_aceitar")
+		if (Net.me.get("friends", []) as Array).size() >= 1:
+			return true
+		return false if Time.get_ticks_msec() - t0 > 20000 else null)
+	if not friends:
+		return "amizade não ficou feita"
+	print("[autotest] amigos: %s" % [Net.me.friends])
+	# rádio: dedicatória de cada um; tem de ouvir a do outro
+	var heard_radio := [false]
+	Net.radio_received.connect(func(who: String, _t: String) -> void:
+		if who != my_name:
+			heard_radio[0] = true)
+	Net.radio("Dedicatória do %s para o Huambo" % me_name)
+	t0 = Time.get_ticks_msec()
+	await _wait_for(func() -> Variant: return true if heard_radio[0] or Time.get_ticks_msec() - t0 > 15000 else null)
+	if not heard_radio[0]:
+		return "não ouvi a rádio do outro"
+	# biscato na rua (zungar) paga ao fim de uns segundos
+	var m1 := int(Net.me.get("money", 0))
+	Net.action("biscato", "zungar")
+	t0 = Time.get_ticks_msec()
+	var paid: Variant = await _wait_for(func() -> Variant:
+		if int(Net.me.get("biscatos", {}).get("feitos", 0)) >= 1:
+			return true
+		return false if Time.get_ticks_msec() - t0 > 25000 else null)
+	if not paid:
+		return "biscato não pagou"
+	print("[autotest] biscato: %+d Kz" % (int(Net.me.get("money", 0)) - m1))
+	# câmbio: compra 1 dólar
+	Net.action("cambio_compra", "", 1)
+	await _wait_for(func() -> Variant: return true if int(Net.me.get("cambio", {}).get("usd", 0)) >= 1 or Time.get_ticks_msec() - t0 > 40000 else null)
+	if int(Net.me.get("cambio", {}).get("usd", 0)) < 1:
+		return "câmbio falhou"
+	# jornal tem a dedicatória
+	var j: Variant = await Net.get_json("/jornal")
+	if typeof(j) != TYPE_DICTIONARY or not (j.noticias as Array).any(func(n: Dictionary) -> bool: return str(n.kind) == "radio"):
+		return "jornal sem a dedicatória"
+	print("[autotest] jornal: %d notícias, câmbio %s" % [(j.noticias as Array).size(), j.cambio.rate])
+	await get_tree().create_timer(3.0).timeout # deixa o outro também acabar
 	return ""
 
 
@@ -381,9 +430,10 @@ func _views_loop() -> void:
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")
-		world.hud._open_phone("sorte")
-		await tree.create_timer(2.0).timeout
-		await _shot("tel_sorte")
+		for app: String in ["biscatos", "cambio", "radio", "jornal", "amigos", "grupos"]:
+			world.hud._open_phone(app)
+			await tree.create_timer(2.5).timeout
+			await _shot("tel_" + app)
 		world.hud.phone.visible = false
 		world.hud._open_chat()
 		await tree.create_timer(2.0).timeout

@@ -714,10 +714,11 @@ const APP_RED := Color("c8102e")
 const APP_YELLOW := Color("f5c400")
 ## [id, nome, ícone, cor]
 const APPS := [
-	["missoes", "Missões", "target", "y"], ["perfil", "Perfil", "person", "d"], ["familia", "Família", "home", "d"], ["mapa", "Mapa", "map", "r"],
-	["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "y"], ["casa", "Casa", "home", "d"],
-	["loja", "Loja", "shirt", "y"], ["saude", "Saúde", "plus", "r"], ["governo", "Governo", "door", "d"], ["sorte", "Sorte", "target", "y"],
-	["transferir", "Transferir", "person", "y"], ["ajuda", "Ajuda", "more", "d"],
+	["missoes", "Missões", "target", "y"], ["perfil", "Perfil", "person", "d"], ["jornal", "Jornal", "more", "d"], ["mapa", "Mapa", "map", "r"],
+	["familia", "Família", "home", "d"], ["saude", "Saúde", "plus", "r"], ["amigos", "Amigos", "person", "r"], ["grupos", "Grupos", "hand", "d"],
+	["biscatos", "Ganhar dinheiro", "bag", "y"], ["vagas", "Vagas", "bag", "r"], ["estudos", "Estudos", "plus", "d"], ["banco", "Banco", "bag", "d"],
+	["cambio", "Câmbio", "rotate", "d"], ["transferir", "Transferir", "person", "y"], ["casa", "Casa", "home", "d"], ["loja", "Loja", "shirt", "y"],
+	["radio", "Rádio", "chat", "d"], ["sorte", "Sorte", "target", "d"], ["governo", "Governo", "door", "d"], ["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -750,6 +751,12 @@ func _rebuild_phone() -> void:
 		"governo": _phone_go("Governo", "BI: %s · Registo criminal: %s · Atestado de residência: %s\nTrata dos documentos na Administração do bairro, no Governo Provincial ou no Tribunal." % ["✓" if Net.me.get("docs", {}).get("bi", false) else "—", "✓" if Net.me.get("docs", {}).get("registo", false) else "—", "✓" if Net.me.get("docs", {}).get("residencia", false) else "—"], "administracao", "Ir à Administração")
 		"ajuda": _phone_help()
 		"sorte": _phone_luck()
+		"biscatos": _phone_biscatos()
+		"cambio": _phone_cambio()
+		"radio": _phone_radio()
+		"jornal": _phone_jornal()
+		"amigos": _phone_friends()
+		"grupos": _phone_groups()
 		"transferir": _phone_transfer()
 	phone_body.add_child(_button("Fechar o telemóvel", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: phone.visible = false))
 
@@ -888,6 +895,213 @@ func _phone_go(_title: String, text: String, venue: String, go_text: String) -> 
 		ui_action.emit("ir:" + venue)))
 
 
+## Caixa de texto + botão (no telemóvel usa a caixa do browser, onde o teclado funciona).
+func _text_row(box: Container, placeholder: String, max_len: int, button: String, cb: Callable) -> LineEdit:
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 6)
+	var le := LineEdit.new()
+	le.placeholder_text = placeholder
+	le.max_length = max_len
+	le.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	le.custom_minimum_size = Vector2(0, 46)
+	le.add_theme_font_override("font", FONT_REG)
+	le.add_theme_font_size_override("font_size", 16)
+	WebTextInput.attach(le, "text")
+	var go := func(_t: String = "") -> void:
+		if le.text.strip_edges() != "":
+			cb.call(le.text.strip_edges())
+			le.text = ""
+	le.text_submitted.connect(go)
+	row.add_child(le)
+	row.add_child(_button(button, "plus", ACCENT, INK, func() -> void: go.call()))
+	box.add_child(row)
+	return le
+
+
+## Ganhar dinheiro: biscatos sem estudos nem documentos.
+func _phone_biscatos() -> void:
+	var b: Dictionary = Net.me.get("biscatos", {"feitos": 0, "max": 6})
+	var c := _card()
+	c.add_child(_label("Biscatos de hoje: %d/%d. Não precisas de estudos nem documentos." % [int(b.feitos), int(b.max)], 15, Color.WHITE, FONT_REG, true))
+	for x: Array in [["engraxar", "Engraxar sapatos", "Na paragem · 300–500 Kz", "paragem"], ["lavar", "Lavar carros", "Na paragem · 500–800 Kz", "paragem"], ["carregar", "Carregar sacos", "No mercado · 600–900 Kz", "ir:mercado"], ["zungar", "Zungar (vender na rua)", "Em qualquer rua · 300–1.000 Kz", ""]]:
+		var id := str(x[0])
+		var where := str(x[3])
+		c.add_child(_label(str(x[1]), 17, Color.WHITE, FONT_BOLD))
+		c.add_child(_label(str(x[2]), 13, Color(1, 1, 1, 0.6), FONT_REG))
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 6)
+		row.add_child(_button("Fazer aqui", "bag", ACCENT, INK, func() -> void:
+			phone.visible = false
+			Net.action("biscato", id)))
+		if where != "":
+			row.add_child(_button("Ir para lá", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+				phone.visible = false
+				ui_action.emit(where)))
+		c.add_child(row)
+
+
+## Câmbio: dólares à taxa do dia (o cambista compra mais barato do que vende).
+func _phone_cambio() -> void:
+	var cm: Dictionary = Net.me.get("cambio", {})
+	if cm.is_empty():
+		return
+	var c := _card()
+	c.add_child(_label("Taxa de hoje: 1 USD = %s Kz" % DemoHud._money(int(cm.rate)), 18, ACCENT, FONT_BOLD, true))
+	c.add_child(_label("Comprar: %s Kz · Vender: %s Kz\nTens %d USD · usados hoje %d/%d USD" % [DemoHud._money(int(cm.buy)), DemoHud._money(int(cm.sell)), int(cm.usd), int(cm.usadoHoje), int(cm.limite)], 15, Color.WHITE, FONT_REG, true))
+	for op: Array in [["cambio_compra", "Comprar"], ["cambio_venda", "Vender"]]:
+		var a := str(op[0])
+		c.add_child(_label(str(op[1]) + " dólares", 16, Color.WHITE, FONT_BOLD))
+		var row := HFlowContainer.new() # quebra a linha no ecrã estreito do telemóvel
+		row.add_theme_constant_override("h_separation", 6)
+		row.add_theme_constant_override("v_separation", 6)
+		for v: int in [10, 50, 100, 500]:
+			row.add_child(_button("%d USD" % v, "plus" if a == "cambio_compra" else "minus", ACCENT if a == "cambio_compra" else Color(1, 1, 1, 0.1), INK if a == "cambio_compra" else Color.WHITE, func() -> void: Net.action(a, "", v)))
+		c.add_child(row)
+	c.add_child(_label("A taxa muda todos os dias: compra barato e vende caro!", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+
+
+## Rádio do Bairro: ouvir (bom para o humor) ou mandar uma dedicatória que todo o bairro ouve.
+var radio_log: Array = []
+
+
+func _phone_radio() -> void:
+	var c := _card()
+	c.add_child(_label("Rádio do Bairro — %s" % place_text, 18, ACCENT, FONT_BOLD, true))
+	c.add_child(_button("Ouvir a rádio (humor +8)", "chat", ACCENT, INK, func() -> void: Net.action("radio_ouvir")))
+	c.add_child(_label("Dedicatória (%s Kz): toda a gente neste bairro ouve." % DemoHud._money(500), 15, Color.WHITE, FONT_REG, true))
+	_text_row(c, "Ex.: Para a minha mãe, com carinho", 120, "No ar", func(t: String) -> void: Net.radio(t))
+	if not radio_log.is_empty():
+		c.add_child(_label("Últimas dedicatórias", 15, Color(1, 1, 1, 0.7), FONT_BOLD))
+		for l: Array in radio_log.slice(maxi(0, radio_log.size() - 6)):
+			c.add_child(_label("%s: «%s»" % [l[0], l[1]], 14, Color.WHITE, FONT_REG, true))
+
+
+func on_radio(who: String, text: String) -> void:
+	radio_log.append([who, text])
+	if radio_log.size() > 20:
+		radio_log.pop_front()
+	show_toast("Rádio do Bairro — %s: «%s»" % [who, text], true)
+	if phone.visible and phone_tab == "radio":
+		_rebuild_phone()
+
+
+## Jornal do Huambo: notícias de hoje, câmbio, grupos.
+var _jornal: Dictionary = {}
+
+
+func _phone_jornal() -> void:
+	var c := _card()
+	c.add_child(_label("Jornal do Huambo", 22, ACCENT, FONT_BOLD))
+	if _jornal.is_empty():
+		c.add_child(_label("A carregar as notícias…", 15, Color(1, 1, 1, 0.6), FONT_REG))
+		_fetch_jornal()
+		return
+	c.add_child(_label("%s · Câmbio: 1 USD = %s Kz" % [str(_jornal.get("dia", "")), DemoHud._money(int(_jornal.get("cambio", {}).get("rate", 0)))], 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	var news: Array = _jornal.get("noticias", [])
+	if news.is_empty():
+		c.add_child(_label("Ainda não há notícias hoje. Compra uma casa, ganha a sorte grande ou manda uma dedicatória para apareceres no jornal!", 15, Color.WHITE, FONT_REG, true))
+	for n: Dictionary in news:
+		c.add_child(_label("• " + str(n.text), 15, Color.WHITE, FONT_REG, true))
+	var gs: Array = _jornal.get("grupos", [])
+	if not gs.is_empty():
+		c.add_child(_label("Grupos com mais membros", 16, ACCENT, FONT_BOLD))
+		for g: Dictionary in gs.slice(0, 5):
+			c.add_child(_label("%s — %d membros" % [g.name, int(g.members)], 14, Color.WHITE, FONT_REG, true))
+	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		_jornal = {}
+		_rebuild_phone()))
+
+
+func _fetch_jornal() -> void:
+	var r: Variant = await Net.get_json("/jornal")
+	if typeof(r) == TYPE_DICTIONARY:
+		_jornal = r
+		if phone.visible and phone_tab in ["jornal", "grupos"]:
+			_rebuild_phone()
+
+
+## Amigos: pedir a quem está perto; ver se estão ligados e onde; ir ter com eles.
+func _phone_friends() -> void:
+	var req: Variant = Net.me.get("friendReq")
+	if typeof(req) == TYPE_DICTIONARY:
+		var r := _card()
+		r.add_child(_label("%s quer ser teu amigo." % req.name, 17, ACCENT, FONT_BOLD, true))
+		var row := HBoxContainer.new()
+		row.add_child(_button("Aceitar", "plus", ACCENT, INK, func() -> void: Net.action("amigo_aceitar")))
+		row.add_child(_button("Recusar", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_recusar")))
+		r.add_child(row)
+	var c := _card()
+	var fr: Array = Net.me.get("friends", [])
+	c.add_child(_label("Os teus amigos (%d)" % fr.size(), 18, Color.WHITE, FONT_BOLD))
+	if fr.is_empty():
+		c.add_child(_label("Ainda não tens amigos. Aproxima-te de alguém e convida-o aqui em baixo.", 15, Color(1, 1, 1, 0.7), FONT_REG, true))
+	for i in fr.size():
+		var f: Dictionary = fr[i]
+		var line := "%s — %s" % [f.name, ("ligado em %s" % f.bairro) if bool(f.online) else "desligado"]
+		c.add_child(_label(line, 15, Color("8fe08a") if bool(f.online) else Color(1, 1, 1, 0.6), FONT_REG, true))
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 6)
+		if bool(f.online):
+			var dist := str(f.district)
+			var room_id := str(f.roomId)
+			row.add_child(_button("Ir ter com", "pin", ACCENT, INK, func() -> void:
+				phone.visible = false
+				if dist == Net.current_district:
+					if Net.room == null or room_id != Net.room.room_id:
+						ui_action.emit("sala:" + room_id)
+					else:
+						show_toast("Já estão no mesmo sítio! Procura-o à tua volta.", true)
+				else:
+					_go(dist, false)))
+		var idx := i + 1
+		row.add_child(_button("Remover", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("amigo_remover", "", idx)))
+		c.add_child(row)
+	# convidar quem está perto
+	var me_e: Variant = Net.entities.get(Net.self_id)
+	var near := []
+	for id: int in Net.entities:
+		if id != Net.self_id and me_e != null and (Net.entities[id].pos as Vector2).distance_to(me_e.pos) <= 1600.0:
+			near.append([id, str(Net.entities[id].name)])
+	var n := _card()
+	n.add_child(_label("Pessoas perto de ti", 16, Color.WHITE, FONT_BOLD))
+	if near.is_empty():
+		n.add_child(_label("Ninguém perto. Vai a um sítio com gente (mercado, cantina, paragem).", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+	for x: Array in near:
+		var eid := int(x[0])
+		n.add_child(_button("Convidar %s" % x[1], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_pedir", str(eid))))
+
+
+## Grupos: criar (conta, 5.000 Kz), entrar, sair e falar com o grupo em qualquer bairro.
+func _phone_groups() -> void:
+	var g: Variant = Net.me.get("group")
+	var c := _card()
+	if typeof(g) == TYPE_DICTIONARY:
+		c.add_child(_label("O teu grupo: %s" % g.name, 18, ACCENT, FONT_BOLD, true))
+		c.add_child(_label("Fala com todos os membros ligados, em qualquer bairro:", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+		_text_row(c, "Mensagem para o grupo…", 120, "Enviar", func(t: String) -> void: Net.say(t, true))
+		var lines: Array = Net.chat_log.filter(func(l: Dictionary) -> bool: return bool(l.get("g", false)))
+		for l: Dictionary in lines.slice(maxi(0, lines.size() - 8)):
+			c.add_child(_label("%s: %s" % [l.n, l.t], 14, Color.WHITE, FONT_REG, true))
+		c.add_child(_button("Sair do grupo", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("grupo_sair")))
+		return
+	c.add_child(_label("Ainda não estás num grupo. Junta-te a um ou cria o teu (5.000 Kz, só com conta).", 15, Color.WHITE, FONT_REG, true))
+	_text_row(c, "Nome do grupo (3 a 30 letras)", 30, "Criar", func(t: String) -> void: Net.action_text("grupo_criar", t))
+	var l := _card()
+	l.add_child(_label("Grupos do Huambo", 17, Color.WHITE, FONT_BOLD))
+	if _jornal.is_empty():
+		l.add_child(_label("A carregar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		_fetch_jornal()
+		return
+	var gs: Array = _jornal.get("grupos", [])
+	if gs.is_empty():
+		l.add_child(_label("Ainda não há grupos. Sê o primeiro!", 14, Color(1, 1, 1, 0.6), FONT_REG))
+	for x: Dictionary in gs:
+		var gid := str(x.id)
+		l.add_child(_button("Entrar: %s (%d)" % [x.name, int(x.members)], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			Net.action_text("grupo_entrar", gid)
+			_jornal = {}))
+
+
 ## Sorte do dia: grátis, uma vez por dia; o servidor sorteia o prémio.
 func _phone_luck() -> void:
 	var c := _card()
@@ -920,8 +1134,9 @@ func _phone_transfer() -> void:
 		var who := str(n[1])
 		var eid := int(n[0])
 		c.add_child(_label(who, 18, Color.WHITE, FONT_BOLD))
-		var row := HBoxContainer.new()
-		row.add_theme_constant_override("separation", 6)
+		var row := HFlowContainer.new()
+		row.add_theme_constant_override("h_separation", 6)
+		row.add_theme_constant_override("v_separation", 6)
 		for v: int in [500, 1000, 5000, 10000]:
 			row.add_child(_button(DemoHud._money(v), "plus", ACCENT, INK, func() -> void: Net.action("transfer", str(eid), v)))
 		c.add_child(row)

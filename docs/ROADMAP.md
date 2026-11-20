@@ -113,3 +113,18 @@ ponta-a-ponta com clientes Godot reais).
 - Sorte do dia (telemóvel): grátis, 1×/dia, prémio sorteado no servidor (até 10.000 Kz), pago uma só vez.
 - Transferir (telemóvel): dar 500–10.000 Kz (limites 100–100.000) a quem está a até 8 m; só contas
   (convidados não enviam nem recebem); débito antes do crédito, com chaves de idempotência.
+
+### Ganhar dinheiro, Câmbio, Rádio, Jornal, Amigos e Grupos (como no Vida na Banda)
+- Biscatos (app «Ganhar dinheiro»): engraxar e lavar carros na paragem, carregar sacos no mercado, zungar em
+  qualquer rua; 12 s cada, pagam 300–1.000 Kz, gastam energia, até 6 por dia; missão «Fazer um biscato».
+- Câmbio: dólares à taxa do dia (anda à volta de 920 Kz/USD e muda todos os dias); comprar 2% acima e vender
+  2% abaixo; até 2.000 USD por dia; os dólares ficam guardados na personagem.
+- Rádio do Bairro: ouvir sobe o humor (+8, uma vez a cada 20 min); dedicatórias pagas (500 Kz) que toda a
+  gente no bairro ouve, uma a cada 2 min por pessoa, texto limpo no servidor.
+- Jornal do Huambo (GET /jornal): notícias de hoje feitas do que os jogadores fazem (sorte grande, casas e carros
+  comprados, nascimentos em famílias ricas, sequências de missões, dedicatórias, grupos novos), câmbio do dia,
+  grupos com mais membros.
+- Amigos: convidar quem está perto, aceitar/recusar, ver quem está ligado e em que bairro, «Ir ter com»
+  (muda de sala no mesmo bairro, ou viagem para outro bairro), remover.
+- Grupos: criar (só com conta, 5.000 Kz, nome único 3–30 letras, Supabase game_groups), entrar, sair e
+  conversa do grupo que chega aos membros ligados em qualquer bairro (canal de presença).

@@ -218,9 +218,10 @@ func update(me: Vector2, delta: float) -> void:
 		if is_instance_valid(m.node):
 			m.node.position = m.base + Vector2(0, sin(_t * 3.2 + i) * 7.0)
 	for s: Dictionary in _staff:
-		var c: DemoCharacter = s.c
-		if not is_instance_valid(c):
+		# a vista rodou e o bairro foi refeito: este funcionário já não existe (volta a ser criado ao entrar)
+		if not is_instance_valid(s.c):
 			continue
+		var c: DemoCharacter = s.c
 		if is_instance_valid(s.bubble):
 			s.bubble.position = c.position + Vector2(-s.bubble.size.x / 2.0, -290)
 		# cumprimenta quem chega perto (de 25 em 25 s no máximo)

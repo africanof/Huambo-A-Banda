@@ -8,6 +8,7 @@ signal entities_despawned(ids: Array)
 signal snapshot_received(server_time: int, flat: Array)
 signal chat_received(id: int, who: String, text: String)
 signal emote_received(id: int, emote: String)
+signal radio_received(who: String, text: String)
 signal notice(code: int, text: String)
 signal disconnected(reason: String)
 signal latency_updated(rtt_ms: int)
@@ -135,9 +136,24 @@ func action_travel(district: String, how: String) -> void:
 
 
 ## Falar: quem está perto ouve (o servidor limpa o texto e limita a pressa).
-func say(text: String) -> void:
+func say(text: String, group := false) -> void:
 	if room and text.strip_edges() != "":
-		room.send(Protocol.C2S_CHAT, {"t": text.strip_edges().left(120)})
+		var msg := {"t": text.strip_edges().left(120)}
+		if group:
+			msg["g"] = true
+		room.send(Protocol.C2S_CHAT, msg)
+
+
+## Dedicatória na Rádio do Bairro (paga; todo o bairro ouve).
+func radio(text: String) -> void:
+	if room and text.strip_edges() != "":
+		room.send(Protocol.C2S_RADIO, {"t": text.strip_edges().left(120)})
+
+
+## Ação com texto curto (nome/id de grupo).
+func action_text(a: String, text: String) -> void:
+	if room:
+		room.send(Protocol.C2S_ACTION, {"a": a, "s": text.left(60)})
 
 
 func emote(e: String) -> void:
@@ -194,11 +210,14 @@ func _on_message(type: Variant, payload: Variant) -> void:
 				notice.emit(int(payload.get("code", 0)), str(payload.get("msg", "")))
 		Protocol.S2C_CHAT:
 			if typeof(payload) == TYPE_DICTIONARY:
-				var line := {"id": int(payload.get("id", -1)), "n": str(payload.get("n", "")), "t": str(payload.get("t", ""))}
+				var line := {"id": int(payload.get("id", -1)), "n": str(payload.get("n", "")), "t": str(payload.get("t", "")), "g": bool(payload.get("g", false))}
 				chat_log.append(line)
 				if chat_log.size() > 50:
 					chat_log.pop_front()
 				chat_received.emit(line.id, line.n, line.t)
+		Protocol.S2C_RADIO:
+			if typeof(payload) == TYPE_DICTIONARY:
+				radio_received.emit(str(payload.get("n", "")), str(payload.get("t", "")))
 		Protocol.S2C_EMOTE:
 			if typeof(payload) == TYPE_DICTIONARY:
 				emote_received.emit(int(payload.get("id", -1)), str(payload.get("e", "")))

@@ -77,10 +77,14 @@ func _ready() -> void:
 			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn"))
 	Net.self_updated.connect(_on_self)
 	# falar e gestos: balão por cima de quem falou / anima quem fez o gesto
-	Net.chat_received.connect(func(id: int, _who: String, text: String) -> void:
+	Net.chat_received.connect(func(id: int, who: String, text: String) -> void:
+		if id < 0: # mensagem do grupo (vem de qualquer bairro)
+			hud.show_toast("%s: %s" % [who, text], true)
+			return
 		var c: DemoCharacter = avatars.get(id)
 		if c:
 			c.say(text))
+	Net.radio_received.connect(func(who: String, text: String) -> void: hud.on_radio(who, text))
 	Net.emote_received.connect(func(id: int, e: String) -> void:
 		var c: DemoCharacter = avatars.get(id)
 		if c:
