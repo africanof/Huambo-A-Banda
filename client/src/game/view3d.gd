@@ -598,7 +598,7 @@ func _build_joystick() -> void:
 	add_child(_joy_ui)
 	_joy_knob = Panel.new()
 	var kb := StyleBoxFlat.new()
-	kb.bg_color = Color(0.95, 0.72, 0.18, 0.9)
+	kb.bg_color = Tema.GOLD
 	kb.set_corner_radius_all(30)
 	_joy_knob.add_theme_stylebox_override("panel", kb)
 	_joy_knob.size = Vector2(60, 60)

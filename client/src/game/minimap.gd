@@ -33,9 +33,9 @@ func _process(_d: float) -> void:
 
 func _draw() -> void:
 	if big:
-		draw_rect(Rect2(Vector2.ZERO, size), Color(0.08, 0.07, 0.07, 0.9), true)
+		draw_rect(Rect2(Vector2.ZERO, size), Tema.PANEL, true)
 	else:
-		draw_circle(size / 2.0, minf(size.x, size.y) / 2.0, Color(0.08, 0.07, 0.07, 0.9))
+		draw_circle(size / 2.0, minf(size.x, size.y) / 2.0, Tema.PANEL)
 
 
 func _fit() -> void:
@@ -86,36 +86,36 @@ func _paint() -> void:
 		var r := Rect2(b.at[0], b.at[1], b.fp[0], b.fp[1])
 		var home: bool = str(b.get("label", "")) == "" or view._is_home(b)
 		var poly := PackedVector2Array([_p(r.position), _p(Vector2(r.end.x, r.position.y)), _p(r.end), _p(Vector2(r.position.x, r.end.y))])
-		c.draw_colored_polygon(poly, Color("d9cbb4") if home else Color("f2c14e"))
+		c.draw_colored_polygon(poly, Color("d9cbb4") if home else Tema.GOLD)
 	# paragem, saídas e lugares com nome (no mapa grande)
 	for p: Dictionary in view.places:
 		var at := _p(Vector2(p.at[0], p.at[1]))
 		match str(p.kind):
 			"stop":
-				c.draw_circle(at, 7.0 if big else 4.0, Color("2f7fd1"))
+				c.draw_circle(at, 7.0 if big else 4.0, Tema.CACIMBO)
 				if big:
 					c.draw_string(FONT, at + Vector2(9, 4), "Paragem", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color.WHITE)
 			"portal":
-				c.draw_circle(at, 6.0 if big else 3.0, Color("8fe08a"))
+				c.draw_circle(at, 6.0 if big else 3.0, Tema.OK)
 				if big:
 					c.draw_string(FONT, at + Vector2(8, 4), str(p.name).trim_prefix("A pé para "), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, Color("c8f5c3"))
 			"door":
 				if big and not str(p.get("venue", "")) in ["casa", "apartamentos"]:
-					c.draw_string(FONT, at + Vector2(-30, 14), str(p.name).substr(0, 22), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Color(1, 1, 1, 0.85))
+					c.draw_string(FONT, at + Vector2(-30, 14), str(p.name).substr(0, 22), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Tema.TEXT)
 	# eu
 	var m := _p(me)
 	c.draw_circle(m, 8.0 if big else 5.0, Color.WHITE)
-	c.draw_circle(m, 6.0 if big else 3.5, Color("e8452c"))
+	c.draw_circle(m, 6.0 if big else 3.5, Tema.TERRA)
 	if big:
 		c.draw_rect(Rect2(Vector2.ZERO, size), Color(1, 1, 1, 0.25), false, 2.0)
 	else:
 		var r := minf(size.x, size.y) / 2.0
-		c.draw_arc(size / 2.0, r - 2.0, 0, TAU, 64, Color(1, 1, 1, 0.55), 3.0, true)
+		c.draw_arc(size / 2.0, r - 2.0, 0, TAU, 64, Tema.GOLD_DEEP, 3.0, true)
 		# norte do mundo no ecrã (a vista isométrica pode estar rodada)
 		var north := (Iso.to_screen(me + Vector2(0, -1)) - Iso.to_screen(me)).normalized()
 		var np := size / 2.0 + north * (r - 16.0)
-		c.draw_circle(np, 10.0, Color(0.08, 0.07, 0.07, 0.95))
-		c.draw_string(FONT, np + Vector2(-5, 5), "N", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color("f5c400"))
+		c.draw_circle(np, 10.0, Tema.PHONE)
+		c.draw_string(FONT, np + Vector2(-5, 5), "N", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Tema.GOLD)
 
 
 func _gui_input(e: InputEvent) -> void:

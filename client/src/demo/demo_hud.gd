@@ -32,7 +32,7 @@ func _ready() -> void:
 	hb.add_child(title)
 	clock.add_theme_font_override("font", FONT)
 	clock.add_theme_font_size_override("font_size", 18)
-	clock.add_theme_color_override("font_color", Color.WHITE)
+	clock.add_theme_color_override("font_color", Tema.TEXT)
 	hb.add_child(clock)
 
 	var right := VBoxContainer.new()
@@ -44,9 +44,9 @@ func _ready() -> void:
 	right.offset_top = 14
 	add_child(right)
 	for b: Array in button_specs:
-		right.add_child(_button(b[0], b[1], b[2], Color(0.08, 0.07, 0.07, 0.82), Color.WHITE))
+		right.add_child(_button(b[0], b[1], b[2], Color(0.08, 0.07, 0.07, 0.82), Tema.TEXT))
 
-	door_btn = _button("entrar", "Entrar em casa  (E)", "home", Color(0.95, 0.72, 0.18, 0.97), Color("2a1d10"))
+	door_btn = _button("entrar", "Entrar em casa  (E)", "home", Tema.GOLD, Tema.INK)
 	door_btn.anchor_left = 0.5
 	door_btn.anchor_right = 0.5
 	door_btn.anchor_top = 1.0
@@ -62,7 +62,7 @@ func _ready() -> void:
 	hint.text = "Setas/WASD para andar · Shift corre · clica no chão · roda do rato = zoom"
 	hint.add_theme_font_override("font", FONT)
 	hint.add_theme_font_size_override("font_size", 14)
-	hint.add_theme_color_override("font_color", Color(1, 1, 1, 0.85))
+	hint.add_theme_color_override("font_color", Tema.TEXT_MUTED)
 	hint.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.7))
 	hint.add_theme_constant_override("outline_size", 4)
 	hint.anchor_top = 1.0

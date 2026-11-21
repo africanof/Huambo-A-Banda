@@ -13,10 +13,10 @@ signal ui_action(id: String)
 const FONT := preload("res://assets/fonts/Inter-SemiBold.otf")
 const FONT_BOLD := preload("res://assets/fonts/Inter-Bold.otf")
 const FONT_REG := preload("res://assets/fonts/Inter-Regular.otf")
-const BG := Color(0.08, 0.07, 0.07, 0.86)
-const ACCENT := Color(0.95, 0.72, 0.18)
-const INK := Color("2a1d10")
-const NEEDS := [["hunger", "Fome", Color("e9a23b")], ["energy", "Energia", Color("4fa3e0")], ["mood", "Humor", Color("e46fa8")], ["health", "Saúde", Color("5cbf6a")]]
+const BG := Tema.PANEL
+const ACCENT := Tema.GOLD
+const INK := Tema.INK
+const NEEDS := [["hunger", "Fome", Tema.NEED_HUNGER], ["energy", "Energia", Tema.NEED_ENERGY], ["mood", "Humor", Tema.NEED_MOOD], ["health", "Saúde", Tema.NEED_HEALTH]]
 
 var place_text := ""
 var catalog: Dictionary = {}
@@ -48,13 +48,13 @@ var _home_tab: Button
 var _inside := false
 var needs_button := Button.new()
 var _dock: PanelContainer
-const ACCENT_DARK := Color("b5341f")
+const ACCENT_DARK := Tema.TERRA
 
 
 func _ready() -> void:
 	# --- topo ao centro: retrato + dinheiro (como nos jogos de vida para telemóvel)
 	var money_pill := PanelContainer.new()
-	var msb := _pill(BG, 36, ACCENT_DARK)
+	var msb := _pill(BG, 36, Tema.GOLD_DEEP)
 	msb.content_margin_left = 8
 	msb.content_margin_right = 26
 	msb.content_margin_top = 6
@@ -72,7 +72,7 @@ func _ready() -> void:
 	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	var frame := PanelContainer.new()
-	var fsb := _pill(Color("6b2a17"), 28, ACCENT)
+	var fsb := _pill(Tema.TERRA_DEEP, 28, ACCENT)
 	fsb.set_content_margin_all(2)
 	fsb.shadow_size = 0
 	frame.add_theme_stylebox_override("panel", fsb)
@@ -85,7 +85,7 @@ func _ready() -> void:
 	mh.add_child(mv)
 	top_label.add_theme_font_override("font", FONT)
 	top_label.add_theme_font_size_override("font_size", 13)
-	top_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.7))
+	top_label.add_theme_color_override("font_color", Tema.TEXT_MUTED)
 	mv.add_child(top_label)
 	money_label.add_theme_font_override("font", FONT_BOLD)
 	money_label.add_theme_font_size_override("font_size", 26)
@@ -102,7 +102,7 @@ func _ready() -> void:
 	sala_button.add_theme_font_override("font", FONT)
 	sala_button.add_theme_font_size_override("font_size", 14)
 	sala_button.text = "Sala 1"
-	sala_button.icon = DemoIcons.make("pin", Color.WHITE, 18)
+	sala_button.icon = DemoIcons.make("pin", Tema.TEXT, 18)
 	sala_button.pressed.connect(_open_rooms)
 	add_child(sala_button)
 	_refresh_sala.call_deferred()
@@ -112,7 +112,7 @@ func _ready() -> void:
 	_style_round(needs_button, 26, BG)
 	needs_button.custom_minimum_size = Vector2(150, 56)
 	needs_button.position = Vector2(14, 90)
-	needs_button.icon = DemoIcons.make("bowl", Color("8fe08a"), 28)
+	needs_button.icon = DemoIcons.make("bowl", Tema.OK, 28)
 	needs_button.add_theme_font_override("font", FONT_BOLD)
 	needs_button.add_theme_font_size_override("font_size", 18)
 	needs_button.toggled.connect(func(on: bool) -> void: _needs_panel.visible = on)
@@ -129,7 +129,7 @@ func _ready() -> void:
 	for n: Array in NEEDS:
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 8)
-		var l := _label(n[1], 15, Color.WHITE, FONT)
+		var l := _label(n[1], 15, Tema.TEXT, FONT)
 		l.custom_minimum_size = Vector2(70, 0)
 		row.add_child(l)
 		var bar := ProgressBar.new()
@@ -140,7 +140,7 @@ func _ready() -> void:
 		fill.bg_color = n[2]
 		fill.set_corner_radius_all(7)
 		var back := StyleBoxFlat.new()
-		back.bg_color = Color(1, 1, 1, 0.12)
+		back.bg_color = Tema.BTN2
 		back.set_corner_radius_all(7)
 		bar.add_theme_stylebox_override("fill", fill)
 		bar.add_theme_stylebox_override("background", back)
@@ -246,7 +246,7 @@ func _ready() -> void:
 	# --- telemóvel e ementa
 	for p: PanelContainer in [phone, menu_panel]:
 		var tall := p == phone
-		p.add_theme_stylebox_override("panel", _pill(PHONE_BG if tall else Color(0.1, 0.09, 0.09, 0.95), 30 if tall else 22))
+		p.add_theme_stylebox_override("panel", _pill(PHONE_BG if tall else Color(0.106, 0.075, 0.059, 0.96), 30 if tall else 22))
 		p.anchor_left = 1.0
 		p.anchor_right = 1.0
 		p.anchor_bottom = 1.0
@@ -380,7 +380,13 @@ func refresh() -> void:
 
 func show_toast(text: String, ok: bool) -> void:
 	toast_label.text = text
-	toast_label.add_theme_color_override("font_color", Color.WHITE if ok else Color("ffb4a8"))
+	toast_label.add_theme_color_override("font_color", Tema.TEXT)
+	# faixa de cor à esquerda: verde-planalto (correu bem) ou terra vermelha (não deu)
+	var sb := Tema.box(Tema.PANEL, 18)
+	sb.border_width_left = 6
+	sb.border_color = Tema.PLANALTO if ok else Tema.TERRA
+	sb.content_margin_left = 20
+	toast_panel.add_theme_stylebox_override("panel", sb)
 	toast_panel.visible = true
 	_toast_until = Time.get_ticks_msec() + 3500
 
@@ -400,7 +406,7 @@ func set_inside(on: bool) -> void:
 	if _home_tab == null:
 		return
 	_home_tab.text = "Sair" if on else "Casa"
-	_home_tab.icon = DemoIcons.make("door" if on else "home", Color.WHITE, 30)
+	_home_tab.icon = DemoIcons.make("door" if on else "home", Tema.TEXT, 30)
 
 
 ## Faz a ação principal do sítio onde estou (o primeiro botão da barra de ações).
@@ -420,7 +426,7 @@ func _rebuild_actions() -> void:
 	for c in actions_box.get_children():
 		c.queue_free()
 	if is_busy():
-		actions_box.add_child(_button("Parar", "minus", BG, Color.WHITE, func() -> void: Net.action("cancel")))
+		actions_box.add_child(_button("Parar", "minus", BG, Tema.TEXT, func() -> void: Net.action("cancel")))
 		return
 	var inside: Variant = Net.me.get("inside")
 	var kind := str(_context.get("kind", ""))
@@ -462,9 +468,9 @@ func _rebuild_actions() -> void:
 			else:
 				var j := _job_by_place(job_here)
 				if not j.is_empty():
-					actions_box.add_child(_button("Vaga: %s" % j.name, "person", BG, Color.WHITE, func() -> void: _open_phone("vagas")))
+					actions_box.add_child(_button("Vaga: %s" % j.name, "person", BG, Tema.TEXT, func() -> void: _open_phone("vagas")))
 	if typeof(inside) == TYPE_DICTIONARY:
-		actions_box.add_child(_button("Sair", "door", BG, Color.WHITE, func() -> void: Net.action("exit")))
+		actions_box.add_child(_button("Sair", "door", BG, Tema.TEXT, func() -> void: Net.action("exit")))
 
 
 ## Nome do edifício onde está o lugar atual (interior) ou do próprio lugar.
@@ -482,16 +488,16 @@ func _panel(title: String) -> void:
 
 
 func _close_button() -> void:
-	menu_body.add_child(_button("Fechar", "minus", BG, Color.WHITE, func() -> void: menu_panel.visible = false))
+	menu_body.add_child(_button("Fechar", "minus", BG, Tema.TEXT, func() -> void: menu_panel.visible = false))
 
 
 ## Mapa: vista geral do bairro e viagem de candongueiro para outros bairros do Huambo.
 func _open_map() -> void:
 	_panel("Mapa do Huambo")
-	menu_body.add_child(_button("Ver o bairro todo / voltar", "map", BG, Color.WHITE, func() -> void:
+	menu_body.add_child(_button("Ver o bairro todo / voltar", "map", BG, Tema.TEXT, func() -> void:
 		ui_action.emit("mapa")
 		menu_panel.visible = false))
-	menu_body.add_child(_label("Apanhar candongueiro (%s Kz) para:" % DemoHud._money(int(catalog.get("prices", {}).get("travel", 200))), 16, Color.WHITE, FONT, true))
+	menu_body.add_child(_label("Apanhar candongueiro (%s Kz) para:" % DemoHud._money(int(catalog.get("prices", {}).get("travel", 200))), 16, Tema.TEXT, FONT, true))
 	var here := str(Net.welcome.get("district", {}).get("id", ""))
 	var http := HTTPRequest.new()
 	add_child(http)
@@ -502,7 +508,7 @@ func _open_map() -> void:
 		return
 	var list: Variant = JSON.parse_string((r[3] as PackedByteArray).get_string_from_utf8()) if r[0] == HTTPRequest.RESULT_SUCCESS else null
 	if typeof(list) != TYPE_ARRAY:
-		menu_body.add_child(_label("Não foi possível obter os bairros.", 14, Color("ffb4a8"), FONT_REG, true))
+		menu_body.add_child(_label("Não foi possível obter os bairros.", 14, Tema.DANGER, FONT_REG, true))
 	else:
 		var bairros: Array = (list as Array).filter(func(d: Dictionary) -> bool: return typeof(d.get("map")) == TYPE_DICTIONARY and str(d.map.get("id", "")).begins_with("bairro:"))
 		var links: Array = []
@@ -514,10 +520,10 @@ func _open_map() -> void:
 		cm.here = here
 		cm.picked.connect(func(id: String) -> void: _go(id, links.has(id)))
 		menu_body.add_child(cm)
-		menu_body.add_child(_label("A amarelo: bairros vizinhos a pé (vai ao fim da rua com a placa). Os outros: candongueiro.", 12, Color(1, 1, 1, 0.7), FONT_REG, true))
+		menu_body.add_child(_label("A amarelo: bairros vizinhos a pé (vai ao fim da rua com a placa). Os outros: candongueiro.", 12, Tema.TEXT_MUTED, FONT_REG, true))
 		bairros.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
 		# catálogo com o postal de cada bairro (como as fotografias das cidades no Vida na Banda)
-		menu_body.add_child(_label("Bairros do Huambo", 18, Color.WHITE, FONT_BOLD))
+		menu_body.add_child(_label("Bairros do Huambo", 18, Tema.TEXT, FONT_BOLD))
 		var grid := GridContainer.new()
 		grid.columns = 2 # o painel tem a mesma largura no telemóvel e ao lado no computador
 		grid.add_theme_constant_override("h_separation", 10)
@@ -535,10 +541,10 @@ func _bairro_card(id: String, name: String, here: bool, walk: bool) -> Control:
 	b.custom_minimum_size = Vector2(0, 168)
 	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	b.focus_mode = Control.FOCUS_NONE
-	var sb := _pill(Color(1, 1, 1, 0.06), 18, ACCENT if here else Color(0, 0, 0, 0))
+	var sb := _pill(Tema.CARD, 18, ACCENT if here else Color(0, 0, 0, 0))
 	sb.set_content_margin_all(0)
 	b.add_theme_stylebox_override("normal", sb)
-	var sbh := _pill(Color(1, 1, 1, 0.14), 18, ACCENT)
+	var sbh := _pill(Tema.BTN2, 18, ACCENT)
 	sbh.set_content_margin_all(0)
 	b.add_theme_stylebox_override("hover", sbh)
 	b.add_theme_stylebox_override("pressed", sbh)
@@ -559,7 +565,7 @@ func _bairro_card(id: String, name: String, here: bool, walk: bool) -> Control:
 	# cantos de cima redondos como o cartão
 	var clip := PanelContainer.new()
 	var cs := StyleBoxFlat.new()
-	cs.bg_color = Color.WHITE
+	cs.bg_color = Tema.TEXT
 	cs.corner_radius_top_left = 18
 	cs.corner_radius_top_right = 18
 	clip.add_theme_stylebox_override("panel", cs)
@@ -568,11 +574,11 @@ func _bairro_card(id: String, name: String, here: bool, walk: bool) -> Control:
 	clip.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	clip.add_child(pic)
 	v.add_child(clip)
-	var t := _label(name, 15, Color.WHITE, FONT_BOLD)
+	var t := _label(name, 15, Tema.TEXT, FONT_BOLD)
 	t.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	v.add_child(t)
-	var tag := _label("Estás aqui" if here else ("A pé (vizinho)" if walk else "Transporte na paragem"), 12, ACCENT if here else (Color("8fe08a") if walk else Color(1, 1, 1, 0.6)), FONT_REG)
+	var tag := _label("Estás aqui" if here else ("A pé (vizinho)" if walk else "Transporte na paragem"), 12, ACCENT if here else (Tema.OK if walk else Tema.TEXT_FAINT), FONT_REG)
 	tag.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	v.add_child(tag)
@@ -592,7 +598,7 @@ func _go(id: String, walk: bool) -> void:
 	_panel("Como queres ir?")
 	var at_stop := str(_context.get("kind", "")) == "stop"
 	if not at_stop:
-		menu_body.add_child(_label("Os candongueiros, kupapatas, táxis e autocarros param na paragem do bairro.", 14, Color.WHITE, FONT_REG, true))
+		menu_body.add_child(_label("Os candongueiros, kupapatas, táxis e autocarros param na paragem do bairro.", 14, Tema.TEXT, FONT_REG, true))
 		menu_body.add_child(_button("Ir a pé até à paragem", "pin", Color("f2c14e"), INK, func() -> void:
 			ui_action.emit("paragem")
 			menu_panel.visible = false))
@@ -626,10 +632,10 @@ func show_guide(step := 0) -> void:
 		cfg.save("user://guia.cfg")
 		return
 	_panel("%s  (%d/%d)" % [GUIDE[step][0], step + 1, GUIDE.size()])
-	menu_body.add_child(_label(GUIDE[step][1], 17, Color.WHITE, FONT_REG, true))
+	menu_body.add_child(_label(GUIDE[step][1], 17, Tema.TEXT, FONT_REG, true))
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 10)
-	row.add_child(_button("Saltar", "minus", BG, Color.WHITE, func() -> void: show_guide(GUIDE.size())))
+	row.add_child(_button("Saltar", "minus", BG, Tema.TEXT, func() -> void: show_guide(GUIDE.size())))
 	row.add_child(_button("Percebi" if step == GUIDE.size() - 1 else "Seguinte", "plus", ACCENT, INK, func() -> void: show_guide(step + 1)))
 	menu_body.add_child(row)
 
@@ -652,19 +658,19 @@ func _refresh_sala() -> void:
 ## Lista de salas do bairro: quantos estão em cada uma; tocar muda de sala.
 func _open_rooms() -> void:
 	_panel("Salas — %s" % place_text)
-	menu_body.add_child(_label("Cada bairro tem várias salas com outras pessoas. Muda para estar com os teus amigos.", 14, Color.WHITE, FONT_REG, true))
+	menu_body.add_child(_label("Cada bairro tem várias salas com outras pessoas. Muda para estar com os teus amigos.", 14, Tema.TEXT, FONT_REG, true))
 	var rooms: Variant = await Net.get_json("/districts/%s/rooms" % Net.current_district)
 	if not menu_panel.visible:
 		return
 	if typeof(rooms) != TYPE_ARRAY:
-		menu_body.add_child(_label("Não foi possível obter as salas.", 14, Color("ffb4a8"), FONT_REG, true))
+		menu_body.add_child(_label("Não foi possível obter as salas.", 14, Tema.DANGER, FONT_REG, true))
 	else:
 		for r: Dictionary in rooms:
 			var mine: bool = Net.room != null and str(r.roomId) == Net.room.room_id
 			var full := int(r.clients) >= int(r.maxClients)
 			var rid := str(r.roomId)
 			var txt := "Sala %d · %d/%d pessoas%s" % [int(r.sala), int(r.clients), int(r.maxClients), "  (estás aqui)" if mine else ""]
-			var b := _button(txt, "person", BG if mine or full else ACCENT, Color.WHITE if mine or full else INK, func() -> void:
+			var b := _button(txt, "person", BG if mine or full else ACCENT, Tema.TEXT if mine or full else INK, func() -> void:
 				menu_panel.visible = false
 				ui_action.emit("sala:" + rid))
 			b.disabled = mine or full
@@ -674,8 +680,8 @@ func _open_rooms() -> void:
 
 func _open_bank() -> void:
 	_panel("Banco Planalto")
-	menu_body.add_child(_label("Na carteira: %s Kz\nNo banco: %s Kz" % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], 16, Color.WHITE, FONT_REG, true))
-	menu_body.add_child(_label("Depositar", 16, Color.WHITE, FONT, true))
+	menu_body.add_child(_label("Na carteira: %s Kz\nNo banco: %s Kz" % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], 16, Tema.TEXT, FONT_REG, true))
+	menu_body.add_child(_label("Depositar", 16, Tema.TEXT, FONT, true))
 	var row := HBoxContainer.new()
 	for v: int in [1000, 10000, 100000]:
 		row.add_child(_button(DemoHud._money(v), "plus", ACCENT, INK, func() -> void: Net.action("bank_in", "", v)))
@@ -683,13 +689,13 @@ func _open_bank() -> void:
 	if all_in > 0:
 		row.add_child(_button("Tudo", "plus", ACCENT, INK, func() -> void: Net.action("bank_in", "", all_in)))
 	menu_body.add_child(row)
-	menu_body.add_child(_label("Levantar", 16, Color.WHITE, FONT, true))
+	menu_body.add_child(_label("Levantar", 16, Tema.TEXT, FONT, true))
 	var row2 := HBoxContainer.new()
 	for v: int in [1000, 10000, 100000]:
-		row2.add_child(_button(DemoHud._money(v), "minus", BG, Color.WHITE, func() -> void: Net.action("bank_out", "", v)))
+		row2.add_child(_button(DemoHud._money(v), "minus", BG, Tema.TEXT, func() -> void: Net.action("bank_out", "", v)))
 	var all_out := int(Net.me.get("bank", 0))
 	if all_out > 0:
-		row2.add_child(_button("Tudo", "minus", BG, Color.WHITE, func() -> void: Net.action("bank_out", "", all_out)))
+		row2.add_child(_button("Tudo", "minus", BG, Tema.TEXT, func() -> void: Net.action("bank_out", "", all_out)))
 	menu_body.add_child(row2)
 	_close_button()
 
@@ -704,7 +710,7 @@ func _open_services() -> void:
 			continue
 		var row := HBoxContainer.new()
 		var done := sv.has("doc") and bool(docs.get(sv.doc, false))
-		row.add_child(_label(str(sv.name) + (" ✓" if done else ""), 15, Color.WHITE, FONT_REG, true))
+		row.add_child(_label(str(sv.name) + (" ✓" if done else ""), 15, Tema.TEXT, FONT_REG, true))
 		var id: String = sv.id
 		if not done:
 			row.add_child(_button("%s Kz" % DemoHud._money(int(sv.price)), "bag", ACCENT, INK, func() -> void:
@@ -719,18 +725,18 @@ func _open_offer(offer: Dictionary) -> void:
 	_panel(str(offer.name))
 	var buy := int(offer.buy)
 	var per_day := int(offer.rentPerDay)
-	menu_body.add_child(_label("Renda: %s Kz/dia (7 dias pagam 6) · Comprar: %s Kz" % [DemoHud._money(per_day), DemoHud._money(buy)], 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+	menu_body.add_child(_label("Renda: %s Kz/dia (7 dias pagam 6) · Comprar: %s Kz" % [DemoHud._money(per_day), DemoHud._money(buy)], 14, Tema.TEXT_MUTED, FONT_REG, true))
 	for u: Dictionary in offer.units:
 		var box := VBoxContainer.new()
 		var state := "é tua" if u.mine else ("livre" if u.free else "ocupada")
-		box.add_child(_label("%s — %s" % [u.name, state], 16, Color.WHITE if u.free else Color(1, 1, 1, 0.5), FONT, true))
+		box.add_child(_label("%s — %s" % [u.name, state], 16, Tema.TEXT if u.free else Tema.TEXT_FAINT, FONT, true))
 		var id: String = u.id
 		if u.free:
 			var row := HBoxContainer.new()
 			row.add_child(_button("1 dia: %s" % DemoHud._money(per_day), "home", ACCENT, INK, func() -> void: Net.action("rent_house", id, 1)))
 			row.add_child(_button("7 dias: %s" % DemoHud._money(per_day * 6), "home", ACCENT, INK, func() -> void: Net.action("rent_house", id, 7)))
 			box.add_child(row)
-			box.add_child(_button("Comprar: %s Kz" % DemoHud._money(buy), "bag", BG, Color.WHITE, func() -> void: Net.action("buy_house", id)))
+			box.add_child(_button("Comprar: %s Kz" % DemoHud._money(buy), "bag", BG, Tema.TEXT, func() -> void: Net.action("buy_house", id)))
 		menu_body.add_child(box)
 	_close_button()
 
@@ -743,14 +749,14 @@ func _open_menu() -> void:
 	menu_body.add_child(_label(str(_context.get("name", "Comer")), 22, ACCENT, FONT_BOLD))
 	for item: Dictionary in catalog.get("menus", {}).get(str(_context.get("shop", "")), []):
 		var row := HBoxContainer.new()
-		var info := _label("%s\n+%d fome%s" % [item.name, int(item.hunger), "" if not item.has("energy") else ", +%d energia" % int(item.energy)], 15, Color.WHITE, FONT_REG, true)
+		var info := _label("%s\n+%d fome%s" % [item.name, int(item.hunger), "" if not item.has("energy") else ", +%d energia" % int(item.energy)], 15, Tema.TEXT, FONT_REG, true)
 		row.add_child(info)
 		var id: String = item.id
 		row.add_child(_button("%s Kz" % DemoHud._money(int(item.price)), "bag", ACCENT, INK, func() -> void:
 			Net.action("eat", id)
 			menu_panel.visible = false))
 		menu_body.add_child(row)
-	menu_body.add_child(_button("Fechar", "minus", BG, Color.WHITE, func() -> void: menu_panel.visible = false))
+	menu_body.add_child(_button("Fechar", "minus", BG, Tema.TEXT, func() -> void: menu_panel.visible = false))
 	phone.visible = false
 	menu_panel.visible = true
 
@@ -772,10 +778,10 @@ func _open_phone(tab: String) -> void:
 
 
 ## Telemóvel como no Vida na Banda: ecrã inicial (hora, missões do dia, apps) e cada app no seu ecrã.
-const PHONE_BG := Color("1d1517")
-const APP_DARK := Color("2e2426")
-const APP_RED := Color("c8102e")
-const APP_YELLOW := Color("f5c400")
+const PHONE_BG := Tema.PHONE
+const APP_DARK := Tema.BTN2
+const APP_RED := Tema.TERRA
+const APP_YELLOW := Tema.GOLD
 ## [id, nome, ícone, cor]
 const APPS := [
 	["missoes", "Missões", "target", "y"], ["perfil", "Perfil", "person", "d"], ["jornal", "Jornal", "more", "d"], ["mapa", "Mapa", "map", "r"],
@@ -789,6 +795,14 @@ const APPS := [
 	["definicoes", "Definições", "more", "d"],
 	["ajuda", "Ajuda", "more", "d"],
 ]
+## Cada app tem a cor da sua família (vida, dinheiro, social, cidade): o ecrã lê-se de relance.
+const APP_CATEGORY := {
+	"missoes": "vida", "perfil": "vida", "familia": "vida", "saude": "vida", "ambicao": "vida", "estudos": "vida", "desporto": "vida",
+	"biscatos": "dinheiro", "vagas": "dinheiro", "banco": "dinheiro", "cambio": "dinheiro", "transferir": "dinheiro", "negocio": "dinheiro",
+	"imoveis": "dinheiro", "classificados": "dinheiro", "ricos": "dinheiro", "sorte": "dinheiro",
+	"amigos": "social", "grupos": "social", "muxima": "social", "radio": "social", "presentes": "social", "quiz": "social", "jornal": "social",
+	"mapa": "cidade", "casa": "cidade", "loja": "cidade", "roupa": "cidade", "governo": "cidade", "lavras": "cidade", "quintal": "cidade", "tempo": "cidade",
+}
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
 
@@ -799,7 +813,7 @@ func _rebuild_phone() -> void:
 	if phone_tab != "inicio":
 		var head := HBoxContainer.new()
 		head.add_theme_constant_override("separation", 10)
-		head.add_child(_button("Início", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: _open_phone("inicio")))
+		head.add_child(_button("Início", "minus", Tema.BTN2, Tema.TEXT, func() -> void: _open_phone("inicio")))
 		var t := ""
 		for a: Array in APPS:
 			if a[0] == phone_tab:
@@ -841,12 +855,12 @@ func _rebuild_phone() -> void:
 		"amigos": _phone_friends()
 		"grupos": _phone_groups()
 		"transferir": _phone_transfer()
-	phone_body.add_child(_button("Fechar o telemóvel", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: phone.visible = false))
+	phone_body.add_child(_button("Fechar o telemóvel", "minus", Tema.BTN2, Tema.TEXT, func() -> void: phone.visible = false))
 
 
 func _card() -> VBoxContainer:
 	var p := PanelContainer.new()
-	var sb := _pill(Color(1, 1, 1, 0.06), 26)
+	var sb := _pill(Tema.CARD, 26)
 	sb.set_content_margin_all(18)
 	sb.shadow_size = 0
 	p.add_theme_stylebox_override("panel", sb)
@@ -861,16 +875,16 @@ func _card() -> VBoxContainer:
 func _phone_start() -> void:
 	var c := _card()
 	var h := int(_clock_min / 60.0)
-	c.add_child(_label("%02d:%02d" % [h, int(_clock_min) % 60], 64, Color("f3ead8"), FONT_BOLD))
+	c.add_child(_label("%02d:%02d" % [h, int(_clock_min) % 60], 64, Tema.TEXT, FONT_BOLD))
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600)
-	c.add_child(_label("%s, %d de %s" % [WEEKDAYS[int(now.weekday)], int(now.day), MONTHS[int(now.month) - 1]], 17, Color(1, 1, 1, 0.6), FONT_REG))
+	c.add_child(_label("%s, %d de %s" % [WEEKDAYS[int(now.weekday)], int(now.day), MONTHS[int(now.month) - 1]], 17, Tema.TEXT_FAINT, FONT_REG))
 	var row := HBoxContainer.new()
-	var city := _label(("Dia" if h >= 6 and h < 18 else "Noite") + " · Huambo · " + place_text, 17, Color.WHITE, FONT_BOLD)
+	var city := _label(("Dia" if h >= 6 and h < 18 else "Noite") + " · Huambo · " + place_text, 17, Tema.TEXT, FONT_BOLD)
 	city.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(city)
 	row.add_child(_label("%s Kz" % DemoHud._money(int(Net.me.get("money", 0))), 18, ACCENT, FONT_BOLD))
 	c.add_child(row)
-	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Color("7ee08a"), FONT))
+	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Tema.OK, FONT))
 	for ev: Dictionary in Net.me.get("eventos", []):
 		c.add_child(_label("Hoje no Huambo: %s — %s" % [ev.name, ev.texto], 14, ACCENT, FONT_BOLD, true))
 	if Time.get_ticks_msec() - _stats_at > 30000:
@@ -884,7 +898,7 @@ func _phone_start() -> void:
 		var done := items.filter(func(x: Dictionary) -> bool: return bool(x.done)).size()
 		var to_claim := items.filter(func(x: Dictionary) -> bool: return bool(x.done) and not bool(x.claimed)).size()
 		var hr := HBoxContainer.new()
-		var ht := _label("Hoje · %d/%d" % [done, items.size()], 18, Color.WHITE, FONT_BOLD)
+		var ht := _label("Hoje · %d/%d" % [done, items.size()], 18, Tema.TEXT, FONT_BOLD)
 		ht.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hr.add_child(ht)
 		if to_claim > 0:
@@ -905,8 +919,8 @@ func _app(a: Array) -> Control:
 	var v := VBoxContainer.new()
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	v.add_theme_constant_override("separation", 4)
-	var bg: Color = {"y": APP_YELLOW, "r": APP_RED, "d": APP_DARK}[a[3]]
-	var fg := INK if a[3] == "y" else Color.WHITE
+	var bg: Color = Tema.app_color(str(APP_CATEGORY.get(str(a[0]), "")))
+	var fg := Tema.on(bg)
 	var b := Button.new()
 	b.icon = DemoIcons.make(str(a[2]), fg, 34)
 	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -920,7 +934,7 @@ func _app(a: Array) -> Control:
 		else:
 			_open_phone(id))
 	v.add_child(b)
-	var l := _label(str(a[1]), 14, Color.WHITE, FONT_BOLD)
+	var l := _label(str(a[1]), 14, Tema.TEXT, FONT_BOLD)
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(l)
 	if id == "missoes":
@@ -938,35 +952,35 @@ func _mission_rows(box: VBoxContainer, items: Array, ms: Dictionary) -> void:
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 8)
 		var mark := "✓" if bool(it.claimed) else ("●" if bool(it.done) else "○")
-		var txt := _label("%s  %s" % [mark, it.text], 15, Color.WHITE if not bool(it.claimed) else Color(1, 1, 1, 0.45), FONT_REG, true)
+		var txt := _label("%s  %s" % [mark, it.text], 15, Tema.TEXT if not bool(it.claimed) else Tema.TEXT_FAINT, FONT_REG, true)
 		txt.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		row.add_child(txt)
 		if bool(it.done) and not bool(it.claimed):
 			var n := i + 1
 			row.add_child(_button("+%s" % DemoHud._money(int(it.reward)), "plus", ACCENT, INK, func() -> void: Net.action("mission_claim", "", n)))
 		elif not bool(it.done):
-			row.add_child(_label("%s Kz" % DemoHud._money(int(it.reward)), 13, Color(1, 1, 1, 0.5), FONT_REG))
+			row.add_child(_label("%s Kz" % DemoHud._money(int(it.reward)), 13, Tema.TEXT_FAINT, FONT_REG))
 		box.add_child(row)
 	if int(ms.get("progress", 0)) > 0:
-		box.add_child(_label("Sítios visitados hoje: %d/3" % int(ms.progress), 13, Color(1, 1, 1, 0.55), FONT_REG))
+		box.add_child(_label("Sítios visitados hoje: %d/3" % int(ms.progress), 13, Tema.TEXT_FAINT, FONT_REG))
 	box.add_child(_label("Sequência: %d dia(s) completos · dia completo hoje: +%s Kz" % [int(ms.get("streak", 0)), DemoHud._money(int(ms.get("streakBonus", 0)))], 13, ACCENT, FONT_REG, true))
 
 
 func _phone_missions() -> void:
 	var ms: Dictionary = Net.me.get("missions", {}) if typeof(Net.me.get("missions")) == TYPE_DICTIONARY else {}
 	var c := _card()
-	c.add_child(_label("Faz as 3 missões de hoje e recolhe os prémios. Completar o dia seguido aumenta o bónus da sequência (até 7 dias).", 15, Color(1, 1, 1, 0.75), FONT_REG, true))
+	c.add_child(_label("Faz as 3 missões de hoje e recolhe os prémios. Completar o dia seguido aumenta o bónus da sequência (até 7 dias).", 15, Tema.TEXT_MUTED, FONT_REG, true))
 	_mission_rows(c, ms.get("items", []), ms)
 
 
 func _phone_family() -> void:
 	var b: Variant = Net.me.get("birth")
 	var c := _card()
-	c.add_child(_label(str(Net.me.get("familyLabel", "")), 18, Color.WHITE, FONT_BOLD, true))
+	c.add_child(_label(str(Net.me.get("familyLabel", "")), 18, Tema.TEXT, FONT_BOLD, true))
 	if typeof(b) == TYPE_DICTIONARY:
-		c.add_child(_label("Pais: %s\nProvíncia de origem: %s\nCresceste em: %s" % [b.pais, b.provincia, b.bairroNome], 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Pais: %s\nProvíncia de origem: %s\nCresceste em: %s" % [b.pais, b.provincia, b.bairroNome], 15, Tema.TEXT, FONT_REG, true))
 	if bool(Net.me.get("parentsToday", false)):
-		c.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+		c.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	else:
 		c.add_child(_button("Pedir dinheiro aos pais", "person", ACCENT, INK, func() -> void: Net.action("parents")))
 	_love_section()
@@ -975,7 +989,7 @@ func _phone_family() -> void:
 ## App que mostra o estado e leva-te a pé ao sítio certo do bairro.
 func _phone_go(_title: String, text: String, venue: String, go_text: String) -> void:
 	var c := _card()
-	c.add_child(_label(text, 16, Color.WHITE, FONT_REG, true))
+	c.add_child(_label(text, 16, Tema.TEXT, FONT_REG, true))
 	c.add_child(_button(go_text, "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:" + venue)))
@@ -1008,24 +1022,24 @@ func _phone_bank() -> void:
 	var d: Variant = Net.me.get("prazo")
 	if typeof(d) == TYPE_DICTIONARY:
 		var secs := int(d.faltamS)
-		c.add_child(_label("%s Kz a %d%% por %s." % [DemoHud._money(int(d.amount)), roundi(float(d.rate) * 100), d.name], 16, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("%s Kz a %d%% por %s." % [DemoHud._money(int(d.amount)), roundi(float(d.rate) * 100), d.name], 16, Tema.TEXT, FONT_REG, true))
 		if secs > 0:
-			c.add_child(_label("Faltam %s. No fim recebes %s Kz. Se levantares antes, recebes só o que puseste." % [_dur(secs), DemoHud._money(int(d.total))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
-			c.add_child(_button("Levantar já (sem juros)", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("prazo_levantar")))
+			c.add_child(_label("Faltam %s. No fim recebes %s Kz. Se levantares antes, recebes só o que puseste." % [_dur(secs), DemoHud._money(int(d.total))], 14, Tema.TEXT_MUTED, FONT_REG, true))
+			c.add_child(_button("Levantar já (sem juros)", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("prazo_levantar")))
 		else:
-			c.add_child(_label("O prazo acabou! Recebes %s Kz." % DemoHud._money(int(d.total)), 16, Color("8fe08a"), FONT_BOLD, true))
+			c.add_child(_label("O prazo acabou! Recebes %s Kz." % DemoHud._money(int(d.total)), 16, Tema.OK, FONT_BOLD, true))
 			c.add_child(_button("Levantar com juros", "bag", ACCENT, INK, func() -> void: Net.action("prazo_levantar")))
 		_extrato_card()
 		return
-	c.add_child(_label("Põe dinheiro da carteira a render. Escolhe o prazo e a quantia:", 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Põe dinheiro da carteira a render. Escolhe o prazo e a quantia:", 15, Tema.TEXT, FONT_REG, true))
 	_extrato_card()
 	for p: Array in PRAZO_INFO:
-		c.add_child(_label("%s · juros de %s" % [p[1], p[2]], 15, Color.WHITE, FONT_BOLD))
+		c.add_child(_label("%s · juros de %s" % [p[1], p[2]], 15, Tema.TEXT, FONT_BOLD))
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 6)
 		for v: int in PRAZO_VALORES:
 			var termo := str(p[0])
-			var b := _button(_short_kz(v), "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("prazo_abrir", termo, v))
+			var b := _button(_short_kz(v), "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("prazo_abrir", termo, v))
 			b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			row.add_child(b)
 		c.add_child(row)
@@ -1037,20 +1051,20 @@ func _extrato_card() -> void:
 	c.add_child(_label("Extrato da carteira", 18, ACCENT, FONT_BOLD))
 	var ex: Variant = Net.me.get("extrato")
 	if typeof(ex) != TYPE_ARRAY:
-		c.add_child(_button("Ver os últimos movimentos", "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("extrato")))
+		c.add_child(_button("Ver os últimos movimentos", "more", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("extrato")))
 		return
 	if (ex as Array).is_empty():
-		c.add_child(_label("Ainda não há movimentos.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label("Ainda não há movimentos.", 14, Tema.TEXT_FAINT, FONT_REG))
 	for m: Dictionary in ex:
 		var row := HBoxContainer.new()
 		var when := Time.get_datetime_dict_from_unix_time(int(float(m.at) / 1000.0) + 3600)
-		var l := _label("%02d/%02d %02d:%02d  %s" % [int(when.day), int(when.month), int(when.hour), int(when.minute), _reason_label(str(m.reason))], 13, Color.WHITE, FONT_REG)
+		var l := _label("%02d/%02d %02d:%02d  %s" % [int(when.day), int(when.month), int(when.hour), int(when.minute), _reason_label(str(m.reason))], 13, Tema.TEXT, FONT_REG)
 		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		row.add_child(l)
 		var amt := int(m.amount)
-		row.add_child(_label(("+" if amt > 0 else "−") + DemoHud._money(absi(amt)), 14, Color("8fe08a") if amt > 0 else Color("ffb4a8"), FONT_BOLD))
+		row.add_child(_label(("+" if amt > 0 else "−") + DemoHud._money(absi(amt)), 14, Tema.OK if amt > 0 else Tema.DANGER, FONT_BOLD))
 		c.add_child(row)
-	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("extrato")))
+	c.add_child(_button("Atualizar", "rotate", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("extrato")))
 
 
 static func _short_kz(v: int) -> String:
@@ -1073,7 +1087,7 @@ func _phone_quintal() -> void:
 	var c := _card()
 	c.add_child(_label("O teu quintal · %d/%d animais" % [animais.size(), int(q.get("max", 12))], 18, ACCENT, FONT_BOLD))
 	if animais.is_empty():
-		c.add_child(_label("Ainda não tens animais. Compra galinhas, cabritos ou porcos no mercado do bairro.", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Ainda não tens animais. Compra galinhas, cabritos ou porcos no mercado do bairro.", 15, Tema.TEXT, FONT_REG, true))
 	else:
 		var counts := {}
 		for a: Dictionary in animais:
@@ -1082,20 +1096,20 @@ func _phone_quintal() -> void:
 		var parts: Array[String] = []
 		for k: String in counts:
 			parts.append("%d × %s" % [counts[k], k])
-		c.add_child(_label(" · ".join(parts), 16, Color.WHITE, FONT_REG, true))
+		c.add_child(_label(" · ".join(parts), 16, Tema.TEXT, FONT_REG, true))
 		var fed := int(q.get("alimentadosS", 0))
 		if fed > 0:
-			c.add_child(_label("Alimentados durante mais %s." % _dur(fed), 14, Color("8fe08a"), FONT_REG, true))
+			c.add_child(_label("Alimentados durante mais %s." % _dur(fed), 14, Tema.OK, FONT_REG, true))
 		else:
-			c.add_child(_label("Os animais têm fome! Sem ração as galinhas não põem e os animais vendem-se mais baratos.", 14, Color("ffd27a"), FONT_REG, true))
+			c.add_child(_label("Os animais têm fome! Sem ração as galinhas não põem e os animais vendem-se mais baratos.", 14, Tema.WARN, FONT_REG, true))
 		c.add_child(_button("Dar ração (%s Kz)" % DemoHud._money(int(q.get("racao", 150)) * animais.size()), "plus", ACCENT, INK, func() -> void: Net.action("criacao_alimentar")))
-		c.add_child(_label("Ovos guardados: %d" % int(q.get("ovos", 0)), 16, Color.WHITE, FONT_BOLD))
+		c.add_child(_label("Ovos guardados: %d" % int(q.get("ovos", 0)), 16, Tema.TEXT, FONT_BOLD))
 	var m := _card()
-	m.add_child(_label("No mercado", 16, Color.WHITE, FONT_BOLD))
+	m.add_child(_label("No mercado", 16, Tema.TEXT, FONT_BOLD))
 	for x: Array in ANIMAL_INFO:
 		var id := str(x[0])
-		m.add_child(_button("Comprar %s" % str(x[1]).to_lower(), "bag", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("criacao_comprar", id)))
-		m.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+		m.add_child(_button("Comprar %s" % str(x[1]).to_lower(), "bag", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("criacao_comprar", id)))
+		m.add_child(_label(str(x[2]), 12, Tema.TEXT_FAINT, FONT_REG, true))
 	if int(q.get("ovos", 0)) > 0:
 		m.add_child(_button("Vender os ovos", "bag", ACCENT, INK, func() -> void: Net.action("criacao_vender", "ovos")))
 	var seen := {}
@@ -1106,13 +1120,13 @@ func _phone_quintal() -> void:
 		if int(a.prontoEmS) > 0:
 			if not seen.has(tipo + "_cresce"):
 				seen[tipo + "_cresce"] = true
-				m.add_child(_label("%s a crescer: falta %s." % [a.name, _dur(int(a.prontoEmS))], 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+				m.add_child(_label("%s a crescer: falta %s." % [a.name, _dur(int(a.prontoEmS))], 13, Tema.TEXT_FAINT, FONT_REG, true))
 			continue
 		if seen.has(tipo):
 			continue
 		seen[tipo] = true
 		m.add_child(_button("Vender %s" % str(a.name).to_lower(), "bag", ACCENT, INK, func() -> void: Net.action("criacao_vender", tipo)))
-	m.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	m.add_child(_button("Ir ao mercado", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:mercado")))
 
@@ -1131,11 +1145,11 @@ func _phone_sport() -> void:
 	bar.show_percentage = false
 	bar.custom_minimum_size = Vector2(0, 14)
 	c.add_child(bar)
-	c.add_child(_label("Treinos hoje: %d/%d. Quem está em forma adoece menos. A forma desce se não treinares." % [int(f.get("treinosHoje", 0)), int(f.get("max", 4))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+	c.add_child(_label("Treinos hoje: %d/%d. Quem está em forma adoece menos. A forma desce se não treinares." % [int(f.get("treinosHoje", 0)), int(f.get("max", 4))], 14, Tema.TEXT_MUTED, FONT_REG, true))
 	for x: Array in SPORT_INFO:
 		var id := str(x[0])
-		c.add_child(_button(str(x[1]), "person", ACCENT if id != "casa" else Color(1, 1, 1, 0.1), INK if id != "casa" else Color.WHITE, func() -> void: Net.action("treinar", id)))
-		c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+		c.add_child(_button(str(x[1]), "person", ACCENT if id != "casa" else Tema.BTN2, INK if id != "casa" else Tema.TEXT, func() -> void: Net.action("treinar", id)))
+		c.add_child(_label(str(x[2]), 12, Tema.TEXT_FAINT, FONT_REG, true))
 
 
 ## Definições: tamanho do texto, nomes, efeitos e terminar sessão (guardadas no aparelho).
@@ -1147,7 +1161,7 @@ func _phone_settings() -> void:
 	for x: Array in [[0.85, "Pequeno"], [1.0, "Normal"], [1.2, "Grande"]]:
 		var v := float(x[0])
 		var sel := is_equal_approx(Definicoes.text_scale, v)
-		var b := _button(("✓ " if sel else "") + str(x[1]), "more", ACCENT if sel else Color(1, 1, 1, 0.1), INK if sel else Color.WHITE, func() -> void:
+		var b := _button(("✓ " if sel else "") + str(x[1]), "more", ACCENT if sel else Tema.BTN2, INK if sel else Tema.TEXT, func() -> void:
 			Definicoes.set_value(get_tree(), "text_scale", v)
 			_rebuild_phone.call_deferred())
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1155,18 +1169,18 @@ func _phone_settings() -> void:
 	c.add_child(row)
 	var t := _card()
 	t.add_child(_label("Ecrã", 16, ACCENT, FONT_BOLD))
-	t.add_child(_button(("✓ " if Definicoes.show_names else "✗ ") + "Nomes por cima das pessoas", "person", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	t.add_child(_button(("✓ " if Definicoes.show_names else "✗ ") + "Nomes por cima das pessoas", "person", Tema.BTN2, Tema.TEXT, func() -> void:
 		Definicoes.set_value(get_tree(), "show_names", not Definicoes.show_names)
 		_rebuild_phone()))
-	t.add_child(_label("Desliga a chuva se o telemóvel for lento.", 12, Color(1, 1, 1, 0.6), FONT_REG, true))
-	t.add_child(_button(("✓ " if Definicoes.effects else "✗ ") + "Chuva e efeitos", "sun", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	t.add_child(_label("Desliga a chuva se o telemóvel for lento.", 12, Tema.TEXT_FAINT, FONT_REG, true))
+	t.add_child(_button(("✓ " if Definicoes.effects else "✗ ") + "Chuva e efeitos", "sun", Tema.BTN2, Tema.TEXT, func() -> void:
 		Definicoes.set_value(get_tree(), "effects", not Definicoes.effects)
 		_rebuild_phone()))
 	var a := _card()
 	a.add_child(_label("Conta", 16, ACCENT, FONT_BOLD))
-	a.add_child(_label(("A jogar como %s." % Auth.display_name) if Auth.display_name != "" else "A jogar.", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
-	a.add_child(_label("Segurança: na app Amigos podes bloquear ou denunciar quem te incomoda.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
-	a.add_child(_button("Terminar sessão", "door", Color(1, 1, 1, 0.1), Color("ffb4a8"), func() -> void:
+	a.add_child(_label(("A jogar como %s." % Auth.display_name) if Auth.display_name != "" else "A jogar.", 14, Tema.TEXT_MUTED, FONT_REG, true))
+	a.add_child(_label("Segurança: na app Amigos podes bloquear ou denunciar quem te incomoda.", 13, Tema.TEXT_FAINT, FONT_REG, true))
+	a.add_child(_button("Terminar sessão", "door", Tema.BTN2, Tema.DANGER, func() -> void:
 		phone.visible = false
 		Net.leave()
 		Auth.sign_out()
@@ -1177,17 +1191,17 @@ func _phone_settings() -> void:
 func _phone_quiz() -> void:
 	var q: Dictionary = Net.me.get("quiz", {}) if typeof(Net.me.get("quiz")) == TYPE_DICTIONARY else {}
 	var c := _card()
-	c.add_child(_label("Pergunta %d de %d · certas hoje: %d" % [mini(int(q.get("n", 0)) + 1, int(q.get("total", 3))), int(q.get("total", 3)), int(q.get("certasHoje", 0))], 15, Color(1, 1, 1, 0.7), FONT_REG))
+	c.add_child(_label("Pergunta %d de %d · certas hoje: %d" % [mini(int(q.get("n", 0)) + 1, int(q.get("total", 3))), int(q.get("total", 3)), int(q.get("certasHoje", 0))], 15, Tema.TEXT_MUTED, FONT_REG))
 	if q.get("pergunta") == null:
 		c.add_child(_label("Já respondeste às perguntas de hoje. Volta amanhã!", 18, ACCENT, FONT_BOLD, true))
 	else:
-		c.add_child(_label(str(q.pergunta), 19, Color.WHITE, FONT_BOLD, true))
+		c.add_child(_label(str(q.pergunta), 19, Tema.TEXT, FONT_BOLD, true))
 		var ops: Array = q.get("opcoes", [])
 		for k in ops.size():
 			var n := k + 1
-			c.add_child(_button(str(ops[k]), "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("quiz_responder", "", n)))
-		c.add_child(_label("Cada resposta certa vale %s Kz." % DemoHud._money(int(q.get("premio", 500))), 13, Color(1, 1, 1, 0.6), FONT_REG))
-	c.add_child(_label("Certas desde sempre: %d" % int(q.get("certas", 0)), 14, Color(1, 1, 1, 0.6), FONT_REG))
+			c.add_child(_button(str(ops[k]), "more", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("quiz_responder", "", n)))
+		c.add_child(_label("Cada resposta certa vale %s Kz." % DemoHud._money(int(q.get("premio", 500))), 13, Tema.TEXT_FAINT, FONT_REG))
+	c.add_child(_label("Certas desde sempre: %d" % int(q.get("certas", 0)), 14, Tema.TEXT_FAINT, FONT_REG))
 
 
 ## Presentes: oferecer ao par ou a um amigo (chega mesmo que esteja noutro bairro ou desligado).
@@ -1205,7 +1219,7 @@ func _phone_gifts() -> void:
 		who.append([i + 1, str(fr[i].name)])
 	var c := _card()
 	if who.is_empty():
-		c.add_child(_label("Ainda não tens amigos nem par. Faz amigos na rua (toca numa pessoa) para lhes ofereceres presentes.", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Ainda não tens amigos nem par. Faz amigos na rua (toca numa pessoa) para lhes ofereceres presentes.", 15, Tema.TEXT, FONT_REG, true))
 		return
 	if not who.any(func(w: Array) -> bool: return int(w[0]) == _gift_to):
 		_gift_to = int(who[0][0])
@@ -1213,14 +1227,14 @@ func _phone_gifts() -> void:
 	for w: Array in who:
 		var id := int(w[0])
 		var sel := id == _gift_to
-		c.add_child(_button(("✓ " if sel else "") + str(w[1]), "person", ACCENT if sel else Color(1, 1, 1, 0.1), INK if sel else Color.WHITE, func() -> void:
+		c.add_child(_button(("✓ " if sel else "") + str(w[1]), "person", ACCENT if sel else Tema.BTN2, INK if sel else Tema.TEXT, func() -> void:
 			_gift_to = id
 			_rebuild_phone()))
 	var g := _card()
 	g.add_child(_label("O quê?", 16, ACCENT, FONT_BOLD))
 	for x: Array in GIFT_INFO:
 		var gid := str(x[0])
-		g.add_child(_button("%s · %s Kz" % [x[1], DemoHud._money(int(x[2]))], "hand", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("presente", gid, _gift_to)))
+		g.add_child(_button("%s · %s Kz" % [x[1], DemoHud._money(int(x[2]))], "hand", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("presente", gid, _gift_to)))
 
 
 ## Caixa de texto + botão (no telemóvel usa a caixa do browser, onde o teclado funciona).
@@ -1253,9 +1267,9 @@ const COURSES := [["agronomia", "Agronomia", "Engenheiro(a) agrónomo(a) · colh
 func _phone_studies() -> void:
 	var edu := int(Net.me.get("education", 0))
 	var c := _card()
-	c.add_child(_label("Escola: nível %d de 4 (aulas %d/%d)" % [edu, int(Net.me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))], 16, Color.WHITE, FONT_BOLD, true))
+	c.add_child(_label("Escola: nível %d de 4 (aulas %d/%d)" % [edu, int(Net.me.get("study", 0)), int(catalog.get("lessonsPerLevel", 3))], 16, Tema.TEXT, FONT_BOLD, true))
 	if edu < 4:
-		c.add_child(_label("Cada nível desbloqueia empregos melhores. Com o nível 4 podes ir para a Universidade.", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+		c.add_child(_label("Cada nível desbloqueia empregos melhores. Com o nível 4 podes ir para a Universidade.", 14, Tema.TEXT_MUTED, FONT_REG, true))
 		c.add_child(_button("Ir à escola", "pin", ACCENT, INK, func() -> void:
 			phone.visible = false
 			ui_action.emit("ir:escola")))
@@ -1264,16 +1278,16 @@ func _phone_studies() -> void:
 	var lic: Array = u.get("licenciaturas", [])
 	var k := _card()
 	k.add_child(_label("Universidade", 18, ACCENT, FONT_BOLD))
-	k.add_child(_label("Instituto Superior Politécnico do Huambo (Bairro Académico) · %s Kz por aula · %d aulas por curso" % [DemoHud._money(int(u.get("preco", 3000))), int(u.get("total", 5))], 13, Color(1, 1, 1, 0.7), FONT_REG, true))
+	k.add_child(_label("Instituto Superior Politécnico do Huambo (Bairro Académico) · %s Kz por aula · %d aulas por curso" % [DemoHud._money(int(u.get("preco", 3000))), int(u.get("total", 5))], 13, Tema.TEXT_MUTED, FONT_REG, true))
 	if u.get("curso") != null:
-		k.add_child(_label("A tirar %s: %d/%d aulas" % [u.cursoNome, int(u.aulas), int(u.total)], 16, Color.WHITE, FONT_BOLD, true))
+		k.add_child(_label("A tirar %s: %d/%d aulas" % [u.cursoNome, int(u.aulas), int(u.total)], 16, Tema.TEXT, FONT_BOLD, true))
 	for x: Array in COURSES:
 		var id := str(x[0])
 		if lic.has(id):
-			k.add_child(_label("✓ Licenciado/a em %s" % x[1], 14, Color("8fe08a"), FONT_REG, true))
+			k.add_child(_label("✓ Licenciado/a em %s" % x[1], 14, Tema.OK, FONT_REG, true))
 		elif str(u.get("curso", "")) != id:
-			k.add_child(_button("Inscrever em %s" % x[1], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("uni_curso", id)))
-			k.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.55), FONT_REG, true))
+			k.add_child(_button("Inscrever em %s" % x[1], "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("uni_curso", id)))
+			k.add_child(_label(str(x[2]), 12, Tema.TEXT_FAINT, FONT_REG, true))
 	k.add_child(_button("Ir à Universidade", "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		if Net.current_district == "bairro_academico":
@@ -1286,16 +1300,16 @@ func _phone_studies() -> void:
 func _phone_health() -> void:
 	var n: Dictionary = Net.me.get("needs", {})
 	var c := _card()
-	c.add_child(_label("Saúde %d%% · Energia %d%% · Fome %d%% · Humor %d%%" % [int(n.get("health", 0)), int(n.get("energy", 0)), int(n.get("hunger", 0)), int(n.get("mood", 0))], 15, Color.WHITE, FONT_BOLD, true))
+	c.add_child(_label("Saúde %d%% · Energia %d%% · Fome %d%% · Humor %d%%" % [int(n.get("health", 0)), int(n.get("energy", 0)), int(n.get("hunger", 0)), int(n.get("mood", 0))], 15, Tema.TEXT, FONT_BOLD, true))
 	var d: Variant = Net.me.get("doenca")
 	if typeof(d) == TYPE_DICTIONARY:
-		c.add_child(_label(str(d.name), 18, Color("ff8a7a"), FONT_BOLD))
-		c.add_child(_label(str(d.texto), 14, Color.WHITE, FONT_REG, true))
+		c.add_child(_label(str(d.name), 18, Tema.DANGER, FONT_BOLD))
+		c.add_child(_label(str(d.texto), 14, Tema.TEXT, FONT_REG, true))
 	else:
-		c.add_child(_label("Estás de boa saúde. Cuidado com a chuva (gripe) e com os mosquitos à noite na época das chuvas (paludismo).", 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+		c.add_child(_label("Estás de boa saúde. Cuidado com a chuva (gripe) e com os mosquitos à noite na época das chuvas (paludismo).", 14, Tema.TEXT_MUTED, FONT_REG, true))
 	var r: Variant = Net.me.get("roubo")
 	if typeof(r) == TYPE_DICTIONARY:
-		c.add_child(_label("Foste assaltado/a (%s Kz). Regista a ocorrência na esquadra nos próximos 30 min para recuperar metade." % DemoHud._money(int(r.amount)), 14, Color("ffd27a"), FONT_REG, true))
+		c.add_child(_label("Foste assaltado/a (%s Kz). Regista a ocorrência na esquadra nos próximos 30 min para recuperar metade." % DemoHud._money(int(r.amount)), 14, Tema.WARN, FONT_REG, true))
 		c.add_child(_button("Ir à esquadra", "pin", ACCENT, INK, func() -> void:
 			phone.visible = false
 			ui_action.emit("ir:esquadra")))
@@ -1303,15 +1317,15 @@ func _phone_health() -> void:
 	var ins := _card()
 	ins.add_child(_label("Seguro de saúde", 18, ACCENT, FONT_BOLD))
 	if bool(sg.get("ativo", false)):
-		ins.add_child(_label("Ativo durante mais %s: consultas, vacinas e medicamentos sem pagar." % _dur(int(sg.get("faltamS", 0))), 15, Color("8fe08a"), FONT_REG, true))
+		ins.add_child(_label("Ativo durante mais %s: consultas, vacinas e medicamentos sem pagar." % _dur(int(sg.get("faltamS", 0))), 15, Tema.OK, FONT_REG, true))
 	else:
-		ins.add_child(_label("Por %s Kz ficas 24 horas com consultas, vacinas e medicamentos pagos pelo seguro." % DemoHud._money(int(sg.get("preco", 4000))), 15, Color.WHITE, FONT_REG, true))
+		ins.add_child(_label("Por %s Kz ficas 24 horas com consultas, vacinas e medicamentos pagos pelo seguro." % DemoHud._money(int(sg.get("preco", 4000))), 15, Tema.TEXT, FONT_REG, true))
 		ins.add_child(_button("Fazer seguro", "plus", ACCENT, INK, func() -> void: Net.action("seguro_comprar")))
 	c = _card()
 	c.add_child(_button("Ir ao centro de saúde", "pin", ACCENT, INK, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:saude")))
-	c.add_child(_button("Ir à farmácia", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	c.add_child(_button("Ir à farmácia", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:farmacia")))
 
@@ -1328,7 +1342,7 @@ func _kixikila_card() -> void:
 	var c := _card()
 	c.add_child(_label("Kixikila do grupo", 18, ACCENT, FONT_BOLD))
 	if typeof(k) != TYPE_DICTIONARY or str(k.status) == "acabada":
-		c.add_child(_label("Poupança em grupo: cada volta todos pagam a mesma quota e um de vocês recebe tudo, à vez.", 14, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Poupança em grupo: cada volta todos pagam a mesma quota e um de vocês recebe tudo, à vez.", 14, Tema.TEXT, FONT_REG, true))
 		var row := HFlowContainer.new()
 		row.add_theme_constant_override("h_separation", 6)
 		row.add_theme_constant_override("v_separation", 6)
@@ -1338,18 +1352,18 @@ func _kixikila_card() -> void:
 			row.add_child(_button("Criar: %s Kz" % DemoHud._money(q), "plus", ACCENT, INK, func() -> void: Net.action("kixi_criar", "", n)))
 		c.add_child(row)
 		return
-	c.add_child(_label("Quota: %s Kz · %d membros: %s" % [DemoHud._money(int(k.quota)), (k.members as Array).size(), ", ".join(k.members)], 14, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Quota: %s Kz · %d membros: %s" % [DemoHud._money(int(k.quota)), (k.members as Array).size(), ", ".join(k.members)], 14, Tema.TEXT, FONT_REG, true))
 	if str(k.status) == "aberta":
-		c.add_child(_label("À espera de membros.", 14, Color(1, 1, 1, 0.65), FONT_REG))
+		c.add_child(_label("À espera de membros.", 14, Tema.TEXT_MUTED, FONT_REG))
 		if not bool(k.souMembro):
 			c.add_child(_button("Aderir", "plus", ACCENT, INK, func() -> void: Net.action("kixi_aderir")))
 		if bool(k.souCriador):
 			c.add_child(_button("Começar a kixikila", "target", ACCENT, INK, func() -> void: Net.action("kixi_comecar")))
 		return
-	c.add_child(_label("Volta %d · na vez: %s · pagaram %d/%d" % [int(k.round) + 1, k.vez, int(k.paid), (k.members as Array).size()], 15, Color("8fe08a"), FONT_BOLD, true))
+	c.add_child(_label("Volta %d · na vez: %s · pagaram %d/%d" % [int(k.round) + 1, k.vez, int(k.paid), (k.members as Array).size()], 15, Tema.OK, FONT_BOLD, true))
 	if bool(k.souMembro) and not bool(k.jaPaguei):
 		c.add_child(_button("Pagar a quota (%s Kz)" % DemoHud._money(int(k.quota)), "bag", ACCENT, INK, func() -> void: Net.action("kixi_pagar")))
-	c.add_child(_button("Receber (se for a tua vez)", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("kixi_receber")))
+	c.add_child(_button("Receber (se for a tua vez)", "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("kixi_receber")))
 
 
 ## Classificados: comprar e vender colheita e dólares entre jogadores.
@@ -1364,20 +1378,20 @@ func _phone_classifieds() -> void:
 	c.add_child(_label("Vender", 18, ACCENT, FONT_BOLD))
 	var col: Dictionary = Net.me.get("colheita", {})
 	var usd := int(Net.me.get("cambio", {}).get("usd", 0))
-	c.add_child(_label("Tens: %s · %d USD" % [", ".join(col.keys().map(func(k: String) -> String: return "%s %d kg" % [k.replace("_", "-"), int(col[k])])) if not col.is_empty() else "sem colheita", usd], 13, Color(1, 1, 1, 0.7), FONT_REG, true))
+	c.add_child(_label("Tens: %s · %d USD" % [", ".join(col.keys().map(func(k: String) -> String: return "%s %d kg" % [k.replace("_", "-"), int(col[k])])) if not col.is_empty() else "sem colheita", usd], 13, Tema.TEXT_MUTED, FONT_REG, true))
 	var items := HFlowContainer.new()
 	items.add_theme_constant_override("h_separation", 6)
 	items.add_theme_constant_override("v_separation", 6)
 	for it: Array in [["milho", "Milho"], ["feijao", "Feijão"], ["batata_doce", "Batata-doce"], ["usd", "Dólares"]]:
 		var id := str(it[0])
-		items.add_child(_button(str(it[1]), "bag", ACCENT if _sell_item == id else Color(1, 1, 1, 0.1), INK if _sell_item == id else Color.WHITE, func() -> void:
+		items.add_child(_button(str(it[1]), "bag", ACCENT if _sell_item == id else Tema.BTN2, INK if _sell_item == id else Tema.TEXT, func() -> void:
 			_sell_item = id
 			_rebuild_phone()))
 	c.add_child(items)
 	var qty := HFlowContainer.new()
 	qty.add_theme_constant_override("h_separation", 6)
 	for q: int in [5, 10, 20, 50]:
-		qty.add_child(_button("%d %s" % [q, "USD" if _sell_item == "usd" else "kg"], "plus", ACCENT if _sell_qty == q else Color(1, 1, 1, 0.1), INK if _sell_qty == q else Color.WHITE, func() -> void:
+		qty.add_child(_button("%d %s" % [q, "USD" if _sell_item == "usd" else "kg"], "plus", ACCENT if _sell_qty == q else Tema.BTN2, INK if _sell_qty == q else Tema.TEXT, func() -> void:
 			_sell_qty = q
 			_rebuild_phone()))
 	c.add_child(qty)
@@ -1390,15 +1404,15 @@ func _phone_classifieds() -> void:
 		_ads_at = Time.get_ticks_msec()
 		_load_ads()
 	if _ads.is_empty():
-		f.add_child(_label("Ainda não há anúncios.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		f.add_child(_label("Ainda não há anúncios.", 14, Tema.TEXT_FAINT, FONT_REG))
 	var my_name := str(Net.entities.get(Net.self_id, {}).get("name", ""))
 	for a: Dictionary in _ads:
 		var what := "%d %s" % [int(a.qty), "USD" if str(a.item) == "usd" else "kg de " + str(a.item).replace("_", "-")]
-		f.add_child(_label("%s — %s Kz" % [what, DemoHud._money(int(a.price))], 15, Color.WHITE, FONT_BOLD, true))
-		f.add_child(_label("%s · %s" % [a.sellerName, a.bairro], 12, Color(1, 1, 1, 0.6), FONT_REG))
+		f.add_child(_label("%s — %s Kz" % [what, DemoHud._money(int(a.price))], 15, Tema.TEXT, FONT_BOLD, true))
+		f.add_child(_label("%s · %s" % [a.sellerName, a.bairro], 12, Tema.TEXT_FAINT, FONT_REG))
 		var aid := str(a.id)
 		if str(a.sellerName) == my_name:
-			f.add_child(_button("Retirar o meu anúncio", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+			f.add_child(_button("Retirar o meu anúncio", "minus", Tema.BTN2, Tema.TEXT, func() -> void:
 				Net.action_text("classif_cancelar", aid)
 				_ads_at = -100000))
 		else:
@@ -1443,12 +1457,12 @@ func _phone_wardrobe() -> void:
 		for w: Array in WARDROBE:
 			if int(w[0]) == hue:
 				name = str(w[1])
-		var b := _button("Vestir: " + name, "shirt", Color.from_hsv(hue / 360.0, 0.55, 0.8) if hue >= 0 else Color(1, 1, 1, 0.12), Color.WHITE, func() -> void: Net.action("roupa_vestir", "", hue + 2))
+		var b := _button("Vestir: " + name, "shirt", Color.from_hsv(hue / 360.0, 0.55, 0.8) if hue >= 0 else Tema.BTN2, Tema.TEXT, func() -> void: Net.action("roupa_vestir", "", hue + 2))
 		row.add_child(b)
 	c.add_child(row)
 	var k := _card()
-	k.add_child(_label("Roupa de fardo — bancas do mercado (1.500 Kz)", 16, Color.WHITE, FONT_BOLD, true))
-	k.add_child(_label("Compra-se estando no mercado do bairro.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	k.add_child(_label("Roupa de fardo — bancas do mercado (1.500 Kz)", 16, Tema.TEXT, FONT_BOLD, true))
+	k.add_child(_label("Compra-se estando no mercado do bairro.", 13, Tema.TEXT_FAINT, FONT_REG, true))
 	var grid := HFlowContainer.new()
 	grid.add_theme_constant_override("h_separation", 6)
 	grid.add_theme_constant_override("v_separation", 6)
@@ -1457,9 +1471,9 @@ func _phone_wardrobe() -> void:
 		if mine.has(int(w[0])):
 			continue
 		var n := i + 1
-		grid.add_child(_button(str(w[1]), "bag", Color.from_hsv(float(w[0]) / 360.0, 0.55, 0.85), Color.WHITE, func() -> void: Net.action("roupa_comprar", "", n)))
+		grid.add_child(_button(str(w[1]), "bag", Color.from_hsv(float(w[0]) / 360.0, 0.55, 0.85), Tema.TEXT, func() -> void: Net.action("roupa_comprar", "", n)))
 	k.add_child(grid)
-	k.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	k.add_child(_button("Ir ao mercado", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:mercado")))
 
@@ -1471,7 +1485,7 @@ var _feed_at := -100000
 
 func _phone_muxima() -> void:
 	var c := _card()
-	c.add_child(_label("Publica o que estás a viver no Huambo:", 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Publica o que estás a viver no Huambo:", 15, Tema.TEXT, FONT_REG, true))
 	_text_row(c, "Escreve a tua publicação…", 160, "Publicar", func(t: String) -> void:
 		Net.action_text("muxima_publicar", t)
 		_feed_at = -100000
@@ -1484,12 +1498,12 @@ func _phone_muxima() -> void:
 		_feed_at = Time.get_ticks_msec()
 		_load_feed()
 	if _feed.is_empty():
-		f.add_child(_label("Ainda ninguém publicou. Sê o primeiro!", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+		f.add_child(_label("Ainda ninguém publicou. Sê o primeiro!", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	for p: Dictionary in _feed:
 		f.add_child(_label("%s · %s" % [p.name, p.bairro], 14, ACCENT, FONT_BOLD))
-		f.add_child(_label(str(p.text), 15, Color.WHITE, FONT_REG, true))
+		f.add_child(_label(str(p.text), 15, Tema.TEXT, FONT_REG, true))
 		var pid := str(p.id)
-		f.add_child(_button("Gosto (%d)" % int(p.likes), "plus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+		f.add_child(_button("Gosto (%d)" % int(p.likes), "plus", Tema.BTN2, Tema.TEXT, func() -> void:
 			Net.action_text("muxima_gosto", pid)
 			_feed_at = -100000
 			get_tree().create_timer(0.6).timeout.connect(func() -> void: _load_feed())))
@@ -1516,29 +1530,29 @@ func _love_section() -> void:
 			var yes := str(kind[2])
 			var no := str(kind[3])
 			row.add_child(_button("Aceitar", "plus", ACCENT, INK, func() -> void: Net.action(yes)))
-			row.add_child(_button("Recusar", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action(no)))
+			row.add_child(_button("Recusar", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action(no)))
 			c.add_child(row)
 	var p: Variant = Net.me.get("partner")
 	if typeof(p) == TYPE_DICTIONARY:
-		c.add_child(_label("%s com %s%s" % ["Casado/a" if bool(p.married) else "A namorar", p.name, " (ligado/a agora)" if bool(p.online) else ""], 16, Color.WHITE, FONT_REG, true))
-		c.add_child(_label("Estar perto do teu par anima o humor.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+		c.add_child(_label("%s com %s%s" % ["Casado/a" if bool(p.married) else "A namorar", p.name, " (ligado/a agora)" if bool(p.online) else ""], 16, Tema.TEXT, FONT_REG, true))
+		c.add_child(_label("Estar perto do teu par anima o humor.", 13, Tema.TEXT_FAINT, FONT_REG, true))
 		if not bool(p.married):
-			c.add_child(_label("Para casar: entrem os dois na igreja do bairro (%s Kz, paga quem pede)." % DemoHud._money(20000), 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+			c.add_child(_label("Para casar: entrem os dois na igreja do bairro (%s Kz, paga quem pede)." % DemoHud._money(20000), 14, Tema.TEXT_MUTED, FONT_REG, true))
 			c.add_child(_button("Pedir em casamento", "plus", ACCENT, INK, func() -> void: Net.action("casar")))
-			c.add_child(_button("Acabar o namoro", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("terminar")))
+			c.add_child(_button("Acabar o namoro", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("terminar")))
 		else:
-			c.add_child(_button("Pedir o divórcio (no Tribunal ou Administração)", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("terminar")))
+			c.add_child(_button("Pedir o divórcio (no Tribunal ou Administração)", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("terminar")))
 		return
-	c.add_child(_label("Estás solteiro/a. Pede alguém que esteja perto em namoro:", 14, Color(1, 1, 1, 0.75), FONT_REG, true))
+	c.add_child(_label("Estás solteiro/a. Pede alguém que esteja perto em namoro:", 14, Tema.TEXT_MUTED, FONT_REG, true))
 	var me_e: Variant = Net.entities.get(Net.self_id)
 	var any := false
 	for id: int in Net.entities:
 		if id != Net.self_id and me_e != null and (Net.entities[id].pos as Vector2).distance_to(me_e.pos) <= 800.0:
 			any = true
 			var eid := id
-			c.add_child(_button("Pedir %s em namoro" % Net.entities[id].name, "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("namoro_pedir", str(eid))))
+			c.add_child(_button("Pedir %s em namoro" % Net.entities[id].name, "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("namoro_pedir", str(eid))))
 	if not any:
-		c.add_child(_label("Ninguém perto de ti agora.", 13, Color(1, 1, 1, 0.5), FONT_REG))
+		c.add_child(_label("Ninguém perto de ti agora.", 13, Tema.TEXT_FAINT, FONT_REG))
 
 
 ## Empresas: abrir um negócio na Administração (com BI); rende por hora até 12 h.
@@ -1550,19 +1564,19 @@ func _phone_business() -> void:
 	var c := _card()
 	if typeof(b) == TYPE_DICTIONARY:
 		c.add_child(_label(str(b.name), 19, ACCENT, FONT_BOLD, true))
-		c.add_child(_label("Nível %d · %s Kz por hora (junta até %d h)" % [int(b.nivel), DemoHud._money(int(b.perHour)), int(b.maxHoras)], 15, Color.WHITE, FONT_REG, true))
-		c.add_child(_label("Lucro por recolher: %s Kz" % DemoHud._money(int(b.pendente)), 18, Color("8fe08a"), FONT_BOLD))
+		c.add_child(_label("Nível %d · %s Kz por hora (junta até %d h)" % [int(b.nivel), DemoHud._money(int(b.perHour)), int(b.maxHoras)], 15, Tema.TEXT, FONT_REG, true))
+		c.add_child(_label("Lucro por recolher: %s Kz" % DemoHud._money(int(b.pendente)), 18, Tema.OK, FONT_BOLD))
 		c.add_child(_button("Recolher o lucro", "bag", ACCENT, INK, func() -> void: Net.action("negocio_recolher")))
 		if b.melhorar != null:
-			c.add_child(_button("Melhorar (%s Kz)" % DemoHud._money(int(b.melhorar)), "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("negocio_melhorar")))
-		c.add_child(_button("Vender o negócio (metade do investido)", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("negocio_vender")))
+			c.add_child(_button("Melhorar (%s Kz)" % DemoHud._money(int(b.melhorar)), "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("negocio_melhorar")))
+		c.add_child(_button("Vender o negócio (metade do investido)", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("negocio_vender")))
 		return
-	c.add_child(_label("Abre o teu negócio: o dinheiro entra mesmo quando não estás a jogar (até 12 horas). O alvará tira-se na Administração do bairro e precisas de BI.", 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Abre o teu negócio: o dinheiro entra mesmo quando não estás a jogar (até 12 horas). O alvará tira-se na Administração do bairro e precisas de BI.", 15, Tema.TEXT, FONT_REG, true))
 	for x: Array in BUSINESSES:
 		var id := str(x[0])
-		c.add_child(_label("%s — %s Kz · %s Kz/hora" % [x[1], DemoHud._money(int(x[2])), DemoHud._money(int(x[3]))], 15, Color.WHITE, FONT_BOLD, true))
+		c.add_child(_label("%s — %s Kz · %s Kz/hora" % [x[1], DemoHud._money(int(x[2])), DemoHud._money(int(x[3]))], 15, Tema.TEXT, FONT_BOLD, true))
 		c.add_child(_button("Abrir (estando na Administração)", "plus", ACCENT, INK, func() -> void: Net.action("negocio_abrir", id)))
-	c.add_child(_button("Ir à Administração", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+	c.add_child(_button("Ir à Administração", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:administracao")))
 
@@ -1580,16 +1594,16 @@ func _phone_housing() -> void:
 			_housing_asked = Time.get_ticks_msec()
 			Net.action("imoveis")
 		if typeof(l) != TYPE_ARRAY:
-			c.add_child(_label("A procurar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+			c.add_child(_label("A procurar…", 14, Tema.TEXT_FAINT, FONT_REG))
 			return
 	if (l as Array).is_empty():
-		c.add_child(_label("Não há casas à venda neste bairro.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label("Não há casas à venda neste bairro.", 14, Tema.TEXT_FAINT, FONT_REG))
 	for h: Dictionary in l:
-		c.add_child(_label("%s — %s" % [h.name, ("%d livre(s) de %d" % [int(h.free), int(h.total)]) if int(h.total) > 1 else ("livre" if int(h.free) > 0 else "ocupada")], 15, Color("8fe08a") if int(h.free) > 0 else Color(1, 1, 1, 0.55), FONT_BOLD, true))
-		c.add_child(_label("Comprar %s Kz · arrendar %s Kz/dia" % [DemoHud._money(int(h.buy)), DemoHud._money(int(h.rentPerDay))], 13, Color(1, 1, 1, 0.7), FONT_REG))
+		c.add_child(_label("%s — %s" % [h.name, ("%d livre(s) de %d" % [int(h.free), int(h.total)]) if int(h.total) > 1 else ("livre" if int(h.free) > 0 else "ocupada")], 15, Tema.OK if int(h.free) > 0 else Tema.TEXT_FAINT, FONT_BOLD, true))
+		c.add_child(_label("Comprar %s Kz · arrendar %s Kz/dia" % [DemoHud._money(int(h.buy)), DemoHud._money(int(h.rentPerDay))], 13, Tema.TEXT_MUTED, FONT_REG))
 		if int(h.free) > 0:
 			var at := Vector2(float(h.x) / 100.0, float(h.y) / 100.0)
-			c.add_child(_button("Ir ver", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			c.add_child(_button("Ir ver", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 				phone.visible = false
 				ui_action.emit("ir_ponto:%f,%f" % [at.x, at.y])))
 
@@ -1605,30 +1619,30 @@ func _phone_lavras() -> void:
 	if typeof(l) == TYPE_DICTIONARY:
 		var secs := int(l.readyInS)
 		if secs > 0:
-			c.add_child(_label("%s a crescer: pronto daqui a %d min %02d s." % [l.name, secs / 60, secs % 60], 16, Color.WHITE, FONT_REG, true))
+			c.add_child(_label("%s a crescer: pronto daqui a %d min %02d s." % [l.name, secs / 60, secs % 60], 16, Tema.TEXT, FONT_REG, true))
 		else:
-			c.add_child(_label("%s pronto para colher!" % l.name, 16, Color("8fe08a"), FONT_BOLD, true))
+			c.add_child(_label("%s pronto para colher!" % l.name, 16, Tema.OK, FONT_BOLD, true))
 		if not bool(l.watered):
-			c.add_child(_label("Ainda não regaste: sem rega (e sem chuva) a colheita fica a metade.", 14, Color("ffd27a"), FONT_REG, true))
-			c.add_child(_button("Regar", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("lavra_regar")))
+			c.add_child(_label("Ainda não regaste: sem rega (e sem chuva) a colheita fica a metade.", 14, Tema.WARN, FONT_REG, true))
+			c.add_child(_button("Regar", "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("lavra_regar")))
 		if secs <= 0:
 			c.add_child(_button("Colher", "bag", ACCENT, INK, func() -> void: Net.action("lavra_colher")))
 	else:
-		c.add_child(_label("A lavra está vazia. O que queres semear?", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("A lavra está vazia. O que queres semear?", 15, Tema.TEXT, FONT_REG, true))
 		for x: Array in CROP_INFO:
 			var id := str(x[0])
 			c.add_child(_button("Semear %s" % x[1], "plus", ACCENT, INK, func() -> void: Net.action("lavra_semear", id)))
-			c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+			c.add_child(_label(str(x[2]), 12, Tema.TEXT_FAINT, FONT_REG, true))
 	var col: Dictionary = Net.me.get("colheita", {})
 	var k := _card()
-	k.add_child(_label("Colheita guardada", 16, Color.WHITE, FONT_BOLD))
+	k.add_child(_label("Colheita guardada", 16, Tema.TEXT, FONT_BOLD))
 	if col.is_empty():
-		k.add_child(_label("Nada guardado.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		k.add_child(_label("Nada guardado.", 14, Tema.TEXT_FAINT, FONT_REG))
 	else:
 		for crop: String in col:
-			k.add_child(_label("%s: %d kg" % [crop.replace("_", "-").capitalize(), int(col[crop])], 15, Color.WHITE, FONT_REG))
+			k.add_child(_label("%s: %d kg" % [crop.replace("_", "-").capitalize(), int(col[crop])], 15, Tema.TEXT, FONT_REG))
 		k.add_child(_button("Vender no mercado", "bag", ACCENT, INK, func() -> void: Net.action("lavra_vender")))
-		k.add_child(_button("Ir ao mercado", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		k.add_child(_button("Ir ao mercado", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 			phone.visible = false
 			ui_action.emit("ir:mercado")))
 
@@ -1642,7 +1656,7 @@ func _phone_ambition() -> void:
 	var feitas: Array = Net.me.get("ambicoesFeitas", [])
 	var c := _card()
 	if typeof(a) == TYPE_DICTIONARY:
-		c.add_child(_label("A tua ambição", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label("A tua ambição", 14, Tema.TEXT_FAINT, FONT_REG))
 		c.add_child(_label(str(a.text), 19, ACCENT, FONT_BOLD, true))
 		var bar := ProgressBar.new()
 		bar.max_value = 100
@@ -1652,17 +1666,17 @@ func _phone_ambition() -> void:
 		if float(a.progress) >= 1.0:
 			c.add_child(_button("Recolher o prémio (%s Kz)" % DemoHud._money(int(a.reward)), "plus", ACCENT, INK, func() -> void: Net.action("ambicao_recolher")))
 		else:
-			c.add_child(_label("Prémio: %s Kz" % DemoHud._money(int(a.reward)), 14, Color.WHITE, FONT_REG))
+			c.add_child(_label("Prémio: %s Kz" % DemoHud._money(int(a.reward)), 14, Tema.TEXT, FONT_REG))
 	else:
-		c.add_child(_label("Escolhe a tua ambição de vida. O jogo mede o progresso e paga um prémio quando a cumprires.", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Escolhe a tua ambição de vida. O jogo mede o progresso e paga um prémio quando a cumprires.", 15, Tema.TEXT, FONT_REG, true))
 	var l := _card()
-	l.add_child(_label("Ambições", 16, Color.WHITE, FONT_BOLD))
+	l.add_child(_label("Ambições", 16, Tema.TEXT, FONT_BOLD))
 	for x: Array in AMBITIONS:
 		var id := str(x[0])
 		if feitas.has(id):
-			l.add_child(_label("✓ %s (cumprida)" % x[1], 14, Color("8fe08a"), FONT_REG, true))
+			l.add_child(_label("✓ %s (cumprida)" % x[1], 14, Tema.OK, FONT_REG, true))
 		else:
-			l.add_child(_button("%s · %s" % [x[1], x[2]], "target", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("ambicao_escolher", id)))
+			l.add_child(_button("%s · %s" % [x[1], x[2]], "target", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("ambicao_escolher", id)))
 
 
 ## Ricos: quem tem mais dinheiro (só contas).
@@ -1673,7 +1687,7 @@ func _phone_rich() -> void:
 	var c := _card()
 	c.add_child(_label("Os mais ricos do Huambo", 18, ACCENT, FONT_BOLD))
 	if _rich.is_empty():
-		c.add_child(_label("A carregar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label("A carregar…", 14, Tema.TEXT_FAINT, FONT_REG))
 		var r: Variant = await Net.get_json("/ricos")
 		if typeof(r) == TYPE_ARRAY:
 			_rich = r if not (r as Array).is_empty() else [{"name": "", "total": -1}]
@@ -1681,14 +1695,14 @@ func _phone_rich() -> void:
 				_rebuild_phone()
 		return
 	if _rich.size() == 1 and int(_rich[0].total) < 0:
-		c.add_child(_label("Ainda não há ninguém na lista. Cria conta e junta dinheiro para apareceres aqui!", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Ainda não há ninguém na lista. Cria conta e junta dinheiro para apareceres aqui!", 15, Tema.TEXT, FONT_REG, true))
 	for i in _rich.size():
 		var x: Dictionary = _rich[i]
 		if int(x.total) < 0:
 			continue
-		c.add_child(_label("%d. %s — %s Kz" % [i + 1, x.name, DemoHud._money(int(x.total))], 15, ACCENT if i < 3 else Color.WHITE, FONT_BOLD if i < 3 else FONT_REG, true))
-	c.add_child(_label("Conta a carteira e o banco de quem joga com conta.", 12, Color(1, 1, 1, 0.55), FONT_REG, true))
-	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		c.add_child(_label("%d. %s — %s Kz" % [i + 1, x.name, DemoHud._money(int(x.total))], 15, ACCENT if i < 3 else Tema.TEXT, FONT_BOLD if i < 3 else FONT_REG, true))
+	c.add_child(_label("Conta a carteira e o banco de quem joga com conta.", 12, Tema.TEXT_FAINT, FONT_REG, true))
+	c.add_child(_button("Atualizar", "rotate", Tema.BTN2, Tema.TEXT, func() -> void:
 		_rich = []
 		_rebuild_phone()))
 
@@ -1699,33 +1713,33 @@ func _phone_weather() -> void:
 	if w.is_empty():
 		return
 	var c := _card()
-	c.add_child(_label("%d °C" % int(w.temp), 52, Color("f3ead8"), FONT_BOLD))
-	c.add_child(_label("%s · %s" % [w.texto, "época das chuvas" if w.epoca == "chuvas" else "cacimbo"], 17, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("%d °C" % int(w.temp), 52, Tema.TEXT, FONT_BOLD))
+	c.add_child(_label("%s · %s" % [w.texto, "época das chuvas" if w.epoca == "chuvas" else "cacimbo"], 17, Tema.TEXT, FONT_REG, true))
 	if w.ceu in ["chuva", "trovoada"]:
-		c.add_child(_label("Na rua a chuva estraga o humor: entra num sítio coberto. A chuva também rega a tua lavra.", 14, Color("ffd27a"), FONT_REG, true))
+		c.add_child(_label("Na rua a chuva estraga o humor: entra num sítio coberto. A chuva também rega a tua lavra.", 14, Tema.WARN, FONT_REG, true))
 	var p := _card()
-	p.add_child(_label("Próximas horas", 16, Color.WHITE, FONT_BOLD))
+	p.add_child(_label("Próximas horas", 16, Tema.TEXT, FONT_BOLD))
 	for f: Dictionary in w.get("previsao", []):
-		p.add_child(_label("%02dh — %s, %d °C" % [int(f.hora), f.texto, int(f.temp)], 15, Color.WHITE, FONT_REG, true))
+		p.add_child(_label("%02dh — %s, %d °C" % [int(f.hora), f.texto, int(f.temp)], 15, Tema.TEXT, FONT_REG, true))
 
 
 ## Ganhar dinheiro: biscatos sem estudos nem documentos.
 func _phone_biscatos() -> void:
 	var b: Dictionary = Net.me.get("biscatos", {"feitos": 0, "max": 6})
 	var c := _card()
-	c.add_child(_label("Biscatos de hoje: %d/%d. Não precisas de estudos nem documentos." % [int(b.feitos), int(b.max)], 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Biscatos de hoje: %d/%d. Não precisas de estudos nem documentos." % [int(b.feitos), int(b.max)], 15, Tema.TEXT, FONT_REG, true))
 	for x: Array in [["engraxar", "Engraxar sapatos", "Na paragem · 300–500 Kz", "paragem"], ["lavar", "Lavar carros", "Na paragem · 500–800 Kz", "paragem"], ["carregar", "Carregar sacos", "No mercado · 600–900 Kz", "ir:mercado"], ["zungar", "Zungar (vender na rua)", "Em qualquer rua · 300–1.000 Kz", ""]]:
 		var id := str(x[0])
 		var where := str(x[3])
-		c.add_child(_label(str(x[1]), 17, Color.WHITE, FONT_BOLD))
-		c.add_child(_label(str(x[2]), 13, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label(str(x[1]), 17, Tema.TEXT, FONT_BOLD))
+		c.add_child(_label(str(x[2]), 13, Tema.TEXT_FAINT, FONT_REG))
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 6)
 		row.add_child(_button("Fazer aqui", "bag", ACCENT, INK, func() -> void:
 			phone.visible = false
 			Net.action("biscato", id)))
 		if where != "":
-			row.add_child(_button("Ir para lá", "pin", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			row.add_child(_button("Ir para lá", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 				phone.visible = false
 				ui_action.emit(where)))
 		c.add_child(row)
@@ -1738,17 +1752,17 @@ func _phone_cambio() -> void:
 		return
 	var c := _card()
 	c.add_child(_label("Taxa de hoje: 1 USD = %s Kz" % DemoHud._money(int(cm.rate)), 18, ACCENT, FONT_BOLD, true))
-	c.add_child(_label("Comprar: %s Kz · Vender: %s Kz\nTens %d USD · usados hoje %d/%d USD" % [DemoHud._money(int(cm.buy)), DemoHud._money(int(cm.sell)), int(cm.usd), int(cm.usadoHoje), int(cm.limite)], 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Comprar: %s Kz · Vender: %s Kz\nTens %d USD · usados hoje %d/%d USD" % [DemoHud._money(int(cm.buy)), DemoHud._money(int(cm.sell)), int(cm.usd), int(cm.usadoHoje), int(cm.limite)], 15, Tema.TEXT, FONT_REG, true))
 	for op: Array in [["cambio_compra", "Comprar"], ["cambio_venda", "Vender"]]:
 		var a := str(op[0])
-		c.add_child(_label(str(op[1]) + " dólares", 16, Color.WHITE, FONT_BOLD))
+		c.add_child(_label(str(op[1]) + " dólares", 16, Tema.TEXT, FONT_BOLD))
 		var row := HFlowContainer.new() # quebra a linha no ecrã estreito do telemóvel
 		row.add_theme_constant_override("h_separation", 6)
 		row.add_theme_constant_override("v_separation", 6)
 		for v: int in [10, 50, 100, 500]:
-			row.add_child(_button("%d USD" % v, "plus" if a == "cambio_compra" else "minus", ACCENT if a == "cambio_compra" else Color(1, 1, 1, 0.1), INK if a == "cambio_compra" else Color.WHITE, func() -> void: Net.action(a, "", v)))
+			row.add_child(_button("%d USD" % v, "plus" if a == "cambio_compra" else "minus", ACCENT if a == "cambio_compra" else Tema.BTN2, INK if a == "cambio_compra" else Tema.TEXT, func() -> void: Net.action(a, "", v)))
 		c.add_child(row)
-	c.add_child(_label("A taxa muda todos os dias: compra barato e vende caro!", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	c.add_child(_label("A taxa muda todos os dias: compra barato e vende caro!", 13, Tema.TEXT_FAINT, FONT_REG, true))
 
 
 ## Rádio do Bairro: ouvir (bom para o humor) ou mandar uma dedicatória que todo o bairro ouve.
@@ -1759,12 +1773,12 @@ func _phone_radio() -> void:
 	var c := _card()
 	c.add_child(_label("Rádio do Bairro — %s" % place_text, 18, ACCENT, FONT_BOLD, true))
 	c.add_child(_button("Ouvir a rádio (humor +8)", "chat", ACCENT, INK, func() -> void: Net.action("radio_ouvir")))
-	c.add_child(_label("Dedicatória (%s Kz): toda a gente neste bairro ouve." % DemoHud._money(500), 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Dedicatória (%s Kz): toda a gente neste bairro ouve." % DemoHud._money(500), 15, Tema.TEXT, FONT_REG, true))
 	_text_row(c, "Ex.: Para a minha mãe, com carinho", 120, "No ar", func(t: String) -> void: Net.radio(t))
 	if not radio_log.is_empty():
-		c.add_child(_label("Últimas dedicatórias", 15, Color(1, 1, 1, 0.7), FONT_BOLD))
+		c.add_child(_label("Últimas dedicatórias", 15, Tema.TEXT_MUTED, FONT_BOLD))
 		for l: Array in radio_log.slice(maxi(0, radio_log.size() - 6)):
-			c.add_child(_label("%s: «%s»" % [l[0], l[1]], 14, Color.WHITE, FONT_REG, true))
+			c.add_child(_label("%s: «%s»" % [l[0], l[1]], 14, Tema.TEXT, FONT_REG, true))
 
 
 func on_radio(who: String, text: String) -> void:
@@ -1784,21 +1798,21 @@ func _phone_jornal() -> void:
 	var c := _card()
 	c.add_child(_label("Jornal do Huambo", 22, ACCENT, FONT_BOLD))
 	if _jornal.is_empty():
-		c.add_child(_label("A carregar as notícias…", 15, Color(1, 1, 1, 0.6), FONT_REG))
+		c.add_child(_label("A carregar as notícias…", 15, Tema.TEXT_FAINT, FONT_REG))
 		_fetch_jornal()
 		return
-	c.add_child(_label("%s · Câmbio: 1 USD = %s Kz" % [str(_jornal.get("dia", "")), DemoHud._money(int(_jornal.get("cambio", {}).get("rate", 0)))], 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	c.add_child(_label("%s · Câmbio: 1 USD = %s Kz" % [str(_jornal.get("dia", "")), DemoHud._money(int(_jornal.get("cambio", {}).get("rate", 0)))], 13, Tema.TEXT_FAINT, FONT_REG, true))
 	var news: Array = _jornal.get("noticias", [])
 	if news.is_empty():
-		c.add_child(_label("Ainda não há notícias hoje. Compra uma casa, ganha a sorte grande ou manda uma dedicatória para apareceres no jornal!", 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("Ainda não há notícias hoje. Compra uma casa, ganha a sorte grande ou manda uma dedicatória para apareceres no jornal!", 15, Tema.TEXT, FONT_REG, true))
 	for n: Dictionary in news:
-		c.add_child(_label("• " + str(n.text), 15, Color.WHITE, FONT_REG, true))
+		c.add_child(_label("• " + str(n.text), 15, Tema.TEXT, FONT_REG, true))
 	var gs: Array = _jornal.get("grupos", [])
 	if not gs.is_empty():
 		c.add_child(_label("Grupos com mais membros", 16, ACCENT, FONT_BOLD))
 		for g: Dictionary in gs.slice(0, 5):
-			c.add_child(_label("%s — %d membros" % [g.name, int(g.members)], 14, Color.WHITE, FONT_REG, true))
-	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			c.add_child(_label("%s — %d membros" % [g.name, int(g.members)], 14, Tema.TEXT, FONT_REG, true))
+	c.add_child(_button("Atualizar", "rotate", Tema.BTN2, Tema.TEXT, func() -> void:
 		_jornal = {}
 		_rebuild_phone()))
 
@@ -1819,17 +1833,17 @@ func _phone_friends() -> void:
 		r.add_child(_label("%s quer ser teu amigo." % req.name, 17, ACCENT, FONT_BOLD, true))
 		var row := HBoxContainer.new()
 		row.add_child(_button("Aceitar", "plus", ACCENT, INK, func() -> void: Net.action("amigo_aceitar")))
-		row.add_child(_button("Recusar", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_recusar")))
+		row.add_child(_button("Recusar", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("amigo_recusar")))
 		r.add_child(row)
 	var c := _card()
 	var fr: Array = Net.me.get("friends", [])
-	c.add_child(_label("Os teus amigos (%d)" % fr.size(), 18, Color.WHITE, FONT_BOLD))
+	c.add_child(_label("Os teus amigos (%d)" % fr.size(), 18, Tema.TEXT, FONT_BOLD))
 	if fr.is_empty():
-		c.add_child(_label("Ainda não tens amigos. Aproxima-te de alguém e convida-o aqui em baixo.", 15, Color(1, 1, 1, 0.7), FONT_REG, true))
+		c.add_child(_label("Ainda não tens amigos. Aproxima-te de alguém e convida-o aqui em baixo.", 15, Tema.TEXT_MUTED, FONT_REG, true))
 	for i in fr.size():
 		var f: Dictionary = fr[i]
 		var line := "%s — %s" % [f.name, ("ligado em %s" % f.bairro) if bool(f.online) else "desligado"]
-		c.add_child(_label(line, 15, Color("8fe08a") if bool(f.online) else Color(1, 1, 1, 0.6), FONT_REG, true))
+		c.add_child(_label(line, 15, Tema.OK if bool(f.online) else Tema.TEXT_FAINT, FONT_REG, true))
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 6)
 		if bool(f.online):
@@ -1845,7 +1859,7 @@ func _phone_friends() -> void:
 				else:
 					_go(dist, false)))
 		var idx := i + 1
-		row.add_child(_button("Remover", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("amigo_remover", "", idx)))
+		row.add_child(_button("Remover", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("amigo_remover", "", idx)))
 		c.add_child(row)
 		_text_row(c, "SMS para %s (20 Kz de saldo)" % f.name, 120, "SMS", func(t: String) -> void: Net.action_text("sms", t, idx))
 	# convidar quem está perto
@@ -1855,19 +1869,19 @@ func _phone_friends() -> void:
 		if id != Net.self_id and me_e != null and (Net.entities[id].pos as Vector2).distance_to(me_e.pos) <= 1600.0:
 			near.append([id, str(Net.entities[id].name)])
 	var n := _card()
-	n.add_child(_label("Pessoas perto de ti", 16, Color.WHITE, FONT_BOLD))
+	n.add_child(_label("Pessoas perto de ti", 16, Tema.TEXT, FONT_BOLD))
 	if near.is_empty():
-		n.add_child(_label("Ninguém perto. Vai a um sítio com gente (mercado, cantina, paragem).", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+		n.add_child(_label("Ninguém perto. Vai a um sítio com gente (mercado, cantina, paragem).", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	for x: Array in near:
 		var eid := int(x[0])
-		n.add_child(_label(str(x[1]), 15, Color.WHITE, FONT_BOLD))
+		n.add_child(_label(str(x[1]), 15, Tema.TEXT, FONT_BOLD))
 		var prow := HBoxContainer.new()
 		prow.add_theme_constant_override("separation", 6)
-		var inv := _button("Convidar", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_pedir", str(eid)))
+		var inv := _button("Convidar", "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("amigo_pedir", str(eid)))
 		inv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		prow.add_child(inv)
-		prow.add_child(_button("Bloquear", "minus", Color(1, 1, 1, 0.08), Color("ffb4a8"), func() -> void: Net.action("bloquear", str(eid))))
-		prow.add_child(_button("Denunciar", "more", Color(1, 1, 1, 0.08), Color("ffb4a8"), func() -> void:
+		prow.add_child(_button("Bloquear", "minus", Tema.BTN2, Tema.DANGER, func() -> void: Net.action("bloquear", str(eid))))
+		prow.add_child(_button("Denunciar", "more", Tema.BTN2, Tema.DANGER, func() -> void:
 			_report_eid = eid
 			_report_name = str(x[1])
 			_rebuild_phone()))
@@ -1878,15 +1892,15 @@ func _phone_friends() -> void:
 	var bl: Array = Net.me.get("bloqueados", [])
 	if not bl.is_empty():
 		var bc := _card()
-		bc.add_child(_label("Bloqueados", 16, Color.WHITE, FONT_BOLD))
-		bc.add_child(_label("Não vês o que dizem nem recebes pedidos, SMS, presentes ou dinheiro deles.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+		bc.add_child(_label("Bloqueados", 16, Tema.TEXT, FONT_BOLD))
+		bc.add_child(_label("Não vês o que dizem nem recebes pedidos, SMS, presentes ou dinheiro deles.", 13, Tema.TEXT_FAINT, FONT_REG, true))
 		for i in bl.size():
 			var bi := i + 1
 			var br := HBoxContainer.new()
-			var bn := _label(str(bl[i].name), 15, Color.WHITE, FONT_REG)
+			var bn := _label(str(bl[i].name), 15, Tema.TEXT, FONT_REG)
 			bn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			br.add_child(bn)
-			br.add_child(_button("Desbloquear", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("desbloquear", "", bi)))
+			br.add_child(_button("Desbloquear", "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("desbloquear", "", bi)))
 			bc.add_child(br)
 
 
@@ -1901,7 +1915,7 @@ func _report_card(box: Container, eid: int) -> void:
 	var motivos: Dictionary = d.get("motivos", {})
 	for k: String in motivos:
 		var motivo := k
-		box.add_child(_button(str(motivos[k]), "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		box.add_child(_button(str(motivos[k]), "more", Tema.BTN2, Tema.TEXT, func() -> void:
 			if _report_note != "":
 				Net.action_text("denunciar", _report_note, eid, motivo)
 			else:
@@ -1912,8 +1926,8 @@ func _report_card(box: Container, eid: int) -> void:
 	_text_row(box, "Explica (opcional), depois escolhe o motivo", 150, "OK", func(t: String) -> void:
 		_report_note = t
 		show_toast("Explicação guardada. Agora escolhe o motivo.", true))
-	box.add_child(_label("Denúncias hoje: %d/%d. As falas recentes da pessoa seguem com a denúncia." % [int(d.get("hoje", 0)), int(d.get("max", 5))], 12, Color(1, 1, 1, 0.6), FONT_REG, true))
-	box.add_child(_button("Cancelar", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+	box.add_child(_label("Denúncias hoje: %d/%d. As falas recentes da pessoa seguem com a denúncia." % [int(d.get("hoje", 0)), int(d.get("max", 5))], 12, Tema.TEXT_FAINT, FONT_REG, true))
+	box.add_child(_button("Cancelar", "minus", Tema.BTN2, Tema.TEXT, func() -> void:
 		_report_eid = -1
 		_rebuild_phone()))
 
@@ -1927,28 +1941,28 @@ func _phone_groups() -> void:
 	var c := _card()
 	if typeof(g) == TYPE_DICTIONARY:
 		c.add_child(_label("O teu grupo: %s" % g.name, 18, ACCENT, FONT_BOLD, true))
-		c.add_child(_label("Fala com todos os membros ligados, em qualquer bairro:", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+		c.add_child(_label("Fala com todos os membros ligados, em qualquer bairro:", 14, Tema.TEXT_MUTED, FONT_REG, true))
 		_text_row(c, "Mensagem para o grupo…", 120, "Enviar", func(t: String) -> void: Net.say(t, true))
 		var lines: Array = Net.chat_log.filter(func(l: Dictionary) -> bool: return bool(l.get("g", false)))
 		for l: Dictionary in lines.slice(maxi(0, lines.size() - 8)):
-			c.add_child(_label("%s: %s" % [l.n, l.t], 14, Color.WHITE, FONT_REG, true))
-		c.add_child(_button("Sair do grupo", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: Net.action("grupo_sair")))
+			c.add_child(_label("%s: %s" % [l.n, l.t], 14, Tema.TEXT, FONT_REG, true))
+		c.add_child(_button("Sair do grupo", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("grupo_sair")))
 		_kixikila_card()
 		return
-	c.add_child(_label("Ainda não estás num grupo. Junta-te a um ou cria o teu (5.000 Kz, só com conta).", 15, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Ainda não estás num grupo. Junta-te a um ou cria o teu (5.000 Kz, só com conta).", 15, Tema.TEXT, FONT_REG, true))
 	_text_row(c, "Nome do grupo (3 a 30 letras)", 30, "Criar", func(t: String) -> void: Net.action_text("grupo_criar", t))
 	var l := _card()
-	l.add_child(_label("Grupos do Huambo", 17, Color.WHITE, FONT_BOLD))
+	l.add_child(_label("Grupos do Huambo", 17, Tema.TEXT, FONT_BOLD))
 	if _jornal.is_empty():
-		l.add_child(_label("A carregar…", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		l.add_child(_label("A carregar…", 14, Tema.TEXT_FAINT, FONT_REG))
 		_fetch_jornal()
 		return
 	var gs: Array = _jornal.get("grupos", [])
 	if gs.is_empty():
-		l.add_child(_label("Ainda não há grupos. Sê o primeiro!", 14, Color(1, 1, 1, 0.6), FONT_REG))
+		l.add_child(_label("Ainda não há grupos. Sê o primeiro!", 14, Tema.TEXT_FAINT, FONT_REG))
 	for x: Dictionary in gs:
 		var gid := str(x.id)
-		l.add_child(_button("Entrar: %s (%d)" % [x.name, int(x.members)], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		l.add_child(_button("Entrar: %s (%d)" % [x.name, int(x.members)], "plus", Tema.BTN2, Tema.TEXT, func() -> void:
 			Net.action_text("grupo_entrar", gid)
 			_jornal = {}))
 
@@ -1956,7 +1970,7 @@ func _phone_groups() -> void:
 ## Sorte do dia: grátis, uma vez por dia; o servidor sorteia o prémio.
 func _phone_luck() -> void:
 	var c := _card()
-	c.add_child(_label("Roda a sorte uma vez por dia, de graça. Podes ganhar até 10.000 Kz.", 16, Color.WHITE, FONT_REG, true))
+	c.add_child(_label("Roda a sorte uma vez por dia, de graça. Podes ganhar até 10.000 Kz.", 16, Tema.TEXT, FONT_REG, true))
 	if bool(Net.me.get("sorteHoje", false)):
 		c.add_child(_label("Já rodaste hoje. Volta amanhã!", 16, ACCENT, FONT_BOLD, true))
 	else:
@@ -1966,9 +1980,9 @@ func _phone_luck() -> void:
 ## Transferir: dar dinheiro a alguém que está perto (cara a cara).
 func _phone_transfer() -> void:
 	var c := _card()
-	c.add_child(_label("Dá dinheiro a uma pessoa que esteja perto de ti (até 8 m). Entre 100 e 100.000 Kz de cada vez.", 15, Color(1, 1, 1, 0.8), FONT_REG, true))
+	c.add_child(_label("Dá dinheiro a uma pessoa que esteja perto de ti (até 8 m). Entre 100 e 100.000 Kz de cada vez.", 15, Tema.TEXT_MUTED, FONT_REG, true))
 	if Auth.is_guest:
-		c.add_child(_label("Precisas de uma conta (Criar conta) para transferir dinheiro.", 15, Color("ffb4a8"), FONT_REG, true))
+		c.add_child(_label("Precisas de uma conta (Criar conta) para transferir dinheiro.", 15, Tema.DANGER, FONT_REG, true))
 		return
 	var me: Variant = Net.entities.get(Net.self_id)
 	var near: Array = []
@@ -1984,7 +1998,7 @@ func _phone_transfer() -> void:
 	for n: Array in near:
 		var who := str(n[1])
 		var eid := int(n[0])
-		c.add_child(_label(who, 18, Color.WHITE, FONT_BOLD))
+		c.add_child(_label(who, 18, Tema.TEXT, FONT_BOLD))
 		var row := HFlowContainer.new()
 		row.add_theme_constant_override("h_separation", 6)
 		row.add_theme_constant_override("v_separation", 6)
@@ -2000,20 +2014,20 @@ var _chat_edit: LineEdit
 
 func _open_chat() -> void:
 	_panel("Falar")
-	menu_body.add_child(_label("Quem está perto de ti (15 m) ouve o que dizes.", 13, Color(1, 1, 1, 0.65), FONT_REG, true))
+	menu_body.add_child(_label("Quem está perto de ti (15 m) ouve o que dizes.", 13, Tema.TEXT_MUTED, FONT_REG, true))
 	var log_box := VBoxContainer.new()
 	log_box.add_theme_constant_override("separation", 4)
 	var lines: Array = Net.chat_log.slice(maxi(0, Net.chat_log.size() - 10))
 	if lines.is_empty():
-		log_box.add_child(_label("Ainda ninguém falou aqui.", 14, Color(1, 1, 1, 0.5), FONT_REG, true))
+		log_box.add_child(_label("Ainda ninguém falou aqui.", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	for l: Dictionary in lines:
-		log_box.add_child(_label("%s: %s" % [l.n, l.t], 15, ACCENT if int(l.id) == Net.self_id else Color.WHITE, FONT_REG, true))
+		log_box.add_child(_label("%s: %s" % [l.n, l.t], 15, ACCENT if int(l.id) == Net.self_id else Tema.TEXT, FONT_REG, true))
 	menu_body.add_child(log_box)
 	var grid := GridContainer.new()
 	grid.columns = 2
 	for ph: String in QUICK_PHRASES:
 		var t := ph
-		grid.add_child(_button(t, "chat", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+		grid.add_child(_button(t, "chat", Tema.BTN2, Tema.TEXT, func() -> void:
 			Net.say(t)
 			menu_panel.visible = false))
 	menu_body.add_child(grid)
@@ -2074,7 +2088,7 @@ func _achievements_card() -> void:
 			total += int(x.reward)
 		c.add_child(_button("Recolher prémios (+%s Kz)" % DemoHud._money(total), "plus", ACCENT, INK, func() -> void: Net.action("conquistas_recolher")))
 	for x: Dictionary in list:
-		c.add_child(_label(("✓ " if bool(x.feita) else "○ ") + "%s — %s" % [x.name, x.text], 14, Color("8fe08a") if bool(x.feita) else Color(1, 1, 1, 0.6), FONT_REG, true))
+		c.add_child(_label(("✓ " if bool(x.feita) else "○ ") + "%s — %s" % [x.name, x.text], 14, Tema.OK if bool(x.feita) else Tema.TEXT_FAINT, FONT_REG, true))
 
 
 func _phone_profile() -> void:
@@ -2092,13 +2106,13 @@ func _phone_profile() -> void:
 		"Documentos: BI %s · Registo criminal %s" % ["✓" if me.get("docs", {}).get("bi", false) else "—", "✓" if me.get("docs", {}).get("registo", false) else "—"],
 	]
 	for l: String in lines:
-		phone_body.add_child(_label(l, 16, Color.WHITE, FONT_REG, true))
+		phone_body.add_child(_label(l, 16, Tema.TEXT, FONT_REG, true))
 	if bool(me.get("parentsToday", false)):
-		phone_body.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
+		phone_body.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	else:
 		phone_body.add_child(_button("Pedir dinheiro aos pais", "person", ACCENT, INK, func() -> void: Net.action("parents")))
 	if float(me.get("needs", {}).get("energy", 100)) < 30:
-		phone_body.add_child(_button("Dormir no banco da paragem (grátis)", "sun", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		phone_body.add_child(_button("Dormir no banco da paragem (grátis)", "sun", Tema.BTN2, Tema.TEXT, func() -> void:
 			Net.action("sleep_rua")
 			phone.visible = false))
 
@@ -2107,14 +2121,14 @@ func _phone_home() -> void:
 	var homes: Array = Net.me.get("homes", [])
 	phone_body.add_child(_label("A minha casa", 20, ACCENT, FONT_BOLD))
 	if homes.is_empty():
-		phone_body.add_child(_label("Ainda não tens casa. Vai à porta da Casa à venda ou de um prédio (Prédio Kuito, Prédio da Rua Cinco) e toca em Entrar para arrendar ou comprar.", 15, Color.WHITE, FONT_REG, true))
+		phone_body.add_child(_label("Ainda não tens casa. Vai à porta da Casa à venda ou de um prédio (Prédio Kuito, Prédio da Rua Cinco) e toca em Entrar para arrendar ou comprar.", 15, Tema.TEXT, FONT_REG, true))
 		var h: Dictionary = catalog.get("housing", {})
 		for k: String in h:
-			phone_body.add_child(_label("%s: renda %s Kz/dia · compra %s Kz" % ["Casa" if k == "casa" else "Apartamento", DemoHud._money(int(h[k].rentPerDay)), DemoHud._money(int(h[k].buy))], 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+			phone_body.add_child(_label("%s: renda %s Kz/dia · compra %s Kz" % ["Casa" if k == "casa" else "Apartamento", DemoHud._money(int(h[k].rentPerDay)), DemoHud._money(int(h[k].buy))], 14, Tema.TEXT_MUTED, FONT_REG, true))
 	for hm: Dictionary in homes:
 		var until := "comprada" if hm.tenure == "buy" else "renda paga até %s" % Time.get_datetime_string_from_unix_time(int(float(hm.paidUntil) / 1000.0) + 3600, true).substr(0, 16)
-		phone_body.add_child(_label("%s — %s" % [hm.name, until], 16, Color.WHITE, FONT, true))
-	phone_body.add_child(_label("Em casa: dorme de graça na tua cama e cozinha por 500 Kz.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+		phone_body.add_child(_label("%s — %s" % [hm.name, until], 16, Tema.TEXT, FONT, true))
+	phone_body.add_child(_label("Em casa: dorme de graça na tua cama e cozinha por 500 Kz.", 13, Tema.TEXT_FAINT, FONT_REG, true))
 
 
 ## Loja: carros (ficam estacionados à porta de casa; tocar no carro → Viajar).
@@ -2123,14 +2137,14 @@ func _phone_shop() -> void:
 	var mine := str(Net.me.get("car", "")) if Net.me.get("car") != null else ""
 	for c: Dictionary in catalog.get("cars", []):
 		var box := VBoxContainer.new()
-		box.add_child(_label("%s — %s Kz" % [c.name, DemoHud._money(int(c.price))], 16, Color.WHITE, FONT, true))
+		box.add_child(_label("%s — %s Kz" % [c.name, DemoHud._money(int(c.price))], 16, Tema.TEXT, FONT, true))
 		var id := str(c.id)
 		if id == mine:
-			box.add_child(_label("É o teu carro.", 14, Color("8fe08a"), FONT_REG, true))
+			box.add_child(_label("É o teu carro.", 14, Tema.OK, FONT_REG, true))
 		else:
 			box.add_child(_button("Comprar", "bag", ACCENT, INK, func() -> void: Net.action("buy_car", id)))
 		phone_body.add_child(box)
-	phone_body.add_child(_label("Precisas de casa para o estacionar. Viajar de carro custa só o combustível (300 Kz).", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	phone_body.add_child(_label("Precisas de casa para o estacionar. Viajar de carro custa só o combustível (300 Kz).", 13, Tema.TEXT_FAINT, FONT_REG, true))
 
 
 func _phone_jobs() -> void:
@@ -2139,18 +2153,18 @@ func _phone_jobs() -> void:
 	phone_body.add_child(_label("Vagas no Huambo", 20, ACCENT, FONT_BOLD))
 	for j: Dictionary in catalog.get("jobs", []):
 		var box := VBoxContainer.new()
-		box.add_child(_label("%s — %s Kz/turno" % [j.name, DemoHud._money(int(j.pay))], 16, Color.WHITE, FONT, true))
+		box.add_child(_label("%s — %s Kz/turno" % [j.name, DemoHud._money(int(j.pay))], 16, Tema.TEXT, FONT, true))
 		var req := "sem estudos" if int(j.education) == 0 else "estudos nível %d" % int(j.education)
 		for dk: String in j.get("docs", []):
 			req += " · " + ("BI" if dk == "bi" else "registo criminal")
-		box.add_child(_label("%s · %s" % [j.where, req], 13, Color(1, 1, 1, 0.65), FONT_REG, true))
+		box.add_child(_label("%s · %s" % [j.where, req], 13, Tema.TEXT_MUTED, FONT_REG, true))
 		var id: String = j.id
 		if id == my:
-			box.add_child(_button("Despedir-me", "minus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("quit_job")))
+			box.add_child(_button("Despedir-me", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("quit_job")))
 		elif edu >= int(j.education):
 			box.add_child(_button("Aceitar", "plus", ACCENT, INK, func() -> void: Net.action("take_job", id)))
 		phone_body.add_child(box)
-	phone_body.add_child(_label("Os 2 primeiros turnos do dia pagam por inteiro; depois cada turno paga menos (85%, 65%, 45%, 20%).", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	phone_body.add_child(_label("Os 2 primeiros turnos do dia pagam por inteiro; depois cada turno paga menos (85%, 65%, 45%, 20%).", 13, Tema.TEXT_FAINT, FONT_REG, true))
 
 
 func _phone_help() -> void:
@@ -2165,7 +2179,7 @@ func _phone_help() -> void:
 		"Uma vez por dia podes pedir dinheiro aos teus pais.",
 		"Andar: setas ou WASD, ou toca no chão.",
 	]:
-		phone_body.add_child(_label("• " + l, 15, Color.WHITE, FONT_REG, true))
+		phone_body.add_child(_label("• " + l, 15, Tema.TEXT, FONT_REG, true))
 
 
 # ------------------------------------------------------------------ utilitários
@@ -2201,7 +2215,8 @@ func _label(text: String, size: int, color: Color, font: Font, wrap := false) ->
 
 
 func _pill(c: Color, r: int, border := Color(0, 0, 0, 0)) -> StyleBoxFlat:
-	var sb := DemoHud._pill(c, r)
+	# cartões do telemóvel levam contorno fino; o resto, a borda pedida
+	var sb := Tema.box(c, r, 0, Tema.STROKE if c == Tema.CARD or c == Tema.PANEL or c == Tema.PHONE else Color(0, 0, 0, 0))
 	if border.a > 0.0:
 		sb.border_color = border
 		sb.set_border_width_all(3)
@@ -2209,14 +2224,16 @@ func _pill(c: Color, r: int, border := Color(0, 0, 0, 0)) -> StyleBoxFlat:
 
 
 func _style_round(b: Button, r: int, bg: Color) -> void:
-	b.add_theme_stylebox_override("normal", _pill(bg, r))
-	b.add_theme_stylebox_override("hover", _pill(bg.lightened(0.12), r))
-	b.add_theme_stylebox_override("pressed", _pill(bg.lightened(0.18), r))
-	b.add_theme_stylebox_override("hover_pressed", _pill(bg.lightened(0.18), r))
+	var step := 4 if bg.a > 0.95 else 0 # só as cores cheias levam degrau; os painéis translúcidos ficam lisos
+	var stroke := Tema.STROKE if bg.a <= 0.95 and bg.a > 0.0 else Color(0, 0, 0, 0)
+	b.add_theme_stylebox_override("normal", Tema.box(bg, r, step, stroke))
+	b.add_theme_stylebox_override("hover", Tema.box(bg.lightened(0.08), r, step, stroke))
+	b.add_theme_stylebox_override("pressed", Tema.box(bg.lightened(0.14), r, 0, stroke))
+	b.add_theme_stylebox_override("hover_pressed", Tema.box(bg.lightened(0.14), r, 0, stroke))
 	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	b.focus_mode = Control.FOCUS_NONE
 	for st: String in ["font_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color"]:
-		b.add_theme_color_override(st, Color.WHITE)
+		b.add_theme_color_override(st, Tema.TEXT)
 
 
 ## Botão redondo só com ícone (coluna da direita).
@@ -2235,7 +2252,7 @@ func _round(icon: String, tip: String, cb: Callable) -> Button:
 func _tab(icon: String, text: String, main: bool, cb: Callable) -> Button:
 	var b := Button.new()
 	b.text = text
-	b.icon = DemoIcons.make(icon, Color.WHITE, 30)
+	b.icon = DemoIcons.make(icon, Tema.TEXT, 30)
 	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	b.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	b.custom_minimum_size = Vector2(84, 74)
@@ -2259,9 +2276,14 @@ func _button(text: String, icon: String, bg: Color, fg: Color, cb: Callable) -> 
 	for st: String in ["font_color", "font_hover_color", "font_pressed_color"]:
 		b.add_theme_color_override(st, fg)
 	b.add_theme_constant_override("h_separation", 10)
-	b.add_theme_stylebox_override("normal", _pill(bg, 23))
-	b.add_theme_stylebox_override("hover", _pill(bg.lightened(0.12), 23))
-	b.add_theme_stylebox_override("pressed", _pill(bg.darkened(0.1), 23))
+	# botão «físico»: degrau por baixo que desaparece ao carregar
+	var step := 0 if bg.a < 0.5 else 4
+	b.add_theme_stylebox_override("normal", Tema.box(bg, 23, step))
+	b.add_theme_stylebox_override("hover", Tema.box(bg.lightened(0.08), 23, step))
+	var pr := Tema.box(bg.darkened(0.08), 23, 0)
+	pr.content_margin_top = 8 + step
+	pr.shadow_size = 2
+	b.add_theme_stylebox_override("pressed", pr)
 	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	b.focus_mode = Control.FOCUS_NONE
 	b.pressed.connect(cb)

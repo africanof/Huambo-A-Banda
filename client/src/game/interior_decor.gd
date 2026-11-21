@@ -98,8 +98,8 @@ func build(view: BairroView, interior: Dictionary) -> void:
 			continue
 		var kind := str(p.kind)
 		var label := "Sair" if kind == "exit" else str(p.name)
-		var col := Color(0.95, 0.72, 0.18) if kind != "exit" else Color(0.09, 0.08, 0.08, 0.9)
-		var fg := Color("2a1d10") if kind != "exit" else Color.WHITE
+		var col := Tema.GOLD if kind != "exit" else Tema.PANEL
+		var fg := Tema.INK if kind != "exit" else Tema.TEXT
 		var node := _pill(label, DemoIcons.make(str(KIND_ICON.get(kind, "target")), fg, 22), col, fg, 20)
 		var base := Iso.to_screen(Vector2(p.at[0], p.at[1])) + Vector2(-node.size.x / 2.0, -170.0)
 		node.position = base

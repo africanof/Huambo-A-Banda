@@ -9,7 +9,7 @@ signal done
 const FONT := preload("res://assets/fonts/Inter-SemiBold.otf")
 const FONT_BOLD := preload("res://assets/fonts/Inter-Bold.otf")
 const FONT_REG := preload("res://assets/fonts/Inter-Regular.otf")
-const ACCENT := Color(0.95, 0.72, 0.18)
+const ACCENT := Tema.GOLD
 ## família → [título, frase, casa (arte do jogo), cor]
 const CLASSES := {
 	"humilde": ["Luta do Bairro", "A vida não vai ser fácil… mas no Huambo ninguém desiste.", "f_casa6", Color("c0703f")],
@@ -31,7 +31,7 @@ var _go := Button.new()
 func _ready() -> void:
 	layer = 70
 	var dim := ColorRect.new()
-	dim.color = Color(0.03, 0.02, 0.02, 0.88)
+	dim.color = Color(0.07, 0.04, 0.03, 0.9)
 	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(dim)
 	var center := CenterContainer.new()
@@ -42,11 +42,11 @@ func _ready() -> void:
 	v.alignment = BoxContainer.ALIGNMENT_CENTER
 	center.add_child(v)
 	v.add_child(_lbl("A lotaria da vida", 30, ACCENT, FONT_BOLD))
-	v.add_child(_lbl("Ninguém escolhe onde nasce…", 16, Color(1, 1, 1, 0.75), FONT_REG))
+	v.add_child(_lbl("Ninguém escolhe onde nasce…", 16, Tema.TEXT_MUTED, FONT_REG))
 	_card_style.set_corner_radius_all(26)
 	_card_style.set_content_margin_all(18)
 	_card_style.set_border_width_all(4)
-	_card_style.border_color = Color(1, 1, 1, 0.85)
+	_card_style.border_color = Tema.TEXT_MUTED
 	_card.add_theme_stylebox_override("panel", _card_style)
 	_card.custom_minimum_size = Vector2(300, 260)
 	_card.pivot_offset = Vector2(150, 130)
@@ -77,13 +77,10 @@ func _ready() -> void:
 	_go.custom_minimum_size = Vector2(260, 54)
 	_go.add_theme_font_override("font", FONT_BOLD)
 	_go.add_theme_font_size_override("font_size", 19)
-	var gs := StyleBoxFlat.new()
-	gs.bg_color = ACCENT
-	gs.set_corner_radius_all(26)
 	for s: String in ["normal", "hover", "pressed"]:
-		_go.add_theme_stylebox_override(s, gs)
+		_go.add_theme_stylebox_override(s, Tema.box(ACCENT.lightened(0.08) if s == "hover" else ACCENT, 26, 0 if s == "pressed" else 5))
 	for s: String in ["font_color", "font_hover_color", "font_pressed_color"]:
-		_go.add_theme_color_override(s, Color("2a1d10"))
+		_go.add_theme_color_override(s, Tema.INK)
 	_go.modulate.a = 0.0
 	_go.disabled = true
 	_go.pressed.connect(_finish)

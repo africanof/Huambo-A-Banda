@@ -50,13 +50,13 @@ func _draw() -> void:
 		for to: Variant in d.get("links", []):
 			if _pos.has(d.id) and _pos.has(to) and str(d.id) < str(to):
 				var hot: bool = (d.id == here and mine.has(to)) or (to == here)
-				draw_line(_pos[d.id], _pos[to], Color(0.95, 0.72, 0.18) if hot else Color(1, 1, 1, 0.35), 3.0 if hot else 1.5, true)
+				draw_line(_pos[d.id], _pos[to], Tema.GOLD if hot else Color(1, 1, 1, 0.35), 3.0 if hot else 1.5, true)
 	for d: Dictionary in districts:
 		if not _pos.has(d.id):
 			continue
 		var p: Vector2 = _pos[d.id]
 		var is_here: bool = d.id == here
-		draw_circle(p, 9.0 if is_here else 6.0, Color("e8452c") if is_here else (Color(0.95, 0.72, 0.18) if mine.has(d.id) else Color.WHITE))
+		draw_circle(p, 9.0 if is_here else 6.0, Tema.TERRA if is_here else (Tema.GOLD if mine.has(d.id) else Tema.TEXT))
 	# nomes: primeiro o bairro atual e os vizinhos; os outros só se não se sobrepuserem
 	var order := districts.duplicate()
 	order.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return _rank(a, mine) < _rank(b, mine))
@@ -73,11 +73,11 @@ func _draw() -> void:
 			if used.any(func(u: Rect2) -> bool: return u.intersects(r)) or not Rect2(Vector2.ZERO, size).encloses(r):
 				continue
 			used.append(r)
-			draw_string(FONT, p + off, str(d.name), HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color.WHITE if d.id != here else Color("ffd0c4"))
+			draw_string(FONT, p + off, str(d.name), HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Tema.TEXT if d.id != here else Tema.GOLD)
 			placed = true
 			break
 		if not placed and d.id == here:
-			draw_string(FONT, p + Vector2(9, 4), str(d.name), HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color("ffd0c4"))
+			draw_string(FONT, p + Vector2(9, 4), str(d.name), HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Tema.GOLD)
 
 
 func _rank(d: Dictionary, mine: Array) -> int:

@@ -6,10 +6,10 @@ extends Control
 const FONT := preload("res://assets/fonts/Inter-SemiBold.otf")
 const FONT_BOLD := preload("res://assets/fonts/Inter-Bold.otf")
 const FONT_REG := preload("res://assets/fonts/Inter-Regular.otf")
-const ACCENT := Color(0.95, 0.72, 0.18)
-const ACCENT_DARK := Color("b5341f")
-const INK := Color("2a1d10")
-const CARD := Color(0.08, 0.07, 0.07, 0.9)
+const ACCENT := Tema.GOLD
+const ACCENT_DARK := Tema.TERRA
+const INK := Tema.INK
+const CARD := Color(0.106, 0.075, 0.059, 0.94)
 ## matizes de roupa (0..1); -1 = a original da arte
 const HUES := [-1.0, 0.0, 0.08, 0.15, 0.33, 0.5, 0.62, 0.75, 0.88]
 const NAMES_M := ["Kalunga", "Tchissola", "Ngola", "Sapalo", "Chipenda", "Cassoma", "Epalanga", "Jamba", "Kandimba", "Tchivinda", "Sacuvaia", "Chimuco"]
@@ -143,19 +143,26 @@ func _build_ui() -> void:
 	sb.bg_color = CARD
 	sb.set_corner_radius_all(28)
 	sb.set_content_margin_all(24)
-	sb.shadow_color = Color(0, 0, 0, 0.4)
-	sb.shadow_size = 14
+	# faixa dourada no topo (milho) e contorno fino quente
+	sb.border_width_top = 5
+	sb.border_width_left = 1
+	sb.border_width_right = 1
+	sb.border_width_bottom = 1
+	sb.border_color = Tema.GOLD
+	sb.shadow_color = Color(0.05, 0.02, 0.0, 0.5)
+	sb.shadow_size = 18
 	_card.add_theme_stylebox_override("panel", sb)
 	center.add_child(_card)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 12)
 	_card.add_child(v)
 	v.add_child(_label("Huambo É A Banda", 34, ACCENT, FONT_BOLD, HORIZONTAL_ALIGNMENT_CENTER))
-	v.add_child(_label("Ninguém escolhe onde nasce: podes nascer na Chiva ou na Cidade Alta. Arranja trabalho, casa, amigos e faz a tua vida no Huambo — com gente real a jogar contigo.", 14, Color(1, 1, 1, 0.8), FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
+	v.add_child(_label("PLANALTO CENTRAL · ANGOLA", 12, Tema.TERRA.lightened(0.25), FONT_BOLD, HORIZONTAL_ALIGNMENT_CENTER))
+	v.add_child(_label("Ninguém escolhe onde nasce: podes nascer na Chiva ou na Cidade Alta. Arranja trabalho, casa, amigos e faz a tua vida no Huambo — com gente real a jogar contigo.", 14, Tema.TEXT_MUTED, FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
 	# quem volta: «Bem-vindo de volta, X!»
 	_welcome_label.add_theme_font_override("font", FONT_BOLD)
 	_welcome_label.add_theme_font_size_override("font_size", 22)
-	_welcome_label.add_theme_color_override("font_color", Color.WHITE)
+	_welcome_label.add_theme_color_override("font_color", Tema.TEXT)
 	_welcome_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_welcome_label.visible = false
 	v.add_child(_welcome_label)
@@ -167,7 +174,7 @@ func _build_ui() -> void:
 		if t[0] != "jogar" and not Auth.supabase_enabled():
 			continue
 		var id: String = t[0]
-		var b := _button(t[1], Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: _set_mode(id))
+		var b := _button(t[1], Tema.BTN2, Tema.TEXT, func() -> void: _set_mode(id))
 		b.set_meta("tab", id)
 		_tabs.add_child(b)
 	# conta (email + senha)
@@ -192,11 +199,11 @@ func _build_ui() -> void:
 	name_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	name_edit.text_submitted.connect(func(_t: String) -> void: _on_start())
 	row.add_child(name_edit)
-	var dice := _button("Sorte", Color(1, 1, 1, 0.12), Color.WHITE, func() -> void: _randomize(true))
+	var dice := _button("Sorte", Tema.BTN2, Tema.TEXT, func() -> void: _randomize(true))
 	dice.tooltip_text = "Nome e visual ao acaso"
 	row.add_child(dice)
 	_char_box.add_child(row)
-	_char_box.add_child(_label("O teu visual", 15, Color(1, 1, 1, 0.75), FONT, HORIZONTAL_ALIGNMENT_LEFT))
+	_char_box.add_child(_label("O teu visual", 15, Tema.TEXT_MUTED, FONT, HORIZONTAL_ALIGNMENT_LEFT))
 	var look := HBoxContainer.new()
 	look.add_theme_constant_override("separation", 14)
 	look.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -220,11 +227,11 @@ func _build_ui() -> void:
 	models.add_theme_constant_override("separation", 8)
 	for m: Array in [[0, "Homem"], [1, "Mulher"]]:
 		var mi: int = m[0]
-		var b := _button(m[1], Color(1, 1, 1, 0.08), Color.WHITE, func() -> void: _set_model(mi))
+		var b := _button(m[1], Tema.BTN2, Tema.TEXT, func() -> void: _set_model(mi))
 		_model_buttons.append(b)
 		models.add_child(b)
 	right.add_child(models)
-	right.add_child(_label("Cor da roupa", 13, Color(1, 1, 1, 0.65), FONT_REG, HORIZONTAL_ALIGNMENT_LEFT))
+	right.add_child(_label("Cor da roupa", 13, Tema.TEXT_MUTED, FONT_REG, HORIZONTAL_ALIGNMENT_LEFT))
 	var grid := GridContainer.new()
 	grid.columns = 5
 	grid.add_theme_constant_override("h_separation", 6)
@@ -259,24 +266,24 @@ func _build_ui() -> void:
 	start_button.custom_minimum_size = Vector2(0, 56)
 	start_button.add_theme_font_size_override("font_size", 20)
 	v.add_child(start_button)
-	_switch_button = _button("Não és tu? Começar outra vida", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+	_switch_button = _button("Não és tu? Começar outra vida", Tema.BTN2, Tema.TEXT, func() -> void:
 		Auth.sign_out()
 		_set_mode("jogar"))
 	_switch_button.visible = false
 	v.add_child(_switch_button)
 	_version_label.add_theme_font_size_override("font_size", 11)
-	_version_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.35))
+	_version_label.add_theme_color_override("font_color", Tema.TEXT_FAINT)
 	_version_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	guest_button = start_button
 	login_button = start_button
 	signup_button = start_button
 	status_label.add_theme_font_override("font", FONT_REG)
 	status_label.add_theme_font_size_override("font_size", 14)
-	status_label.add_theme_color_override("font_color", Color("ffd2c4"))
+	status_label.add_theme_color_override("font_color", Tema.DANGER)
 	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(status_label)
-	v.add_child(_label("PC: setas ou WASD para andar · E para entrar · R para rodar · V para mudar de vista", 11, Color(1, 1, 1, 0.45), FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
+	v.add_child(_label("PC: setas ou WASD para andar · E para entrar · R para rodar · V para mudar de vista", 11, Tema.TEXT_FAINT, FONT_REG, HORIZONTAL_ALIGNMENT_CENTER, true))
 	v.add_child(_version_label)
 	get_viewport().size_changed.connect(_fit)
 	_fit()
@@ -300,7 +307,7 @@ func _set_mode(m: String) -> void:
 	start_button.text = {"jogar": "Começar a vida", "criar": "Criar conta e começar", "entrar": "Entrar", "voltar": "Continuar a vida"}[m]
 	for b: Node in _tabs.get_children():
 		var on: bool = b.get_meta("tab") == m
-		_paint(b, ACCENT if on else Color(1, 1, 1, 0.08), INK if on else Color.WHITE)
+		_paint(b, ACCENT if on else Tema.BTN2, INK if on else Tema.TEXT)
 	status_label.text = ""
 
 
@@ -310,7 +317,7 @@ func _set_model(m: int) -> void:
 	_preview.set_character(_preview.cid)
 	_preview.set_top_hue(null if hue < 0.0 else hue)
 	for i in _model_buttons.size():
-		_paint(_model_buttons[i], ACCENT if i == m else Color(1, 1, 1, 0.08), INK if i == m else Color.WHITE)
+		_paint(_model_buttons[i], ACCENT if i == m else Tema.BTN2, INK if i == m else Tema.TEXT)
 
 
 func _set_hue(h: float) -> void:
@@ -318,7 +325,7 @@ func _set_hue(h: float) -> void:
 	_preview.set_top_hue(null if h < 0.0 else h)
 	for sw: Button in _swatch_grid.get_children():
 		var st: StyleBoxFlat = sw.get_theme_stylebox("normal")
-		st.border_color = Color.WHITE if is_equal_approx(float(sw.get_meta("hue")), h) else Color(1, 1, 1, 0)
+		st.border_color = Tema.TEXT if is_equal_approx(float(sw.get_meta("hue")), h) else Color(1, 1, 1, 0)
 
 
 ## 🎲 Sorte: nome e visual ao acaso (a família e o bairro sorteiam-se ao nascer).
@@ -397,7 +404,7 @@ func _run(auth_step: Callable) -> void:
 
 func _set_busy(busy: bool, text: String) -> void:
 	status_label.text = text
-	status_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.8) if busy else Color("ffd2c4"))
+	status_label.add_theme_color_override("font_color", Tema.TEXT_MUTED if busy else Tema.DANGER)
 	start_button.disabled = busy
 
 
@@ -422,7 +429,7 @@ func _style_edit(e: LineEdit, placeholder: String) -> void:
 	e.add_theme_font_override("font", FONT)
 	e.add_theme_font_size_override("font_size", 17)
 	var st := StyleBoxFlat.new()
-	st.bg_color = Color(1, 1, 1, 0.1)
+	st.bg_color = Tema.BTN2
 	st.set_corner_radius_all(14)
 	st.content_margin_left = 14
 	st.content_margin_right = 14
@@ -447,11 +454,12 @@ func _button(t: String, bg: Color, fg: Color, cb: Callable) -> Button:
 
 func _paint(b: Button, bg: Color, fg: Color) -> void:
 	for s: String in ["normal", "hover", "pressed", "disabled"]:
-		var st := StyleBoxFlat.new()
-		st.bg_color = bg.lightened(0.1) if s == "hover" else (bg.darkened(0.1) if s == "pressed" else bg)
-		st.set_corner_radius_all(22)
+		var col := bg.lightened(0.08) if s == "hover" else (bg.darkened(0.08) if s == "pressed" else bg)
+		var st := Tema.box(col, 22, 0 if s == "pressed" or bg.a < 0.5 else 4)
 		st.content_margin_left = 18
 		st.content_margin_right = 18
+		if s == "pressed":
+			st.content_margin_top = 12
 		b.add_theme_stylebox_override(s, st)
 	for s: String in ["font_color", "font_hover_color", "font_pressed_color", "font_disabled_color"]:
 		b.add_theme_color_override(s, fg)

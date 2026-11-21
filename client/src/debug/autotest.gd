@@ -497,9 +497,17 @@ func _views_loop() -> void:
 	await _shot("rua_aerea")
 	# telemóvel (ecrã inicial e uma app)
 	if AppConfig.has_flag("telemovel"):
+		# a lotaria da vida (personagem nova) tapa o ecrã: fecha-a para a fotografia
+		for n: Node in world.get_children():
+			if n is BirthLottery:
+				n.queue_free()
 		world.hud._open_phone("inicio")
 		await tree.create_timer(4.0).timeout
 		await _shot("tel_inicio")
+		var ps: ScrollContainer = world.hud.phone_body.get_parent()
+		ps.scroll_vertical = 640
+		await tree.create_timer(1.0).timeout
+		await _shot("tel_apps")
 		world.hud._open_phone("missoes")
 		await tree.create_timer(2.0).timeout
 		await _shot("tel_missoes")

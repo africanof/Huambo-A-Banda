@@ -627,18 +627,21 @@ func _add_lamp_light(at: Vector2) -> void:
 func _add_label(text: String, at: Vector2, is_home: bool) -> void:
 	var pill := PanelContainer.new()
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color(0.09, 0.08, 0.08, 0.86) if not is_home else Color(0.95, 0.72, 0.18, 0.95)
+	sb.bg_color = Tema.PANEL if not is_home else Tema.GOLD
 	sb.set_corner_radius_all(14)
 	sb.content_margin_left = 12
 	sb.content_margin_right = 12
 	sb.content_margin_top = 4
 	sb.content_margin_bottom = 4
+	# traço dourado por baixo: «aqui pode-se entrar» (o casario sem nome não tem etiqueta)
+	sb.border_width_bottom = 3
+	sb.border_color = Tema.GOLD if not is_home else Tema.GOLD_DEEP
 	pill.add_theme_stylebox_override("panel", sb)
 	var l := Label.new()
 	l.text = ("⌂  " if is_home else "") + text
 	l.add_theme_font_override("font", preload("res://assets/fonts/Inter-SemiBold.otf"))
 	l.add_theme_font_size_override("font_size", 22)
-	l.add_theme_color_override("font_color", Color.WHITE if not is_home else Color("2a1d10"))
+	l.add_theme_color_override("font_color", Tema.TEXT if not is_home else Tema.INK)
 	pill.add_child(l)
 	labels.add_child(pill)
 	pill.reset_size()
