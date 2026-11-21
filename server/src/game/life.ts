@@ -98,6 +98,8 @@ export interface LifeState {
   /** denúncias feitas hoje (limite por dia) */
   denunciasDay: string | null;
   denuncias: number;
+  /** último dia em que recolheu a prenda de um feriado/data especial */
+  prendaDia: string | null;
 }
 
 export interface Missions {
@@ -472,6 +474,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     bloqueados: [],
     denunciasDay: null,
     denuncias: 0,
+    prendaDia: null,
   };
 }
 
@@ -616,6 +619,7 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
       : [],
     denunciasDay: typeof r.denunciasDay === "string" ? r.denunciasDay : null,
     denuncias: Math.round(num(r.denuncias, 0, 0, DENUNCIAS_POR_DIA)),
+    prendaDia: typeof r.prendaDia === "string" ? r.prendaDia : null,
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }

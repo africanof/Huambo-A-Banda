@@ -792,7 +792,7 @@ const APPS := [
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
 	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["classificados", "Classificados", "bag", "y"],
 	["quintal", "Quintal", "home", "y"], ["desporto", "Desporto", "person", "r"], ["quiz", "Saber Huambo", "target", "y"], ["presentes", "Presentes", "hand", "r"],
-	["definicoes", "Definições", "more", "d"],
+	["agenda", "Agenda", "sun", "d"], ["definicoes", "Definições", "more", "d"],
 	["ajuda", "Ajuda", "more", "d"],
 ]
 ## Cada app tem a cor da sua família (vida, dinheiro, social, cidade): o ecrã lê-se de relance.
@@ -801,7 +801,7 @@ const APP_CATEGORY := {
 	"biscatos": "dinheiro", "vagas": "dinheiro", "banco": "dinheiro", "cambio": "dinheiro", "transferir": "dinheiro", "negocio": "dinheiro",
 	"imoveis": "dinheiro", "classificados": "dinheiro", "ricos": "dinheiro", "sorte": "dinheiro",
 	"amigos": "social", "grupos": "social", "muxima": "social", "radio": "social", "presentes": "social", "quiz": "social", "jornal": "social",
-	"mapa": "cidade", "casa": "cidade", "loja": "cidade", "roupa": "cidade", "governo": "cidade", "lavras": "cidade", "quintal": "cidade", "tempo": "cidade",
+	"mapa": "cidade", "casa": "cidade", "loja": "cidade", "roupa": "cidade", "governo": "cidade", "lavras": "cidade", "quintal": "cidade", "tempo": "cidade", "agenda": "cidade",
 }
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 const MONTHS := ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
@@ -833,6 +833,7 @@ func _rebuild_phone() -> void:
 		"quiz": _phone_quiz()
 		"presentes": _phone_gifts()
 		"definicoes": _phone_settings()
+		"agenda": _phone_agenda()
 		"casa": _phone_home()
 		"loja": _phone_shop()
 		"saude": _phone_health()
@@ -887,6 +888,7 @@ func _phone_start() -> void:
 	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Tema.OK, FONT))
 	for ev: Dictionary in Net.me.get("eventos", []):
 		c.add_child(_label("Hoje no Huambo: %s — %s" % [ev.name, ev.texto], 14, ACCENT, FONT_BOLD, true))
+	_prize_button(c)
 	if Time.get_ticks_msec() - _stats_at > 30000:
 		_stats_at = Time.get_ticks_msec()
 		_fetch_stats()
@@ -1150,6 +1152,49 @@ func _phone_sport() -> void:
 		var id := str(x[0])
 		c.add_child(_button(str(x[1]), "person", ACCENT if id != "casa" else Tema.BTN2, INK if id != "casa" else Tema.TEXT, func() -> void: Net.action("treinar", id)))
 		c.add_child(_label(str(x[2]), 12, Tema.TEXT_FAINT, FONT_REG, true))
+
+
+## Prenda do dia (feriados e datas do Huambo): botão para recolher, uma vez por dia.
+func _prize_button(box: Container) -> void:
+	var p: Variant = Net.me.get("prendaHoje")
+	if typeof(p) != TYPE_DICTIONARY:
+		return
+	if bool(p.recolhida):
+		box.add_child(_label("Prenda de hoje (%s) já recolhida." % p.name, 13, Tema.TEXT_FAINT, FONT_REG, true))
+	else:
+		box.add_child(_button("Recolher a prenda do dia: %s Kz" % DemoHud._money(int(p.premio)), "bag", Tema.TERRA, Tema.TEXT, func() -> void: Net.action("evento_recolher")))
+
+
+## Agenda: o que se passa hoje e as próximas datas do Huambo e de Angola.
+func _phone_agenda() -> void:
+	var c := _card()
+	c.add_child(_label("Hoje", 18, ACCENT, FONT_BOLD))
+	var evs: Array = Net.me.get("eventos", [])
+	if evs.is_empty():
+		c.add_child(_label("Um dia normal no Huambo.", 15, Tema.TEXT_MUTED, FONT_REG, true))
+	for ev: Dictionary in evs:
+		c.add_child(_label(str(ev.name), 16, Tema.TEXT, FONT_BOLD, true))
+		c.add_child(_label(str(ev.texto), 14, Tema.TEXT_MUTED, FONT_REG, true))
+	_prize_button(c)
+	var n := _card()
+	n.add_child(_label("Próximas datas", 18, ACCENT, FONT_BOLD))
+	for a: Dictionary in Net.me.get("agenda", []):
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 12)
+		var date := _label(str(a.date), 18, Tema.GOLD if bool(a.feriado) else Tema.TEXT, FONT_BOLD)
+		date.custom_minimum_size = Vector2(64, 0)
+		row.add_child(date)
+		var col := VBoxContainer.new()
+		col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var days := int(a.inDays)
+		var when := "hoje" if days == 0 else ("amanhã" if days == 1 else "daqui a %d dias" % days)
+		col.add_child(_label("%s%s" % [a.name, " · feriado" if bool(a.feriado) else ""], 15, Tema.TEXT, FONT_BOLD, true))
+		col.add_child(_label("%s — %s" % [when, a.texto], 13, Tema.TEXT_FAINT, FONT_REG, true))
+		row.add_child(col)
+		n.add_child(row)
+	var w := _card()
+	w.add_child(_label("Toda a semana", 16, ACCENT, FONT_BOLD))
+	w.add_child(_label("Sexta à noite: sexta-feira na banda · Sábado: dia de feira · Domingo: missa. Abril a junho: época das colheitas.", 14, Tema.TEXT_MUTED, FONT_REG, true))
 
 
 ## Definições: tamanho do texto, nomes, efeitos e terminar sessão (guardadas no aparelho).

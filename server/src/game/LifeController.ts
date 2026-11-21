@@ -105,7 +105,7 @@ import {
 import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
-import { eventsAt, hasEvent } from "./events.js";
+import { dayPrize, eventsAt, hasEvent, isHoliday, upcoming } from "./events.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
 import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
@@ -241,6 +241,8 @@ export interface SelfState {
   kixikila: { quota: number; status: string; round: number; members: string[]; paid: number; vez: string | null; souMembro: boolean; jaPaguei: boolean; souCriador: boolean } | null;
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
+  agenda: ReturnType<typeof upcoming>;
+  prendaHoje: { name: string; premio: number; recolhida: boolean } | null;
   visitados: number;
   uni: { curso: string | null; cursoNome: string | null; aulas: number; total: number; licenciaturas: string[]; preco: number };
   doenca: { id: string; name: string; texto: string } | null;
@@ -582,6 +584,9 @@ export class LifeController {
         case "extrato":
           e.extrato = await this.wallets.history(actor.characterId, 30);
           break;
+        case "evento_recolher":
+          await this.claimDayPrize(actor, e);
+          break;
         case "quiz_responder":
           await this.quizAnswer(actor, e, (msg.n ?? 0) - 1);
           break;
@@ -843,7 +848,12 @@ export class LifeController {
     if (sv.credit) e.life.phoneCredit += sv.credit;
     const n = e.life.needs;
     const c = (v: number) => Math.max(0, Math.min(100, v));
-    const boost = (sv.venue === "igreja" && hasEvent(this.now(), "missa")) || (sv.venue === "discoteca" && hasEvent(this.now(), "sexta")) ? 2 : 1;
+    const nowT = this.now();
+    const boost =
+      (sv.venue === "igreja" && (hasEvent(nowT, "missa") || hasEvent(nowT, "finados") || hasEvent(nowT, "natal"))) ||
+      (sv.venue === "discoteca" && (hasEvent(nowT, "sexta") || hasEvent(nowT, "carnaval") || hasEvent(nowT, "passagem")))
+        ? 2
+        : 1;
     e.life.needs = { hunger: n.hunger, mood: c(n.mood + (sv.mood ?? 0) * boost), health: c(n.health + (sv.health ?? 0)), energy: c(n.energy + (sv.energy ?? 0)) };
     e.dirty = true;
     this.out.toast(actor, price > 0 ? `${sv.name}: feito (−${price.toLocaleString("pt-PT")} Kz).` : covered ? `${sv.name}: feito (pago pelo seguro).` : `${sv.name}: feito.`, true);
@@ -966,11 +976,11 @@ export class LifeController {
       if (!job) return;
       rollDay(e.life, this.now());
       const idx = e.life.shiftsCount;
-      const pay = Math.round(job.pay * shiftFactor(idx));
+      const pay = Math.round(job.pay * shiftFactor(idx) * (isHoliday(this.now()) ? 1.5 : 1)); // feriado: +50%
       e.money = await this.wallets.apply(actor.characterId, pay, `work.${job.id}`, `shift:${actor.characterId}:${e.life.shiftsDay}:${idx}`);
       e.life.shiftsCount = idx + 1;
       e.life.needs = { ...n, energy: Math.max(0, n.energy - 12), hunger: Math.max(0, n.hunger - 8) };
-      const note = idx >= 2 ? ` (turno ${idx + 1} do dia: ${Math.round(shiftFactor(idx) * 100)}%)` : "";
+      const note = (idx >= 2 ? ` (turno ${idx + 1} do dia: ${Math.round(shiftFactor(idx) * 100)}%)` : "") + (isHoliday(this.now()) ? " · feriado +50%" : "");
       this.out.toast(actor, `Turno concluído: +${pay.toLocaleString("pt-PT")} Kz${note}.`, true);
       this.mission(actor, e, "trabalhar");
     } else if (kind === "biscato") {
@@ -1765,8 +1775,9 @@ export class LifeController {
     if (!to) return this.out.toast(actor, "Escolhe a quem queres oferecer.", false);
     const here0 = this.actorById(to.id);
     if (here0 && this.blocks(here0, actor.characterId)) return this.out.toast(actor, "Essa pessoa não aceita nada teu.", false);
-    if (e.money < g.price) return this.out.toast(actor, `${g.name} custa ${g.price.toLocaleString("pt-PT")} Kz.`, false);
-    e.money = await this.wallets.apply(actor.characterId, -g.price, `presente.${id}`, `presente:${actor.characterId}:${this.op()}`);
+    const price = this.giftPrice(g.price);
+    if (e.money < price) return this.out.toast(actor, `${g.name} custa ${price.toLocaleString("pt-PT")} Kz.`, false);
+    e.money = await this.wallets.apply(actor.characterId, -price, `presente.${id}`, `presente:${actor.characterId}:${this.op()}`);
     e.life.presentes += 1;
     e.dirty = true;
     const from = actor.name ?? "Alguém";
@@ -1779,7 +1790,27 @@ export class LifeController {
         this.store(to.id, { kind: "sms", from, fromId: actor.characterId, text: `Mandei-te um presente: ${g.name.toLowerCase()}!`, at: this.now() });
       }
     }
-    this.out.toast(actor, `Ofereceste ${g.name.toLowerCase()} a ${to.name} (−${g.price.toLocaleString("pt-PT")} Kz).`, true);
+    this.out.toast(actor, `Ofereceste ${g.name.toLowerCase()} a ${to.name} (−${price.toLocaleString("pt-PT")} Kz).`, true);
+  }
+
+  /** Dia da Mulher e quadra do Natal: presentes a metade do preço. */
+  private giftPrice(base: number): number {
+    const t = this.now();
+    return hasEvent(t, "mulher") || hasEvent(t, "quadra_natal") || hasEvent(t, "natal") ? Math.round(base / 2) : base;
+  }
+
+  /** Prenda do dia num feriado ou data especial: uma vez por pessoa e por dia. */
+  private async claimDayPrize(actor: LifeActor, e: Entry): Promise<void> {
+    const t = this.now();
+    const p = dayPrize(t);
+    if (!p) return this.out.toast(actor, "Hoje não há prenda do dia. Vê a Agenda para os próximos feriados.", false);
+    const day = angolaDay(t);
+    if (e.life.prendaDia === day) return this.out.toast(actor, "Já recolheste a prenda de hoje.", false);
+    e.life.prendaDia = day; // antes de pagar: um segundo pedido não paga duas vezes
+    e.dirty = true;
+    e.money = await this.wallets.apply(actor.characterId, p.premio, `evento.${p.id}`, `evento:${actor.characterId}:${day}`);
+    e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 10) };
+    this.out.toast(actor, `${p.name}: recebeste a prenda do dia (+${p.premio.toLocaleString("pt-PT")} Kz e bom humor)!`, true);
   }
 
   /** Guarda para quem está desligado (falhas da base de dados não rebentam a ação). */
@@ -1866,7 +1897,8 @@ export class LifeController {
     // choveu durante o crescimento conta como rega
     const rained = weatherAt(l.plantedAt).ceu === "chuva" || weatherAt(l.readyAt).ceu === "chuva" || weatherAt(l.plantedAt).ceu === "trovoada";
     const agro = e.life.uni.licenciaturas.includes("agronomia") ? 1.5 : 1; // engenheiro agrónomo colhe mais
-    const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR) * agro);
+    const epoca = hasEvent(t, "colheita") ? 1.25 : 1; // abril a junho no planalto
+    const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR) * agro * epoca);
     e.life.colheita[l.crop] = (e.life.colheita[l.crop] ?? 0) + kg;
     e.life.colhidoTotal += kg;
     e.life.lavra = null;
@@ -2285,6 +2317,11 @@ export class LifeController {
         : null,
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
+      agenda: upcoming(t, 8),
+      prendaHoje: (() => {
+        const p = dayPrize(t);
+        return p ? { name: p.name, premio: p.premio, recolhida: e.life.prendaDia === angolaDay(t) } : null;
+      })(),
       visitados: e.life.visitados.length,
       uni: { curso: e.life.uni.curso, cursoNome: e.life.uni.curso ? CURSOS[e.life.uni.curso]?.name ?? null : null, aulas: e.life.uni.aulas, total: UNI_LESSONS, licenciaturas: [...e.life.uni.licenciaturas], preco: UNI_PRICE },
       doenca: e.life.doenca ? { id: e.life.doenca.id, name: DOENCAS[e.life.doenca.id]?.name ?? e.life.doenca.id, texto: DOENCAS[e.life.doenca.id]?.texto ?? "" } : null,

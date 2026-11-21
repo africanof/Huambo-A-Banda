@@ -532,7 +532,7 @@ func _views_loop() -> void:
 		print("[autotest] extrato: %d movimentos" % (Net.me.get("extrato") as Array).size() if typeof(Net.me.get("extrato")) == TYPE_ARRAY else "[autotest] extrato: nada")
 		if typeof(Net.me.get("extrato")) != TYPE_ARRAY:
 			_finish(false, "extrato não chegou")
-		for app: String in ["classificados", "grupos", "quintal", "desporto", "banco", "quiz", "presentes", "saude", "amigos", "definicoes"]:
+		for app: String in ["classificados", "grupos", "quintal", "desporto", "banco", "quiz", "presentes", "saude", "amigos", "definicoes", "agenda"]:
 			world.hud._open_phone(app)
 			await tree.create_timer(2.5).timeout
 			await _shot("tel_" + app)
