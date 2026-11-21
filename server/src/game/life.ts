@@ -93,6 +93,11 @@ export interface LifeState {
   seguroAte: number;
   /** presentes enviados (conquista) */
   presentes: number;
+  /** jogadores bloqueados (não falam contigo, nem pedem, nem mandam SMS ou presentes) */
+  bloqueados: Array<{ id: string; name: string }>;
+  /** denúncias feitas hoje (limite por dia) */
+  denunciasDay: string | null;
+  denuncias: number;
 }
 
 export interface Missions {
@@ -464,6 +469,9 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     quizCertas: 0,
     seguroAte: 0,
     presentes: 0,
+    bloqueados: [],
+    denunciasDay: null,
+    denuncias: 0,
   };
 }
 
@@ -600,6 +608,14 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     quizCertas: Math.round(num(r.quizCertas, 0, 0, 1e9)),
     seguroAte: num(r.seguroAte, 0, 0, 1e15),
     presentes: Math.round(num(r.presentes, 0, 0, 1e9)),
+    bloqueados: Array.isArray(r.bloqueados)
+      ? r.bloqueados
+          .filter((b): b is { id: string; name: string } => !!b && typeof b.id === "string" && typeof b.name === "string")
+          .slice(0, MAX_BLOQUEADOS)
+          .map((b) => ({ id: b.id.slice(0, 64), name: b.name.slice(0, 40) }))
+      : [],
+    denunciasDay: typeof r.denunciasDay === "string" ? r.denunciasDay : null,
+    denuncias: Math.round(num(r.denuncias, 0, 0, DENUNCIAS_POR_DIA)),
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
@@ -851,6 +867,19 @@ export const PRESENTES: Record<string, { name: string; price: number; mood: numb
 /** Seguro de saúde: um dia (24 h reais) de consultas, vacinas e medicamentos sem pagar. */
 export const SEGURO_PRICE = 4_000;
 export const SEGURO_MS = 24 * 3600_000;
+
+// ---------------------------------------------------------------- segurança: bloquear e denunciar
+
+export const MAX_BLOQUEADOS = 100;
+export const DENUNCIAS_POR_DIA = 5;
+/** Motivos de denúncia (o jogador escolhe um; texto livre opcional). */
+export const MOTIVOS_DENUNCIA: Record<string, string> = {
+  insultos: "Insultos ou linguagem ofensiva",
+  assedio: "Assédio ou ameaças",
+  burla: "Burla (enganou-me com dinheiro)",
+  nome: "Nome impróprio",
+  outro: "Outro motivo",
+};
 
 // ---------------------------------------------------------------- criação de animais (quintal)
 

@@ -241,7 +241,7 @@ var _rain_layer: CanvasLayer
 ## Lá dentro (interiores) e nas vistas 3D não chove.
 func _update_rain(me: Dictionary) -> void:
 	var w: Variant = me.get("tempo")
-	var raining: bool = typeof(w) == TYPE_DICTIONARY and str(w.ceu) in ["chuva", "trovoada"] and _room_center == Vector2.INF and mode3d == ""
+	var raining: bool = typeof(w) == TYPE_DICTIONARY and str(w.ceu) in ["chuva", "trovoada"] and _room_center == Vector2.INF and mode3d == "" and Definicoes.effects
 	if raining and _rain == null:
 		_rain_layer = CanvasLayer.new()
 		_rain_layer.layer = 1

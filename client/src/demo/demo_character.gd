@@ -54,6 +54,9 @@ func _ready() -> void:
 	tag.add_theme_constant_override("outline_size", 5)
 	tag.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	tag.size = Vector2(160, 20)
+	Definicoes.load_once()
+	tag.visible = Definicoes.show_names
+	add_to_group("definicoes")
 	add_child(tag)
 	set_character(cid)
 
@@ -276,3 +279,8 @@ func play_emote(e: String) -> void:
 			_emote_tw.tween_property(body, "rotation", 0.08, 0.2)
 			_emote_tw.tween_property(body, "rotation", -0.05, 0.2)
 			_emote_tw.tween_property(body, "rotation", 0.0, 0.2)
+
+
+## Definições: mostrar/esconder os nomes por cima das pessoas.
+func _on_definicoes() -> void:
+	tag.visible = Definicoes.show_names

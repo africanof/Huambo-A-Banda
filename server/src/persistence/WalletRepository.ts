@@ -14,12 +14,26 @@ export interface WalletRepository {
   balance(characterId: string): Promise<number>;
   /** Aplica um movimento (positivo ou negativo). Lança InsufficientFunds se o saldo ficasse negativo. */
   apply(characterId: string, amount: number, reason: string, key: string): Promise<number>;
+  /** Últimos movimentos (mais recente primeiro), para o extrato. */
+  history(characterId: string, limit: number): Promise<WalletMove[]>;
+}
+
+export interface WalletMove {
+  amount: number;
+  balance: number;
+  reason: string;
+  at: number;
 }
 
 /** Convidados, desenvolvimento e testes. */
 export class MemoryWalletRepository implements WalletRepository {
   private readonly balances = new Map<string, number>();
   private readonly applied = new Map<string, number>();
+  private readonly moves = new Map<string, WalletMove[]>();
+
+  async history(characterId: string, limit: number): Promise<WalletMove[]> {
+    return (this.moves.get(characterId) ?? []).slice(-limit).reverse();
+  }
 
   async balance(characterId: string): Promise<number> {
     return this.balances.get(characterId) ?? 0;
@@ -32,6 +46,11 @@ export class MemoryWalletRepository implements WalletRepository {
     if (next < 0) throw new InsufficientFunds();
     this.balances.set(characterId, next);
     this.applied.set(key, next);
+    if (Math.round(amount) !== 0) {
+      const m = this.moves.get(characterId) ?? [];
+      m.push({ amount: Math.round(amount), balance: next, reason: _reason, at: Date.now() });
+      this.moves.set(characterId, m.slice(-50));
+    }
     if (this.applied.size > 200_000) this.applied.clear();
     return next;
   }
@@ -45,6 +64,22 @@ export class SupabaseWalletRepository implements WalletRepository {
     const { data, error } = await this.db.from("wallets").select("balance").eq("character_id", characterId).maybeSingle<{ balance: number }>();
     if (error) throw new Error(`wallets.select: ${error.message}`);
     return Number(data?.balance ?? 0);
+  }
+
+  async history(characterId: string, limit: number): Promise<WalletMove[]> {
+    const { data, error } = await this.db
+      .from("wallet_transactions")
+      .select("amount, balance_after, reason, created_at")
+      .eq("character_id", characterId)
+      .order("created_at", { ascending: false })
+      .limit(limit);
+    if (error) throw new Error(`wallet_transactions.select: ${error.message}`);
+    return (data ?? []).map((r: { amount: number; balance_after: number; reason: string; created_at: string }) => ({
+      amount: Number(r.amount),
+      balance: Number(r.balance_after),
+      reason: r.reason,
+      at: Date.parse(r.created_at),
+    }));
   }
 
   async apply(characterId: string, amount: number, reason: string, key: string): Promise<number> {
@@ -79,5 +114,9 @@ export class RoutingWalletRepository implements WalletRepository {
 
   apply(characterId: string, amount: number, reason: string, key: string): Promise<number> {
     return this.pick(characterId).apply(characterId, amount, reason, key);
+  }
+
+  history(characterId: string, limit: number): Promise<WalletMove[]> {
+    return this.pick(characterId).history(characterId, limit);
   }
 }

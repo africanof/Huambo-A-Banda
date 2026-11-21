@@ -66,6 +66,9 @@ import {
   PRESENTES,
   SEGURO_PRICE,
   SEGURO_MS,
+  MAX_BLOQUEADOS,
+  DENUNCIAS_POR_DIA,
+  MOTIVOS_DENUNCIA,
   CURSOS,
   UNI_LESSONS,
   UNI_PRICE,
@@ -107,6 +110,8 @@ import { queueGift, queueSms, takeGifts, takeSms } from "./sms.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
 import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
+import { MemoryReportRepository, type ReportRepository } from "../persistence/ReportRepository.js";
+import type { WalletMove } from "../persistence/WalletRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
 import { forecast, weatherAt } from "./weather.js";
@@ -137,6 +142,8 @@ interface Busy {
 }
 
 interface Entry {
+  /** extrato pedido (últimos movimentos da carteira) */
+  extrato?: WalletMove[];
   /** kixikila do grupo (lida quando a app pede ou depois de cada ação) */
   kixi?: Kixikila | null;
   /** pedido de namoro recebido / pedido de casamento recebido */
@@ -181,7 +188,9 @@ export interface LifeOutput {
   /** mudou de roupa: a sala grava a aparência e avisa quem a vê */
   appearance?(actor: LifeActor, top: number): void;
   /** SMS para uma personagem (em qualquer sala); devolve true se foi entregue a alguém ligado */
-  sms?(toCharacterId: string, from: string, text: string): boolean;
+  sms?(toCharacterId: string, from: string, text: string, fromId?: string): boolean;
+  /** últimas falas de uma personagem nesta sala (contexto de uma denúncia) */
+  recentChat?(characterId: string): string[];
 }
 
 const RESIDENTIAL = new Set(Object.keys(HOUSING));
@@ -223,6 +232,9 @@ export interface SelfState {
   weddingReq: { name: string } | null;
   negocio: { tipo: string; name: string; nivel: number; perHour: number; pendente: number; melhorar: number | null; maxHoras: number } | null;
   imoveis: Entry["imoveis"] | null;
+  extrato: Array<{ amount: number; balance: number; reason: string; at: number }> | null;
+  bloqueados: Array<{ name: string }>;
+  denuncias: { hoje: number; max: number; motivos: Record<string, string> };
   roupas: number[];
   kixikila: { quota: number; status: string; round: number; members: string[]; paid: number; vez: string | null; souMembro: boolean; jaPaguei: boolean; souCriador: boolean } | null;
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
@@ -273,6 +285,7 @@ export class LifeController {
   private readonly posts: PostRepository;
   private readonly kixi: KixikilaRepository;
   private readonly listings: ListingRepository;
+  private readonly reports: ReportRepository;
   /** Muxima: quantas publicações por pessoa na última hora */
   private readonly postTimes = new Map<string, number[]>();
 
@@ -282,7 +295,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -290,6 +303,7 @@ export class LifeController {
     this.posts = deps.posts ?? new MemoryPostRepository();
     this.kixi = deps.kixikila ?? new MemoryKixikilaRepository();
     this.listings = deps.listings ?? new MemoryListingRepository();
+    this.reports = deps.reports ?? new MemoryReportRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -322,8 +336,8 @@ export class LifeController {
     // voltou a entrar dentro de uma casa que já não é sua (renda acabou): vai para a rua
     this.evictIfNeeded(actor, e);
     // SMS que chegaram enquanto estava desligado
-    for (const m of takeSms(actor.characterId)) this.out.toast(actor, `SMS de ${m.from}: «${m.text}»`, true);
-    for (const g of takeGifts(actor.characterId)) this.receiveGift(actor, g.from, g.name, g.mood);
+    for (const m of takeSms(actor.characterId)) if (!m.fromId || !this.blocks(actor, m.fromId)) this.out.toast(actor, `SMS de ${m.from}: «${m.text}»`, true);
+    for (const g of takeGifts(actor.characterId)) if (!g.fromId || !this.blocks(actor, g.fromId)) this.receiveGift(actor, g.from, g.name, g.mood);
     this.sendSelf(actor);
   }
 
@@ -552,6 +566,18 @@ export class LifeController {
           break;
         case "prazo_abrir":
           await this.termOpen(actor, e, msg.n, msg.i);
+          break;
+        case "bloquear":
+          this.block(actor, e, msg.i);
+          break;
+        case "desbloquear":
+          this.unblock(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "denunciar":
+          await this.report(actor, e, msg.n ? String(msg.n) : undefined, msg.i, msg.s); // n = quem (eid), i = motivo
+          break;
+        case "extrato":
+          e.extrato = await this.wallets.history(actor.characterId, 30);
           break;
         case "quiz_responder":
           await this.quizAnswer(actor, e, (msg.n ?? 0) - 1);
@@ -914,7 +940,7 @@ export class LifeController {
         e.life.needs = decay(e.life.needs, minutes);
         this.healthAndCrime(actor, e, minutes, t);
         e.life.forma = Math.max(0, e.life.forma - FORMA_DECAY * minutes);
-        for (const g of takeGifts(actor.characterId)) this.receiveGift(actor, g.from, g.name, g.mood);
+        for (const g of takeGifts(actor.characterId)) if (!g.fromId || !this.blocks(actor, g.fromId)) this.receiveGift(actor, g.from, g.name, g.mood);
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -1028,8 +1054,8 @@ export class LifeController {
     if (e.life.phoneCredit < SMS_PRICE) return this.out.toast(actor, "Sem saldo no telemóvel. Carrega na loja de telecomunicações.", false);
     e.life.phoneCredit -= SMS_PRICE;
     e.dirty = true;
-    const online = this.out.sms?.(f.id, actor.name ?? "Amigo", text) ?? false;
-    if (!online) queueSms(f.id, actor.name ?? "Amigo", text, this.now());
+    const online = this.out.sms?.(f.id, actor.name ?? "Amigo", text, actor.characterId) ?? false;
+    if (!online) queueSms(f.id, actor.name ?? "Amigo", text, this.now(), actor.characterId);
     this.out.toast(actor, online ? `SMS enviado a ${f.name}.` : `SMS enviado a ${f.name} (vai ler quando entrar).`, true);
   }
 
@@ -1306,6 +1332,7 @@ export class LifeController {
     const target = this.byEid(toEid);
     if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
     if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM) return this.out.toast(actor, "Aproxima-te da pessoa (assim não, de longe!).", false);
+    if (this.blocks(target, actor.characterId) || this.blocks(actor, target.characterId)) return this.out.toast(actor, "Não podes enviar pedidos a essa pessoa.", false);
     if (e.life.partner) return this.out.toast(actor, `Já tens par: ${e.life.partner.name}.`, false);
     const te = this.entries.get(target)!;
     if (te.life.partner) return this.out.toast(actor, `${target.name ?? "Essa pessoa"} já tem par.`, false);
@@ -1628,6 +1655,70 @@ export class LifeController {
     );
   }
 
+  // ---------------------------------------------------------------- segurança: bloquear e denunciar
+
+  /** true se `receiver` bloqueou a personagem `senderId`. */
+  blocks(receiver: LifeActor, senderId: string): boolean {
+    return !!this.entries.get(receiver)?.life.bloqueados.some((b) => b.id === senderId);
+  }
+
+  private block(actor: LifeActor, e: Entry, eid: string | undefined): void {
+    const target = this.byEid(eid);
+    if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    const L = e.life;
+    if (L.bloqueados.some((b) => b.id === target.characterId)) return this.out.toast(actor, "Já bloqueaste essa pessoa.", false);
+    if (L.bloqueados.length >= MAX_BLOQUEADOS) return this.out.toast(actor, "Já tens muitas pessoas bloqueadas.", false);
+    L.bloqueados.push({ id: target.characterId, name: (target.name ?? "Alguém").slice(0, 40) });
+    // deixa de ser amigo (e cancela pedidos pendentes dessa pessoa)
+    L.friends = L.friends.filter((f) => f.id !== target.characterId);
+    const te = this.entries.get(target);
+    if (te && te.life.friends.some((f) => f.id === actor.characterId)) {
+      te.life.friends = te.life.friends.filter((f) => f.id !== actor.characterId);
+      te.dirty = true;
+      this.sendSelf(target);
+    }
+    if (e.friendReq?.from === target) e.friendReq = undefined;
+    if (e.loveReq?.from === target) e.loveReq = undefined;
+    if (e.weddingReq?.from === target) e.weddingReq = undefined;
+    e.dirty = true;
+    this.out.toast(actor, `Bloqueaste ${target.name ?? "essa pessoa"}. Não vês o que diz nem recebes pedidos, SMS ou presentes.`, true);
+  }
+
+  private unblock(actor: LifeActor, e: Entry, idx: number): void {
+    const b = e.life.bloqueados[idx];
+    if (!b) return this.out.toast(actor, "Escolhe alguém da lista.", false);
+    e.life.bloqueados.splice(idx, 1);
+    e.dirty = true;
+    this.out.toast(actor, `Desbloqueaste ${b.name}.`, true);
+  }
+
+  private async report(actor: LifeActor, e: Entry, eid: string | undefined, motivo: string | undefined, extra: string | undefined): Promise<void> {
+    const target = this.byEid(eid);
+    if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    if (!motivo || !(motivo in MOTIVOS_DENUNCIA)) return this.out.toast(actor, "Escolhe o motivo da denúncia.", false);
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para denunciar precisas de uma conta (não convidado). Podes bloquear a pessoa.", false);
+    const L = e.life;
+    const day = angolaDay(this.now());
+    if (L.denunciasDay !== day) {
+      L.denunciasDay = day;
+      L.denuncias = 0;
+    }
+    if (L.denuncias >= DENUNCIAS_POR_DIA) return this.out.toast(actor, "Já fizeste muitas denúncias hoje. Podes bloquear a pessoa.", false);
+    L.denuncias += 1;
+    e.dirty = true;
+    const note = sanitizeChat(extra)?.slice(0, 160);
+    await this.reports.add({
+      reporter: actor.characterId,
+      reporterName: actor.name ?? "",
+      reported: target.characterId,
+      reportedName: target.name ?? "",
+      reason: note ? `${motivo}: ${note}` : motivo,
+      bairro: this.district.id,
+      context: this.out.recentChat?.(target.characterId) ?? [],
+    });
+    this.out.toast(actor, `Denúncia enviada (${MOTIVOS_DENUNCIA[motivo]}). Obrigado — a equipa vai rever. Também podes bloquear a pessoa.`, true);
+  }
+
   // ---------------------------------------------------------------- Saber Huambo
 
   private quizToday(e: Entry): { day: string; ids: number[] } {
@@ -1667,6 +1758,8 @@ export class LifeController {
     // n = 1000 é o par; senão o amigo n da lista
     const to = idx === 999 ? (e.life.partner ? { id: e.life.partner.id, name: e.life.partner.name } : undefined) : e.life.friends[idx];
     if (!to) return this.out.toast(actor, "Escolhe a quem queres oferecer.", false);
+    const here0 = this.actorById(to.id);
+    if (here0 && this.blocks(here0, actor.characterId)) return this.out.toast(actor, "Essa pessoa não aceita nada teu.", false);
     if (e.money < g.price) return this.out.toast(actor, `${g.name} custa ${g.price.toLocaleString("pt-PT")} Kz.`, false);
     e.money = await this.wallets.apply(actor.characterId, -g.price, `presente.${id}`, `presente:${actor.characterId}:${this.op()}`);
     e.life.presentes += 1;
@@ -1675,9 +1768,9 @@ export class LifeController {
     const here = this.actorById(to.id);
     if (here) this.receiveGift(here, from, g.name, g.mood);
     else {
-      queueGift(to.id, from, g.name, g.mood);
+      queueGift(to.id, from, g.name, g.mood, actor.characterId);
       const text = `Mandei-te um presente: ${g.name.toLowerCase()}!`;
-      if (!(this.out.sms?.(to.id, from, text) ?? false)) queueSms(to.id, from, text, this.now());
+      if (!(this.out.sms?.(to.id, from, text, actor.characterId) ?? false)) queueSms(to.id, from, text, this.now(), actor.characterId);
     }
     this.out.toast(actor, `Ofereceste ${g.name.toLowerCase()} a ${to.name} (−${g.price.toLocaleString("pt-PT")} Kz).`, true);
   }
@@ -1902,6 +1995,7 @@ export class LifeController {
     const target = this.byEid(toEid);
     if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
     if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM * 2) return this.out.toast(actor, "Aproxima-te da pessoa para a convidar.", false);
+    if (this.blocks(target, actor.characterId) || this.blocks(actor, target.characterId)) return this.out.toast(actor, "Não podes enviar pedidos a essa pessoa.", false);
     if (e.life.friends.some((f) => f.id === target.characterId)) return this.out.toast(actor, "Já são amigos.", false);
     if (e.life.friends.length >= MAX_FRIENDS) return this.out.toast(actor, `Já tens ${MAX_FRIENDS} amigos.`, false);
     const te = this.entries.get(target)!;
@@ -2016,6 +2110,7 @@ export class LifeController {
     if (!target) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
     if (target.userId?.startsWith("guest:")) return this.out.toast(actor, "Essa pessoa joga como convidado e não pode receber dinheiro.", false);
     if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM) return this.out.toast(actor, "Aproxima-te da pessoa para lhe dar o dinheiro.", false);
+    if (this.blocks(target, actor.characterId)) return this.out.toast(actor, "Essa pessoa não aceita nada teu.", false);
     const te = this.entries.get(target)!;
     const op = this.op();
     // primeiro tira (falha sem dinheiro), depois dá; chaves únicas = não se repete
@@ -2138,6 +2233,9 @@ export class LifeController {
           }
         : null,
       imoveis: e.imoveis ?? null,
+      extrato: e.extrato ?? null,
+      bloqueados: e.life.bloqueados.map((b) => ({ name: b.name })),
+      denuncias: { hoje: e.life.denunciasDay === angolaDay(t) ? e.life.denuncias : 0, max: DENUNCIAS_POR_DIA, motivos: MOTIVOS_DENUNCIA },
       roupas: [...e.life.roupas],
       kixikila: e.kixi
         ? {

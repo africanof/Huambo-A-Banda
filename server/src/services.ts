@@ -1,5 +1,6 @@
 import type { KixikilaRepository } from "./persistence/KixikilaRepository.js";
 import type { ListingRepository } from "./persistence/ListingRepository.js";
+import type { ReportRepository } from "./persistence/ReportRepository.js";
 import type { PostRepository } from "./persistence/PostRepository.js";
 import type { GroupRepository } from "./persistence/GroupRepository.js";
 import type { Env } from "./config/env.js";
@@ -22,6 +23,7 @@ export interface Services {
   posts: PostRepository;
   kixikila: KixikilaRepository;
   listings: ListingRepository;
+  reports: ReportRepository;
 }
 
 let current: Services | undefined;

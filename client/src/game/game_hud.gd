@@ -786,6 +786,7 @@ const APPS := [
 	["ambicao", "Ambição", "target", "r"], ["ricos", "Ricos", "bag", "y"], ["tempo", "Tempo", "sun", "d"], ["negocio", "Empresas", "bag", "r"],
 	["imoveis", "Imóveis", "home", "d"], ["muxima", "Muxima", "chat", "r"], ["roupa", "Guarda-roupa", "shirt", "r"], ["classificados", "Classificados", "bag", "y"],
 	["quintal", "Quintal", "home", "y"], ["desporto", "Desporto", "person", "r"], ["quiz", "Saber Huambo", "target", "y"], ["presentes", "Presentes", "hand", "r"],
+	["definicoes", "Definições", "more", "d"],
 	["ajuda", "Ajuda", "more", "d"],
 ]
 const WEEKDAYS := ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
@@ -817,6 +818,7 @@ func _rebuild_phone() -> void:
 		"desporto": _phone_sport()
 		"quiz": _phone_quiz()
 		"presentes": _phone_gifts()
+		"definicoes": _phone_settings()
 		"casa": _phone_home()
 		"loja": _phone_shop()
 		"saude": _phone_health()
@@ -984,6 +986,21 @@ const PRAZO_INFO := [["curto", "30 minutos", "2%"], ["medio", "3 horas", "6%"], 
 const PRAZO_VALORES := [10000, 50000, 100000, 500000]
 
 
+const REASON_LABELS := [["work", "Salário"], ["salario", "Salário"], ["biscato", "Biscato"], ["eat", "Comida"], ["food", "Comida"], ["service", "Serviço"], ["bank", "Banco"],
+	["transfer.in", "Recebido de alguém"], ["transfer.out", "Dado a alguém"], ["mission", "Missão"], ["conquista", "Conquista"], ["lavra", "Lavra"], ["criacao", "Quintal"],
+	["prazo", "Depósito a prazo"], ["quiz", "Saber Huambo"], ["presente", "Presente"], ["seguro", "Seguro de saúde"], ["kixi", "Kixikila"], ["classif", "Classificados"],
+	["cambio", "Câmbio"], ["casa", "Casa"], ["house", "Casa"], ["rent", "Renda"], ["travel", "Viagem"], ["car", "Carro"], ["negocio", "Empresa"], ["sorte", "Sorte"],
+	["radio", "Rádio"], ["roupa", "Roupa"], ["uni", "Universidade"], ["study", "Estudos"], ["parents", "Pais"], ["roubo", "Assalto"], ["policia", "Polícia"],
+	["starting_balance", "Saldo inicial"], ["grupo", "Grupo"], ["muxima", "Muxima"], ["casamento", "Casamento"], ["hotel", "Hotel"]]
+
+
+static func _reason_label(r: String) -> String:
+	for x: Array in REASON_LABELS:
+		if r.begins_with(str(x[0])):
+			return str(x[1])
+	return r.split(".")[0].capitalize()
+
+
 func _phone_bank() -> void:
 	_phone_go("Banco", "Na carteira: %s Kz\nNo banco: %s Kz\nDepositar e levantar faz-se ao balcão do banco." % [DemoHud._money(int(Net.me.get("money", 0))), DemoHud._money(int(Net.me.get("bank", 0)))], "banco", "Ir ao banco")
 	var c := _card()
@@ -998,8 +1015,10 @@ func _phone_bank() -> void:
 		else:
 			c.add_child(_label("O prazo acabou! Recebes %s Kz." % DemoHud._money(int(d.total)), 16, Color("8fe08a"), FONT_BOLD, true))
 			c.add_child(_button("Levantar com juros", "bag", ACCENT, INK, func() -> void: Net.action("prazo_levantar")))
+		_extrato_card()
 		return
 	c.add_child(_label("Põe dinheiro da carteira a render. Escolhe o prazo e a quantia:", 15, Color.WHITE, FONT_REG, true))
+	_extrato_card()
 	for p: Array in PRAZO_INFO:
 		c.add_child(_label("%s · juros de %s" % [p[1], p[2]], 15, Color.WHITE, FONT_BOLD))
 		var row := HBoxContainer.new()
@@ -1010,6 +1029,28 @@ func _phone_bank() -> void:
 			b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			row.add_child(b)
 		c.add_child(row)
+
+
+## Extrato: os últimos movimentos da carteira (o livro-razão do servidor).
+func _extrato_card() -> void:
+	var c := _card()
+	c.add_child(_label("Extrato da carteira", 18, ACCENT, FONT_BOLD))
+	var ex: Variant = Net.me.get("extrato")
+	if typeof(ex) != TYPE_ARRAY:
+		c.add_child(_button("Ver os últimos movimentos", "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("extrato")))
+		return
+	if (ex as Array).is_empty():
+		c.add_child(_label("Ainda não há movimentos.", 14, Color(1, 1, 1, 0.6), FONT_REG))
+	for m: Dictionary in ex:
+		var row := HBoxContainer.new()
+		var when := Time.get_datetime_dict_from_unix_time(int(float(m.at) / 1000.0) + 3600)
+		var l := _label("%02d/%02d %02d:%02d  %s" % [int(when.day), int(when.month), int(when.hour), int(when.minute), _reason_label(str(m.reason))], 13, Color.WHITE, FONT_REG)
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(l)
+		var amt := int(m.amount)
+		row.add_child(_label(("+" if amt > 0 else "−") + DemoHud._money(absi(amt)), 14, Color("8fe08a") if amt > 0 else Color("ffb4a8"), FONT_BOLD))
+		c.add_child(row)
+	c.add_child(_button("Atualizar", "rotate", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("extrato")))
 
 
 static func _short_kz(v: int) -> String:
@@ -1095,6 +1136,41 @@ func _phone_sport() -> void:
 		var id := str(x[0])
 		c.add_child(_button(str(x[1]), "person", ACCENT if id != "casa" else Color(1, 1, 1, 0.1), INK if id != "casa" else Color.WHITE, func() -> void: Net.action("treinar", id)))
 		c.add_child(_label(str(x[2]), 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+
+
+## Definições: tamanho do texto, nomes, efeitos e terminar sessão (guardadas no aparelho).
+func _phone_settings() -> void:
+	var c := _card()
+	c.add_child(_label("Tamanho do texto", 16, ACCENT, FONT_BOLD))
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 6)
+	for x: Array in [[0.85, "Pequeno"], [1.0, "Normal"], [1.2, "Grande"]]:
+		var v := float(x[0])
+		var sel := is_equal_approx(Definicoes.text_scale, v)
+		var b := _button(("✓ " if sel else "") + str(x[1]), "more", ACCENT if sel else Color(1, 1, 1, 0.1), INK if sel else Color.WHITE, func() -> void:
+			Definicoes.set_value(get_tree(), "text_scale", v)
+			_rebuild_phone.call_deferred())
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(b)
+	c.add_child(row)
+	var t := _card()
+	t.add_child(_label("Ecrã", 16, ACCENT, FONT_BOLD))
+	t.add_child(_button(("✓ " if Definicoes.show_names else "✗ ") + "Nomes por cima das pessoas", "person", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		Definicoes.set_value(get_tree(), "show_names", not Definicoes.show_names)
+		_rebuild_phone()))
+	t.add_child(_label("Desliga a chuva se o telemóvel for lento.", 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+	t.add_child(_button(("✓ " if Definicoes.effects else "✗ ") + "Chuva e efeitos", "sun", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+		Definicoes.set_value(get_tree(), "effects", not Definicoes.effects)
+		_rebuild_phone()))
+	var a := _card()
+	a.add_child(_label("Conta", 16, ACCENT, FONT_BOLD))
+	a.add_child(_label(("A jogar como %s." % Auth.display_name) if Auth.display_name != "" else "A jogar.", 14, Color(1, 1, 1, 0.7), FONT_REG, true))
+	a.add_child(_label("Segurança: na app Amigos podes bloquear ou denunciar quem te incomoda.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+	a.add_child(_button("Terminar sessão", "door", Color(1, 1, 1, 0.1), Color("ffb4a8"), func() -> void:
+		phone.visible = false
+		Net.leave()
+		Auth.sign_out()
+		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")))
 
 
 ## Saber Huambo: 3 perguntas por dia sobre o Huambo e Angola; cada certa dá dinheiro.
@@ -1784,7 +1860,65 @@ func _phone_friends() -> void:
 		n.add_child(_label("Ninguém perto. Vai a um sítio com gente (mercado, cantina, paragem).", 14, Color(1, 1, 1, 0.6), FONT_REG, true))
 	for x: Array in near:
 		var eid := int(x[0])
-		n.add_child(_button("Convidar %s" % x[1], "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_pedir", str(eid))))
+		n.add_child(_label(str(x[1]), 15, Color.WHITE, FONT_BOLD))
+		var prow := HBoxContainer.new()
+		prow.add_theme_constant_override("separation", 6)
+		var inv := _button("Convidar", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("amigo_pedir", str(eid)))
+		inv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		prow.add_child(inv)
+		prow.add_child(_button("Bloquear", "minus", Color(1, 1, 1, 0.08), Color("ffb4a8"), func() -> void: Net.action("bloquear", str(eid))))
+		prow.add_child(_button("Denunciar", "more", Color(1, 1, 1, 0.08), Color("ffb4a8"), func() -> void:
+			_report_eid = eid
+			_report_name = str(x[1])
+			_rebuild_phone()))
+		n.add_child(prow)
+		if _report_eid == eid:
+			_report_card(n, eid)
+	# bloqueados
+	var bl: Array = Net.me.get("bloqueados", [])
+	if not bl.is_empty():
+		var bc := _card()
+		bc.add_child(_label("Bloqueados", 16, Color.WHITE, FONT_BOLD))
+		bc.add_child(_label("Não vês o que dizem nem recebes pedidos, SMS, presentes ou dinheiro deles.", 13, Color(1, 1, 1, 0.6), FONT_REG, true))
+		for i in bl.size():
+			var bi := i + 1
+			var br := HBoxContainer.new()
+			var bn := _label(str(bl[i].name), 15, Color.WHITE, FONT_REG)
+			bn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			br.add_child(bn)
+			br.add_child(_button("Desbloquear", "plus", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void: Net.action("desbloquear", "", bi)))
+			bc.add_child(br)
+
+
+## Denúncia: escolher o motivo (e, se quiser, explicar). Vai para a equipa de moderação.
+var _report_eid := -1
+var _report_name := ""
+
+
+func _report_card(box: Container, eid: int) -> void:
+	var d: Dictionary = Net.me.get("denuncias", {}) if typeof(Net.me.get("denuncias")) == TYPE_DICTIONARY else {}
+	box.add_child(_label("Denunciar %s — porquê?" % _report_name, 15, ACCENT, FONT_BOLD, true))
+	var motivos: Dictionary = d.get("motivos", {})
+	for k: String in motivos:
+		var motivo := k
+		box.add_child(_button(str(motivos[k]), "more", Color(1, 1, 1, 0.1), Color.WHITE, func() -> void:
+			if _report_note != "":
+				Net.action_text("denunciar", _report_note, eid, motivo)
+			else:
+				Net.action("denunciar", motivo, eid)
+			_report_eid = -1
+			_report_note = ""
+			_rebuild_phone()))
+	_text_row(box, "Explica (opcional), depois escolhe o motivo", 150, "OK", func(t: String) -> void:
+		_report_note = t
+		show_toast("Explicação guardada. Agora escolhe o motivo.", true))
+	box.add_child(_label("Denúncias hoje: %d/%d. As falas recentes da pessoa seguem com a denúncia." % [int(d.get("hoje", 0)), int(d.get("max", 5))], 12, Color(1, 1, 1, 0.6), FONT_REG, true))
+	box.add_child(_button("Cancelar", "minus", Color(1, 1, 1, 0.08), Color.WHITE, func() -> void:
+		_report_eid = -1
+		_rebuild_phone()))
+
+
+var _report_note := ""
 
 
 ## Grupos: criar (conta, 5.000 Kz), entrar, sair e falar com o grupo em qualquer bairro.

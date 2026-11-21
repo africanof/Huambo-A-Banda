@@ -58,23 +58,32 @@ export class DistrictRoom extends Room {
   private loop!: GameLoop;
   private life?: LifeController;
   private readonly chatLimiter = new BurstLimiter(5, 10_000);
+  /** últimas falas de cada pessoa nesta sala (só para o contexto das denúncias) */
+  private readonly chatLog = new Map<string, string[]>();
+
+  private noteChat(characterId: string, text: string): void {
+    const l = this.chatLog.get(characterId) ?? [];
+    l.push(text);
+    this.chatLog.set(characterId, l.slice(-8));
+    if (this.chatLog.size > 500) this.chatLog.delete(this.chatLog.keys().next().value!);
+  }
   private readonly emoteLimiter = new BurstLimiter(3, 6_000);
   private readonly radioLimiter = new BurstLimiter(1, 120_000);
 
   /** SMS vindo de qualquer sala: entrega se a pessoa está nesta. */
-  private readonly onSms = (m: { to: string; from: string; text: string }): void => {
+  private readonly onSms = (m: { to: string; from: string; text: string; fromId?: string }): void => {
     for (const client of this.clients as unknown as DistrictClient[]) {
       const q = this.playerOf(client);
-      if (q && q.characterId === m.to) client.send(S2C.SMS, { n: m.from, t: m.text });
+      if (q && q.characterId === m.to && !(m.fromId && this.life?.blocks(q, m.fromId))) client.send(S2C.SMS, { n: m.from, t: m.text });
     }
   };
 
   /** Mensagem do grupo vinda de qualquer sala: entrega aos membros que estão nesta. */
-  private readonly onGroupMessage = (m: { gid: string; gname: string; id: number; n: string; t: string }): void => {
+  private readonly onGroupMessage = (m: { gid: string; gname: string; id: number; n: string; t: string; cid?: string }): void => {
     if (!this.life) return;
     for (const client of this.clients as unknown as DistrictClient[]) {
       const q = this.playerOf(client);
-      if (q && this.life.groupOf(q)?.id === m.gid) client.send(S2C.CHAT, { id: -1, n: `[${m.gname}] ${m.n}`, t: m.t, g: true });
+      if (q && this.life.groupOf(q)?.id === m.gid && !(m.cid && this.life.blocks(q, m.cid))) client.send(S2C.CHAT, { id: -1, n: `[${m.gname}] ${m.n}`, t: m.t, g: true });
     }
   };
   private lifeTimer: NodeJS.Timeout | undefined;
@@ -128,11 +137,12 @@ export class DistrictRoom extends Room {
             }
           },
           // SMS: entregue em qualquer sala do servidor (canal de presença)
-          sms: (to, from, text) => {
+          sms: (to, from, text, fromId) => {
             if (!whereIs(to)) return false;
-            void this.presence.publish(SMS_CHANNEL, { to, from, text });
+            void this.presence.publish(SMS_CHANNEL, { to, from, text, fromId });
             return true;
           },
+          recentChat: (cid) => [...(this.chatLog.get(cid) ?? [])],
           // entrar/sair de um edifício: a posição saltou; para o movimento e atualiza a área de interesse
           moved: (actor) => {
             const p = actor as Player;
@@ -146,7 +156,7 @@ export class DistrictRoom extends Room {
         },
         Date.now,
         Math.random,
-        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings },
+        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings, reports: services().reports },
       );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }
@@ -231,9 +241,10 @@ export class DistrictRoom extends Room {
           client.send(S2C.TOAST, { t: "Não estás em nenhum grupo.", ok: false });
           return;
         }
-        void this.presence.publish(GROUP_CHANNEL, { gid: g.id, gname: g.name, id: p.eid, n: p.name, t: text });
+        void this.presence.publish(GROUP_CHANNEL, { gid: g.id, gname: g.name, id: p.eid, n: p.name, t: text, cid: p.characterId });
         return;
       }
+      this.noteChat(p.characterId, text);
       const heard = this.sendNear(p, S2C.CHAT, { id: p.eid, n: p.name, t: text });
       if (heard > 0) this.life?.social(p, "conversar");
     });
@@ -454,6 +465,7 @@ export class DistrictRoom extends Room {
       const q = this.playerOf(client);
       if (!q) continue;
       if (q !== from && Math.hypot(q.x - from.x, q.y - from.y) > HEAR_RADIUS_CM) continue;
+      if (q !== from && this.life?.blocks(q, from.characterId)) continue; // bloqueado: não ouve nem vê
       client.send(type, payload);
       if (q !== from) others++;
     }

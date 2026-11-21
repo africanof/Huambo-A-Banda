@@ -175,6 +175,10 @@ export const ActionSchema = z
       "quiz_responder",
       "presente",
       "seguro_comprar",
+      "bloquear",
+      "desbloquear",
+      "denunciar",
+      "extrato",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

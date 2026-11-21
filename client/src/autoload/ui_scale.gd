@@ -14,8 +14,8 @@ const DENSITY := 1.25 ## unidades lógicas por px CSS (ou dp)
 var portrait := false
 signal changed
 
-
 func _ready() -> void:
+	Definicoes.load_once()
 	get_window().size_changed.connect(_apply)
 	_apply()
 
@@ -40,7 +40,9 @@ func logical_size_for(px: Vector2, ratio: float) -> Vector2i:
 func _apply() -> void:
 	var win := get_window()
 	var px := Vector2(win.size)
-	win.content_scale_size = logical_size_for(px, _device_ratio())
+	var base := logical_size_for(px, _device_ratio())
+	# texto maior = ecrã lógico mais pequeno (tudo cresce por igual)
+	win.content_scale_size = Vector2i(roundi(base.x / Definicoes.text_scale), roundi(base.y / Definicoes.text_scale))
 	var p := px.y > px.x
 	if p != portrait:
 		portrait = p
