@@ -995,7 +995,85 @@ func _phone_family() -> void:
 		c.add_child(_label("Já pediste dinheiro aos pais hoje.", 14, Tema.TEXT_FAINT, FONT_REG, true))
 	else:
 		c.add_child(_button("Pedir dinheiro aos pais", "person", ACCENT, INK, func() -> void: Net.action("parents")))
+	if int(Net.me.get("geracao", 1)) > 1:
+		c.add_child(_label("És a %d.ª geração da família." % int(Net.me.get("geracao", 1)), 14, Tema.GOLD, FONT_BOLD, true))
 	_love_section()
+	_children_section()
+
+
+## Filhos: ter (casados, com casa, no centro de saúde), cuidar até serem adultos, receber ajuda e
+## continuar a família como um deles (nova geração: herda-se o dinheiro, o banco e as casas).
+var _baby_name := ""
+var _confirm_gen := -1
+
+
+func _children_section() -> void:
+	var c := _card()
+	c.add_child(_label("Filhos", 18, ACCENT, FONT_BOLD))
+	var req: Variant = Net.me.get("babyReq")
+	if typeof(req) == TYPE_DICTIONARY:
+		c.add_child(_label("%s quer ter um filho/a convosco: %s." % [req.name, req.nome], 15, Tema.TEXT, FONT_BOLD, true))
+		var r := HBoxContainer.new()
+		r.add_theme_constant_override("separation", 6)
+		var yes := _button("Sim!", "plus", ACCENT, INK, func() -> void: Net.action("filho_aceitar"))
+		yes.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		r.add_child(yes)
+		r.add_child(_button("Ainda não", "minus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("filho_recusar")))
+		c.add_child(r)
+	var kids: Array = Net.me.get("filhos", [])
+	for i in kids.size():
+		var k: Dictionary = kids[i]
+		var n := i + 1
+		var box := VBoxContainer.new()
+		box.add_theme_constant_override("separation", 4)
+		box.add_child(_label("%s %s · %d anos · %s" % ["👧" if k.sexo == "f" else "👦", k.nome, int(k.idade), k.fase], 16, Tema.TEXT, FONT_BOLD, true))
+		box.add_child(_label("Estudos: nível %d" % int(k.estudos), 13, Tema.TEXT_FAINT, FONT_REG))
+		if not bool(k.adulto):
+			if bool(k.cuidadoHoje):
+				box.add_child(_label("Hoje já cuidaste de %s." % k.nome, 13, Tema.OK, FONT_REG, true))
+			else:
+				box.add_child(_button("%s (%s Kz)" % [k.cuidadoTexto, DemoHud._money(int(k.custo))], "plus", ACCENT, INK, func() -> void: Net.action("filho_cuidar", "", n)))
+				box.add_child(_label("Sem cuidados há mais de um dia, o teu humor desce.", 12, Tema.WARN, FONT_REG, true))
+		else:
+			if not bool(k.ajudaHoje):
+				box.add_child(_button("Receber a visita (+%s Kz)" % DemoHud._money(int(k.ajuda)), "bag", ACCENT, INK, func() -> void: Net.action("filho_ajuda", "", n)))
+			if _confirm_gen == n:
+				box.add_child(_label("Continuar a vida como %s? Herdas o dinheiro, o banco, as casas e o carro. Recomeças os estudos (ficas com os de %s), o emprego e o namoro." % [k.nome, k.nome], 14, Tema.WARN, FONT_REG, true))
+				var g := HBoxContainer.new()
+				g.add_theme_constant_override("separation", 6)
+				var go := _button("Sim, passar o testemunho", "person", Tema.TERRA, Tema.TEXT, func() -> void:
+					_confirm_gen = -1
+					Net.action("geracao_continuar", "", n))
+				go.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				g.add_child(go)
+				g.add_child(_button("Não", "minus", Tema.BTN2, Tema.TEXT, func() -> void:
+					_confirm_gen = -1
+					_rebuild_phone()))
+				box.add_child(g)
+			else:
+				box.add_child(_button("Continuar a vida como %s" % k.nome, "person", Tema.BTN2, Tema.TEXT, func() -> void:
+					_confirm_gen = n
+					_rebuild_phone()))
+		c.add_child(box)
+	var pa: Variant = Net.me.get("partner")
+	if typeof(pa) == TYPE_DICTIONARY and bool(pa.married):
+		c.add_child(_label("Ter um filho/a: os dois no centro de saúde, com casa (comprada ou arrendada). Parto: 10.000 Kz.", 13, Tema.TEXT_MUTED, FONT_REG, true))
+		_text_row(c, "Nome do bebé (opcional)", 20, "OK", func(t: String) -> void:
+			_baby_name = t
+			show_toast("Nome escolhido: %s" % t, true))
+		var r2 := HBoxContainer.new()
+		r2.add_theme_constant_override("separation", 6)
+		for x: Array in [["m", "Menino"], ["f", "Menina"], ["", "Surpresa"]]:
+			var sx := str(x[0])
+			var bb := _button(str(x[1]), "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action_text("filho_pedir", _baby_name if _baby_name != "" else "-", 0, sx))
+			bb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			r2.add_child(bb)
+		c.add_child(r2)
+		c.add_child(_button("Ir ao centro de saúde", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
+			phone.visible = false
+			ui_action.emit("ir:saude")))
+	elif kids.is_empty():
+		c.add_child(_label("Para teres filhos, casa-te primeiro (namoro → casamento na igreja).", 14, Tema.TEXT_MUTED, FONT_REG, true))
 
 
 ## App que mostra o estado e leva-te a pé ao sítio certo do bairro.

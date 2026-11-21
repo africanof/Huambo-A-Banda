@@ -304,6 +304,15 @@ func _life_loop(world: Node) -> void:
 			return true if me != null and ((me.pos as Vector2) / 100.0).distance_to(wp) < 0.05 else null)
 	await get_tree().create_timer(0.5).timeout
 	var before := int(Net.me.money)
+	# salário do nível da carreira (estagiário/a começa com 80%); num feriado paga +50%
+	var cr: Variant = Net.me.get("carreira")
+	var expected := int(cr.salario) if typeof(cr) == TYPE_DICTIONARY else 2000
+	var holiday := false
+	for ev: Dictionary in Net.me.get("eventos", []):
+		if bool(ev.get("feriado", false)):
+			holiday = true
+	if holiday:
+		expected = roundi(expected * 1.5)
 	Net.action("work")
 	await _wait_for(func() -> Variant: return true if typeof(Net.me.get("busy")) == TYPE_DICTIONARY else null)
 	print("[autotest] a trabalhar…")
@@ -323,8 +332,8 @@ func _life_loop(world: Node) -> void:
 	world.hud._open_menu()
 	await _shot("jogo_cantina_ementa")
 	world.hud.menu_panel.visible = false
-	if gained != 2000:
-		_finish(false, "pagamento inesperado: %d" % gained)
+	if gained != expected:
+		_finish(false, "pagamento inesperado: %d (esperado %d)" % [gained, expected])
 
 
 ## Andar por pontos (metros) e esperar que o servidor confirme cada um.

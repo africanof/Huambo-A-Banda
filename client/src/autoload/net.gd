@@ -227,6 +227,8 @@ func _on_message(type: Variant, payload: Variant) -> void:
 				var ent: Variant = entities.get(int(payload.get("id", -1)))
 				if ent != null:
 					ent.appearance = payload.a
+					if str(payload.get("n", "")) != "":
+						ent.name = str(payload.n) # nova geração: mudou de nome
 				appearance_changed.emit(int(payload.get("id", -1)), payload.a)
 		Protocol.S2C_SMS:
 			if typeof(payload) == TYPE_DICTIONARY:

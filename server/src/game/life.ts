@@ -102,6 +102,24 @@ export interface LifeState {
   prendaDia: string | null;
   /** carreira: turnos feitos em cada emprego (a experiência fica mesmo depois de sair) */
   carreira: Record<string, number>;
+  /** filhos (cada pai/mãe tem a sua cópia; o id é o mesmo nos dois) */
+  filhos: Filho[];
+  /** geração da família (1 = a primeira personagem; sobe ao continuar a vida como filho/a) */
+  geracao: number;
+}
+
+export interface Filho {
+  id: string;
+  nome: string;
+  sexo: "m" | "f";
+  nasceu: number;
+  /** último dia (Angola) em que foi cuidado/a, e quantas vezes ao todo */
+  cuidadoDia: string | null;
+  cuidados: number;
+  /** estudos (0..4): sobem com os cuidados em idade escolar */
+  estudos: number;
+  /** último dia em que (já adulto/a) ajudou com dinheiro */
+  ajudaDia: string | null;
 }
 
 export interface Missions {
@@ -379,6 +397,36 @@ export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_c
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
 export const SHIFT_FLOOR = 0.2;
 
+// ---------------------------------------------------------------- família: filhos e gerações
+
+export const MAX_FILHOS = 6;
+/** Parto no centro de saúde (pago por quem pede). */
+export const PARTO_PRICE = 10_000;
+/** Os filhos crescem: anos de idade por cada dia real (adultos aos 18, ≈ 12 dias). */
+export const ANOS_POR_DIA = 1.5;
+export const IDADE_ADULTA = 18;
+/** Cuidar (uma vez por dia por filho): custo por fase da vida. */
+export const CUIDADO: Array<{ ate: number; fase: string; price: number; texto: string }> = [
+  { ate: 3, fase: "bebé", price: 800, texto: "Fraldas, leite e colo" },
+  { ate: 12, fase: "criança", price: 1200, texto: "Comida, uniforme e escola" },
+  { ate: 18, fase: "adolescente", price: 1500, texto: "Propinas, roupa e explicações" },
+];
+/** Cada tantos cuidados em idade escolar (6–17) o filho sobe um nível de estudos. */
+export const CUIDADOS_POR_NIVEL = 3;
+/** Filho adulto ajuda os pais uma vez por dia: base + por nível de estudos. */
+export const AJUDA_BASE = 1500;
+export const AJUDA_POR_ESTUDO = 1000;
+export const NOMES_M = ["Kalei", "Ndala", "Tchissola", "Kanda", "Sakaita", "Chilombo", "Kapinga", "Ngunga", "Muteka", "Lunda"];
+export const NOMES_F = ["Ngueve", "Ndapandula", "Tchiyeva", "Kassova", "Ombela", "Nalumbu", "Wiyeta", "Esperança", "Feliciana", "Lussati"];
+
+export function idadeAnos(f: Filho, nowMs: number): number {
+  return Math.floor(((nowMs - f.nasceu) / 86_400_000) * ANOS_POR_DIA);
+}
+
+export function faseDe(anos: number): { fase: string; price: number; texto: string } | null {
+  return CUIDADO.find((c) => anos < c.ate) ?? null; // null = adulto/a
+}
+
 // ---------------------------------------------------------------- carreira
 
 /** Níveis da carreira em cada emprego: turnos acumulados, título e multiplicador do salário. */
@@ -501,6 +549,8 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     denuncias: 0,
     prendaDia: null,
     carreira: {},
+    filhos: [],
+    geracao: 1,
   };
 }
 
@@ -594,6 +644,22 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
         .filter(([k, v]) => k in CROPS && typeof v === "number" && Number.isFinite(v) && v > 0)
         .map(([k, v]) => [k, Math.min(100_000, Math.round(v as number))]),
     ),
+    filhos: Array.isArray(r.filhos)
+      ? r.filhos
+          .filter((f): f is Filho => !!f && typeof f.id === "string" && typeof f.nome === "string" && typeof f.nasceu === "number" && Number.isFinite(f.nasceu))
+          .slice(0, MAX_FILHOS)
+          .map((f) => ({
+            id: f.id.slice(0, 40),
+            nome: f.nome.slice(0, 20),
+            sexo: f.sexo === "f" ? "f" : "m",
+            nasceu: f.nasceu,
+            cuidadoDia: typeof f.cuidadoDia === "string" ? f.cuidadoDia : null,
+            cuidados: Math.round(num(f.cuidados, 0, 0, 100_000)),
+            estudos: Math.round(num(f.estudos, 0, 0, 4)),
+            ajudaDia: typeof f.ajudaDia === "string" ? f.ajudaDia : null,
+          }))
+      : [],
+    geracao: Math.round(num(r.geracao, 1, 1, 1000)),
     colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
     ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
     ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],
@@ -853,6 +919,8 @@ export const CONQUISTAS: Record<string, { name: string; text: string; reward: nu
   generoso: { name: "Generoso/a", text: "Ofereceste 5 presentes", reward: 1000 },
   promovido: { name: "Promovido/a", text: "Tiveste a primeira promoção", reward: 1000 },
   chefe: { name: "Chefe", text: "Chegaste a chefe de equipa", reward: 5000 },
+  pai_mae: { name: "Pai / Mãe", text: "Tiveste o primeiro filho", reward: 2000 },
+  geracao: { name: "Nova geração", text: "Continuaste a vida como filho/a", reward: 3000 },
 };
 
 // ---------------------------------------------------------------- Saber Huambo (perguntas do dia)

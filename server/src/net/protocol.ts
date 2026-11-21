@@ -180,6 +180,12 @@ export const ActionSchema = z
       "denunciar",
       "extrato",
       "evento_recolher",
+      "filho_pedir",
+      "filho_aceitar",
+      "filho_recusar",
+      "filho_cuidar",
+      "filho_ajuda",
+      "geracao_continuar",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

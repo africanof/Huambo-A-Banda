@@ -92,6 +92,9 @@ func _ready() -> void:
 		if c:
 			var top := int(a.get("top", -1))
 			c.set_top_hue(null if top < 0 else top / 360.0)
+			var ent: Variant = Net.entities.get(id)
+			if ent != null and str(ent.name) != "":
+				c.tag.text = str(ent.name)
 			if id == Net.self_id:
 				hud.set_portrait(c.body.sprite_frames.get_frame_texture("idle_down", 0) if c.body.sprite_frames else null))
 	Net.emote_received.connect(func(id: int, e: String) -> void:

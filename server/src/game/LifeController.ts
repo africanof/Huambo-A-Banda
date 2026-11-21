@@ -68,6 +68,17 @@ import {
   SEGURO_MS,
   MAX_BLOQUEADOS,
   CARREIRA,
+  MAX_FILHOS,
+  PARTO_PRICE,
+  IDADE_ADULTA,
+  CUIDADOS_POR_NIVEL,
+  AJUDA_BASE,
+  AJUDA_POR_ESTUDO,
+  NOMES_M,
+  NOMES_F,
+  idadeAnos,
+  faseDe,
+  type Filho,
   careerLevel,
   chefeEducation,
   DENUNCIAS_POR_DIA,
@@ -109,6 +120,7 @@ import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
 import { mutedUntil, untilText } from "./moderation.js";
+import { sanitizeDisplayName } from "../auth/TokenVerifier.js";
 import { dayPrize, eventsAt, hasEvent, isHoliday, upcoming } from "./events.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
@@ -153,6 +165,8 @@ interface Entry {
   /** pedido de namoro recebido / pedido de casamento recebido */
   loveReq?: { from: LifeActor };
   weddingReq?: { from: LifeActor };
+  /** pedido para terem um filho (o par responde) */
+  babyReq?: { from: LifeActor; nome: string; sexo: "m" | "f" };
   /** lista de imóveis do bairro (pedida pela app Imóveis) */
   imoveis?: Array<{ door: string; name: string; venue: string; free: number; total: number; buy: number; rentPerDay: number; x: number; y: number }>;
   /** pedido de amizade recebido (vale enquanto quem pediu estiver nesta sala) */
@@ -195,6 +209,8 @@ export interface LifeOutput {
   sms?(toCharacterId: string, from: string, text: string, fromId?: string): boolean;
   /** presente para uma personagem ligada noutra sala; devolve true se foi entregue */
   gift?(toCharacterId: string, from: string, name: string, mood: number, fromId?: string): boolean;
+  /** mudou de nome (nova geração): a sala grava e mostra o nome novo */
+  rename?(actor: LifeActor, name: string): void;
   /** últimas falas de uma personagem nesta sala (contexto de uma denúncia) */
   recentChat?(characterId: string): string[];
 }
@@ -254,6 +270,9 @@ export interface SelfState {
   criacao: { animais: Array<{ tipo: string; name: string; prontoEmS: number }>; alimentadosS: number; ovos: number; max: number; racao: number };
   forma: { valor: number; treinosHoje: number; max: number };
   prazo: { amount: number; termo: string; name: string; rate: number; faltamS: number; total: number } | null;
+  filhos: Array<{ nome: string; sexo: string; idade: number; fase: string; adulto: boolean; estudos: number; cuidadoHoje: boolean; custo: number; cuidadoTexto: string; ajudaHoje: boolean; ajuda: number }>;
+  babyReq: { name: string; nome: string } | null;
+  geracao: number;
   carreira: { titulo: string; nivel: number; turnos: number; proximo: { titulo: string; faltam: number; estudos: number | null } | null; salario: number } | null;
   curriculo: Array<{ job: string; name: string; titulo: string; turnos: number }>;
   quiz: { n: number; total: number; certasHoje: number; certas: number; pergunta: string | null; opcoes: string[]; premio: number };
@@ -593,6 +612,22 @@ export class LifeController {
           break;
         case "extrato":
           e.extrato = await this.wallets.history(actor.characterId, 30);
+          break;
+        case "filho_pedir":
+          this.babyAsk(actor, e, msg.s, msg.i);
+          break;
+        case "filho_aceitar":
+        case "filho_recusar":
+          await this.babyAnswer(actor, e, msg.a === "filho_aceitar");
+          break;
+        case "filho_cuidar":
+          await this.childCare(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "filho_ajuda":
+          await this.childHelp(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "geracao_continuar":
+          await this.nextGeneration(actor, e, (msg.n ?? 0) - 1);
           break;
         case "evento_recolher":
           await this.claimDayPrize(actor, e);
@@ -963,6 +998,9 @@ export class LifeController {
         e.life.needs = decay(e.life.needs, minutes);
         this.healthAndCrime(actor, e, minutes, t);
         e.life.forma = Math.max(0, e.life.forma - FORMA_DECAY * minutes);
+        // filhos menores sem cuidados há mais de um dia: a consciência pesa (humor desce)
+        if (e.life.filhos.some((f) => faseDe(idadeAnos(f, t)) && f.cuidadoDia !== angolaDay(t) && f.cuidadoDia !== angolaDay(t - 86_400_000)))
+          e.life.needs = { ...e.life.needs, mood: Math.max(0, e.life.needs.mood - 0.3 * minutes) };
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -1112,6 +1150,8 @@ export class LifeController {
       atleta: L.forma >= 80,
       poupado: L.prazosFeitos > 0,
       sabichao: L.quizCertas >= 20,
+      pai_mae: L.filhos.length > 0 || L.geracao > 1,
+      geracao: L.geracao > 1,
       promovido: Object.entries(L.carreira).some(([j, n]) => { const jb = jobById(j); return !!jb && careerLevel(jb, n, L.education) >= 1; }),
       chefe: Object.entries(L.carreira).some(([j, n]) => { const jb = jobById(j); return !!jb && careerLevel(jb, n, L.education) >= CARREIRA.length - 1; }),
       generoso: L.presentes >= 5,
@@ -1693,6 +1733,123 @@ export class LifeController {
       ready ? `Levantaste o depósito com juros: +${total.toLocaleString("pt-PT")} Kz (${(total - d.amount).toLocaleString("pt-PT")} Kz de juros).` : `Levantaste antes do fim do prazo: recebes só os ${total.toLocaleString("pt-PT")} Kz, sem juros.`,
       true,
     );
+  }
+
+  // ---------------------------------------------------------------- família: filhos e gerações
+
+  private babyAsk(actor: LifeActor, e: Entry, rawName: string | undefined, sexo: string | undefined): void {
+    const p = e.life.partner;
+    if (!p?.married) return this.out.toast(actor, "Para terem filhos primeiro casem-se na igreja.", false);
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para teres filhos precisas de uma conta.", false);
+    if (!e.homes.length) return this.out.toast(actor, "Primeiro arranjem uma casa (comprada ou arrendada) para a criança.", false);
+    if (e.life.filhos.length >= MAX_FILHOS) return this.out.toast(actor, `Já têm ${MAX_FILHOS} filhos — a casa está cheia!`, false);
+    const i = interiorAt(this.district, actor.x, actor.y);
+    if (i?.venue !== "saude") return this.out.toast(actor, "O parto é no centro de saúde: vão os dois lá dentro.", false);
+    const pa = this.actorById(p.id);
+    if (!pa || interiorAt(this.district, pa.x, pa.y)?.id !== i.id) return this.out.toast(actor, `${p.name} tem de estar aqui contigo no centro de saúde.`, false);
+    if (e.money < PARTO_PRICE) return this.out.toast(actor, `O parto custa ${PARTO_PRICE.toLocaleString("pt-PT")} Kz.`, false);
+    const sx: "m" | "f" = sexo === "f" ? "f" : sexo === "m" ? "m" : this.rand() < 0.5 ? "m" : "f";
+    const pool = sx === "f" ? NOMES_F : NOMES_M;
+    const nome = sanitizeDisplayName(rawName) ?? pool[Math.floor(this.rand() * pool.length)]!;
+    this.entries.get(pa)!.babyReq = { from: actor, nome, sexo: sx };
+    this.out.toast(actor, `Perguntaste a ${p.name} se querem ter um filho/a (${nome}).`, true);
+    this.out.toast(pa, `${actor.name ?? "O teu par"} quer ter um filho/a convosco: ${nome}. Responde em Família no telemóvel.`, true);
+    this.sendSelf(pa);
+  }
+
+  private async babyAnswer(actor: LifeActor, e: Entry, yes: boolean): Promise<void> {
+    const req = e.babyReq;
+    e.babyReq = undefined;
+    if (!req) return this.out.toast(actor, "Não há nenhum pedido.", false);
+    const fe = this.entries.get(req.from);
+    if (!yes) {
+      if (fe) this.out.toast(req.from, `${actor.name ?? "O teu par"} acha que ainda não é altura.`, false);
+      return this.out.toast(actor, "Disseste que ainda não.", true);
+    }
+    if (!fe || e.life.partner?.id !== req.from.characterId || !e.life.partner.married) return this.out.toast(actor, "O pedido já não vale.", false);
+    if (fe.life.filhos.length >= MAX_FILHOS || e.life.filhos.length >= MAX_FILHOS) return this.out.toast(actor, "A família já está completa.", false);
+    try {
+      fe.money = await this.wallets.apply(req.from.characterId, -PARTO_PRICE, "familia.parto", `parto:${req.from.characterId}:${this.op()}`);
+    } catch (err) {
+      if (err instanceof InsufficientFunds) return this.out.toast(actor, "Falta dinheiro para o parto.", false);
+      throw err;
+    }
+    const t = this.now();
+    const filho: Filho = { id: `f-${req.from.characterId.slice(0, 8)}-${this.op()}`, nome: req.nome, sexo: req.sexo, nasceu: t, cuidadoDia: angolaDay(t), cuidados: 0, estudos: 0, ajudaDia: null };
+    for (const [who, ent] of [[req.from, fe], [actor, e]] as const) {
+      ent.life.filhos.push({ ...filho });
+      ent.life.needs = { ...ent.life.needs, mood: Math.min(100, ent.life.needs.mood + 20) };
+      ent.dirty = true;
+      this.out.toast(who, `Nasceu ${req.nome}! ${req.sexo === "f" ? "Uma menina" : "Um menino"} cheio/a de saúde. Parabéns!`, true);
+      this.sendSelf(who);
+    }
+    recordNews("familia", this.district.name, `Nasceu ${req.nome}, filho/a de ${req.from.name ?? "?"} e ${actor.name ?? "?"}.`, t);
+  }
+
+  private async childCare(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const f = e.life.filhos[idx];
+    if (!f) return this.out.toast(actor, "Escolhe um filho da lista.", false);
+    const t = this.now();
+    const anos = idadeAnos(f, t);
+    const fase = faseDe(anos);
+    if (!fase) return this.out.toast(actor, `${f.nome} já é adulto/a e cuida de si.`, false);
+    const day = angolaDay(t);
+    if (f.cuidadoDia === day) return this.out.toast(actor, `Hoje já cuidaste de ${f.nome}.`, false);
+    if (e.money < fase.price) return this.out.toast(actor, `${fase.texto} custa ${fase.price.toLocaleString("pt-PT")} Kz.`, false);
+    f.cuidadoDia = day; // antes de pagar: não se cobra duas vezes no mesmo dia
+    e.dirty = true;
+    e.money = await this.wallets.apply(actor.characterId, -fase.price, "familia.cuidar", `cuidar:${actor.characterId}:${f.id}:${day}`);
+    f.cuidados += 1;
+    let extra = "";
+    if (anos >= 6 && f.cuidados % CUIDADOS_POR_NIVEL === 0 && f.estudos < 4) {
+      f.estudos += 1;
+      extra = ` ${f.nome} passou de classe: estudos nível ${f.estudos}!`;
+    }
+    e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 6) };
+    this.out.toast(actor, `${fase.texto} para ${f.nome} (−${fase.price.toLocaleString("pt-PT")} Kz).${extra}`, true);
+  }
+
+  private async childHelp(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const f = e.life.filhos[idx];
+    if (!f) return this.out.toast(actor, "Escolhe um filho da lista.", false);
+    const t = this.now();
+    if (idadeAnos(f, t) < IDADE_ADULTA) return this.out.toast(actor, `${f.nome} ainda é menor: ainda és tu que ajudas!`, false);
+    const day = angolaDay(t);
+    if (f.ajudaDia === day) return this.out.toast(actor, `${f.nome} já te ajudou hoje.`, false);
+    f.ajudaDia = day;
+    e.dirty = true;
+    const amount = AJUDA_BASE + AJUDA_POR_ESTUDO * f.estudos;
+    e.money = await this.wallets.apply(actor.characterId, amount, "familia.ajuda", `ajuda:${actor.characterId}:${f.id}:${day}`);
+    e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 5) };
+    this.out.toast(actor, `${f.nome} veio visitar-te e deixou ${amount.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  /**
+   * Nova geração: continuar a vida como um filho/a adulto/a. Herda o dinheiro, o banco, as casas
+   * e o carro (é a mesma conta); recomeça os estudos, o emprego, a carreira e o namoro.
+   */
+  private async nextGeneration(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const f = e.life.filhos[idx];
+    if (!f) return this.out.toast(actor, "Escolhe um filho da lista.", false);
+    if (idadeAnos(f, this.now()) < IDADE_ADULTA) return this.out.toast(actor, `${f.nome} ainda não é adulto/a.`, false);
+    if (e.busy) return this.out.toast(actor, "Acaba primeiro o que estás a fazer.", false);
+    const old = actor.name ?? "?";
+    const L = e.life;
+    L.filhos.splice(idx, 1); // os irmãos ficam na família
+    L.geracao += 1;
+    L.education = f.estudos;
+    L.study = 0;
+    L.jobId = null;
+    L.carreira = {};
+    L.partner = null;
+    L.uni = { curso: null, aulas: 0, licenciaturas: [] };
+    L.doenca = null;
+    L.needs = { hunger: 90, energy: 100, mood: 90, health: 100 };
+    e.dirty = true;
+    actor.name = f.nome;
+    this.out.rename?.(actor, f.nome);
+    recordNews("familia", this.district.name, `${old} passou o testemunho: ${f.nome} continua a família (${L.geracao}.ª geração).`, this.now());
+    this.out.toast(actor, `Agora és ${f.nome}, ${L.geracao}.ª geração da família. Herdaste o dinheiro, o banco e as casas de ${old}.`, true);
   }
 
   // ---------------------------------------------------------------- segurança: bloquear e denunciar
@@ -2362,6 +2519,25 @@ export class LifeController {
           racao: RACAO_PRICE,
         };
       })(),
+      filhos: e.life.filhos.map((f) => {
+        const anos = idadeAnos(f, t);
+        const fase = faseDe(anos);
+        return {
+          nome: f.nome,
+          sexo: f.sexo,
+          idade: anos,
+          fase: fase?.fase ?? "adulto/a",
+          adulto: !fase,
+          estudos: f.estudos,
+          cuidadoHoje: f.cuidadoDia === angolaDay(t),
+          custo: fase?.price ?? 0,
+          cuidadoTexto: fase?.texto ?? "",
+          ajudaHoje: f.ajudaDia === angolaDay(t),
+          ajuda: AJUDA_BASE + AJUDA_POR_ESTUDO * f.estudos,
+        };
+      }),
+      babyReq: e.babyReq ? { name: e.babyReq.from.name ?? "O teu par", nome: e.babyReq.nome } : null,
+      geracao: e.life.geracao,
       carreira: (() => {
         const job = jobById(e.life.jobId);
         if (!job) return null;

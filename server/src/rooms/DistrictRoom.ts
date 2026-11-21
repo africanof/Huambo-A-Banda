@@ -161,6 +161,17 @@ export class DistrictRoom extends Room {
               if (q && (q === p || q.known.has(p.eid))) c.send(S2C.APPEARANCE, { id: p.eid, a: p.appearance });
             }
           },
+          // nova geração: a personagem passa a ter o nome do filho/a; grava e mostra a quem a vê
+          rename: (actor, name) => {
+            const p = actor as Player;
+            p.name = name;
+            const client = this.clientOf(p);
+            if (client?.auth) void services().characters.update(client.auth, { name }).catch((err) => log().warn({ err }, "rename save"));
+            for (const c of this.clients as unknown as DistrictClient[]) {
+              const q = this.playerOf(c);
+              if (q && (q === p || q.known.has(p.eid))) c.send(S2C.APPEARANCE, { id: p.eid, a: p.appearance, n: name });
+            }
+          },
           // SMS: entregue em qualquer sala do servidor (canal de presença)
           sms: (to, from, text, fromId) => {
             if (!whereIs(to)) return false;
