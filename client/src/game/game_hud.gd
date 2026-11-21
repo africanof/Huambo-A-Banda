@@ -43,6 +43,7 @@ var _right := VBoxContainer.new()
 var _needs_panel: PanelContainer
 var _portrait := TextureRect.new()
 var money_label := Label.new()
+var _last_money := -1
 var sala_button := Button.new()
 var _home_tab: Button
 var _inside := false
@@ -329,6 +330,9 @@ func set_clock(minutes: float) -> void:
 		sky = " · %d°C%s" % [int(w.temp), " CHUVA" if w.ceu in ["chuva", "trovoada"] else ""]
 	top_label.text = "%s · %s · %02d:%02d%s" % ["DIA" if h >= 6 and h < 18 else "NOITE", place_text.to_upper(), h, m, sky]
 	money_label.text = "%s Kz" % DemoHud._money(money)
+	if _last_money >= 0 and money > _last_money:
+		Som.play("moedas")
+	_last_money = money
 
 
 func _process(_delta: float) -> void:
@@ -379,6 +383,10 @@ func refresh() -> void:
 
 
 func show_toast(text: String, ok: bool) -> void:
+	if not ok:
+		Som.play("erro")
+	elif text.begins_with("Missão feita") or text.begins_with("Conquista") or text.begins_with("Parabéns") or text.begins_with("Certo!"):
+		Som.play("sucesso")
 	toast_label.text = text
 	toast_label.add_theme_color_override("font_color", Tema.TEXT)
 	# faixa de cor à esquerda: verde-planalto (correu bem) ou terra vermelha (não deu)
@@ -771,6 +779,8 @@ func _toggle_phone() -> void:
 
 
 func _open_phone(tab: String) -> void:
+	if not phone.visible:
+		Som.play("telemovel")
 	phone_tab = tab
 	menu_panel.visible = false
 	phone.visible = true
@@ -1221,6 +1231,24 @@ func _phone_settings() -> void:
 	t.add_child(_button(("✓ " if Definicoes.effects else "✗ ") + "Chuva e efeitos", "sun", Tema.BTN2, Tema.TEXT, func() -> void:
 		Definicoes.set_value(get_tree(), "effects", not Definicoes.effects)
 		_rebuild_phone()))
+	var snd := _card()
+	snd.add_child(_label("Som", 16, ACCENT, FONT_BOLD))
+	for spec: Array in [["vol_musica", "Música", Definicoes.vol_musica], ["vol_sons", "Sons e ambiente", Definicoes.vol_sons]]:
+		snd.add_child(_label(str(spec[1]), 14, Tema.TEXT_MUTED, FONT_REG))
+		var vr := HBoxContainer.new()
+		vr.add_theme_constant_override("separation", 6)
+		for lv: Array in [[0.0, "Desligado"], [0.35, "Baixo"], [0.6, "Médio"], [1.0, "Alto"]]:
+			var key := str(spec[0])
+			var val := float(lv[0])
+			var on := absf(float(spec[2]) - val) < 0.13
+			var vb := _button(("✓ " if on else "") + str(lv[1]), "", ACCENT if on else Tema.BTN2, INK if on else Tema.TEXT, func() -> void:
+				Definicoes.set_value(get_tree(), key, val)
+				_rebuild_phone())
+			vb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			vb.add_theme_font_size_override("font_size", 14)
+			vr.add_child(vb)
+		snd.add_child(vr)
+	snd.add_child(_label("Música original do jogo: semba de dia, kizomba à noite.", 12, Tema.TEXT_FAINT, FONT_REG, true))
 	var a := _card()
 	a.add_child(_label("Conta", 16, ACCENT, FONT_BOLD))
 	a.add_child(_label(("A jogar como %s." % Auth.display_name) if Auth.display_name != "" else "A jogar.", 14, Tema.TEXT_MUTED, FONT_REG, true))
@@ -1228,6 +1256,7 @@ func _phone_settings() -> void:
 	a.add_child(_button("Terminar sessão", "door", Tema.BTN2, Tema.DANGER, func() -> void:
 		phone.visible = false
 		Net.leave()
+		Som.ambient("")
 		Auth.sign_out()
 		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")))
 
@@ -1479,6 +1508,7 @@ var sms_log: Array = []
 
 
 func on_sms(who: String, text: String) -> void:
+	Som.play("sms")
 	sms_log.append([who, text])
 	if sms_log.size() > 20:
 		sms_log.pop_front()
@@ -2269,6 +2299,9 @@ func _pill(c: Color, r: int, border := Color(0, 0, 0, 0)) -> StyleBoxFlat:
 
 
 func _style_round(b: Button, r: int, bg: Color) -> void:
+	if not b.has_meta("som"):
+		b.set_meta("som", true)
+		b.pressed.connect(func() -> void: Som.play("toque"))
 	var step := 4 if bg.a > 0.95 else 0 # só as cores cheias levam degrau; os painéis translúcidos ficam lisos
 	var stroke := Tema.STROKE if bg.a <= 0.95 and bg.a > 0.0 else Color(0, 0, 0, 0)
 	b.add_theme_stylebox_override("normal", Tema.box(bg, r, step, stroke))
@@ -2331,5 +2364,6 @@ func _button(text: String, icon: String, bg: Color, fg: Color, cb: Callable) -> 
 	b.add_theme_stylebox_override("pressed", pr)
 	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	b.focus_mode = Control.FOCUS_NONE
+	b.pressed.connect(func() -> void: Som.play("toque"))
 	b.pressed.connect(cb)
 	return b

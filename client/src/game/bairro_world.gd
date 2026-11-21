@@ -223,10 +223,27 @@ func _process(delta: float) -> void:
 	if view3d and mode3d != "":
 		view3d.set_light(canvas_mod.color, night, _inside_id != "" and _inside_id != "?")
 	hud.set_clock(minutes)
+	_update_sound(minutes)
 	view.scale_labels(camera.zoom.x, avatars.values().map(func(c: DemoCharacter) -> Control: return c.tag))
 
 
 var _travelling := false
+
+
+## Música e ambiente conforme a hora, a chuva e o sítio (rua ou dentro).
+func _update_sound(minutes: float) -> void:
+	var h := minutes / 60.0
+	var is_night := h >= 19.0 or h < 6.0
+	var inside := _inside_id != "" and _inside_id != "?"
+	Som.music("noite" if is_night else "planalto")
+	var w: Variant = Net.me.get("tempo")
+	var raining: bool = typeof(w) == TYPE_DICTIONARY and str(w.ceu) in ["chuva", "trovoada"]
+	if inside or mode3d == "car" or _travelling:
+		Som.ambient("")
+	elif raining:
+		Som.ambient("chuva")
+	else:
+		Som.ambient("grilos" if is_night else "passaros")
 
 
 ## O servidor cobrou o candongueiro: muda de sala (bairro) e recarrega o mundo.
@@ -552,6 +569,7 @@ func _update_inside() -> void:
 	# ao entrar o destino já foi cumprido; ao sair mantém-se (pode já ter tocado noutro edifício)
 	if not i.is_empty() or str(_pending_place.get("interior", "")) != "":
 		_pending_station = ""
+	Som.play("porta")
 	if i.is_empty():
 		decor.clear()
 		hud.set_inside(false)

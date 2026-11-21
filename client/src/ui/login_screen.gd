@@ -49,6 +49,7 @@ func _ready() -> void:
 		return
 	_build_background()
 	_build_ui()
+	Som.music("planalto")
 	_set_mode("jogar")
 	_randomize(false)
 	Net.last_error = ""
@@ -448,6 +449,7 @@ func _button(t: String, bg: Color, fg: Color, cb: Callable) -> Button:
 	b.add_theme_font_override("font", FONT_BOLD)
 	b.add_theme_font_size_override("font_size", 16)
 	_paint(b, bg, fg)
+	b.pressed.connect(func() -> void: Som.play("toque"))
 	b.pressed.connect(cb)
 	return b
 
