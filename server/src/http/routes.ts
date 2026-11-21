@@ -10,6 +10,7 @@ import { listDistricts } from "../game/districts.js";
 import { KeyedRateLimiter } from "../utils/RateLimiter.js";
 import { AppearanceSchema, PROTOCOL_VERSION } from "../net/protocol.js";
 import { sanitizeDisplayName, type Identity } from "../auth/TokenVerifier.js";
+import { registerModeration } from "./moderation.js";
 
 export function clientIp(req: Request, trustedHeader: string): string {
   if (trustedHeader) {
@@ -48,6 +49,7 @@ export function registerRoutes(app: Application, svc: Services): void {
   app.disable("x-powered-by");
   app.use(cors(svc.env.CORS_ORIGINS));
   app.use(express.json({ limit: "4kb" }));
+  registerModeration(app, svc, (req) => clientIp(req, svc.env.TRUSTED_IP_HEADER));
 
   app.get("/health", (_req, res) => {
     // "gravacao": onde ficam as personagens com conta ("supabase") ou só em memória (perde-se ao reiniciar)

@@ -1,4 +1,5 @@
 import { MemoryKixikilaRepository, SupabaseKixikilaRepository, type KixikilaRepository } from "./KixikilaRepository.js";
+import { MemorySanctionRepository, SupabaseSanctionRepository, type SanctionRepository } from "./SanctionRepository.js";
 import { MemoryInboxRepository, RoutingInboxRepository, SupabaseInboxRepository, type InboxRepository } from "./InboxRepository.js";
 import { MemoryReportRepository, SupabaseReportRepository, type ReportRepository } from "./ReportRepository.js";
 import { MemoryListingRepository, SupabaseListingRepository, type ListingRepository } from "./ListingRepository.js";
@@ -50,6 +51,7 @@ export interface Repositories {
   listings: ListingRepository;
   reports: ReportRepository;
   inbox: InboxRepository;
+  sanctions: SanctionRepository;
 }
 
 /**
@@ -73,9 +75,10 @@ export function createRepositories(env: Env): Repositories {
       listings: new SupabaseListingRepository(supa.db),
       reports: new SupabaseReportRepository(supa.db),
       inbox: new RoutingInboxRepository(new SupabaseInboxRepository(supa.db)),
+      sanctions: new SupabaseSanctionRepository(supa.db),
     };
   }
-  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository(), posts: new MemoryPostRepository(), kixikila: new MemoryKixikilaRepository(), listings: new MemoryListingRepository(), reports: new MemoryReportRepository(), inbox: new MemoryInboxRepository() };
+  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository(), posts: new MemoryPostRepository(), kixikila: new MemoryKixikilaRepository(), listings: new MemoryListingRepository(), reports: new MemoryReportRepository(), inbox: new MemoryInboxRepository(), sanctions: new MemorySanctionRepository() };
 }
 
 export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";

@@ -34,6 +34,8 @@ const EnvSchema = z
 
     ALLOW_GUESTS: boolish,
     GUEST_TOKEN_SECRET: z.string().min(32).optional(),
+    /** chave do painel de moderação (/moderacao); sem ela o painel não existe */
+    ADMIN_TOKEN: z.string().min(24).optional(),
     /** Tokens de convidado por IP por minuto (anti-abuso). */
     GUEST_RATE_PER_MIN: z.coerce.number().int().min(1).max(100_000).default(5),
 

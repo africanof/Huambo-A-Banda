@@ -8,6 +8,7 @@ import { LifeController, lifeCatalog } from "../game/LifeController.js";
 import { markPlayedToday } from "../game/stats.js";
 import { BurstLimiter, HEAR_RADIUS_CM, sanitizeChat } from "../game/social.js";
 import { setOffline, setOnline, whereIs } from "../game/presence.js";
+import { bannedUntil, mutedUntil, noteSanction, untilText } from "../game/moderation.js";
 import {
   C2S,
   ErrorCodes,
@@ -49,6 +50,8 @@ const AOI_RADIUS_CELLS = 2;
 const KICK_CHANNEL = "huambo:kick-user";
 const GROUP_CHANNEL = "huambo:group-chat";
 const SMS_CHANNEL = "huambo:sms";
+/** castigos aplicados no painel de moderação (todas as salas, todos os processos); igual em http/moderation.ts */
+const MOD_CHANNEL = "huambo:moderacao";
 
 export class DistrictRoom extends Room {
   // Proteção anti-flood nativa do Colyseus: acima disto o cliente é desligado.
@@ -97,6 +100,26 @@ export class DistrictRoom extends Room {
   private readonly scratch = new Set<number>();
   private nextEid = 1;
   private readonly onKick = (payload: { userId: string; except: string }) => this.kickDuplicate(payload);
+
+  /** Castigo novo vindo do painel: atualiza a memória e põe fora quem foi banido. */
+  private readonly onModeration = (m: { characterId: string; muteUntil: number; banUntil: number }): void => {
+    noteSanction(m.characterId, m.muteUntil, m.banUntil);
+    for (const client of this.clients as unknown as DistrictClient[]) {
+      const q = this.playerOf(client);
+      if (!q || q.characterId !== m.characterId) continue;
+      if (m.banUntil > Date.now()) {
+        client.send(S2C.TOAST, { t: `Foste banido/a do jogo ${untilText(m.banUntil)}.`, ok: false });
+        client.leave(4003);
+      } else if (m.muteUntil > Date.now()) client.send(S2C.TOAST, { t: `Foste silenciado/a pela moderação ${untilText(m.muteUntil)}.`, ok: false });
+    }
+  };
+
+  /** true (e avisa) se a pessoa está silenciada pela moderação. */
+  private muted(client: DistrictClient, characterId: string): boolean {
+    const until = mutedUntil(characterId, Date.now());
+    if (until) client.send(S2C.TOAST, { t: `Estás silenciado/a pela moderação ${untilText(until)}.`, ok: false });
+    return until > 0;
+  }
 
   /**
    * Corre no pedido HTTP de matchmaking, antes de qualquer lugar ser reservado.
@@ -240,6 +263,7 @@ export class DistrictRoom extends Room {
         client.send(S2C.TOAST, { t: "Calma! Estás a falar depressa demais.", ok: false });
         return;
       }
+      if (this.muted(client, p.characterId)) return;
       const text = sanitizeChat(msg.data.t);
       if (!text) return;
       if (msg.data.g) {
@@ -262,6 +286,7 @@ export class DistrictRoom extends Room {
       const p = this.playerOf(client);
       const msg = ChatSchema.safeParse(raw);
       if (!p || !msg.success || !this.life) return;
+      if (this.muted(client, p.characterId)) return;
       if (!this.radioLimiter.take(p.characterId)) {
         client.send(S2C.TOAST, { t: "A rádio só passa uma dedicatória tua a cada 2 minutos.", ok: false });
         return;
@@ -274,7 +299,7 @@ export class DistrictRoom extends Room {
     this.onMessage(C2S.EMOTE, (client: DistrictClient, raw: unknown) => {
       const p = this.playerOf(client);
       const msg = EmoteSchema.safeParse(raw);
-      if (!p || !msg.success || !this.emoteLimiter.take(p.characterId)) return;
+      if (!p || !msg.success || !this.emoteLimiter.take(p.characterId) || mutedUntil(p.characterId, Date.now())) return;
       this.sendNear(p, S2C.EMOTE, { id: p.eid, e: msg.data.e });
     });
 
@@ -289,6 +314,7 @@ export class DistrictRoom extends Room {
     void this.presence.subscribe(KICK_CHANNEL, this.onKick);
     void this.presence.subscribe(GROUP_CHANNEL, this.onGroupMessage);
     void this.presence.subscribe(SMS_CHANNEL, this.onSms);
+    void this.presence.subscribe(MOD_CHANNEL, this.onModeration);
     log().info({ roomId: this.roomId, district: district.id }, "district room created");
   }
 
@@ -301,6 +327,11 @@ export class DistrictRoom extends Room {
     await this.presence.publish(KICK_CHANNEL, { userId: auth.userId, except: client.sessionId });
 
     const character = await services().characters.loadOrCreate(auth);
+    // castigo de moderação: banido não entra; silenciado entra mas não fala
+    const sc = await services().sanctions.get(character.id).catch(() => null);
+    noteSanction(character.id, sc?.muteUntil ?? 0, sc?.banUntil ?? 0);
+    const ban = bannedUntil(character.id, Date.now());
+    if (ban) throw new ServerError(4003, `Foste banido/a do jogo ${untilText(ban)}. Motivo: ${sc?.reason || "regras do jogo"}.`);
 
     const chosen = this.district.spawns.find((s) => s.id === options?.spawn);
     let pos = randomSpawn(this.district, chosen?.id);
@@ -385,6 +416,7 @@ export class DistrictRoom extends Room {
     await this.presence.unsubscribe(KICK_CHANNEL, this.onKick);
     await this.presence.unsubscribe(GROUP_CHANNEL, this.onGroupMessage);
     await this.presence.unsubscribe(SMS_CHANNEL, this.onSms);
+    await this.presence.unsubscribe(MOD_CHANNEL, this.onModeration);
     await this.flushPersistence(true);
   }
 

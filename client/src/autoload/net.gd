@@ -256,4 +256,5 @@ func _humanize(code: int, text: String) -> String:
 		Protocol.ERR_INVALID_DISTRICT: return "Bairro desconhecido."
 		Protocol.ERR_DUPLICATE_SESSION: return "A tua conta entrou noutro dispositivo."
 		Protocol.ERR_SERVER_SHUTDOWN: return "O servidor está a reiniciar."
+		4003: return text if text != "" else "Foste banido/a do jogo pela moderação."
 	return text if text != "" else "Ligação perdida."

@@ -105,6 +105,7 @@ import {
 import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
+import { mutedUntil, untilText } from "./moderation.js";
 import { dayPrize, eventsAt, hasEvent, isHoliday, upcoming } from "./events.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
@@ -514,6 +515,10 @@ export class LifeController {
           this.sendSms(actor, e, (msg.n ?? 0) - 1, msg.s);
           break;
         case "muxima_publicar":
+          if (mutedUntil(actor.characterId, this.now())) {
+            this.out.toast(actor, `Estás silenciado/a pela moderação ${untilText(mutedUntil(actor.characterId, this.now()))}.`, false);
+            break;
+          }
           await this.post(actor, msg.s);
           break;
         case "muxima_gosto":
@@ -1061,6 +1066,7 @@ export class LifeController {
   private sendSms(actor: LifeActor, e: Entry, idx: number, raw: string | undefined): void {
     const f = e.life.friends[idx];
     if (!f) return this.out.toast(actor, "Escolhe um amigo da lista.", false);
+    if (mutedUntil(actor.characterId, this.now())) return this.out.toast(actor, `Estás silenciado/a pela moderação ${untilText(mutedUntil(actor.characterId, this.now()))}.`, false);
     const text = sanitizeChat(raw)?.slice(0, 120);
     if (!text) return this.out.toast(actor, "Escreve a mensagem.", false);
     if (e.life.phoneCredit < SMS_PRICE) return this.out.toast(actor, "Sem saldo no telemóvel. Carrega na loja de telecomunicações.", false);

@@ -18,6 +18,9 @@ services:
         value: "true"
       - key: GUEST_TOKEN_SECRET
         generateValue: true
+      # chave do painel de moderação (https://<nome>.onrender.com/moderacao): o Render gera-a; vê-a em Environment
+      - key: ADMIN_TOKEN
+        generateValue: true
       - key: GUEST_RATE_PER_MIN
         value: "10"
       - key: TRUSTED_IP_HEADER
