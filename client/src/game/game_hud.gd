@@ -785,6 +785,8 @@ func _open_phone(tab: String) -> void:
 		Net.action("loja_ver")
 	elif tab == "associacao" and phone_tab != "associacao":
 		Net.action("assoc_ver")
+	elif tab == "negocio" and phone_tab != "negocio":
+		Net.action("estab_ver")
 	phone_tab = tab
 	menu_panel.visible = false
 	phone.visible = true
@@ -908,6 +910,8 @@ func _phone_start() -> void:
 	for ev: Dictionary in Net.me.get("eventos", []):
 		c.add_child(_label("Hoje no Huambo: %s — %s" % [ev.name, ev.texto], 14, ACCENT, FONT_BOLD, true))
 	_prize_button(c)
+	if int(Net.me.get("preso", 0)) > 0:
+		c.add_child(_label("Estás detido/a na esquadra: sais daqui a %d s." % int(Net.me.get("preso", 0)), 15, Tema.DANGER, FONT_BOLD, true))
 	if Time.get_ticks_msec() - _stats_at > 30000:
 		_stats_at = Time.get_ticks_msec()
 		_fetch_stats()
@@ -1955,10 +1959,40 @@ func _love_section() -> void:
 
 
 ## Empresas: abrir um negócio na Administração (com BI); rende por hora até 12 h.
-const BUSINESSES := [["quiosque", "Quiosque de saldo e recargas", 50000, 2000], ["cantina", "Cantina", 150000, 6000], ["candongueiro", "Candongueiro (táxi azul e branco)", 400000, 15000]]
+const BUSINESSES := [
+	["quiosque", "Quiosque de saldo e recargas", 50000, 2000], ["salao", "Salão de cabeleireiro e tranças", 80000, 3200],
+	["cantina", "Cantina de bairro", 150000, 6000], ["kupapatas", "Frota de kupapatas (5 motas)", 250000, 9500],
+	["oficina", "Oficina mecânica", 300000, 11000], ["candongueiro", "Candongueiro (táxi azul e branco)", 400000, 15000],
+	["fazenda", "Fazenda de milho e feijão", 600000, 21000], ["escola_conducao", "Escola de condução", 800000, 27000],
+	["radio", "Rádio comunitária", 1200000, 38000], ["transportadora", "Transportadora (camiões Huambo–Luanda)", 2000000, 60000],
+	["construtora", "Construtora", 4000000, 115000],
+]
+var _biz_tab := "estab"
 
 
 func _phone_business() -> void:
+	# separadores: estabelecimentos reais · empresas · por baixo da mesa
+	var tabs := HBoxContainer.new()
+	tabs.add_theme_constant_override("separation", 4)
+	for t: Array in [["estab", "Sítios"], ["empresa", "Empresas"], ["ilegal", "Por baixo"]]:
+		var id := str(t[0])
+		var on := _biz_tab == id
+		var tb := _button(str(t[1]), "", ACCENT if on else Tema.BTN2, INK if on else Tema.TEXT, func() -> void:
+			_biz_tab = id
+			if id == "estab":
+				Net.action("estab_ver")
+			_rebuild_phone())
+		tb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		tb.add_theme_font_size_override("font_size", 14)
+		tabs.add_child(tb)
+	phone_body.add_child(tabs)
+	match _biz_tab:
+		"estab":
+			_venues_section()
+			return
+		"ilegal":
+			_illegal_section()
+			return
 	var b: Variant = Net.me.get("negocio")
 	var c := _card()
 	if typeof(b) == TYPE_DICTIONARY:
@@ -1978,6 +2012,77 @@ func _phone_business() -> void:
 	c.add_child(_button("Ir à Administração", "pin", Tema.BTN2, Tema.TEXT, func() -> void:
 		phone.visible = false
 		ui_action.emit("ir:administracao")))
+
+
+## Estabelecimentos reais da cidade: comprar o sítio onde estás, recolher a caixa, melhorar e vender.
+func _venues_section() -> void:
+	var es: Dictionary = Net.me.get("estabelecimentos", {}) if typeof(Net.me.get("estabelecimentos")) == TYPE_DICTIONARY else {}
+	var aqui: Variant = es.get("aqui")
+	if typeof(aqui) == TYPE_DICTIONARY:
+		var h := _card()
+		h.add_child(_label("Estás em: %s" % aqui.nome, 17, ACCENT, FONT_BOLD, true))
+		if bool(aqui.souDono):
+			h.add_child(_label("Este sítio é teu.", 14, Tema.OK, FONT_BOLD))
+		elif aqui.get("dono") != null:
+			h.add_child(_label("Dono/a: %s" % aqui.dono, 14, Tema.TEXT_MUTED, FONT_REG))
+		else:
+			h.add_child(_label("%s à venda por %s Kz." % [aqui.venue, DemoHud._money(int(aqui.preco))], 15, Tema.TEXT, FONT_REG, true))
+			h.add_child(_button("Comprar este sítio", "bag", ACCENT, INK, func() -> void: Net.action("estab_comprar")))
+	var c := _card()
+	c.add_child(_label("Os meus estabelecimentos", 18, ACCENT, FONT_BOLD))
+	var meus: Array = es.get("meus", [])
+	if meus.is_empty():
+		c.add_child(_label("Ainda não tens. Entra numa cantina, padaria, churrasqueira, farmácia, loja de telemóveis, discoteca ou hotel e compra-o: ficas com %d%% do que os clientes lá pagam e rendimento por hora (até %d sítios)." % [roundi(float(es.get("parte", 0.25)) * 100), int(es.get("max", 3))], 14, Tema.TEXT_MUTED, FONT_REG, true))
+	var total := 0
+	for v: Dictionary in meus:
+		var vid := str(v.id)
+		total += int(v.caixa)
+		c.add_child(_label("%s · %s (%s)" % [v.nome, v.venue, v.bairro], 16, Tema.TEXT, FONT_BOLD, true))
+		c.add_child(_label("Nível %d · %s Kz/hora · caixa %s Kz" % [int(v.nivel), DemoHud._money(int(v.perHour)), DemoHud._money(int(v.caixa))], 13, Tema.TEXT_MUTED, FONT_REG, true))
+		var r := HBoxContainer.new()
+		r.add_theme_constant_override("separation", 4)
+		if v.get("melhorar") != null:
+			var mb := _button("Melhorar %s" % DemoHud._money(int(v.melhorar)), "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action_text("estab_melhorar", vid))
+			mb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			mb.add_theme_font_size_override("font_size", 13)
+			r.add_child(mb)
+		var sb := _button("Vender %s" % DemoHud._money(int(v.vender)), "minus", Tema.BTN2, Tema.TEXT_FAINT, func() -> void: Net.action_text("estab_vender", vid))
+		sb.add_theme_font_size_override("font_size", 13)
+		r.add_child(sb)
+		c.add_child(r)
+	if total > 0:
+		c.add_child(_button("Recolher a caixa de todos (%s Kz)" % DemoHud._money(total), "bag", ACCENT, INK, func() -> void: Net.action("estab_recolher")))
+	var cat := _card()
+	cat.add_child(_label("Preços na cidade", 16, ACCENT, FONT_BOLD))
+	for x: Dictionary in es.get("catalogo", []):
+		cat.add_child(_label("%s — %s Kz · %s Kz/hora" % [x.name, DemoHud._money(int(x.price)), DemoHud._money(int(x.perHour))], 14, Tema.TEXT, FONT_REG, true))
+	var bl: Array = es.get("bairro", [])
+	if not bl.is_empty():
+		var bc := _card()
+		bc.add_child(_label("Donos neste bairro", 16, ACCENT, FONT_BOLD))
+		for x: Dictionary in bl:
+			bc.add_child(_label("%s — %s (nível %d)" % [x.nome, x.dono, int(x.nivel)], 14, Tema.TEXT_MUTED, FONT_REG, true))
+	c.add_child(_button("Atualizar", "rotate", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("estab_ver")))
+
+
+## Por baixo da mesa: esquemas ilegais (rendem muito, mas cada recolha arrisca rusga da polícia).
+func _illegal_section() -> void:
+	var c := _card()
+	c.add_child(_label("Por baixo da mesa", 18, Tema.DANGER, FONT_BOLD))
+	c.add_child(_label("Dinheiro fácil… até a polícia bater à porta. Numa rusga perdes o esquema e o lucro, pagas multa, ficas detido/a e perdes o registo criminal limpo (há empregos que o exigem).", 13, Tema.TEXT_MUTED, FONT_REG, true))
+	var il: Variant = Net.me.get("ilegal")
+	if typeof(il) == TYPE_DICTIONARY:
+		c.add_child(_label(str(il.name), 17, Tema.TEXT, FONT_BOLD, true))
+		c.add_child(_label(str(il.texto), 13, Tema.TEXT_FAINT, FONT_REG, true))
+		c.add_child(_label("A juntar: %s Kz · risco de rusga ao recolher: %d%%" % [DemoHud._money(int(il.pendente)), int(il.risco)], 15, Tema.WARN, FONT_BOLD, true))
+		c.add_child(_button("Recolher (arriscar)", "bag", Tema.TERRA, Tema.TEXT, func() -> void: Net.action("ilegal_recolher")))
+		c.add_child(_button("Largar o esquema", "minus", Tema.BTN2, Tema.TEXT_FAINT, func() -> void: Net.action("ilegal_fechar")))
+		return
+	for x: Dictionary in Net.me.get("ilegais", []):
+		var t := str(x.tipo)
+		c.add_child(_label("%s — %s Kz · %s Kz/hora" % [x.name, DemoHud._money(int(x.cost)), DemoHud._money(int(x.perHour))], 15, Tema.TEXT, FONT_BOLD, true))
+		c.add_child(_label(str(x.texto), 12, Tema.TEXT_FAINT, FONT_REG, true))
+		c.add_child(_button("Entrar no esquema", "plus", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("ilegal_abrir", t)))
 
 
 ## Imóveis: casas e prédios do bairro com frações livres, preços e caminho até lá.
@@ -2513,6 +2618,9 @@ func _career_card() -> void:
 		bar.color = Tema.GOLD if i <= int(cr.nivel) else Tema.BTN2
 		steps.add_child(bar)
 	c.add_child(steps)
+	if str(Net.me.get("job", "")) == "policia":
+		c.add_child(_button("Patrulhar o bairro (na esquadra)", "target", Tema.CACIMBO, Tema.TEXT, func() -> void: Net.action("policia_patrulha")))
+		c.add_child(_label("Apanha esquemas ilegais de quem está no bairro e recebe metade da multa.", 12, Tema.TEXT_FAINT, FONT_REG, true))
 	var nx: Variant = cr.get("proximo")
 	if typeof(nx) == TYPE_DICTIONARY:
 		var t := "Próxima promoção: %s daqui a %d turno(s)." % [nx.titulo, int(nx.faltam)]
