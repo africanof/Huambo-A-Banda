@@ -90,3 +90,39 @@ describe("extrato", () => {
     expect(ex[0]!.balance).toBe(ex[1]!.balance - 4000);
   });
 });
+
+describe("caixa de entrada (SMS e presentes guardados)", () => {
+  it("o que chega desligado fica guardado e é entregue uma só vez ao entrar; presente noutra sala chega pelo canal", async () => {
+    const { MemoryInboxRepository } = await import("../src/persistence/InboxRepository.js");
+    const inbox = new MemoryInboxRepository();
+    const toasts: Array<[LifeActor, string]> = [];
+    const selves = new Map<LifeActor, SelfState>();
+    const d = getDistrict("cidade_alta")!;
+    const wallets = new MemoryWalletRepository();
+    const gifts: string[] = [];
+    const out = {
+      self: (a: LifeActor, s: SelfState) => selves.set(a, s),
+      toast: (a: LifeActor, t: string) => toasts.push([a, t]),
+      gift: (to: string) => (to === "online-noutra-sala" ? (gifts.push(to), true) : false),
+    };
+    const roomA = new LifeController(d, wallets, out, () => Date.UTC(2026, 6, 8, 10), () => 0.5, { inbox });
+    const roomB = new LifeController(d, wallets, out, () => Date.UTC(2026, 6, 8, 10), () => 0.5, { inbox });
+    const sp = d.spawns[0]!;
+    const a: LifeActor = { characterId: "aa", x: sp.x, y: sp.y, name: "Ana" };
+    await roomA.join(a, { friends: [{ id: "cc", name: "Cuca" }, { id: "online-noutra-sala", name: "Dino" }], phoneCredit: 100 });
+    await wallets.apply("aa", 50_000, "teste", "t-aa");
+    await roomA.handle(a, { a: "self" });
+    await roomA.handle(a, { a: "sms", n: 1, s: "Olá Cuca!" });
+    await roomA.handle(a, { a: "presente", n: 1, i: "flores" });
+    await roomA.handle(a, { a: "presente", n: 2, i: "chocolate" });
+    expect(gifts).toEqual(["online-noutra-sala"]); // não ficou guardado: foi pelo canal
+    // a Cuca entra noutra sala do servidor: recebe tudo uma vez
+    const c: LifeActor = { characterId: "cc", x: sp.x, y: sp.y, name: "Cuca" };
+    await roomB.join(c, { needs: { hunger: 80, energy: 80, mood: 30, health: 100 } });
+    const mine = toasts.filter(([w]) => w === c).map(([, t]) => t);
+    expect(mine.some((t) => t.includes("Olá Cuca!"))).toBe(true);
+    expect(mine.some((t) => /ofereceu-te flores/.test(t))).toBe(true);
+    expect(selves.get(c)!.needs.mood).toBe(40);
+    expect(await inbox.take("cc")).toEqual([]);
+  });
+});

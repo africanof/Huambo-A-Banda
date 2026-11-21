@@ -71,10 +71,12 @@ export class DistrictRoom extends Room {
   private readonly radioLimiter = new BurstLimiter(1, 120_000);
 
   /** SMS vindo de qualquer sala: entrega se a pessoa está nesta. */
-  private readonly onSms = (m: { to: string; from: string; text: string; fromId?: string }): void => {
+  private readonly onSms = (m: { to: string; from: string; text: string; fromId?: string; gift?: { name: string; mood: number } }): void => {
     for (const client of this.clients as unknown as DistrictClient[]) {
       const q = this.playerOf(client);
-      if (q && q.characterId === m.to && !(m.fromId && this.life?.blocks(q, m.fromId))) client.send(S2C.SMS, { n: m.from, t: m.text });
+      if (!q || q.characterId !== m.to) continue;
+      if (m.gift) this.life?.giftArrived(q, m.from, m.gift.name, m.gift.mood, m.fromId);
+      else if (!(m.fromId && this.life?.blocks(q, m.fromId))) client.send(S2C.SMS, { n: m.from, t: m.text });
     }
   };
 
@@ -143,6 +145,12 @@ export class DistrictRoom extends Room {
             return true;
           },
           recentChat: (cid) => [...(this.chatLog.get(cid) ?? [])],
+          // presente para quem está ligado noutra sala (mesmo canal dos SMS)
+          gift: (to, from, name, mood, fromId) => {
+            if (!whereIs(to)) return false;
+            void this.presence.publish(SMS_CHANNEL, { to, from, text: "", fromId, gift: { name, mood } });
+            return true;
+          },
           // entrar/sair de um edifício: a posição saltou; para o movimento e atualiza a área de interesse
           moved: (actor) => {
             const p = actor as Player;
@@ -156,7 +164,7 @@ export class DistrictRoom extends Room {
         },
         Date.now,
         Math.random,
-        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings, reports: services().reports },
+        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings, reports: services().reports, inbox: services().inbox },
       );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }

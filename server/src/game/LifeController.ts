@@ -106,11 +106,11 @@ import type { ActionMessage } from "../net/protocol.js";
 import { GroupNameTaken, MemoryGroupRepository, type GroupRepository } from "../persistence/GroupRepository.js";
 import { recordNews } from "./news.js";
 import { eventsAt, hasEvent } from "./events.js";
-import { queueGift, queueSms, takeGifts, takeSms } from "./sms.js";
 import { MemoryPostRepository, type PostRepository } from "../persistence/PostRepository.js";
 import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from "../persistence/KixikilaRepository.js";
 import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
 import { MemoryReportRepository, type ReportRepository } from "../persistence/ReportRepository.js";
+import { MemoryInboxRepository, type InboxItem, type InboxRepository } from "../persistence/InboxRepository.js";
 import type { WalletMove } from "../persistence/WalletRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
@@ -189,6 +189,8 @@ export interface LifeOutput {
   appearance?(actor: LifeActor, top: number): void;
   /** SMS para uma personagem (em qualquer sala); devolve true se foi entregue a alguém ligado */
   sms?(toCharacterId: string, from: string, text: string, fromId?: string): boolean;
+  /** presente para uma personagem ligada noutra sala; devolve true se foi entregue */
+  gift?(toCharacterId: string, from: string, name: string, mood: number, fromId?: string): boolean;
   /** últimas falas de uma personagem nesta sala (contexto de uma denúncia) */
   recentChat?(characterId: string): string[];
 }
@@ -286,6 +288,7 @@ export class LifeController {
   private readonly kixi: KixikilaRepository;
   private readonly listings: ListingRepository;
   private readonly reports: ReportRepository;
+  private readonly inbox: InboxRepository;
   /** Muxima: quantas publicações por pessoa na última hora */
   private readonly postTimes = new Map<string, number[]>();
 
@@ -295,7 +298,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -304,6 +307,7 @@ export class LifeController {
     this.kixi = deps.kixikila ?? new MemoryKixikilaRepository();
     this.listings = deps.listings ?? new MemoryListingRepository();
     this.reports = deps.reports ?? new MemoryReportRepository();
+    this.inbox = deps.inbox ?? new MemoryInboxRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -336,8 +340,7 @@ export class LifeController {
     // voltou a entrar dentro de uma casa que já não é sua (renda acabou): vai para a rua
     this.evictIfNeeded(actor, e);
     // SMS que chegaram enquanto estava desligado
-    for (const m of takeSms(actor.characterId)) if (!m.fromId || !this.blocks(actor, m.fromId)) this.out.toast(actor, `SMS de ${m.from}: «${m.text}»`, true);
-    for (const g of takeGifts(actor.characterId)) if (!g.fromId || !this.blocks(actor, g.fromId)) this.receiveGift(actor, g.from, g.name, g.mood);
+    await this.deliverInbox(actor);
     this.sendSelf(actor);
   }
 
@@ -940,7 +943,6 @@ export class LifeController {
         e.life.needs = decay(e.life.needs, minutes);
         this.healthAndCrime(actor, e, minutes, t);
         e.life.forma = Math.max(0, e.life.forma - FORMA_DECAY * minutes);
-        for (const g of takeGifts(actor.characterId)) if (!g.fromId || !this.blocks(actor, g.fromId)) this.receiveGift(actor, g.from, g.name, g.mood);
         // estar perto do par anima
         const pa = e.life.partner ? this.actorById(e.life.partner.id) : undefined;
         if (pa && Math.hypot(pa.x - actor.x, pa.y - actor.y) < 600) e.life.needs = { ...e.life.needs, mood: Math.min(100, e.life.needs.mood + 1.5 * minutes) };
@@ -1055,7 +1057,7 @@ export class LifeController {
     e.life.phoneCredit -= SMS_PRICE;
     e.dirty = true;
     const online = this.out.sms?.(f.id, actor.name ?? "Amigo", text, actor.characterId) ?? false;
-    if (!online) queueSms(f.id, actor.name ?? "Amigo", text, this.now(), actor.characterId);
+    if (!online) this.store(f.id, { kind: "sms", from: actor.name ?? "Amigo", fromId: actor.characterId, text, at: this.now() });
     this.out.toast(actor, online ? `SMS enviado a ${f.name}.` : `SMS enviado a ${f.name} (vai ler quando entrar).`, true);
   }
 
@@ -1210,7 +1212,10 @@ export class LifeController {
       se.money = await this.wallets.balance(seller.characterId);
       this.out.toast(seller, `Vendeste nos Classificados: +${l.price.toLocaleString("pt-PT")} Kz.`, true);
       this.sendSelf(seller);
-    } else this.out.sms?.(l.seller, "Classificados", `Vendeste ${l.qty} ${l.item === "usd" ? "USD" : "kg"} por ${l.price} Kz.`) || queueSms(l.seller, "Classificados", `Vendeste ${l.qty} ${l.item === "usd" ? "USD" : "kg"} por ${l.price} Kz.`, this.now());
+    } else {
+      const text = `Vendeste ${l.qty} ${l.item === "usd" ? "USD" : "kg"} por ${l.price} Kz.`;
+      if (!this.out.sms?.(l.seller, "Classificados", text)) this.store(l.seller, { kind: "sms", from: "Classificados", text, at: this.now() });
+    }
   }
 
   private async listingCancel(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
@@ -1768,11 +1773,39 @@ export class LifeController {
     const here = this.actorById(to.id);
     if (here) this.receiveGift(here, from, g.name, g.mood);
     else {
-      queueGift(to.id, from, g.name, g.mood, actor.characterId);
-      const text = `Mandei-te um presente: ${g.name.toLowerCase()}!`;
-      if (!(this.out.sms?.(to.id, from, text, actor.characterId) ?? false)) queueSms(to.id, from, text, this.now(), actor.characterId);
+      // ligado noutra sala: chega já; desligado: fica guardado e chega quando entrar
+      if (!(this.out.gift?.(to.id, from, g.name, g.mood, actor.characterId) ?? false)) {
+        this.store(to.id, { kind: "gift", from, fromId: actor.characterId, name: g.name, mood: g.mood, at: this.now() });
+        this.store(to.id, { kind: "sms", from, fromId: actor.characterId, text: `Mandei-te um presente: ${g.name.toLowerCase()}!`, at: this.now() });
+      }
     }
     this.out.toast(actor, `Ofereceste ${g.name.toLowerCase()} a ${to.name} (−${g.price.toLocaleString("pt-PT")} Kz).`, true);
+  }
+
+  /** Guarda para quem está desligado (falhas da base de dados não rebentam a ação). */
+  private store(to: string, item: InboxItem): void {
+    void this.inbox.push(to, item).catch(() => undefined);
+  }
+
+  /** Entrega o que estava à espera (SMS e presentes), salvo de quem foi bloqueado. */
+  private async deliverInbox(actor: LifeActor): Promise<void> {
+    let items: InboxItem[] = [];
+    try {
+      items = await this.inbox.take(actor.characterId);
+    } catch {
+      return;
+    }
+    for (const m of items) {
+      if (m.fromId && this.blocks(actor, m.fromId)) continue;
+      if (m.kind === "sms") this.out.toast(actor, `SMS de ${m.from}: «${m.text ?? ""}»`, true);
+      else this.receiveGift(actor, m.from, m.name ?? "um presente", m.mood ?? 0);
+    }
+  }
+
+  /** Presente que chegou de outra sala (a pessoa está aqui). */
+  giftArrived(actor: LifeActor, from: string, name: string, mood: number, fromId?: string): void {
+    if (fromId && this.blocks(actor, fromId)) return;
+    this.receiveGift(actor, from, name, mood);
   }
 
   private receiveGift(actor: LifeActor, from: string, name: string, mood: number): void {
