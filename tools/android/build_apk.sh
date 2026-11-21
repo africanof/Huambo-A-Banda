@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-# Gera o APK de Android do Huambo É A Banda (assinado para publicar).
+# Gera a app de Android do Huambo É A Banda, assinada para publicar:
+#   - APK  (instalar diretamente no telemóvel)
+#   - AAB  (Android App Bundle, o formato que a Google Play Store pede)
 #
-#   KEYSTORE=/caminho/huambo-release.keystore KEYSTORE_PASSWORD=… tools/android/build_apk.sh
+#   KEYSTORE=/caminho/huambo-release.keystore KEYSTORE_PASSWORD=… tools/android/build_apk.sh        # os dois
+#   FORMATO=apk … tools/android/build_apk.sh                                                       # só o APK
+#
+# O AAB compila com o Gradle: precisa no SDK de platforms;android-35 e build-tools;35.0.1, e de
+# acesso à rede (Maven Central, Google Maven) na primeira vez. O modelo de compilação Android do
+# Godot (client/android/) instala-se sozinho e não vai para o repositório.
 #
 # Precisa de: Godot 4.6.2 (GODOT=…), modelos de exportação Android, Android SDK com build-tools
 # (editor settings: export/android/android_sdk_path) e Java 17+.
@@ -13,10 +20,18 @@ cd "$(dirname "$0")/../../client"
 : "${GODOT:=godot}"
 : "${KEYSTORE:?indica o caminho da keystore em KEYSTORE}"
 : "${KEYSTORE_PASSWORD:?indica a palavra-passe em KEYSTORE_PASSWORD}"
+FORMATO="${FORMATO:-ambos}"
 mkdir -p build/android
 "$GODOT" --headless --path . --import >/dev/null 2>&1 || true
-GODOT_ANDROID_KEYSTORE_RELEASE_PATH="$KEYSTORE" \
-GODOT_ANDROID_KEYSTORE_RELEASE_USER="${KEYSTORE_ALIAS:-huambo}" \
-GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD="$KEYSTORE_PASSWORD" \
+export GODOT_ANDROID_KEYSTORE_RELEASE_PATH="$KEYSTORE"
+export GODOT_ANDROID_KEYSTORE_RELEASE_USER="${KEYSTORE_ALIAS:-huambo}"
+export GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD="$KEYSTORE_PASSWORD"
+if [ "$FORMATO" != "aab" ]; then
   "$GODOT" --headless --path . --export-release "Android" build/android/huambo-e-a-banda.apk
-ls -lh build/android/huambo-e-a-banda.apk
+fi
+if [ "$FORMATO" != "apk" ]; then
+  install=""
+  [ -d android/build ] || install="--install-android-build-template"
+  "$GODOT" --headless --path . $install --export-release "Android AAB" build/android/huambo-e-a-banda.aab
+fi
+ls -lh build/android/
