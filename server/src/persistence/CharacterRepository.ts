@@ -36,6 +36,8 @@ export interface CharacterRepository {
   savePositions(updates: PositionUpdate[]): Promise<void>;
   /** Altera nome/aparência da personagem da conta (criando-a se ainda não existir). */
   update(identity: Identity, changes: CharacterUpdate): Promise<CharacterRecord>;
+  /** Apaga a conta e tudo o que lhe pertence (personagem, carteira, casas…). Devolve o id da personagem apagada, se havia. */
+  deleteAccount(identity: Identity): Promise<string | null>;
 }
 
 export function defaultAppearance(seed: string): Appearance {

@@ -51,6 +51,23 @@ export class SupabaseCharacterRepository implements CharacterRepository {
     return toRecord(created.data);
   }
 
+  /**
+   * Apaga o utilizador do Supabase Auth: a base de dados apaga em cascata o perfil, a personagem,
+   * a carteira e o livro-razão, casas, conta bancária e inventário. As tabelas do jogo que guardam
+   * o id como texto (caixa de entrada, anúncios abertos) limpam-se aqui.
+   */
+  async deleteAccount(identity: Identity): Promise<string | null> {
+    const { data } = await this.db.from("characters").select("id").eq("owner_id", identity.userId);
+    const ids = ((data ?? []) as Array<{ id: string }>).map((r) => r.id);
+    if (ids.length) {
+      await this.db.from("game_inbox").delete().in("to_character", ids);
+      await this.db.from("game_listings").delete().in("seller", ids).eq("status", "open");
+    }
+    const { error } = await this.db.auth.admin.deleteUser(identity.userId);
+    if (error) throw new Error(`auth.deleteUser: ${error.message}`);
+    return ids[0] ?? null;
+  }
+
   async update(identity: Identity, changes: CharacterUpdate): Promise<CharacterRecord> {
     const current = await this.loadOrCreate(identity);
     const patch: Record<string, unknown> = {};

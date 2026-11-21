@@ -1207,6 +1207,9 @@ func _phone_agenda() -> void:
 	w.add_child(_label("Sexta à noite: sexta-feira na banda · Sábado: dia de feira · Domingo: missa. Abril a junho: época das colheitas.", 14, Tema.TEXT_MUTED, FONT_REG, true))
 
 
+var _confirm_delete := false
+
+
 ## Definições: tamanho do texto, nomes, efeitos e terminar sessão (guardadas no aparelho).
 func _phone_settings() -> void:
 	var c := _card()
@@ -1259,6 +1262,30 @@ func _phone_settings() -> void:
 		Som.ambient("")
 		Auth.sign_out()
 		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")))
+	# apagar a conta: dois passos (as lojas de aplicações exigem esta opção)
+	if not _confirm_delete:
+		a.add_child(_button("Apagar a minha conta", "minus", Color(0, 0, 0, 0), Tema.TEXT_FAINT, func() -> void:
+			_confirm_delete = true
+			_rebuild_phone()))
+	else:
+		var z := _card()
+		z.add_child(_label("Apagar a conta para sempre?", 17, Tema.DANGER, FONT_BOLD, true))
+		z.add_child(_label("Perdes a personagem, o dinheiro, as casas, a família e os amigos. Não dá para desfazer.", 14, Tema.TEXT_MUTED, FONT_REG, true))
+		z.add_child(_button("Sim, apagar tudo", "minus", Tema.TERRA, Tema.TEXT, func() -> void:
+			show_toast("A apagar a conta…", true)
+			var r: Variant = await Net.post_json("/me/delete", {"confirm": "APAGAR"})
+			if r == null:
+				show_toast("Não foi possível apagar agora. Tenta mais tarde.", false)
+				return
+			_confirm_delete = false
+			phone.visible = false
+			Net.leave()
+			Som.ambient("")
+			Auth.sign_out()
+			get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")))
+		z.add_child(_button("Não, voltar", "plus", Tema.BTN2, Tema.TEXT, func() -> void:
+			_confirm_delete = false
+			_rebuild_phone()))
 
 
 ## Saber Huambo: 3 perguntas por dia sobre o Huambo e Angola; cada certa dá dinheiro.

@@ -15,6 +15,7 @@ const HUES := [-1.0, 0.0, 0.08, 0.15, 0.33, 0.5, 0.62, 0.75, 0.88]
 const NAMES_M := ["Kalunga", "Tchissola", "Ngola", "Sapalo", "Chipenda", "Cassoma", "Epalanga", "Jamba", "Kandimba", "Tchivinda", "Sacuvaia", "Chimuco"]
 const NAMES_F := ["Nhanga", "Lussati", "Chilombo", "Ngueza", "Esperança", "Florinda", "Kaluquembe", "Tchiumba", "Ndalu", "Celeste", "Wezy", "Kissanga"]
 
+var _forgot: Button
 var mode := "jogar" ## jogar (convidado) | criar (conta) | entrar (conta)
 var model := 0 ## 0 homem, 1 mulher
 var hue := -1.0
@@ -57,6 +58,10 @@ func _ready() -> void:
 		var t := preload("res://src/debug/autotest.gd").new()
 		t.name = "Autotest"
 		get_tree().root.add_child.call_deferred(t)
+	elif Auth.take_recovery_link():
+		# abriu pela ligação do email «mudar a palavra-passe»
+		_set_mode("nova")
+		status_label.text = "Escolhe a tua palavra-passe nova."
 	elif Auth.supabase_enabled():
 		_try_resume()
 	_show_version()
@@ -189,6 +194,9 @@ func _build_ui() -> void:
 	_style_edit(password_edit, "Senha")
 	password_edit.secret = true
 	_acc_box.add_child(password_edit)
+	_forgot = _button("Esqueci-me da palavra-passe", Color(0, 0, 0, 0), Tema.TEXT_MUTED, func() -> void: _set_mode("recuperar"))
+	_forgot.add_theme_font_size_override("font_size", 14)
+	_acc_box.add_child(_forgot)
 	# personagem
 	_char_box.add_theme_constant_override("separation", 10)
 	v.add_child(_char_box)
@@ -300,12 +308,17 @@ func _fit() -> void:
 
 func _set_mode(m: String) -> void:
 	mode = m
-	_acc_box.visible = m in ["criar", "entrar"]
+	_acc_box.visible = m in ["criar", "entrar", "recuperar", "nova"]
+	email_edit.visible = m != "nova"
+	password_edit.visible = m != "recuperar"
+	password_edit.placeholder_text = "Palavra-passe nova (6 ou mais)" if m == "nova" else "Senha"
+	_forgot.visible = m == "entrar"
 	_char_box.visible = m in ["jogar", "criar"]
 	_welcome_label.visible = m == "voltar"
 	_switch_button.visible = m == "voltar"
-	_tabs.visible = m != "voltar"
-	start_button.text = {"jogar": "Começar a vida", "criar": "Criar conta e começar", "entrar": "Entrar", "voltar": "Continuar a vida"}[m]
+	_tabs.visible = m not in ["voltar", "nova"]
+	start_button.text = {"jogar": "Começar a vida", "criar": "Criar conta e começar", "entrar": "Entrar", "voltar": "Continuar a vida",
+		"recuperar": "Enviar email para mudar a palavra-passe", "nova": "Guardar e entrar"}[m]
 	for b: Node in _tabs.get_children():
 		var on: bool = b.get_meta("tab") == m
 		_paint(b, ACCENT if on else Tema.BTN2, INK if on else Tema.TEXT)
@@ -347,6 +360,14 @@ func _on_guest() -> void:
 func _on_start() -> void:
 	if mode == "voltar":
 		await _run(func() -> String: return "")
+		return
+	if mode == "recuperar":
+		_set_busy(true, "A enviar…")
+		var e: String = await Auth.request_password_reset(email_edit.text.strip_edges())
+		_set_busy(false, e if e != "" else "Enviámos um email para %s. Abre a ligação nesse email para escolher a palavra-passe nova." % email_edit.text.strip_edges())
+		return
+	if mode == "nova":
+		await _run(func() -> String: return await Auth.set_new_password(password_edit.text))
 		return
 	if mode != "entrar":
 		if name_edit.text.strip_edges().length() < 2:

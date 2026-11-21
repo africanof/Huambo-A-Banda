@@ -92,6 +92,62 @@ func sign_up_email(email: String, password: String, wanted_name: String) -> Stri
 	return _apply_supabase_session(res, "Não foi possível criar a conta")
 
 
+## «Esqueci-me da palavra-passe»: o Supabase manda um email com uma ligação que abre o jogo
+## já com sessão de recuperação (#type=recovery), onde se escolhe a palavra-passe nova.
+func request_password_reset(email: String) -> String:
+	if not supabase_enabled():
+		return "Supabase não configurado (config/client.cfg)"
+	if not "@" in email:
+		return "Escreve o email da tua conta."
+	var back := AppConfig.server_url + "/"
+	if OS.has_feature("web"):
+		back = str(JavaScriptBridge.eval("window.location.origin + window.location.pathname", true))
+	var res := await _post_json(AppConfig.supabase_url + "/auth/v1/recover?redirect_to=" + back.uri_encode(), {"email": email}, _supabase_headers())
+	if res.status == 200:
+		return ""
+	return _error_text(res, "Não foi possível enviar o email")
+
+
+## Se o jogo abriu pela ligação do email de recuperação: guarda a sessão e devolve true.
+func take_recovery_link() -> bool:
+	if not OS.has_feature("web"):
+		return false
+	var h := str(JavaScriptBridge.eval("window.location.hash", true))
+	if not "type=recovery" in h:
+		return false
+	var q := {}
+	for part: String in h.trim_prefix("#").split("&"):
+		var kv := part.split("=", true, 1)
+		if kv.size() == 2:
+			q[kv[0]] = kv[1].uri_decode()
+	# tira o token da barra de endereço (não fica no histórico)
+	JavaScriptBridge.eval("history.replaceState(null, '', window.location.pathname + window.location.search)", true)
+	if str(q.get("access_token", "")) == "":
+		return false
+	_set_session(str(q.access_token), str(q.get("refresh_token", "")), int(q.get("expires_in", "3600")))
+	is_guest = false
+	return true
+
+
+## Palavra-passe nova (depois da ligação de recuperação).
+func set_new_password(password: String) -> String:
+	if password.length() < 6:
+		return "A palavra-passe precisa de pelo menos 6 letras ou números."
+	var res := await _request(AppConfig.supabase_url + "/auth/v1/user", HTTPClient.METHOD_PUT, {"password": password},
+		PackedStringArray(["apikey: " + AppConfig.supabase_key, "Authorization: Bearer " + access_token]))
+	if res.status != 200:
+		return _error_text(res, "Não foi possível mudar a palavra-passe")
+	var user: Dictionary = res.data
+	user_id = str(user.get("id", ""))
+	display_name = str(user.get("user_metadata", {}).get("display_name", user.get("email", "")))
+	var cfg := ConfigFile.new()
+	cfg.set_value("sessao", "refresh_token", refresh_token)
+	cfg.set_value("sessao", "nome", display_name)
+	cfg.save(SESSION_FILE)
+	signed_in.emit(display_name)
+	return ""
+
+
 ## Renova o token de acesso (contas Supabase) antes de expirar.
 func ensure_fresh_token() -> void:
 	if is_guest or refresh_token.is_empty():
@@ -153,12 +209,16 @@ func _error_text(res: Dictionary, fallback: String) -> String:
 
 
 func _post_json(url: String, body: Dictionary, extra_headers: PackedStringArray) -> Dictionary:
+	return await _request(url, HTTPClient.METHOD_POST, body, extra_headers)
+
+
+func _request(url: String, method: int, body: Dictionary, extra_headers: PackedStringArray) -> Dictionary:
 	var http := HTTPRequest.new()
 	http.timeout = 10.0
 	add_child(http)
 	var headers := PackedStringArray(["Content-Type: application/json"])
 	headers.append_array(extra_headers)
-	var err := http.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
+	var err := http.request(url, headers, method, JSON.stringify(body))
 	if err != OK:
 		http.queue_free()
 		return {"status": 0, "data": {}}

@@ -191,6 +191,23 @@ export function registerRoutes(app: Application, svc: Services): void {
     }
   });
 
+  // Apagar a conta (pedido das lojas de aplicações): exige escrever APAGAR. Põe a pessoa fora do jogo.
+  app.post("/me/delete", async (req, res) => {
+    const id = await identify(req, res);
+    if (!id) return;
+    if ((req.body as { confirm?: unknown } | undefined)?.confirm !== "APAGAR") {
+      res.status(400).json({ error: "confirm_required" });
+      return;
+    }
+    try {
+      await matchMaker.presence.publish("huambo:kick-user", { userId: id.userId, except: "" });
+      await svc.characters.deleteAccount(id);
+      res.json({ ok: true });
+    } catch {
+      res.status(503).json({ error: "storage_unavailable" });
+    }
+  });
+
   app.post("/auth/guest", async (req, res) => {
     if (!svc.verifier.guestsEnabled) {
       res.status(403).json({ error: "guests_disabled" });

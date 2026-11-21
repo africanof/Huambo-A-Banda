@@ -31,6 +31,14 @@ export class MemoryCharacterRepository implements CharacterRepository {
     return rec;
   }
 
+  async deleteAccount(identity: Identity): Promise<string | null> {
+    const rec = this.byOwner.get(identity.userId);
+    if (!rec) return null;
+    this.byOwner.delete(identity.userId);
+    this.byId.delete(rec.id);
+    return rec.id;
+  }
+
   async update(identity: Identity, changes: CharacterUpdate): Promise<CharacterRecord> {
     const rec = await this.loadOrCreate(identity);
     if (changes.name) rec.name = changes.name;

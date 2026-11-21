@@ -29,6 +29,10 @@ class RoutingCharacterRepository implements CharacterRepository {
     return (identity.kind === "guest" ? this.guests : this.users).update(identity, changes);
   }
 
+  deleteAccount(identity: Identity): Promise<string | null> {
+    return (identity.kind === "guest" ? this.guests : this.users).deleteAccount(identity);
+  }
+
   async savePositions(updates: PositionUpdate[]): Promise<void> {
     const mem = updates.filter((u) => u.id.startsWith("mem-"));
     const db = updates.filter((u) => !u.id.startsWith("mem-"));
