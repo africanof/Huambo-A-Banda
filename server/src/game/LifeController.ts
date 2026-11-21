@@ -128,7 +128,8 @@ import { MemoryListingRepository, type ListingRepository } from "../persistence/
 import { MemoryReportRepository, type ReportRepository } from "../persistence/ReportRepository.js";
 import { MemoryInboxRepository, type InboxItem, type InboxRepository } from "../persistence/InboxRepository.js";
 import { MemoryMarketRepository, type MarketRepository } from "../persistence/MarketRepository.js";
-import { MARKET_ITEMS } from "./economia.js";
+import { MARKET_ITEMS, ASSOC_POINTS, ASSOC_GOAL, ASSOC_GOAL_PRIZE, ASSOC_TOP_PRIZE, ASSOC_MIN_POINTS, angolaWeek, previousWeek } from "./economia.js";
+import { MemoryAssociationRepository, type AssociationRepository, type AssocRow } from "../persistence/AssociationRepository.js";
 import type { WalletMove } from "../persistence/WalletRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
@@ -160,6 +161,8 @@ interface Busy {
 }
 
 interface Entry {
+  /** associação: o que a app mostrou da última vez (ranking, totais) */
+  assocView?: { semana: string; ranking: AssocRow[]; total: number; meus: number; anterior: AssocRow[]; meusAnterior: { bairro: string; pontos: number } | null };
   /** extrato pedido (últimos movimentos da carteira) */
   extrato?: WalletMove[];
   /** kixikila do grupo (lida quando a app pede ou depois de cada ação) */
@@ -264,6 +267,19 @@ export interface SelfState {
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   agenda: ReturnType<typeof upcoming>;
+  associacao: {
+    bairro: string | null;
+    nome: string | null;
+    semana: string;
+    total: number;
+    meus: number;
+    objetivo: number;
+    premioObjetivo: number;
+    objetivoRecolhido: boolean;
+    ranking: Array<{ bairro: string; nome: string; pontos: number; membros: number }>;
+    topAnterior: { nome: string; pontos: number; souMembro: boolean; recolhido: boolean; premio: number } | null;
+    aqui: string;
+  };
   mercado: Array<{ item: string; name: string; unit: string; preco: number; base: number }>;
   prendaHoje: { name: string; premio: number; recolhida: boolean } | null;
   visitados: number;
@@ -320,6 +336,7 @@ export class LifeController {
   private readonly reports: ReportRepository;
   private readonly inbox: InboxRepository;
   private readonly market: MarketRepository;
+  private readonly assoc: AssociationRepository;
   /** últimos preços do mercado vivo (para o telemóvel); atualizados a cada troca e de minuto a minuto */
   private marketCache: Record<string, number> = {};
   private marketAt = 0;
@@ -332,7 +349,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -343,6 +360,7 @@ export class LifeController {
     this.reports = deps.reports ?? new MemoryReportRepository();
     this.inbox = deps.inbox ?? new MemoryInboxRepository();
     this.market = deps.market ?? new MemoryMarketRepository();
+    this.assoc = deps.assoc ?? new MemoryAssociationRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -636,6 +654,20 @@ export class LifeController {
           break;
         case "geracao_continuar":
           await this.nextGeneration(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "assoc_aderir":
+          await this.assocJoin(actor, e);
+          break;
+        case "assoc_sair":
+          e.life.associacao = null;
+          e.dirty = true;
+          this.out.toast(actor, "Saíste da associação do bairro.", true);
+          break;
+        case "assoc_ver":
+          await this.assocLoad(actor, e);
+          break;
+        case "assoc_premio":
+          await this.assocPrize(actor, e, msg.i);
           break;
         case "evento_recolher":
           await this.claimDayPrize(actor, e);
@@ -1042,6 +1074,7 @@ export class LifeController {
       this.out.toast(actor, `Turno concluído: +${pay.toLocaleString("pt-PT")} Kz${note}.`, true);
       // experiência: um turno a mais nesta carreira; ao passar um patamar, promoção
       e.life.carreira[job.id] = (e.life.carreira[job.id] ?? 0) + 1;
+      this.assocAdd(actor, e, ASSOC_POINTS.turno);
       const after = careerLevel(job, e.life.carreira[job.id]!, e.life.education);
       if (after > before) {
         const nv = CARREIRA[after]!;
@@ -1666,6 +1699,7 @@ export class LifeController {
       const total = Math.round(c.ovos * OVO_PRICE * (await this.marketFactor("ovos")) * feira);
       e.money = await this.wallets.apply(actor.characterId, total, "criacao.ovos", `ovos:${actor.characterId}:${this.op()}`);
       this.marketTrade("ovos", c.ovos);
+      this.assocAdd(actor, e, (total / 100) * ASSOC_POINTS.venda);
       this.out.toast(actor, `Vendeste ${c.ovos} ovos: +${total.toLocaleString("pt-PT")} Kz.`, true);
       c.ovos = 0;
       c.vendidos += 1;
@@ -1683,6 +1717,7 @@ export class LifeController {
     const total = Math.round(a.sell * (await this.marketFactor(what!)) * (hungry ? FOME_FACTOR : 1) * feira);
     e.money = await this.wallets.apply(actor.characterId, total, `criacao.venda.${what}`, `criacao-venda:${actor.characterId}:${this.op()}`);
     this.marketTrade(what!, 1);
+    this.assocAdd(actor, e, (total / 100) * ASSOC_POINTS.venda);
     c.animais.splice(idx, 1);
     c.vendidos += 1;
     e.dirty = true;
@@ -1783,6 +1818,87 @@ export class LifeController {
     );
   }
 
+  // ---------------------------------------------------------------- associações de bairro
+
+  /** Soma pontos à associação de quem fez a atividade (em segundo plano). */
+  private assocAdd(actor: LifeActor, e: Entry, pontos: number): void {
+    const b = e.life.associacao;
+    const p = Math.round(pontos);
+    if (!b || p <= 0) return;
+    void this.assoc.add(actor.characterId, b, angolaWeek(this.now()), p).catch(() => undefined);
+  }
+
+  private async assocJoin(actor: LifeActor, e: Entry): Promise<void> {
+    const i = interiorAt(this.district, actor.x, actor.y);
+    if (i?.venue !== "administracao" && i?.venue !== "governo")
+      return this.out.toast(actor, "A sede da associação é a Administração do bairro: entra lá para aderir.", false);
+    const week = angolaWeek(this.now());
+    if (e.life.associacao === this.district.id) return this.out.toast(actor, `Já és membro da associação de ${this.district.name}.`, false);
+    if (e.life.associacao && e.life.assocSemana === week) return this.out.toast(actor, "Só podes mudar de associação uma vez por semana.", false);
+    e.life.associacao = this.district.id;
+    e.life.assocSemana = week;
+    e.dirty = true;
+    this.out.toast(actor, `Bem-vindo/a à associação de moradores de ${this.district.name}! Colher, trabalhar, vender e cuidar dos filhos dá pontos ao bairro.`, true);
+    await this.assocLoad(actor, e);
+  }
+
+  private async assocLoad(_actor: LifeActor, e: Entry): Promise<void> {
+    const t = this.now();
+    const week = angolaWeek(t);
+    const prev = previousWeek(t);
+    try {
+      const [ranking, anterior, me, mePrev] = await Promise.all([
+        this.assoc.ranking(week, 30),
+        this.assoc.ranking(prev, 3),
+        this.assoc.member(e.life.associacao ? this.charOf(e) : "", week),
+        this.assoc.member(this.charOf(e), prev),
+      ]);
+      const mine = ranking.find((r) => r.bairro === e.life.associacao);
+      e.assocView = { semana: week, ranking, total: mine?.pontos ?? 0, meus: me?.bairro === e.life.associacao ? me.pontos : 0, anterior, meusAnterior: mePrev };
+    } catch {
+      /* sem base de dados: fica o que já se sabia */
+    }
+  }
+
+  private charOf(e: Entry): string {
+    for (const [a, x] of this.entries) if (x === e) return a.characterId;
+    return "";
+  }
+
+  /** Prémios: «objetivo» (a associação chegou à meta desta semana) e «top» (1.º lugar da semana passada). */
+  private async assocPrize(actor: LifeActor, e: Entry, kind: string | undefined): Promise<void> {
+    const t = this.now();
+    await this.assocLoad(actor, e);
+    const v = e.assocView;
+    if (!v) return this.out.toast(actor, "Não foi possível ver a associação agora.", false);
+    if (kind === "objetivo") {
+      const key = `objetivo:${v.semana}`;
+      if (!e.life.associacao) return this.out.toast(actor, "Primeiro adere à associação do bairro.", false);
+      if (e.life.assocPremios.includes(key)) return this.out.toast(actor, "Já recolheste o prémio do objetivo desta semana.", false);
+      if (v.total < ASSOC_GOAL) return this.out.toast(actor, `O bairro ainda vai em ${v.total}/${ASSOC_GOAL} pontos.`, false);
+      if (v.meus < ASSOC_MIN_POINTS) return this.out.toast(actor, `Contribui primeiro: precisas de ${ASSOC_MIN_POINTS} pontos teus esta semana (tens ${v.meus}).`, false);
+      e.life.assocPremios = [...e.life.assocPremios, key].slice(-20);
+      e.dirty = true;
+      e.money = await this.wallets.apply(actor.characterId, ASSOC_GOAL_PRIZE, "assoc.objetivo", `assoc-obj:${actor.characterId}:${v.semana}`);
+      return this.out.toast(actor, `O bairro cumpriu o objetivo da semana! +${ASSOC_GOAL_PRIZE.toLocaleString("pt-PT")} Kz.`, true);
+    }
+    if (kind === "top") {
+      const prev = previousWeek(t);
+      const key = `top:${prev}`;
+      const top = v.anterior[0];
+      const mp = v.meusAnterior;
+      if (e.life.assocPremios.includes(key)) return this.out.toast(actor, "Já recolheste o prémio do 1.º lugar.", false);
+      if (!top || !mp || mp.bairro !== top.bairro) return this.out.toast(actor, "A tua associação não ficou em 1.º lugar na semana passada.", false);
+      if (mp.pontos < ASSOC_MIN_POINTS) return this.out.toast(actor, `Só recebe quem contribuiu (pelo menos ${ASSOC_MIN_POINTS} pontos na semana passada).`, false);
+      e.life.assocPremios = [...e.life.assocPremios, key].slice(-20);
+      e.dirty = true;
+      e.money = await this.wallets.apply(actor.characterId, ASSOC_TOP_PRIZE, "assoc.top", `assoc-top:${actor.characterId}:${prev}`);
+      recordNews("grupo", getDistrict(top.bairro)?.name ?? top.bairro, `A associação de ${getDistrict(top.bairro)?.name ?? top.bairro} ganhou a semana no Huambo!`, t);
+      return this.out.toast(actor, `${getDistrict(top.bairro)?.name ?? top.bairro} foi o melhor bairro da semana passada! +${ASSOC_TOP_PRIZE.toLocaleString("pt-PT")} Kz.`, true);
+    }
+    return this.out.toast(actor, "Que prémio?", false);
+  }
+
   // ---------------------------------------------------------------- família: filhos e gerações
 
   private babyAsk(actor: LifeActor, e: Entry, rawName: string | undefined, sexo: string | undefined): void {
@@ -1848,6 +1964,7 @@ export class LifeController {
     e.dirty = true;
     e.money = await this.wallets.apply(actor.characterId, -fase.price, "familia.cuidar", `cuidar:${actor.characterId}:${f.id}:${day}`);
     f.cuidados += 1;
+    this.assocAdd(actor, e, ASSOC_POINTS.cuidar);
     let extra = "";
     if (anos >= 6 && f.cuidados % CUIDADOS_POR_NIVEL === 0 && f.estudos < 4) {
       f.estudos += 1;
@@ -2131,6 +2248,7 @@ export class LifeController {
     const kg = Math.round(c.kg * (l.watered || rained ? 1 : DRY_FACTOR) * agro * epoca);
     e.life.colheita[l.crop] = (e.life.colheita[l.crop] ?? 0) + kg;
     e.life.colhidoTotal += kg;
+    this.assocAdd(actor, e, kg * ASSOC_POINTS.colheita);
     e.life.lavra = null;
     e.dirty = true;
     this.out.toast(actor, `Colheste ${kg} kg de ${c.name}${l.watered || rained ? "" : " (sem rega rendeu metade)"}. Vende no mercado.`, true);
@@ -2148,6 +2266,7 @@ export class LifeController {
     e.money = await this.wallets.apply(actor.characterId, total, "lavra.venda", `lavra-venda:${actor.characterId}:${this.op()}`);
     e.life.colheita = {};
     for (const [k, kg] of Object.entries(sold)) this.marketTrade(k, kg); // muita oferta faz baixar o preço
+    this.assocAdd(actor, e, (total / 100) * ASSOC_POINTS.venda);
     e.dirty = true;
     this.out.toast(actor, `Vendeste a colheita no mercado: +${total.toLocaleString("pt-PT")} Kz.`, true);
   }
@@ -2550,6 +2669,33 @@ export class LifeController {
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       agenda: upcoming(t, 8),
+      associacao: (() => {
+        const v = e.assocView;
+        const week = angolaWeek(t);
+        const fresh = v && v.semana === week ? v : undefined;
+        const top = fresh?.anterior[0];
+        return {
+          bairro: e.life.associacao,
+          nome: e.life.associacao ? (getDistrict(e.life.associacao)?.name ?? e.life.associacao) : null,
+          semana: week,
+          total: fresh?.total ?? 0,
+          meus: fresh?.meus ?? 0,
+          objetivo: ASSOC_GOAL,
+          premioObjetivo: ASSOC_GOAL_PRIZE,
+          objetivoRecolhido: e.life.assocPremios.includes(`objetivo:${week}`),
+          ranking: (fresh?.ranking ?? []).map((r) => ({ ...r, nome: getDistrict(r.bairro)?.name ?? r.bairro })),
+          topAnterior: top
+            ? {
+                nome: getDistrict(top.bairro)?.name ?? top.bairro,
+                pontos: top.pontos,
+                souMembro: fresh?.meusAnterior?.bairro === top.bairro && (fresh?.meusAnterior?.pontos ?? 0) >= ASSOC_MIN_POINTS,
+                recolhido: e.life.assocPremios.includes(`top:${previousWeek(t)}`),
+                premio: ASSOC_TOP_PRIZE,
+              }
+            : null,
+          aqui: this.district.name,
+        };
+      })(),
       mercado: (() => {
         this.refreshMarket();
         return Object.entries(MARKET_ITEMS).map(([k, m]) => ({ item: k, name: m.name, unit: m.unit, preco: Math.round(this.marketCache[k] ?? m.base), base: m.base }));

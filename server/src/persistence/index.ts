@@ -1,5 +1,6 @@
 import { MemoryKixikilaRepository, SupabaseKixikilaRepository, type KixikilaRepository } from "./KixikilaRepository.js";
 import { MemorySanctionRepository, SupabaseSanctionRepository, type SanctionRepository } from "./SanctionRepository.js";
+import { MemoryAssociationRepository, SupabaseAssociationRepository, type AssociationRepository } from "./AssociationRepository.js";
 import { MemoryMarketRepository, SupabaseMarketRepository, type MarketRepository } from "./MarketRepository.js";
 import { MemoryInboxRepository, RoutingInboxRepository, SupabaseInboxRepository, type InboxRepository } from "./InboxRepository.js";
 import { MemoryReportRepository, SupabaseReportRepository, type ReportRepository } from "./ReportRepository.js";
@@ -58,6 +59,7 @@ export interface Repositories {
   inbox: InboxRepository;
   sanctions: SanctionRepository;
   market: MarketRepository;
+  assoc: AssociationRepository;
 }
 
 /**
@@ -83,9 +85,10 @@ export function createRepositories(env: Env): Repositories {
       inbox: new RoutingInboxRepository(new SupabaseInboxRepository(supa.db)),
       sanctions: new SupabaseSanctionRepository(supa.db),
       market: new SupabaseMarketRepository(supa.db),
+      assoc: new SupabaseAssociationRepository(supa.db),
     };
   }
-  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository(), posts: new MemoryPostRepository(), kixikila: new MemoryKixikilaRepository(), listings: new MemoryListingRepository(), reports: new MemoryReportRepository(), inbox: new MemoryInboxRepository(), sanctions: new MemorySanctionRepository(), market: new MemoryMarketRepository() };
+  return { characters: guests, wallets: guestWallets, properties: new MemoryPropertyRepository(guestWallets), bank: guestBank, groups: new MemoryGroupRepository(), posts: new MemoryPostRepository(), kixikila: new MemoryKixikilaRepository(), listings: new MemoryListingRepository(), reports: new MemoryReportRepository(), inbox: new MemoryInboxRepository(), sanctions: new MemorySanctionRepository(), market: new MemoryMarketRepository(), assoc: new MemoryAssociationRepository() };
 }
 
 export type { CharacterRepository, CharacterRecord, CharacterUpdate, PositionUpdate } from "./CharacterRepository.js";

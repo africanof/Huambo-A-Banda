@@ -186,6 +186,10 @@ export const ActionSchema = z
       "filho_cuidar",
       "filho_ajuda",
       "geracao_continuar",
+      "assoc_aderir",
+      "assoc_sair",
+      "assoc_ver",
+      "assoc_premio",
     ]),
     i: z.string().regex(/^[a-z0-9_]{1,40}$/).optional(),
     /** quantia (banco) ou dias (renda) */

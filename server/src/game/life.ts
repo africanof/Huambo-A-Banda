@@ -106,6 +106,11 @@ export interface LifeState {
   filhos: Filho[];
   /** geração da família (1 = a primeira personagem; sobe ao continuar a vida como filho/a) */
   geracao: number;
+  /** associação de bairro (id do bairro) e semana em que aderiu */
+  associacao: string | null;
+  assocSemana: string | null;
+  /** prémios da associação já recolhidos ("objetivo:2026-W47", "top:2026-W46") */
+  assocPremios: string[];
 }
 
 export interface Filho {
@@ -551,6 +556,9 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     carreira: {},
     filhos: [],
     geracao: 1,
+    associacao: null,
+    assocSemana: null,
+    assocPremios: [],
   };
 }
 
@@ -660,6 +668,9 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
           }))
       : [],
     geracao: Math.round(num(r.geracao, 1, 1, 1000)),
+    associacao: typeof r.associacao === "string" && /^[a-z0-9_]{2,40}$/.test(r.associacao) ? r.associacao : null,
+    assocSemana: typeof r.assocSemana === "string" ? r.assocSemana : null,
+    assocPremios: Array.isArray(r.assocPremios) ? r.assocPremios.filter((x): x is string => typeof x === "string").slice(-20) : [],
     colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
     ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
     ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],

@@ -41,8 +41,9 @@ export function angolaWeek(nowMs: number): string {
   const d = new Date(nowMs + 3600_000);
   const day = (d.getUTCDay() + 6) % 7; // segunda = 0
   const thursday = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - day + 3));
-  const firstThursday = new Date(Date.UTC(thursday.getUTCFullYear(), 0, 4));
-  const week = 1 + Math.round((thursday.getTime() - firstThursday.getTime()) / 604_800_000 - ((firstThursday.getUTCDay() + 6) % 7 - 3) / 7);
+  // a semana pertence ao ano da sua quinta-feira; semana 1 é a que tem a primeira quinta-feira
+  const yearStart = Date.UTC(thursday.getUTCFullYear(), 0, 1);
+  const week = Math.ceil(((thursday.getTime() - yearStart) / 86_400_000 + 1) / 7);
   return `${thursday.getUTCFullYear()}-W${String(week).padStart(2, "0")}`;
 }
 
