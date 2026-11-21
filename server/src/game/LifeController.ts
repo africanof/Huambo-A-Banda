@@ -138,6 +138,21 @@ import {
   simulateSales,
 } from "./economia.js";
 import { MemoryShopRepository, type Shop, type ShopRepository } from "../persistence/ShopRepository.js";
+import { MemoryVenueRepository, type OwnedVenue, type VenueRepository } from "../persistence/VenueRepository.js";
+import {
+  VENUES_FOR_SALE,
+  VENUE_CUT,
+  VENUE_MAX_LEVEL,
+  VENUE_MAX_HOURS,
+  VENUE_MAX_OWNED,
+  VENUE_RESALE,
+  venuePerHour,
+  venueUpgradeCost,
+  ILEGAIS,
+  raidChance,
+  MULTA_FRACAO,
+  RUSGA_PREMIO,
+} from "./economia.js";
 import { MARKET_ITEMS, ASSOC_POINTS, ASSOC_GOAL, ASSOC_GOAL_PRIZE, ASSOC_TOP_PRIZE, ASSOC_MIN_POINTS, angolaWeek, previousWeek } from "./economia.js";
 import { MemoryAssociationRepository, type AssociationRepository, type AssocRow } from "../persistence/AssociationRepository.js";
 import type { WalletMove } from "../persistence/WalletRepository.js";
@@ -171,6 +186,8 @@ interface Busy {
 }
 
 interface Entry {
+  /** estabelecimentos: os meus e os deste bairro (com dono ou à venda) */
+  venueView?: { meus: OwnedVenue[]; bairro: OwnedVenue[] };
   /** lojas: a minha, a loja onde trabalho e as bancas deste bairro (o que a app mostrou) */
   shopView?: { minha: Shop | null; emprego: Shop | null; aqui: Shop[] };
   /** proposta de emprego numa loja */
@@ -281,6 +298,17 @@ export interface SelfState {
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   agenda: ReturnType<typeof upcoming>;
+  estabelecimentos: {
+    meus: Array<{ id: string; nome: string; venue: string; bairro: string; nivel: number; caixa: number; perHour: number; melhorar: number | null; vender: number }>;
+    aqui: { id: string; nome: string; venue: string; dono: string | null; preco: number | null; souDono: boolean } | null;
+    bairro: Array<{ nome: string; dono: string; nivel: number }>;
+    catalogo: Array<{ venue: string; name: string; price: number; perHour: number }>;
+    max: number;
+    parte: number;
+  };
+  ilegal: { tipo: string; name: string; perHour: number; pendente: number; risco: number; texto: string } | null;
+  ilegais: Array<{ tipo: string; name: string; cost: number; perHour: number; texto: string }>;
+  preso: number;
   loja: {
     minha: { nome: string; caixa: number; vendas: number; bairro: string; itens: Array<{ item: string; name: string; qty: number; price: number; cost: number }>; empregados: Array<{ name: string; salario: number }> } | null;
     emprego: { nome: string; bairro: string; dono: string } | null;
@@ -361,6 +389,7 @@ export class LifeController {
   private readonly market: MarketRepository;
   private readonly assoc: AssociationRepository;
   private readonly shops: ShopRepository;
+  private readonly venues: VenueRepository;
   /** últimos preços do mercado vivo (para o telemóvel); atualizados a cada troca e de minuto a minuto */
   private marketCache: Record<string, number> = {};
   private marketAt = 0;
@@ -373,7 +402,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository; shops?: ShopRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository; shops?: ShopRepository; venues?: VenueRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -386,6 +415,7 @@ export class LifeController {
     this.market = deps.market ?? new MemoryMarketRepository();
     this.assoc = deps.assoc ?? new MemoryAssociationRepository();
     this.shops = deps.shops ?? new MemoryShopRepository();
+    this.venues = deps.venues ?? new MemoryVenueRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -459,6 +489,11 @@ export class LifeController {
     if (!e) return;
     rollDay(e.life, this.now());
     rollMissions(e.life.missions, this.now(), actor.characterId);
+    // preso/a depois de uma rusga: só se pode ver o estado
+    if (e.busy?.kind === "preso" && msg.a !== "self") {
+      const left = Math.ceil((e.busy.until - this.now()) / 1000);
+      return this.out.toast(actor, `Estás detido/a na esquadra. Sais daqui a ${left} s.`, false);
+    }
     try {
       switch (msg.a) {
         case "self":
@@ -680,6 +715,33 @@ export class LifeController {
         case "geracao_continuar":
           await this.nextGeneration(actor, e, (msg.n ?? 0) - 1);
           break;
+        case "estab_ver":
+          await this.venueLoad(actor, e);
+          break;
+        case "estab_comprar":
+          await this.venueBuy(actor, e);
+          break;
+        case "estab_recolher":
+          await this.venueCollect(actor, e, msg.s);
+          break;
+        case "estab_melhorar":
+          await this.venueUpgrade(actor, e, msg.s);
+          break;
+        case "estab_vender":
+          await this.venueSell(actor, e, msg.s);
+          break;
+        case "ilegal_abrir":
+          await this.illegalOpen(actor, e, msg.i);
+          break;
+        case "ilegal_recolher":
+          await this.illegalCollect(actor, e);
+          break;
+        case "ilegal_fechar":
+          this.illegalClose(actor, e);
+          break;
+        case "policia_patrulha":
+          await this.policePatrol(actor, e);
+          break;
         case "loja_abrir":
           await this.shopOpen(actor, e, msg.s);
           break;
@@ -804,6 +866,7 @@ export class LifeController {
     const item = (MENUS[place.shop] ?? []).find((m) => m.id === itemId);
     if (!item) return this.out.toast(actor, "Esse prato não existe aqui.", false);
     e.money = await this.wallets.apply(actor.characterId, -item.price, `food.${item.id}`, `food:${actor.characterId}:${this.op()}:${item.id}`);
+    this.venueRevenue(actor, item.price);
     e.life.needs = applyFood(e.life.needs, item);
     e.dirty = true;
     this.out.toast(actor, `Comeste: ${item.name} (−${item.price} Kz).`, true);
@@ -840,6 +903,7 @@ export class LifeController {
     if (kind === "study" && interiorAt(this.district, actor.x, actor.y)?.venue === "universidade") return this.uniLesson(actor, e);
     if (kind === "study" && e.life.education >= MAX_EDUCATION) return this.out.toast(actor, "Já tens o nível máximo de estudos. Continua na Universidade (Bairro Académico)!", false);
     e.money = await this.wallets.apply(actor.characterId, -price, `${kind}.pay`, `${kind}:${actor.characterId}:${this.op()}`);
+    this.venueRevenue(actor, price);
     this.startBusy(actor, e, kind);
   }
 
@@ -991,6 +1055,7 @@ export class LifeController {
     const covered = this.insured(e) && (sv.venue === "saude" || sv.id === "medicamentos");
     const price = covered ? 0 : sv.price;
     if (price > 0) e.money = await this.wallets.apply(actor.characterId, -price, `service.${sv.id}`, `service:${actor.characterId}:${this.op()}:${sv.id}`);
+    this.venueRevenue(actor, price);
     if (sv.doc) e.life.docs[sv.doc] = true;
     if (sv.credit) e.life.phoneCredit += sv.credit;
     const n = e.life.needs;
@@ -1077,8 +1142,8 @@ export class LifeController {
     const t = this.now();
     for (const [actor, e] of this.entries) {
       if (!e.busy) continue;
-      // afastou-se: interrompe
-      if (Math.hypot(actor.x - e.busy.x, actor.y - e.busy.y) > 60) {
+      // afastou-se: interrompe (quem está detido/a não se livra a andar)
+      if (e.busy.kind !== "preso" && Math.hypot(actor.x - e.busy.x, actor.y - e.busy.y) > 60) {
         e.busy = null;
         this.out.toast(actor, "Interrompeste o que estavas a fazer.", false);
         this.sendSelf(actor);
@@ -1123,6 +1188,10 @@ export class LifeController {
     e.dirty = true;
     if (kind === "loja") {
       await this.shopShiftEnd(actor, e);
+      return;
+    }
+    if (kind === "preso") {
+      this.out.toast(actor, "Foste libertado/a. Juízo, hein!", true);
       return;
     }
     if (kind === "work") {
@@ -1882,6 +1951,216 @@ export class LifeController {
       ready ? `Levantaste o depósito com juros: +${total.toLocaleString("pt-PT")} Kz (${(total - d.amount).toLocaleString("pt-PT")} Kz de juros).` : `Levantaste antes do fim do prazo: recebes só os ${total.toLocaleString("pt-PT")} Kz, sem juros.`,
       true,
     );
+  }
+
+  // ---------------------------------------------------------------- estabelecimentos da cidade
+
+  private interiorById(id: string): Interior | undefined {
+    return this.district.interiors?.find((i) => i.id === id);
+  }
+
+  /** Muda um estabelecimento com segurança (versão), juntando antes o rendimento dos clientes do bairro. */
+  private async mutateVenue(id: string, fn: (v: OwnedVenue) => string | void): Promise<{ v: OwnedVenue | null; err?: string }> {
+    for (let k = 0; k < 5; k++) {
+      const v = await this.venues.get(id);
+      if (!v) return { v: null, err: "Esse estabelecimento não tem dono." };
+      this.settleVenue(v);
+      const err = fn(v);
+      if (err) return { v, err };
+      if (await this.venues.save(v)) return { v: { ...v, version: v.version + 1 } };
+    }
+    return { v: null, err: "Está muito movimentado. Tenta outra vez." };
+  }
+
+  private settleVenue(v: OwnedVenue): void {
+    const t = this.now();
+    const hours = Math.min(VENUE_MAX_HOURS, Math.max(0, (t - v.lastTick) / 3600_000));
+    v.caixa += Math.floor(hours * venuePerHour(v.venue, v.nivel));
+    v.lastTick = t;
+  }
+
+  /** Parte do que um jogador pagou dentro de um estabelecimento com dono vai para a caixa do dono. */
+  private venueRevenue(actor: LifeActor, amount: number): void {
+    const i = interiorAt(this.district, actor.x, actor.y);
+    if (!i || !VENUES_FOR_SALE[i.venue] || amount <= 0) return;
+    const cut = Math.floor(amount * VENUE_CUT);
+    if (cut <= 0) return;
+    void this.venues
+      .get(i.id)
+      .then((v) => {
+        if (!v || v.owner === actor.characterId) return;
+        return this.mutateVenue(i.id, (x) => {
+          x.caixa += cut;
+        });
+      })
+      .catch(() => undefined);
+  }
+
+  private async venueLoad(actor: LifeActor, e: Entry): Promise<void> {
+    try {
+      const meus = await this.venues.byOwner(actor.characterId);
+      const bairro = await this.venues.byBairro(this.district.id);
+      for (const v of [...meus, ...bairro]) this.settleVenue(v);
+      e.venueView = { meus, bairro };
+    } catch {
+      /* sem base de dados */
+    }
+  }
+
+  /** Comprar o estabelecimento onde se está (tem de estar à venda). */
+  private async venueBuy(actor: LifeActor, e: Entry): Promise<void> {
+    const i = interiorAt(this.district, actor.x, actor.y);
+    const cat = i ? VENUES_FOR_SALE[i.venue] : undefined;
+    if (!i || !cat) return this.out.toast(actor, "Entra no estabelecimento que queres comprar (cantina, padaria, churrasqueira, farmácia, loja, discoteca ou hotel).", false);
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para comprar um estabelecimento precisas de uma conta.", false);
+    if (!e.life.docs.bi) return this.out.toast(actor, "Para comprar um estabelecimento precisas de BI.", false);
+    const existing = await this.venues.get(i.id);
+    if (existing) return this.out.toast(actor, existing.owner === actor.characterId ? "Este sítio já é teu!" : `${i.name} já tem dono: ${existing.ownerName}.`, false);
+    if ((await this.venues.byOwner(actor.characterId)).length >= VENUE_MAX_OWNED) return this.out.toast(actor, `Já tens ${VENUE_MAX_OWNED} estabelecimentos. Vende um para comprar outro.`, false);
+    if (e.money < cat.price) return this.out.toast(actor, `${i.name} custa ${cat.price.toLocaleString("pt-PT")} Kz.`, false);
+    const op = this.op();
+    e.money = await this.wallets.apply(actor.characterId, -cat.price, `estab.compra.${i.venue}`, `estab:${actor.characterId}:${op}`);
+    const v = await this.venues.claim({ interiorId: i.id, owner: actor.characterId, ownerName: actor.name ?? "", bairro: this.district.id, venue: i.venue, nome: i.name, nivel: 1, caixa: 0, investido: cat.price, lastTick: this.now() });
+    if (!v) {
+      e.money = await this.wallets.apply(actor.characterId, cat.price, "estab.compra.devolvida", `estab-dev:${actor.characterId}:${op}`);
+      return this.out.toast(actor, "Alguém comprou este sítio agora mesmo.", false);
+    }
+    recordNews("casa", this.district.name, `${actor.name ?? "Alguém"} comprou ${i.name} (${this.district.name}).`, this.now());
+    this.out.toast(actor, `Agora és dono/a de ${i.name}! Recebes ${Math.round(VENUE_CUT * 100)}% do que os clientes pagam aqui e ${venuePerHour(i.venue, 1).toLocaleString("pt-PT")} Kz por hora.`, true);
+    await this.venueLoad(actor, e);
+  }
+
+  private async venueCollect(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    const mine = (await this.venues.byOwner(actor.characterId)).filter((v) => !id || v.interiorId === id);
+    if (!mine.length) return this.out.toast(actor, "Não tens estabelecimentos.", false);
+    let total = 0;
+    for (const v0 of mine) {
+      let amount = 0;
+      const r = await this.mutateVenue(v0.interiorId, (v) => {
+        if (v.owner !== actor.characterId) return "Já não é teu.";
+        amount = v.caixa;
+        v.caixa = 0;
+      });
+      if (r.err || amount <= 0) continue;
+      e.money = await this.wallets.apply(actor.characterId, amount, `estab.lucro.${v0.venue}`, `estab-lucro:${v0.interiorId}:${r.v!.version}`);
+      total += amount;
+    }
+    if (total <= 0) return this.out.toast(actor, "Ainda não há lucro para recolher.", false);
+    this.assocAdd(actor, e, (total / 100) * ASSOC_POINTS.venda);
+    this.out.toast(actor, `Recolheste ${total.toLocaleString("pt-PT")} Kz dos teus estabelecimentos.`, true);
+    await this.venueLoad(actor, e);
+  }
+
+  private async venueUpgrade(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    const v0 = id ? await this.venues.get(id) : null;
+    if (!v0 || v0.owner !== actor.characterId) return this.out.toast(actor, "Esse estabelecimento não é teu.", false);
+    if (v0.nivel >= VENUE_MAX_LEVEL) return this.out.toast(actor, "Já está no nível máximo.", false);
+    const cost = venueUpgradeCost(v0.venue, v0.nivel);
+    if (e.money < cost) return this.out.toast(actor, `Melhorar custa ${cost.toLocaleString("pt-PT")} Kz.`, false);
+    const op = this.op();
+    e.money = await this.wallets.apply(actor.characterId, -cost, `estab.melhorar.${v0.venue}`, `estab-mel:${actor.characterId}:${op}`);
+    const r = await this.mutateVenue(v0.interiorId, (v) => {
+      if (v.owner !== actor.characterId) return "Já não é teu.";
+      if (v.nivel >= VENUE_MAX_LEVEL) return "Já está no nível máximo.";
+      v.nivel += 1;
+      v.investido += cost;
+    });
+    if (r.err) {
+      e.money = await this.wallets.apply(actor.characterId, cost, "estab.melhorar.devolvido", `estab-mel-dev:${actor.characterId}:${op}`);
+      return this.out.toast(actor, r.err, false);
+    }
+    this.out.toast(actor, `${v0.nome} passou ao nível ${r.v!.nivel}: rende ${venuePerHour(v0.venue, r.v!.nivel).toLocaleString("pt-PT")} Kz por hora.`, true);
+    await this.venueLoad(actor, e);
+  }
+
+  private async venueSell(actor: LifeActor, e: Entry, id: string | undefined): Promise<void> {
+    const v = id ? await this.venues.get(id) : null;
+    if (!v || v.owner !== actor.characterId) return this.out.toast(actor, "Esse estabelecimento não é teu.", false);
+    this.settleVenue(v);
+    if (!(await this.venues.release(v.interiorId, v.version))) return this.out.toast(actor, "Está muito movimentado. Tenta outra vez.", false);
+    const total = Math.round(v.investido * VENUE_RESALE) + v.caixa;
+    e.money = await this.wallets.apply(actor.characterId, total, `estab.venda.${v.venue}`, `estab-venda:${v.interiorId}:${v.version}`);
+    this.out.toast(actor, `Vendeste ${v.nome}: +${total.toLocaleString("pt-PT")} Kz (com a caixa).`, true);
+    await this.venueLoad(actor, e);
+  }
+
+  // ---------------------------------------------------------------- crime organizado (negócios ilegais)
+
+  private async illegalOpen(actor: LifeActor, e: Entry, tipo: string | undefined): Promise<void> {
+    const n = ILEGAIS[tipo ?? ""];
+    if (!n) return this.out.toast(actor, "Esse esquema não existe.", false);
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Precisas de uma conta.", false);
+    if (e.life.ilegal) return this.out.toast(actor, "Já tens um esquema a correr. Fecha-o primeiro.", false);
+    if (e.life.jobId === "policia") return this.out.toast(actor, "És agente da polícia! Não te metas nisso.", false);
+    if (e.money < n.cost) return this.out.toast(actor, `Para começar precisas de ${n.cost.toLocaleString("pt-PT")} Kz.`, false);
+    e.money = await this.wallets.apply(actor.characterId, -n.cost, `ilegal.abrir.${tipo}`, `ilegal:${actor.characterId}:${this.op()}`);
+    const t = this.now();
+    e.life.ilegal = { tipo: tipo!, desde: t, lastCollect: t, investido: n.cost };
+    e.dirty = true;
+    this.out.toast(actor, `Começaste: ${n.name}. Rende ${n.perHour.toLocaleString("pt-PT")} Kz por hora… enquanto a polícia não descobrir.`, true);
+  }
+
+  /** Recolher o lucro do esquema: quanto mais tempo acumulado, maior o risco de rusga. */
+  private async illegalCollect(actor: LifeActor, e: Entry): Promise<void> {
+    const il = e.life.ilegal;
+    if (!il) return this.out.toast(actor, "Não tens nenhum esquema.", false);
+    const n = ILEGAIS[il.tipo]!;
+    const t = this.now();
+    const hours = Math.min(24, Math.max(0, (t - il.lastCollect) / 3600_000));
+    const amount = Math.floor(hours * n.perHour);
+    if (amount < 1) return this.out.toast(actor, "Ainda não há lucro para recolher.", false);
+    if (this.rand() < raidChance(il.tipo, hours)) return this.raid(actor, e, null);
+    il.lastCollect = t;
+    e.dirty = true;
+    e.money = await this.wallets.apply(actor.characterId, amount, `ilegal.lucro.${il.tipo}`, `ilegal-lucro:${actor.characterId}:${t}`);
+    this.out.toast(actor, `Recolheste ${amount.toLocaleString("pt-PT")} Kz do ${n.name.toLowerCase()}. Ninguém viu… desta vez.`, true);
+  }
+
+  private illegalClose(actor: LifeActor, e: Entry): void {
+    if (!e.life.ilegal) return this.out.toast(actor, "Não tens nenhum esquema.", false);
+    e.life.ilegal = null;
+    e.dirty = true;
+    this.out.toast(actor, "Fechaste o esquema. Vida limpa a partir de agora.", true);
+  }
+
+  /** Rusga: perde-se o esquema e o lucro, multa, detenção e cadastro. Se foi um/a agente, recebe parte da multa. */
+  private async raid(actor: LifeActor, e: Entry, agent: LifeActor | null): Promise<void> {
+    const il = e.life.ilegal;
+    if (!il) return;
+    const n = ILEGAIS[il.tipo]!;
+    const multa = Math.min(e.money, Math.round(il.investido * MULTA_FRACAO));
+    e.life.ilegal = null;
+    e.life.rusgas += 1;
+    e.life.docs.registo = false; // fica com cadastro
+    e.dirty = true;
+    if (multa > 0) e.money = await this.wallets.apply(actor.characterId, -multa, "policia.multa", `multa:${actor.characterId}:${this.op()}`);
+    e.busy = null;
+    this.startBusy(actor, e, "preso");
+    recordNews("missoes", this.district.name, `Rusga da polícia em ${this.district.name}: desmantelado ${n.name.toLowerCase()} de ${actor.name ?? "um morador"}.`, this.now());
+    this.out.toast(actor, `RUSGA! A polícia apanhou o teu ${n.name.toLowerCase()}. Multa de ${multa.toLocaleString("pt-PT")} Kz, ficas detido/a uns minutos e perdes o registo criminal limpo.`, false);
+    if (agent) {
+      const ae = this.entries.get(agent);
+      const premio = Math.round(multa * RUSGA_PREMIO);
+      if (ae && premio > 0) {
+        ae.money = await this.wallets.apply(agent.characterId, premio, "policia.premio", `premio-rusga:${agent.characterId}:${this.op()}`);
+        this.sendSelf(agent);
+      }
+      this.out.toast(agent, `Rusga bem-sucedida: desmantelaste ${n.name.toLowerCase()} de ${actor.name ?? "um suspeito"}. Prémio: ${premio.toLocaleString("pt-PT")} Kz.`, true);
+    }
+    this.sendSelf(actor);
+  }
+
+  /** Agente da polícia em serviço na esquadra: patrulha o bairro e pode apanhar esquemas de quem está nesta sala. */
+  private async policePatrol(actor: LifeActor, e: Entry): Promise<void> {
+    if (e.life.jobId !== "policia") return this.out.toast(actor, "Só agentes da polícia fazem patrulhas.", false);
+    if (interiorAt(this.district, actor.x, actor.y)?.venue !== "esquadra") return this.out.toast(actor, "As patrulhas começam na esquadra.", false);
+    if (e.life.needs.energy < 15) return this.out.toast(actor, "Estás cansado(a) demais para patrulhar.", false);
+    e.life.needs = { ...e.life.needs, energy: e.life.needs.energy - 10 };
+    e.dirty = true;
+    const suspects = [...this.entries.entries()].filter(([a, x]) => a !== actor && x.life.ilegal);
+    if (!suspects.length || this.rand() > 0.5) return this.out.toast(actor, "Patrulha feita: tudo calmo no bairro.", true);
+    const [who, we] = suspects[Math.floor(this.rand() * suspects.length)]!;
+    await this.raid(who, we, actor);
   }
 
   // ---------------------------------------------------------------- lojas dos jogadores
@@ -3020,6 +3299,41 @@ export class LifeController {
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       agenda: upcoming(t, 8),
+      estabelecimentos: (() => {
+        const vv = e.venueView;
+        const here = interiorAt(this.district, actor.x, actor.y);
+        const hereOwned = here ? vv?.bairro.find((x) => x.interiorId === here.id) : undefined;
+        return {
+          meus: (vv?.meus ?? []).map((v) => ({
+            id: v.interiorId,
+            nome: v.nome,
+            venue: VENUES_FOR_SALE[v.venue]?.name ?? v.venue,
+            bairro: getDistrict(v.bairro)?.name ?? v.bairro,
+            nivel: v.nivel,
+            caixa: v.caixa,
+            perHour: venuePerHour(v.venue, v.nivel),
+            melhorar: v.nivel < VENUE_MAX_LEVEL ? venueUpgradeCost(v.venue, v.nivel) : null,
+            vender: Math.round(v.investido * VENUE_RESALE),
+          })),
+          aqui:
+            here && VENUES_FOR_SALE[here.venue]
+              ? { id: here.id, nome: here.name, venue: VENUES_FOR_SALE[here.venue]!.name, dono: hereOwned ? hereOwned.ownerName : null, preco: hereOwned ? null : VENUES_FOR_SALE[here.venue]!.price, souDono: hereOwned?.owner === actor.characterId }
+              : null,
+          bairro: (vv?.bairro ?? []).map((v) => ({ nome: v.nome, dono: v.ownerName, nivel: v.nivel })),
+          catalogo: Object.entries(VENUES_FOR_SALE).map(([k, x]) => ({ venue: k, name: x.name, price: x.price, perHour: x.perHour })),
+          max: VENUE_MAX_OWNED,
+          parte: VENUE_CUT,
+        };
+      })(),
+      ilegal: (() => {
+        const il = e.life.ilegal;
+        if (!il) return null;
+        const n = ILEGAIS[il.tipo]!;
+        const hours = Math.min(24, Math.max(0, (t - il.lastCollect) / 3600_000));
+        return { tipo: il.tipo, name: n.name, perHour: n.perHour, pendente: Math.floor(hours * n.perHour), risco: Math.round(raidChance(il.tipo, hours) * 100), texto: n.texto };
+      })(),
+      ilegais: Object.entries(ILEGAIS).map(([k, x]) => ({ tipo: k, name: x.name, cost: x.cost, perHour: x.perHour, texto: x.texto })),
+      preso: e.busy?.kind === "preso" ? Math.max(0, Math.ceil((e.busy.until - t) / 1000)) : 0,
       loja: (() => {
         const v = e.shopView;
         const itens = (sh: Shop) =>

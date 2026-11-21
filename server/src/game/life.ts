@@ -1,3 +1,4 @@
+import { ILEGAIS } from "./economia.js";
 /**
  * Regras de vida do Huambo É A Banda — funções puras, sem rede nem base de dados.
  *
@@ -111,6 +112,10 @@ export interface LifeState {
   assocSemana: string | null;
   /** prémios da associação já recolhidos ("objetivo:2026-W47", "top:2026-W46") */
   assocPremios: string[];
+  /** negócio ilegal (crime organizado) e quando foi a última recolha */
+  ilegal: { tipo: string; desde: number; lastCollect: number; investido: number } | null;
+  /** rusgas sofridas (para o jornal e o cadastro) */
+  rusgas: number;
   /** emprego numa loja de outro jogador (a loja confirma; isto é só para mostrar e encontrar) */
   lojaEmprego: { shopId: string; nome: string; bairro: string } | null;
 }
@@ -398,7 +403,7 @@ export const LESSONS_PER_LEVEL = 3;
 export const MAX_EDUCATION = 4;
 
 /** Duração (s) das ações com tempo. */
-export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15, biscato: 12, loja: 20 } as const;
+export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15, biscato: 12, loja: 20, preso: 120 } as const;
 
 /** Pagamento por turno do dia: os 2 primeiros por inteiro, depois decresce. */
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
@@ -562,6 +567,8 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     assocSemana: null,
     assocPremios: [],
     lojaEmprego: null,
+    ilegal: null,
+    rusgas: 0,
   };
 }
 
@@ -674,6 +681,11 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     associacao: typeof r.associacao === "string" && /^[a-z0-9_]{2,40}$/.test(r.associacao) ? r.associacao : null,
     assocSemana: typeof r.assocSemana === "string" ? r.assocSemana : null,
     assocPremios: Array.isArray(r.assocPremios) ? r.assocPremios.filter((x): x is string => typeof x === "string").slice(-20) : [],
+    ilegal:
+      r.ilegal && typeof r.ilegal.tipo === "string" && r.ilegal.tipo in ILEGAIS && typeof r.ilegal.lastCollect === "number"
+        ? { tipo: r.ilegal.tipo, desde: num(r.ilegal.desde, r.ilegal.lastCollect, 0, 1e15), lastCollect: r.ilegal.lastCollect, investido: Math.round(num(r.ilegal.investido, 0, 0, 1e9)) }
+        : null,
+    rusgas: Math.round(num(r.rusgas, 0, 0, 1e6)),
     lojaEmprego:
       r.lojaEmprego && typeof r.lojaEmprego.shopId === "string" && typeof r.lojaEmprego.nome === "string" && typeof r.lojaEmprego.bairro === "string"
         ? { shopId: r.lojaEmprego.shopId.slice(0, 64), nome: r.lojaEmprego.nome.slice(0, 40), bairro: r.lojaEmprego.bairro.slice(0, 40) }
@@ -859,8 +871,16 @@ export const DIVORCE_PRICE = 5_000;
 /** Negócios: custo de abrir (Kz), rendimento por hora (nível 1) — o dinheiro junta-se até 12 h. */
 export const NEGOCIOS: Record<string, { name: string; cost: number; perHour: number }> = {
   quiosque: { name: "Quiosque de saldo e recargas", cost: 50_000, perHour: 2_000 },
-  cantina: { name: "Cantina", cost: 150_000, perHour: 6_000 },
+  salao: { name: "Salão de cabeleireiro e tranças", cost: 80_000, perHour: 3_200 },
+  cantina: { name: "Cantina de bairro", cost: 150_000, perHour: 6_000 },
+  kupapatas: { name: "Frota de kupapatas (5 motas)", cost: 250_000, perHour: 9_500 },
+  oficina: { name: "Oficina mecânica", cost: 300_000, perHour: 11_000 },
   candongueiro: { name: "Candongueiro (táxi azul e branco)", cost: 400_000, perHour: 15_000 },
+  fazenda: { name: "Fazenda de milho e feijão", cost: 600_000, perHour: 21_000 },
+  escola_conducao: { name: "Escola de condução", cost: 800_000, perHour: 27_000 },
+  radio: { name: "Rádio comunitária", cost: 1_200_000, perHour: 38_000 },
+  transportadora: { name: "Transportadora (camiões Huambo–Luanda)", cost: 2_000_000, perHour: 60_000 },
+  construtora: { name: "Construtora", cost: 4_000_000, perHour: 115_000 },
 };
 export const NEGOCIO_MAX_NIVEL = 3;
 export const NEGOCIO_MAX_HOURS = 12;

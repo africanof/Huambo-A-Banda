@@ -127,3 +127,61 @@ export function simulateSales(stock: ShopStock, hours: number, employees: number
   }
   return { stock: out, revenue, units };
 }
+
+// ---------------------------------------------------------------- estabelecimentos da cidade (comprar sítios reais)
+
+/**
+ * Sítios reais do mapa que um jogador pode comprar (um dono por sítio). O dono recebe uma parte de
+ * tudo o que os jogadores lá pagam e o rendimento dos clientes do bairro (por hora, conforme o nível).
+ * Serviços públicos (escola, saúde, igreja, polícia, administração, tribunal, banco, correios, mercado) não se vendem.
+ */
+export const VENUES_FOR_SALE: Record<string, { name: string; price: number; perHour: number }> = {
+  cantina: { name: "Cantina", price: 300_000, perHour: 7_000 },
+  padaria: { name: "Padaria", price: 350_000, perHour: 8_000 },
+  churrasqueira: { name: "Churrasqueira", price: 450_000, perHour: 10_000 },
+  farmacia: { name: "Farmácia", price: 700_000, perHour: 15_000 },
+  loja_telecom: { name: "Loja de telemóveis", price: 900_000, perHour: 19_000 },
+  discoteca: { name: "Discoteca", price: 1_500_000, perHour: 32_000 },
+  hotel: { name: "Hotel", price: 2_500_000, perHour: 50_000 },
+};
+/** Parte do que os jogadores pagam no sítio que vai para a caixa do dono. */
+export const VENUE_CUT = 0.25;
+export const VENUE_MAX_LEVEL = 3;
+/** Rendimento passivo acumula no máximo 24 h (é preciso ir recolhendo). */
+export const VENUE_MAX_HOURS = 24;
+/** Cada pessoa pode ter até 3 estabelecimentos. */
+export const VENUE_MAX_OWNED = 3;
+/** Vender de volta à cidade: recupera-se esta parte do que se investiu. */
+export const VENUE_RESALE = 0.6;
+
+export function venuePerHour(venue: string, nivel: number): number {
+  const v = VENUES_FOR_SALE[venue];
+  return v ? Math.round(v.perHour * (1 + 0.5 * (nivel - 1))) : 0;
+}
+export function venueUpgradeCost(venue: string, nivel: number): number {
+  const v = VENUES_FOR_SALE[venue];
+  return v ? Math.round(v.price * 0.6 * nivel) : 0;
+}
+
+// ---------------------------------------------------------------- negócios por baixo da mesa (crime organizado)
+
+/**
+ * Negócios ilegais: rendem muito mais, mas cada recolha arrisca uma rusga da polícia.
+ * O risco sobe com o «calor» (quanto mais tempo e mais dinheiro, mais se dá nas vistas).
+ * Rusga: perde-se o negócio e o lucro, paga-se multa, vai-se preso uns minutos e perde-se o registo criminal limpo.
+ */
+export const ILEGAIS: Record<string, { name: string; cost: number; perHour: number; risco: number; texto: string }> = {
+  contrabando: { name: "Contrabando de combustível", cost: 200_000, perHour: 22_000, risco: 0.1, texto: "Bidões a atravessar a fronteira sem pagar impostos." },
+  jogo: { name: "Jogo clandestino", cost: 350_000, perHour: 35_000, risco: 0.13, texto: "Apostas e máquinas escondidas num armazém." },
+  desmanche: { name: "Desmanche de carros roubados", cost: 600_000, perHour: 60_000, risco: 0.17, texto: "Peças de carros roubados vendidas a oficinas." },
+};
+/** Risco de rusga numa recolha: base do negócio + 1,5% por hora acumulada (máx. 60%). */
+export function raidChance(tipo: string, hours: number): number {
+  const n = ILEGAIS[tipo];
+  if (!n) return 0;
+  return Math.min(0.6, n.risco + 0.015 * Math.min(24, hours));
+}
+export const MULTA_FRACAO = 0.3; // da quantia investida
+export const PRISAO_S = 120; // tempo preso (segundos reais)
+/** Prémio para o/a agente que faz a rusga (parte da multa). */
+export const RUSGA_PREMIO = 0.5;

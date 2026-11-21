@@ -6,6 +6,7 @@ import type { SanctionRepository } from "./persistence/SanctionRepository.js";
 import type { MarketRepository } from "./persistence/MarketRepository.js";
 import type { AssociationRepository } from "./persistence/AssociationRepository.js";
 import type { ShopRepository } from "./persistence/ShopRepository.js";
+import type { VenueRepository } from "./persistence/VenueRepository.js";
 import type { PostRepository } from "./persistence/PostRepository.js";
 import type { GroupRepository } from "./persistence/GroupRepository.js";
 import type { Env } from "./config/env.js";
@@ -34,6 +35,7 @@ export interface Services {
   market: MarketRepository;
   assoc: AssociationRepository;
   shops: ShopRepository;
+  venues: VenueRepository;
 }
 
 let current: Services | undefined;
