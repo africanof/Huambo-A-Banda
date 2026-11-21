@@ -128,6 +128,16 @@ import { MemoryListingRepository, type ListingRepository } from "../persistence/
 import { MemoryReportRepository, type ReportRepository } from "../persistence/ReportRepository.js";
 import { MemoryInboxRepository, type InboxItem, type InboxRepository } from "../persistence/InboxRepository.js";
 import { MemoryMarketRepository, type MarketRepository } from "../persistence/MarketRepository.js";
+import {
+  SHOP_ITEMS,
+  SHOP_OPEN_PRICE,
+  SHOP_MAX_STOCK,
+  SHOP_MAX_EMPLOYEES,
+  SHOP_PRICE_MAX,
+  SHOP_WAGES,
+  simulateSales,
+} from "./economia.js";
+import { MemoryShopRepository, type Shop, type ShopRepository } from "../persistence/ShopRepository.js";
 import { MARKET_ITEMS, ASSOC_POINTS, ASSOC_GOAL, ASSOC_GOAL_PRIZE, ASSOC_TOP_PRIZE, ASSOC_MIN_POINTS, angolaWeek, previousWeek } from "./economia.js";
 import { MemoryAssociationRepository, type AssociationRepository, type AssocRow } from "../persistence/AssociationRepository.js";
 import type { WalletMove } from "../persistence/WalletRepository.js";
@@ -161,6 +171,10 @@ interface Busy {
 }
 
 interface Entry {
+  /** lojas: a minha, a loja onde trabalho e as bancas deste bairro (o que a app mostrou) */
+  shopView?: { minha: Shop | null; emprego: Shop | null; aqui: Shop[] };
+  /** proposta de emprego numa loja */
+  shopOffer?: { from: LifeActor; shopId: string; nome: string; salario: number };
   /** associação: o que a app mostrou da última vez (ranking, totais) */
   assocView?: { semana: string; ranking: AssocRow[]; total: number; meus: number; anterior: AssocRow[]; meusAnterior: { bairro: string; pontos: number } | null };
   /** extrato pedido (últimos movimentos da carteira) */
@@ -267,6 +281,15 @@ export interface SelfState {
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   agenda: ReturnType<typeof upcoming>;
+  loja: {
+    minha: { nome: string; caixa: number; vendas: number; bairro: string; itens: Array<{ item: string; name: string; qty: number; price: number; cost: number }>; empregados: Array<{ name: string; salario: number }> } | null;
+    emprego: { nome: string; bairro: string; dono: string } | null;
+    aqui: Array<{ id: string; nome: string; dono: string; itens: Array<{ item: string; name: string; qty: number; price: number }> }>;
+    oferta: { from: string; nome: string; salario: number } | null;
+    catalogo: Array<{ item: string; name: string; cost: number }>;
+    licenca: number;
+    salarios: number[];
+  };
   associacao: {
     bairro: string | null;
     nome: string | null;
@@ -337,6 +360,7 @@ export class LifeController {
   private readonly inbox: InboxRepository;
   private readonly market: MarketRepository;
   private readonly assoc: AssociationRepository;
+  private readonly shops: ShopRepository;
   /** últimos preços do mercado vivo (para o telemóvel); atualizados a cada troca e de minuto a minuto */
   private marketCache: Record<string, number> = {};
   private marketAt = 0;
@@ -349,7 +373,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository; shops?: ShopRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -361,6 +385,7 @@ export class LifeController {
     this.inbox = deps.inbox ?? new MemoryInboxRepository();
     this.market = deps.market ?? new MemoryMarketRepository();
     this.assoc = deps.assoc ?? new MemoryAssociationRepository();
+    this.shops = deps.shops ?? new MemoryShopRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -654,6 +679,43 @@ export class LifeController {
           break;
         case "geracao_continuar":
           await this.nextGeneration(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "loja_abrir":
+          await this.shopOpen(actor, e, msg.s);
+          break;
+        case "loja_ver":
+          await this.shopLoad(actor, e);
+          break;
+        case "loja_stock":
+          await this.shopRestock(actor, e, msg.i, msg.n ?? 0);
+          break;
+        case "loja_preco":
+          await this.shopPrice(actor, e, msg.i, msg.n ?? 0);
+          break;
+        case "loja_comprar":
+          await this.shopBuy(actor, e, msg.s, msg.i);
+          break;
+        case "loja_recolher":
+          await this.shopCollect(actor, e);
+          break;
+        case "loja_contratar":
+          await this.shopHire(actor, e, msg.i, msg.n ?? 0);
+          break;
+        case "loja_aceitar":
+        case "loja_recusar":
+          await this.shopOfferAnswer(actor, e, msg.a === "loja_aceitar");
+          break;
+        case "loja_despedir":
+          await this.shopFire(actor, e, (msg.n ?? 0) - 1);
+          break;
+        case "loja_sair":
+          await this.shopQuit(actor, e);
+          break;
+        case "loja_turno":
+          await this.shopShiftStart(actor, e);
+          break;
+        case "loja_fechar":
+          await this.shopClose(actor, e);
           break;
         case "assoc_aderir":
           await this.assocJoin(actor, e);
@@ -1059,6 +1121,10 @@ export class LifeController {
   private async finish(actor: LifeActor, e: Entry, kind: Busy["kind"], item?: string): Promise<void> {
     const n = e.life.needs;
     e.dirty = true;
+    if (kind === "loja") {
+      await this.shopShiftEnd(actor, e);
+      return;
+    }
     if (kind === "work") {
       const job = jobById(e.life.jobId);
       if (!job) return;
@@ -1816,6 +1882,291 @@ export class LifeController {
       ready ? `Levantaste o depósito com juros: +${total.toLocaleString("pt-PT")} Kz (${(total - d.amount).toLocaleString("pt-PT")} Kz de juros).` : `Levantaste antes do fim do prazo: recebes só os ${total.toLocaleString("pt-PT")} Kz, sem juros.`,
       true,
     );
+  }
+
+  // ---------------------------------------------------------------- lojas dos jogadores
+
+  /**
+   * Muda uma loja com segurança: lê, faz as contas das vendas aos clientes do bairro desde a última
+   * vez, aplica a mudança e grava só se ninguém mexeu entretanto (senão tenta outra vez).
+   * fn devolve um texto de erro para desistir, ou nada para gravar.
+   */
+  private async mutateShop(id: string, fn: (s: Shop) => string | void): Promise<{ shop: Shop | null; err?: string }> {
+    for (let attempt = 0; attempt < 5; attempt++) {
+      const s = await this.shops.get(id);
+      if (!s) return { shop: null, err: "Essa loja já não existe." };
+      this.settleShop(s);
+      const err = fn(s);
+      if (err) return { shop: s, err };
+      if (await this.shops.save(s)) return { shop: { ...s, version: s.version + 1 } };
+    }
+    return { shop: null, err: "A loja está muito movimentada. Tenta outra vez." };
+  }
+
+  /** Vendas aos clientes do bairro (não-jogadores) desde a última conta. */
+  private settleShop(s: Shop): void {
+    const t = this.now();
+    const hours = (t - s.lastTick) / 3600_000;
+    if (hours <= 0) return;
+    const r = simulateSales(s.stock, hours, s.empregados.length, this.rand);
+    s.stock = r.stock;
+    s.caixa += r.revenue;
+    s.vendas += r.revenue;
+    s.lastTick = t;
+  }
+
+  private atShopMarket(actor: LifeActor, s: Shop): boolean {
+    return this.district.id === s.bairro && this.atMarket(actor);
+  }
+
+  private async shopLoad(actor: LifeActor, e: Entry): Promise<void> {
+    try {
+      const minha = await this.shops.byOwner(actor.characterId);
+      if (minha) this.settleShop(minha);
+      let emprego: Shop | null = null;
+      if (e.life.lojaEmprego) {
+        emprego = await this.shops.get(e.life.lojaEmprego.shopId);
+        if (!emprego || !emprego.empregados.some((x) => x.id === actor.characterId)) {
+          e.life.lojaEmprego = null; // foi despedido/a ou a loja fechou
+          e.dirty = true;
+          emprego = null;
+        }
+      }
+      const aqui = (await this.shops.byBairro(this.district.id)).filter((x) => x.owner !== actor.characterId);
+      for (const x of aqui) this.settleShop(x);
+      e.shopView = { minha, emprego, aqui };
+    } catch {
+      /* sem base de dados: fica o que se sabia */
+    }
+  }
+
+  private async shopOpen(actor: LifeActor, e: Entry, rawName: string | undefined): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para abrir uma loja precisas de uma conta.", false);
+    if (!this.atMarket(actor)) return this.out.toast(actor, "As bancas abrem-se no mercado do bairro: vai lá.", false);
+    const nome = sanitizeDisplayName(rawName) ?? `Banca de ${actor.name ?? "Morador"}`.slice(0, 40);
+    if (e.money < SHOP_OPEN_PRICE) return this.out.toast(actor, `A licença da banca custa ${SHOP_OPEN_PRICE.toLocaleString("pt-PT")} Kz.`, false);
+    if (await this.shops.byOwner(actor.characterId)) return this.out.toast(actor, "Já tens uma loja.", false);
+    e.money = await this.wallets.apply(actor.characterId, -SHOP_OPEN_PRICE, "loja.licenca", `loja-abrir:${actor.characterId}:${this.op()}`);
+    const s = await this.shops.create({ owner: actor.characterId, ownerName: actor.name ?? "", bairro: this.district.id, nome, caixa: 0, stock: {}, empregados: [], vendas: 0, lastTick: this.now() });
+    if (!s) {
+      e.money = await this.wallets.apply(actor.characterId, SHOP_OPEN_PRICE, "loja.licenca.devolvida", `loja-abrir-dev:${actor.characterId}:${this.op()}`);
+      return this.out.toast(actor, "Já tens uma loja.", false);
+    }
+    recordNews("grupo", this.district.name, `${actor.name ?? "Alguém"} abriu a ${nome} no mercado de ${this.district.name}.`, this.now());
+    this.out.toast(actor, `Abriste a ${nome}! Compra stock ao grossista e escolhe os preços.`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  private async shopRestock(actor: LifeActor, e: Entry, item: string | undefined, qty: number): Promise<void> {
+    const it = SHOP_ITEMS[item ?? ""];
+    if (!it) return this.out.toast(actor, "Esse produto não existe.", false);
+    if (!Number.isInteger(qty) || qty < 1 || qty > SHOP_MAX_STOCK) return this.out.toast(actor, "Quantidade inválida.", false);
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Não tens loja.", false);
+    if (!this.atShopMarket(actor, mine)) return this.out.toast(actor, "O grossista está no mercado onde fica a tua banca.", false);
+    const have = mine.stock[item!]?.qty ?? 0;
+    const n = Math.min(qty, SHOP_MAX_STOCK - have);
+    if (n <= 0) return this.out.toast(actor, `Já tens o máximo de ${it.name.toLowerCase()} (${SHOP_MAX_STOCK}).`, false);
+    const cost = n * it.cost;
+    if (e.money < cost) return this.out.toast(actor, `${n} × ${it.name} custa ${cost.toLocaleString("pt-PT")} Kz no grossista.`, false);
+    e.money = await this.wallets.apply(actor.characterId, -cost, `loja.stock.${item}`, `loja-stock:${actor.characterId}:${this.op()}`);
+    const r = await this.mutateShop(mine.id, (s) => {
+      const cur = s.stock[item!] ?? { qty: 0, price: it.cost * 2 };
+      s.stock[item!] = { qty: Math.min(SHOP_MAX_STOCK, cur.qty + n), price: cur.price };
+    });
+    if (r.err) {
+      e.money = await this.wallets.apply(actor.characterId, cost, "loja.stock.devolvido", `loja-stock-dev:${actor.characterId}:${this.op()}`);
+      return this.out.toast(actor, r.err, false);
+    }
+    this.out.toast(actor, `Compraste ${n} × ${it.name} ao grossista (−${cost.toLocaleString("pt-PT")} Kz).`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  private async shopPrice(actor: LifeActor, e: Entry, item: string | undefined, price: number): Promise<void> {
+    const it = SHOP_ITEMS[item ?? ""];
+    if (!it) return this.out.toast(actor, "Esse produto não existe.", false);
+    if (!Number.isInteger(price) || price < it.cost || price > it.cost * SHOP_PRICE_MAX)
+      return this.out.toast(actor, `O preço de ${it.name.toLowerCase()} vai de ${it.cost} a ${it.cost * SHOP_PRICE_MAX} Kz.`, false);
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Não tens loja.", false);
+    const r = await this.mutateShop(mine.id, (s) => {
+      if (!s.stock[item!]) return "Compra primeiro esse produto ao grossista.";
+      s.stock[item!]!.price = price;
+    });
+    if (r.err) return this.out.toast(actor, r.err, false);
+    this.out.toast(actor, `${it.name}: agora a ${price.toLocaleString("pt-PT")} Kz.`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  /** Comprar numa banca de outro jogador (no mercado desse bairro): come/bebe logo. */
+  private async shopBuy(actor: LifeActor, e: Entry, shopId: string | undefined, item: string | undefined): Promise<void> {
+    const it = SHOP_ITEMS[item ?? ""];
+    if (!it || !shopId) return this.out.toast(actor, "Escolhe o produto.", false);
+    const s0 = await this.shops.get(shopId);
+    if (!s0) return this.out.toast(actor, "Essa loja já fechou.", false);
+    if (s0.owner === actor.characterId) return this.out.toast(actor, "Essa banca é tua!", false);
+    if (!this.atShopMarket(actor, s0)) return this.out.toast(actor, "Vai ao mercado onde fica essa banca.", false);
+    if (s0.owner && this.blocks(actor, s0.owner)) return this.out.toast(actor, "Bloqueaste quem tem essa banca.", false);
+    const price = s0.stock[item!]?.price ?? 0;
+    if (!price || (s0.stock[item!]?.qty ?? 0) <= 0) return this.out.toast(actor, `Acabou ${it.name.toLowerCase()} nesta banca.`, false);
+    if (e.money < price) return this.out.toast(actor, `Custa ${price.toLocaleString("pt-PT")} Kz.`, false);
+    // primeiro paga (falha sem dinheiro); se o produto acabar entretanto, devolve-se
+    const op = this.op();
+    e.money = await this.wallets.apply(actor.characterId, -price, `loja.compra.${item}`, `loja-compra:${actor.characterId}:${op}`);
+    const r = await this.mutateShop(shopId, (s) => {
+      const st = s.stock[item!];
+      if (!st || st.qty <= 0) return `Acabou ${it.name.toLowerCase()} nesta banca.`;
+      if (st.price !== price) return "O preço mudou agora mesmo. Vê outra vez.";
+      st.qty -= 1;
+      s.caixa += price;
+      s.vendas += price;
+    });
+    if (r.err) {
+      e.money = await this.wallets.apply(actor.characterId, price, "loja.compra.devolvida", `loja-compra-dev:${actor.characterId}:${op}`);
+      return this.out.toast(actor, r.err, false);
+    }
+    e.life.needs = applyFood(e.life.needs, { id: item!, name: it.name, price, hunger: it.hunger ?? 0, mood: it.mood, energy: it.energy });
+    e.dirty = true;
+    this.out.toast(actor, `Compraste ${it.name} na ${s0.nome} (−${price.toLocaleString("pt-PT")} Kz).`, true);
+    const owner = this.actorById(s0.owner);
+    if (owner) this.out.toast(owner, `${actor.name ?? "Um cliente"} comprou ${it.name.toLowerCase()} na tua banca (+${price} Kz na caixa).`, true);
+    this.mission(actor, e, "comer");
+    await this.shopLoad(actor, e);
+  }
+
+  /** O dono tira o dinheiro da caixa para a carteira. */
+  private async shopCollect(actor: LifeActor, e: Entry): Promise<void> {
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Não tens loja.", false);
+    let amount = 0;
+    const r = await this.mutateShop(mine.id, (s) => {
+      if (s.caixa <= 0) return "A caixa está vazia.";
+      amount = s.caixa;
+      s.caixa = 0;
+    });
+    if (r.err) return this.out.toast(actor, r.err, false);
+    e.money = await this.wallets.apply(actor.characterId, amount, "loja.caixa", `loja-caixa:${mine.id}:${r.shop!.version}`);
+    this.assocAdd(actor, e, (amount / 100) * ASSOC_POINTS.venda);
+    this.out.toast(actor, `Tiraste ${amount.toLocaleString("pt-PT")} Kz da caixa da ${mine.nome}.`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  private async shopHire(actor: LifeActor, e: Entry, eid: string | undefined, wageIdx: number): Promise<void> {
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Primeiro abre uma loja.", false);
+    const target = this.byEid(eid);
+    if (!target || target === actor) return this.out.toast(actor, "Essa pessoa já não está aqui.", false);
+    if (Math.hypot(target.x - actor.x, target.y - actor.y) > TRANSFER_NEAR_CM * 2) return this.out.toast(actor, "Aproxima-te da pessoa para lhe propor trabalho.", false);
+    if (this.blocks(target, actor.characterId)) return this.out.toast(actor, "Essa pessoa não aceita propostas tuas.", false);
+    const salario = SHOP_WAGES[wageIdx - 1];
+    if (!salario) return this.out.toast(actor, "Escolhe o salário do turno.", false);
+    if (mine.empregados.length >= SHOP_MAX_EMPLOYEES) return this.out.toast(actor, `A banca já tem ${SHOP_MAX_EMPLOYEES} empregados.`, false);
+    if (mine.empregados.some((x) => x.id === target.characterId)) return this.out.toast(actor, "Já trabalha contigo.", false);
+    const te = this.entries.get(target)!;
+    te.shopOffer = { from: actor, shopId: mine.id, nome: mine.nome, salario };
+    this.out.toast(actor, `Propuseste trabalho a ${target.name ?? "alguém"} (${salario.toLocaleString("pt-PT")} Kz por turno).`, true);
+    this.out.toast(target, `${actor.name ?? "Alguém"} quer contratar-te na ${mine.nome}: ${salario.toLocaleString("pt-PT")} Kz por turno. Responde na app Lojas.`, true);
+    this.sendSelf(target);
+  }
+
+  private async shopOfferAnswer(actor: LifeActor, e: Entry, yes: boolean): Promise<void> {
+    const o = e.shopOffer;
+    e.shopOffer = undefined;
+    if (!o) return this.out.toast(actor, "Não tens propostas.", false);
+    if (!yes) {
+      if (this.entries.has(o.from)) this.out.toast(o.from, `${actor.name ?? "A pessoa"} recusou o trabalho na tua banca.`, false);
+      return this.out.toast(actor, "Recusaste a proposta.", true);
+    }
+    if (e.life.lojaEmprego) return this.out.toast(actor, "Já trabalhas noutra loja. Sai primeiro.", false);
+    const r = await this.mutateShop(o.shopId, (s) => {
+      if (s.empregados.length >= SHOP_MAX_EMPLOYEES) return "A banca já não tem vaga.";
+      if (!s.empregados.some((x) => x.id === actor.characterId)) s.empregados.push({ id: actor.characterId, name: (actor.name ?? "").slice(0, 40), salario: o.salario });
+    });
+    if (r.err) return this.out.toast(actor, r.err, false);
+    e.life.lojaEmprego = { shopId: o.shopId, nome: o.nome, bairro: r.shop!.bairro };
+    e.dirty = true;
+    this.out.toast(actor, `Agora trabalhas na ${o.nome}. Faz turnos no mercado (app Lojas).`, true);
+    if (this.entries.has(o.from)) this.out.toast(o.from, `${actor.name ?? "A pessoa"} aceitou trabalhar na tua banca!`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  private async shopFire(actor: LifeActor, e: Entry, idx: number): Promise<void> {
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Não tens loja.", false);
+    let name = "";
+    const r = await this.mutateShop(mine.id, (s) => {
+      const x = s.empregados[idx];
+      if (!x) return "Escolhe um empregado da lista.";
+      name = x.name;
+      s.empregados.splice(idx, 1);
+    });
+    if (r.err) return this.out.toast(actor, r.err, false);
+    this.out.toast(actor, `Despediste ${name}.`, true);
+    await this.shopLoad(actor, e);
+  }
+
+  private async shopQuit(actor: LifeActor, e: Entry): Promise<void> {
+    const job = e.life.lojaEmprego;
+    if (!job) return this.out.toast(actor, "Não trabalhas em nenhuma loja.", false);
+    await this.mutateShop(job.shopId, (s) => {
+      s.empregados = s.empregados.filter((x) => x.id !== actor.characterId);
+    });
+    e.life.lojaEmprego = null;
+    e.dirty = true;
+    this.out.toast(actor, `Saíste da ${job.nome}.`, true);
+  }
+
+  private async shopShiftStart(actor: LifeActor, e: Entry): Promise<void> {
+    const job = e.life.lojaEmprego;
+    if (!job) return this.out.toast(actor, "Não trabalhas em nenhuma loja.", false);
+    const s = await this.shops.get(job.shopId);
+    if (!s || !s.empregados.some((x) => x.id === actor.characterId)) {
+      e.life.lojaEmprego = null;
+      e.dirty = true;
+      return this.out.toast(actor, "Já não trabalhas nessa loja.", false);
+    }
+    if (!this.atShopMarket(actor, s)) return this.out.toast(actor, `A ${s.nome} fica no mercado de ${getDistrict(s.bairro)?.name ?? s.bairro}.`, false);
+    if (e.life.needs.energy < 10) return this.out.toast(actor, "Estás cansado(a) demais para trabalhar.", false);
+    this.startBusy(actor, e, "loja");
+    if (e.busy?.kind === "loja") this.out.toast(actor, `Turno na ${s.nome}: a atender clientes…`, true);
+  }
+
+  /** Fim do turno na loja: o empregado atende clientes (vende mais) e é pago pela caixa da loja. */
+  private async shopShiftEnd(actor: LifeActor, e: Entry): Promise<void> {
+    const job = e.life.lojaEmprego;
+    if (!job) return;
+    let salario = 0;
+    let vendeu = 0;
+    const r = await this.mutateShop(job.shopId, (s) => {
+      const me = s.empregados.find((x) => x.id === actor.characterId);
+      if (!me) return "Já não trabalhas nessa loja.";
+      // um turno com alguém ao balcão atende mais gente (como 2 horas de clientes com mais um empregado)
+      const extra = simulateSales(s.stock, 2, s.empregados.length + 1, this.rand);
+      s.stock = extra.stock;
+      s.caixa += extra.revenue;
+      s.vendas += extra.revenue;
+      vendeu = extra.revenue;
+      if (s.caixa < me.salario) return `A caixa da ${s.nome} não tem dinheiro para te pagar (o turno vendeu ${extra.revenue} Kz).`;
+      s.caixa -= me.salario;
+      salario = me.salario;
+    });
+    const n = e.life.needs;
+    e.life.needs = { ...n, energy: Math.max(0, n.energy - 12), hunger: Math.max(0, n.hunger - 8) };
+    e.dirty = true;
+    if (r.err) return this.out.toast(actor, r.err, false);
+    e.money = await this.wallets.apply(actor.characterId, salario, "loja.salario", `loja-salario:${job.shopId}:${r.shop!.version}`);
+    this.assocAdd(actor, e, ASSOC_POINTS.turno);
+    this.out.toast(actor, `Turno na ${job.nome}: vendeste ${vendeu.toLocaleString("pt-PT")} Kz e recebeste ${salario.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
+  private async shopClose(actor: LifeActor, e: Entry): Promise<void> {
+    const mine = await this.shops.byOwner(actor.characterId);
+    if (!mine) return this.out.toast(actor, "Não tens loja.", false);
+    this.settleShop(mine);
+    if (!(await this.shops.remove(mine.id, mine.version))) return this.out.toast(actor, "A loja está a ser usada agora. Tenta outra vez.", false);
+    if (mine.caixa > 0) e.money = await this.wallets.apply(actor.characterId, mine.caixa, "loja.fecho", `loja-fecho:${mine.id}`);
+    this.out.toast(actor, `Fechaste a ${mine.nome}${mine.caixa > 0 ? ` e levaste ${mine.caixa.toLocaleString("pt-PT")} Kz da caixa` : ""}. O stock que sobrou foi dado aos vizinhos.`, true);
+    await this.shopLoad(actor, e);
   }
 
   // ---------------------------------------------------------------- associações de bairro
@@ -2669,6 +3020,24 @@ export class LifeController {
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       agenda: upcoming(t, 8),
+      loja: (() => {
+        const v = e.shopView;
+        const itens = (sh: Shop) =>
+          Object.entries(sh.stock)
+            .filter(([k]) => SHOP_ITEMS[k])
+            .map(([k, x]) => ({ item: k, name: SHOP_ITEMS[k]!.name, qty: x.qty, price: x.price, cost: SHOP_ITEMS[k]!.cost }));
+        return {
+          minha: v?.minha
+            ? { nome: v.minha.nome, caixa: v.minha.caixa, vendas: v.minha.vendas, bairro: getDistrict(v.minha.bairro)?.name ?? v.minha.bairro, itens: itens(v.minha), empregados: v.minha.empregados.map((x) => ({ name: x.name, salario: x.salario })) }
+            : null,
+          emprego: v?.emprego ? { nome: v.emprego.nome, bairro: getDistrict(v.emprego.bairro)?.name ?? v.emprego.bairro, dono: v.emprego.ownerName } : e.life.lojaEmprego ? { nome: e.life.lojaEmprego.nome, bairro: getDistrict(e.life.lojaEmprego.bairro)?.name ?? e.life.lojaEmprego.bairro, dono: "" } : null,
+          aqui: (v?.aqui ?? []).map((x) => ({ id: x.id, nome: x.nome, dono: x.ownerName, itens: itens(x).filter((i) => i.qty > 0).map(({ cost: _c, ...rest }) => rest) })),
+          oferta: e.shopOffer ? { from: e.shopOffer.from.name ?? "Alguém", nome: e.shopOffer.nome, salario: e.shopOffer.salario } : null,
+          catalogo: Object.entries(SHOP_ITEMS).map(([k, x]) => ({ item: k, name: x.name, cost: x.cost })),
+          licenca: SHOP_OPEN_PRICE,
+          salarios: SHOP_WAGES,
+        };
+      })(),
       associacao: (() => {
         const v = e.assocView;
         const week = angolaWeek(t);

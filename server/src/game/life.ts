@@ -111,6 +111,8 @@ export interface LifeState {
   assocSemana: string | null;
   /** prémios da associação já recolhidos ("objetivo:2026-W47", "top:2026-W46") */
   assocPremios: string[];
+  /** emprego numa loja de outro jogador (a loja confirma; isto é só para mostrar e encontrar) */
+  lojaEmprego: { shopId: string; nome: string; bairro: string } | null;
 }
 
 export interface Filho {
@@ -396,7 +398,7 @@ export const LESSONS_PER_LEVEL = 3;
 export const MAX_EDUCATION = 4;
 
 /** Duração (s) das ações com tempo. */
-export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15, biscato: 12 } as const;
+export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_casa: 15, biscato: 12, loja: 20 } as const;
 
 /** Pagamento por turno do dia: os 2 primeiros por inteiro, depois decresce. */
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
@@ -559,6 +561,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     associacao: null,
     assocSemana: null,
     assocPremios: [],
+    lojaEmprego: null,
   };
 }
 
@@ -671,6 +674,10 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     associacao: typeof r.associacao === "string" && /^[a-z0-9_]{2,40}$/.test(r.associacao) ? r.associacao : null,
     assocSemana: typeof r.assocSemana === "string" ? r.assocSemana : null,
     assocPremios: Array.isArray(r.assocPremios) ? r.assocPremios.filter((x): x is string => typeof x === "string").slice(-20) : [],
+    lojaEmprego:
+      r.lojaEmprego && typeof r.lojaEmprego.shopId === "string" && typeof r.lojaEmprego.nome === "string" && typeof r.lojaEmprego.bairro === "string"
+        ? { shopId: r.lojaEmprego.shopId.slice(0, 64), nome: r.lojaEmprego.nome.slice(0, 40), bairro: r.lojaEmprego.bairro.slice(0, 40) }
+        : null,
     colhidoTotal: Math.round(num(r.colhidoTotal, 0, 0, 1e9)),
     ambicao: typeof r.ambicao === "string" && r.ambicao in AMBICOES ? r.ambicao : null,
     ambicoesFeitas: Array.isArray(r.ambicoesFeitas) ? r.ambicoesFeitas.filter((x): x is string => typeof x === "string" && x in AMBICOES) : [],
