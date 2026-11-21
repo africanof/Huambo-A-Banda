@@ -2204,8 +2204,48 @@ func _achievements_card() -> void:
 		c.add_child(_label(("✓ " if bool(x.feita) else "○ ") + "%s — %s" % [x.name, x.text], 14, Tema.OK if bool(x.feita) else Tema.TEXT_FAINT, FONT_REG, true))
 
 
+## Carreira no emprego atual: título, turnos, salário e quanto falta para a próxima promoção.
+const CAREER_TITLES := ["Estagiário(a)", "Efetivo(a)", "Experiente", "Sénior", "Chefe de equipa"]
+
+
+func _career_card() -> void:
+	var cr: Variant = Net.me.get("carreira")
+	if typeof(cr) != TYPE_DICTIONARY:
+		return
+	var job := _job(str(Net.me.get("job", "")))
+	var c := _card()
+	c.add_child(_label("A tua carreira", 16, ACCENT, FONT_BOLD))
+	c.add_child(_label("%s — %s" % [cr.titulo, job.get("name", "")], 18, Tema.TEXT, FONT_BOLD, true))
+	c.add_child(_label("Salário: %s Kz por turno · %d turnos feitos" % [DemoHud._money(int(cr.salario)), int(cr.turnos)], 14, Tema.TEXT_MUTED, FONT_REG, true))
+	# escada de níveis
+	var steps := HBoxContainer.new()
+	steps.add_theme_constant_override("separation", 4)
+	for i in CAREER_TITLES.size():
+		var bar := ColorRect.new()
+		bar.custom_minimum_size = Vector2(0, 10)
+		bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		bar.color = Tema.GOLD if i <= int(cr.nivel) else Tema.BTN2
+		steps.add_child(bar)
+	c.add_child(steps)
+	var nx: Variant = cr.get("proximo")
+	if typeof(nx) == TYPE_DICTIONARY:
+		var t := "Próxima promoção: %s daqui a %d turno(s)." % [nx.titulo, int(nx.faltam)]
+		if nx.get("estudos") != null:
+			t += " Para chefiar precisas de estudos nível %d." % int(nx.estudos)
+		c.add_child(_label(t, 14, Tema.OK, FONT_REG, true))
+	else:
+		c.add_child(_label("Chegaste ao topo: és chefe de equipa!", 14, Tema.OK, FONT_BOLD, true))
+
+
 func _phone_profile() -> void:
 	_achievements_card()
+	_career_card()
+	var cv: Array = Net.me.get("curriculo", [])
+	if not cv.is_empty():
+		var c := _card()
+		c.add_child(_label("Currículo", 16, ACCENT, FONT_BOLD))
+		for x: Dictionary in cv:
+			c.add_child(_label("%s — %s (%d turnos)" % [x.name, x.titulo, int(x.turnos)], 14, Tema.TEXT_MUTED, FONT_REG, true))
 	var me := Net.me
 	var job := _job(str(me.get("job", "")))
 	var lines := [
@@ -2263,6 +2303,7 @@ func _phone_shop() -> void:
 func _phone_jobs() -> void:
 	var my := str(Net.me.get("job", ""))
 	var edu := int(Net.me.get("education", 0))
+	_career_card()
 	phone_body.add_child(_label("Vagas no Huambo", 20, ACCENT, FONT_BOLD))
 	for j: Dictionary in catalog.get("jobs", []):
 		var box := VBoxContainer.new()

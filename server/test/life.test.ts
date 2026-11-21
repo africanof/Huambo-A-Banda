@@ -105,7 +105,9 @@ describe("LifeController (bairro Cidade Baixa)", () => {
       c.needs.energy = 100;
       c.needs.hunger = 100;
     }
-    expect(earned).toEqual([pay, pay, Math.round(pay * 0.85), Math.round(pay * 0.65)]);
+    // estagiário(a) nos primeiros turnos: 80% do salário (a carreira sobe com a experiência)
+    const est = pay * 0.8;
+    expect(earned).toEqual([est, est, Math.round(est * 0.85), Math.round(est * 0.65)]);
     expect(t.last().shifts).toBe(4);
   });
 

@@ -100,6 +100,8 @@ export interface LifeState {
   denuncias: number;
   /** último dia em que recolheu a prenda de um feriado/data especial */
   prendaDia: string | null;
+  /** carreira: turnos feitos em cada emprego (a experiência fica mesmo depois de sair) */
+  carreira: Record<string, number>;
 }
 
 export interface Missions {
@@ -377,6 +379,29 @@ export const DURATION = { work: 20, study: 20, sleep: 15, sleep_rua: 15, sleep_c
 export const SHIFT_CURVE = [1, 1, 0.85, 0.65, 0.45];
 export const SHIFT_FLOOR = 0.2;
 
+// ---------------------------------------------------------------- carreira
+
+/** Níveis da carreira em cada emprego: turnos acumulados, título e multiplicador do salário. */
+export const CARREIRA: Array<{ turnos: number; titulo: string; mult: number }> = [
+  { turnos: 0, titulo: "Estagiário(a)", mult: 0.8 },
+  { turnos: 5, titulo: "Efetivo(a)", mult: 1.0 },
+  { turnos: 15, titulo: "Experiente", mult: 1.2 },
+  { turnos: 35, titulo: "Sénior", mult: 1.45 },
+  { turnos: 70, titulo: "Chefe de equipa", mult: 1.8 },
+];
+/** Para chefe é preciso um nível de estudos acima do que o emprego pede (máx. 4). */
+export function chefeEducation(job: Job): number {
+  return Math.min(4, job.education + 1);
+}
+
+/** Nível da carreira (0..4) para um emprego, dado os turnos e os estudos. */
+export function careerLevel(job: Job, turnos: number, education: number): number {
+  let lv = 0;
+  for (let i = 0; i < CARREIRA.length; i++) if (turnos >= CARREIRA[i]!.turnos) lv = i;
+  if (lv === CARREIRA.length - 1 && education < chefeEducation(job)) lv -= 1; // falta estudar para chefiar
+  return lv;
+}
+
 export function shiftFactor(shiftIndex: number): number {
   return SHIFT_CURVE[shiftIndex] ?? SHIFT_FLOOR;
 }
@@ -475,6 +500,7 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     denunciasDay: null,
     denuncias: 0,
     prendaDia: null,
+    carreira: {},
   };
 }
 
@@ -620,6 +646,11 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
     denunciasDay: typeof r.denunciasDay === "string" ? r.denunciasDay : null,
     denuncias: Math.round(num(r.denuncias, 0, 0, DENUNCIAS_POR_DIA)),
     prendaDia: typeof r.prendaDia === "string" ? r.prendaDia : null,
+    carreira: Object.fromEntries(
+      Object.entries(r.carreira && typeof r.carreira === "object" ? r.carreira : {})
+        .filter(([k, v]) => !!jobById(k) && typeof v === "number" && Number.isFinite(v) && v > 0)
+        .map(([k, v]) => [k, Math.min(100_000, Math.round(v as number))]),
+    ),
     partner:
       r.partner && typeof r.partner.id === "string" && typeof r.partner.name === "string" && typeof r.partner.since === "number"
         ? { id: r.partner.id.slice(0, 64), name: r.partner.name.slice(0, 40), since: r.partner.since, married: r.partner.married === true }
@@ -820,6 +851,8 @@ export const CONQUISTAS: Record<string, { name: string; text: string; reward: nu
   poupado: { name: "Poupado/a", text: "Levantaste um depósito a prazo com juros", reward: 1000 },
   sabichao: { name: "Sabichão/Sabichona", text: "Acertaste 20 perguntas do Saber Huambo", reward: 1500 },
   generoso: { name: "Generoso/a", text: "Ofereceste 5 presentes", reward: 1000 },
+  promovido: { name: "Promovido/a", text: "Tiveste a primeira promoção", reward: 1000 },
+  chefe: { name: "Chefe", text: "Chegaste a chefe de equipa", reward: 5000 },
 };
 
 // ---------------------------------------------------------------- Saber Huambo (perguntas do dia)

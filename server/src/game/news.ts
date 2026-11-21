@@ -5,7 +5,7 @@ import { angolaDay } from "./life.js";
  * (sorte grande, casas e carros comprados, nascimentos, dedicatórias da rádio, grupos novos…).
  * Guarda as últimas 200 em memória (recomeça se o servidor reiniciar).
  */
-export type NewsKind = "sorte" | "casa" | "carro" | "nascimento" | "radio" | "grupo" | "missoes" | "amizade";
+export type NewsKind = "sorte" | "casa" | "carro" | "nascimento" | "radio" | "grupo" | "missoes" | "amizade" | "emprego" | "familia";
 export interface NewsItem {
   t: number;
   day: string;

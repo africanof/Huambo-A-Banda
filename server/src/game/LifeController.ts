@@ -67,6 +67,9 @@ import {
   SEGURO_PRICE,
   SEGURO_MS,
   MAX_BLOQUEADOS,
+  CARREIRA,
+  careerLevel,
+  chefeEducation,
   DENUNCIAS_POR_DIA,
   MOTIVOS_DENUNCIA,
   CURSOS,
@@ -251,6 +254,8 @@ export interface SelfState {
   criacao: { animais: Array<{ tipo: string; name: string; prontoEmS: number }>; alimentadosS: number; ovos: number; max: number; racao: number };
   forma: { valor: number; treinosHoje: number; max: number };
   prazo: { amount: number; termo: string; name: string; rate: number; faltamS: number; total: number } | null;
+  carreira: { titulo: string; nivel: number; turnos: number; proximo: { titulo: string; faltam: number; estudos: number | null } | null; salario: number } | null;
+  curriculo: Array<{ job: string; name: string; titulo: string; turnos: number }>;
   quiz: { n: number; total: number; certasHoje: number; certas: number; pergunta: string | null; opcoes: string[]; premio: number };
   seguro: { ativo: boolean; faltamS: number; preco: number };
   missions: { items: Array<{ id: string; text: string; reward: number; done: boolean; claimed: boolean }>; streak: number; streakBonus: number; progress: number };
@@ -981,12 +986,24 @@ export class LifeController {
       if (!job) return;
       rollDay(e.life, this.now());
       const idx = e.life.shiftsCount;
-      const pay = Math.round(job.pay * shiftFactor(idx) * (isHoliday(this.now()) ? 1.5 : 1)); // feriado: +50%
+      const before = careerLevel(job, e.life.carreira[job.id] ?? 0, e.life.education);
+      const level = CARREIRA[before]!;
+      const pay = Math.round(job.pay * level.mult * shiftFactor(idx) * (isHoliday(this.now()) ? 1.5 : 1)); // nível da carreira; feriado +50%
       e.money = await this.wallets.apply(actor.characterId, pay, `work.${job.id}`, `shift:${actor.characterId}:${e.life.shiftsDay}:${idx}`);
       e.life.shiftsCount = idx + 1;
       e.life.needs = { ...n, energy: Math.max(0, n.energy - 12), hunger: Math.max(0, n.hunger - 8) };
       const note = (idx >= 2 ? ` (turno ${idx + 1} do dia: ${Math.round(shiftFactor(idx) * 100)}%)` : "") + (isHoliday(this.now()) ? " · feriado +50%" : "");
       this.out.toast(actor, `Turno concluído: +${pay.toLocaleString("pt-PT")} Kz${note}.`, true);
+      // experiência: um turno a mais nesta carreira; ao passar um patamar, promoção
+      e.life.carreira[job.id] = (e.life.carreira[job.id] ?? 0) + 1;
+      const after = careerLevel(job, e.life.carreira[job.id]!, e.life.education);
+      if (after > before) {
+        const nv = CARREIRA[after]!;
+        this.out.toast(actor, `Promoção! Agora és ${nv.titulo} — ${job.name}. O salário passa a ${Math.round(job.pay * nv.mult).toLocaleString("pt-PT")} Kz por turno.`, true);
+        recordNews("emprego", this.district.name, `${actor.name ?? "Alguém"} foi promovido/a a ${nv.titulo.toLowerCase()} (${job.name}).`, this.now());
+      } else if (before === CARREIRA.length - 2 && (e.life.carreira[job.id] ?? 0) >= CARREIRA[CARREIRA.length - 1]!.turnos && e.life.education < chefeEducation(job)) {
+        this.out.toast(actor, `Já tens experiência para chefe, mas precisas de estudos nível ${chefeEducation(job)}.`, false);
+      }
       this.mission(actor, e, "trabalhar");
     } else if (kind === "biscato") {
       const b = BISCATOS[item ?? ""];
@@ -1095,6 +1112,8 @@ export class LifeController {
       atleta: L.forma >= 80,
       poupado: L.prazosFeitos > 0,
       sabichao: L.quizCertas >= 20,
+      promovido: Object.entries(L.carreira).some(([j, n]) => { const jb = jobById(j); return !!jb && careerLevel(jb, n, L.education) >= 1; }),
+      chefe: Object.entries(L.carreira).some(([j, n]) => { const jb = jobById(j); return !!jb && careerLevel(jb, n, L.education) >= CARREIRA.length - 1; }),
       generoso: L.presentes >= 5,
     };
     for (const [id, ok] of Object.entries(has)) {
@@ -2343,6 +2362,27 @@ export class LifeController {
           racao: RACAO_PRICE,
         };
       })(),
+      carreira: (() => {
+        const job = jobById(e.life.jobId);
+        if (!job) return null;
+        const n = e.life.carreira[job.id] ?? 0;
+        const lv = careerLevel(job, n, e.life.education);
+        const nx = CARREIRA[lv + 1];
+        const blocked = !!nx && lv + 1 === CARREIRA.length - 1 && e.life.education < chefeEducation(job);
+        return {
+          titulo: CARREIRA[lv]!.titulo,
+          nivel: lv,
+          turnos: n,
+          proximo: nx ? { titulo: nx.titulo, faltam: Math.max(0, nx.turnos - n), estudos: blocked ? chefeEducation(job) : null } : null,
+          salario: Math.round(job.pay * CARREIRA[lv]!.mult),
+        };
+      })(),
+      curriculo: Object.entries(e.life.carreira)
+        .map(([j, n]) => {
+          const jb = jobById(j)!;
+          return { job: j, name: jb.name, titulo: CARREIRA[careerLevel(jb, n, e.life.education)]!.titulo, turnos: n };
+        })
+        .sort((a, b) => b.turnos - a.turnos),
       quiz: (() => {
         const { ids } = this.quizToday(e);
         const q = e.life.quizFeitas < QUIZ_POR_DIA ? QUIZ[ids[e.life.quizFeitas]!]! : null;
