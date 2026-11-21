@@ -2,6 +2,8 @@ extends Node
 ## Configuração em camadas: ficheiro do projeto → ficheiro do utilizador → argumentos/URL.
 
 var server_url := "http://127.0.0.1:2567"
+## Servidor publicado (a app de Android/iOS liga-se sempre a este, nunca ao servidor local)
+var public_url := "https://huambo-a-banda.onrender.com"
 var default_district := "cidade_baixa"
 var supabase_url := ""
 var supabase_key := ""
@@ -13,6 +15,9 @@ func _ready() -> void:
 	_load_file("user://client.cfg")
 	_load_args()
 	_load_web_query()
+	# app instalada (APK): sem argumentos, vai para o servidor publicado
+	if OS.has_feature("mobile") and not OS.has_feature("web") and not args.has("server"):
+		server_url = public_url
 	server_url = server_url.rstrip("/")
 
 
@@ -28,6 +33,7 @@ func _load_file(path: String) -> void:
 	default_district = cfg.get_value("server", "default_district", default_district)
 	supabase_url = cfg.get_value("supabase", "url", supabase_url)
 	supabase_key = cfg.get_value("supabase", "publishable_key", supabase_key)
+	public_url = cfg.get_value("server", "public_url", public_url)
 
 
 func _load_args() -> void:
