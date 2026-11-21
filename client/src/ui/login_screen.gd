@@ -68,10 +68,24 @@ func _ready() -> void:
 
 
 ## Versão publicada do jogo, no fundo do cartão (para saber se o telemóvel já tem a mais recente).
+## Se o jogo pode ser instalado, aparece também o botão «Instalar no telemóvel».
 func _show_version() -> void:
 	var h: Variant = await Net.get_json("/health")
 	if typeof(h) == TYPE_DICTIONARY and is_instance_valid(_version_label):
 		_version_label.text = "versão %s" % str(h.get("versao", "?"))
+	# o convite do browser para instalar chega uns segundos depois de a página abrir
+	await get_tree().create_timer(3.0).timeout
+	var inst := Instalar.offer()
+	if inst == "" or not is_instance_valid(_version_label):
+		return
+	var b := _button("📲 Instalar no telemóvel" if inst == "prompt" else "📲 Instalar: Partilhar → Adicionar ao ecrã principal", Tema.BTN2, Tema.TEXT if inst == "prompt" else Tema.TEXT_MUTED, func() -> void:
+		if inst == "prompt":
+			Instalar.prompt())
+	if inst == "prompt":
+		b.pressed.connect(func() -> void: b.visible = false)
+	b.add_theme_font_size_override("font_size", 14)
+	_version_label.get_parent().add_child(b)
+	_version_label.get_parent().move_child(b, _version_label.get_index())
 
 
 ## Quem já jogou neste aparelho continua a mesma vida (como no Vida na Banda): sem nome nem email outra vez.

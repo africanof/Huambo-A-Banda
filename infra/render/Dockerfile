@@ -20,6 +20,7 @@ WORKDIR /src/client
 RUN (godot --headless --path . --import >/dev/null 2>&1 || true) \
  && mkdir -p /web/packs && godot --headless --path . --export-release "Web Online" /web/index.html \
  && test -s /web/index.wasm && test -s /web/index.pck \
+ && cp web/manifest.webmanifest web/sw.js web/offline.html web/*.png /web/ \
  && for k in $(ls assets/kits); do godot --headless --path . --export-pack "Pack $k" /web/packs/$k.pck && test -s /web/packs/$k.pck; done
 
 # ---- 2. servidor (TypeScript → JavaScript)

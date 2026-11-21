@@ -1,0 +1,19 @@
+{
+  "name": "Huambo É A Banda",
+  "short_name": "Huambo",
+  "description": "Faz a tua vida no Huambo: trabalho, casa, amigos e família, com gente real a jogar contigo.",
+  "lang": "pt-AO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#1b130f",
+  "theme_color": "#1b130f",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

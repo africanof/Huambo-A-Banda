@@ -1252,6 +1252,17 @@ func _phone_settings() -> void:
 			vr.add_child(vb)
 		snd.add_child(vr)
 	snd.add_child(_label("Música original do jogo: semba de dia, kizomba à noite.", 12, Tema.TEXT_FAINT, FONT_REG, true))
+	var inst := Instalar.offer()
+	if inst != "":
+		var ic := _card()
+		ic.add_child(_label("Instalar o jogo", 16, ACCENT, FONT_BOLD))
+		if inst == "prompt":
+			ic.add_child(_label("Fica com o ícone no ecrã do telemóvel e abre em ecrã inteiro, como uma app.", 14, Tema.TEXT_MUTED, FONT_REG, true))
+			ic.add_child(_button("Instalar no telemóvel", "plus", ACCENT, INK, func() -> void:
+				Instalar.prompt()
+				_rebuild_phone.call_deferred()))
+		else:
+			ic.add_child(_label("No iPhone: toca em Partilhar (o quadrado com a seta) e depois em «Adicionar ao ecrã principal».", 14, Tema.TEXT_MUTED, FONT_REG, true))
 	var a := _card()
 	a.add_child(_label("Conta", 16, ACCENT, FONT_BOLD))
 	a.add_child(_label(("A jogar como %s." % Auth.display_name) if Auth.display_name != "" else "A jogar.", 14, Tema.TEXT_MUTED, FONT_REG, true))
