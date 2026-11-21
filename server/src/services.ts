@@ -3,6 +3,7 @@ import type { ListingRepository } from "./persistence/ListingRepository.js";
 import type { ReportRepository } from "./persistence/ReportRepository.js";
 import type { InboxRepository } from "./persistence/InboxRepository.js";
 import type { SanctionRepository } from "./persistence/SanctionRepository.js";
+import type { MarketRepository } from "./persistence/MarketRepository.js";
 import type { PostRepository } from "./persistence/PostRepository.js";
 import type { GroupRepository } from "./persistence/GroupRepository.js";
 import type { Env } from "./config/env.js";
@@ -28,6 +29,7 @@ export interface Services {
   reports: ReportRepository;
   inbox: InboxRepository;
   sanctions: SanctionRepository;
+  market: MarketRepository;
 }
 
 let current: Services | undefined;

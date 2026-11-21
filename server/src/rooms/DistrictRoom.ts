@@ -198,7 +198,7 @@ export class DistrictRoom extends Room {
         },
         Date.now,
         Math.random,
-        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings, reports: services().reports, inbox: services().inbox },
+        { properties: services().properties, bank: services().bank, groups: services().groups, posts: services().posts, kixikila: services().kixikila, listings: services().listings, reports: services().reports, inbox: services().inbox, market: services().market },
       );
       this.lifeTimer = setInterval(() => void this.life?.tick().catch((err) => log().error({ err }, "life tick")), 250);
     }

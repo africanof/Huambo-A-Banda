@@ -127,6 +127,8 @@ import { MemoryKixikilaRepository, type Kixikila, type KixikilaRepository } from
 import { MemoryListingRepository, type ListingRepository } from "../persistence/ListingRepository.js";
 import { MemoryReportRepository, type ReportRepository } from "../persistence/ReportRepository.js";
 import { MemoryInboxRepository, type InboxItem, type InboxRepository } from "../persistence/InboxRepository.js";
+import { MemoryMarketRepository, type MarketRepository } from "../persistence/MarketRepository.js";
+import { MARKET_ITEMS } from "./economia.js";
 import type { WalletMove } from "../persistence/WalletRepository.js";
 import { whereIs } from "./presence.js";
 import { sanitizeChat } from "./social.js";
@@ -262,6 +264,7 @@ export interface SelfState {
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   agenda: ReturnType<typeof upcoming>;
+  mercado: Array<{ item: string; name: string; unit: string; preco: number; base: number }>;
   prendaHoje: { name: string; premio: number; recolhida: boolean } | null;
   visitados: number;
   uni: { curso: string | null; cursoNome: string | null; aulas: number; total: number; licenciaturas: string[]; preco: number };
@@ -316,6 +319,10 @@ export class LifeController {
   private readonly listings: ListingRepository;
   private readonly reports: ReportRepository;
   private readonly inbox: InboxRepository;
+  private readonly market: MarketRepository;
+  /** últimos preços do mercado vivo (para o telemóvel); atualizados a cada troca e de minuto a minuto */
+  private marketCache: Record<string, number> = {};
+  private marketAt = 0;
   /** Muxima: quantas publicações por pessoa na última hora */
   private readonly postTimes = new Map<string, number[]>();
 
@@ -325,7 +332,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -335,6 +342,7 @@ export class LifeController {
     this.listings = deps.listings ?? new MemoryListingRepository();
     this.reports = deps.reports ?? new MemoryReportRepository();
     this.inbox = deps.inbox ?? new MemoryInboxRepository();
+    this.market = deps.market ?? new MemoryMarketRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -1613,13 +1621,15 @@ export class LifeController {
     if (!this.atMarket(actor)) return this.out.toast(actor, "Os animais compram-se no mercado do bairro.", false);
     const c = e.life.criacao;
     if (c.animais.length >= MAX_ANIMAIS) return this.out.toast(actor, `O quintal já tem ${MAX_ANIMAIS} animais.`, false);
-    if (e.money < a.price) return this.out.toast(actor, `Precisas de ${a.price.toLocaleString("pt-PT")} Kz.`, false);
+    const price = Math.round(a.price * (await this.marketFactor(tipo!))); // mercado vivo: muita procura encarece
+    if (e.money < price) return this.out.toast(actor, `Precisas de ${price.toLocaleString("pt-PT")} Kz.`, false);
     this.tallyEggs(e);
-    e.money = await this.wallets.apply(actor.characterId, -a.price, `criacao.compra.${tipo}`, `criacao:${actor.characterId}:${this.op()}`);
+    e.money = await this.wallets.apply(actor.characterId, -price, `criacao.compra.${tipo}`, `criacao:${actor.characterId}:${this.op()}`);
+    this.marketTrade(tipo!, -1);
     c.animais.push({ tipo: tipo!, desde: this.now() });
     if (c.animais.length === 1) c.ovosAt = this.now();
     e.dirty = true;
-    this.out.toast(actor, `Compraste ${a.name.toLowerCase() === "galinha" ? "uma galinha" : "um " + a.name.toLowerCase()} (−${a.price.toLocaleString("pt-PT")} Kz). Não te esqueças da ração.`, true);
+    this.out.toast(actor, `Compraste ${a.name.toLowerCase() === "galinha" ? "uma galinha" : "um " + a.name.toLowerCase()} (−${price.toLocaleString("pt-PT")} Kz). Não te esqueças da ração.`, true);
   }
 
   private async animalFeed(actor: LifeActor, e: Entry): Promise<void> {
@@ -1653,8 +1663,9 @@ export class LifeController {
     const feira = hasEvent(t, "feira") ? 1.3 : 1;
     if (what === "ovos") {
       if (c.ovos <= 0) return this.out.toast(actor, "Não tens ovos para vender.", false);
-      const total = Math.round(c.ovos * OVO_PRICE * feira);
+      const total = Math.round(c.ovos * OVO_PRICE * (await this.marketFactor("ovos")) * feira);
       e.money = await this.wallets.apply(actor.characterId, total, "criacao.ovos", `ovos:${actor.characterId}:${this.op()}`);
+      this.marketTrade("ovos", c.ovos);
       this.out.toast(actor, `Vendeste ${c.ovos} ovos: +${total.toLocaleString("pt-PT")} Kz.`, true);
       c.ovos = 0;
       c.vendidos += 1;
@@ -1669,12 +1680,49 @@ export class LifeController {
       return this.out.toast(actor, young ? `O ${a.name.toLowerCase()} ainda está a crescer: faltam ${Math.ceil((young.desde + a.growMin * 60_000 - t) / 60_000)} min.` : `Não tens ${a.name.toLowerCase()}.`, false);
     }
     const hungry = t > c.fedUntil;
-    const total = Math.round(a.sell * (hungry ? FOME_FACTOR : 1) * feira);
+    const total = Math.round(a.sell * (await this.marketFactor(what!)) * (hungry ? FOME_FACTOR : 1) * feira);
     e.money = await this.wallets.apply(actor.characterId, total, `criacao.venda.${what}`, `criacao-venda:${actor.characterId}:${this.op()}`);
+    this.marketTrade(what!, 1);
     c.animais.splice(idx, 1);
     c.vendidos += 1;
     e.dirty = true;
     this.out.toast(actor, `Vendeste ${a.name.toLowerCase() === "galinha" ? "uma galinha" : "o " + a.name.toLowerCase()}: +${total.toLocaleString("pt-PT")} Kz${hungry ? " (estava magro de fome)" : ""}.`, true);
+  }
+
+  // ---------------------------------------------------------------- mercado vivo
+
+  /** Preço atual ÷ preço normal (1 = normal). Lê o preço fresco na altura da troca. */
+  private async marketFactor(item: string): Promise<number> {
+    const m = MARKET_ITEMS[item];
+    if (!m) return 1;
+    try {
+      this.marketCache = await this.market.prices(this.now());
+      this.marketAt = this.now();
+    } catch {
+      /* sem base de dados: fica o último preço conhecido */
+    }
+    return (this.marketCache[item] ?? m.base) / m.base;
+  }
+
+  /** Regista a troca no mercado partilhado (falhas não estragam a venda). */
+  private marketTrade(item: string, qty: number): void {
+    if (!MARKET_ITEMS[item] || !qty) return;
+    void this.market
+      .trade(item, qty, this.now())
+      .then((p) => {
+        this.marketCache[item] = p;
+      })
+      .catch(() => undefined);
+  }
+
+  /** Atualiza a cache dos preços para o telemóvel (no máximo uma vez por minuto). */
+  private refreshMarket(): void {
+    if (this.now() - this.marketAt < 60_000) return;
+    this.marketAt = this.now();
+    void this.market
+      .prices(this.now())
+      .then((p) => (this.marketCache = p))
+      .catch(() => undefined);
   }
 
   // ---------------------------------------------------------------- desporto
@@ -2094,10 +2142,12 @@ export class LifeController {
       return this.out.toast(actor, "A colheita vende-se no mercado do bairro.", false);
     let total = 0;
     const feira = hasEvent(this.now(), "feira") ? 1.3 : 1; // sábado: dia de feira
-    for (const [k, kg] of Object.entries(e.life.colheita)) total += Math.round(kg * (CROPS[k]?.price ?? 0) * feira);
+    const sold = { ...e.life.colheita };
+    for (const [k, kg] of Object.entries(sold)) total += Math.round(kg * (CROPS[k]?.price ?? 0) * (await this.marketFactor(k)) * feira);
     if (total <= 0) return this.out.toast(actor, "Não tens colheita para vender.", false);
     e.money = await this.wallets.apply(actor.characterId, total, "lavra.venda", `lavra-venda:${actor.characterId}:${this.op()}`);
     e.life.colheita = {};
+    for (const [k, kg] of Object.entries(sold)) this.marketTrade(k, kg); // muita oferta faz baixar o preço
     e.dirty = true;
     this.out.toast(actor, `Vendeste a colheita no mercado: +${total.toLocaleString("pt-PT")} Kz.`, true);
   }
@@ -2500,6 +2550,10 @@ export class LifeController {
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       agenda: upcoming(t, 8),
+      mercado: (() => {
+        this.refreshMarket();
+        return Object.entries(MARKET_ITEMS).map(([k, m]) => ({ item: k, name: m.name, unit: m.unit, preco: Math.round(this.marketCache[k] ?? m.base), base: m.base }));
+      })(),
       prendaHoje: (() => {
         const p = dayPrize(t);
         return p ? { name: p.name, premio: p.premio, recolhida: e.life.prendaDia === angolaDay(t) } : null;

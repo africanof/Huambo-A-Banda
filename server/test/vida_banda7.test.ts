@@ -34,7 +34,8 @@ describe("criação de animais", () => {
     await life.handle(a, { a: "criacao_comprar", i: "galinha" });
     await life.handle(a, { a: "criacao_comprar", i: "galinha" });
     await life.handle(a, { a: "criacao_comprar", i: "cabrito" });
-    expect(await wallets.balance("cr")).toBe(m0 - 2 * ANIMAIS.galinha!.price - ANIMAIS.cabrito!.price);
+    // mercado vivo: comprar a segunda galinha já sai 2% mais caro (mais procura)
+    expect(await wallets.balance("cr")).toBe(m0 - ANIMAIS.galinha!.price - Math.round(ANIMAIS.galinha!.price * 1.02) - ANIMAIS.cabrito!.price);
     expect(selves.get(a)!.criacao.animais).toHaveLength(3);
     // sem ração não há ovos
     advance(60 * MIN);
@@ -58,8 +59,12 @@ describe("criação de animais", () => {
     expect(await wallets.balance("cr")).toBe(m2 + ovos * OVO_PRICE);
     // o cabrito já cresceu mas está com fome: vende-se mais barato
     const m3 = await wallets.balance("cr");
+    // mercado vivo: o preço do cabrito subiu um pouco quando o compraste (e foi recuperando com o tempo)
+    const mk = (life as unknown as { market: { prices(t: number): Promise<Record<string, number>> } }).market;
+    const fac = (await mk.prices(Date.UTC(2026, 6, 8, 10) + 60 * MIN + 3 * OVO_MIN * MIN + 1000 + FEED_MIN * MIN * 3))["cabrito"]! / 24000;
     await life.handle(a, { a: "criacao_vender", i: "cabrito" });
-    expect(await wallets.balance("cr")).toBe(m3 + Math.round(ANIMAIS.cabrito!.sell * 0.6));
+    expect(await wallets.balance("cr")).toBe(m3 + Math.round(ANIMAIS.cabrito!.sell * fac * 0.6));
+    expect(fac).toBeGreaterThan(1);
     expect(selves.get(a)!.criacao.animais.map((x) => x.tipo)).toEqual(["galinha", "galinha"]);
     // porco acabado de comprar ainda não se vende
     await life.handle(a, { a: "criacao_comprar", i: "porco" });
