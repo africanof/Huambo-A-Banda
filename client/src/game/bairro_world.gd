@@ -39,6 +39,9 @@ func _ready() -> void:
 		return
 	add_child(canvas_mod)
 	_attach_marker()
+	moradores = Moradores.new()
+	add_child(moradores)
+	moradores.setup(self, view, _find_path)
 	speed_m = float(w.get("speed", 450)) / UNIT
 	snapshot_hz = int(w.get("snapshotHz", 10))
 	hud = GameHud.new()
@@ -222,7 +225,10 @@ func _process(delta: float) -> void:
 		if mode3d != "" and view3d:
 			var room := view.interior_at(local_char.world_pos)
 			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
-			view3d.sync_people(avatars, Net.self_id)
+			var people := avatars.duplicate()
+			if moradores:
+				people.merge(moradores.characters())
+			view3d.sync_people(people, Net.self_id)
 			view3d.follow(local_char.last_dir if local_char.is_moving() else Vector2.ZERO, delta)
 			view3d.update_camera(local_char.world_pos, delta)
 		view.update_occlusion(local_char.position, delta, local_char.world_pos)
@@ -230,6 +236,11 @@ func _process(delta: float) -> void:
 	var now := Time.get_datetime_dict_from_unix_time(int(Time.get_unix_time_from_system()) + 3600) # hora de Angola (UTC+1)
 	var minutes := float(now.hour * 60 + now.minute) + float(now.second) / 60.0
 	var night := view.apply_hour(minutes / 60.0, canvas_mod)
+	if moradores:
+		moradores.night = clampf(night, 0.0, 1.0)
+		var tw: Variant = Net.me.get("tempo")
+		moradores.raining = typeof(tw) == TYPE_DICTIONARY and str(tw.ceu) in ["chuva", "trovoada"]
+		moradores.players = maxi(0, avatars.size() - 1)
 	if _inside_id != "" and _inside_id != "?":
 		canvas_mod.color = Color(1.0, 0.97, 0.92) # dentro dos edifícios há luz acesa, de dia ou de noite
 	if view3d and mode3d != "":
@@ -241,6 +252,7 @@ func _process(delta: float) -> void:
 
 var _travelling := false
 var _marker: DestMarker
+var moradores: Moradores
 
 
 var _marker_layer: CanvasLayer
@@ -562,6 +574,8 @@ func _apply_rot(r: int, animate: bool) -> void:
 		c.reparent(view.objects, false)
 		c.position = Iso.to_screen(c.world_pos)
 	_attach_marker()
+	if moradores:
+		moradores.set_view(view)
 	if local_char:
 		local_char.obstacles = view.obstacles
 	old.queue_free()
@@ -940,6 +954,18 @@ func _find_path(from: Vector2, to: Vector2) -> Array[Vector2]:
 			if r.grow(0.42).has_point(p):
 				return false
 		return true
+	if free.call(from) == false:
+		# partida encostada a uma parede (ex.: a porta de um edifício): começa no ponto livre mais perto
+		for rad: float in [0.5, 1.0, 1.5, 2.0, 3.0]:
+			var got := false
+			for k in 16:
+				var c0: Vector2 = from + Vector2.from_angle(TAU * k / 16.0) * rad
+				if free.call(c0):
+					from = c0
+					got = true
+					break
+			if got:
+				break
 	if free.call(to) == false:
 		# destino tapado (porta encostada à parede, toque em cima de um edifício): o ponto livre mais perto
 		var found := false

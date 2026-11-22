@@ -267,15 +267,27 @@ func say(text: String, secs := 6.0) -> void:
 		add_child(_bubble)
 	var lab: Label = _bubble.get_child(0)
 	lab.text = text
-	lab.custom_minimum_size = Vector2(minf(260.0, 14.0 + text.length() * 9.0), 0)
+	# frases curtas numa linha; longas partem-se a 260 px (o tamanho só se sabe depois de arrumar o texto)
+	var short := text.length() <= 26
+	lab.autowrap_mode = TextServer.AUTOWRAP_OFF if short else TextServer.AUTOWRAP_WORD_SMART
+	lab.custom_minimum_size = Vector2(0 if short else 260.0, 0)
+	_bubble.size = Vector2.ZERO
 	_bubble.reset_size()
-	_bubble.position = Vector2(-_bubble.size.x / 2.0, tag.position.y - _bubble.size.y - 8.0)
+	_place_bubble()
+	_place_bubble.call_deferred()
 	_bubble.visible = true
 	_bubble.modulate.a = 1.0
 	_bubble_until = Time.get_ticks_msec() + int(secs * 1000.0)
 	get_tree().create_timer(secs).timeout.connect(func() -> void:
 		if is_instance_valid(_bubble) and Time.get_ticks_msec() >= _bubble_until - 50:
 			_bubble.visible = false)
+
+
+func _place_bubble() -> void:
+	if not is_instance_valid(_bubble):
+		return
+	_bubble.reset_size()
+	_bubble.position = Vector2(-_bubble.size.x / 2.0, tag.position.y - _bubble.size.y - 8.0)
 
 
 ## Gesto: animação curta do próprio desenho da personagem + legenda.
