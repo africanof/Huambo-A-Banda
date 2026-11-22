@@ -117,6 +117,7 @@ func step(dir_world: Vector2, delta: float, max_dist := INF) -> void:
 	if fixed_speed > 0.0 and _moving:
 		cadence = (dist / maxf(delta, 0.0001)) / stride_for(world_pos - before)
 	body.speed_scale = cadence * 8.0 / BASE_FPS if _moving else 1.0
+	_settle_facing(delta)
 	_update_anim()
 	position = Iso.to_screen(world_pos)
 	if _moving:
@@ -141,6 +142,7 @@ func drive(new_pos: Vector2, delta: float) -> void:
 		body.speed_scale = clampf(cadence, 0.5, 8.0) * 8.0 / BASE_FPS
 	else:
 		body.speed_scale = 1.0
+	_settle_facing(delta)
 	_update_anim()
 	position = Iso.to_screen(world_pos)
 
@@ -170,13 +172,36 @@ func _free(p: Vector2) -> bool:
 
 ## Direção no ecrã do último movimento (para escolher entre 8 direções).
 var screen_dir := Vector2(0, 1)
+## Direção que a animação mostra: só muda quando a nova direção se mantém um instante
+## (ou a viragem é grande) — nas curvas a personagem já não «pisca» entre duas direções.
+var _shown_dir := Vector2(0, 1)
+var _turn_t := 0.0
+const TURN_HOLD := 0.09
+
+
+func is_moving() -> bool:
+	return _moving
+
+
+func _settle_facing(delta: float) -> void:
+	if not _moving:
+		return
+	var diff := absf(_shown_dir.angle_to(screen_dir))
+	if diff < deg_to_rad(12.0):
+		_turn_t = 0.0
+		_shown_dir = screen_dir
+		return
+	_turn_t += delta
+	if diff > deg_to_rad(70.0) or _turn_t >= TURN_HOLD:
+		_shown_dir = screen_dir
+		_turn_t = 0.0
 
 
 func _update_anim() -> void:
-	var dir := ("up" if facing_up else "down")
-	var flip := facing_left
+	var dir := ("up" if _shown_dir.y < -0.01 or (absf(_shown_dir.y) <= 0.01 and facing_up) else "down")
+	var flip := _shown_dir.x < -0.01 or (absf(_shown_dir.x) <= 0.01 and facing_left)
 	# 8 direções: na horizontal do ecrã usa o perfil; na vertical, frente ou costas; nas diagonais, 3/4
-	var a := rad_to_deg(screen_dir.angle()) # 0 = direita, 90 = baixo
+	var a := rad_to_deg(_shown_dir.angle()) # 0 = direita, 90 = baixo
 	var frames := body.sprite_frames
 	if frames and frames.has_animation("walk_side"):
 		if absf(a) < 22.5 or absf(a) > 157.5:

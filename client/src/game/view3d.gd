@@ -6,7 +6,12 @@ extends SubViewportContainer
 ##   · edifícios como caixas com a planta real, pintadas com a própria arte isométrica
 ##     (cada fachada é recortada da imagem por um shader, sem trabalho no processador);
 ##   · árvores, candeeiros, carros e pessoas como painéis virados para a câmara.
-## Arrastar = olhar à volta; joystick (ou WASD) = andar na direção para onde se olha.
+## Como no Vida na Banda, em telemóvel:
+##   · polegar esquerdo em qualquer sítio da metade esquerda = joystick (aparece debaixo do dedo);
+##   · arrastar na metade direita = olhar à volta; tocar no chão = andar até lá;
+##   · «ombro»: ao andar, a câmara volta devagar para trás da personagem;
+##   · «olhos»: a câmara balança um pouco a cada passo.
+## No computador: WASD/setas para andar, arrastar com o rato para olhar, clique no chão para ir.
 
 const PX_PER_M := 88.0 ## altura: píxeis do jogo por metro (personagem ≈ 1,7 m)
 const FACADE := preload("res://src/game/facade.gdshader")
@@ -29,6 +34,14 @@ var _boards: Array = [] ## [Sprite3D, id base] — painéis que mudam de arte co
 var _board_rot := -1
 var _env: Environment
 var _cam_dist := 3.6 ## distância atual da câmara (encurta quando há uma parede atrás)
+signal tapped(world: Vector2) ## tocou no chão (metros do mundo)
+const JOY_R := 70.0
+const JOY_HOME := Vector2(28, -270) ## canto onde o joystick descansa (relativo ao fundo do ecrã)
+var _joy_center := Vector2.INF ## centro do joystick quando aparece debaixo do dedo
+var _taps := {} ## dedo/rato -> [posição, ms] para distinguir toque de arrasto
+var _last_look_ms := -100000
+var _moving := false
+var _bob := 0.0
 
 
 ## Luz do dia/noite igual à vista aérea; lá dentro, luz acesa.
@@ -490,11 +503,14 @@ func update_camera(me: Vector2, delta: float) -> void:
 	var fwd := Vector3(sin(yaw), 0, cos(yaw))
 	var eye := Vector3(me.x, 1.6, me.y)
 	if mode == "olhos":
-		cam.position = eye
+		# passada: a cabeça sobe e desce um pouco (e para quando paras)
+		var b := sin(_bob) * 0.035 if _moving else 0.0
+		cam.position = eye + Vector3(0, b, 0)
 	else:
 		# por cima do ombro: atrás e acima; se houver parede ou edifício no caminho, a câmara
 		# aproxima-se (nunca entra dentro de um edifício nem sai da sala)
-		var free := _free_distance(me, -Vector2(fwd.x, fwd.z), 4.2)
+		# telemóvel na vertical: câmara mais perto (a personagem não fica pequenina ao longe)
+		var free := _free_distance(me, -Vector2(fwd.x, fwd.z), 4.2 if vs.x >= vs.y else 2.8)
 		_cam_dist = lerpf(_cam_dist, free, clampf(delta * (12.0 if free < _cam_dist else 3.0), 0.0, 1.0))
 		var h := 2.0 + _cam_dist * 0.22 + maxf(0.0, 2.6 - _cam_dist) * 0.55 # perto de uma parede: sobe
 		var want := Vector3(me.x, h, me.y) - fwd * _cam_dist
@@ -511,6 +527,22 @@ func update_camera(me: Vector2, delta: float) -> void:
 		return
 	var look := eye + fwd * 10.0 + Vector3(0, tan(pitch) * 10.0, 0)
 	cam.look_at(look, Vector3.UP)
+
+
+## Chamado a cada fotograma com a direção em que a personagem anda (ZERO = parada).
+## «Ombro»: se não estás a olhar à volta, a câmara roda devagar para ficar atrás dela.
+func follow(dir: Vector2, delta: float) -> void:
+	_moving = dir != Vector2.ZERO
+	if _moving:
+		_bob += delta * 9.0
+	if mode != "ombro" or not _moving or Time.get_ticks_msec() - _last_look_ms < 1500:
+		return
+	if joy.y < -0.2:
+		return # a andar para trás: a câmara não dá a volta
+	var want := atan2(dir.x, dir.y)
+	var diff := wrapf(want - yaw, -PI, PI)
+	var rate := 2.4 if joy == Vector2.ZERO else 1.4 * clampf(joy.y + 0.3, 0.0, 1.0)
+	yaw += clampf(diff, -rate * delta, rate * delta)
 
 
 ## Distância livre (m) da personagem na direção dir, até ao primeiro obstáculo (edifícios, paredes da sala).
@@ -569,20 +601,83 @@ func move_dir(keys: Vector2) -> Vector2:
 
 
 func _gui_input(e: InputEvent) -> void:
-	# arrastar fora do joystick = olhar à volta (rato ou dedo)
-	if e is InputEventMouseMotion and (e.button_mask & MOUSE_BUTTON_MASK_LEFT) and _joy_finger == -1:
-		yaw -= e.relative.x * 0.006
-		pitch = clampf(pitch - e.relative.y * 0.004, -0.9, 0.6)
+	# --- rato (computador): arrastar = olhar; clicar sem arrastar = andar até lá
+	if e is InputEventMouseButton and e.button_index == MOUSE_BUTTON_LEFT and not DisplayServer.is_touchscreen_available():
+		if e.pressed:
+			_taps[-2] = [e.position, Time.get_ticks_msec()]
+		elif _taps.has(-2):
+			_maybe_tap(-2, e.position)
+		return
+	if e is InputEventMouseMotion and (e.button_mask & MOUSE_BUTTON_MASK_LEFT) and _joy_finger == -1 and not DisplayServer.is_touchscreen_available():
+		_look(e.relative)
+		if _taps.has(-2) and (e.position - (_taps[-2][0] as Vector2)).length() > 12.0:
+			_taps.erase(-2)
 		accept_event()
-	elif e is InputEventScreenDrag and e.index == _look_finger:
-		yaw -= e.relative.x * 0.006
-		pitch = clampf(pitch - e.relative.y * 0.004, -0.9, 0.6)
+		return
+	# --- toque: metade esquerda = joystick que aparece debaixo do polegar; direita = olhar
+	if e is InputEventScreenTouch:
+		if e.pressed:
+			_taps[e.index] = [e.position, Time.get_ticks_msec()]
+			if _joy_finger == -1 and e.position.x < size.x * 0.45 and e.position.y > size.y * 0.3:
+				_joy_finger = e.index
+				_joy_center = e.position
+				_joy_ui.position = e.position - Vector2(JOY_R, JOY_R)
+				_joy_ui.modulate.a = 1.0
+				_set_joy(e.position)
+			elif _look_finger == -1:
+				_look_finger = e.index
+		else:
+			if e.index == _joy_finger:
+				_release_joy()
+			elif e.index == _look_finger:
+				_look_finger = -1
+				_maybe_tap(e.index, e.position)
+			_taps.erase(e.index)
 		accept_event()
-	elif e is InputEventScreenTouch:
-		if e.pressed and _look_finger == -1 and e.index != _joy_finger:
-			_look_finger = e.index
-		elif not e.pressed and e.index == _look_finger:
-			_look_finger = -1
+	elif e is InputEventScreenDrag:
+		if e.index == _joy_finger:
+			_set_joy(e.position)
+		elif e.index == _look_finger:
+			_look(e.relative)
+			if _taps.has(e.index) and (e.position - (_taps[e.index][0] as Vector2)).length() > 12.0:
+				_taps.erase(e.index)
+		accept_event()
+
+
+func _look(rel: Vector2) -> void:
+	yaw -= rel.x * 0.006
+	pitch = clampf(pitch - rel.y * 0.004, -0.9, 0.6)
+	_last_look_ms = Time.get_ticks_msec()
+
+
+## Toque curto sem arrastar: andar até ao ponto do chão onde se tocou.
+func _maybe_tap(index: int, pos: Vector2) -> void:
+	var t: Variant = _taps.get(index)
+	_taps.erase(index)
+	if t == null or (pos - (t[0] as Vector2)).length() > 12.0 or Time.get_ticks_msec() - int(t[1]) > 400:
+		return
+	var o := cam.project_ray_origin(pos * (Vector2(vp.size) / size))
+	var n := cam.project_ray_normal(pos * (Vector2(vp.size) / size))
+	if n.y >= -0.01:
+		return # tocou no céu
+	var hit := o + n * (-o.y / n.y)
+	tapped.emit(Vector2(hit.x, hit.z))
+
+
+func _set_joy(p: Vector2) -> void:
+	var v := (p - _joy_center) / JOY_R
+	if v.length() > 1.0:
+		v = v.normalized()
+	joy = Vector2(v.x, -v.y) if v.length() > 0.12 else Vector2.ZERO
+	_joy_knob.position = Vector2(40, 40) + v * 45.0
+
+
+func _release_joy() -> void:
+	_joy_finger = -1
+	joy = Vector2.ZERO
+	_joy_knob.position = Vector2(40, 40)
+	_joy_ui.position = Vector2(JOY_HOME.x, size.y + JOY_HOME.y)
+	_joy_ui.modulate.a = 0.55
 
 
 func _build_joystick() -> void:
@@ -606,8 +701,14 @@ func _build_joystick() -> void:
 	_joy_knob.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_joy_ui.add_child(_joy_knob)
 	_joy_ui.gui_input.connect(_on_joy)
-	resized.connect(func() -> void: _joy_ui.position = Vector2(28, size.y - 140 - 130))
-	_joy_ui.position = Vector2(28, size.y - 140 - 130)
+	if DisplayServer.is_touchscreen_available():
+		# no telemóvel o joystick é tratado pelo ecrã inteiro (aparece debaixo do polegar)
+		_joy_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	resized.connect(func() -> void:
+		if _joy_finger == -1:
+			_joy_ui.position = Vector2(JOY_HOME.x, size.y + JOY_HOME.y))
+	_joy_ui.position = Vector2(JOY_HOME.x, size.y + JOY_HOME.y)
+	_joy_ui.modulate.a = 0.55 # em descanso fica meio transparente: mostra onde pôr o polegar
 
 
 func _on_joy(e: InputEvent) -> void:
@@ -620,12 +721,9 @@ func _on_joy(e: InputEvent) -> void:
 			_joy_finger = -1
 	elif e is InputEventMouseMotion and _joy_finger == 0:
 		p = e.position
-	elif e is InputEventScreenTouch:
-		_joy_finger = e.index if e.pressed else -1
-		if e.pressed:
-			p = e.position
-	elif e is InputEventScreenDrag and e.index == _joy_finger:
-		p = e.position
+	elif e is InputEventScreenTouch or e is InputEventScreenDrag:
+		# o toque é tratado pelo ecrã inteiro (joystick dinâmico); aqui só o rato
+		return
 	if _joy_finger == -1:
 		joy = Vector2.ZERO
 		_joy_knob.position = Vector2(40, 40)

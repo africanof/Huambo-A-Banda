@@ -38,6 +38,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://src/ui/login_screen.tscn")
 		return
 	add_child(canvas_mod)
+	_attach_marker()
 	speed_m = float(w.get("speed", 450)) / UNIT
 	snapshot_hz = int(w.get("snapshotHz", 10))
 	hud = GameHud.new()
@@ -62,6 +63,10 @@ func _ready() -> void:
 	_set_street_limits()
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 6.0
+	_marker = DestMarker.new()
+	# no chão: fica logo antes das pessoas e edifícios na ordem do mapa (por cima do chão e das ruas)
+	_marker.visible = false
+	_attach_marker()
 	add_child(camera)
 	var fl := CanvasLayer.new()
 	fl.layer = 40
@@ -176,7 +181,10 @@ func _process(delta: float) -> void:
 	_update_remotes(delta)
 	if local_char:
 		if _follow:
-			camera.position = local_char.position + Vector2(0, -70)
+			# a câmara segue com suavidade e olha um pouco para onde a personagem vai
+			var want_lead := local_char.screen_dir * 55.0 if local_char.is_moving() else Vector2.ZERO
+			_lead = _lead.lerp(want_lead, clampf(delta * 2.5, 0.0, 1.0))
+			camera.position = local_char.position + Vector2(0, -70) + _lead
 			if _room_center != Vector2.INF:
 				camera.position = _room_center # lá dentro: a sala inteira fica no ecrã
 		hud.set_context(view.place_near(local_char.world_pos))
@@ -215,6 +223,7 @@ func _process(delta: float) -> void:
 			var room := view.interior_at(local_char.world_pos)
 			view3d.room_bounds = Rect2() if room.is_empty() else Rect2(room.rect[0], room.rect[1], room.rect[2], room.rect[3])
 			view3d.sync_people(avatars, Net.self_id)
+			view3d.follow(local_char.last_dir if local_char.is_moving() else Vector2.ZERO, delta)
 			view3d.update_camera(local_char.world_pos, delta)
 		view.update_occlusion(local_char.position, delta, local_char.world_pos)
 		_update_inside()
@@ -231,6 +240,28 @@ func _process(delta: float) -> void:
 
 
 var _travelling := false
+var _marker: DestMarker
+
+
+var _marker_layer: CanvasLayer
+
+
+## O marcador fica numa camada própria que acompanha o mapa (não escurece à noite e vê-se sempre).
+func _attach_marker() -> void:
+	if _marker == null:
+		return
+	if _marker_layer == null:
+		_marker_layer = CanvasLayer.new()
+		_marker_layer.layer = 1
+		_marker_layer.follow_viewport_enabled = true
+		add_child(_marker_layer)
+	if _marker.get_parent() != _marker_layer:
+		if _marker.get_parent():
+			_marker.get_parent().remove_child(_marker)
+		_marker_layer.add_child(_marker)
+	_marker.queue_redraw()
+## antecipação da câmara: olha um pouco para onde a personagem vai (px do ecrã)
+var _lead := Vector2.ZERO
 
 
 ## Música e ambiente conforme a hora, a chuva e o sítio (rua ou dentro).
@@ -530,6 +561,7 @@ func _apply_rot(r: int, animate: bool) -> void:
 	for c: DemoCharacter in avatars.values():
 		c.reparent(view.objects, false)
 		c.position = Iso.to_screen(c.world_pos)
+	_attach_marker()
 	if local_char:
 		local_char.obstacles = view.obstacles
 	old.queue_free()
@@ -658,6 +690,13 @@ func _set_mode3d(m: String) -> void:
 		hud.add_child(view3d)
 		hud.move_child(view3d, 0) # por baixo dos botões do HUD
 		view3d.build(view)
+		view3d.tapped.connect(func(w: Vector2) -> void:
+			# tocar no chão nas vistas 3D: anda até lá (uma porta perto do toque faz entrar)
+			var st := view.door_at(Iso.to_screen(w))
+			if not st.is_empty() and Vector2(st.at[0], st.at[1]).distance_to(w) < 2.5:
+				_go_station(st)
+			else:
+				request_move(w))
 		if local_char:
 			view3d.yaw = atan2(local_char.last_dir.x, local_char.last_dir.y)
 	view3d.mode = m
@@ -694,6 +733,14 @@ func _update_local(delta: float) -> void:
 	elif _click_target != null:
 		var to: Vector2 = _click_target - local_char.world_pos
 		wdir = Vector2.ZERO if to.length() < 0.1 else to.normalized()
+		# curvas suaves: perto de um ponto do caminho já começa a virar para o seguinte
+		if not _path.is_empty() and to.length() < CORNER_M:
+			var nxt0: Vector2 = (_path[0] as Vector2) - local_char.world_pos
+			if nxt0.length() > 0.05:
+				var k := to.length() / CORNER_M
+				wdir = (to.normalized() * k + nxt0.normalized() * (1.0 - k)).normalized()
+			if to.length() < 0.22:
+				wdir = Vector2.ZERO # passa já ao ponto seguinte (abaixo)
 		if wdir == Vector2.ZERO:
 			# chegou a este ponto do caminho: segue logo para o próximo (no mesmo fotograma)
 			_click_target = _path.pop_front() if not _path.is_empty() else null
@@ -714,7 +761,18 @@ func _update_local(delta: float) -> void:
 	var left := INF
 	if kdir == Vector2.ZERO and _click_target != null:
 		left = (_click_target as Vector2).distance_to(local_char.world_pos) # não passa do ponto do caminho
+	if not _path.is_empty() and kdir == Vector2.ZERO:
+		left = INF # nas curvas suaves não trava no ponto do caminho
 	local_char.step(wdir, delta, left)
+	if _marker and _marker.visible:
+		if _click_target == null and _path.is_empty() or kdir != Vector2.ZERO or mode3d != "":
+			_marker.clear()
+		else:
+			var rest: Array[Vector2] = [local_char.world_pos]
+			if _click_target != null:
+				rest.append(_click_target)
+			rest.append_array(_path)
+			_marker.path = rest
 	if _click_target != null and wdir != Vector2.ZERO and local_char.world_pos.distance_to(before) < 0.0005:
 		_click_target = null
 		_path.clear()
@@ -755,6 +813,8 @@ func _update_remotes(delta: float) -> void:
 			target = (buf[0][1] as Vector2).lerp(buf[1][1], clampf((render_time - buf[0][0]) / span, 0.0, 1.0))
 		(avatars[id] as DemoCharacter).drive(target, delta)
 
+
+const CORNER_M := 0.45 ## raio (m) com que a personagem arredonda as esquinas do caminho
 
 ## Câmara como no Vida na Banda: tocar = andar; arrastar = olhar à volta (a câmara deixa de
 ## seguir até a personagem andar ou carregares em «Seguir personagem»); dois dedos = zoom.
@@ -849,6 +909,8 @@ func request_move(target_m: Vector2) -> void:
 		route = route.slice(1, mini(route.size(), 24))
 		_click_target = route[0]
 		_path.assign(route.slice(1))
+		if _marker and mode3d == "":
+			_marker.show_at(route[-1], route)
 		var flat: Array = []
 		for p: Vector2 in route:
 			flat.append(roundi(p.x * UNIT))
@@ -858,6 +920,9 @@ func request_move(target_m: Vector2) -> void:
 		return
 	_path.clear()
 	_click_target = target_m
+	if _marker and mode3d == "":
+		var one: Array[Vector2] = [target_m]
+		_marker.show_at(target_m, one)
 	if Net.room:
 		Net.room.send(Protocol.C2S_MOVE_TO, {"x": roundi(target_m.x * UNIT), "y": roundi(target_m.y * UNIT)})
 	_last_dir = Vector2i.ZERO
