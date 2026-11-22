@@ -80,7 +80,7 @@ describe("lugares novos funcionam", () => {
     expect(t.me(a).needs.energy).toBe(e0 - 10);
     Object.assign(a, spot("mercado", "food"));
     await t.life.handle(a, { a: "eat", i: "batata_doce" });
-    expect(t.toasts.at(-1)).toMatch(/Batata-doce/);
+    expect(t.toasts.slice(-2).join(" | ")).toMatch(/Batata-doce/); // (o 1.º passo pode avisar logo a seguir)
     Object.assign(a, spot("churrasqueira", "food"));
     await t.life.handle(a, { a: "eat", i: "frango" });
     expect(t.toasts.at(-1)).toMatch(/Frango/);

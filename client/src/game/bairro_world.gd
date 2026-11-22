@@ -346,8 +346,15 @@ func _update_rain(me: Dictionary) -> void:
 		_rain_layer = null
 
 
+var _invite_sent := false
+
+
 func _on_self(me: Dictionary) -> void:
 	_update_rain(me)
+	# entrou pela ligação de convite (?convite=CÓDIGO): usa-o uma vez, sozinho
+	if not _invite_sent and AppConfig.args.has("convite") and typeof(me.get("convite")) == TYPE_DICTIONARY and bool(me.convite.get("podeUsar", false)):
+		_invite_sent = true
+		Net.action_text("convite_usar", str(AppConfig.args.convite))
 	var b: Variant = me.get("birth")
 	if typeof(b) == TYPE_DICTIONARY and bool(b.get("nova", false)) and not _birth_shown:
 		# 🎲 a lotaria da vida: primeiro a revelação, depois a ida para o bairro onde cresceu

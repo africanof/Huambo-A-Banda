@@ -787,6 +787,8 @@ func _open_phone(tab: String) -> void:
 		Net.action("assoc_ver")
 	elif tab == "negocio" and phone_tab != "negocio":
 		Net.action("estab_ver")
+	elif tab == "amigos" and phone_tab != "amigos":
+		Net.action("convite_ver")
 	phone_tab = tab
 	menu_panel.visible = false
 	phone.visible = true
@@ -906,7 +908,8 @@ func _phone_start() -> void:
 	row.add_child(city)
 	row.add_child(_label("%s Kz" % DemoHud._money(int(Net.me.get("money", 0))), 18, ACCENT, FONT_BOLD))
 	c.add_child(row)
-	c.add_child(_label("●  %s pessoas a jogar hoje" % DemoHud._money(int(_stats.hoje)), 16, Tema.OK, FONT))
+	var hoje := int(_stats.hoje)
+	c.add_child(_label("●  %s %s a jogar hoje" % [DemoHud._money(hoje), "pessoa" if hoje == 1 else "pessoas"], 16, Tema.OK, FONT))
 	for ev: Dictionary in Net.me.get("eventos", []):
 		c.add_child(_label("Hoje no Huambo: %s — %s" % [ev.name, ev.texto], 14, ACCENT, FONT_BOLD, true))
 	_prize_button(c)
@@ -915,6 +918,7 @@ func _phone_start() -> void:
 	if Time.get_ticks_msec() - _stats_at > 30000:
 		_stats_at = Time.get_ticks_msec()
 		_fetch_stats()
+	_first_steps_card()
 	# missões do dia
 	var ms: Dictionary = Net.me.get("missions", {}) if typeof(Net.me.get("missions")) == TYPE_DICTIONARY else {}
 	var items: Array = ms.get("items", [])
@@ -1452,6 +1456,67 @@ func _phone_assoc() -> void:
 		row.add_child(_label("%d pts · %d membros" % [int(x.pontos), int(x.membros)], 14, Tema.TEXT_MUTED, FONT_REG))
 		r.add_child(row)
 	r.add_child(_button("Atualizar", "rotate", Tema.BTN2, Tema.TEXT, func() -> void: Net.action("assoc_ver")))
+
+
+## Primeiros passos: a lista de boas-vindas no ecrã inicial (some quando acabas).
+func _first_steps_card() -> void:
+	var ini: Variant = Net.me.get("inicio")
+	if typeof(ini) != TYPE_DICTIONARY:
+		return
+	var c := _card()
+	var passos: Array = ini.get("passos", [])
+	var done := passos.filter(func(p: Dictionary) -> bool: return bool(p.feito)).size()
+	c.add_child(_label("Primeiros passos · %d/%d" % [done, passos.size()], 18, ACCENT, FONT_BOLD))
+	var next_shown := false
+	for p: Dictionary in passos:
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 8)
+		var mark := "✓" if bool(p.feito) else "○"
+		var l := _label("%s  %s" % [mark, p.text], 15, Tema.OK if bool(p.feito) else Tema.TEXT, FONT_BOLD if not bool(p.feito) and not next_shown else FONT_REG, true)
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(l)
+		var id := str(p.id)
+		if bool(p.feito) and not bool(p.pago):
+			row.add_child(_button("+%s" % DemoHud._money(int(p.reward)), "bag", ACCENT, INK, func() -> void: Net.action("inicio_recolher", id)))
+		elif not bool(p.feito):
+			row.add_child(_label("%s Kz" % DemoHud._money(int(p.reward)), 13, Tema.TEXT_FAINT, FONT_REG))
+		c.add_child(row)
+		# dica só para o próximo passo por fazer
+		if not bool(p.feito) and not next_shown:
+			next_shown = true
+			c.add_child(_label(str(p.dica), 13, Tema.TEXT_MUTED, FONT_REG, true))
+	if bool(ini.get("acabado", false)):
+		c.add_child(_button("Recolher o prémio final (%s Kz)" % DemoHud._money(int(ini.get("bonus", 0))), "bag", Tema.TERRA, Tema.TEXT, func() -> void: Net.action("inicio_recolher", "tudo")))
+
+
+## Convites: o meu código para partilhar no WhatsApp, e o código de quem me convidou.
+func _invite_card() -> void:
+	var cv: Variant = Net.me.get("convite")
+	if typeof(cv) != TYPE_DICTIONARY:
+		var g := _card()
+		g.add_child(_label("Convida amigos", 16, ACCENT, FONT_BOLD))
+		g.add_child(_label("Cria uma conta para teres o teu código de convite e ganhares prémios.", 13, Tema.TEXT_MUTED, FONT_REG, true))
+		return
+	var c := _card()
+	c.add_child(_label("Convida amigos", 18, ACCENT, FONT_BOLD))
+	var premio := DemoHud._money(int(cv.premio))
+	c.add_child(_label("Quando um amigo entra com o teu código e faz %d turnos de trabalho, ganham os dois %s Kz." % [int(cv.precisa), premio], 14, Tema.TEXT_MUTED, FONT_REG, true))
+	if cv.get("code") == null:
+		c.add_child(_label("A preparar o teu código…", 13, Tema.TEXT_FAINT, FONT_REG))
+	else:
+		var code := str(cv.code)
+		c.add_child(_label("O teu código: %s" % code, 22, Tema.TEXT, FONT_BOLD))
+		c.add_child(_label("Convidaste %d · prémios ganhos %d" % [int(cv.convidados), int(cv.premiados)], 13, Tema.TEXT_FAINT, FONT_REG))
+		c.add_child(_button("Partilhar no WhatsApp", "chat", Tema.PLANALTO, Tema.TEXT, func() -> void:
+			var link := "%s/?convite=%s" % [AppConfig.public_url, code]
+			var msg := "Bora viver no Huambo! Joga «Huambo É A Banda» comigo: %s\nUsa o meu código %s e ganhamos os dois %s Kz." % [link, code, premio]
+			OS.shell_open("https://wa.me/?text=" + msg.uri_encode())))
+	if bool(cv.get("premioPronto", false)):
+		c.add_child(_button("Recolher o prémio do convite (%s Kz)" % premio, "bag", ACCENT, INK, func() -> void: Net.action("convite_premio")))
+	elif bool(cv.get("usei", false)) and not bool(cv.get("recebido", false)):
+		c.add_child(_label("Entraste com um convite: faz %d turnos de trabalho para receberes o prémio (vais em %d)." % [int(cv.precisa), int(cv.turnos)], 13, Tema.WARN, FONT_REG, true))
+	elif bool(cv.get("podeUsar", false)):
+		_text_row(c, "Código de quem te convidou", 8, "Usar", func(t: String) -> void: Net.action_text("convite_usar", t))
 
 
 ## Prenda do dia (feriados e datas do Huambo): botão para recolher, uma vez por dia.
@@ -2331,6 +2396,7 @@ func _fetch_jornal() -> void:
 
 ## Amigos: pedir a quem está perto; ver se estão ligados e onde; ir ter com eles.
 func _phone_friends() -> void:
+	_invite_card()
 	var req: Variant = Net.me.get("friendReq")
 	if typeof(req) == TYPE_DICTIONARY:
 		var r := _card()

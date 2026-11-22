@@ -116,6 +116,9 @@ export interface LifeState {
   ilegal: { tipo: string; desde: number; lastCollect: number; investido: number } | null;
   /** rusgas sofridas (para o jornal e o cadastro) */
   rusgas: number;
+  /** primeiros passos feitos e prémios já recolhidos */
+  inicio: string[];
+  inicioPagos: string[];
   /** emprego numa loja de outro jogador (a loja confirma; isto é só para mostrar e encontrar) */
   lojaEmprego: { shopId: string; nome: string; bairro: string } | null;
 }
@@ -439,6 +442,19 @@ export function faseDe(anos: number): { fase: string; price: number; texto: stri
   return CUIDADO.find((c) => anos < c.ate) ?? null; // null = adulto/a
 }
 
+// ---------------------------------------------------------------- primeiros passos (os primeiros 10 minutos)
+
+/** Lista de boas-vindas: cada passo ensina uma coisa do jogo e paga um pequeno prémio. */
+export const PRIMEIROS_PASSOS: Array<{ id: string; text: string; dica: string; reward: number }> = [
+  { id: "entrar", text: "Entra num sítio com nome", dica: "Toca numa porta (cantina, banco, igreja…) e carrega em «Entrar».", reward: 500 },
+  { id: "comer", text: "Come alguma coisa", dica: "Numa cantina ou padaria, vai ao balcão e escolhe da ementa.", reward: 500 },
+  { id: "emprego", text: "Arranja um emprego", dica: "Telemóvel → Vagas. Começa por zungueiro/a ou vendedor/a do mercado.", reward: 800 },
+  { id: "turno", text: "Faz um turno de trabalho", dica: "Vai ao sítio do emprego e carrega em «Trabalhar».", reward: 1500 },
+  { id: "social", text: "Faz um amigo ou deposita no banco", dica: "Telemóvel → Amigos (convida quem está perto) ou entra no banco.", reward: 1000 },
+];
+/** Prémio por completar a lista toda. */
+export const PRIMEIROS_PASSOS_BONUS = 3000;
+
 // ---------------------------------------------------------------- carreira
 
 /** Níveis da carreira em cada emprego: turnos acumulados, título e multiplicador do salário. */
@@ -569,6 +585,8 @@ export function newLife(rand: () => number = Math.random, nowMs = Date.now()): L
     lojaEmprego: null,
     ilegal: null,
     rusgas: 0,
+    inicio: [],
+    inicioPagos: [],
   };
 }
 
@@ -686,6 +704,8 @@ export function sanitizeLife(raw: unknown, rand: () => number = Math.random): Li
         ? { tipo: r.ilegal.tipo, desde: num(r.ilegal.desde, r.ilegal.lastCollect, 0, 1e15), lastCollect: r.ilegal.lastCollect, investido: Math.round(num(r.ilegal.investido, 0, 0, 1e9)) }
         : null,
     rusgas: Math.round(num(r.rusgas, 0, 0, 1e6)),
+    inicio: Array.isArray(r.inicio) ? r.inicio.filter((x): x is string => typeof x === "string" && PRIMEIROS_PASSOS.some((p) => p.id === x)) : [],
+    inicioPagos: Array.isArray(r.inicioPagos) ? r.inicioPagos.filter((x): x is string => typeof x === "string" && (PRIMEIROS_PASSOS.some((p) => p.id === x) || x === "tudo")) : [],
     lojaEmprego:
       r.lojaEmprego && typeof r.lojaEmprego.shopId === "string" && typeof r.lojaEmprego.nome === "string" && typeof r.lojaEmprego.bairro === "string"
         ? { shopId: r.lojaEmprego.shopId.slice(0, 64), nome: r.lojaEmprego.nome.slice(0, 40), bairro: r.lojaEmprego.bairro.slice(0, 40) }

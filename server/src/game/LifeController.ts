@@ -68,6 +68,8 @@ import {
   SEGURO_MS,
   MAX_BLOQUEADOS,
   CARREIRA,
+  PRIMEIROS_PASSOS,
+  PRIMEIROS_PASSOS_BONUS,
   MAX_FILHOS,
   PARTO_PRICE,
   IDADE_ADULTA,
@@ -139,6 +141,7 @@ import {
 } from "./economia.js";
 import { MemoryShopRepository, type Shop, type ShopRepository } from "../persistence/ShopRepository.js";
 import { MemoryVenueRepository, type OwnedVenue, type VenueRepository } from "../persistence/VenueRepository.js";
+import { MemoryInviteRepository, cleanCode, type InviteRepository } from "../persistence/InviteRepository.js";
 import {
   VENUES_FOR_SALE,
   VENUE_CUT,
@@ -186,6 +189,8 @@ interface Busy {
 }
 
 interface Entry {
+  /** convites: o meu código e quem convidei; se entrei com o código de alguém */
+  inviteView?: { code: string; convidados: number; premiados: number; usei: { owner: string; rewarded: boolean } | null };
   /** estabelecimentos: os meus e os deste bairro (com dono ou à venda) */
   venueView?: { meus: OwnedVenue[]; bairro: OwnedVenue[] };
   /** lojas: a minha, a loja onde trabalho e as bancas deste bairro (o que a app mostrou) */
@@ -252,6 +257,10 @@ export interface LifeOutput {
 }
 
 const RESIDENTIAL = new Set(Object.keys(HOUSING));
+/** Convites: prémio para os dois quando o convidado faz os primeiros turnos (no máximo 20 por pessoa). */
+const INVITE_PRIZE = 5000;
+const INVITE_MIN_SHIFTS = 3;
+const INVITE_MAX_REWARDS = 20;
 
 export interface SelfState {
   money: number;
@@ -298,6 +307,8 @@ export interface SelfState {
   conquistas: Array<{ id: string; name: string; text: string; reward: number; feita: boolean; paga: boolean }>;
   eventos: ReturnType<typeof eventsAt>;
   agenda: ReturnType<typeof upcoming>;
+  convite: { code: string | null; convidados: number; premiados: number; usei: boolean; premioPronto: boolean; recebido: boolean; turnos: number; precisa: number; premio: number; podeUsar: boolean } | null;
+  inicio: { passos: Array<{ id: string; text: string; dica: string; reward: number; feito: boolean; pago: boolean }>; bonus: number; acabado: boolean } | null;
   estabelecimentos: {
     meus: Array<{ id: string; nome: string; venue: string; bairro: string; nivel: number; caixa: number; perHour: number; melhorar: number | null; vender: number }>;
     aqui: { id: string; nome: string; venue: string; dono: string | null; preco: number | null; souDono: boolean } | null;
@@ -390,6 +401,7 @@ export class LifeController {
   private readonly assoc: AssociationRepository;
   private readonly shops: ShopRepository;
   private readonly venues: VenueRepository;
+  private readonly invites: InviteRepository;
   /** últimos preços do mercado vivo (para o telemóvel); atualizados a cada troca e de minuto a minuto */
   private marketCache: Record<string, number> = {};
   private marketAt = 0;
@@ -402,7 +414,7 @@ export class LifeController {
     private readonly out: LifeOutput,
     private readonly now: () => number = Date.now,
     private readonly rand: () => number = Math.random,
-    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository; shops?: ShopRepository; venues?: VenueRepository } = {},
+    deps: { properties?: PropertyRepository; bank?: BankRepository; groups?: GroupRepository; posts?: PostRepository; kixikila?: KixikilaRepository; listings?: ListingRepository; reports?: ReportRepository; inbox?: InboxRepository; market?: MarketRepository; assoc?: AssociationRepository; shops?: ShopRepository; venues?: VenueRepository; invites?: InviteRepository } = {},
   ) {
     this.properties = deps.properties ?? new MemoryPropertyRepository(wallets);
     this.bank = deps.bank ?? new MemoryBankRepository(wallets);
@@ -416,6 +428,7 @@ export class LifeController {
     this.assoc = deps.assoc ?? new MemoryAssociationRepository();
     this.shops = deps.shops ?? new MemoryShopRepository();
     this.venues = deps.venues ?? new MemoryVenueRepository();
+    this.invites = deps.invites ?? new MemoryInviteRepository();
   }
 
   /** Entrada na sala: estado guardado (ou personagem nova → família sorteada e dinheiro inicial). */
@@ -793,6 +806,18 @@ export class LifeController {
         case "assoc_premio":
           await this.assocPrize(actor, e, msg.i);
           break;
+        case "convite_ver":
+          await this.inviteLoad(actor, e);
+          break;
+        case "convite_usar":
+          await this.inviteUse(actor, e, msg.s);
+          break;
+        case "convite_premio":
+          await this.inviteReward(actor, e);
+          break;
+        case "inicio_recolher":
+          await this.claimOnboarding(actor, e, msg.i);
+          break;
         case "evento_recolher":
           await this.claimDayPrize(actor, e);
           break;
@@ -885,6 +910,7 @@ export class LifeController {
     e.life.jobId = job.id;
     e.dirty = true;
     this.out.toast(actor, `Novo emprego: ${job.name}. Vai a ${job.where} para trabalhar.`, true);
+    this.onboard(actor, e, "emprego");
   }
 
   private startWork(actor: LifeActor, e: Entry): void {
@@ -1951,6 +1977,57 @@ export class LifeController {
       ready ? `Levantaste o depósito com juros: +${total.toLocaleString("pt-PT")} Kz (${(total - d.amount).toLocaleString("pt-PT")} Kz de juros).` : `Levantaste antes do fim do prazo: recebes só os ${total.toLocaleString("pt-PT")} Kz, sem juros.`,
       true,
     );
+  }
+
+  // ---------------------------------------------------------------- convites (crescer pelo WhatsApp)
+
+  private turnosTotais(e: Entry): number {
+    return Object.values(e.life.carreira).reduce((a, b) => a + b, 0);
+  }
+
+  private async inviteLoad(actor: LifeActor, e: Entry): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return;
+    try {
+      const code = await this.invites.codeFor(actor.characterId, actor.name ?? "");
+      const st = await this.invites.stats(actor.characterId);
+      const u = await this.invites.usedBy(actor.characterId);
+      e.inviteView = { code, ...st, usei: u ? { owner: u.owner, rewarded: u.rewarded } : null };
+    } catch {
+      /* sem base de dados */
+    }
+  }
+
+  /** Entrar com o código de quem convidou (uma vez, no início da vida). */
+  private async inviteUse(actor: LifeActor, e: Entry, raw: string | undefined): Promise<void> {
+    if (actor.userId?.startsWith("guest:")) return this.out.toast(actor, "Para usar um convite precisas de uma conta.", false);
+    const code = cleanCode(raw);
+    if (!code) return this.out.toast(actor, "O código tem 6 letras/números.", false);
+    if (this.turnosTotais(e) >= INVITE_MIN_SHIFTS) return this.out.toast(actor, "Os convites são para quem está a começar.", false);
+    const o = await this.invites.ownerOf(code);
+    if (!o) return this.out.toast(actor, "Esse código não existe.", false);
+    if (o.owner === actor.characterId) return this.out.toast(actor, "Esse código é teu!", false);
+    if (!(await this.invites.use(actor.characterId, actor.name ?? "", code, o.owner))) return this.out.toast(actor, "Já entraste com um convite.", false);
+    this.out.toast(actor, `Convite de ${o.ownerName || "um amigo"} aceite! Faz ${INVITE_MIN_SHIFTS} turnos de trabalho e os dois ganham ${INVITE_PRIZE.toLocaleString("pt-PT")} Kz.`, true);
+    await this.inviteLoad(actor, e);
+  }
+
+  /** Prémio do convite: quando quem foi convidado já fez os primeiros turnos, os dois recebem. */
+  private async inviteReward(actor: LifeActor, e: Entry): Promise<void> {
+    const u = await this.invites.usedBy(actor.characterId);
+    if (!u) return this.out.toast(actor, "Não entraste com nenhum convite.", false);
+    if (u.rewarded) return this.out.toast(actor, "Já recebeste o prémio do convite.", false);
+    if (this.turnosTotais(e) < INVITE_MIN_SHIFTS) return this.out.toast(actor, `Faz ${INVITE_MIN_SHIFTS} turnos de trabalho (vais em ${this.turnosTotais(e)}).`, false);
+    const st = await this.invites.stats(u.owner);
+    const owner = await this.invites.reward(actor.characterId);
+    if (!owner) return this.out.toast(actor, "Já recebeste o prémio do convite.", false);
+    e.money = await this.wallets.apply(actor.characterId, INVITE_PRIZE, "convite.convidado", `convite-in:${actor.characterId}`);
+    if (st.premiados < INVITE_MAX_REWARDS) {
+      await this.wallets.apply(owner, INVITE_PRIZE, "convite.dono", `convite-dono:${actor.characterId}`);
+      const text = `${actor.name ?? "O teu convidado"} já está a fazer a vida no Huambo: recebeste ${INVITE_PRIZE.toLocaleString("pt-PT")} Kz pelo convite!`;
+      if (!this.out.sms?.(owner, "Convites", text)) this.store(owner, { kind: "sms", from: "Convites", text, at: this.now() });
+    }
+    this.out.toast(actor, `Prémio do convite: +${INVITE_PRIZE.toLocaleString("pt-PT")} Kz (e quem te convidou também ganhou).`, true);
+    await this.inviteLoad(actor, e);
   }
 
   // ---------------------------------------------------------------- estabelecimentos da cidade
@@ -3064,6 +3141,8 @@ export class LifeController {
     };
     add(e, req.from);
     add(fe, actor);
+    this.onboard(actor, e, "social");
+    this.onboard(req.from, fe, "social");
     this.out.toast(actor, `Agora és amigo de ${req.from.name ?? "alguém"}!`, true);
     this.out.toast(req.from, `${actor.name ?? "Alguém"} aceitou a tua amizade!`, true);
     this.sendSelf(req.from);
@@ -3168,7 +3247,38 @@ export class LifeController {
   }
 
   /** Uma ação real conta para a missão do dia (se for uma das de hoje). */
+  /** Primeiros passos: marca o passo feito e avisa (o prémio recolhe-se no telemóvel). */
+  private onboard(actor: LifeActor, e: Entry, step: string): void {
+    if (e.life.inicio.includes(step) || !PRIMEIROS_PASSOS.some((p) => p.id === step)) return;
+    e.life.inicio.push(step);
+    e.dirty = true;
+    const p = PRIMEIROS_PASSOS.find((x) => x.id === step)!;
+    this.out.toast(actor, `Primeiro passo feito: ${p.text}! Recolhe ${p.reward.toLocaleString("pt-PT")} Kz no telemóvel.`, true);
+  }
+
+  private async claimOnboarding(actor: LifeActor, e: Entry, step: string | undefined): Promise<void> {
+    const L = e.life;
+    if (step === "tudo") {
+      if (PRIMEIROS_PASSOS.some((p) => !L.inicioPagos.includes(p.id))) return this.out.toast(actor, "Recolhe primeiro todos os passos.", false);
+      if (L.inicioPagos.includes("tudo")) return this.out.toast(actor, "Já recolheste este prémio.", false);
+      L.inicioPagos.push("tudo");
+      e.dirty = true;
+      e.money = await this.wallets.apply(actor.characterId, PRIMEIROS_PASSOS_BONUS, "inicio.tudo", `inicio:${actor.characterId}:tudo`);
+      return this.out.toast(actor, `Completaste os primeiros passos! +${PRIMEIROS_PASSOS_BONUS.toLocaleString("pt-PT")} Kz. Agora a vida é tua.`, true);
+    }
+    const p = PRIMEIROS_PASSOS.find((x) => x.id === step);
+    if (!p) return this.out.toast(actor, "Passo desconhecido.", false);
+    if (!L.inicio.includes(p.id)) return this.out.toast(actor, `Ainda não fizeste: ${p.text}.`, false);
+    if (L.inicioPagos.includes(p.id)) return this.out.toast(actor, "Já recolheste este prémio.", false);
+    L.inicioPagos.push(p.id);
+    e.dirty = true;
+    e.money = await this.wallets.apply(actor.characterId, p.reward, `inicio.${p.id}`, `inicio:${actor.characterId}:${p.id}`);
+    this.out.toast(actor, `${p.text}: +${p.reward.toLocaleString("pt-PT")} Kz.`, true);
+  }
+
   private mission(actor: LifeActor, e: Entry, kind: string, detail = ""): void {
+    const step = ({ visitar: "entrar", comer: "comer", trabalhar: "turno", banco: "social" } as Record<string, string>)[kind];
+    if (step) this.onboard(actor, e, step);
     const m = e.life.missions;
     const i = m.ids.indexOf(kind);
     const wasDone = i >= 0 && m.done[i];
@@ -3299,6 +3409,27 @@ export class LifeController {
       conquistas: Object.entries(CONQUISTAS).map(([id, c]) => ({ id, name: c.name, text: c.text, reward: c.reward, feita: e.life.conquistas.includes(id), paga: e.life.conquistasPagas.includes(id) })),
       eventos: eventsAt(t),
       agenda: upcoming(t, 8),
+      convite: actor.userId?.startsWith("guest:")
+        ? null
+        : {
+            code: e.inviteView?.code ?? null,
+            convidados: e.inviteView?.convidados ?? 0,
+            premiados: e.inviteView?.premiados ?? 0,
+            usei: !!e.inviteView?.usei,
+            recebido: !!e.inviteView?.usei?.rewarded,
+            premioPronto: !!e.inviteView?.usei && !e.inviteView.usei.rewarded && this.turnosTotais(e) >= INVITE_MIN_SHIFTS,
+            turnos: this.turnosTotais(e),
+            precisa: INVITE_MIN_SHIFTS,
+            premio: INVITE_PRIZE,
+            podeUsar: !e.inviteView?.usei && this.turnosTotais(e) < INVITE_MIN_SHIFTS,
+          },
+      inicio: e.life.inicioPagos.includes("tudo")
+        ? null
+        : {
+            passos: PRIMEIROS_PASSOS.map((p) => ({ ...p, feito: e.life.inicio.includes(p.id), pago: e.life.inicioPagos.includes(p.id) })),
+            bonus: PRIMEIROS_PASSOS_BONUS,
+            acabado: PRIMEIROS_PASSOS.every((p) => e.life.inicioPagos.includes(p.id)),
+          },
       estabelecimentos: (() => {
         const vv = e.venueView;
         const here = interiorAt(this.district, actor.x, actor.y);
